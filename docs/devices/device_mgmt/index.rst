@@ -193,7 +193,7 @@ Topic
 Location update triggered by user or app
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A user can update the location of a device using the IoT Platform web interface. An app updates the location of a device using the Rest API (Version 2). In case the device, for which the location update is triggered, is currently active and managed, the device retrieves an update message on topic: 
+When a user or application updates the location of an active managed device the device retrieves an update message: 
 
 Topic
 ~~~~~~

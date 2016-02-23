@@ -16,7 +16,7 @@ The constructor builds the client instance, and accepts a Properties object cont
 - ``clean-session`` - true or false (required only if you want to connect the application in durable subscription. By default the clean-session is set to true).
 - ``shared-subscription`` - true or false (required only if shared subscription needs to be enabled).
 
-.. note:: One must set ``shared-subscription`` to true to build scalable applications which will load balance messages across multiple instances of the application. Refer to the `scalable applications section <https://docs.internetofthings.ibmcloud.com/messaging/applications.html#/scalable-applications#scalable-applications>`__ for more information about the load balancing.
+.. note:: One must set ``shared-subscription`` to true to build scalable applications which will load balance messages across multiple instances of the application. Refer to the `scalable applications section <https://docs.internetofthings.ibmcloud.com/applications/mqtt.html#/scalable-applications#scalable-applications>`__ for more information about the load balancing.
 
 The Properties object creates definitions which are used to interact with the IoT Platform module. If no options are provided or organization is provided as quickstart, the client will connect to the IoT Platform Quickstart, and default to an unregistered device.
 

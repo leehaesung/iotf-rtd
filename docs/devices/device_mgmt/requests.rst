@@ -235,7 +235,10 @@ This response will trigger the next request.
    {
       "reqId" : "909b477c-cd37-4bee-83fa-1d568664fbe8",
       "d" : {
-         "fields" : ["mgmt.firmware"]
+         "fields" : [ { 
+         	"fields" : "mgmt.firmware" 
+         	}
+         ]
       }
    }
 
@@ -331,7 +334,7 @@ After a response with ``rc`` set to ``200`` was sent the firmware download is co
    {
       "reqId" : "d9ca3635-64d5-46e2-93ee-7d1b573fb20f",
       "d" : {
-         "data" : [{
+         "fields" : [{
                "field" : "mgmt.firmware"
             }
          ]

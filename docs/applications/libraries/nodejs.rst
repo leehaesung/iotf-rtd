@@ -2,34 +2,48 @@ Node.js for Application Developers
 ==================================
 
 - See `iot-nodejs <https://github.com/ibm-messaging/iot-nodejs>`_ in GitHub
+- See the `samples for device <https://github.com/ibm-messaging/iot-nodejs/tree/master/samples>`_ in Github
 - See `ibmiotf <https://www.npmjs.com/package/ibmiotf>`_ on NPM
 
 
 ----
 
 
-Constructor
----------------
+Application
+==============
 
-The constructor builds the application client instance. It accepts an configuration json containing the following :
-- org - Your organization ID
-- id - The unique ID of your application within your organization.
-- auth-key - API key
-- auth-token - API key token
+*ApplicationClient* is application client for the Internet of Things
+Foundation service. This section contains information on how
+applications interact with devices.
+
+Constructor
+-----------
+
+The constructor builds the application client instance. It accepts an
+configuration json containing the following :
+
+-   org - Your organization ID
+-   id - The unique ID of your application within your organization.
+-   auth-key - API key
+-   auth-token - API key token
+-   type - use 'shared' to enable shared subscription
 
 If you want to use quickstart, then send only the first two properties.
 
 .. code:: javascript
 
-    var Client = require("ibmiotf").IotfApplication;
-    var config = {
-        "org" : orgId,
-        "id" : appId,
-        "auth-key" : apiKey,
-        "auth-token" : apiToken
-    }
-    
-    var appClient = new Client(config);
+    var Client = require("ibmiotf");
+	var appClientConfig = {
+		"org" : orgId,
+		"id" : appId,
+		"auth-key" : apiKey,
+		"auth-token" : apiToken
+	}
+
+	var appClient = new Client.IotfApplication(appClientConfig);
+	
+	.....
+	
 
 Using a configuration file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,19 +52,23 @@ Instead of passing the configuration json directly, you can also use a configura
 
 .. code:: javascript
 
-    var Client = require("ibmiotf").IotfApplication;
-    
-    var config = Client.parseConfigFile(configFilePath);    
-    var appClient = new Client(config);
+    var Client = require("ibmiotf");
+	var appClientConfig = require("./application.json");
+
+	var appClient = new Client.IotfApplication(appClientConfig);
+	
+	.....
     
 The configuration file must be in the format of
 
 .. code:: javascript
 
-    org=$orgId
-    id=$myUniqueIs
-    auth-key=$apiKey
-    auth-token=$token
+    {
+	  "org": 'xxxxx',
+	  "id": 'myapp',
+	  "auth-key": 'a-xxxxxxx-zenkqyfiea',
+	  "auth-token": 'xxxxxxxxxx'
+    }
 
 
 ----
@@ -59,26 +77,85 @@ The configuration file must be in the format of
 Connecting to the IoT Platform
 ----------------------------------------------------
 
-Connect to the IoT Platform by calling the *connect* function.
+Connect to the IBM Watson Internet of Things Platform by calling the *connect*
 
 .. code:: javascript
 
-    var Client = require("ibmiotf").IotfApplication;
-    
-    var config = Client.parseConfigFile(configFilePath);    
-    var appClient = new Client(config);
-    
-    appClient.connect();
-    
-    appClient.on("connect", function () {
-    //Add your code here
-    });
+    var appClient = new Client.IotfApplication(appClientConfig);
+
+	appClient.connect();
+
+	appClient.on("connect", function () {
+
+	//Add your code here
+	});
     
 
 After the successful connection to the IoT Platform service, the application client sends a *connect* event. So all the logic can be implemented inside this callback function.
 
 
-----
+Logging
+--------
+
+By default, all the logs of ```warn``` are logged. If you want to enable more logs, use the *log.setLevel* function. Supported log levels - *trace, debug, info, warn, error*.
+
+.. code:: javascript
+
+	var appClient = new Client.IotfApplication(appClientConfig);
+
+	appClient.connect();
+	//setting the log level to 'trace'
+	appClient.log.setLevel('trace');
+	appClient.on("connect", function () {
+
+	//Add your code here
+	});
+	
+
+Shared Subscription
+---------------------
+
+Use this feature to build scalable applications which will load balance messages across multiple instances of the application. To enable this, pass 'type' as 'shared' in the configuration.
+
+.. code:: javascript
+
+	var appClientConfig = {
+	  org: 'xxxxx',
+	  id: 'myapp',
+	  "auth-key": 'a-xxxxxx-xxxxxxxxx',
+	  "auth-token": 'xxxxx!xxxxxxxx',
+	  "type" : "shared" // make this connection as shared subscription
+	};
+	var appClient = new Client.IotfApplication(appClientConfig);
+
+	appClient.connect();
+	//setting the log level to 'trace'
+	appClient.log.setLevel('trace');
+	appClient.on("connect", function () {
+
+	//Add your code here
+	});
+	
+
+Handling errors
+------------------
+
+When the application clients encounters an error, it emits an *error* event.
+
+.. code:: javascript
+
+	var appClient = new Client.IotfApplication(appClientConfig);
+
+	appClient.connect();
+	//setting the log level to 'trace'
+	appClient.log.setLevel('trace');
+	appClient.on("connect", function () {
+
+	//Add your code here
+	});
+	appClient.on("error", function (err) {
+		console.log("Error : "+err);
+	});
 
 
 Subscribing to device events
@@ -95,34 +172,28 @@ To subscribe to all events from all devices
 
 .. code:: javascript
 
-    var Client = require("ibmiotf").IotfApplication;
-    
-    var config = Client.parseConfigFile(configFilePath);    
-    var appClient = new Client(config);
-    
-    appClient.connect();
-    
-    appClient.on("connect", function () {
-    
-        appClient.subscribeToDeviceEvents();
-    });
+	var appClient = new Client.IotfApplication(appClientConfig);
+
+	appClient.connect();
+
+	appClient.on("connect", function () {
+
+		appClient.subscribeToDeviceEvents();
+	});
     
 
 To subscribe to all events from all devices of a specific type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code:: javascript
 
-    var Client = require("ibmiotf").IotfApplication;
-    
-    var config = Client.parseConfigFile(configFilePath);    
-    var appClient = new Client(config);
-    
-    appClient.connect();
-    
-    appClient.on("connect", function () {
+	var appClient = new Client.IotfApplication(appClientConfig);
 
-        appClient.subscribeToDeviceEvents("mydeviceType");
-    });
+	appClient.connect();
+
+	appClient.on("connect", function () {
+
+		appClient.subscribeToDeviceEvents("mydeviceType");
+	});
 
 
 To subscribe to a specific event from all devices
@@ -130,35 +201,29 @@ To subscribe to a specific event from all devices
 
 .. code:: javascript
 
-    var Client = require("ibmiotf").IotfApplication;
-    
-    var config = Client.parseConfigFile(configFilePath);    
-    var appClient = new Client(config);
-    
-    appClient.connect();
-    
-    appClient.on("connect", function () {
-    
-        appClient.subscribeToDeviceEvents("+","+","myevent");
-    });
+	var appClient = new Client.IotfApplication(appClientConfig);
+
+	appClient.connect();
+
+	appClient.on("connect", function () {
+
+		appClient.subscribeToDeviceEvents("+","+","myevent");
+	});
     
 
 To subscribe to a specific event from two or more different devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code:: javascript
 
-    var Client = require("ibmiotf").IotfApplication;
-    
-    var config = Client.parseConfigFile(configFilePath);    
-    var appClient = new Client(config);
-    
-    appClient.connect();
-    
-    appClient.on("connect", function () {
-    
-        appClient.subscribeToDeviceEvents("myDeviceType","device01","myevent");
-        appClient.subscribeToDeviceEvents("myOtherDeviceType","device02","myevent");
-    });
+	var appClient = new Client.IotfApplication(appClientConfig);
+
+	appClient.connect();
+
+	appClient.on("connect", function () {
+
+		appClient.subscribeToDeviceEvents("myDeviceType","device01","myevent");
+		appClient.subscribeToDeviceEvents("myOtherDeviceType","device02","myevent");
+	});
     
 
 To subscribe to all events published by a device in json format
@@ -166,18 +231,15 @@ To subscribe to all events published by a device in json format
 
 .. code:: javascript
 
-    var Client = require("ibmiotf").IotfApplication;
-    
-    var config = Client.parseConfigFile(configFilePath);    
-    var appClient = new Client(config);
-    
-    appClient.connect();
-    
-    appClient.on("connect", function () {
-    
-        appClient.subscribeToDeviceEvents("myDeviceType","device01","+","json");
-    
-    });
+	var appClient = new Client.IotfApplication(appClientConfig);
+
+	appClient.connect();
+
+	appClient.on("connect", function () {
+
+		appClient.subscribeToDeviceEvents("myDeviceType","device01","+","json");
+
+	});
 
 
 Handling events from devices
@@ -194,23 +256,20 @@ To process the events received by your subscriptions you need to implement a dev
 
 .. code:: javascript
 
-    var Client = require("ibmiotf").IotfApplication;
-    
-    var config = Client.parseConfigFile(configFilePath);    
-    var appClient = new Client(config);
-    
-    appClient.connect();
-    
-    appClient.on("connect", function () {
-    
-        appClient.subscribeToDeviceEvents("myDeviceType","device01","+","json");
-    
-    });
-    appClient.on("deviceEvent", function (deviceType, deviceId, eventType, format, payload) {
-    
-        console.log("Device Event from :: "+deviceType+" : "+deviceId+" of event "+eventType+" with payload : "+payload);
-    
-    });
+	var appClient = new Client.IotfApplication(appClientConfig);
+
+	appClient.connect();
+
+	appClient.on("connect", function () {
+
+		appClient.subscribeToDeviceEvents("myDeviceType","device01","+","json");
+
+	});
+	appClient.on("deviceEvent", function (deviceType, deviceId, eventType, format, payload) {
+
+		console.log("Device Event from :: "+deviceType+" : "+deviceId+" of event "+eventType+" with payload : "+payload);
+
+	});
     
 
 ----
@@ -226,18 +285,15 @@ Subscribe to status updates for all devices
 
 .. code:: javascript
 
-    var Client = require("ibmiotf").IotfApplication;
-    
-    var config = Client.parseConfigFile(configFilePath);    
-    var appClient = new Client(config);
-    
-    appClient.connect();
-    
-    appClient.on("connect", function () {
-    
-        appClient.subscribeToDeviceStatus();
-    
-    });
+	var appClient = new Client.IotfApplication(appClientConfig);
+
+	appClient.connect();
+
+	appClient.on("connect", function () {
+
+		appClient.subscribeToDeviceStatus();
+
+	});
 
 
 Subscribe to status updates for all devices of a specific type
@@ -245,37 +301,31 @@ Subscribe to status updates for all devices of a specific type
 
 .. code:: javascript
 
-    var Client = require("ibmiotf").IotfApplication;
-    
-    var config = Client.parseConfigFile(configFilePath);    
-    var appClient = new Client(config);
-    
-    appClient.connect();
-    
-    appClient.on("connect", function () {
-    
-        appClient.subscribeToDeviceStatus("myDeviceType");
-    
-    });
+	var appClient = new Client.IotfApplication(appClientConfig);
+
+	appClient.connect();
+
+	appClient.on("connect", function () {
+
+		appClient.subscribeToDeviceStatus("myDeviceType");
+
+	});
 
 Subscribe to status updates for two different devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: javascript
 
-    var Client = require("ibmiotf").IotfApplication;
-    
-    var config = Client.parseConfigFile(configFilePath);    
-    var appClient = new Client(config);
-    
-    appClient.connect();
-    
-    appClient.on("connect", function () {
-    
-        appClient.subscribeToDeviceStatus("myDeviceType","device01");
-        appClient.subscribeToDeviceStatus("myOtherDeviceType","device02");
-    
-    });
+	var appClient = new Client.IotfApplication(appClientConfig);
+
+	appClient.connect();
+
+	appClient.on("connect", function () {
+
+		appClient.subscribeToDeviceStatus("myDeviceType","device01");
+		appClient.subscribeToDeviceStatus("myOtherDeviceType","device02");
+
+	});
 
 Handling status updates from devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -289,24 +339,21 @@ To process the status updates received by your subscriptions you need to impleme
 
 .. code:: javascript
 
-    var Client = require("ibmiotf").IotfApplication;
-    
-    var config = Client.parseConfigFile(configFilePath);    
-    var appClient = new Client(config);
-    
-    appClient.connect();
-    
-    appClient.on("connect", function () {
-    
-        appClient.subscribeToDeviceStatus("myDeviceType","device01");
-        appClient.subscribeToDeviceStatus("myOtherDeviceType","device02");
-    
-    });
-    appClient.on("deviceStatus", function (deviceType, deviceId, payload, topic) {
-    
-        console.log("Device status from :: "+deviceType+" : "+deviceId+" with payload : "+payload);
-    
-    });
+	var appClient = new Client.IotfApplication(appClientConfig);
+
+	appClient.connect();
+
+	appClient.on("connect", function () {
+
+		appClient.subscribeToDeviceStatus("myDeviceType","device01");
+		appClient.subscribeToDeviceStatus("myOtherDeviceType","device02");
+
+	});
+	appClient.on("deviceStatus", function (deviceType, deviceId, payload, topic) {
+
+		console.log("Device status from :: "+deviceType+" : "+deviceId+" with payload : "+payload);
+
+	});
 
 
 ----
@@ -325,19 +372,17 @@ Applications can publish events as if they originated from a Device. The functio
 
 .. code:: javascript
 
-    var Client = require("ibmiotf").IotfApplication;
-    
-    var config = Client.parseConfigFile(configFilePath);    
-    var appClient = new Client(config);
-    
-    appClient.connect();
-    
-    appClient.on("connect", function () {
-    
-        var myData={'name' : 'foo', 'cpu' : 60, 'mem' : 50}
-        appClient.publishDeviceEvent("myDeviceType","device01", "myEvent", "json", myData);
-    
-    });
+	var appClient = new Client.IotfApplication(appClientConfig);
+
+	appClient.connect();
+
+	appClient.on("connect", function () {
+
+		var myData={'name' : 'foo', 'cpu' : 60, 'mem' : 50};
+		myData = JSON.stringify(myData);
+		appClient.publishDeviceEvent("myDeviceType","device01", "myEvent", "json", myData);
+
+	});
 
 
 ----
@@ -356,19 +401,17 @@ Applications can publish commands to connected devices. The function requires:
 
 .. code:: javascript
 
-    var Client = require("ibmiotf").IotfApplication;
-    
-    var config = Client.parseConfigFile(configFilePath);    
-    var appClient = new Client(config);
-    
-    appClient.connect();
+	var appClient = new Client.IotfApplication(appClientConfig);
 
-    appClient.on("connect", function () {
-    
-        var myData={'DelaySeconds' : 10}
-        appClient.publishDeviceCommand("myDeviceType","device01", "reboot", "json", myData);
-    
-    });
+	appClient.connect();
+
+	appClient.on("connect", function () {
+
+		var myData={'DelaySeconds' : 10};
+		myData = JSON.stringify(myData);
+		appClient.publishDeviceCommand("myDeviceType","device01", "reboot", "json", myData);
+
+	});
 
 
 ----
@@ -381,33 +424,15 @@ Disconnects the client and releases the connections
 
 .. code:: javascript
 
-    var Client = require("ibmiotf").IotfApplication;
-    
-    var config = Client.parseConfigFile(configFilePath);    
-    var appClient = new Client(config);
-    
-    appClient.connect();
-    
-    appClient.on("connect", function () {
-    
-        var myData={'DelaySeconds' : 10}
-        appClient.publishDeviceCommand("myDeviceType","device01", "reboot", "json", myData);
-    
-        appClient.disconnect();
-    });
+	var appClient = new Client.IotfApplication(appClientConfig);
 
+	appClient.connect();
 
-----
+	appClient.on("connect", function () {
 
+		var myData={'DelaySeconds' : 10}
+		appClient.publishDeviceCommand("myDeviceType","device01", "reboot", "json", myData);
 
-Check Connection Status
------------------------
+		appClient.disconnect();
+	});
 
-*isConnected* gives the current status of the application client connection
-
-.. code:: javascript
-
-	if(client.isConnected) {
-		....
-		....
-	}

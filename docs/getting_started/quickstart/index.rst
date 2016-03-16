@@ -33,10 +33,10 @@ Now, as you adjust the sensor values in your simulated device you will be able t
 
 Mosquitto Demonstration
 -----------------------
-`Mosquitto <http://mosquitto.org/>`_ is a cross platform open source MQTT client that is perfect for experimenting with the Watson IoT platform service.  Once you have installed mosquitto pick an ``applicationId``, a ``deviceId`` that have a good chance to be unique (otherwise your experiment will clash with someone 
+`Mosquitto <http://mosquitto.org/>`_ is a cross platform open source MQTT client that is perfect for experimenting with the Watson IoT platform service.  Once you have installed mosquitto pick an ``<applicationId>``, a ``<deviceId>`` that have a good chance to be unique (otherwise your experiment will clash with someone 
 else running through this same demonstration). 
 
-.. note:: There are a couple of restrictions you must consider when dedicing on these IDs:
+.. note:: There are a couple of restrictions you must consider when deciding on these IDs:
 
     - Maximum length of 36 characters 
     - Must comprise only alpha-numeric characters (``a-z``, ``A-Z``, ``0-9``) and the following special characters:
@@ -46,7 +46,7 @@ else running through this same demonstration).
       - dot (``.``)
 
 
-With your ``applicationId`` and ``deviceId`` in hand the first thing you want to do is create a connection representing your application using ``mosquitto_sub``:
+With your ``<applicationId>`` and ``<deviceId>`` in hand the first thing you want to do is create a connection representing your application using ``mosquitto_sub``. Using examples of ``<applicationId>`` = myApplicationId and ``<deviceId>`` = myDeviceId:
 
 ::
     

@@ -200,9 +200,9 @@ A sample implementation of the Command callback is shown below,
 .. code:: java
 
     import com.ibm.iotf.client.gateway.Command;
-    import com.ibm.iotf.client.gateway.CommandCallback;
+    import com.ibm.iotf.client.gateway.GatewayCallback;
     
-    public class GatewayCommandCallback implements CommandCallback, Runnable {
+    public class GatewayCommandCallback implements GatewayCallback, Runnable {
     	// A queue to hold & process the commands
     	private BlockingQueue<Command> queue = new LinkedBlockingQueue<Command>();
     	
@@ -218,6 +218,17 @@ A sample implementation of the Command callback is shown below,
     	        // code to process the command
     	    }
     	}
+    	
+    	/**
+    	 * If a gateway subscribes to a topic of a device or sends data on behalf of a device 
+	 * where the gateway does not have permission for, the message or the subscription is being ignored. 
+	 * This behavior is different compared to applications where the connection will be terminated. 
+	 * The Gateway will be notified on the notification topic:
+	 */
+    	@Override
+	public void processNotification(Notification notification) {
+		
+	}
     } 
   
 Once the Command callback is added to the GatewayClient, the processCommand() method is invoked whenever any command is published on the subscribed criteria, The following snippet shows how to add the command call back into GatewayClient instance,
@@ -226,7 +237,7 @@ Once the Command callback is added to the GatewayClient, the processCommand() me
 
     gwClient.connect()
     GatewayCommandCallback callback = new GatewayCommandCallback();
-    gwClient.setCommandCallback(callback);
+    gwClient.setGatewayCallback(callback);
     //Subscribe to device connected to the Gateway
     gwClient.subscribeToDeviceCommands(DEVICE_TYPE, DEVICE_ID);
 

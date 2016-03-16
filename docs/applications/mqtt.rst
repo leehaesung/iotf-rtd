@@ -53,7 +53,7 @@ An application must authenticate using a client ID in the following format:
     * dash (-)
     * underscore (_)
     * dot (.)
-- The client ID has a maximum length of 36 characters
+- **app\_id** has a maximum length of 36 characters
 - When connecting to the Quickstart service no authentication is required
 - An application does not need to be registered before it can connect
 

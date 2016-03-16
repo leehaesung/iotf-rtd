@@ -47,10 +47,13 @@ An application must authenticate using a client ID in the following format:
 	a:**org\_id**:**app_id**
 
 -  **a** indicates the client is an application
--  **org\_id** is your unique organization ID, assigned when you sign up
-   with the service.  It will be a 6 character alphanumeric string.
--  **app\_id** is a user-defined unique string identifier for this client.
-- We do not impose any rules on the **app\_id** component of the client ID
+-  **org\_id** is your unique 6 character organization ID, assigned when you sign up
+   with the service
+-  **app\_id** is a user-defined unique string identifier for this client and must comprise only alpha-numeric characters (a-z, A-Z, 0-9) and the following special characters:
+    * dash (-)
+    * underscore (_)
+    * dot (.)
+- The client ID has a maximum length of 36 characters
 - When connecting to the Quickstart service no authentication is required
 - An application does not need to be registered before it can connect
 

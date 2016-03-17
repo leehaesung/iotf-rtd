@@ -88,3 +88,59 @@ Configure the Watson IoT platform to store a record of the events your devices g
         },
         "ts": "2014-12-30T14:47:36+00:00"
       }
+
+Last Event Cache
+-----------------
+The API can now return the last recorded value of an event-id for a specific device, or the last recorded value for each event-id reported by a specific device. The last event cache only applies to values send in the last 30 days. 
+
+To request the most recent value for a specific event-id, use the following API request. This request will return the last recorded value for the event-id "power".
+
+.. code::
+
+	GET /api/v0002/device/types/<device-type>/devices/<device-id>/events/power
+	
+The response is returned as JSON in the following format: 
+
+.. code::
+
+	{
+		"deviceId": "<device-id>", 
+		"eventId": "power", 
+		"format": "json", 
+		"payload": "eyJzdGF0ZSI6Im9uIn0=", 
+		"timestamp": "2016-03-14T14:12:06.527+0000", 
+		"typeId": "<device-type>"
+	}
+	
+.. note
+	
+	While the API response is JSON, event payloads can be written in any format. Payloads returned by this API will be encoded in base64.
+	
+Alternatively, to request the most recent value for each event-id reported by this device, use the following API request.
+
+.. code::
+
+	GET /api/v0002/device/types/<device-type>/devices/<device-id>/events
+	
+The response will include all event-id's sent by the device. In this instance, it returns values for the "power" and "temperature" events.
+
+.. code:: 
+
+	[
+	    {
+	        "deviceId": "<device-id>", 
+	        "eventId": "power", 
+	        "format": "json", 
+	        "payload": "eyJzdGF0ZSI6Im9uIn0=", 
+	        "timestamp": "2016-03-14T14:12:06.527+0000", 
+	        "typeId": "<device-type>"
+	    }, 
+	    {
+	        "deviceId": "<device-id>", 
+	        "eventId": "temperature", 
+	        "format": "json", 
+	        "payload": "eyJpbnRlcm5hbCI6MjIsICJleHRlcm5hbCI6MTZ9", 
+	        "timestamp": "2016-03-14T14:17:44.891+0000", 
+	        "typeId": "<device-type>"
+	    }
+	]

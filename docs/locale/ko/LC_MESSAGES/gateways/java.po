@@ -1,0 +1,283 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/gateways/java.rst:2
+msgid "Java for Gateway Developers"
+msgstr ""
+"게이트웨이 개발자용 Java"
+
+#: ../docs/gateways/java.rst:4
+msgid "See `iot-java <https://github.com/ibm-messaging/iot-java>`_ in GitHub"
+msgstr ""
+"GitHub에서 `iot-java <https://github.com/ibm-messaging/iot-java>`_ 참조"
+
+#: ../docs/gateways/java.rst:7
+msgid "Constructor"
+msgstr ""
+"생성자"
+
+#: ../docs/gateways/java.rst:9
+msgid "The constructor builds the Gateway client instance, and accepts a Properties object containing the following definitions:"
+msgstr ""
+"생성자는 게이트웨이 클라이언트 인스턴스를 빌드하고 다음 정의가 포함된 특성 오브젝트를 허용합니다. "
+
+#: ../docs/gateways/java.rst:11
+msgid "org - Your organization ID."
+msgstr ""
+"org - 조직 ID. "
+
+#: ../docs/gateways/java.rst:12
+msgid "type - The type of your Gateway device."
+msgstr ""
+"type - Gateway 디바이스의 유형."
+
+#: ../docs/gateways/java.rst:13
+msgid "id - The ID of your Gateway."
+msgstr ""
+"id - Gateway 디바이스의 ID."
+
+#: ../docs/gateways/java.rst:14
+msgid "auth-method - Method of authentication (The only value currently supported is \"token\")."
+msgstr ""
+"auth-method - 인증 방법(현재 지원되는 유일한 값은 \"token\"임)."
+
+#: ../docs/gateways/java.rst:15
+msgid "auth-token - API key token."
+msgstr ""
+"auth-token - API 키 토큰."
+
+#: ../docs/gateways/java.rst:17
+msgid "The Properties object creates definitions which are used to interact with the Watson Internet of Things Platform module."
+msgstr ""
+"특성 오브젝트는 Watson Internet of Things Platform 모듈과 상호작용하는 데 사용되는 정의를 작성합니다."
+
+#: ../docs/gateways/java.rst:19
+msgid "The following code snippet shows how to construct the GatewayClient instance,"
+msgstr ""
+"다음 코드 스니펫은 GatewayClien 인스턴스를 생성하는 방법을 보여줍니다. "
+
+#: ../docs/gateways/java.rst:33
+msgid "Using a configuration file"
+msgstr ""
+"구성 파일 사용"
+
+#: ../docs/gateways/java.rst:35
+msgid "Instead of including a Properties object directly, you can use a configuration file containing the name-value pairs for Properties. If you are using a configuration file containing a Properties object, use the following code format."
+msgstr ""
+"특성 오브젝트를 직접 포함하는 대신 특성에 대한 이름 값 쌍이 포함된 구성 파일을 사용할 수 있습니다. 특성 오브젝트가 포함된 구성 파일을 사용 중인 경우 다음 코드 형식을 사용하십시오."
+
+#: ../docs/gateways/java.rst:43
+msgid "The Gateway device configuration file must be in the following format:"
+msgstr ""
+"Gateway 디바이스 구성 파일의 형식은 다음 형식이어야 합니다. "
+
+#: ../docs/gateways/java.rst:58
+msgid "Connecting to the Watson Internet of Things Platform"
+msgstr ""
+"Watson Internet of Things Platform에 연결"
+
+#: ../docs/gateways/java.rst:60
+msgid "Connect to the Watson Internet of Things Platform by calling the *connect* function."
+msgstr ""
+"*connect* 함수를 호출하여 Watson Internet of Things Platform에 연결하십시오. "
+
+#: ../docs/gateways/java.rst:70
+msgid "After the successful connection to the IBM Watson IoT Platform, the Gateway client can perform the following operations,"
+msgstr ""
+"IBM Watson IoT Platform에 성공적으로 연결되면 게이트웨이 클라이언트는 다음 오퍼레이션을 수행할 수 있습니다. "
+
+#: ../docs/gateways/java.rst:72
+msgid "Publish events for itself and on behalf of devices connected behind the Gateway."
+msgstr ""
+"게이트웨이 자체 및 게이트웨이 뒤에 연결된 디바이스를 대신해 이벤트 공개"
+
+#: ../docs/gateways/java.rst:73
+msgid "Subscribe to commands for itself and on behalf of devices behind the Gateway."
+msgstr ""
+"게이트웨이 자체 및 게이트웨이 뒤에 연결된 디바이스를 대신해 명령 구독"
+
+#: ../docs/gateways/java.rst:78
+msgid "Register devices using the Watson IoT Platform API"
+msgstr ""
+"Watson IoT Platform API를 사용하여 디바이스 등록"
+
+#: ../docs/gateways/java.rst:79
+msgid "There are different ways to register the devices behind the Gateway to IBM Watson IoT Platform,"
+msgstr ""
+"게이트웨이 뒤에 있는 디바이스를 IBM Watson IoT Platform에 등록하는 방법에는 여러 가지가 있습니다. "
+
+#: ../docs/gateways/java.rst:81
+msgid "**Auto registration**: The device gets added automatically in IBM Watson IoT Platform when Gateway publishes any event/subscribes to any commands for the devices connected to it."
+msgstr ""
+"**자동 등록**: 게이트웨이가 이벤트를 공개하거나 게이트웨이에 연결된 디바이스에 대한 명령을 구독할 경우 디바이스가 IBM Watson IoT Platform에 자동으로 추가됩니다. "
+
+#: ../docs/gateways/java.rst:82
+msgid "**API**: The Watson IoT Platform API can be used to register the devices to the Watson IoT Platform."
+msgstr ""
+"**API**: Watson IoT Platform API를 사용하여 디바이스를 Watson IoT Platform에 등록할 수 있습니다. "
+
+#: ../docs/gateways/java.rst:84
+msgid "The Watson IoT Platform API can be used to register the devices (that are connected to the Gateway) to the Watson IoT Platform. The APIClient simplifies the interactions with Watson IoT Platform API. Get the APIClient instance by invoking the api() method as follows,"
+msgstr ""
+"Watson IoT Platform API를 사용하여 디바이스(게이트웨이에 연결됨)를 Watson IoT Platform에 등록할 수 있습니다. APIClient를 사용하면 Watson IoT Platform API와의 상호작용이 단순해집니다. APIClient 인스턴스를 가져오려면 다음과 같이 api() 메소드를 호출하십시오. "
+
+#: ../docs/gateways/java.rst:97
+msgid "Once you get the handle of APIClient, you can add the devices. Following code snippet shows how to add a device to a Gateway in Watson IoT Platform,"
+msgstr ""
+"APIClient 핸들을 가져온 후에는 디바이스를 추가할 수 있습니다. 다음 코드 스니펫은 Watson IoT Platform에서 게이트웨이에 디바이스를 추가하는 방법을 보여줍니다. "
+
+#: ../docs/gateways/java.rst:111
+msgid "The gwDeviceId and gwDeviceType are the Gateway properties to which this device will be attached to when its registered."
+msgstr ""
+"gwDeviceId 및 gwDeviceType은 등록 시 해당 디바이스가 연결될 게이트웨이 특성입니다. "
+
+#: ../docs/gateways/java.rst:117
+msgid "Publishing events"
+msgstr ""
+"이벤트 공개"
+
+#: ../docs/gateways/java.rst:118
+msgid "Events are the mechanism by which Gateways/devices publish data to the Watson IoT Platform. The Gateway/device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"이벤트는 게이트웨이/디바이스가 데이터를 Watson IoT Platform에 공개할 때 사용하는 메커니즘입니다. 게이트웨이/디바이스는 이벤트의 컨텐츠를 제어하고 전송하는 각 이벤트에 대해 이름을 지정합니다. "
+
+#: ../docs/gateways/java.rst:120
+msgid "**The Gateway can publish events from itself and on behalf of any device connected via the Gateway**."
+msgstr ""
+"**게이트웨이는 게이트웨이 자체에서 그리고 게이트웨이를 통해 연결된 모든 디바이스를 대신해 이벤트를 공개할 수 있습니다.** "
+
+#: ../docs/gateways/java.rst:122
+msgid "When an event is received by the IBM Watson IoT Platform the credentials of the connection on which the event was received are used to determine from which Gateway the event was sent. With this architecture it is impossible for a Gateway to impersonate another device."
+msgstr ""
+"IBM Watson IoT Platform에서 이벤트를 수신하면 이벤트가 수신된 연결의 신임 정보를 사용하여 이벤트를 전송한 게이트웨이를 판별합니다. 이 아키텍처를 사용할 경우 게이트웨이가 다른 디바이스로 위장할 수 없습니다. "
+
+#: ../docs/gateways/java.rst:124
+msgid "Events can be published at any of the three `quality of service levels <../messaging/mqtt.html#/>`__ defined by the MQTT protocol.  By default events will be published as qos level 0."
+msgstr ""
+"이벤트는 MQTT 프로토콜에서 정의한 세 가지 `서비스 품질(QoS) 레벨 <../messaging/mqtt.html#/>`__에서 공개될 수 있습니다. 기본적으로 이벤트는 qos 레벨 0으로 공개됩니다. "
+
+#: ../docs/gateways/java.rst:127
+msgid "Publish Gateway event using default quality of service"
+msgstr ""
+"기본 서비스 품질(QoS)을 사용하여 Gateway 이벤트 공개"
+
+#: ../docs/gateways/java.rst:140
+msgid "Publish Gateway event using user-defined quality of service"
+msgstr ""
+"사용자 정의 서비스 품질(QoS)을 사용하여 Gateway 이벤트 공개"
+
+#: ../docs/gateways/java.rst:142
+msgid "Events can be published at higher MQTT quality of service levels, but these events may take slower than QoS level 0, because of the extra confirmation of receipt."
+msgstr ""
+"이벤트는 더 높은 MQTT 서비스 품질(QoS) 레벨에서 공개될 수 있지만 이러한 이벤트는 별도의 수신 확인으로 인해 QoS 레벨 0보다 느릴 수 있습니다. "
+
+#: ../docs/gateways/java.rst:156
+msgid "Publishing events from devices"
+msgstr ""
+"디바이스의 이벤트 공개"
+
+#: ../docs/gateways/java.rst:158
+msgid "The Gateway can publish events on behalf of any device connected via the Gateway by passing the appropriate typeId and deviceId based on the origin of the event:"
+msgstr ""
+"게이트웨이는 이벤트 출처를 기반으로 적합한 typeId 및 deviceId를 전달하여 게이트웨이를 통해 연결된 모든 디바이스를 대신해 이벤트를 공개할 수 있습니다. "
+
+#: ../docs/gateways/java.rst:173
+msgid "One can use the overloaded publishDeviceEvent() method to publish the device event in the desired quality of service. Refer to `MQTT Connectivity for Gateways <https://docs.internetofthings.ibmcloud.com/gateways/mqtt.html>`__ documentation to know more about the topic structure used."
+msgstr ""
+"overloaded publishDeviceEvent() 메소드를 사용하여 원하는 서비스 품질(QoS)로 디바이스 이벤트를 공개할 수 있습니다. 사용된 주제 구조에 대한 자세한 내용은 `게이트웨이를 위한 MQTT 연결 <https://docs.internetofthings.ibmcloud.com/gateways/mqtt.html>`__ 문서를 참조하십시오. "
+
+#: ../docs/gateways/java.rst:179
+msgid "Handling commands"
+msgstr ""
+"명령 처리"
+
+#: ../docs/gateways/java.rst:180
+msgid "The Gateway can subscribe to commands directed at the gateway itself and to any device connected via the gateway. When the Gateway client connects, it automatically subscribes to any commands for this Gateway. But to subscribe to any commands for the devices connected via the Gateway, use one of the overloaded subscribeToDeviceCommands() method, for example,"
+msgstr ""
+"게이트웨이는 게이트웨이 자체 및 게이트웨이를 통해 연결된 모든 디바이스에 전달되는 명령을 구독할 수 있습니다. 게이트웨이 클라이언트가 연결되면 해당 게이트웨이에 대한 명령을 자동으로 구독합니다. 그러나 게이트웨이를 통해 연결된 디바이스에 대한 명령을 구독하려면 오버로드된 ubscribeToDeviceCommands() 메소드 중 하나를 사용하십시오. 예를 들면 다음과 같습니다. "
+
+#: ../docs/gateways/java.rst:189
+msgid "To process specific commands you need to register a command callback method. The messages are returned as an instance of the Command class which has the following properties:"
+msgstr ""
+"특정 명령을 처리하려면 명령 콜백 메소드를 등록해야 합니다. 메시지는 다음과 같은 특성을 가진 명령 클래스의 인스턴스로 리턴됩니다. "
+
+#: ../docs/gateways/java.rst:191
+msgid "deviceType - The device type for which the command is received."
+msgstr ""
+"deviceType - 명령이 수신된 디바이스 유형입니다. "
+
+#: ../docs/gateways/java.rst:192
+msgid "deviceId - The device id for which the command is received, Could be the Gateway or any device connected via the Gateway."
+msgstr ""
+"deviceId - 명령이 수신된 디바이스 ID로, 게이트웨이 또는 게이트웨이를 통해 연결된 디바이스일 수 있습니다. "
+
+#: ../docs/gateways/java.rst:193
+msgid "payload - The command payload."
+msgstr ""
+"payload - 명령 페이로드입니다. "
+
+#: ../docs/gateways/java.rst:194
+msgid "format - The format of the command payload, currently only JSON format is supported in the Java Client Library."
+msgstr ""
+"format - 명령 페이로드의 형식입니다. 현재는 Java 클라이언트 라이브러리에서 JSON 형식만 지원됩니다. "
+
+#: ../docs/gateways/java.rst:195
+msgid "command - The name of the command."
+msgstr ""
+"command - 명령 이름입니다. "
+
+#: ../docs/gateways/java.rst:196
+msgid "timestamp - The org.joda.time.DateTime when the command is sent."
+msgstr ""
+"timestamp - 명령이 전송될 당시의 org.joda.time.DateTime입니다. "
+
+#: ../docs/gateways/java.rst:198
+msgid "A sample implementation of the Command callback is shown below,"
+msgstr ""
+"명령 콜백의 샘플 구현은 다음과 같습니다. "
+
+#: ../docs/gateways/java.rst:223
+msgid "Once the Command callback is added to the GatewayClient, the processCommand() method is invoked whenever any command is published on the subscribed criteria, The following snippet shows how to add the command call back into GatewayClient instance,"
+msgstr ""
+"명령 콜백이 GatewayClient에 추가되면 명령이 구독된 기준에 공개될 때마다 processCommand() 메소드가 호출됩니다. 다음 스니펫은 GatewayClient 인스턴스에 명령 콜백을 추가하는 방법을 보여줍니다. "
+
+#: ../docs/gateways/java.rst:234
+msgid "Overloaded methods are available to control the command subscription."
+msgstr ""
+"명령 구독을 제어하는 데 과부하된 메소드를 사용할 수 있습니다. "
+
+#: ../docs/gateways/java.rst:239
+msgid "List Devices Connected through the Gateway"
+msgstr ""
+"게이트웨이를 통해 연결된 디바이스 나열"
+
+#: ../docs/gateways/java.rst:241
+msgid "Invoke the method getDevicesConnectedThroughGateway() to retrieve all devices that are connected through the specified gateway(typeId, deviceId) to Watson IoT Platform:"
+msgstr ""
+"getDevicesConnectedThroughGateway() 메소드를 호출하여 지정된 게이트웨이(typeId, deviceId)를 통해 Watson IoT Platform에 연결된 모든 디바이스를 검색하십시오. "
+
+#: ../docs/gateways/java.rst:250
+msgid "Examples"
+msgstr ""
+"예제"
+
+#: ../docs/gateways/java.rst:251
+msgid "`SampleRasPiGateway <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdeviceclient/src/com/ibm/iotf/sample/client/gateway/SampleRasPiGateway.java>`__ - A Gateway sample that shows how to connect Raspberry Pi as Gateway. This sample is explained in detail in `this recipe <https://developer.ibm.com/recipes/?post_type=tutorials&p=9397>`__."
+msgstr ""
+"`SampleRasPiGateway <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdeviceclient/src/com/ibm/iotf/sample/client/gateway/SampleRasPiGateway.java>`__ - Raspberry Pi를 게이트웨이로 연결하는 방법을 보여주는 게이트웨이 샘플입니다. 이 샘플은 `이 지침서 <https://developer.ibm.com/recipes/?post_type=tutorials&p=9397>`__에 자세히 설명되어 있습니다. "
+

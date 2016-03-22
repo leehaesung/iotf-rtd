@@ -1,0 +1,412 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/applications/mqtt.rst:2
+msgid "MQTT Connectivity for Applications"
+msgstr ""
+"應用程式的 MQTT 連線功能"
+
+#: ../docs/applications/mqtt.rst:6
+msgid "Client connection"
+msgstr ""
+"用戶端連線"
+
+#: ../docs/applications/mqtt.rst:7
+msgid "Every registered organization has a unique endpoint which must be used when connecting MQTT clients for applications in that organization."
+msgstr ""
+"每一個已登錄的組織都有唯一的端點，當針對該組織中的應用程式連接 MQTT 用戶端時必須使用此端點。"
+
+#: ../docs/applications/mqtt.rst:10
+msgid "**org\\_id**.messaging.internetofthings.ibmcloud.com"
+msgstr ""
+"**org\\_id**.messaging.internetofthings.ibmcloud.com"
+
+#: ../docs/applications/mqtt.rst:14
+msgid "Unencrypted client connection"
+msgstr ""
+"未加密的用戶端連線"
+
+#: ../docs/applications/mqtt.rst:16
+msgid "Connect on port **1883**"
+msgstr ""
+"在埠 **1883** 連接"
+
+#: ../docs/applications/mqtt.rst:18
+msgid "All information your application submits is being sent in plain text (including the API key and authentication token). We recommend the use of an encrypted connection whenever possible."
+msgstr ""
+"應用程式提交的所有資訊將以純文字傳送（包括 API 金鑰和鑑別記號）。我們建議盡可能使用加密連線。"
+
+#: ../docs/applications/mqtt.rst:24
+msgid "Encrypted client connection"
+msgstr ""
+"已加密的用戶端連線"
+
+#: ../docs/applications/mqtt.rst:26
+msgid "Connect on port **8883** or **443** for websockets."
+msgstr ""
+"針對 Websocket，在埠 **8883** 或 **443** 連接。"
+
+#: ../docs/applications/mqtt.rst:28
+msgid "In many client libraries you will need to provide the server's public certificate in pem format.  The following file contains the entire certificate chain for \\*.messaging.internetofthings.ibmcloud.com: messaging.pem_"
+msgstr ""
+"在許多用戶端程式庫中，您需要以 pem 格式提供伺服器的公用憑證。下列檔案包含整個憑證鏈：\\*.messaging.internetofthings.ibmcloud.com: messaging.pem_"
+
+#: ../docs/applications/mqtt.rst:34
+msgid "Some SSL client libraries have been shown to not handle wildcarded domains, in which case, if you can not change libraries, you will need to turn off certificate checking."
+msgstr ""
+"部分 SSL 用戶端程式庫已表明不處理含萬用字元的網域，在該情況下，如果您無法變更程式庫，則需要關閉憑證檢查。"
+
+#: ../docs/applications/mqtt.rst:38
+msgid "The IoT Platform requires TLS v1.2. We suggest the following cipher suites: ECDHE-RSA-AES256-GCM-SHA384, AES256-GCM-SHA384, ECDHE-RSA-AES128-GCM-SHA256 or AES128-GCM-SHA256 *(as of Jun 1 2015)*."
+msgstr ""
+"IoT Platform 需要 TLS 1.2 版。我們建議使用下列密碼組合：ECDHE-RSA-AES256-GCM-SHA384、AES256-GCM-SHA384、ECDHE-RSA-AES128-GCM-SHA256 或 AES128-GCM-SHA256 *（從 2015 年 6 月 1 日開始）*。"
+
+#: ../docs/applications/mqtt.rst:43
+msgid "MQTT client identifier"
+msgstr ""
+"MQTT 用戶端 ID"
+
+#: ../docs/applications/mqtt.rst:45
+msgid "An application must authenticate using a client ID in the following format:"
+msgstr ""
+"應用程式必須使用下列格式的用戶端 ID 進行鑑別："
+
+#: ../docs/applications/mqtt.rst:47
+msgid "a:**org\\_id**:**app_id**"
+msgstr ""
+"a:**org\\_id**:**app_id**"
+
+#: ../docs/applications/mqtt.rst:49
+msgid "**a** indicates the client is an application"
+msgstr ""
+"**a** 指出用戶端是應用程式"
+
+#: ../docs/applications/mqtt.rst:50
+#: ../docs/applications/mqtt.rst:182
+msgid "**org\\_id** is your unique organization ID, assigned when you sign up with the service.  It will be a 6 character alphanumeric string."
+msgstr ""
+"**org\\_id** 是唯一的組織 ID，當您註冊服務時會指派該 ID。它將會是一個 6 字元英數字串。"
+
+#: ../docs/applications/mqtt.rst:52
+#: ../docs/applications/mqtt.rst:184
+msgid "**app\\_id** is a user-defined unique string identifier for this client."
+msgstr ""
+"**app\\_id** 是使用者針對此用戶端定義的唯一字串 ID。"
+
+#: ../docs/applications/mqtt.rst:53
+msgid "We do not impose any rules on the **app\\_id** component of the client ID"
+msgstr ""
+"我們未對用戶端 ID 的 **app\\_id** 元件強制執行任何規則"
+
+#: ../docs/applications/mqtt.rst:54
+msgid "When connecting to the Quickstart service no authentication is required"
+msgstr ""
+"連接至 Quickstart 服務時，不需要進行鑑別"
+
+#: ../docs/applications/mqtt.rst:55
+msgid "An application does not need to be registered before it can connect"
+msgstr ""
+"應用程式不需要先登錄就可以連接"
+
+#: ../docs/applications/mqtt.rst:57
+msgid "Only one MQTT client can connect using any given client ID.  As soon as a second client in your organization connects using an **app\\_id** that you have already connected the first client will be disconnected."
+msgstr ""
+"使用任何給定的用戶端 ID 只能連接一個 MQTT 用戶端。一旦您組織中有第二個用戶端使用您已連接的 **app\\_id** 來進行連接，則第一個用戶端會中斷連接。"
+
+#: ../docs/applications/mqtt.rst:64
+msgid "MQTT authentication"
+msgstr ""
+"MQTT 鑑別"
+
+#: ../docs/applications/mqtt.rst:66
+msgid "Applications require an API Key to connect into an organization.  When an API Key is registered a token will be generated that must be used with that API key."
+msgstr ""
+"應用程式需要 API 金鑰來連接到組織。當登錄 API 金鑰時，會產生一個記號，它必須與 API 金鑰一起使用。"
+
+#: ../docs/applications/mqtt.rst:69
+msgid "The API key will look something like this: a-**org\\_id**-a84ps90Ajs"
+msgstr ""
+"API 金鑰與下列內容類似：a-**org\\_id**-a84ps90Ajs"
+
+#: ../docs/applications/mqtt.rst:71
+msgid "The token will look something like this: MP$08VKz!8rXwnR-Q*"
+msgstr ""
+"此記號與下列內容類似：MP$08VKz!8rXwnR-Q*"
+
+#: ../docs/applications/mqtt.rst:73
+msgid "When making an MQTT connection using an API key the following applies:"
+msgstr ""
+"當使用 API 金鑰建立 MQTT 連線時，適用下列規定："
+
+#: ../docs/applications/mqtt.rst:75
+msgid "MQTT client ID: a:**org\\id**:**app\\_id**"
+msgstr ""
+"MQTT 用戶端 ID：a:**org\\id**:**app\\_id**"
+
+#: ../docs/applications/mqtt.rst:76
+msgid "MQTT username must be the API key: a-**org\\_id**-a84ps90Ajs"
+msgstr ""
+"MQTT 使用者名稱必須是 API 金鑰：a-**org\\_id**-a84ps90Ajs"
+
+#: ../docs/applications/mqtt.rst:77
+msgid "MQTT password must be the authentication token: MP$08VKz!8rXwnR-Q*"
+msgstr ""
+"MQTT 密碼必須是鑑別記號：MP$08VKz!8rXwnR-Q*"
+
+#: ../docs/applications/mqtt.rst:81
+msgid "Publishing device events"
+msgstr ""
+"發佈裝置事件"
+
+#: ../docs/applications/mqtt.rst:82
+msgid "An application can publish events as if they came from any registered device."
+msgstr ""
+"應用程式可當成事件是來自任何已登錄裝置來發佈事件。"
+
+#: ../docs/applications/mqtt.rst:84
+msgid "Publish to topic iot-2/type/**device\\_type**/id/**device\\_id**/evt/**event\\_id**/fmt/**format\\_string**"
+msgstr ""
+"發佈至主題 iot-2/type/**device\\_type**/id/**device\\_id**/evt/**event\\_id**/fmt/**format\\_string**"
+
+#: ../docs/applications/mqtt.rst:86
+msgid "You may have a number of devices that are already generating bespoke data that you wish to send to the IoT Platform.  One way to get that data into the service would be to write an application that processes the data and publishes it to the IoT Platform."
+msgstr ""
+"您可能有許多裝置已產生您要傳送至 IoT Platform 的預定資料。使該資料進入服務的方法之一是撰寫應用程式來處理該資料，並將它發佈至 IoT Platform。"
+
+#: ../docs/applications/mqtt.rst:92
+msgid "Publishing device commands"
+msgstr ""
+"發佈裝置指令"
+
+#: ../docs/applications/mqtt.rst:93
+msgid "An application can publish a command to any registered device."
+msgstr ""
+"應用程式可將指令發佈至任何已登錄裝置。"
+
+#: ../docs/applications/mqtt.rst:95
+msgid "Publish to topic iot-2/type/**device\\_type**/id/**device\\_id**/cmd/**command\\_id**/fmt/**format\\_string**"
+msgstr ""
+"發佈至主題 iot-2/type/**device\\_type**/id/**device\\_id**/cmd/**command\\_id**/fmt/**format\\_string**"
+
+#: ../docs/applications/mqtt.rst:99
+msgid "Subscribing to device events"
+msgstr ""
+"訂閱裝置事件"
+
+#: ../docs/applications/mqtt.rst:100
+msgid "An application can subscribe to events from one or more devices."
+msgstr ""
+"應用程式可訂閱來自一或多個裝置的事件。"
+
+#: ../docs/applications/mqtt.rst:102
+msgid "Subscribe to topic iot-2/type/**device\\_type**/id/**device\\_id**/evt/**event\\_id**/fmt/**format\\_string**"
+msgstr ""
+"訂閱主題 iot-2/type/**device\\_type**/id/**device\\_id**/evt/**event\\_id**/fmt/**format\\_string**"
+
+#: ../docs/applications/mqtt.rst:104
+#: ../docs/applications/mqtt.rst:120
+msgid "The MQTT \"any\" wildcard character (+) may be used for any of the following components if you want to subscribe to more than one type of event, or events from more than a single device."
+msgstr ""
+"如果要訂閱多種類型的事件，或來自多個裝置的事件，可針對下列任何元件使用 MQTT \"any\" 萬用字元 (+)。"
+
+#: ../docs/applications/mqtt.rst:108
+#: ../docs/applications/mqtt.rst:124
+#: ../docs/applications/mqtt.rst:139
+#: ../docs/applications/mqtt.rst:164
+msgid "device\\_type"
+msgstr ""
+"device\\_type"
+
+#: ../docs/applications/mqtt.rst:109
+#: ../docs/applications/mqtt.rst:125
+#: ../docs/applications/mqtt.rst:140
+msgid "device\\_id"
+msgstr ""
+"device\\_id"
+
+#: ../docs/applications/mqtt.rst:110
+msgid "event\\_id"
+msgstr ""
+"event\\_id"
+
+#: ../docs/applications/mqtt.rst:111
+#: ../docs/applications/mqtt.rst:127
+msgid "format\\_string"
+msgstr ""
+"format\\_string"
+
+#: ../docs/applications/mqtt.rst:115
+msgid "Subscribing to device commands"
+msgstr ""
+"訂閱裝置指令"
+
+#: ../docs/applications/mqtt.rst:116
+msgid "An application can subscribe to commands being sent to one or more devices."
+msgstr ""
+"應用程式可訂閱要傳送至一或多個裝置的指令。"
+
+#: ../docs/applications/mqtt.rst:118
+msgid "Subscribe to topic iot-2/type/**device\\_type**/id/**device\\_id**/cmd/**command\\_id**/fmt/**format\\_string**"
+msgstr ""
+"訂閱主題 iot-2/type/**device\\_type**/id/**device\\_id**/cmd/**command\\_id**/fmt/**format\\_string**"
+
+#: ../docs/applications/mqtt.rst:126
+msgid "cmd\\_id"
+msgstr ""
+"cmd\\_id"
+
+#: ../docs/applications/mqtt.rst:131
+msgid "Subscribing to device status messages"
+msgstr ""
+"訂閱裝置狀態訊息"
+
+#: ../docs/applications/mqtt.rst:132
+msgid "An application can subscribe to monitor status of one or more devices."
+msgstr ""
+"應用程式可訂閱一或多個裝置的監視狀態。"
+
+#: ../docs/applications/mqtt.rst:134
+msgid "Subscribe to topic iot-2/type/**device\\_type**/id/**device\\_id**/mon"
+msgstr ""
+"訂閱主題 iot-2/type/**device\\_type**/id/**device\\_id**/mon"
+
+#: ../docs/applications/mqtt.rst:136
+msgid "The MQTT \"any\" wildcard character (+) may be used for any of the following components if you want to subscribe to updates from more than one device."
+msgstr ""
+"如果要訂閱來自多個裝置的更新項目，可針對下列任何元件使用 MQTT \"any\" 萬用字元 (+)。"
+
+#: ../docs/applications/mqtt.rst:144
+msgid "Subscribing to application status messages"
+msgstr ""
+"訂閱應用程式狀態訊息"
+
+#: ../docs/applications/mqtt.rst:145
+msgid "An application can subscribe to monitor status of one or more applications."
+msgstr ""
+"應用程式可訂閱一或多個應用程式的監視狀態。"
+
+#: ../docs/applications/mqtt.rst:147
+msgid "Subscribe to topic iot-2/app/**app\\_id**/mon"
+msgstr ""
+"訂閱主題 iot-2/app/**app\\_id**/mon"
+
+#: ../docs/applications/mqtt.rst:149
+msgid "The MQTT \"any\" wildcard character (+) may be used for **app\\_id** if you want to subscribe for updates for all applications."
+msgstr ""
+"如果要訂閱所有應用程式的更新項目，可針對 **app\\_id** 使用 MQTT \"any\" 萬用字元 (+)。"
+
+#: ../docs/applications/mqtt.rst:154
+msgid "Quickstart restrictions"
+msgstr ""
+"Quickstart 限制"
+
+#: ../docs/applications/mqtt.rst:156
+msgid "If you are writing application code that wants to support use with Quickstart you must take into account the following features present in the registered service that are not supported in Quickstart:"
+msgstr ""
+"如果您要撰寫應用程式碼來支援與 Quickstart 搭配使用，則必須考量已登錄服務中所具有但 Quickstart 不支援的下列特性："
+
+#: ../docs/applications/mqtt.rst:160
+msgid "Publishing commands"
+msgstr ""
+"發佈指令"
+
+#: ../docs/applications/mqtt.rst:161
+msgid "Subscribing to commands"
+msgstr ""
+"訂閱指令"
+
+#: ../docs/applications/mqtt.rst:162
+msgid "Use of the MQTT \"any\" wildcard character (+) for the following topic components:"
+msgstr ""
+"對下列主題元件使用 MQTT \"any\" 萬用字元 (+)："
+
+#: ../docs/applications/mqtt.rst:165
+msgid "app\\_id"
+msgstr ""
+"app\\_id"
+
+#: ../docs/applications/mqtt.rst:166
+msgid "MQTT connection over SSL"
+msgstr ""
+"透過 SSL 的 MQTT 連線"
+
+#: ../docs/applications/mqtt.rst:170
+msgid "Scalable Applications"
+msgstr ""
+"可調式應用程式"
+
+#: ../docs/applications/mqtt.rst:172
+msgid "You can build scalable applications which will load balance messages across multiple instances of your application by making a few changes to how your application connects to the IoT Platform. Applications taking advantage of this feature must only attempt to make non-durable subscriptions. A bit of experimentation may be needed to understand how many clients are needed for the optimum balance in load."
+msgstr ""
+"您可以建置可調式應用程式，針對應用程式連接至 IoT Platform 的方式進行一些變更，以在多個應用程式實例之間對訊息進行負載平衡。利用這項特性的應用程式只能嘗試進行不可延續的訂閱。您可能需要進行一點實驗，以瞭解需要多少用戶端才能達到最佳的負載平衡。"
+
+#: ../docs/applications/mqtt.rst:179
+msgid "Supply a client id of the form **A**:**org\\_id**:**app\\_id**"
+msgstr ""
+"提供格式為 **A**:**org\\_id**:**app\\_id** 的用戶端 ID"
+
+#: ../docs/applications/mqtt.rst:181
+msgid "**A** indicates the client is a scalable application"
+msgstr ""
+"**A** 表示用戶端是可調式應用程式"
+
+#: ../docs/applications/mqtt.rst:185
+msgid "Create a non-durable subscription"
+msgstr ""
+"建立不可延續的訂閱"
+
+#: ../docs/applications/mqtt.rst:187
+msgid "Only non-durable subscriptions are supported for scalable applications. Please note that the client id must begin with a capital 'A' in order to designated as a scalable application by the IoT Platform. Multiple clients that are part of the scalable application should use the exact same client id."
+msgstr ""
+"可調式應用程式僅支援不可延續的訂閱。請注意用戶端 ID 的開頭必須是大寫 'A'，IoT Platform 才能將它指定為可調式應用程式。屬於可調式應用程式一部分的多個用戶端應該使用完全相同的用戶端 ID。"
+
+#: ../docs/applications/mqtt.rst:194
+msgid "How It Works"
+msgstr ""
+"如何運作"
+
+#: ../docs/applications/mqtt.rst:195
+msgid "The IoT Platform service extends the MQTT 3.1.1 specification to provide support for shared subscriptions. Shared subscription can provide simple load balancing functionality for applications. A shared subscription might be needed if a back-end enterprise application can not keep up with the number of messages being published to a specific topic space. For example if many devices were publishing messages that are being processed by a single application. It might be helpful to leverage the load balancing capability of a shared subscription. IoT Platform shared subscription support is limited to non-durable subscriptions only."
+msgstr ""
+"IoT Platform 服務會擴充 MQTT 3.1.1 規格，以支援共用訂閱。共用訂閱可為應用程式提供簡單的負載平衡功能。如果後端企業應用程式無法跟上要發佈至特定主題空間的訊息數，則可能需要共用訂閱。例如，如果有多個裝置發佈的訊息都是由單一應用程式所處理。運用共用訂閱的負載平衡功能，可能會有所幫助。IoT Platform 共用訂閱支援僅限於不可延續的訂閱。"
+
+#: ../docs/applications/mqtt.rst:203
+msgid "A simple example of an auto-scaling application:"
+msgstr ""
+"自動調整大小應用程式的簡單範例："
+
+#: ../docs/applications/mqtt.rst:205
+msgid "client 1 connects as A:abc123:myApplication and subscribes to all device events client 1 will receive 100% of the device events published"
+msgstr ""
+"用戶端 1 以 A:abc123:myApplication 連接並訂閱所有裝置事件，用戶端 1 會收到 100% 發佈的裝置事件"
+
+#: ../docs/applications/mqtt.rst:207
+msgid "client 2 connects as A:abc123:myApplication and subscribes to all device events now, client 1 and client 2 will share all of the events published between them. that is the load is now shared between client 1 and client 2."
+msgstr ""
+"用戶端 2 以 A:abc123:myApplication 連接且現在訂閱所有裝置事件，用戶端 1 與用戶端 2 即會共用在它們之間發佈的所有事件。也就是說，目前在用戶端 1 與用戶端 2 之間會共用負載。"
+
+#: ../docs/applications/mqtt.rst:210
+msgid "client 3 connects as A:abc123:myApplication and subscribes to all device events now, instance 1, 2 and 3 will process the events shared amongst all three instances"
+msgstr ""
+"用戶端 3 以 A:abc123:myApplication 連接且現在訂閱所有裝置事件，實例 1、2 及 3 將會處理在這三個實例之間共用的事件"
+
+#: ../docs/applications/mqtt.rst:212
+msgid "clients 2 and 3 unsubscribe from all device events now, although instance 2 and 3 are still connected to the service, instance 1 will be receiving  all device events published"
+msgstr ""
+"用戶端 2 及 3 現在取消訂閱所有裝置事件，雖然實例 2 及 3 仍然連接至服務，但實例 1 會接收所有發佈的裝置事件"
+

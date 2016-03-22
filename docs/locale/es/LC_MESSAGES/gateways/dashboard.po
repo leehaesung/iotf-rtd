@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/gateways/dashboard.rst:2
+msgid "Connecting and Using a Gateway Device using the IoT Platform Dashboard"
+msgstr ""
+"Conexión y utilización de un dispositivo de pasarela utilizando el panel de control de IoT Platform"
+
+#: ../docs/gateways/dashboard.rst:4
+msgid "This task describes the process of connecting a gateway device, which connects itself, and devices behind the gateway, and sends data from itself and devices behind it to the IoT Platform."
+msgstr ""
+"Esta tarea describe el proceso de conexión de un dispositivo de pasarela, que se conecta a sí mismo y a los dispositivos detrás de la pasarela y envía a IoT Platform los datos propios y de los dispositivos que están detrás."
+
+#: ../docs/gateways/dashboard.rst:6
+msgid "Gateways can also subscribe to commands on behalf of devices connected to the gateway."
+msgstr ""
+"Las pasarelas también se pueden suscribir a los mandatos en nombre de los dispositivos conectados a la pasarela."
+
+#: ../docs/gateways/dashboard.rst:9
+msgid "Prerequisites"
+msgstr ""
+"Requisitos previos"
+
+#: ../docs/gateways/dashboard.rst:11
+msgid "This task assumes that you already have an IoT Platform organization."
+msgstr ""
+"Esta tarea supone que ya tiene una organización de IoT Platform."
+
+#: ../docs/gateways/dashboard.rst:14
+msgid "Procedure"
+msgstr ""
+"Procedimiento"
+
+#: ../docs/gateways/dashboard.rst:16
+msgid "Creating a device type for your gateway: A gateway has more rights than a normal device, and can send and receive device data on behalf of other devices."
+msgstr ""
+"Creación de un tipo de dispositivo para la pasarela: Una pasarela tiene más derechos que un dispositivo normal y puede enviar y recibir datos de dispositivo en nombre de otros dispositivos."
+
+#: ../docs/gateways/dashboard.rst:18
+msgid "In your organization dashboard 'Devices' tab, select the 'Device Types' sub-tab. Click 'Create Type'. Click 'Create gateway type', and follow the instructions in the flow, including adding any device properties and metadata. Click 'Create' to complete the flow and create the device type."
+msgstr ""
+"En el separador 'Dispositivos' del panel de control de la organización, seleccione el subseparador 'Tipos de dispositivo'. Pulse 'Crear tipo'. Pulse 'Crear tipo de pasarela' y siga las instrucciones del flujo, incluida la adición de propiedades de dispositivo y metadatos. Pulse 'Crear' para completar el flujo y crear el tipo de dispositivo."
+
+#: ../docs/gateways/dashboard.rst:20
+msgid "To create a gateway device:"
+msgstr ""
+"Para crear un dispositivo de pasarela:"
+
+#: ../docs/gateways/dashboard.rst:22
+msgid "In your organization dashboard 'Devices' tab, select the 'Browse' sub-tab and click 'Add device'. Select the gateway device type created in the previous step. Follow the 'Add device' flow, entering the mandatory *deviceId* property, and any other optional properties."
+msgstr ""
+"En el separador 'Dispositivos' del panel de control de la organización, seleccione el subseparador 'Examinar' y pulse 'Añadir dispositivo'. Seleccione el tipo de dispositivo de pasarela creado en el paso anterior. Siga el flujo de 'Añadir dispositivo', entrando la propiedad *deviceId* obligatoria y otras propiedades opcionales."
+
+#: ../docs/gateways/dashboard.rst:24
+msgid "After creating a gateway device, the authentication token provided should be saved for use in configuring the gateway to connect to the IoT Platform."
+msgstr ""
+"Después de crear un dispositivo de pasarela, se debe guardar la señal de autenticación proporcionada para utilizarla en la configuración de la pasarela para conectarse a IoT Platform."
+
+#: ../docs/gateways/dashboard.rst:26
+msgid "Connecting the gateway to the IoT Platform."
+msgstr ""
+"Conexión de la pasarela a IoT Platform."
+
+#: ../docs/gateways/dashboard.rst:28
+msgid "There are a range of recipes available for connecting devices to the IoT Platform platform. Connecting a gateway requires the same steps as connecting a normal device with one exception. When connecting a normal device, the clientId uses the following format:"
+msgstr ""
+"Existe un rango de recetas disponibles para conectar dispositivos a IoT Platform. Para conectar una pasarela es necesario realizar los mismos pasos que para conectar un dispositivo normal, con una excepción: al conectar un dispositivo normal, el ID de cliente utiliza el formato siguiente:"
+
+#: ../docs/gateways/dashboard.rst:30
+msgid "``d:<orgId>:<typeId>:<deviceId>``"
+msgstr ""
+"``d:<IdOrg>:<IdTipo>:<IdDispositivo>``"
+
+#: ../docs/gateways/dashboard.rst:32
+msgid "When connecting a gateway device, the clientId replaces ``d`` with ``g``:"
+msgstr ""
+"Al conectar un dispositivo de pasarela, el ID de cliente sustituye ``d`` por ``g``:"
+
+#: ../docs/gateways/dashboard.rst:34
+msgid "``g:<orgId>:<typeId>:<deviceId>``"
+msgstr ""
+"``g:<IdOrg>:<IdTipo>:<IdDispositivo>``"
+
+#: ../docs/gateways/dashboard.rst:36
+msgid "Set up devices that are connected to the gateway and are to be connected to the IoT Platform:"
+msgstr ""
+"Configurar dispositivos que están conectados a la pasarela y se deben conectar a IoT Platform:"
+
+#: ../docs/gateways/dashboard.rst:38
+msgid "Create a device type for the device or devices which are to connect through the gateway. The devices should have *gatewayId* and *gatewayTypeId* properties matching the *deviceId* and *deviceTypeId* of the gateway they are connecting through. Add the devices which are connected to the gateway to the IoT Platform."
+msgstr ""
+"Cree un tipo de dispositivo para el dispositivo o los dispositivos que se deben conectar a través de la pasarela. Los dispositivos deben tener propiedades *gatewayId* y *gatewayTypeId* que coincidan con las propiedades *deviceId* y *deviceTypeId* de la pasarela a la través de la cual se están conectando. Añada a IoT Platform los dispositivos que están conectados a la pasarela."
+
+#: ../docs/gateways/dashboard.rst:40
+msgid "The devices connected to the gateway should now be visible in your IoT Platform organization dashboard."
+msgstr ""
+"Ahora los dispositivos conectados a la pasarela deben estar visibles en el panel de control de organización de IoT Platform."
+

@@ -1,0 +1,223 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/libraries/embedded_c.rst:2
+msgid "Embedded C for Device Developers"
+msgstr ""
+"디바이스 개발자용 Embedded C"
+
+#: ../docs/devices/libraries/embedded_c.rst:4
+msgid "See `iotf-embeddedc <https://github.com/ibm-messaging/iotf-embeddedc>`_ on GitHub"
+msgstr ""
+"GitHub에서 `iotf-embeddedc <https://github.com/ibm-messaging/iotf-embeddedc>`_ 참조"
+
+#: ../docs/devices/libraries/embedded_c.rst:8
+msgid "Dependencies"
+msgstr ""
+"종속 항목"
+
+#: ../docs/devices/libraries/embedded_c.rst:10
+msgid "`Eclipse Paho Embedded C library <http://git.eclipse.org/c/paho/org.eclipse.paho.mqtt.embedded-c.git/>`__ - provides an MQTT C client library, check `here <http://www.eclipse.org/paho/clients/c/embedded/>`__ for more information."
+msgstr ""
+"`Eclipse Paho Embedded C 라이브러리(<http://git.eclipse.org/c/paho/org.eclipse.paho.mqtt.embedded-c.git/>)` - MQTT C 클라이언트 라이브러리를 제공합니다. 자세한 정보는 `여기(<http://www.eclipse.org/paho/clients/c/embedded/>)`를 확인하십시오. "
+
+#: ../docs/devices/libraries/embedded_c.rst:14
+msgid "Installation"
+msgstr ""
+"설치"
+
+#: ../docs/devices/libraries/embedded_c.rst:15
+msgid "To install the IoT Platform client library for Embedded C follow the instructions below."
+msgstr ""
+"Embedded C용 IoT Platform 클라이언트 라이브러리를 설치하려면 아래의 지시사항을 따르십시오. "
+
+#: ../docs/devices/libraries/embedded_c.rst:17
+msgid "To install the latest version of the library, enter the following code in your command line."
+msgstr ""
+"라이브러리의 최신 버전을 설치하려면 명령행에 다음 코드를 입력하십시오. "
+
+#: ../docs/devices/libraries/embedded_c.rst:23
+msgid "Copy the Paho library .tar file that was downloaded in the previous step to the *lib* directory."
+msgstr ""
+"이전 단계에서 다운로드한 Paho 라이브러리 .tar 파일을 *lib* 디렉토리에 복사하십시오. "
+
+#: ../docs/devices/libraries/embedded_c.rst:30
+msgid "Extract the library file"
+msgstr ""
+"라이브러리 파일 추출"
+
+#: ../docs/devices/libraries/embedded_c.rst:38
+msgid "When downloaded, the client has the following file structure:"
+msgstr ""
+"다운로드된 경우 클라이언트의 파일 구조는 다음과 같습니다. "
+
+#: ../docs/devices/libraries/embedded_c.rst:54
+msgid "Initializing the Client Library"
+msgstr ""
+"클라이언트 라이브러리 초기화"
+
+#: ../docs/devices/libraries/embedded_c.rst:56
+msgid "After downloading the client library, it must be initialized and connected to the IoT Platform. There are 2 ways to initialize the IoT Platform Client Library for Embedded C:"
+msgstr ""
+"클라이언트 라이브러리를 다운로드한 후에는 초기화하여 IoT Platform에 연결해야 합니다. 두 가지 방법으로 Embedded C용 IoT Platform 클라이언트 라이브러리를 초기화할 수 있습니다. "
+
+#: ../docs/devices/libraries/embedded_c.rst:59
+msgid "Passing as Parameters"
+msgstr ""
+"매개변수로 전달"
+
+#: ../docs/devices/libraries/embedded_c.rst:61
+msgid "The 'initialize' function takes the following details to connect to the IoT Platform service:"
+msgstr ""
+"'initialize' 함수는 다음과 같은 세부사항을 사용하여 IoT Platform 서비스에 연결합니다. "
+
+#: ../docs/devices/libraries/embedded_c.rst:63
+msgid "client - Pointer to the *iotfclient*"
+msgstr ""
+"클라이언트 - *iotfclient*에 대한 포인터"
+
+#: ../docs/devices/libraries/embedded_c.rst:64
+msgid "org - Your organization ID"
+msgstr ""
+"org - 조직 ID"
+
+#: ../docs/devices/libraries/embedded_c.rst:65
+msgid "type - The type of your device"
+msgstr ""
+"type - 디바이스의 유형"
+
+#: ../docs/devices/libraries/embedded_c.rst:66
+msgid "id - The device ID"
+msgstr ""
+"id - 디바이스 ID"
+
+#: ../docs/devices/libraries/embedded_c.rst:67
+msgid "authmethod - Method of authentication (the only value currently supported is \"token\")"
+msgstr ""
+"authmethod - 인증 방법(현재 지원되는 유일한 값은 \"token\"임)"
+
+#: ../docs/devices/libraries/embedded_c.rst:68
+msgid "authtoken - API key token (required if auth-method is \"token\")"
+msgstr ""
+"authtoken - API 키 토큰(auth-method가 \"token\"인 경우 필수)"
+
+#: ../docs/devices/libraries/embedded_c.rst:84
+msgid "Using a Configuration File"
+msgstr ""
+"구성 파일 사용"
+
+#: ../docs/devices/libraries/embedded_c.rst:86
+msgid "You can also use a configuration file to initialize the Embedded C client library. The function 'initialize\\_configfile' takes the configuration file path as a parameter."
+msgstr ""
+"구성 파일을 사용하여 Embedded C 클라이언트 라이브러리를 초기화할 수도 있습니다. 'initialize\\_configfile' 함수는 구성 파일 경로를 매개변수로 가져옵니다. "
+
+#: ../docs/devices/libraries/embedded_c.rst:99
+msgid "The configuration file must use the following format."
+msgstr ""
+"구성 파일은 다음 형식을 사용해야 합니다. "
+
+#: ../docs/devices/libraries/embedded_c.rst:111
+msgid "Connecting to the Service"
+msgstr ""
+"서비스에 연결"
+
+#: ../docs/devices/libraries/embedded_c.rst:113
+msgid "After initializing the IoT Platform Embedded C client library, you can connect to the IoT Platform by calling the 'connectiotf' function."
+msgstr ""
+"IoT Platform Embedded C 클라이언트 라이브러리를 초기화한 후에는 'connectiotf' 함수를 호출하여 IoT Platform에 연결할 수 있습니다. "
+
+#: ../docs/devices/libraries/embedded_c.rst:141
+msgid "Handling commands"
+msgstr ""
+"명령 처리"
+
+#: ../docs/devices/libraries/embedded_c.rst:143
+msgid "When the device client connects, it automatically subscribes to any command for this device. To process specific commands you need to register a command callback function by calling the function 'setCommandHandler'. The commands are returned as:"
+msgstr ""
+"디바이스 클라이언트는 연결되면 이 디바이스에 대한 명령을 자동으로 구독합니다. 특정 명령을 처리하려면 'setCommandHandler' 함수를 호출하여 명령 콜백 함수를 등록해야 합니다. 이 명령은 다음과 같이 리턴됩니다. "
+
+#: ../docs/devices/libraries/embedded_c.rst:145
+msgid "commandName - name of the command invoked"
+msgstr ""
+"commandName - 호출된 명령의 이름"
+
+#: ../docs/devices/libraries/embedded_c.rst:146
+msgid "format - e.g json, xml"
+msgstr ""
+"format - 예: json, xml"
+
+#: ../docs/devices/libraries/embedded_c.rst:147
+msgid "payload"
+msgstr ""
+"페이로드"
+
+#: ../docs/devices/libraries/embedded_c.rst:169
+msgid "The 'yield' function must be called periodically to receive commands."
+msgstr ""
+"명령을 수신하려면 'yield' 함수를 주기적으로 호출해야 합니다."
+
+#: ../docs/devices/libraries/embedded_c.rst:173
+msgid "Publishing events"
+msgstr ""
+"이벤트 공개"
+
+#: ../docs/devices/libraries/embedded_c.rst:175
+msgid "Events can be published by using:"
+msgstr ""
+"다음을 사용하여 이벤트를 공개할 수 있습니다. "
+
+#: ../docs/devices/libraries/embedded_c.rst:177
+msgid "eventType - Type of event to be published e.g status, gps"
+msgstr ""
+"eventType - 공개할 이벤트의 유형(예: 상태, gps)"
+
+#: ../docs/devices/libraries/embedded_c.rst:178
+msgid "eventFormat - Format of the event e.g json"
+msgstr ""
+"eventFormat - 이벤트의 형식(예: json)"
+
+#: ../docs/devices/libraries/embedded_c.rst:179
+msgid "data - Payload of the event"
+msgstr ""
+"data - 이벤트의 페이로드"
+
+#: ../docs/devices/libraries/embedded_c.rst:180
+msgid "QoS - qos for the publish event. Supported values : QOS0, QOS1, QOS2"
+msgstr ""
+"QoS - 이벤트 공개에 대한 qos. 지원되는 값: QOS0, QOS1, QOS2"
+
+#: ../docs/devices/libraries/embedded_c.rst:194
+msgid "Disconnect Client"
+msgstr ""
+"클라이언트 연결 끊기"
+
+#: ../docs/devices/libraries/embedded_c.rst:196
+msgid "To disconnect the client and release the connections, run the following code snippet."
+msgstr ""
+"클라이언트의 연결을 끊고 연결을 해제하려면 다음 코드 스니펫을 실행하십시오. "
+
+#: ../docs/devices/libraries/embedded_c.rst:212
+msgid "Samples"
+msgstr ""
+"샘플"
+
+#: ../docs/devices/libraries/embedded_c.rst:214
+msgid "Sample device and application code is provided in `GitHub <https://github.com/ibm-messaging/iotf-embeddedc/tree/master/samples>`_."
+msgstr ""
+"샘플 디바이스 및 애플리케이션 코드가 `GitHub <https://github.com/ibm-messaging/iotf-embeddedc/tree/master/samples>`_에 제공됩니다."
+

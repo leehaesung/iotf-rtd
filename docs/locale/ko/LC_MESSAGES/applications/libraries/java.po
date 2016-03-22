@@ -1,0 +1,448 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/applications/libraries/java.rst:2
+msgid "Java for Application Developers"
+msgstr ""
+"애플리케이션 개발자용 Java"
+
+#: ../docs/applications/libraries/java.rst:4
+msgid "See `iot-java <https://github.com/ibm-messaging/iot-java>`_ in GitHub"
+msgstr ""
+"GitHub에서 `iot-java <https://github.com/ibm-messaging/iot-java>`_ 참조"
+
+#: ../docs/applications/libraries/java.rst:7
+msgid "Constructor"
+msgstr ""
+"생성자"
+
+#: ../docs/applications/libraries/java.rst:9
+msgid "The constructor builds the client instance, and accepts a Properties object containing the following definitions:"
+msgstr ""
+"생성자는 클라이언트 인스턴스를 빌드하고 다음 정의가 포함된 특성 오브젝트를 승인합니다."
+
+#: ../docs/applications/libraries/java.rst:11
+msgid "``org`` - Your organization ID (This is a required field. In case of quickstart flow, provide org as ``quickstart``)."
+msgstr ""
+"``org`` - 조직 ID입니다(필수 필드). quickstart 플로우의 경우 org를 ``quickstart``로 제공하십시오. "
+
+#: ../docs/applications/libraries/java.rst:12
+msgid "``id`` - The unique ID of your application within your organization."
+msgstr ""
+"``id`` - 조직 내 애플리케이션의 고유 ID."
+
+#: ../docs/applications/libraries/java.rst:13
+msgid "``auth-method`` - Method of authentication (the only value currently supported is ``apikey``)."
+msgstr ""
+"``auth-method`` - 인증 방법(현재 지원되는 유일한 값은 ``apikey``임)."
+
+#: ../docs/applications/libraries/java.rst:14
+msgid "``auth-key`` - API key (required if auth-method is ``apikey``)."
+msgstr ""
+"``auth-key`` - API 키(auth-method가 ``apikey``인 경우에는 필수)."
+
+#: ../docs/applications/libraries/java.rst:15
+msgid "``auth-token`` - API key token (required if auth-method is ``apikey``)."
+msgstr ""
+"``auth-token`` - API 키 토큰(auth-method가 ``apikey``인 경우에는 필수)."
+
+#: ../docs/applications/libraries/java.rst:16
+msgid "``clean-session`` - true or false (required only if you want to connect the application in durable subscription. By default the clean-session is set to true)."
+msgstr ""
+"``clean-session`` - true 또는 false입니다. 애플리케이션을 지속적 구독에 연결하려는 경우에만 필수입니다. 기본적으로 clean-session은 true로 설정해야 합니다. "
+
+#: ../docs/applications/libraries/java.rst:17
+msgid "``shared-subscription`` - true or false (required only if shared subscription needs to be enabled)."
+msgstr ""
+"``shared-subscription`` - true 또는 false입니다. 공유 구독을 사용으로 설정해야 하는 경우에만 필수입니다. "
+
+#: ../docs/applications/libraries/java.rst:19
+msgid "One must set ``shared-subscription`` to true to build scalable applications which will load balance messages across multiple instances of the application. Refer to the `scalable applications section <https://docs.internetofthings.ibmcloud.com/applications/mqtt.html#/scalable-applications#scalable-applications>`__ for more information about the load balancing."
+msgstr ""
+"``shared-subscription``을 true로 설정하여 애플리케이션의 여러 인스턴스 간에 메시지를 로드 밸런싱하는 확장 가능 애플리케이션을 빌드해야 합니다. 로드 밸런싱에 대한 자세한 정보는 `확장 가능 애플리케이션 절 <https://docs.internetofthings.ibmcloud.com/applications/mqtt.html#/scalable-applications#scalable-applications>`__의 내용을 참조하십시오. "
+
+#: ../docs/applications/libraries/java.rst:21
+msgid "The Properties object creates definitions which are used to interact with the IoT Platform module. If no options are provided or organization is provided as quickstart, the client will connect to the IoT Platform Quickstart, and default to an unregistered device."
+msgstr ""
+"특성 오브젝트는 IoT Platform 모듈과 상호작용하는 데 사용되는 정의를 작성합니다.옵션을 제공하지 않거나 조직이 quickstart로 제공되는 경우 클라이언트가 IoT Platform Quickstart에 연결되며 등록되지 않은 디바이스로 기본값이 설정됩니다. "
+
+#: ../docs/applications/libraries/java.rst:23
+msgid "The following code snippet shows how to construct the ApplicationClient instance in Quickstart mode,"
+msgstr ""
+"다음 코드 스니펫은 Quickstart 모드에서 ApplicationClient 인스턴스를 생성하는 방법을 보여줍니다."
+
+#: ../docs/applications/libraries/java.rst:36
+msgid "The following code snippet shows how to construct the ApplicationClient instance in registered flow,"
+msgstr ""
+"다음 코드 스니펫은 등록된 플로우에서 ApplicationClient 인스턴스를 생성하는 방법을 보여줍니다."
+
+#: ../docs/applications/libraries/java.rst:50
+msgid "Using a configuration file"
+msgstr ""
+"구성 파일 사용"
+
+#: ../docs/applications/libraries/java.rst:52
+msgid "Instead of including a Properties object directly, you can use a configuration file containing the name-value pairs for Properties. If you are using a configuration file containing a Properties object, use the following code format."
+msgstr ""
+"특성 오브젝트를 직접 포함하는 대신 특성에 대한 이름 값 쌍이 포함된 구성 파일을 사용할 수 있습니다. 특성 오브젝트가 포함된 구성 파일을 사용 중인 경우 다음 코드 형식을 사용하십시오."
+
+#: ../docs/applications/libraries/java.rst:60
+msgid "The application configuration file must be in the following format:"
+msgstr ""
+"애플리케이션 구성 파일의 형식은 다음 형식이어야 합니다. "
+
+#: ../docs/applications/libraries/java.rst:77
+msgid "Connecting to the IoT Platform"
+msgstr ""
+"IoT Platform에 연결"
+
+#: ../docs/applications/libraries/java.rst:79
+msgid "Connect to the IoT Platform by calling the *connect* function."
+msgstr ""
+"*connect* 함수를 호출하여 IoT Platform에 연결하십시오. "
+
+#: ../docs/applications/libraries/java.rst:89
+msgid "After the successful connection to the IoT Platform service, the application client can perform the following operations, like subscribing to device events, subscribing to device status, publishing device events and commands."
+msgstr ""
+"IoT Platform 서비스에 연결하는 데 성공하면 애플리케이션 클라이언트가 다음 오퍼레이션을 수행할 수 있습니다. 디바이스 이벤트 구독, 디바이스 상태 구독, 디바이스 이벤트 및 명령 공개"
+
+#: ../docs/applications/libraries/java.rst:96
+msgid "Subscribing to device events"
+msgstr ""
+"디바이스 이벤트 구독"
+
+#: ../docs/applications/libraries/java.rst:97
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"이벤트는 디바이스가 데이터를 IoT Platform에 공개할 때 사용하는 메커니즘입니다. 디바이스는 이벤트의 컨텐츠를 제어하고 전송하는 각 이벤트에 대해 이름을 지정합니다. "
+
+#: ../docs/applications/libraries/java.rst:99
+msgid "When an event is received by the IoT Platform the credentials of the connection on which the event was received are used to determine from which device the event was sent. With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"IoT Platform에서 이벤트를 수신하면 이벤트가 수신된 연결의 신임 정보를 사용하여 이벤트를 전송한 디바이스를 판별합니다. 이 아키텍처를 사용하면 한 디바이스가 다른 디바이스를 위장할 수 없습니다. "
+
+#: ../docs/applications/libraries/java.rst:101
+msgid "By default, applications will subscribe to all events from all connected devices. Use the type, id, event and msgFormat parameters to control the scope of the subscription. A single client can support multiple subscriptions. The code samples below give examples of how to subscribe to devices dependent on device type, id, event and msgFormat parameters."
+msgstr ""
+"기본적으로 애플리케이션은 연결된 모든 디바이스의 모든 이벤트를 구독합니다. 유형, id, 이벤트 및 msgFormat 매개변수를 사용하여 구독의 범위를 제어하십시오. 단일 클라이언트가 여러 구독을 지원할 수 있습니다. 아래의 코드 샘플에서는 디바이스 유형, id, 이벤트 및 msgFormat 매개변수에 종속된 디바이스를 구독하는 방법에 대한 예제를 제공합니다. "
+
+#: ../docs/applications/libraries/java.rst:104
+msgid "To subscribe to all events from all devices"
+msgstr ""
+"모든 디바이스의 모든 이벤트 구독"
+
+#: ../docs/applications/libraries/java.rst:112
+msgid "To subscribe to all events from all devices of a specific type"
+msgstr ""
+"특정 유형의 모든 디바이스의 모든 이벤트 구독"
+
+#: ../docs/applications/libraries/java.rst:120
+msgid "To subscribe to all events from a specific device"
+msgstr ""
+"특정 디바이스에서 모든 이벤트 구독"
+
+#: ../docs/applications/libraries/java.rst:128
+msgid "To subscribe to a specific event from two or more different devices"
+msgstr ""
+"둘 이상의 다른 디바이스의 특정 이벤트 구독"
+
+#: ../docs/applications/libraries/java.rst:137
+msgid "To subscribe to events published by a device in json format"
+msgstr ""
+"json 형식으로 디바이스가 공개하는 이벤트 구독"
+
+#: ../docs/applications/libraries/java.rst:149
+msgid "Handling events from devices"
+msgstr ""
+"디바이스의 이벤트 처리"
+
+#: ../docs/applications/libraries/java.rst:150
+msgid "To process the events received by your subscriptions you need to register an event callback method. The messages are returned as an instance of the Event class which has the following properties:"
+msgstr ""
+"구독에 의해 수신된 이벤트를 처리하려면 이벤트 콜백 메소드를 등록해야 합니다. 메시지는 다음 특성이 있는 이벤트 클래스의 인스턴스로 리턴됩니다."
+
+#: ../docs/applications/libraries/java.rst:152
+msgid "event.device - string (uniquely identifies the device across all types of devices in the organization)"
+msgstr ""
+"event.device - 문자열(조직에 있는 모든 유형의 디바이스에서 디바이스를 고유하게 식별함)"
+
+#: ../docs/applications/libraries/java.rst:153
+msgid "event.deviceType - string"
+msgstr ""
+"event.deviceType - 문자열"
+
+#: ../docs/applications/libraries/java.rst:154
+msgid "event.deviceId - string"
+msgstr ""
+"event.deviceId - 문자열"
+
+#: ../docs/applications/libraries/java.rst:155
+msgid "event.event - string"
+msgstr ""
+"event.event - 문자열"
+
+#: ../docs/applications/libraries/java.rst:156
+msgid "event.format - string"
+msgstr ""
+"event.format - 문자열"
+
+#: ../docs/applications/libraries/java.rst:157
+msgid "event.data - dict"
+msgstr ""
+"event.data - dict"
+
+#: ../docs/applications/libraries/java.rst:158
+msgid "event.timestamp - datetime"
+msgstr ""
+"event.timestamp - 날짜/시간"
+
+#: ../docs/applications/libraries/java.rst:160
+msgid "A sample implementation of the Event callback,"
+msgstr ""
+"이벤트 콜백의 샘플 구현"
+
+#: ../docs/applications/libraries/java.rst:178
+msgid "Once the event callback is added to the ApplicationClient, the processEvent() method is invoked whenever any event is published on the subscribed criteria, The following snippet shows how to add the Event call back into ApplicationClient instance,"
+msgstr ""
+"이벤트 콜백이 ApplicationClient에 추가되면 이벤트가 구독된 기준에서 공개되는 경우 항상 processEvent() 메소드가 호출됩니다. 다음 스니펫은 ApplicationClient 인스턴스에 이벤트 콜백을 추가하는 방법을 보여줍니다."
+
+#: ../docs/applications/libraries/java.rst:186
+msgid "Similar to subscribing to device events, the application can subscribe to commands that are sent to the devices. Following code snippet shows how to subscribe to all commands to all the devices in the organization:"
+msgstr ""
+"디바이스 이벤트 구독과 유사하게 애플리케이션이 디바이스에 전송된 명령을 구독할 수 있습니다. 코드 스니펫을 따르면 조직에서 모든 디바이스에 대해 모든 명령을 구독하는 방법을 보여줍니다."
+
+#: ../docs/applications/libraries/java.rst:194
+msgid "Overloaded methods are available to control the command subscription. The processCommand() method is called when a command is sent to the device that matches the command subscription."
+msgstr ""
+"명령 구독을 제어하는 데 과부하된 메소드를 사용할 수 있습니다. 명령 구독에 맞는 디바이스에 명령이 전송되면 processCommand() 메소드가 호출됩니다."
+
+#: ../docs/applications/libraries/java.rst:201
+msgid "Subscribing to device status"
+msgstr ""
+"디바이스 상태 구독"
+
+#: ../docs/applications/libraries/java.rst:202
+msgid "Similar to subscribing to device events, applications can subscribe to device status, like device connect and disconnect to IoT Platform. By default, this will subscribe to status updates for all connected devices. Use the Device Type and Device Id parameters to control the scope of the subscription. A single ApplicationClient can support multiple subscriptions."
+msgstr ""
+"디바이스 이벤트 구독과 유사하게 애플리케이션이 IoT Platform에 대한 디바이스 연결 및 연결 끊기와 같은 디바이스 상태를 구독할 수 있습니다. 기본적으로 이는 연결된 모든 디바이스에 대한 상태 업데이트를 구독합니다. 디바이스 유형 및 디바이스 ID 매개변수를 사용하여 구독의 범위를 제어하십시오. 단일 ApplicationClient가 여러 구독을 지원할 수 있습니다."
+
+#: ../docs/applications/libraries/java.rst:205
+msgid "Subscribe to status updates for all devices"
+msgstr ""
+"모든 디바이스에 대한 상태 업데이트 구독"
+
+#: ../docs/applications/libraries/java.rst:214
+msgid "Subscribe to status updates for all devices of a specific type"
+msgstr ""
+"특정 유형의 모든 디바이스에 대한 상태 업데이트 구독"
+
+#: ../docs/applications/libraries/java.rst:223
+msgid "Subscribe to status updates for two different devices"
+msgstr ""
+"두 개의 다른 디바이스에 대한 상태 업데이트 구독"
+
+#: ../docs/applications/libraries/java.rst:236
+msgid "Handling status updates from devices"
+msgstr ""
+"디바이스의 상태 업데이트 처리"
+
+#: ../docs/applications/libraries/java.rst:237
+msgid "To process the status updates received by your subscriptions you need to register an status event callback method. The messages are returned as an instance of the Status class which contains the below mentioned properties:"
+msgstr ""
+"구독에 의해 수신된 상태 업데이트를 처리하려면 상태 이벤트 콜백 메소드를 등록해야 합니다. 메시지는 아래에 언급된 특성이 포함된 상태 클래스의 인스턴스로 리턴됩니다."
+
+#: ../docs/applications/libraries/java.rst:239
+msgid "The following properties are set for both \"Connect\" and \"Disconnect\" status events:"
+msgstr ""
+"\"연결\" 상태 이벤트와 \"연결 끊기\" 상태 이벤트 모두에 대해 다음과 같은 특성이 설정됩니다. "
+
+#: ../docs/applications/libraries/java.rst:241
+msgid "status.clientAddr - string"
+msgstr ""
+"status.clientAddr - 문자열"
+
+#: ../docs/applications/libraries/java.rst:242
+msgid "status.protocol - string"
+msgstr ""
+"status.protocol - 문자열"
+
+#: ../docs/applications/libraries/java.rst:243
+msgid "status.clientId - string"
+msgstr ""
+"status.clientId - 문자열"
+
+#: ../docs/applications/libraries/java.rst:244
+msgid "status.user - string"
+msgstr ""
+"status.user - 문자열"
+
+#: ../docs/applications/libraries/java.rst:245
+msgid "status.time - java.util.Date"
+msgstr ""
+"status.time - java.util.Date"
+
+#: ../docs/applications/libraries/java.rst:246
+msgid "status.action - string"
+msgstr ""
+"status.action - 문자열"
+
+#: ../docs/applications/libraries/java.rst:247
+msgid "status.connectTime - java.util.Date"
+msgstr ""
+"status.connectTime - java.util.Date"
+
+#: ../docs/applications/libraries/java.rst:248
+msgid "status.port - integer"
+msgstr ""
+"status.port - 정수"
+
+#: ../docs/applications/libraries/java.rst:250
+msgid "The following properties are only set when the action is \"Disconnect\":"
+msgstr ""
+"다음과 같은 특성은 조치가 \"연결 끊기\"인 경우에만 설정됩니다. "
+
+#: ../docs/applications/libraries/java.rst:252
+msgid "status.writeMsg - integer"
+msgstr ""
+"status.writeMsg - 정수"
+
+#: ../docs/applications/libraries/java.rst:253
+msgid "status.readMsg - integer"
+msgstr ""
+"status.readMsg - 정수"
+
+#: ../docs/applications/libraries/java.rst:254
+msgid "status.reason - string"
+msgstr ""
+"status.reason - 문자열"
+
+#: ../docs/applications/libraries/java.rst:255
+msgid "status.readBytes - integer"
+msgstr ""
+"status.readBytes - 정수"
+
+#: ../docs/applications/libraries/java.rst:256
+msgid "status.writeBytes - integer"
+msgstr ""
+"status.writeBytes - 정수"
+
+#: ../docs/applications/libraries/java.rst:258
+msgid "A sample implementation of the Status callback,"
+msgstr ""
+"상태 콜백의 샘플 구현"
+
+#: ../docs/applications/libraries/java.rst:282
+msgid "Once the status callback is added to the ApplicationClient, the processDeviceStatus() method is invoked whenever any device is connected or disconnected from IoT Platform that matches the criteria, The following snippet shows how to add the status call back instance into ApplicationClient,"
+msgstr ""
+"상태 콜백이 ApplicationClient에 추가되면 디바이스가 기준에 맞는 IoT Platform에 연결되거나 연결이 끊길 때마다 processDeviceStatus() 메소드가 호출됩니다. 다음 스니펫은 ApplicationClient에 상태 콜백 인스턴스를 추가하는 방법을 보여줍니다. "
+
+#: ../docs/applications/libraries/java.rst:291
+msgid "As similar to device status, the application can subscribe to any other application connect or disconnect status as well. Following code snippet shows how to subscribe to the application status in the organization:"
+msgstr ""
+"디바이스 상태와 유사하게 애플리케이션은 기타 애플리케이션 연결 또는 연결 끊기 상태도 구독할 수 있습니다. 코드 스니펫을 따르면 조직에서 애플리케이션 상태를 구독하는 방법을 보여줍니다."
+
+#: ../docs/applications/libraries/java.rst:299
+msgid "Overloaded method is available to control the status subscription to a particular application. The processApplicationStatus() method is called whenever any application is connected or disconnected from IoT Platform that matches the criteria."
+msgstr ""
+"특정한 애플리케이션에 대한 상태 구독을 제어하는 데 과부하된 메소드를 사용할 수 있습니다. 애플리케이션이 기준에 맞는 IoT Platform에 연결되거나 연결이 끊길 때마다 processApplicationStatus() 메소드가 호출됩니다. "
+
+#: ../docs/applications/libraries/java.rst:306
+msgid "Publishing events from devices"
+msgstr ""
+"디바이스의 이벤트 공개"
+
+#: ../docs/applications/libraries/java.rst:307
+msgid "Applications can publish events as if they originated from a Device."
+msgstr ""
+"애플리케이션은 디바이스에서 시작된 것처럼 이벤트를 공개할 수 있습니다."
+
+#: ../docs/applications/libraries/java.rst:324
+msgid "Publish events using HTTP(s)"
+msgstr ""
+"HTTP(s)를 통한 이벤트 공개"
+
+#: ../docs/applications/libraries/java.rst:325
+msgid "Apart from MQTT, the application can publish device events to IBM Watson IoT Platform using HTTP(s) by following 3 simple steps,"
+msgstr ""
+"MQTT 외에는 애플리케이션이 다음 3개의 간단한 단계에 따라 HTTP(s)를 통해 IBM Watson IoT Platform에 디바이스 이벤트를 공개할 수 있습니다. "
+
+#: ../docs/applications/libraries/java.rst:327
+msgid "Construct the ApplicationClient instance using the properties file"
+msgstr ""
+"특성 파일을 통한 ApplicationClient 인스턴스 생성"
+
+#: ../docs/applications/libraries/java.rst:328
+msgid "Construct the event that needs to be published"
+msgstr ""
+"공개되어야 하는 이벤트 생성"
+
+#: ../docs/applications/libraries/java.rst:329
+msgid "Specify the event name, Device Type, Device ID and publish the event using publishEventOverHTTP() method as follows,"
+msgstr ""
+"이벤트 이름, 디바이스 유형, 디바이스 ID를 지정하고 다음과 같이 publishEventOverHTTP() 메소드를 통해 이벤트를 공개하십시오."
+
+#: ../docs/applications/libraries/java.rst:343
+msgid "The complete code can be found in the application example `HttpApplicationDeviceEventPublish <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdeviceclient/src/com/ibm/iotf/sample/client/application/HttpApplicationDeviceEventPublish.java>`__"
+msgstr ""
+"전체 코드는 애플리케이션 예제 `HttpApplicationDeviceEventPublish <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdeviceclient/src/com/ibm/iotf/sample/client/application/HttpApplicationDeviceEventPublish.java>`__에서 찾을 수 있습니다."
+
+#: ../docs/applications/libraries/java.rst:345
+msgid "Based on the settings in the properties file, the publishEventOverHTTP() method either publishes the event in Quickstart or in Registered flow. When the Organization ID mentioned in the properties file is quickstart, publishEventOverHTTP() method publishes the event to IoT Platform quickstart service and publishes the event in plain HTTP format. But when valid registered organization is mentioned in the properties file, this method always publishes the event in HTTPS (HTTP over SSL), so all the communication is secured."
+msgstr ""
+"특성 파일의 설정에 기반하여 publishEventOverHTTP() 메소드가 Quickstart 또는 등록된 플로우에서 이벤트를 공개합니다. 특성 파일에 언급된 조직 ID가 quickstart이면 publishEventOverHTTP() 메소드가 IoT Platform quickstart 서비스에 이벤트를 공개하고 일반 HTTP 형식으로 이벤트를 공개합니다. 그러나 유효한 등록된 조직이 특성 파일에 언급된 경우 이 메소드는 항상 HTTPS(HTTP over SSL)로 이벤트를 공개하여 모든 통신이 안전합니다."
+
+#: ../docs/applications/libraries/java.rst:347
+msgid "The event in HTTP(s) is published at most once Quality of Service, so the application needs to implement the retry logic when there is an error."
+msgstr ""
+"HTTP(s)의 이벤트는 최대 한 번 서비스 품질(QoS)이 공개되므로 오류 발생 시 애플리케이션이 재시도 논리를 구현해야 합니다."
+
+#: ../docs/applications/libraries/java.rst:354
+msgid "Publishing commands to devices"
+msgstr ""
+"디바이스에 명령 공개"
+
+#: ../docs/applications/libraries/java.rst:355
+msgid "Applications can publish commands to connected devices."
+msgstr ""
+"애플리케이션은 연결된 디바이스에 명령을 공개할 수 있습니다."
+
+#: ../docs/applications/libraries/java.rst:374
+msgid "Examples"
+msgstr ""
+"예제"
+
+#: ../docs/applications/libraries/java.rst:375
+msgid "`MQTTApplicationDeviceEventPublish <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdeviceclient/src/com/ibm/iotf/sample/client/application/MQTTApplicationDeviceEventPublish.java>`__ - A sample application that shows how to publish device events."
+msgstr ""
+"`MQTTApplicationDeviceEventPublish <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdeviceclient/src/com/ibm/iotf/sample/client/application/MQTTApplicationDeviceEventPublish.java>`__ - 디바이스 이벤트를 공개하는 방법을 보여주는 샘플 애플리케이션"
+
+#: ../docs/applications/libraries/java.rst:376
+msgid "`RegisteredApplicationCommandPublish <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdeviceclient/src/com/ibm/iotf/sample/client/application/RegisteredApplicationCommandPublish.java>`__ - A sample application that shows how to publish a command to a device."
+msgstr ""
+"`RegisteredApplicationCommandPublish <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdeviceclient/src/com/ibm/iotf/sample/client/application/RegisteredApplicationCommandPublish.java>`__ - 디바이스에 명령을 공개하는 방법을 보여주는 샘플 애플리케이션"
+
+#: ../docs/applications/libraries/java.rst:377
+msgid "`RegisteredApplicationSubscribeSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdeviceclient/src/com/ibm/iotf/sample/client/application/RegisteredApplicationSubscribeSample.java>`__ - A sample application that shows how to subscribe for various events like, device events, device commands, device status and application status."
+msgstr ""
+"`RegisteredApplicationSubscribeSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdeviceclient/src/com/ibm/iotf/sample/client/application/RegisteredApplicationSubscribeSample.java>`__ - 디바이스 이벤트, 디바이스 명령, 디바이스 상태 및 애플리케이션 상태와 같이 여러 이벤트에 대해 구독하는 방법을 보여주는 샘플 애플리케이션"
+
+#: ../docs/applications/libraries/java.rst:378
+msgid "`SharedSubscriptionSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdeviceclient/src/com/ibm/iotf/sample/client/application/SharedSubscriptionSample.java>`__ - A sample application that shows how to build a scalable application which will load balance messages across multiple instances of the application."
+msgstr ""
+"`SharedSubscriptionSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdeviceclient/src/com/ibm/iotf/sample/client/application/SharedSubscriptionSample.java>`__ - 애플리케이션의 여러 인스턴스 간에 메시지를 로드밸런싱하는 확장 가능 애플리케이션을 빌드하는 방법을 보여주는 샘플 애플리케이션"
+

@@ -1,0 +1,432 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/gateways/mqtt.rst:2
+msgid "MQTT Connectivity for Gateways"
+msgstr ""
+"게이트웨이를 위한 MQTT 연결"
+
+#: ../docs/gateways/mqtt.rst:4
+msgid "This feature is currently available as part of a limited beta.  Future updates may include changes incompatible with the current version of this feature.  Try it out and `let us know what you think <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_"
+msgstr ""
+"이 기능은 현재 제한된 베타의 일부로 제공됩니다. 추가 업데이트에는 이 기능의 현재 버전과 호환되지 않는 변경사항이 포함될 수 있습니다. 이 기능을 사용해 본 후 `의견을 알려주십시오 <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_. "
+
+#: ../docs/gateways/mqtt.rst:10
+msgid "MQTT client connection"
+msgstr ""
+"MQTT 클라이언트 연결"
+
+#: ../docs/gateways/mqtt.rst:11
+msgid "Every registered organization has a unique endpoint which must be used when connecting MQTT clients for gateways in that organization."
+msgstr ""
+"등록된 모든 조직에는 해당 조직의 게이트웨이에 대해 MQTT 클라이언트를 연결할 때 사용해야 하는 고유 엔드포인트가 있습니다. "
+
+#: ../docs/gateways/mqtt.rst:14
+msgid "**org\\_id**.messaging.internetofthings.ibmcloud.com"
+msgstr ""
+"**org\\_id**.messaging.internetofthings.ibmcloud.com"
+
+#: ../docs/gateways/mqtt.rst:18
+msgid "Unencrypted client connection"
+msgstr ""
+"암호화되지 않은 클라이언트 연결"
+
+#: ../docs/gateways/mqtt.rst:20
+msgid "Connect on port **1883**"
+msgstr ""
+"포트 **1883**에서 연결"
+
+#: ../docs/gateways/mqtt.rst:22
+msgid "All information your gateway submits is being sent in plain text (including the authentication credentials for your gateway). We recommend the use of an encrypted connection whenever possible."
+msgstr ""
+"게이트웨이가 제출하는 모든 정보는 일반 텍스트로 전송됩니다(게이트웨이에 대한 인증 신임 정보 포함). 가능할 때마다 암호화된 연결을 사용하는 것이 좋습니다."
+
+#: ../docs/gateways/mqtt.rst:28
+msgid "Encrypted client connection"
+msgstr ""
+"암호화된 클라이언트 연결"
+
+#: ../docs/gateways/mqtt.rst:30
+msgid "Connect on port **8883** or **443** for websockets."
+msgstr ""
+"웹 소켓을 위해 포트 **8883** 또는 **443**에서 연결합니다. "
+
+#: ../docs/gateways/mqtt.rst:32
+msgid "In many client libraries you will need to provide the server's public certificate in pem format.  The following file contains the entire certificate chain for \\*.messaging.internetofthings.ibmcloud.com: messaging.pem_"
+msgstr ""
+"다수의 클라이언트 라이브러리에서 사용자는 pem 형식으로 서버의 공용 인증서를 제공해야 합니다. 다음 파일에는 \\*.messaging.internetofthings.ibmcloud.com: messaging.pem에 대한 전체 인증서 체인이 포함되어 있습니다. "
+
+#: ../docs/gateways/mqtt.rst:38
+msgid "Some SSL client libraries have been shown to not handle wildcarded domains, in which case, if you can not change libraries, you will need to turn off certificate checking."
+msgstr ""
+"일부 SSL 클라이언트 라이브러리는 와일드카드 도메인을 처리하지 않는 것으로 표시되었으며 이 경우 라이브러리를 변경할 수 없으면 인증서 확인을 꺼야 합니다. "
+
+#: ../docs/gateways/mqtt.rst:42
+msgid "The IoT Platform requires TLS v1.2. We suggest the following cipher suites: ECDHE-RSA-AES256-GCM-SHA384, AES256-GCM-SHA384, ECDHE-RSA-AES128-GCM-SHA256 or AES128-GCM-SHA256 *(as of Jun 1 2015)*."
+msgstr ""
+"IoT Platform에는 TLS v1.2가 필요합니다. ECDHE-RSA-AES256-GCM-SHA384, AES256-GCM-SHA384, ECDHE-RSA-AES128-GCM-SHA256 또는 AES128-GCM-SHA256 암호 스위트를 추천합니다. *(2015년 1월 1일 현재)*"
+
+#: ../docs/gateways/mqtt.rst:47
+msgid "MQTT client identifier"
+msgstr ""
+"MQTT 클라이언트 ID"
+
+#: ../docs/gateways/mqtt.rst:49
+msgid "A gateway must authenticate using a client ID in the following format:"
+msgstr ""
+"게이트웨이는 다음 형식의 클라이언트 ID를 사용하여 인증해야 합니다. "
+
+#: ../docs/gateways/mqtt.rst:51
+msgid "g:**orgId**:**typeId**:**deviceId**"
+msgstr ""
+"g:**orgId**:**typeId**:**deviceId**"
+
+#: ../docs/gateways/mqtt.rst:53
+msgid "**g** idenfities your client as a gateway"
+msgstr ""
+"**g**는 클라이언트를 게이트웨이로 식별합니다. "
+
+#: ../docs/gateways/mqtt.rst:54
+msgid "**orgId** is your unique organization ID, assigned when you sign up with the service.  It will be a 6 character alphanumeric string."
+msgstr ""
+"**orgId**는 서비스에 등록할 때 지정된 고유한 조직 ID입니다. 이 ID는 6자 영숫자 문자열입니다. "
+
+#: ../docs/gateways/mqtt.rst:56
+msgid "**typeId** is intended to be used as an identifier of the type of gateway connecting, it may be useful to think of this as analogous to a model number."
+msgstr ""
+"**typeId**는 게이트웨이 연결 유형의 ID로 사용되며, 모델 번호와 유사한 것으로 간주하면 유용할 수 있습니다. "
+
+#: ../docs/gateways/mqtt.rst:59
+msgid "**deviceId** must uniquely identify a gateway device across all gateways of a specific type, it may be useful to think of this as analogous to a serial number."
+msgstr ""
+"**deviceId**는 특정 유형의 모든 게이트웨이에서 게이트웨이 디바이스를 고유하게 식별해야 하며, 일련 번호와 비슷한 것으로 간주하면 유용할 수 있습니다. "
+
+#: ../docs/gateways/mqtt.rst:63
+msgid "You can use any scheme of your choice when assigning values for ``typeId`` and ``deviceId``, however the following restrictions apply to both:"
+msgstr ""
+"``typeId`` 및 ``deviceId``에 대한 값을 지정할 때 선택한 스킴을 사용할 수 있지만 다음과 같은 제한사항이 둘 다에 적용됩니다. "
+
+#: ../docs/gateways/mqtt.rst:66
+msgid "Maximum length of 36 characters"
+msgstr ""
+"최대 길이 36자"
+
+#: ../docs/gateways/mqtt.rst:67
+msgid "Must comprise only alpha-numeric characters (``a-z``, ``A-Z``, ``0-9``) and the following special characters:"
+msgstr ""
+"영숫자 문자(``a-z``, ``A-Z``, ``0-9``)와 다음 특수 문자만 포함해야 함:"
+
+#: ../docs/gateways/mqtt.rst:69
+msgid "dash (``-``)"
+msgstr ""
+"대시(``-``)"
+
+#: ../docs/gateways/mqtt.rst:70
+msgid "underscore (``_``)"
+msgstr ""
+"밑줄(``_``)"
+
+#: ../docs/gateways/mqtt.rst:71
+msgid "dot (``.``)"
+msgstr ""
+"점(``.``)"
+
+#: ../docs/gateways/mqtt.rst:75
+msgid "MQTT authentication"
+msgstr ""
+"MQTT 인증"
+
+#: ../docs/gateways/mqtt.rst:78
+msgid "Username"
+msgstr ""
+"사용자 이름"
+
+#: ../docs/gateways/mqtt.rst:80
+msgid "The service currently only supports token-based authentication for devices, as such there is only one valid username for gateways today."
+msgstr ""
+"이 서비스는 디바이스에 대한 토큰 기반 인증만 현재 지원하므로 오늘날에는 게이트웨이에 대해 올바른 사용자 이름이 하나만 있습니다. "
+
+#: ../docs/gateways/mqtt.rst:83
+msgid "A value of ``use-token-auth`` indicates to the service that the authentication token for the gateway will be passed as the password for the MQTT connection."
+msgstr ""
+"``use-token-auth``의 값은 게이트웨이에 대한 인증 토큰이 MQTT 연결을 위한 비밀번호로 전달됨을 서비스에 표시합니다."
+
+#: ../docs/gateways/mqtt.rst:88
+msgid "Password"
+msgstr ""
+"비밀번호"
+
+#: ../docs/gateways/mqtt.rst:90
+msgid "When using token based authentication submit the device authentication token as the password when making your MQTT connection."
+msgstr ""
+"토큰 기반 인증을 사용하는 경우에는 MQTT 연결 작성 시 디바이스 인증 토큰을 비밀번호로 제출하십시오. "
+
+#: ../docs/gateways/mqtt.rst:95
+msgid "Publishing events"
+msgstr ""
+"이벤트 공개"
+
+#: ../docs/gateways/mqtt.rst:97
+msgid "A gateway can publish events from itself and on behalf of any device connected via the gateway by using the following topic and substituting in the appropriate ``typeId`` and ``deviceId`` based on the intended origin of the event:"
+msgstr ""
+"게이트웨이는 다음 주제를 사용하되 의도한 이벤트 출처를 기반으로 적합한 ``typeId``와 ``deviceId`로 대체하여 게이트웨이 자체에서 그리고 게이트웨이를 통해 연결된 모든 디바이스를 대신해 이벤트를 공개할 수 있습니다. "
+
+#: ../docs/gateways/mqtt.rst:102
+msgid "iot-2/type/\\ **typeId**/id/\\ **deviceId**/evt/\\ **eventId**/fmt/\\ **formatString**"
+msgstr ""
+"iot-2/type/\\ **typeId**/id/\\ **deviceId**/evt/\\ **eventId**/fmt/\\ **formatString**"
+
+#: ../docs/gateways/mqtt.rst:105
+#: ../docs/gateways/mqtt.rst:134
+msgid "Example"
+msgstr ""
+"예제"
+
+#: ../docs/gateways/mqtt.rst:107
+#: ../docs/gateways/mqtt.rst:137
+msgid "``typeId``"
+msgstr ""
+"``typeId``"
+
+#: ../docs/gateways/mqtt.rst:107
+#: ../docs/gateways/mqtt.rst:137
+msgid "``deviceId``"
+msgstr ""
+"``deviceId``"
+
+#: ../docs/gateways/mqtt.rst:109
+#: ../docs/gateways/mqtt.rst:139
+msgid "Gateway 1"
+msgstr ""
+"게이트웨이 1"
+
+#: ../docs/gateways/mqtt.rst:109
+#: ../docs/gateways/mqtt.rst:139
+msgid "mygateway"
+msgstr ""
+"mygateway"
+
+#: ../docs/gateways/mqtt.rst:109
+#: ../docs/gateways/mqtt.rst:139
+msgid "gateway1"
+msgstr ""
+"gateway1"
+
+#: ../docs/gateways/mqtt.rst:111
+#: ../docs/gateways/mqtt.rst:141
+msgid "Device 1"
+msgstr ""
+"디바이스 1"
+
+#: ../docs/gateways/mqtt.rst:111
+#: ../docs/gateways/mqtt.rst:141
+msgid "mydevice"
+msgstr ""
+"mydevice"
+
+#: ../docs/gateways/mqtt.rst:111
+#: ../docs/gateways/mqtt.rst:141
+msgid "device1"
+msgstr ""
+"device1"
+
+#: ../docs/gateways/mqtt.rst:114
+msgid "Gateway 1 can publish it's own status events: ``iot-2/type/mygateway/id/gateway1/evt/status/fmt/json``"
+msgstr ""
+"게이트웨이 1은 자체 상태 이벤트를 공개할 수 있습니다. ``iot-2/type/mygateway/id/gateway1/evt/status/fmt/json``"
+
+#: ../docs/gateways/mqtt.rst:115
+msgid "Gateway 1 can publish status events on behalf of Device 1: ``iot-2/type/mydevice/id/device1/evt/status/fmt/json``"
+msgstr ""
+"게이트웨이 1은 디바이스 1을 대신해 상태 이벤트를 공개할 수 있습니다. ``iot-2/type/mydevice/id/device1/evt/status/fmt/json``"
+
+#: ../docs/gateways/mqtt.rst:118
+msgid "The message payload is limited to a maximum of 4096 bytes.  Messages larger than this will be rejected."
+msgstr ""
+"메시지 페이로드는 최대 4096바이트로 제한됩니다. 따라서 이를 초과하는 메시지는 거부됩니다. "
+
+#: ../docs/gateways/mqtt.rst:122
+msgid "Subscribing to commands"
+msgstr ""
+"명령 구독"
+
+#: ../docs/gateways/mqtt.rst:124
+msgid "A gateway can subscribe to commands directed at the gateway itself and to any device connected via the gateway by using the following topic and substituting in the appropriate ``typeId`` and ``deviceId``:"
+msgstr ""
+"게이트웨이는 다음 주제를 사용하되 적합한 ``typeId``와 ``deviceId`로 대체하여 게이트웨이 자체 및 게이트웨이를 통해 연결된 모든 디바이스에 전달되는 명령을 구독합니다. "
+
+#: ../docs/gateways/mqtt.rst:128
+msgid "iot-2/type/\\ **typeId**/id/\\ **deviceId**/cmd/\\ **commandId**/fmt/\\ **formatString**"
+msgstr ""
+"iot-2/type/\\ **typeId**/id/\\ **deviceId**/cmd/\\ **commandId**/fmt/\\ **formatString**"
+
+#: ../docs/gateways/mqtt.rst:130
+msgid "The MQTT ``+`` wildcard can be used for ``typeId``, ``deviceId``, ``commandId`` and ``formatString`` to subscribe to multiple command sources."
+msgstr ""
+"MQTT ``+`` 와일드카드를 ``typeId``, ``deviceId``, ``commandId`` 및 ``formatString``에 사용하여 여러 명령 소스를 구독할 수 있습니다. "
+
+#: ../docs/gateways/mqtt.rst:144
+msgid "Gateway 1 can subscribe to commands directed at the gateway: ``iot-2/type/mygateway/id/gateway1/cmd/+/fmt/+``"
+msgstr ""
+"게이트웨이 1은 게이트웨이에 전달되는 명령을 구독할 수 있습니다. ``iot-2/type/mygateway/id/gateway1/cmd/+/fmt/+``"
+
+#: ../docs/gateways/mqtt.rst:145
+msgid "Gateway 1 can subscribe to commands sent to Device 1: ``iot-2/type/mydevice/id/device1/cmd/+/fmt/+``"
+msgstr ""
+"게이트웨이 1은 디바이스 1으로 전송된 명령을 구독할 수 있습니다. ``iot-2/type/mydevice/id/device1/cmd/+/fmt/+``"
+
+#: ../docs/gateways/mqtt.rst:146
+msgid "Gateway 1 can subscribe any command sent to devices of type \"mydevice\": ``iot-2/type/mydevice/id/+/cmd/+/fmt/+``"
+msgstr ""
+"게이트웨이 1은 \"mydevice\" 유형의 장치로 전송되는 모든 모든 명령을 구독할 수 있습니다. ``iot-2/type/mydevice/id/+/cmd/+/fmt/+`` "
+
+#: ../docs/gateways/mqtt.rst:150
+msgid "Managed Gateways"
+msgstr ""
+"관리 게이트웨이"
+
+#: ../docs/gateways/mqtt.rst:152
+msgid "Support for device lifecycle management is optional, the device management protocol used by IoT Platform utilises the same MQTT connection that your gateway already uses for events and command control."
+msgstr ""
+"디바이스 라이프사이클 관리에 대한 지원은 선택적입니다. IoT Platform에서 사용하는 디바이스 관리 프로토콜은 게이트웨이가 이벤트 및 명령 제어에 이미 사용하고 있는 것과 동일한 MQTT 연결을 사용합니다. "
+
+#: ../docs/gateways/mqtt.rst:157
+msgid "Quality of Service Levels and Clean Session"
+msgstr ""
+"서비스 품질(QoS) 레벨 및 정리 세션"
+
+#: ../docs/gateways/mqtt.rst:159
+msgid "Managed gateways can publish messages with Quality of Service (QoS) level of 0 or 1. If QoS 1 is used, messages from the gateway will be queued if necessary. Messages from the gateway must not be retained messages."
+msgstr ""
+"관리 게이트웨이는 서비스 품질(QoS) 레벨이 0 또는 1인 메시지를 공개할 수 있습니다. QoS 1을 사용하면 필요한 경우 게이트웨이의 메시지가 큐에 저장됩니다. 게이트웨이의 메시지는 보관된 메시지가 아니어야 합니다. "
+
+#: ../docs/gateways/mqtt.rst:163
+msgid "The IoT Platform publishes requests with a QoS level of 1 to support queuing of messages.  In order to queue messages sent while a managed gateway is not connected, the device should use ``cleansession=false``."
+msgstr ""
+"IoT Platform은 메시지의 큐 저장을 지원하기 위해 QoS 레벨이 1인 요청을 공개합니다. 관리 게이트웨이가 연결되지 않은 동안 전송된 메시지를 큐에 저장하려면 디바이스가 ``cleansession=false``를 사용해야 합니다. "
+
+#: ../docs/gateways/mqtt.rst:168
+msgid "If your managed gateway uses a durable subscription (cleansession=false) you need to be aware that device management commands sent to your gateway while it is offline will be reported as failed operations, however, when the gateway later connects those requests will be actioned by the gateway."
+msgstr ""
+"관리 게이트웨이가 지속적 구독(cleansession=false)을 사용하는 경우, 오프라인인 상태에서 게이트웨이로 전송된 디바이스 관리 명령은 실패한 오퍼레이션으로 보고됩니다. 그러나 게이트웨이가 나중에 연결되면 게이트웨이에서 해당 요청을 처리합니다. "
+
+#: ../docs/gateways/mqtt.rst:173
+msgid "When handling failures it is important to take this into account if you are using durable subscriptions for your managed gateways."
+msgstr ""
+"관리 게이트웨이에 대해 지속적 구독을 사용하는 경우 실패를 처리할 때 이 점을 고려해야 합니다. "
+
+#: ../docs/gateways/mqtt.rst:178
+msgid "Topics"
+msgstr ""
+"주제"
+
+#: ../docs/gateways/mqtt.rst:180
+msgid "A managed gateway is required to subscribe to two topics to handle requests and responses from IoT Platform:"
+msgstr ""
+"관리 게이트웨이는 IoT Platform의 요청과 응답을 처리하기 위해 다음 두 개의 주제를 구독해야 합니다. "
+
+#: ../docs/gateways/mqtt.rst:182
+msgid "The managed gateway will subscribe to device management reponses on ``iotdm-1/type/<typeId>/id/<deviceId>/response/+``"
+msgstr ""
+"관리 게이트웨이는 ``iotdm-1/type/<typeId>/id/<deviceId>/response/+``에서 디바이스 관리 응답을 구독합니다. "
+
+#: ../docs/gateways/mqtt.rst:183
+msgid "The managed gateway will subscribe to device management requests on ``iotdm-1/type/<typeId>/id/<deviceId>/+``"
+msgstr ""
+"관리 게이트웨이는 ``iotdm-1/type/<typeId>/id/<deviceId>/+``에서 디바이스 관리 요청을 구독합니다. "
+
+#: ../docs/gateways/mqtt.rst:186
+msgid "A managed gateway will publish to two topics:"
+msgstr ""
+"관리 게이트웨이는 다음 두 개의 주제를 공개합니다. "
+
+#: ../docs/gateways/mqtt.rst:188
+msgid "The managed gateway will publish device management responses on ``iotdevice-1/type/<typeId>/id/<deviceId>/response/``"
+msgstr ""
+"관리 게이트웨이는 ``iotdevice-1/type/<typeId>/id/<deviceId>/response/``에서 디바이스 관리 응답을 공개합니다. "
+
+#: ../docs/gateways/mqtt.rst:189
+msgid "The managed gateway will publish device management requests on ``iotdevice-1/type/<typeId>/id/<deviceId>/``"
+msgstr ""
+"관리 게이트웨이는 ``iotdevice-1/type/<typeId>/id/<deviceId>/``에서 디바이스 관리 요청을 공개합니다. "
+
+#: ../docs/gateways/mqtt.rst:191
+msgid "The gateway is able to process device management protocol messages for both itself and on behalf other connected devices by using the relevant <typeId> and <deviceId>."
+msgstr ""
+"게이트웨이는 관련 <typeId> 및 <deviceId>를 사용하여 게이트웨이 자체에 대해, 연결된 다른 디바이스를 대신해 디바이스 관리 프로토콜을 처리할 수 있습니다. "
+
+#: ../docs/gateways/mqtt.rst:196
+msgid "Message Format"
+msgstr ""
+"메시지 형식"
+
+#: ../docs/gateways/mqtt.rst:198
+msgid "All messages are sent in JSON format. There are two types of message."
+msgstr ""
+"모든 메시지는 JSON 형식으로 전송됩니다. 2개 유형의 메시지가 있습니다."
+
+#: ../docs/gateways/mqtt.rst:209
+msgid "Request"
+msgstr ""
+"요청"
+
+#: ../docs/gateways/mqtt.rst:201
+msgid "Requests are formatted as follows:"
+msgstr ""
+"요청은 다음과 같이 형식화됩니다."
+
+#: ../docs/gateways/mqtt.rst:207
+msgid "``d`` carries any data relevant to the request"
+msgstr ""
+"``d``는 요청과 관련된 모든 데이터를 운반합니다. "
+
+#: ../docs/gateways/mqtt.rst:208
+msgid "``reqId`` is an identifier of the request, and must be copied into a response. If a response is not required, the field should be omitted."
+msgstr ""
+"``reqId``는 요청 ID이며, 응답에 복사되어야 합니다. 응답이 필요하지 않은 경우 필드를 생략해야 합니다."
+
+#: ../docs/gateways/mqtt.rst:229
+msgid "Response"
+msgstr ""
+"응답"
+
+#: ../docs/gateways/mqtt.rst:212
+msgid "Responses are formatted as follows:"
+msgstr ""
+"응답은 다음과 같이 형식화됩니다."
+
+#: ../docs/gateways/mqtt.rst:223
+msgid "\"rc\" is a result code of the original request."
+msgstr ""
+"\"rc\"는 원래 요청의 결과 코드입니다. "
+
+#: ../docs/gateways/mqtt.rst:224
+msgid "``message`` is an optional element with a text description of the response code."
+msgstr ""
+"``message``는 응답 코드에 대한 텍스트 설명이 포함된 선택적 요소입니다. "
+
+#: ../docs/gateways/mqtt.rst:225
+msgid "``d`` is an optional data element accompanying the response."
+msgstr ""
+"``d``는 응답을 동반하는 선택적 데이터 요소입니다. "
+
+#: ../docs/gateways/mqtt.rst:226
+msgid "``reqId`` is the request ID of the original request. This is used to correlate responses with requests, and the device needs to ensure that all request IDs are unique.  When responding to IoT Platform requests, the correct ``reqId`` value must be sent in the response."
+msgstr ""
+"``reqId``는 원래 요청의 요청 ID입니다. 응답을 요청과 상관시키는 데 사용되고 디바이스에서는 모든 요청 ID가 고유해야 합니다. IoT Platform 요청에 응답하는 경우 올바른 ``reqId`` 값이 응답으로 전송되어야 합니다. "
+

@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/reference/security/index.rst:3
+msgid "Securing the Watson IoT platform"
+msgstr ""
+"保護 Watson IoT Platform 安全"
+
+#: ../docs/reference/security/index.rst:5
+msgid "The IBM Watson IoT platform is a fully managed, cloud-hosted service that makes it simple to derive value from Internet of Things (IoT) devices."
+msgstr ""
+"IBM Watson IoT Platform 是一種全面管理的雲端代管服務，能夠輕易從 Internet of Things (IoT) 裝置中衍生值。"
+
+#: ../docs/reference/security/index.rst:9
+msgid "The following document aims to answer common questions about how your organization's data is protected. Focusing on specific areas:"
+msgstr ""
+"下列文件旨在回答關於如何保護組織資料的一般問題。著眼於特定區域："
+
+#: ../docs/reference/security/index.rst:12
+msgid "Authentication: assuring the identity of users, devices or applications attempting to access your organization's information."
+msgstr ""
+"鑑別：確保試圖存取您組織資訊的使用者、裝置或應用程式的身分。"
+
+#: ../docs/reference/security/index.rst:14
+msgid "Authorization: assuring that users, devices and applications have permission to access your organization's information."
+msgstr ""
+"授權：確保使用者、裝置及應用程式有權限存取您組織的資訊。"
+
+#: ../docs/reference/security/index.rst:16
+msgid "Encryption: assuring that data is only readable by authorized parties and cannot be intercepted."
+msgstr ""
+"加密：確保資料只有獲授權一方可以讀取，而且不能被截取。"
+
+#: ../docs/reference/security/index.rst:23
+msgid "Terminology"
+msgstr ""
+"名詞解釋"
+
+#: ../docs/reference/security/index.rst:32
+msgid "How do we secure management of your organization?"
+msgstr ""
+"如何保護組織管理的安全？"
+
+#: ../docs/reference/security/index.rst:33
+msgid "The browser-based GUI and REST APIs are fronted by HTTPS, with a certificate signed by DigiCert enabling you to trust that you're connecting to the genuine Watson IoT platform."
+msgstr ""
+"瀏覽器型 GUI 和 REST API 前面有 HTTPS，具有 DigiCert 所簽署的憑證，讓您相信您是要連接到真正的 Watson IoT Platform。"
+
+#: ../docs/reference/security/index.rst:37
+msgid "GUI: authenticated via your IBM ID."
+msgstr ""
+"GUI：透過 IBM ID 進行鑑別。"
+
+#: ../docs/reference/security/index.rst:38
+msgid "REST API: once you create an API key through the GUI, you can use this to make authenticated REST calls against your organization."
+msgstr ""
+"REST API：透過 GUI 建立 API 金鑰之後，您可以利用它對組織發出已鑑別的 REST 呼叫。"
+
+#: ../docs/reference/security/index.rst:48
+msgid "How do we secure your device and application credentials?"
+msgstr ""
+"如何保護裝置和應用程式認證的安全？"
+
+#: ../docs/reference/security/index.rst:49
+msgid "When devices are registered or API keys are generated, the authentication token is salted and hashed. This means your organization's credentials can never be recovered from our systems - even in the unlikely event that the Watson IoT platform is compromised."
+msgstr ""
+"當登錄裝置或產生 API 金鑰時，鑑別記號以隨機雜湊方式產生。這表示組織的認證絕對無法從我們的系統中回復 - 即使是發生 Watson IoT Platform 受損的極罕見事件也是如此。"
+
+#: ../docs/reference/security/index.rst:54
+msgid "Device credentials and API keys can be individually revoked if they are compromised."
+msgstr ""
+"裝置認證和 API 金鑰如已受損，可以個別予以撤銷。"
+
+#: ../docs/reference/security/index.rst:64
+msgid "How do we ensure your devices connect securely to the Watson IoT platform?"
+msgstr ""
+"如何確保裝置安全連接到 Watson IoT Platform？"
+
+#: ../docs/reference/security/index.rst:65
+msgid "Devices connect through a unique combination of clientId and authentication token that only you know."
+msgstr ""
+"裝置是透過只有您才知道的唯一 clientId 和鑑別記號組合來進行連接。"
+
+#: ../docs/reference/security/index.rst:67
+msgid "Full support for connectivity over TLS (v1.2) is provided."
+msgstr ""
+"已提供對透過 TLS（1.2 版）之連線功能的全面支援。"
+
+#: ../docs/reference/security/index.rst:68
+msgid "Open standards are used (MQTT v3.1.1) to allow easy interop across many platforms and languages."
+msgstr ""
+"使用開放式標準（MQTT 3.1.1 版），使許多平台和語言之間的交互作業變容易。"
+
+#: ../docs/reference/security/index.rst:78
+msgid "How do we prevent data leaking between devices?"
+msgstr ""
+"如何防止裝置之間洩漏資料？"
+
+#: ../docs/reference/security/index.rst:79
+msgid "Secure messaging patterns are baked in. Once authenticated, devices are only authorized to publish and subscribe to a restricted topic space:"
+msgstr ""
+"會存入安全傳訊型樣。鑑別之後，裝置僅獲授權來發佈和訂閱受限主題空間："
+
+#: ../docs/reference/security/index.rst:82
+msgid "/iot-2/evt/+/fmt/+"
+msgstr ""
+"/iot-2/evt/+/fmt/+"
+
+#: ../docs/reference/security/index.rst:83
+msgid "/iot-2/cmd/+"
+msgstr ""
+"/iot-2/cmd/+"
+
+#: ../docs/reference/security/index.rst:85
+msgid "All devices work with the same topic space. The authentication credentials provided by the client connecting dictate to which device this topic space will be scoped by the Watson IoT platform.  This prevents devices from being able to impersonate another device."
+msgstr ""
+"所有裝置都使用相同的主題空間。所連接用戶端提供的鑑別認證指定 Watson IoT Platform 會將此主題空間限定在哪個裝置。這可防止裝置假冒另一個裝置。"
+
+#: ../docs/reference/security/index.rst:90
+msgid "The only way to impersonate another device is by obtaining compromised security credentials for the device."
+msgstr ""
+"假冒另一個裝置的唯一方式是取得該裝置已洩露的安全認證。"
+
+#: ../docs/reference/security/index.rst:97
+msgid "Applications can subscribe and publish on both the event and command topics for all devices in the organization. Applications can analyse data from many devices simultaneously, and can also simulate or proxy devices in addition to forming the complementary side of a full duplex communication loop."
+msgstr ""
+"應用程式可針對組織中所有裝置的事件和指令主題進行訂閱及發佈。應用程式可同步分析來自許多裝置的資料，而且，除了形成全雙工通訊迴圈的互補面之外，還可以模擬或代理裝置。"
+
+#: ../docs/reference/security/index.rst:107
+msgid "How do we prevent data leaking between organizations?"
+msgstr ""
+"如何防止組織之間洩漏資料？"
+
+#: ../docs/reference/security/index.rst:108
+msgid "The topic space in which devices and applications operate is scoped within a single organization. When authenticated, the Watson IoT platform transforms the topic structure using an organization ID based on the client authentication, making it impossible for data from one organization to be accessed from another."
+msgstr ""
+"裝置和應用程式操作所在的主題空間限定在單一組織內。鑑別後，Watson IoT Platform 會根據用戶端鑑別，使用組織 ID 轉換主題結構，使得某個組織的資料無法從另一個組織進行存取。"
+

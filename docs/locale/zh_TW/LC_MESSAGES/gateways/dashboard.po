@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/gateways/dashboard.rst:2
+msgid "Connecting and Using a Gateway Device using the IoT Platform Dashboard"
+msgstr ""
+"使用 IoT Platform 儀表板來連接及使用閘道裝置"
+
+#: ../docs/gateways/dashboard.rst:4
+msgid "This task describes the process of connecting a gateway device, which connects itself, and devices behind the gateway, and sends data from itself and devices behind it to the IoT Platform."
+msgstr ""
+"此作業說明連接閘道裝置的程序，而此程序會連接閘道裝置本身及閘道後面的裝置，並將資料從閘道裝置本身及其後面的裝置傳送至 IoT Platform。"
+
+#: ../docs/gateways/dashboard.rst:6
+msgid "Gateways can also subscribe to commands on behalf of devices connected to the gateway."
+msgstr ""
+"閘道也可以代表連接至閘道的裝置訂閱指令。"
+
+#: ../docs/gateways/dashboard.rst:9
+msgid "Prerequisites"
+msgstr ""
+"必要條件"
+
+#: ../docs/gateways/dashboard.rst:11
+msgid "This task assumes that you already have an IoT Platform organization."
+msgstr ""
+"此作業假設您已有 IoT Platform 組織。"
+
+#: ../docs/gateways/dashboard.rst:14
+msgid "Procedure"
+msgstr ""
+"程序"
+
+#: ../docs/gateways/dashboard.rst:16
+msgid "Creating a device type for your gateway: A gateway has more rights than a normal device, and can send and receive device data on behalf of other devices."
+msgstr ""
+"建立閘道的裝置類型：閘道擁有超過一般裝置的權限，而且可以代表其他裝置傳送及接收裝置資料。"
+
+#: ../docs/gateways/dashboard.rst:18
+msgid "In your organization dashboard 'Devices' tab, select the 'Device Types' sub-tab. Click 'Create Type'. Click 'Create gateway type', and follow the instructions in the flow, including adding any device properties and metadata. Click 'Create' to complete the flow and create the device type."
+msgstr ""
+"在組織儀表板的「裝置」標籤中，選取「裝置類型」子標籤。按一下「建立類型」。按一下「建立閘道類型」，並遵循流程中的指示，包括新增任何裝置內容和 meta 資料。按一下「建立」來完成流程並建立裝置類型。"
+
+#: ../docs/gateways/dashboard.rst:20
+msgid "To create a gateway device:"
+msgstr ""
+"若要建立閘道裝置，請執行下列動作："
+
+#: ../docs/gateways/dashboard.rst:22
+msgid "In your organization dashboard 'Devices' tab, select the 'Browse' sub-tab and click 'Add device'. Select the gateway device type created in the previous step. Follow the 'Add device' flow, entering the mandatory *deviceId* property, and any other optional properties."
+msgstr ""
+"在組織儀表板的「裝置」標籤中，選取「瀏覽」子標籤，然後按一下「新增裝置」。選取前一個步驟中建立的閘道裝置類型。遵循「新增裝置」流程，並輸入必要的 *deviceId* 內容，以及任何其他選用內容。"
+
+#: ../docs/gateways/dashboard.rst:24
+msgid "After creating a gateway device, the authentication token provided should be saved for use in configuring the gateway to connect to the IoT Platform."
+msgstr ""
+"在建立閘道裝置之後，應該儲存提供的鑑別記號，以用於將閘道配置為連接至 IoT Platform 的作業。"
+
+#: ../docs/gateways/dashboard.rst:26
+msgid "Connecting the gateway to the IoT Platform."
+msgstr ""
+"將閘道連接至 IoT Platform。"
+
+#: ../docs/gateways/dashboard.rst:28
+msgid "There are a range of recipes available for connecting devices to the IoT Platform platform. Connecting a gateway requires the same steps as connecting a normal device with one exception. When connecting a normal device, the clientId uses the following format:"
+msgstr ""
+"有各種秘訣可用來將裝置連接至 IoT Platform 平台。連接閘道需要與連接一般裝置相同的步驟，但有一個例外。當連接一般裝置時，clientId 會使用下列格式："
+
+#: ../docs/gateways/dashboard.rst:30
+msgid "``d:<orgId>:<typeId>:<deviceId>``"
+msgstr ""
+"``d:<orgId>:<typeId>:<deviceId>``"
+
+#: ../docs/gateways/dashboard.rst:32
+msgid "When connecting a gateway device, the clientId replaces ``d`` with ``g``:"
+msgstr ""
+"當連接閘道裝置時，clientId 會將 ``d`` 取代為 ``g``："
+
+#: ../docs/gateways/dashboard.rst:34
+msgid "``g:<orgId>:<typeId>:<deviceId>``"
+msgstr ""
+"``g:<orgId>:<typeId>:<deviceId>``"
+
+#: ../docs/gateways/dashboard.rst:36
+msgid "Set up devices that are connected to the gateway and are to be connected to the IoT Platform:"
+msgstr ""
+"設定連接至閘道並將連接至 IoT Platform 的裝置："
+
+#: ../docs/gateways/dashboard.rst:38
+msgid "Create a device type for the device or devices which are to connect through the gateway. The devices should have *gatewayId* and *gatewayTypeId* properties matching the *deviceId* and *deviceTypeId* of the gateway they are connecting through. Add the devices which are connected to the gateway to the IoT Platform."
+msgstr ""
+"針對將透過閘道連接的一個或多個裝置建立裝置類型。裝置具有的 *gatewayId* 和 *gatewayTypeId* 內容應該符合透過其連接它們之閘道的 *deviceId* 和 *deviceTypeId*。將連接至閘道的裝置新增至 IoT Platform。"
+
+#: ../docs/gateways/dashboard.rst:40
+msgid "The devices connected to the gateway should now be visible in your IoT Platform organization dashboard."
+msgstr ""
+"現在應該可在 IoT Platform 組織儀表板中看到連接至閘道的裝置。"
+

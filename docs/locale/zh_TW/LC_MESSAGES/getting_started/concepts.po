@@ -1,0 +1,193 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/getting_started/concepts.rst:2
+msgid "Concepts"
+msgstr ""
+"概念"
+
+#: ../docs/getting_started/concepts.rst:5
+msgid "Organizations"
+msgstr ""
+"組織"
+
+#: ../docs/getting_started/concepts.rst:6
+msgid "When you register with the Watson IoT platform you are given an organization ID, this is a unique 6 character identifier for your account."
+msgstr ""
+"當您在 Watson IoT Platform 中登錄時，會獲得一個組織 ID，這是您帳戶的唯一 6 個字元 ID。"
+
+#: ../docs/getting_started/concepts.rst:9
+msgid "**Organizations** ensure your data is only accessible from your devices and applications.  Once registered, devices and API keys are bound to a single organization.  When an application connects to the service using an API key it registers with the organization that \"owns\" the API key."
+msgstr ""
+"**組織** 確保您的資料只能透過裝置和應用程式進行存取。登錄之後，裝置和 API 金鑰會連結到單一組織。當應用程式使用 API 金鑰連接到服務時，它會在「擁有」API 金鑰的組織中登錄。"
+
+#: ../docs/getting_started/concepts.rst:14
+msgid "For your security it is impossible for cross-organization communication within the Watson IoT platform eco-system, intentional or otherwise.  The only way to transmit data between two organizations it to explicitly create two applications, one within each organization, that communicate with each other to act as a relay between the organizations."
+msgstr ""
+"基於安全理由，不論是有意或無意，要在 Watson IoT Platform 生態系統內進行跨組織通訊是行不通的。在兩個組織之間傳輸資料的唯一方式，是明確建立兩個應用程式（每一個組織內各一個）來彼此進行通訊，以扮演組織之間的中繼角色。"
+
+#: ../docs/getting_started/concepts.rst:22
+msgid "Devices"
+msgstr ""
+"裝置"
+
+#: ../docs/getting_started/concepts.rst:23
+msgid "A device can be anything that has a connection to the internet and has data it wants to get into the cloud."
+msgstr ""
+"裝置可以是連線到網際網路且含有它想要放入雲端的資料的任何項目。"
+
+#: ../docs/getting_started/concepts.rst:25
+msgid "A device is not able to directly interact with other devices."
+msgstr ""
+"裝置無法直接與其他裝置互動。"
+
+#: ../docs/getting_started/concepts.rst:26
+msgid "Devices are able to accept commands from applications."
+msgstr ""
+"裝置可接受來自應用程式的指令。"
+
+#: ../docs/getting_started/concepts.rst:27
+msgid "Devices uniquely identify themselves to the Watson IoT platform with an authentication token that will only be accepted for that device."
+msgstr ""
+"裝置可利用只有該裝置才接受的鑑別記號，在 Watson IoT Platform 中唯一地識別自己。"
+
+#: ../docs/getting_started/concepts.rst:29
+msgid "Devices must be registered before they can connect to the Watson IoT platform."
+msgstr ""
+"必須先登錄裝置，這些裝置才能連接到 Watson IoT Platform。"
+
+#: ../docs/getting_started/concepts.rst:32
+msgid "Managed and Unmanaged Devices"
+msgstr ""
+"受管理與未受管理的裝置"
+
+#: ../docs/getting_started/concepts.rst:33
+msgid "**Managed devices** are defined as devices which contain a management agent. A management agent is a set of logic which allows the device to interact with the Watson IoT platform Device Management service via the Device Management protocol. Managed devices can perform device management operations including location updates, firmware download and updates, and reboot and factory reset."
+msgstr ""
+"**受管理裝置** 定義為內含管理代理程式的裝置。管理代理程式是一組邏輯，可讓裝置透過「裝置管理」通訊協定，與「Watson IoT Platform 裝置管理」服務互動。受管理裝置可執行裝置管理作業，包括位置更新、韌體下載及更新，及重新開機和重設為原廠設定。"
+
+#: ../docs/getting_started/concepts.rst:38
+msgid "An **unmanaged device** is a device without a management agent. An unmanaged device can still connect to the Watson IoT platform and send and receive events and commands. However, it cannot send any device management requests, or perform any of the device management operations."
+msgstr ""
+"**未受管理裝置** 是不具有管理代理程式的裝置。未受管理裝置仍可連接至 Watson IoT Platform，並傳送及接收事件和指令。但是，不能傳送任何裝置管理要求，或執行任何裝置管理作業。"
+
+#: ../docs/getting_started/concepts.rst:45
+msgid "Applications"
+msgstr ""
+"應用程式"
+
+#: ../docs/getting_started/concepts.rst:46
+msgid "An application is anything that has a connection to the internet and wants to interact with data from devices and/or control the behaviour of those devices in some manner."
+msgstr ""
+"應用程式是連線到網際網路且要與來自裝置的資料進行互動，及/或以某種方式控制那些裝置行為的任何項目。"
+
+#: ../docs/getting_started/concepts.rst:49
+msgid "Applications identify themselves to the Watson IoT platform with an API key and a unique application ID."
+msgstr ""
+"應用程式可利用 API 金鑰和唯一的應用程式 ID，在 Watson IoT Platform 中識別自己。"
+
+#: ../docs/getting_started/concepts.rst:51
+msgid "Applications do not need to be registered before they can connect to the Watson IoT platform, however they must present a valid API key that has previously been registered."
+msgstr ""
+"應用程式不需要先登錄就可以連接到 Watson IoT Platform，不過，它們必須提出先前已登錄過的有效 API 金鑰。"
+
+#: ../docs/getting_started/concepts.rst:58
+msgid "Gateway Devices"
+msgstr ""
+"閘道裝置"
+
+#: ../docs/getting_started/concepts.rst:60
+msgid "Gateway support is currently available as part of a limited beta.  Future updates may include changes incompatible with the current version of this feature.  Try it out and `let us know what you think <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_"
+msgstr ""
+"受限測試版目前提供閘道支援。未來更新可能包括與此功能的現行版本不相容的變更。請試用它，並 `讓我們知道您的想法 <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_"
+
+#: ../docs/getting_started/concepts.rst:64
+msgid "Gateways are a specialized class of Device. They have the combined capabilities of an Application and a Device allowing them to serve as access points providing connectivity to the service for other devices without the ability to directly connect."
+msgstr ""
+"閘道是特殊化的「裝置」類別。它們結合了「應用程式」和「裝置」的功能，可讓它們當作存取點，為沒有直接連接能力的其他裝置提供服務的連線功能。"
+
+#: ../docs/getting_started/concepts.rst:67
+msgid "Gateway devices can register new devices and can send and receive data on behalf of devices connected to them."
+msgstr ""
+"閘道裝置可以登錄新裝置，也可以代表連接至它們的裝置傳送和接收資料。"
+
+#: ../docs/getting_started/concepts.rst:69
+msgid "Gateway Devices must be registered before they can connect to the service"
+msgstr ""
+"「閘道裝置」必須先登錄，然後才能連接至服務"
+
+#: ../docs/getting_started/concepts.rst:74
+msgid "Events"
+msgstr ""
+"事件"
+
+#: ../docs/getting_started/concepts.rst:75
+msgid "Events are the mechanism by which **devices** publish data to the Watson IoT platform.  The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"事件是 **裝置** 藉以將資料發佈到 Watson IoT Platform 的機制。裝置可控制事件的內容，並為它傳送的每一個事件指派一個名稱。"
+
+#: ../docs/getting_started/concepts.rst:78
+msgid "When an event is received by the Watson IoT platform from a device the credentials of the connection on which the event was received are used to determine from which device the event was sent.  With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"當 Watson IoT Platform 接收事件時，會使用接收事件的連線認證來判斷是哪個裝置傳送了事件。使用此架構，裝置就不可能假冒成另一個裝置。"
+
+#: ../docs/getting_started/concepts.rst:83
+msgid "**Devices** are unable to receive events, regardless of whether they are its own events or those of another device."
+msgstr ""
+"**裝置** 無法接收事件，不論它們是裝置本身的事件還是另一個裝置的事件。"
+
+#: ../docs/getting_started/concepts.rst:85
+msgid "**Applications** are able to process events from devices in real time.  When an application receives an event it has visibility of the source of the event and the data contained in that event.  Applications can be configured to subscribe to all events from all devices, a subset of events, a subset of devices or a combination of these events."
+msgstr ""
+"**應用程式** 可以即時處理來自裝置的事件。當應用程式接收事件時，它可以看到事件的來源和包含在該事件中的資料。應用程式可配置為訂閱來自所有裝置的所有事件、事件子集、裝置子集或這些事件的組合。"
+
+#: ../docs/getting_started/concepts.rst:93
+msgid "Historical Event Storage"
+msgstr ""
+"歷程事件儲存"
+
+#: ../docs/getting_started/concepts.rst:95
+msgid "Historical event storage allows users to store the data from devices added to their Watson IoT platform organization. Historical event storage activity and duration can be controlled from the settings panel in the Watson IoT platform dashboard."
+msgstr ""
+"歷程事件儲存可讓使用者從新增至其 Watson IoT Platform 組織的裝置中儲存資料。歷程事件儲存活動和期間可從 Watson IoT Platform 儀表板中的設定畫面來控制。"
+
+#: ../docs/getting_started/concepts.rst:99
+msgid "When changing settings for historical data storage, keep in mind that storing data for longer periods of time will affect your billing. Also, care should be taken when disabling historical data storage, as upon disabling data storage for your organization, all stored data will be deleted, and cannot be recovered."
+msgstr ""
+"變更歷程資料儲存的設定時請留意，長時間儲存資料將會影響到您的計費。此外，停用歷程資料儲存時則須注意，一旦為您的組織停用資料儲存，所有已儲存的資料都將予以刪除，且無法回復。"
+
+#: ../docs/getting_started/concepts.rst:104
+msgid "Historical event storage uses an MQTT Quality of Service level of 0 (delivery at most once), so some data may be lost."
+msgstr ""
+"歷程事件儲存會使用 MQTT 服務品質等級 0（最多傳遞一次），因此部分資料可能會遺失。"
+
+#: ../docs/getting_started/concepts.rst:110
+msgid "Commands"
+msgstr ""
+"指令"
+
+#: ../docs/getting_started/concepts.rst:111
+msgid "**Commands** are the mechanism by which **applications** can communicate with **devices**.  Only applications can send commands, which must be issued to specific devices."
+msgstr ""
+"**指令** 是 **應用程式** 可藉以與 **裝置** 進行通訊的機制。只有應用程式可傳送必須對特定裝置發出的指令。"
+
+#: ../docs/getting_started/concepts.rst:115
+msgid "The device must determine which action to take on receipt of any given command, and even controls which commands it will subscribe to in the first place.  It is possible to design your device to listen for any command, or to simply subscribe to a set of specific commands."
+msgstr ""
+"裝置必須決定在接收到任何給定的指令時要採取的動作，甚至控制它將率先訂閱哪些指令。可以設計裝置來接聽任何指令，或只訂閱一組特定指令。"
+

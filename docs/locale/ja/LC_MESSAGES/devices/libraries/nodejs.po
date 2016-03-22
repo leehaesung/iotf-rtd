@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/libraries/nodejs.rst:2
+msgid "Node.js for Device Developers"
+msgstr ""
+"デバイス開発者用の Node.js"
+
+#: ../docs/devices/libraries/nodejs.rst:4
+msgid "See `iot-nodejs <https://github.com/ibm-messaging/iot-nodejs>`_ in GitHub"
+msgstr ""
+"GitHub の `iot-nodejs <https://github.com/ibm-messaging/iot-nodejs>`_ を参照してください。"
+
+#: ../docs/devices/libraries/nodejs.rst:5
+msgid "See `ibmiotf <https://www.npmjs.com/package/ibmiotf>`_ on NPM"
+msgstr ""
+"NPM の `ibmiotf <https://www.npmjs.com/package/ibmiotf>`_ を参照してください。"
+
+#: ../docs/devices/libraries/nodejs.rst:8
+msgid "Constructor"
+msgstr ""
+"コンストラクター"
+
+#: ../docs/devices/libraries/nodejs.rst:10
+msgid "The constructor builds the device client instance. It accepts a configuration json containing the following definitions:"
+msgstr ""
+"コンストラクターはデバイス・クライアント・インスタンスを作成します。これは、以下の定義を含む構成 json を受け入れます。"
+
+#: ../docs/devices/libraries/nodejs.rst:12
+msgid "``org`` - Your organization ID"
+msgstr ""
+"``org`` - 組織 ID"
+
+#: ../docs/devices/libraries/nodejs.rst:13
+msgid "``type`` - The type of your device"
+msgstr ""
+"``type`` - デバイスのタイプ"
+
+#: ../docs/devices/libraries/nodejs.rst:14
+msgid "``id`` - The ID of your device"
+msgstr ""
+"``id`` - デバイスの ID"
+
+#: ../docs/devices/libraries/nodejs.rst:15
+msgid "``auth-method`` - Method of authentication (the only value currently supported is ``token``)"
+msgstr ""
+"``auth-method`` - 認証方式 (現在サポートされている値は「token」のみ)"
+
+#: ../docs/devices/libraries/nodejs.rst:16
+msgid "``auth-token`` - API key token (required if auth-method is ``token``)"
+msgstr ""
+"``auth-token`` - API キー・トークン (auth-method が「token」である場合に必須)。"
+
+#: ../docs/devices/libraries/nodejs.rst:18
+msgid "If you want to use Quickstart, then send only the first three properties."
+msgstr ""
+"Quickstart を使用する場合は、最初の 3 つのプロパティーのみを送信します。"
+
+#: ../docs/devices/libraries/nodejs.rst:34
+msgid "Using a configuration file"
+msgstr ""
+"構成ファイルの使用"
+
+#: ../docs/devices/libraries/nodejs.rst:36
+msgid "Instead of passing the configuration json directly, you can also use a configuration file. Use the following code snippet:"
+msgstr ""
+"構成 json を直接渡す代わりに、構成ファイルを使用することもできます。以下のコード・スニペットを使用します。"
+
+#: ../docs/devices/libraries/nodejs.rst:45
+msgid "The configuration file must be in the format of"
+msgstr ""
+"構成ファイルは、以下の形式でなければなりません"
+
+#: ../docs/devices/libraries/nodejs.rst:56
+msgid "Connecting to the IoT Platform"
+msgstr ""
+"IoT Platform への接続"
+
+#: ../docs/devices/libraries/nodejs.rst:58
+msgid "Connect to the IoT Platform by calling the *connect* function."
+msgstr ""
+"*connect* 関数を呼び出して IoT Platform に接続します。"
+
+#: ../docs/devices/libraries/nodejs.rst:73
+msgid "After the successful connection to the IoT Platform service, the device client sends a *connect* event. So all the device logic can be implemented inside this callback function."
+msgstr ""
+"IoT Platform サービスへの接続に成功すると、デバイス・クライアントは *connect* イベントを送信します。このため、すべてのデバイス・ロジックはこのコールバック関数の内部に実装できます。"
+
+#: ../docs/devices/libraries/nodejs.rst:76
+msgid "Publishing events"
+msgstr ""
+"イベントのパブリッシング"
+
+#: ../docs/devices/libraries/nodejs.rst:78
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"イベントは、デバイスが IoT Platform にデータをパブリッシュするためのメカニズムです。デバイスはイベントのコンテンツを制御し、送信するイベントごとに名前を割り当てます。"
+
+#: ../docs/devices/libraries/nodejs.rst:80
+msgid "When an event is received by the IoT Platform the credentials of the connection on which the event was received are used to determine from which device the event was sent. With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"IoT Platform は、イベントを受け取ると、そのイベントを受け取った接続の資格情報に基づいて、イベントの送信元のデバイスを特定します。このアーキテクチャーにより、デバイスは別のデバイスの偽名を使用することが不可能になります。"
+
+#: ../docs/devices/libraries/nodejs.rst:82
+msgid "Events can be published at any of the three quality of service levels defined by the MQTT protocol. By default events will be published as QoS level 0. Please not that if you are using the Internet of Things Quickstart service, events can only be published at QoS level 0."
+msgstr ""
+"イベントは、MQTT プロトコルによって定義された 3 つのサービス品質レベルのいずれでもパブリッシュできます。デフォルトでは、イベントは QoS レベル 0 としてパブリッシュされます。Internet of Things Quickstart サービスを使用している場合、イベントは QoS レベル 0 でのみパブリッシュできることに注意してください。"
+
+#: ../docs/devices/libraries/nodejs.rst:84
+msgid "Events can be published by using: -   eventType - Type of event to be published e.g status, gps. -   eventFormat - Format of the event e.g json. -   data - Payload of the event. -   QoS - MQTT quality of service for the publish event. Supported values : 0,1,2."
+msgstr ""
+"イベントは、以下を使用してパブリッシュできます。-   eventType - パブリッシュするイベントのタイプ。例: status、gps。-   eventFormat - イベントの形式。例: json。-   data - イベントのペイロード。-   QoS - パブリッシュ・イベントの MQTT サービス品質。サポートされる値: 0、1、2。"
+
+#: ../docs/devices/libraries/nodejs.rst:107
+msgid "Handling commands"
+msgstr ""
+"コマンドの処理"
+
+#: ../docs/devices/libraries/nodejs.rst:109
+msgid "When the device client connects, it automatically subscribes to any command for this device. To process specific commands you need to register a command callback function. The device client sends *command* when a command is received. The callback function has the following properties."
+msgstr ""
+"デバイス・クライアントは、接続時に自動的にこのデバイスのコマンドをサブスクライブします。特定のコマンドを処理するには、コマンド・コールバック関数を登録する必要があります。デバイス・クライアントは、コマンドを受け取ると *command* を送信します。コールバック関数のプロパティーは以下のとおりです。"
+
+#: ../docs/devices/libraries/nodejs.rst:111
+msgid "commandName - name of the command invoked"
+msgstr ""
+"commandName - 呼び出されるコマンドの名前"
+
+#: ../docs/devices/libraries/nodejs.rst:112
+msgid "format - e.g json, xml"
+msgstr ""
+"format - 例: json、xml"
+
+#: ../docs/devices/libraries/nodejs.rst:113
+msgid "payload - payload for the command"
+msgstr ""
+"payload - コマンドのペイロード"
+
+#: ../docs/devices/libraries/nodejs.rst:114
+msgid "topic - actual topic where the command was received"
+msgstr ""
+"topic - コマンドを受け取った実際のトピック"
+
+#: ../docs/devices/libraries/nodejs.rst:140
+msgid "Disconnect Client"
+msgstr ""
+"クライアントの切断"
+
+#: ../docs/devices/libraries/nodejs.rst:142
+msgid "Disconnects the client and releases the connections"
+msgstr ""
+"クライアントを切断し、接続をリリースします"
+
+#: ../docs/devices/libraries/nodejs.rst:164
+msgid "Check Connection Status"
+msgstr ""
+"接続状況の検査"
+
+#: ../docs/devices/libraries/nodejs.rst:166
+msgid "*isConnected* gives the current status of the client connection"
+msgstr ""
+"*isConnected* はクライアント接続の現在のステータスを示します"
+

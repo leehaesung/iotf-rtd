@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/applications/api.rst:2
+msgid "HTTP API for Applications"
+msgstr ""
+"API HTTP pour les applications "
+
+#: ../docs/applications/api.rst:4
+msgid "The IoT Platform API can be used to interact with your organization in the IoT Platform."
+msgstr ""
+"L'API IoT Platform permet d'interagir avec votre organisation dans IoT Platform. "
+
+#: ../docs/applications/api.rst:7
+msgid "API Capabilities"
+msgstr ""
+"Fonctionnalités de l'API"
+
+#: ../docs/applications/api.rst:9
+msgid "The IoT Platform API supports the following functionality for applications:"
+msgstr ""
+"L'API IoT Platform prend en charge les fonctions suivantes pour les applications : "
+
+#: ../docs/applications/api.rst:11
+msgid "View organization details."
+msgstr ""
+"Affichage des détails de l'organisation."
+
+#: ../docs/applications/api.rst:12
+msgid "Bulk device operations (list all, add, remove)."
+msgstr ""
+"Exécution d'opérations globales sur les terminaux (affichage de tous les terminaux et ajout ou suppression de terminaux)."
+
+#: ../docs/applications/api.rst:13
+msgid "Device type operations (list all, create, delete, view details, update)."
+msgstr ""
+"Opérations relatives aux types de terminaux (affichage de la liste de tous les types de terminaux, création et suppression de types de terminaux, affichage des détails et mise à jour des types de terminaux)."
+
+#: ../docs/applications/api.rst:14
+msgid "Device operations (list devices, add, remove, view details, update, view location, view management information)."
+msgstr ""
+"Opérations relatives aux terminaux (affichage de la liste de terminaux, ajout et suppression de terminaux, affichage des détails d'un terminal, mise à jour des terminaux, affichage de l'emplacement et des informations de gestion)."
+
+#: ../docs/applications/api.rst:15
+msgid "Device diagnostic operations (clear log, retrieve logs, add log information, delete logs, get specific log, clear error codes, get device error codes, add an error code)."
+msgstr ""
+"Opérations de diagnostic des terminaux (effacement du journal, extraction des journaux, ajout d'informations de consignation, suppression des journaux, obtention d'un journal spécifique, effacement des codes d'erreur, obtention des codes d'erreur d'un terminal et ajout d'un code d'erreur)."
+
+#: ../docs/applications/api.rst:16
+msgid "Connection problem determination (list device connection log events)."
+msgstr ""
+"Identification des erreurs de connexion (affichage de la liste des événements du journal des connexions d'un terminal)."
+
+#: ../docs/applications/api.rst:17
+msgid "Historical event retrieval (view events from all devices, view events from a device type, view events for a specific device)."
+msgstr ""
+"Extraction des événements historiques (affichage des événements de tous les terminaux, affichage des événements d'un type de terminal et affichage des événements d'un terminal spécifique)."
+
+#: ../docs/applications/api.rst:18
+msgid "Device management request operations (list device management requests, initiate a request, clear request status, get details of a request, get list of request statuses for each affected device,  get request status for a specific device)."
+msgstr ""
+"Opérations relatives aux demandes de gestion des terminaux (affichage de la liste des demandes de gestion des terminaux, lancement d'une demande, effacement du statut d'une demande, obtention des détails d'une demande, obtention de la liste des statuts d'une demande pour chaque terminal concerné, obtention du statut d'une demande pour un terminal spécifique)."
+
+#: ../docs/applications/api.rst:19
+msgid "Usage management (retrieve number of active devices over a period of time, retrieve amount of storage used by historical event data, retrieve total amount of data used)."
+msgstr ""
+"Gestion de l'utilisation (extraction du nombre de terminaux actifs sur  une période donnée, extraction de la quantité de stockage utilisée par les données d'événement historiques, extraction de la quantité totale de données utilisée)."
+
+#: ../docs/applications/api.rst:20
+msgid "Publish events on behalf of devices (beta)"
+msgstr ""
+"Publication d'événements pour le compte de terminaux (bêta) "
+
+#: ../docs/applications/api.rst:21
+msgid "Service status queries (retrieve service statuses for an organization)."
+msgstr ""
+"Requêtes des statuts du service (extraction des statuts du service pour une organisation)."
+
+#: ../docs/applications/api.rst:28
+msgid "IoT Platform API Version 2"
+msgstr ""
+"API IoT Platform version 2"
+
+#: ../docs/applications/api.rst:30
+msgid "The current version of the IoT Platform API is `version 2 <../swagger/v0002.html>`_.  We strongly recommend that all users build their solutions based on the version 2 APIs."
+msgstr ""
+"La version actuelle de l'API IoT Platform est la `version 2 <../swagger/v0002.html>`_.  Il est fortement recommandé à tous les utilisateurs de construire leurs solutions à partir des API de version 2. "
+
+#: ../docs/applications/api.rst:38
+msgid "IoT Platform API Version 1"
+msgstr ""
+"API IoT Platform version 1"
+
+#: ../docs/applications/api.rst:40
+msgid "`Version 1 <../swagger/v0001.html>`_ of the API is still supported, however it should now be considered a deprecated API, many features listed above are not available in the version 1 API."
+msgstr ""
+"La `version 1 <../swagger/v0001.html>`_ de l'API reste prise en charge. Toutefois, elle doit être considérée comme dépréciée ; en effet, de nombreuses fonctions répertoriées ci-dessus ne sont pas disponibles dans la version 1 de l'API. "
+
+#: ../docs/applications/api.rst:45
+msgid "Many of the API paths relating to devices have changed."
+msgstr ""
+"De nombreux chemins d'API ont été modifiés pour les terminaux."
+
+#: ../docs/applications/api.rst:46
+msgid "Version 1 of the API does not support any device type operations, other than listing all device types."
+msgstr ""
+"La version 1 de l'API ne prend en charge aucune opération relative aux types de terminaux, à l'exception de l'affichage de tous les types de terminaux."
+
+#: ../docs/applications/api.rst:47
+msgid "Operations related to device management, device management requests, diagnostic information, or location cannot be performed using version 1 of the API."
+msgstr ""
+"Les opérations relatives à la gestion des terminaux, aux demandes de gestion des terminaux, aux informations de diagnostic ou à l'emplacement ne peuvent pas être effectuées à l'aide de la version 1 de l'API."
+

@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/applications/api.rst:2
+msgid "HTTP API for Applications"
+msgstr ""
+"API HTTP para Aplicativos"
+
+#: ../docs/applications/api.rst:4
+msgid "The IoT Platform API can be used to interact with your organization in the IoT Platform."
+msgstr ""
+"O IoT Platform API pode ser usado para interagir com sua organização no IoT Platform."
+
+#: ../docs/applications/api.rst:7
+msgid "API Capabilities"
+msgstr ""
+"Recursos da API"
+
+#: ../docs/applications/api.rst:9
+msgid "The IoT Platform API supports the following functionality for applications:"
+msgstr ""
+"O IoT Platform API suporta a seguinte funcionalidade para aplicativos:"
+
+#: ../docs/applications/api.rst:11
+msgid "View organization details."
+msgstr ""
+"Visualizar detalhes da organização."
+
+#: ../docs/applications/api.rst:12
+msgid "Bulk device operations (list all, add, remove)."
+msgstr ""
+"Operações de dispositivo em massa (listar todos, incluir, remover)."
+
+#: ../docs/applications/api.rst:13
+msgid "Device type operations (list all, create, delete, view details, update)."
+msgstr ""
+"Operações de tipo de dispositivo (listar todos, criar, excluir, visualizar detalhes, atualizar)."
+
+#: ../docs/applications/api.rst:14
+msgid "Device operations (list devices, add, remove, view details, update, view location, view management information)."
+msgstr ""
+"Operações de dispositivo (listar dispositivos, incluir, remover, visualizar detalhes, atualizar, visualizar local, visualizar informações de gerenciamento)."
+
+#: ../docs/applications/api.rst:15
+msgid "Device diagnostic operations (clear log, retrieve logs, add log information, delete logs, get specific log, clear error codes, get device error codes, add an error code)."
+msgstr ""
+"Operações de diagnóstico de dispositivo (limpar log, recuperar logs, incluir informações de log, excluir logs, obter log específico, limpar códigos de erro, obter códigos de erro do dispositivo, incluir um código de erro)."
+
+#: ../docs/applications/api.rst:16
+msgid "Connection problem determination (list device connection log events)."
+msgstr ""
+"Determinação de problemas de conexão (listar eventos de log da conexão de dispositivo)."
+
+#: ../docs/applications/api.rst:17
+msgid "Historical event retrieval (view events from all devices, view events from a device type, view events for a specific device)."
+msgstr ""
+"Recuperação de eventos históricos (visualizar eventos de todos os dispositivos, visualizar eventos de um tipo de dispositivo, visualizar eventos de um dispositivo específico)."
+
+#: ../docs/applications/api.rst:18
+msgid "Device management request operations (list device management requests, initiate a request, clear request status, get details of a request, get list of request statuses for each affected device,  get request status for a specific device)."
+msgstr ""
+"Operações de solicitação de gerenciamento de dispositivo (listar solicitações de gerenciamento de dispositivo, iniciar uma solicitação, limpar status da solicitação, obter detalhes de uma solicitação, obter uma lista de status de solicitação para cada dispositivo afetado, obter status de solicitação do dispositivo para um dispositivo específico)."
+
+#: ../docs/applications/api.rst:19
+msgid "Usage management (retrieve number of active devices over a period of time, retrieve amount of storage used by historical event data, retrieve total amount of data used)."
+msgstr ""
+"Gerenciamento de uso (recuperar número de dispositivos ativos durante um período de tempo, recuperar quantidade de armazenamento usado pelos dados de eventos históricos, recuperar quantidade total de dados utilizados)."
+
+#: ../docs/applications/api.rst:20
+msgid "Publish events on behalf of devices (beta)"
+msgstr ""
+"Publicar eventos em nome de dispositivos (beta)"
+
+#: ../docs/applications/api.rst:21
+msgid "Service status queries (retrieve service statuses for an organization)."
+msgstr ""
+"Consultas de status de serviço (recuperar status de serviço para uma organização)."
+
+#: ../docs/applications/api.rst:28
+msgid "IoT Platform API Version 2"
+msgstr ""
+"IoT Platform API Versão 2"
+
+#: ../docs/applications/api.rst:30
+msgid "The current version of the IoT Platform API is `version 2 <../swagger/v0002.html>`_.  We strongly recommend that all users build their solutions based on the version 2 APIs."
+msgstr ""
+"A versão atual do IoT Platform API é `versão 2 <../swagger/v0002.html>`_. É altamente recomendável que todos os usuários construam suas soluções com base nas APIs versão 2."
+
+#: ../docs/applications/api.rst:38
+msgid "IoT Platform API Version 1"
+msgstr ""
+"IoT Platform API Versão 1"
+
+#: ../docs/applications/api.rst:40
+msgid "`Version 1 <../swagger/v0001.html>`_ of the API is still supported, however it should now be considered a deprecated API, many features listed above are not available in the version 1 API."
+msgstr ""
+"A `versão 1 <../swagger/v0001.html>`_ da API ainda é suportada, no entanto, ela agora deveria ser considerada uma API descontinuada, muitos recursos listados acima não estão disponíveis na API versão 1."
+
+#: ../docs/applications/api.rst:45
+msgid "Many of the API paths relating to devices have changed."
+msgstr ""
+"Muitos dos caminhos de API relacionados aos dispositivos foram alterados."
+
+#: ../docs/applications/api.rst:46
+msgid "Version 1 of the API does not support any device type operations, other than listing all device types."
+msgstr ""
+"A versão 1 da API não suporta nenhuma operação de tipo de dispositivo, além da listagem de todos os tipos de dispositivos."
+
+#: ../docs/applications/api.rst:47
+msgid "Operations related to device management, device management requests, diagnostic information, or location cannot be performed using version 1 of the API."
+msgstr ""
+"As operações relacionadas ao gerenciamento de dispositivo, solicitações do gerenciamento de dispositivo, informações de diagnóstico ou local não podem ser executadasusando a versão 1 daAPI."
+

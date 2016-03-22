@@ -1,0 +1,883 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/applications/libraries/python.rst:2
+msgid "Python for Application Developers"
+msgstr ""
+"애플리케이션 개발자용 Python"
+
+#: ../docs/applications/libraries/python.rst:4
+msgid "See `iot-python <https://github.com/ibm-messaging/iot-python>`_ in GitHub"
+msgstr ""
+"GitHub에서 `iot-python <https://github.com/ibm-messaging/iot-python>`_ 참조"
+
+#: ../docs/applications/libraries/python.rst:5
+msgid "See `ibmiotf <https://pypi.python.org/pypi/ibmiotf>`_ on PyPi"
+msgstr ""
+"PyPi에서 `ibmiotf <https://pypi.python.org/pypi/ibmiotf>`_ 참조"
+
+#: ../docs/applications/libraries/python.rst:8
+msgid "Constructor"
+msgstr ""
+"생성자"
+
+#: ../docs/applications/libraries/python.rst:10
+msgid "The constructor builds the client instance, and accepts an options dict containing the following definitions:"
+msgstr ""
+"생성자는 클라이언트 인스턴스를 빌드하고 다음과 같은 정의가 포함된 옵션 dict를 승인합니다. "
+
+#: ../docs/applications/libraries/python.rst:12
+msgid "``org`` - Your organization ID."
+msgstr ""
+"``org`` - 조직 ID."
+
+#: ../docs/applications/libraries/python.rst:13
+msgid "``id`` - The unique ID of your application within your organization."
+msgstr ""
+"``id`` - 조직 내 애플리케이션의 고유 ID."
+
+#: ../docs/applications/libraries/python.rst:14
+msgid "``auth-method`` - Method of authentication (the only value currently supported is ``apikey``)."
+msgstr ""
+"``auth-method`` - 인증 방법(현재 지원되는 유일한 값은 ``apikey``임)."
+
+#: ../docs/applications/libraries/python.rst:15
+msgid "``auth-key`` - API key (required if auth-method is ``apikey``)."
+msgstr ""
+"``auth-key`` - API 키(auth-method가 ``apikey``인 경우에는 필수)."
+
+#: ../docs/applications/libraries/python.rst:16
+msgid "``auth-token`` - API key token (required if auth-method is ``apikey``)."
+msgstr ""
+"``auth-token`` - API 키 토큰(auth-method가 ``apikey``인 경우에는 필수)."
+
+#: ../docs/applications/libraries/python.rst:18
+msgid "If no options dict is provided, the client will connect to the IoT Platform Quickstart, and default to an unregistered device. The options dict creates definitions which are used to interact with the IoT Platform module."
+msgstr ""
+"dict 옵션을 제공하지 않을 경우 클라이언트가 IoT Platform Quickstart에 연결되며 등록되지 않은 디바이스로 기본값이 설정됩니다. 옵션 dict는 IoT Platform 모듈과 상호작용하는 데 사용되는 정의를 작성합니다. "
+
+#: ../docs/applications/libraries/python.rst:37
+msgid "Using a configuration file"
+msgstr ""
+"구성 파일 사용"
+
+#: ../docs/applications/libraries/python.rst:39
+msgid "If you are not using an options dict as shown above, you include a configuration file containing an options dict. If you are using a configuration file containing an options dict, use the following code format."
+msgstr ""
+"위에 표시된 대로 옵션 dict를 사용하지 않는 경우에는 옵션 dict가 포함된 구성 파일을 포함하십시오. 옵션 dict가 포함된 구성 파일을 사용하는 경우에는 다음의 코드 형식을 사용하십시오. "
+
+#: ../docs/applications/libraries/python.rst:50
+msgid "The application configuration file must be in the following format:"
+msgstr ""
+"애플리케이션 구성 파일의 형식은 다음 형식이어야 합니다. "
+
+#: ../docs/applications/libraries/python.rst:66
+msgid "API calls"
+msgstr ""
+"API 호출"
+
+#: ../docs/applications/libraries/python.rst:68
+msgid "Each method in the APIClient responds with either a valid response (JSON or boolean) in the case of success or IoTFCReSTException in the case of failure. The IoTFCReSTException contains the following properties that application can parse to get more information about the failure."
+msgstr ""
+"APIClient의 각 메소드는 성공 시 유효한 응답(JSON 또는 부울)으로 응답하거나 실패 시 IoTFCReSTException으로 응답합니다. IoTFCReSTException에는 실패에 대한 자세한 정보를 가져오는 데 애플리케이션이 구문 분석할 수 있는 다음 특성이 포함됩니다."
+
+#: ../docs/applications/libraries/python.rst:70
+msgid "httpcode - HTTP Status Code"
+msgstr ""
+"httpcode - HTTP 상태 코드"
+
+#: ../docs/applications/libraries/python.rst:71
+msgid "message - Exception message containing the reason for the failure"
+msgstr ""
+"message - 실패에 대한 이유가 포함된 예외 메시지"
+
+#: ../docs/applications/libraries/python.rst:72
+msgid "response - JsonElement containing the partial response if any otherwise null"
+msgstr ""
+"response - 달리 널인 경우 부분 응답이 포함된 JsonElement"
+
+#: ../docs/applications/libraries/python.rst:74
+msgid "So in the case of failure, application needs to parse the response to see if the action is partially successful or not."
+msgstr ""
+"따라서 실패한 경우 애플리케이션은 응답을 구문 분석하여 조치가 부분적으로 성공인지 여부를 확인해야 합니다."
+
+#: ../docs/applications/libraries/python.rst:81
+msgid "Subscribing to device events"
+msgstr ""
+"디바이스 이벤트 구독"
+
+#: ../docs/applications/libraries/python.rst:82
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"이벤트는 디바이스가 데이터를 IoT Platform에 공개할 때 사용하는 메커니즘입니다. 디바이스는 이벤트의 컨텐츠를 제어하고 전송하는 각 이벤트에 대해 이름을 지정합니다. "
+
+#: ../docs/applications/libraries/python.rst:84
+msgid "When an event is received by the IoT Platform the credentials of the connection on which the event was received are used to determine from which device the event was sent. With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"IoT Platform에서 이벤트를 수신하면 이벤트가 수신된 연결의 신임 정보를 사용하여 이벤트를 전송한 디바이스를 판별합니다. 이 아키텍처를 사용하면 한 디바이스가 다른 디바이스를 위장할 수 없습니다. "
+
+#: ../docs/applications/libraries/python.rst:86
+msgid "By default, applications will subscribe to all events from all connected devices. Use the type, id, event and msgFormat parameters to control the scope of the subscription. A single client can support multiple subscriptions. The code samples below give examples of how to subscribe to devices dependent on device type, id, event and msgFormat parameters."
+msgstr ""
+"기본적으로 애플리케이션은 연결된 모든 디바이스의 모든 이벤트를 구독합니다. 유형, id, 이벤트 및 msgFormat 매개변수를 사용하여 구독의 범위를 제어하십시오. 단일 클라이언트가 여러 구독을 지원할 수 있습니다. 아래의 코드 샘플에서는 디바이스 유형, id, 이벤트 및 msgFormat 매개변수에 종속된 디바이스를 구독하는 방법에 대한 예제를 제공합니다. "
+
+#: ../docs/applications/libraries/python.rst:90
+msgid "To subscribe to all events from all devices"
+msgstr ""
+"모든 디바이스의 모든 이벤트 구독"
+
+#: ../docs/applications/libraries/python.rst:104
+msgid "To subscribe to all events from all devices of a specific type"
+msgstr ""
+"특정 유형의 모든 디바이스의 모든 이벤트 구독"
+
+#: ../docs/applications/libraries/python.rst:118
+msgid "To subscribe to a specific event from all devices"
+msgstr ""
+"모든 디바이스의 특정 이벤트 구독"
+
+#: ../docs/applications/libraries/python.rst:132
+msgid "To subscribe to a specific event from two or more different devices"
+msgstr ""
+"둘 이상의 다른 디바이스의 특정 이벤트 구독"
+
+#: ../docs/applications/libraries/python.rst:147
+msgid "To subscribe to all events published by a device in json format"
+msgstr ""
+"JSON 형식으로 디바이스가 공개하는 모든 이벤트 구독"
+
+#: ../docs/applications/libraries/python.rst:164
+msgid "Handling events from devices"
+msgstr ""
+"디바이스의 이벤트 처리"
+
+#: ../docs/applications/libraries/python.rst:165
+msgid "To process the events received by your subscriptions you need to register an event callback method. The messages are returned as an instance of the Event class:"
+msgstr ""
+"구독에 의해 수신된 이벤트를 처리하려면 이벤트 콜백 메소드를 등록해야 합니다. 메시지는 이벤트 클래스의 인스턴스로 리턴됩니다. "
+
+#: ../docs/applications/libraries/python.rst:167
+msgid "event.device - string (uniquely identifies the device across all types of devices in the organization)"
+msgstr ""
+"event.device - 문자열(조직에 있는 모든 유형의 디바이스에서 디바이스를 고유하게 식별함)"
+
+#: ../docs/applications/libraries/python.rst:168
+msgid "event.deviceType - string"
+msgstr ""
+"event.deviceType - 문자열"
+
+#: ../docs/applications/libraries/python.rst:169
+msgid "event.deviceId - string"
+msgstr ""
+"event.deviceId - 문자열"
+
+#: ../docs/applications/libraries/python.rst:170
+msgid "event.event - string"
+msgstr ""
+"event.event - 문자열"
+
+#: ../docs/applications/libraries/python.rst:171
+msgid "event.format - string"
+msgstr ""
+"event.format - 문자열"
+
+#: ../docs/applications/libraries/python.rst:172
+msgid "event.data - dict"
+msgstr ""
+"event.data - dict"
+
+#: ../docs/applications/libraries/python.rst:173
+msgid "event.timestamp - datetime"
+msgstr ""
+"event.timestamp - 날짜/시간"
+
+#: ../docs/applications/libraries/python.rst:196
+msgid "Subscribing to device status"
+msgstr ""
+"디바이스 상태 구독"
+
+#: ../docs/applications/libraries/python.rst:197
+msgid "By default, this will subscribe to status updates for all connected devices. Use the type and id parameters to control the scope of the subscription. A single client can support multiple subscriptions."
+msgstr ""
+"기본적으로 이는 연결된 모든 디바이스에 대한 상태 업데이트를 구독합니다. 유형 및 id 매개변수를 사용하여 구독의 범위를 제어하십시오. 단일 클라이언트가 여러 구독을 지원할 수 있습니다. "
+
+#: ../docs/applications/libraries/python.rst:200
+msgid "Subscribe to status updates for all devices"
+msgstr ""
+"모든 디바이스에 대한 상태 업데이트 구독"
+
+#: ../docs/applications/libraries/python.rst:214
+msgid "Subscribe to status updates for all devices of a specific type"
+msgstr ""
+"특정 유형의 모든 디바이스에 대한 상태 업데이트 구독"
+
+#: ../docs/applications/libraries/python.rst:228
+msgid "Subscribe to status updates for two different devices"
+msgstr ""
+"두 개의 다른 디바이스에 대한 상태 업데이트 구독"
+
+#: ../docs/applications/libraries/python.rst:246
+msgid "Handling status updates from devices"
+msgstr ""
+"디바이스의 상태 업데이트 처리"
+
+#: ../docs/applications/libraries/python.rst:247
+msgid "To process the status updates received by your subscriptions you need to register an event callback method. The messages are returned as an instance of the Status class:"
+msgstr ""
+"구독에 의해 수신된 상태 업데이트를 처리하려면 이벤트 콜백 메소드를 등록해야 합니다. 메시지는 상태 클래스의 인스턴스로 리턴됩니다. "
+
+#: ../docs/applications/libraries/python.rst:249
+msgid "The following properties are set for both \"Connect\" and \"Disconnect\" status events:"
+msgstr ""
+"\"연결\" 상태 이벤트와 \"연결 끊기\" 상태 이벤트 모두에 대해 다음과 같은 특성이 설정됩니다. "
+
+#: ../docs/applications/libraries/python.rst:251
+msgid "status.clientAddr - string"
+msgstr ""
+"status.clientAddr - 문자열"
+
+#: ../docs/applications/libraries/python.rst:252
+msgid "status.protocol - string"
+msgstr ""
+"status.protocol - 문자열"
+
+#: ../docs/applications/libraries/python.rst:253
+msgid "status.clientId - string"
+msgstr ""
+"status.clientId - 문자열"
+
+#: ../docs/applications/libraries/python.rst:254
+msgid "status.user - string"
+msgstr ""
+"status.user - 문자열"
+
+#: ../docs/applications/libraries/python.rst:255
+msgid "status.time - datetime"
+msgstr ""
+"status.time - 날짜/시간"
+
+#: ../docs/applications/libraries/python.rst:256
+msgid "status.action - string"
+msgstr ""
+"status.action - 문자열"
+
+#: ../docs/applications/libraries/python.rst:257
+msgid "status.connectTime - datetime"
+msgstr ""
+"status.connectTime - 날짜/시간"
+
+#: ../docs/applications/libraries/python.rst:258
+msgid "status.port - integer"
+msgstr ""
+"status.port - 정수"
+
+#: ../docs/applications/libraries/python.rst:260
+msgid "The following properties are only set when the action is \"Disconnect\":"
+msgstr ""
+"다음과 같은 특성은 조치가 \"연결 끊기\"인 경우에만 설정됩니다. "
+
+#: ../docs/applications/libraries/python.rst:262
+msgid "status.writeMsg - integer"
+msgstr ""
+"status.writeMsg - 정수"
+
+#: ../docs/applications/libraries/python.rst:263
+msgid "status.readMsg - integer"
+msgstr ""
+"status.readMsg - 정수"
+
+#: ../docs/applications/libraries/python.rst:264
+msgid "status.reason - string"
+msgstr ""
+"status.reason - 문자열"
+
+#: ../docs/applications/libraries/python.rst:265
+msgid "status.readBytes - integer"
+msgstr ""
+"status.readBytes - 정수"
+
+#: ../docs/applications/libraries/python.rst:266
+msgid "status.writeBytes - integer"
+msgstr ""
+"status.writeBytes - 정수"
+
+#: ../docs/applications/libraries/python.rst:292
+msgid "Publishing events from devices"
+msgstr ""
+"디바이스의 이벤트 공개"
+
+#: ../docs/applications/libraries/python.rst:293
+msgid "Applications can publish events as if they originated from a Device"
+msgstr ""
+"애플리케이션은 디바이스에서 시작된 것처럼 이벤트를 공개할 수 있음"
+
+#: ../docs/applications/libraries/python.rst:311
+msgid "Publishing commands to devices"
+msgstr ""
+"디바이스에 명령 공개"
+
+#: ../docs/applications/libraries/python.rst:312
+msgid "Applications can publish commands to connected devices"
+msgstr ""
+"애플리케이션은 연결된 디바이스에 명령을 공개할 수 있음"
+
+#: ../docs/applications/libraries/python.rst:330
+msgid "Organization details"
+msgstr ""
+"조직 세부사항"
+
+#: ../docs/applications/libraries/python.rst:332
+msgid "Applications can use the ``getOrganizationDetails()`` method to retrieve the details about the configuration of the organization."
+msgstr ""
+"애플리케이션은 ``getOrganizationDetails()`` 메소드를 사용하여 조직 구성에 대한 세부사항을 검색할 수 있습니다. "
+
+#: ../docs/applications/libraries/python.rst:347
+msgid "Refer to the Organization Configuration section of the `IBM IoT Platform API <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html>`__ for information about the request & response model and http status code."
+msgstr ""
+"요청 및 응답 모델과 http 상태 코드에 대한 정보는 `IBM IoT Platform API <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html>`__의 조직 구성 절을 참조하십시오."
+
+#: ../docs/applications/libraries/python.rst:355
+msgid "Bulk device operations"
+msgstr ""
+"벌크 디바이스 오퍼레이션"
+
+#: ../docs/applications/libraries/python.rst:357
+msgid "Applications can use bulk operations to get, add or remove devices in bulk."
+msgstr ""
+"애플리케이션이 벌크 오퍼레이션을 사용하여 디바이스를 대량으로 가져오고 추가하거나 제거할 수 있습니다. "
+
+#: ../docs/applications/libraries/python.rst:359
+msgid "Refer to the Bulk Operations section of the `IBM IoT Platform API <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html#!/Bulk_Operations/>`__ for information about the list of query parameters, the request & response model and http status code."
+msgstr ""
+"조회 매개변수, 요청 및 응답 모델과 http 상태 코드의 목록에 대한 정보는 `IBM IoT Platform API <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html#!/Bulk_Operations/>`__의 벌크 오퍼레이션 섹션을 참조하십시오."
+
+#: ../docs/applications/libraries/python.rst:362
+msgid "Retrieve device information"
+msgstr ""
+"디바이스 정보 검색"
+
+#: ../docs/applications/libraries/python.rst:364
+msgid "Bulk device information can be retrieved using the ``getAllDevices()`` method. This method retrieves information on all registered devices in the organization, each request can contain a maximum of 512KB."
+msgstr ""
+"벌크 디바이스 정보는 ``getAllDevices()`` 메소드를 사용하여 검색할 수 있습니다. 이 메소드는 조직에서 모든 등록된 디바이스의 정보를 검색하며, 각 요청에는 최대 512KB가 포함될 수 있습니다."
+
+#: ../docs/applications/libraries/python.rst:367
+msgid "The response contains parameters required by the application to retrieve the dictionary *results* from the response to get the array of devices returned. Other parameters in the response are required to make further calls, for example, the ``_bookmark`` element can be used to page through results. Issue the first request without specifying a bookmark, then take the bookmark returned in the response and provide it on the request for the next page. Repeat until the end of the result set indicated by the absence of a bookmark. Each request must use exactly the same values for the other parameters, or the results are undefined."
+msgstr ""
+"응답에는 리턴된 디바이스의 어레이를 가져오기 위해 응답에서 사전 *results*를 검색하는 데 애플리케이션에 필요한 매개변수가 포함됩니다. 응답의 기타 매개변수는 추가 호출을 작성하는 데 필요합니다. 예를 들어, ``_bookmark`` 요소를 사용하여 페이지별로 결과를 볼 수 있습니다. 책갈피를 지정하지 않고 첫 번째 요청을 발행한 다음 응답에 리턴된 책갈피를 가져와서 그 다음 페이지에 대해 요청 시 제공하십시오. 책갈피의 부재로 표시된 결과 세트의 끝까지 반복하십시오. 각 요청은 기타 매개변수에 대해 정확히 동일한 값을 사용해야 합니다. 그렇지 않으면 결과가 정의되지 않습니다."
+
+#: ../docs/applications/libraries/python.rst:389
+msgid "Add Devices in bulk"
+msgstr ""
+"대량으로 디바이스 추가"
+
+#: ../docs/applications/libraries/python.rst:391
+msgid "The ``addMultipleDevices()`` method can be used to add one or more devices to your IoT Platform organization, the maximum size of a request is set to 512KB.  The response will contain the generated authentication tokens for each added device. These authentication tokens must be recorded when processing the response, as lost authentication tokens cannot be retrieved."
+msgstr ""
+"``addMultipleDevices()`` 메소드를 사용하여 IoT Platform 조직에 하나 이상의 디바이스를 추가할 수 있습니다. 최대 요청 크기는 512KB로 설정됩니다. 응답에는 각 추가된 디바이스의 생성된 인증 토큰이 포함됩니다. 이러한 인증 토큰은 유실된 인증 토큰을 검색할 수 없으므로 응답 처리 시 기록되어야 합니다."
+
+#: ../docs/applications/libraries/python.rst:416
+msgid "Delete Devices in bulk"
+msgstr ""
+"대량으로 디바이스 삭제"
+
+#: ../docs/applications/libraries/python.rst:418
+msgid "The ``deleteMultipleDevices()`` method can be used to delete multiple devices from an IoT Platform organization, each request can contain a maximum of 512KB."
+msgstr ""
+"``deleteMultipleDevices()`` 메소드를 사용하여 IoT Platform 조직에서 여러 디바이스를 삭제할 수 있으며, 각 요청에는 최대 512KB가 포함될 수 있습니다. "
+
+#: ../docs/applications/libraries/python.rst:443
+msgid "Device Type Operations"
+msgstr ""
+"디바이스 유형 오퍼레이션"
+
+#: ../docs/applications/libraries/python.rst:445
+msgid "Device types can be used as templates for adding device information to devices as they are added to your organization. Applications can use the IoT Platform API to list, create, delete, view, or update device types in your organization."
+msgstr ""
+"디바이스 유형은 해당 조직에 추가되므로 디바이스에 디바이스 정보를 추가하는 데 템플리트로 사용될 수 있습니다. 애플리케이션은 IoT Platform API를 사용하여 해당 조직의 디바이스 유형을 나열, 작성, 삭제, 업데이트하거나 볼 수 있습니다. "
+
+#: ../docs/applications/libraries/python.rst:449
+msgid "Refer to the Device Types section of the `IBM IoT Platform API <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html>`__ documentation for information about the list of query parameters, the request & response model, and http status codes."
+msgstr ""
+"조회 매개변수, 요청 및 응답 모델과 http 상태 코드의 목록에 대한 정보는 `IBM IoT Platform API <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html>`__ 문서의 디바이스 유형 섹션을 참조하십시오."
+
+#: ../docs/applications/libraries/python.rst:454
+msgid "Get all Device Types"
+msgstr ""
+"모든 디바이스 유형 가져오기"
+
+#: ../docs/applications/libraries/python.rst:456
+msgid "The ``getAllDeviceTypes()`` method can be used to retrieve all device types in your IoT Platform organization. The response contains parameters and application needs to retrieve the dictionary *results* from the response to get the array of devices returned. Other parameters in the response are required to make further call, for example, the *_bookmark* element can be used to page through results. Issue the first request without specifying a bookmark, then take the bookmark returned in the response and provide it on the request for the next page. Repeat until the end of the result set indicated by the absence of a bookmark. Each request must use exactly the same values for the other parameters, or the results are undefined."
+msgstr ""
+"``getAllDeviceTypes()`` 메소드를 사용하여 IoT Platform 조직에서 모든 디바이스 유형을 검색할 수 있습니다. 응답에는 리턴된 디바이스의 어레이를 가져오기 위해 응답에서 사전 *results*를 검색하는 데 애플리케이션에 필요한 매개변수가 포함됩니다. 응답의 기타 매개변수는 추가 호출을 작성하는 데 필요합니다. 예를 들어, *_bookmark* 요소를 사용하여 페이지별로 결과를 볼 수 있습니다. 책갈피를 지정하지 않고 첫 번째 요청을 발행한 다음 응답에 리턴된 책갈피를 가져와서 그 다음 페이지에 대해 요청 시 제공하십시오. 책갈피의 부재로 표시된 결과 세트의 끝까지 반복하십시오. 각 요청은 기타 매개변수에 대해 정확히 동일한 값을 사용해야 합니다. 그렇지 않으면 결과가 정의되지 않습니다."
+
+#: ../docs/applications/libraries/python.rst:485
+msgid "Add a Device Type"
+msgstr ""
+"디바이스 유형 추가"
+
+#: ../docs/applications/libraries/python.rst:487
+msgid "The ``addDeviceType()`` method can be used to register a device type to IoT Platform. In each request, you must first define the device information, and device metadata elements which you want to be applied to all devices of this type. The device information element is comprised of several variables, including, serial number, manufacturer, model, class, description, firmware and hardware versions, and descriptive location. The metadata element is comprised of custom variables and values which can be defined by the user."
+msgstr ""
+"``addDeviceType()`` 메소드를 사용하여 IoT Platform에 디바이스 유형을 등록할 수 있습니다. 각 요청에서는 먼저 디바이스 정보와 이 유형의 모든 디바이스에 적용되도록 하려는 디바이스 메타데이터 요소를 정의해야 합니다. 디바이스 정보 요소는 일련 번호, 제조업체, 모델, 클래스, 설명, 펌웨어 및 하드웨어 버전과 설명 위치를 포함하여 몇몇 변수로 구성됩니다. 메타데이터 요소는 사용자가 정의할 수 있는 값 및 사용자 정의 변수로 구성됩니다."
+
+#: ../docs/applications/libraries/python.rst:523
+msgid "Delete a Device Type"
+msgstr ""
+"디바이스 유형 삭제"
+
+#: ../docs/applications/libraries/python.rst:525
+msgid "The ``deleteDeviceType()`` method can be used to delete a device type from your IoT Platform organization."
+msgstr ""
+"``deleteDeviceType()`` 메소드를 사용하여 IoT Platform 조직에서 디바이스 유형을 삭제할 수 있습니다. "
+
+#: ../docs/applications/libraries/python.rst:542
+msgid "Get a Device Type"
+msgstr ""
+"디바이스 유형 가져오기"
+
+#: ../docs/applications/libraries/python.rst:544
+msgid "The ``getDeviceType()`` method retrieves information on a given device type. The ``typeId`` of the device type you wish to retrieve must be used as a parameter"
+msgstr ""
+"``getDeviceType()`` 메소드는 지정된 디바이스 유형에 대한 정보를 검색합니다. 검색하려는 디바이스 유형의 ``typeId``를 매개변수로 사용해야 합니다. "
+
+#: ../docs/applications/libraries/python.rst:561
+msgid "Update a Device Type"
+msgstr ""
+"디바이스 유형 업데이트"
+
+#: ../docs/applications/libraries/python.rst:563
+msgid "The ``updateDeviceType()`` method can be used to modify the properties of a device type. When using this method, several parameters must be defined. Firstly, the ``typeId`` of the device type to be updated must be specified, then the ``description``, ``deviceInfo``, and ``metadata`` elements."
+msgstr ""
+"``updateDeviceType()`` 메소드를 사용하여 디바이스 유형의 특성을 수정할 수 있습니다. 이 메소드를 사용할 때 몇몇 매개변수를 정의해야 합니다. 먼저, 업데이트할 디바이스 유형의 ``typeId``를 지정한 다음 ``description``, ``deviceInfo`` 및 ``metadata`` 요소를 지정해야 합니다. "
+
+#: ../docs/applications/libraries/python.rst:599
+msgid "Device operations"
+msgstr ""
+"디바이스 오퍼레이션"
+
+#: ../docs/applications/libraries/python.rst:601
+msgid "Device operations made available through the API include listing, adding, removing, viewing, updating, viewing location and viewing  device management information of devices in an IoT Platform organization."
+msgstr ""
+"API를 통해 사용 가능한 디바이스 오퍼레이션에는 나열, 추가, 제거, 보기, 업데이트, 위치 보기 및 IoT Platform 조직에서 디바이스의 디바이스 관리 정보 보기가 포함됩니다. "
+
+#: ../docs/applications/libraries/python.rst:603
+msgid "Refer to the Device section of the `IoT Platform API <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html>`__ for information about the list of query parameters, the request & response model and http status code."
+msgstr ""
+"조회 매개변수, 요청 및 응답 모델과 http 상태 코드의 목록에 대한 정보는 `IoT Platform API <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html>`__의 디바이스 절을 참조하십시오."
+
+#: ../docs/applications/libraries/python.rst:606
+msgid "Get Devices of a particular Device Type"
+msgstr ""
+"특정한 디바이스 유형의 디바이스 가져오기"
+
+#: ../docs/applications/libraries/python.rst:608
+msgid "The *retrieveDevices()* method can be used to retrieve all the devices of a particular device type in an organization from IoT Platform. For example,"
+msgstr ""
+"*retrieveDevices()* 메소드를 사용하여 IoT Platform에서 조직에 있는 특정 디바이스 유형의 모든 디바이스를 검색할 수 있습니다. 예를 들어, 다음과 같습니다."
+
+#: ../docs/applications/libraries/python.rst:615
+msgid "The response contains parameters and application needs to retrieve the dictionary *results* from the response to get the array of devices returned. Other parameters in the response are required to make further call, for example, the *_bookmark* element can be used to page through results. Issue the first request without specifying a bookmark, then take the bookmark returned in the response and provide it on the request for the next page. Repeat until the end of the result set indicated by the absence of a bookmark. Each request must use exactly the same values for the other parameters, or the results are undefined."
+msgstr ""
+"응답에는 리턴된 디바이스의 어레이를 가져오기 위해 응답에서 사전 *results*를 검색하는 데 애플리케이션에 필요한 매개변수가 포함됩니다. 응답의 기타 매개변수는 추가 호출을 작성하는 데 필요합니다. 예를 들어, *_bookmark* 요소를 사용하여 페이지별로 결과를 볼 수 있습니다. 책갈피를 지정하지 않고 첫 번째 요청을 발행한 다음 응답에 리턴된 책갈피를 가져와서 그 다음 페이지에 대해 요청 시 제공하십시오. 책갈피의 부재로 표시된 결과 세트의 끝까지 반복하십시오. 각 요청은 기타 매개변수에 대해 정확히 동일한 값을 사용해야 합니다. 그렇지 않으면 결과가 정의되지 않습니다."
+
+#: ../docs/applications/libraries/python.rst:617
+#: ../docs/applications/libraries/python.rst:889
+msgid "In order to pass the *_bookmark* or any other condition, the overloaded method must be used. The overloaded method takes the parameters in the form of dictionary as shown below,"
+msgstr ""
+"*_bookmark* 또는 임의의 기타 조건을 전달하려면 과부하된 메소드를 사용해야 합니다. 과부하된 메소드는 아래에 표시된 대로 사전의 양식으로 매개변수를 가져옵니다."
+
+#: ../docs/applications/libraries/python.rst:623
+msgid "The above snippet sorts the response based on device id and uses the bookmark to page through the results."
+msgstr ""
+"위의 스니펫은 디바이스에 기반하여 응답을 정렬하고 책갈피를 사용하여 페이지별로 결과를 봅니다."
+
+#: ../docs/applications/libraries/python.rst:626
+msgid "Add a Device"
+msgstr ""
+"디바이스 추가"
+
+#: ../docs/applications/libraries/python.rst:628
+msgid "The *registerDevice()* method is used to add a device to an IoT Platform organization. The *registerDevice()* method adds a single device to your IoT Platform organization. The parameters which can be set when adding a device are:"
+msgstr ""
+"*registerDevice()* 메소드를 사용하여 IoT Platform 조직에 디바이스를 추가할 수 있습니다. *registerDevice()* 메소드는 IoT Platform 조직에 단일 디바이스를 추가합니다. 디바이스 추가 시 설정할 수 있는 매개변수는 다음과 같습니다."
+
+#: ../docs/applications/libraries/python.rst:630
+msgid "deviceTypeId: *Optional*. Assigns a device type to the device. Where there is a clash between variables defined by the device type and variables defined by under deviceInfo, the device specific variables will take precedence."
+msgstr ""
+"deviceTypeId: *Optional*. 디바이스 유형을 디바이스에 지정합니다. 디바이스 유형에서 정의된 변수 및 deviceInfo에서 정의된 변수 간에 충돌이 있는 경우 디바이스 특정 변수가 우선합니다."
+
+#: ../docs/applications/libraries/python.rst:631
+msgid "deviceId: *Mandatory*."
+msgstr ""
+"deviceId: *Mandatory*."
+
+#: ../docs/applications/libraries/python.rst:632
+msgid "authToken: *Optional*. If no authentication token is supplied, one will be generated and included in the response."
+msgstr ""
+"authToken: *Optional*. 인증 토큰이 제공되지 않은 경우 생성되어 응답에 포함됩니다."
+
+#: ../docs/applications/libraries/python.rst:633
+msgid "deviceInfo: *Optional*. This parameter is optional, and can contain a number of variables, including: serialNumber, manufacturer, model, deviceClass, description, firmware and hardware versions, and descriptiveLocation."
+msgstr ""
+"deviceInfo: *Optional*. 이 매개변수는 선택사항이며 serialNumber, 제조업체, 모델, deviceClass, 설명, 펌웨어 및 하드웨어 버전과 descriptiveLocation을 포함하여 다수의 변수를 포함할 수 있습니다."
+
+#: ../docs/applications/libraries/python.rst:634
+msgid "metadata: *Optional*. Metadata can optionally be added in the form of custom field:value string pairs. An example is given in the code sample below."
+msgstr ""
+"metadata: *Optional*. 메타데이터는 사용자 정의 필드:값 문자열 쌍의 양식으로 선택적으로 추가될 수 있습니다. 예제가 아래 코드 샘플에 제공됩니다."
+
+#: ../docs/applications/libraries/python.rst:635
+msgid "location: *Optional*. This parameter contains the longitude, latitude, elevation, accuracy, and mesauredDateTime variables."
+msgstr ""
+"location: *Optional*. 이 매개변수는 경도, 위도, 고도, 정확성 및 mesauredDateTime 변수를 포함합니다."
+
+#: ../docs/applications/libraries/python.rst:637
+msgid "For more information on the parameters presented here, and the response format and codes, please see the relevant section of `API documentation <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html#!/Devices/post_device_types_typeId_devices>`__."
+msgstr ""
+"여기에 표시된 매개변수 및 응답 형식과 코드에 대한 자세한 정보는 `API 문서 <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html#!/Devices/post_device_types_typeId_devices>`__의 관련 섹션을 참조하십시오."
+
+#: ../docs/applications/libraries/python.rst:639
+msgid "When using the *registerDevice()* method, you must define the mandatory deviceID parameter, and any of the optional parameters you require for your device, then call the method using the parameters you've selected."
+msgstr ""
+"*registerDevice()* 메소드 사용 시 필수 deviceID 매개변수 및 디바이스에 대해 필요한 임의의 선택적 매개변수를 정의한 다음 선택한 매개변수를 사용하는 메소드를 호출해야 합니다."
+
+#: ../docs/applications/libraries/python.rst:642
+#: ../docs/applications/libraries/python.rst:703
+#: ../docs/applications/libraries/python.rst:746
+msgid "Sample"
+msgstr ""
+"샘플"
+
+#: ../docs/applications/libraries/python.rst:644
+msgid "The following code sample should be inserted after the constructor code in a .py file. This code demonstrates defining the deviceId, authToken, metadata, deviceInfo parameters, and location parameters and then using the method with those parameters and adding a device type."
+msgstr ""
+"다음 코드 샘플은 .py 파일에서 생성자 코드 다음에 삽입되어야 합니다. 이 코드는 deviceId, authToken,메타데이터, deviceInfo 매개변수 및 위치 매개변수 정의를 보여준 다음 해당 매개변수가 포함된 메소드 사용 및 디바이스 유형 추가를 보여줍니다."
+
+#: ../docs/applications/libraries/python.rst:658
+msgid "Delete a Device"
+msgstr ""
+"디바이스 삭제"
+
+#: ../docs/applications/libraries/python.rst:660
+msgid "The *deleteDevice()* method is used to remove a device from an IoT Platform organization. When deleting a device using this method, the parameters which must be specified in the method are the deviceTypeId, and the deviceId."
+msgstr ""
+"*deleteDevice()* 메소드를 사용하여 IoT Platform 조직에서 디바이스를 삭제할 수 있습니다. 이 메소드를 통해 디바이스를 삭제하는 경우 메소드에 지정되어야 하는 매개변수는 deviceTypeId 및 deviceId입니다."
+
+#: ../docs/applications/libraries/python.rst:662
+#: ../docs/applications/libraries/python.rst:674
+msgid "The following code snippet provides an example of the format required for this method."
+msgstr ""
+"다음 코드 스니펫은 이 메소드에 필요한 형식의 예제를 제공합니다."
+
+#: ../docs/applications/libraries/python.rst:670
+msgid "Get a Device"
+msgstr ""
+"디바이스 가져오기"
+
+#: ../docs/applications/libraries/python.rst:672
+msgid "The *getDevice()* method can be used to retrieve a device from an IoT Platform organization. When retrieving device details using this method, the parameters which must be specified in the method are the deviceTypeId, and the deviceId."
+msgstr ""
+"*getDevice()* 메소드를 사용하여 IoT Platform 조직에서 디바이스를 검색할 수 있습니다. 이 메소드를 통해 디바이스 세부사항을 검색하는 경우 메소드에 지정되어야 하는 매개변수는 deviceTypeId 및 deviceId입니다."
+
+#: ../docs/applications/libraries/python.rst:682
+msgid "Get all Devices"
+msgstr ""
+"모든 디바이스 가져오기"
+
+#: ../docs/applications/libraries/python.rst:684
+msgid "The *getAllDevices()* method can be used to retrieve all devices within an IoT Platform organization."
+msgstr ""
+"*getAllDevices()* 메소드를 사용하여 IoT Platform 조직 내에서 모든 디바이스를 검색할 수 있습니다. "
+
+#: ../docs/applications/libraries/python.rst:692
+msgid "Update a Device"
+msgstr ""
+"디바이스 업데이트"
+
+#: ../docs/applications/libraries/python.rst:694
+msgid "The *updateDevice()* method is used to modify one or more properties of a device. Any property in the deviceInfo or metadata parameters can be updated. In order to update a device property, it must be defined above the method. The status parameter should contain \"alert\": True. The Alert property controls whether a device will display error codes in the IoT Platform user interface, and should be set by default to 'True'."
+msgstr ""
+"*updateDevice()* 메소드는 디바이스의 하나 이상의 특성을 수정하는 데 사용됩니다. deviceInfo 또는 메타데이터 매개변수의 특성을 업데이트할 수 있습니다. 디바이스 특성을 업데이트하려면 메소드 위에 정의되어야 합니다. 상태 매개변수는 \"경보\": True를 포함해야 합니다. Alert 특성은 디바이스가 IoT Platform 사용자 인터페이스에서 오류 코드를 표시하는지 여부를 제어하며, 기본적으로 'True'로 설정해야 합니다. "
+
+#: ../docs/applications/libraries/python.rst:705
+msgid "In this sample, the following code identifies a specific device, and updates several properties under the deviceInfo parameter."
+msgstr ""
+"이 샘플에서 다음 코드가 특정 디바이스를 식별하고 deviceInfo 매개변수에서 몇몇 특성을 업데이트합니다."
+
+#: ../docs/applications/libraries/python.rst:714
+msgid "Get Location Information"
+msgstr ""
+"위치 정보 가져오기"
+
+#: ../docs/applications/libraries/python.rst:716
+msgid "The *getDeviceLocation()* method can be used to retrieve the location information of a device. The parameters required for retrieving the location data are deviceTypeId and deviceId."
+msgstr ""
+"*getDeviceLocation()* 메소드는 디바이스의 위치 정보를 검색하는 데 사용할 수 있습니다. 위치 데이터를 검색하는 데 필요한 매개변수는 deviceTypeId 및 deviceId입니다."
+
+#: ../docs/applications/libraries/python.rst:722
+msgid "The response to this method contains the longitude, latitude, elevation, accuracy, measuredTimeStamp, and updatedTimeStamp properties."
+msgstr ""
+"이 메소드에 대한 응답은 경도, 위도, 고도, 정확성, measuredTimeStamp 및 updatedTimeStamp 특성을 포함합니다."
+
+#: ../docs/applications/libraries/python.rst:726
+msgid "Update Location Information"
+msgstr ""
+"위치 정보 업데이트"
+
+#: ../docs/applications/libraries/python.rst:728
+msgid "The *updateDeviceLocation()* method is used to modify the location information for a device. Simlarly to updating device properties, the deviceLocation parameter must be defined with the changes you wish to apply. The code sample below demonstrates changing the location data for a given device."
+msgstr ""
+"*updateDeviceLocation()* 메소드는 디바이스의 위치 정보를 수정하는 데 사용됩니다. 디바이스 특성 업데이트와 유사하게 deviceLocation 매개변수는 적용하려는 변경사항과 함께 정의되어야 합니다. 아래의 코드 샘플이 제공된 디바이스에 대해 위치 데이터 변경을 보여줍니다."
+
+#: ../docs/applications/libraries/python.rst:735
+msgid "If no date is supplied, the entry is added with the current date and time."
+msgstr ""
+"날짜가 제공되지 않는 경우 현재 날짜 및 시간이 포함된 항목이 추가됩니다."
+
+#: ../docs/applications/libraries/python.rst:739
+msgid "Get Device Management Information"
+msgstr ""
+"디바이스 관리 정보 가져오기"
+
+#: ../docs/applications/libraries/python.rst:741
+msgid "The *getDeviceManagementInformation()* method is used to get the device management information for a device. The response contains the last activity date-time, the device's dormant status (true/false), support for device and firmware actions, and firmware data. For a comprehensive list of response content, please see the relevant API documentation."
+msgstr ""
+"*getDeviceManagementInformation()* 메소드는 디바이스의 디바이스 관리 정보를 가져오는 데 사용됩니다. 응답에는 마지막 활동 날짜-시간, 디바이스의 유휴 상태(true/false), 디바이스 및 펌웨어 조치에 대한 지원 및 펌웨어 데이터가 포함됩니다. 응답 컨텐츠의 전체 목록은 관련 API 문서를 참조하십시오."
+
+#: ../docs/applications/libraries/python.rst:743
+msgid "The following code sample will return the device management information for a device with the deviceId \"00aabbccde03\", with deviceTypeId \"iotsample-arduino\"."
+msgstr ""
+"다음 코드 샘플이 deviceId \"00aabbccde03\" 및 deviceTypeId \"iotsample-arduino\"와 함께 디바이스에 대해 디바이스 관리 정보를 리턴합니다."
+
+#: ../docs/applications/libraries/python.rst:756
+msgid "Device diagnostic operations"
+msgstr ""
+"디바이스 진단 오퍼레이션"
+
+#: ../docs/applications/libraries/python.rst:758
+msgid "Applications can use device diagnostic operations to clear logs, retrieve all or specific logs for a device, add log information, delete logs, clear error codes, get device error codes, and add an error codes."
+msgstr ""
+"애플리케이션은 디바이스 진단 오퍼레이션을 사용하여 로그를 지우고 디바이스에 대해 모든 또는 특정 로그를 검색하며 로그 정보를 추가하고 로그를 삭제하며 오류 코드를 지우고 디바이스 오류 코드를 가져오고 오류 코드를 추가할 수 있습니다."
+
+#: ../docs/applications/libraries/python.rst:760
+msgid "For more detailed information on query and response models, response codes, and query paramters, please see the relevant API documentation."
+msgstr ""
+"조회 및 응답 모델, 응답 코드, 조회 매개변수에 대한 자세한 정보는 관련 API 문서를 참조하십시오."
+
+#: ../docs/applications/libraries/python.rst:763
+msgid "Get Diagnostic logs"
+msgstr ""
+"진단 로그 가져오기"
+
+#: ../docs/applications/libraries/python.rst:765
+msgid "The *getAllDiagnosticLogs()* method is used to retrieve all diagnostic logs for a specific device. The *getAllDiagnosticLogs()* method requires the deviceTypeId and deviceId parameters."
+msgstr ""
+"*getAllDiagnosticLogs()* 메소드는 특정 디바이스에 대해 모든 진단 로그를 검색하는 데 사용됩니다. *getAllDiagnosticLogs()* 메소드는 deviceTypeId 및 deviceId 매개변수를 요구합니다."
+
+#: ../docs/applications/libraries/python.rst:771
+msgid "The response model for this method contains the logId, message, severity, data, and timestamp."
+msgstr ""
+"이 메소드의 응답 모델에는 logId, 메시지, 심각도, 데이터 및 시간소인이 포함됩니다."
+
+#: ../docs/applications/libraries/python.rst:774
+msgid "Clear Diagnostic logs for a Device"
+msgstr ""
+"디바이스의 진단 로그 지우기"
+
+#: ../docs/applications/libraries/python.rst:776
+msgid "The *clearAllDiagnosticLogs()* method is used to delete all diagnostic logs for a specific device. The required parameters are deviceTypeId and deviceId. Care should be taken when deleting logs, as logs cannot be recovered once deleted."
+msgstr ""
+"*clearAllDiagnosticLogs()* 메소드는 특정 디바이스에 대해 모든 진단 로그를 삭제하는 데 사용됩니다. 필수 매개변수는 deviceTypeId 및 deviceId입니다. 로그는 한 번 삭제되면 복구할 수 없으므로 로그 삭제 시 주의해야 합니다."
+
+#: ../docs/applications/libraries/python.rst:784
+msgid "Add a Diagnostic log"
+msgstr ""
+"진단 로그 추가"
+
+#: ../docs/applications/libraries/python.rst:786
+msgid "The *addDiagnosticLog()* method is used to add an entry in the diagnostic log of the device. The log may be pruned as the new entry is added. If no date is supplied, the entry is added with the current date and time. To use this method, first define a 'logs' parameter with the following variables:"
+msgstr ""
+"*addDiagnosticLog()* 메소드는 디바이스의 진단 로그에서 항목을 추가하는 데 사용됩니다. 로그는 새 항목이 추가되면서 프루닝될 수 있습니다. 날짜가 제공되지 않는 경우 현재 날짜 및 시간이 포함된 항목이 추가됩니다. 이 메소드를 사용하려면 먼저 'logs' 매개변수를 다음 변수와 함께 정의하십시오."
+
+#: ../docs/applications/libraries/python.rst:788
+msgid "message: This variable is mandatory, and contains the new diagnostic message."
+msgstr ""
+"메시지: 이 변수는 필수이며 새 진단 메시지를 포함합니다."
+
+#: ../docs/applications/libraries/python.rst:789
+msgid "severity: This variable is optional. If used it corresponds to the severity of the diagnostic log, and should be 0, 1, or 2, corresponding to the informational, warning, and error categories."
+msgstr ""
+"심각도: 이 변수는 선택사항입니다. 사용되는 경우 진단 로그의 심각도에 해당하고 정보용, 경고 및 오류 카테고리에 해당하는 0, 1 또는 2여야 합니다."
+
+#: ../docs/applications/libraries/python.rst:790
+msgid "data: This variable is optional, and should contain diagnostic data."
+msgstr ""
+"데이터: 이 변수는 선택사항이고 진단 데이터를 포함해야 합니다."
+
+#: ../docs/applications/libraries/python.rst:791
+#: ../docs/applications/libraries/python.rst:849
+msgid "timestamp: This variable is optional, and contains the date and time of the log entry in ISO8601 format. If this variable is not included, it is automatically added with the current date and time."
+msgstr ""
+"시간소인: 이 변수는 선택사항이고 ISO8601 형식에서 로그 항목의 날짜 및 시간을 포함합니다. 이 변수가 포함되지 않는 경우 현재 날짜 및 시간과 함께 자동으로 추가됩니다."
+
+#: ../docs/applications/libraries/python.rst:793
+msgid "The other necessary paramteres required in the method are the deviceTypeId and deviceId for the specific device."
+msgstr ""
+"메소드에 필요한 기타 필수 매개변수는 특정 디바이스에 대해 deviceTypeId 및 deviceId입니다."
+
+#: ../docs/applications/libraries/python.rst:795
+msgid "The code sample below contains an example of the method."
+msgstr ""
+"아래의 코드 샘플은 메소드의 예제를 포함합니다."
+
+#: ../docs/applications/libraries/python.rst:804
+msgid "Retrieve a specific Diagnostic log"
+msgstr ""
+"특정 진단 로그 검색"
+
+#: ../docs/applications/libraries/python.rst:806
+msgid "The *getDiagnosticLog()* method is used to retrieve a specific diagnostic log for a specified device based on the log id. The required parameters for this method are the deviceTypeId, deviceId, and logId."
+msgstr ""
+"*getDiagnosticLog()* 메소드는 로그 ID에 기반하여 지정된 디바이스에 대해 특정 진단 로그를 검색하는 데 사용됩니다. 이 메소드의 필수 매개변수는 deviceTypeId, deviceId 및 logId입니다."
+
+#: ../docs/applications/libraries/python.rst:814
+msgid "Delete a Diagnostic log"
+msgstr ""
+"진단 로그 삭제"
+
+#: ../docs/applications/libraries/python.rst:816
+msgid "The *deleteDiagnosticLog()* can be used to delete a specific diagnostic log. In order to specify a diagnostic log, the deviceTypeId, deviceId, and logId parameters should be supplied."
+msgstr ""
+"*deleteDiagnosticLog()*는 특정 진단 로그를 삭제하는 데 사용할 수 있습니다. 진단 로그를 지정하려면 deviceTypeId, deviceId 및 logId 매개변수가 제공되어야 합니다."
+
+#: ../docs/applications/libraries/python.rst:824
+msgid "Retrieve Device Error Codes"
+msgstr ""
+"디바이스 오류 코드 검색"
+
+#: ../docs/applications/libraries/python.rst:826
+msgid "The *getAllDiagnosticErrorCodes()* method is used to retrieve all diagnostic error codes associated with a specific device."
+msgstr ""
+"*getAllDiagnosticErrorCodes()* 메소드는 특정 디바이스와 연관된 모든 진단 오류 코드를 검색하는 데 사용됩니다."
+
+#: ../docs/applications/libraries/python.rst:834
+msgid "Clear Diagnostic Error Codes"
+msgstr ""
+"진단 오류 코드 지우기"
+
+#: ../docs/applications/libraries/python.rst:836
+msgid "The *clearAllErrorCodes()* method is used to clear the list of error codes associated with the device. The list is replaced with a single error code of zero."
+msgstr ""
+"*clearAllErrorCodes()* 메소드는 디바이스와 연관된 오류 코드의 목록을 지우는 데 사용됩니다. 이 목록은 0의 단일 오류 코드로 바뀝니다."
+
+#: ../docs/applications/libraries/python.rst:844
+msgid "Add single Diagnostic ErrorCode"
+msgstr ""
+"단일 진단 ErrorCode 추가"
+
+#: ../docs/applications/libraries/python.rst:846
+msgid "The *addErrorCode()* method is used to add an error code to the list of error codes associated with the device. The list may be pruned as the new entry is added. The parameters required in the method are deviceTypeId, deviceId, and errorCode. The errorCode parameter contains the following variables:"
+msgstr ""
+"*addErrorCode()* 메소드는 디바이스와 연관된 오류 코드의 목록에 오류 코드를 추가하는 데 사용됩니다. 목록은 새 항목이 추가되면서 프루닝될 수 있습니다. 메소드에 필요한 매개변수는 deviceTypeId, deviceId 및 errorCode입니다. errorCode 매개변수는 다음 변수를 포함합니다."
+
+#: ../docs/applications/libraries/python.rst:848
+msgid "errorCode: This variable is mandatory and should be set as an integer. This sets the number of the error code to be created."
+msgstr ""
+"errorCode: 이 변수는 필수이며 정수로 설정되어야 합니다. 이는 작성될 오류 코드의 수를 설정합니다."
+
+#: ../docs/applications/libraries/python.rst:859
+msgid "Connection problem determination"
+msgstr ""
+"연결 문제점 판별"
+
+#: ../docs/applications/libraries/python.rst:861
+msgid "The *getDeviceConnectionLogs()* method is used to list connection log events for a device. This information can be used to help diagnose connectivity problems between the device and the IoT Platform service. The entries record successful connection, unsuccessful connection attempts, intentional disconnection and server-initiated disconnection events."
+msgstr ""
+"*getDeviceConnectionLogs()* 메소드는 디바이스에 대해 연결 로그 이벤트를 나열하는 데 사용됩니다. 이 정보를 사용하여 디바이스 및 IoT Platform 서비스 간의 연결 문제점을 진단하는 데 도움을 받을 수 있습니다. 항목은 성공적인 연결, 실패한 연결 시도, 의도된 연결 끊기 및 서버 시작 연결 끊기 이벤트를 기록합니다."
+
+#: ../docs/applications/libraries/python.rst:867
+msgid "The response includes a list of log entries, containing log messages and timestamps."
+msgstr ""
+"응답에는 로그 메시지 및 시간소인을 포함하여 로그 항목의 목록이 포함됩니다."
+
+#: ../docs/applications/libraries/python.rst:872
+msgid "Historical Event Retrieval"
+msgstr ""
+"히스토리 이벤트 검색"
+
+#: ../docs/applications/libraries/python.rst:874
+msgid "These operations can be used to view events from all devices, view events from a device type or to view events for a specific device."
+msgstr ""
+"이러한 오퍼레이션은 모든 디바이스에서 이벤트를 보고 디바이스 유형에서 이벤트를 보거나 특정 디바이스에 대해 이벤트를 보는 데 사용할 수 있습니다."
+
+#: ../docs/applications/libraries/python.rst:876
+msgid "Refer to the Historical Event Retrieval section of the `IBM IoT Platform API <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html>`__ for information about the list of query parameters, the request & response model and http status code."
+msgstr ""
+"조회 매개변수, 요청 및 응답 모델과 http 상태 코드의 목록에 대한 정보는 `IBM IoT Platform API <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html>`__의 히스토리 이벤트 검색 절을 참조하십시오."
+
+#: ../docs/applications/libraries/python.rst:879
+msgid "View events from all devices"
+msgstr ""
+"모든 디바이스에서 이벤트 보기"
+
+#: ../docs/applications/libraries/python.rst:881
+msgid "Method getHistoricalEvents() can be used to view events across all devices registered to the organization."
+msgstr ""
+"메소드 getHistoricalEvents()는 조직에 등록된 모든 디바이스 간에 이벤트를 보는 데 사용할 수 있습니다."
+
+#: ../docs/applications/libraries/python.rst:887
+msgid "The response will contain some parameters and the application needs to retrieve the JSON element *events* from the response to get the array of events returned. Other parameters in the response are required to make further call, for example, the *_bookmark* element can be used to page through results. Issue the first request without specifying a bookmark, then take the bookmark returned in the response and provide it on the request for the next page. Repeat until the end of the result set indicated by the absence of a bookmark. Each request must use exactly the same values for the other parameters, or the results are undefined."
+msgstr ""
+"응답에는 일부 매개변수가 포함되며 애플리케이션이 리턴된 이벤트의 어레이를 가져오기 위해 응답에서 JSON 요소 *events*를 검색해야 합니다. 응답의 기타 매개변수는 추가 호출을 작성하는 데 필요합니다. 예를 들어, *_bookmark* 요소를 사용하여 페이지별로 결과를 볼 수 있습니다. 책갈피를 지정하지 않고 첫 번째 요청을 발행한 다음 응답에 리턴된 책갈피를 가져와서 그 다음 페이지에 대해 요청 시 제공하십시오. 책갈피의 부재로 표시된 결과 세트의 끝까지 반복하십시오. 각 요청은 기타 매개변수에 대해 정확히 동일한 값을 사용해야 합니다. 그렇지 않으면 결과가 정의되지 않습니다."
+
+#: ../docs/applications/libraries/python.rst:898
+msgid "The above snippet returns the events between the start and end time."
+msgstr ""
+"위의 스니펫은 시작 및 종료 시간 사이에 이벤트를 리턴합니다."
+
+#: ../docs/applications/libraries/python.rst:901
+msgid "View events from a device type"
+msgstr ""
+"디바이스 유형에서 이벤트 보기"
+
+#: ../docs/applications/libraries/python.rst:903
+msgid "The *getHistoricalEvents()* method is used to view events from all the devices of a particular device type."
+msgstr ""
+"*getHistoricalEvents()* 메소드는 특정한 디바이스 유형의 모든 디바이스에서 이벤트를 보는 데 사용됩니다."
+
+#: ../docs/applications/libraries/python.rst:909
+msgid "The response will contain some parameters and the application needs to retrieve the JSON element *events* from the response to get the array of events returned. As mentioned in the *view events from all devices* section, the overloaded method can be used to control the output."
+msgstr ""
+"응답에는 일부 매개변수가 포함되며 애플리케이션이 리턴된 이벤트의 어레이를 가져오기 위해 응답에서 JSON 요소 *events*를 검색해야 합니다. 모든 devices* 절에서 *view 이벤트에 언급된 대로 과부하된 메소드를 사용하여 출력을 제어할 수 있습니다."
+
+#: ../docs/applications/libraries/python.rst:913
+msgid "View events from a device"
+msgstr ""
+"디바이스에서 이벤트 보기"
+
+#: ../docs/applications/libraries/python.rst:915
+msgid "The *getHistoricalEvents()* method is used to view events from a specific device. DeviceTypeId and deviceId parameters are required in order to use this method."
+msgstr ""
+"*getHistoricalEvents()* 메소드는 특정 디바이스에서 이벤트를 보는 데 사용됩니다. 이 메소드를 사용하려면 DeviceTypeId 및 deviceId 매개변수가 필요합니다."
+
+#: ../docs/applications/libraries/python.rst:921
+msgid "The response will contain more parameters and application needs to retrieve the JSON element *events* from the response to get the array of events returned."
+msgstr ""
+"응답에는 추가 매개변수가 포함되며 애플리케이션이 리턴된 이벤트의 어레이를 가져오기 위해 응답에서 JSON 요소 *events*를 검색해야 합니다."
+

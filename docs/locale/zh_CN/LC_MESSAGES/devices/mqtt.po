@@ -1,0 +1,379 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/mqtt.rst:3
+msgid "MQTT Connectivity for Devices"
+msgstr ""
+"设备的 MQTT 连接"
+
+#: ../docs/devices/mqtt.rst:6
+msgid "Client connection"
+msgstr ""
+"客户机连接"
+
+#: ../docs/devices/mqtt.rst:7
+msgid "Every registered organization has a unique endpoint which must be used when connecting MQTT clients for devices in that organization."
+msgstr ""
+"每个已注册组织具有唯一端点，在连接该组织中设备的 MQTT 客户机时必须使用此端点。"
+
+#: ../docs/devices/mqtt.rst:10
+msgid "**org\\_id**.messaging.internetofthings.ibmcloud.com"
+msgstr ""
+"**org\\_id**.messaging.internetofthings.ibmcloud.com"
+
+#: ../docs/devices/mqtt.rst:14
+msgid "Unencrypted client connection"
+msgstr ""
+"未加密客户机连接"
+
+#: ../docs/devices/mqtt.rst:16
+msgid "Connect on port **1883**"
+msgstr ""
+"在端口 **1883** 上连接"
+
+#: ../docs/devices/mqtt.rst:18
+msgid "All information your device submits is being sent in plain text (including the authentication credentials for your device). We recommend the use of an encrypted connection whenever possible."
+msgstr ""
+"设备提交的所有信息将以明文形式（包括设备的认证凭证）发送。我们建议尽可能使用加密连接。"
+
+#: ../docs/devices/mqtt.rst:24
+msgid "Encrypted client connection"
+msgstr ""
+"加密客户机连接"
+
+#: ../docs/devices/mqtt.rst:26
+msgid "Connect on port **8883** or **443** for websockets."
+msgstr ""
+"针对 Web 套接字，在端口 **8883** 或 **443** 上连接。"
+
+#: ../docs/devices/mqtt.rst:28
+msgid "In many client libraries you will need to provide the server's public certificate in pem format.  The following file contains the entire certificate chain for \\*.messaging.internetofthings.ibmcloud.com: messaging.pem_"
+msgstr ""
+"在很多客户机库中，您将需要提供 pem 格式的服务器公用证书。以下文件包含 \\*.messaging.internetofthings.ibmcloud.com: messaging.pem_ 的整个证书链"
+
+#: ../docs/devices/mqtt.rst:34
+msgid "Some SSL client libraries have been shown to not handle wildcarded domains, in which case, if you can not change libraries, you will need to turn off certificate checking."
+msgstr ""
+"经证实，一些 SSL 客户机库不会处理带通配符的域，在此情况下，如果无法更改库，那么您将需要关闭证书检查。"
+
+#: ../docs/devices/mqtt.rst:38
+msgid "The IoT Platform requires TLS v1.2. We suggest the following cipher suites: ECDHE-RSA-AES256-GCM-SHA384, AES256-GCM-SHA384, ECDHE-RSA-AES128-GCM-SHA256 or AES128-GCM-SHA256 *(as of Jun 1 2015)*."
+msgstr ""
+"IoT Platform 需要 TLS v1.2。我们建议使用以下密码套件：ECDHE-RSA-AES256-GCM-SHA384、AES256-GCM-SHA384、ECDHE-RSA-AES128-GCM-SHA256 或 AES128-GCM-SHA256 *（自 2015 年 1 月 1 日起）*。"
+
+#: ../docs/devices/mqtt.rst:41
+msgid "**Device Support in Quickstart**"
+msgstr ""
+"**Quickstart 中的设备支持**"
+
+#: ../docs/devices/mqtt.rst:43
+msgid "When connecting to the Quickstart service no authentication (or registration) is required, and ``orgId`` must be set to ``quickstart``"
+msgstr ""
+"连接到 Quickstart 服务时，不需要任何认证（或注册），并且“orgId”必须设置为“quickstart”"
+
+#: ../docs/devices/mqtt.rst:45
+msgid "The Quickstart service does not currently support MQTT Quality of Service (QoS) levels greater than 0. This is the fastest and offers no confirmation of receipt.  If you are writing device code for use with Quickstart you must also take into account the following features present in the registered service that are not supported in Quickstart:"
+msgstr ""
+"Quickstart 服务当前不支持高于 0 的 MQTT 服务质量 (QoS) 级别。这是最快的，且不提供确认回执。如果编写设备代码以与 Quickstart 配合使用，那么还必须考虑已注册服务中存在而在 Quickstart 中不支持的以下功能："
+
+#: ../docs/devices/mqtt.rst:47
+#: ../docs/devices/mqtt.rst:116
+msgid "Subscribing to commands"
+msgstr ""
+"预订命令"
+
+#: ../docs/devices/mqtt.rst:48
+msgid "MQTT connection over SSL"
+msgstr ""
+"通过 SSL 进行 MQTT 连接"
+
+#: ../docs/devices/mqtt.rst:49
+msgid "Clean or durable sessions"
+msgstr ""
+"清洁或可持续的会话"
+
+#: ../docs/devices/mqtt.rst:51
+msgid "Also, messages sent from devices at a rate greater than 1 per second may be discarded."
+msgstr ""
+"另外，可能会丢弃从设备发送的速率大于每秒 1 次的消息。"
+
+#: ../docs/devices/mqtt.rst:56
+msgid "MQTT client identifier"
+msgstr ""
+"MQTT 客户机标识"
+
+#: ../docs/devices/mqtt.rst:58
+msgid "A Device must authenticate using a client ID in the following format:"
+msgstr ""
+"设备必须使用以下格式的客户机标识进行认证："
+
+#: ../docs/devices/mqtt.rst:60
+msgid "d:**org\\_id**:**device_type**:**device\\_id**"
+msgstr ""
+"d:**org\\_id**:**device_type**:**device\\_id**"
+
+#: ../docs/devices/mqtt.rst:62
+msgid "**d** idenfities your client as a device"
+msgstr ""
+"**d** 将客户机标识为设备"
+
+#: ../docs/devices/mqtt.rst:63
+msgid "**org\\_id** is your unique organization ID, assigned when you sign up with the service.  It will be a 6 character alphanumeric string."
+msgstr ""
+"**org\\_id** 为您的唯一组织标识，在您注册服务时予以分配。这将是 6 字符字母数字字符串。"
+
+#: ../docs/devices/mqtt.rst:65
+msgid "**type\\_id** is intended to be used as an identifier of the type of device connecting, it may be useful to think of this as analogous to a model number."
+msgstr ""
+"**type\\_id** 旨在用作进行连接的设备类型的标识，将其视为类似于型号可能会很有用。"
+
+#: ../docs/devices/mqtt.rst:68
+msgid "**device\\_id** must uniquely identify a device across all devices of a specific device\\_type, it may be useful to think of this as analogous to a serial number."
+msgstr ""
+"**device\\_id** 必须在特定 device\\_type 的所有设备中唯一标识某个设备，将其视为类似于序号可能会很有用。"
+
+#: ../docs/devices/mqtt.rst:72
+msgid "You can use any scheme of your choice when assigning values for ``type_id`` and ``device_id``, however the following restrictions apply to both:"
+msgstr ""
+"分配“type_id”和“device_id”的值时，可使用所选的任何方案，但两者都存在以下限制："
+
+#: ../docs/devices/mqtt.rst:75
+msgid "Maximum length of 36 characters"
+msgstr ""
+"最大长度为 36 个字符"
+
+#: ../docs/devices/mqtt.rst:76
+msgid "Must comprise only alpha-numeric characters (``a-z``, ``A-Z``, ``0-9``) and the following special characters:"
+msgstr ""
+"必须仅包含字母数字字符（“a-z”、“A-Z”和“0-9”）和以下特殊字符："
+
+#: ../docs/devices/mqtt.rst:78
+msgid "dash (``-``)"
+msgstr ""
+"短划线（“-”）"
+
+#: ../docs/devices/mqtt.rst:79
+msgid "underscore (``_``)"
+msgstr ""
+"下划线（“_”）"
+
+#: ../docs/devices/mqtt.rst:80
+msgid "dot (``.``)"
+msgstr ""
+"点（“.”）"
+
+#: ../docs/devices/mqtt.rst:84
+msgid "MQTT authentication"
+msgstr ""
+"MQTT 认证"
+
+#: ../docs/devices/mqtt.rst:87
+msgid "Username"
+msgstr ""
+"用户名"
+
+#: ../docs/devices/mqtt.rst:89
+msgid "The service currently only supports token-based authentication for devices, as such there is only one valid username for devices today."
+msgstr ""
+"服务当前仅支持针对设备进行基于令牌的认证，因此目前针对设备只有一个有效用户名。"
+
+#: ../docs/devices/mqtt.rst:92
+msgid "A value of ``use-token-auth`` indicates to the service that the authentication token for the device will be passed as the password for the MQTT connection."
+msgstr ""
+"值“use-token-auth”向服务表明：设备的认证令牌将作为 MQTT 连接的密码进行传递。"
+
+#: ../docs/devices/mqtt.rst:97
+msgid "Password"
+msgstr ""
+"密码"
+
+#: ../docs/devices/mqtt.rst:99
+msgid "When using token based authentication submit the device authentication token as the password when making your MQTT connection."
+msgstr ""
+"如果使用基于令牌的认证，请在建立 MQTT 连接时，将设备认证令牌作为密码提交。"
+
+#: ../docs/devices/mqtt.rst:105
+msgid "Publishing events"
+msgstr ""
+"发布事件"
+
+#: ../docs/devices/mqtt.rst:107
+msgid "Devices can only publish to the event topic of the form iot-2/evt/\\ **event\\_id**/fmt/**format\\_string**"
+msgstr ""
+"设备只能发布以下格式的事件主题：iot-2/evt/\\ **event\\_id**/fmt/**format\\_string**"
+
+#: ../docs/devices/mqtt.rst:109
+msgid "**event\\_id** is the ID of the event, for example \"status\".  The event ID can be any string permitted by MQTT.  Subscriber applications must use this string in their subscription topic to receive the events published on this topic if wildcards are not used."
+msgstr ""
+"**event\\_id** 是事件的标识，例如，“status”。事件标识可以是 MQTT 允许的任何字符串。如果不使用通配符，那么订户应用程序必须在其预订主题中使用此字符串以接收有关此主题发布的事件。"
+
+#: ../docs/devices/mqtt.rst:110
+msgid "**format\\_string** is the format of the event payload, for example \"json\".  The format can be any string permitted by MQTT.  Subscriber applications must use this string in their subscription topic to receive events published on this topic if wildcards are not used.  If the format is not \"json\", then messages will not be stored in the Historian."
+msgstr ""
+"**format\\_string** 是事件有效内容的格式，例如，“json”。格式可以是 MQTT 允许的任何字符串。如果不使用通配符，那么订户应用程序必须在其预订主题中使用此字符串以接收有关此主题发布的事件。如果格式不是“json”，那么消息不会存储在 Historian 中。"
+
+#: ../docs/devices/mqtt.rst:112
+msgid "The message payload is limited to a maximum of 4096 bytes.  Messages larger than this will be rejected."
+msgstr ""
+"消息有效内容限制为最长 4096 个字节。将拒绝大于此大小的消息。"
+
+#: ../docs/devices/mqtt.rst:118
+msgid "Devices can only subscribe to command topics of the form iot-2/cmd/\\ **command\\_id**/fmt/**format\\_string**.  They cannot subscribe to other devices' events and will only receive commands published specifically to the device itself."
+msgstr ""
+"设备只能预订以下格式的命令主题：**command\\_id**/fmt/**format\\_string**。无法预订其他设备的事件，并且将仅接收专门发布到设备自身的命令。"
+
+#: ../docs/devices/mqtt.rst:120
+msgid "**command\\_id** is the ID of the command, for example \"update\".  The command ID can be any string permitted by MQTT.  A device must use this string in its subscription topic in order to receive commands published on this topic if wildcards are not used."
+msgstr ""
+"**command\\_id** 是命令的标识，例如，“update”。命令标识可以是 MQTT 允许的任何字符串。如果不使用通配符，那么设备必须在此预订主题中使用此属性以接收有关此主题发布的命令。"
+
+#: ../docs/devices/mqtt.rst:121
+msgid "**format\\_string** is the format of the command payload, for example \"json\".  The format can be any string permitted by MQTT.  A device must use this string in its subscription topic in order to receive commands published on this topic if wildcards are not used."
+msgstr ""
+"**format\\_string** 是命令有效内容的格式，例如，“json”。格式可以是 MQTT 允许的任何字符串。如果不使用通配符，那么设备必须在此预订主题中使用此属性以接收有关此主题发布的命令。"
+
+#: ../docs/devices/mqtt.rst:124
+msgid "Managed Devices"
+msgstr ""
+"受管设备"
+
+#: ../docs/devices/mqtt.rst:126
+msgid "Support for device lifecycle management is optional, the device management protocol used by IoTF utilises the same MQTT connection that your device already uses for events and command control."
+msgstr ""
+"设备生命周期管理支持是可选的，IoTF 使用的设备管理协议利用设备已用于事件和命令控制的相同 MQTT 连接。"
+
+#: ../docs/devices/mqtt.rst:131
+msgid "Quality of Service Levels and Clean Session"
+msgstr ""
+"服务质量级别和 Clean Session"
+
+#: ../docs/devices/mqtt.rst:133
+msgid "Managed devices can publish messages with Quality of Service (QoS) level of 0 or 1. If QoS 1 is used, messages from the device will be queued if necessary. Messages from the device must not be retained messages."
+msgstr ""
+"受管设备可以发布服务质量 (QoS) 级别为 0 或 1 的消息。如果使用 QoS 级别 1，那么在必要时会对来自设备的消息进行排队。来自设备的消息不能是保留消息。"
+
+#: ../docs/devices/mqtt.rst:137
+msgid "The IoT Platform publishes requests with a QoS level of 1 to support queuing of messages.  In order to queue messages sent while a managed device is not connected, the device should use ``cleansession=false``."
+msgstr ""
+"IoT Platform 可发布 QoS 级别为 1 的请求以支持消息排队。要在未连接受管设备的情况下让发送的消息排队，该设备应使用“cleansession=false”。"
+
+#: ../docs/devices/mqtt.rst:142
+msgid "If your managed device uses a durable subscription (cleansession=false) you need to be aware that device management commands sent to your device while it is offline will be reported as failed operations if the device does not reconnect to the service before the request times out, however when the device later connects those requests will be actioned by the device."
+msgstr ""
+"如果受管设备使用持久预订 (cleansession=false)，那么您需要注意，如果在请求超时前设备未重新连接到服务，那么脱机时发送到设备的设备管理命令将报告为失败的操作，但是在设备稍后连接时，设备将执行这些请求。"
+
+#: ../docs/devices/mqtt.rst:148
+msgid "When handling request failures it is important to take this into account if you are using durable subscriptions for your managed devices."
+msgstr ""
+"在处理请求失败时，重要的是考虑是否对于受管设备使用持久预订。"
+
+#: ../docs/devices/mqtt.rst:153
+msgid "Topics"
+msgstr ""
+"主题"
+
+#: ../docs/devices/mqtt.rst:155
+msgid "A managed device is required to subscribe to two topics to handle requests and responses from IoTF:"
+msgstr ""
+"需要受管设备预订两个主题以处理来自 IoTF 的请求和响应："
+
+#: ../docs/devices/mqtt.rst:157
+msgid "The managed device will subscribe to device management reponses on ``iotdm-1/response/+``"
+msgstr ""
+"受管设备将预订有关“iotdm-1/response/+”的设备管理响应"
+
+#: ../docs/devices/mqtt.rst:158
+msgid "The managed device will subscribe to device management requests on ``iotdm-1/+``"
+msgstr ""
+"受管设备将预订有关“iotdm-1/+”的设备管理请求"
+
+#: ../docs/devices/mqtt.rst:161
+msgid "A managed device will publish to two topics:"
+msgstr ""
+"受管设备将发布到两个主题："
+
+#: ../docs/devices/mqtt.rst:163
+msgid "The managed device will publish device management responses on ``iotdevice-1/response/``"
+msgstr ""
+"受管设备将发布有关“iotdevice-1/response/”的设备管理响应"
+
+#: ../docs/devices/mqtt.rst:164
+msgid "The managed device will publish device management requests on ``iotdevice-1/``"
+msgstr ""
+"受管设备将发布有关“iotdevice-1/”的设备管理请求"
+
+#: ../docs/devices/mqtt.rst:168
+msgid "Message Format"
+msgstr ""
+"消息格式"
+
+#: ../docs/devices/mqtt.rst:170
+msgid "All messages are sent in JSON format. There are two types of message."
+msgstr ""
+"所有消息将以 JSON 格式进行发送。有两种类型的消息。"
+
+#: ../docs/devices/mqtt.rst:181
+msgid "Request"
+msgstr ""
+"请求"
+
+#: ../docs/devices/mqtt.rst:173
+msgid "Requests are formatted as follows:"
+msgstr ""
+"请求的格式如下："
+
+#: ../docs/devices/mqtt.rst:179
+msgid "``d`` carries any data relevant to the request"
+msgstr ""
+"“d”传送与请求相关的所有数据"
+
+#: ../docs/devices/mqtt.rst:180
+msgid "``reqId`` is an identifier of the request, and must be copied into a response. If a response is not required, the field should be omitted."
+msgstr ""
+"“reqId”是请求的标识，并且必须复制到响应。如果不需要响应，那么应省略此字段。"
+
+#: ../docs/devices/mqtt.rst:201
+msgid "Response"
+msgstr ""
+"响应"
+
+#: ../docs/devices/mqtt.rst:184
+msgid "Responses are formatted as follows:"
+msgstr ""
+"响应的格式如下："
+
+#: ../docs/devices/mqtt.rst:195
+msgid "\"rc\" is a result code of the original request."
+msgstr ""
+"“rc”是原始请求的结果代码。"
+
+#: ../docs/devices/mqtt.rst:196
+msgid "``message`` is an optional element with a text description of the response code."
+msgstr ""
+"“message”是包含响应代码的文本描述的可选元素。"
+
+#: ../docs/devices/mqtt.rst:197
+msgid "``d`` is an optional data element accompanying the response."
+msgstr ""
+"“d”是伴随响应的可选数据元素。"
+
+#: ../docs/devices/mqtt.rst:198
+msgid "``reqId`` is the request ID of the original request. This is used to correlate responses with requests, and the device needs to ensure that all request IDs are unique.  When responding to IoT Platform requests, the correct ``reqId`` value must be sent in the response."
+msgstr ""
+"“reqId”是原始请求的请求标识。这用于将响应与请求联系在一起，因此设备需要确保所有请求标识都是唯一的。在响应 IoT Platform 请求时，必须在响应中发送正确的“reqId”值。"
+

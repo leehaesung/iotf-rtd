@@ -1,0 +1,218 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/getting_started/register/index.rst:2
+msgid "Register"
+msgstr ""
+"등록"
+
+#: ../docs/getting_started/register/index.rst:4
+msgid "Registering for an account on the Watson IoT platform and connecting your first device is simple and will take less than 10 minutes to complete."
+msgstr ""
+"Watson IoT Platform에 계정을 등록하고 첫 번째 디바이스를 연결하는 작업은 간단하므로 10분 내로 완료할 수 있습니다. "
+
+#: ../docs/getting_started/register/index.rst:8
+msgid "Create a Bluemix Account"
+msgstr ""
+"Bluemix 계정 작성"
+
+#: ../docs/getting_started/register/index.rst:9
+msgid "First you will need to `register for a Bluemix account <https://console.ng.bluemix.net/registration/>`_.  Once you have verified your e-mail address you should find yourself looking at an empty dashboard:"
+msgstr ""
+"먼저 `Bluemix 계정을 등록 <https://console.ng.bluemix.net/registration/>`_해야 합니다. 이메일 주소를 확인하면 빈 대시보드가 표시됩니다. "
+
+#: ../docs/getting_started/register/index.rst:17
+msgid "Choose your Region"
+msgstr ""
+"지역 선택"
+
+#: ../docs/getting_started/register/index.rst:18
+msgid "Now, before you go any further you need to consider data soveriegnty and make a decision as to which of the available regions you want to register your service instance with.  Currently the Watson IoT platform is available in two regions:"
+msgstr ""
+"추가 작업을 수행하기 전에 데이터 주권(Data Sovereignty)을 고려하여 서비스 인스턴스를 등록할 수 있는 지역을 결정해야 합니다. 현재 Watson IoT Platform은 두 지역에 제공됩니다. "
+
+#: ../docs/getting_started/register/index.rst:21
+msgid "United Kingom"
+msgstr ""
+"영국"
+
+#: ../docs/getting_started/register/index.rst:22
+msgid "United States"
+msgstr ""
+"미국"
+
+#: ../docs/getting_started/register/index.rst:25
+msgid "Data sovereignty is the concept that information which has been converted and stored in binary digital form is subject to the laws of the country in which it is located."
+msgstr ""
+"데이터 주권이란 2진 디지털 형식으로 변환되어 저장된 정보가 소재 국가의 법률 적용을 받는다는 개념입니다. "
+
+#: ../docs/getting_started/register/index.rst:28
+msgid "The region your Watson IoT platform instance will be provisioned in will be determined by the Bluemix region you are using.  You can switch Bluemix regions via the controls in the top right corner of the Bluemix dashboard.  You can also determine which region are currently have selected by the URL in your browser:"
+msgstr ""
+"Watson IoT Platform 인스턴스가 프로비저닝될 지역은 사용 중인 Bluemix 지역에 따라 결정됩니다. Bluemix 지역은 Bluemix 대시보드의 오른쪽 위에 있는 컨트롤을 통해 전환할 수 있습니다. 브라우저의 URL에 현재 어떤 지역이 선택되어 있는지 판별할 수도 있습니다. "
+
+#: ../docs/getting_started/register/index.rst:30
+msgid "United Kingdom: console.\\ **eu-gb**\\ .bluemix.net"
+msgstr ""
+"영국: console.\\ **eu-gb**\\ .bluemix.net"
+
+#: ../docs/getting_started/register/index.rst:31
+msgid "United States: console.\\ **ng**\\ .bluemix.net"
+msgstr ""
+"미국: console.\\ **ng**\\ .bluemix.net"
+
+#: ../docs/getting_started/register/index.rst:38
+msgid "Provision a Watson IoT platform Service Instance"
+msgstr ""
+"Watson IoT Platform 서비스 인스턴스 프로비저닝"
+
+#: ../docs/getting_started/register/index.rst:39
+msgid "From anywhere in the Bluemix dashboard click **catalog** in the top navigation, this will take you to a list of all services available on Bluemix."
+msgstr ""
+"Bluemix 대시보드의 아무 위치에서 위쪽 탐색에 있는 **카탈로그**를 클릭하면 Bluemix에서 사용 가능한 모든 서비스 목록이 표시됩니다. "
+
+#: ../docs/getting_started/register/index.rst:41
+msgid "Type ``Internet of Things`` into the search box at the top of the page to filter out all the other services."
+msgstr ""
+"페이지 위쪽에 있는 검색 상자에 ``Internet of Things``를 입력하여 다른 모든 서비스를 필터링하여 제거하십시오. "
+
+#: ../docs/getting_started/register/index.rst:42
+msgid "Click ``View More``  on the **Watson IoT platform** service tile."
+msgstr ""
+"**Watson IoT Platform** 서비스 타일에 있는 ``계속 보기``를 클릭하십시오. "
+
+#: ../docs/getting_started/register/index.rst:43
+msgid "Optionally give your service instance a name (or simply accept the generated name)"
+msgstr ""
+"선택적으로 서비스 인스턴스에 이름을 제공(또는 생성된 이름을 단순히 승인)"
+
+#: ../docs/getting_started/register/index.rst:44
+msgid "Click ``Create``"
+msgstr ""
+"``작성``을 클릭하십시오. "
+
+#: ../docs/getting_started/register/index.rst:49
+msgid "After a short delay you will find yourself the proud owner of an organization on the IBM Watson IoT platform."
+msgstr ""
+"잠시 후 IBM Watson IoT Platform에서 자신이 조직 소유자임을 확인할 수 있습니다. "
+
+#: ../docs/getting_started/register/index.rst:56
+msgid "Additional Setup and Experimentation"
+msgstr ""
+"추가 설정 및 테스트"
+
+#: ../docs/getting_started/register/index.rst:57
+msgid "Click the ``Launch Dashboard`` button when viewing your new service instance within Bluemix, this will take you to your Watson IoT platform Dashboard."
+msgstr ""
+"Bluemix 내에서 새 서비스 인스턴스를 볼 때 ``대시보드 실행``단추를 클릭하면 Watson IoT Platform 대시보드로 이동합니다. "
+
+#: ../docs/getting_started/register/index.rst:60
+msgid "Configure Access"
+msgstr ""
+"액세스 구성"
+
+#: ../docs/getting_started/register/index.rst:61
+msgid "You are currently accessing the dashboard through a 24 hour access token generated by Bluemix when you clicked ``Launch Dashboard``, when this expires you will need to return to Bluemix and relaunch the dashboard.  I think we can all agree it's preferable not to have to do this, so let's promote you to a permanent member of the organization."
+msgstr ""
+"``대시보드 실행`을 클릭할 때 Bluemix에서 생성하는 24시간 액세스 토큰을 통해 현재 대시보드에 액세스하고 있고, 이 토큰이 만료되면 Bluemix로 돌아가서 대시보드를 다시 실행해야 합니다. 그러나 사용자는 이 작업을 수행하지 않는 것을 모두 선호하므로 자신을 조직의 영구 구성원으로 승격시키십시오. "
+
+#: ../docs/getting_started/register/index.rst:65
+msgid "In the navigation menu select ``Access`` and then ``Guests``, you should see the e-mail address you signed up to Bluemix with in there and the expiration date for your session.  Click the ``Promote`` button to set yourself up as a permanent member of the organization, your ID will disappear from the list, and can now be found under ``Access > Members``."
+msgstr ""
+"탐색 메뉴에서 ``액세스``를 클릭한 다음 ``게스트``를 클릭하면 Bluemix에 등록할 때 사용한 이메일 주소와 세션 만료 날짜가 표시됩니다. ``승격`` 단추를 클릭하면 자신이 조직의 영구 구성원으로 등록되므로, 자신의 ID가 목록에서 사라지고 ``액세스 > 구성원`` 아래에 표시됩니다. "
+
+#: ../docs/getting_started/register/index.rst:73
+msgid "Connect an Application"
+msgstr ""
+"애플리케이션 연결"
+
+#: ../docs/getting_started/register/index.rst:74
+msgid "Applications require an ``API key`` to connect to the service.  Let's set one up.  Navigate to ``Access > API Keys`` and click ``Generate API Key``. Take a note of your ``API Key`` and ``Authentication Token`` - you will need them shortly."
+msgstr ""
+"서비스에 연결하려면 애플리케이션에 ``API 키``가 필요합니다. API 키를 설정하겠습니다. ``액세스 > API 키``로 이동한 다음 ``API 키 생성``을 클릭하십시오. ``API 키``및 ``인증 토큰``이 즉시 필요하므로 메모해 두십시오. "
+
+#: ../docs/getting_started/register/index.rst:80
+msgid "Now we have an API key we want to run an application, the simpler the better."
+msgstr ""
+"API 키를 생성했으므로 애플리케이션을 실행하려고 하고, 단순할수록 좋습니다. "
+
+#: ../docs/getting_started/register/index.rst:83
+msgid "The Watson IoT platform has client library support for multiple languages, but for the purpose of this getting started tutorial we're going to stick with Python.  If you don't already have `Python <https://www.python.org/downloads/>`_ installed now is the time to do so."
+msgstr ""
+"Watson IoT Platform에서 여러 언어에 대한 클라이언트 라이브러리 지원을 제공하지만, 본 시작하기 학습서의 목적상 Python을 사용하려고 합니다. Python <https://www.python.org/downloads/>`_이 아직 설치되어 있지 않다면 설치하십시오. "
+
+#: ../docs/getting_started/register/index.rst:86
+msgid "Install the latest version of the Watson IoT platform python client library using pip"
+msgstr ""
+"pip를 사용하여 Watson IoT Platform Python 클라이언트 라이브러리의 최신 버전을 설치하십시오. "
+
+#: ../docs/getting_started/register/index.rst:92
+msgid "Now, create a really simple application that will connect using the API key you just created:"
+msgstr ""
+"이제 방금 작성한 API 키를 사용하여 연결할 아주 단순한 애플리케이션을 작성하십시오. "
+
+#: ../docs/getting_started/register/index.rst:133
+msgid "When you launch the application you will see nothing overly exciting"
+msgstr ""
+"애플리케이션을 실행할 때 아주 흥미로운 사항은 없습니다. "
+
+#: ../docs/getting_started/register/index.rst:142
+msgid "Connect a Device"
+msgstr ""
+"디바이스 연결"
+
+#: ../docs/getting_started/register/index.rst:143
+msgid "Before we can register a device we have to define a device type.  A ``device type`` is intended to represent a group of devices that are identical, it can be useful to think of the ``device type`` as analogous to a model in the traditional model:serial identification scheme.  Leave you application running to return to your Watson IoT platform Dashboard and navigate to ``Devices > Device Types``, click ``Create Type`` and enter ``python-sample`` as the name, all other fields are optional, so we're just going to skip past the rest of the options for the device type for now."
+msgstr ""
+"디바이스를 등록하기 전에 디바이스 유형을 정의해야 합니다. ``디바이스 유형``은 동일한 디바이스 그룹을 나타내며, ``디바이스 유형``을 기존의 모델:일련번호 식별 스킴의 모델과 유사한 용어로 간주하면 유용할 수 있습니다. 애플리케이션이 실행 중인 상태에서 Watson IoT Platform 대시보드로 돌아와 ``디바이스 > 디바이스 유형``으로 이동한 다음 ``유형 작성``을 클릭하고 이름으로 ``python-sample``을 입력하십시오. 그 외의 모든 필드는 선택사항이므로, 우선은 디바이스 유형에 대한 나머지 옵션을 건너뛰려고 합니다. "
+
+#: ../docs/getting_started/register/index.rst:151
+msgid "Now it's time to register a device of this type, navigate to ``Devices > Browse`` and click ``Add Device``, select the ``python-sample`` device type that we just created and click ``Next``.  On the second panel enter a device ID of \"MyFirstDevice\" and click ``Next`` to continue through the guided creation process until you reach the ``Add`` button."
+msgstr ""
+"이제 이 유형의 디바이스를 등록할 차례입니다. ``디바이스 > 찾아보기`로 이동하여 ``디바이스 추가``를 클릭하고 방금 작성한 ``python-sample`` 디바이스 유형을 선택한 후 ``다음``을 클릭하십시오. 두 번째 패널에서 디바이스 ID로 \"MyFirstDevice\"를 입력한 후 ``다음``을 클릭하여 ``추가`` 단추가 표시될 때까지 안내되는 작성 프로세스를 계속 진행하십시오. "
+
+#: ../docs/getting_started/register/index.rst:158
+msgid "Once you click ``Add`` your device is registered and you will be presented with a generated ``authentication token`` for that device."
+msgstr ""
+"``추가``를 클릭하면 해당 디바이스가 등록되고 해당 디바이스에 대해 생성된 ``인증 토큰``이 표시됩니다. "
+
+#: ../docs/getting_started/register/index.rst:163
+msgid "We're now going to take that authentication token and write a totally minimal device client in python."
+msgstr ""
+"이제 해당 인증 토큰을 가져와서 Python에서 극도로 작은 디바이스 클라이언트를 작성하려고 합니다. "
+
+#: ../docs/getting_started/register/index.rst:194
+msgid "When executed the device code will generate 10 events .. code::"
+msgstr ""
+"실행하면 디바이스 코드가 10개의 이벤트를 생성합니다. 코드::"
+
+#: ../docs/getting_started/register/index.rst:204
+msgid "Returning to the terminal where your application is running you will be able to see the application is recieving and processing the events submitted by your device in real time."
+msgstr ""
+"애플리케이션이 실행 중인 터미널로 돌아오면 애플리케이션이 디바이스를 통해 제출된 이벤트를 실시간으로 수신하여 처리하고 있음을 확인할 수 있습니다. "
+
+#: ../docs/getting_started/register/index.rst:223
+msgid "Finally, if you return to the Watson IoT platform dashboard and scroll down to ``Device Events`` you will be able to see all the events that you just sent."
+msgstr ""
+"최종으로 Watson IoT Platform 대시보드로 돌아와서 ``디바이스 이벤트``로 스크롤하면 방금 전송한 이벤트를 모두 확인할 수 있습니다. "
+
+#: ../docs/getting_started/register/index.rst:228
+msgid "You can also examine the content of any of the events by selecting an event from the table."
+msgstr ""
+"또한 테이블에서 이벤트를 선택하여 이벤트의 컨텐츠를 확인할 수도 있습니다. "
+

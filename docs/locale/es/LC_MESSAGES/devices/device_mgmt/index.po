@@ -1,0 +1,521 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/device_mgmt/index.rst:2
+msgid "Device Management Protocol"
+msgstr ""
+"Protocolo de gestión de dispositivo"
+
+#: ../docs/devices/device_mgmt/index.rst:5
+msgid "Introduction"
+msgstr ""
+"Introducción"
+
+#: ../docs/devices/device_mgmt/index.rst:7
+msgid "The Device Management capabilities in the IoT Platform create a new class of connected devices, Managed Devices."
+msgstr ""
+"Las prestaciones de gestión de dispositivos de IoT Platform crean una nueva clase de dispositivos conectados, los dispositivos gestionados."
+
+#: ../docs/devices/device_mgmt/index.rst:9
+msgid "Managed Devices must, by definition, contain a management agent which can understand the IoT Platform Device Management Protocol, and send a Manage Device request to the IoT Platform Device Management server. Managed devices can access the device management operations as explained later in this document."
+msgstr ""
+"Por definición, los dispositivos gestionados deben contener un agente de gestión que pueda entender el protocolo de gestión de dispositivos de IoT Platform y enviar solicitudes de dispositivos gestionados al servidor de gestión de dispositivos de IoT Platform. Los dispositivos gestionados pueden acceder a las operaciones de gestión de dispositivos como se explica más adelante en el presente documento."
+
+#: ../docs/devices/device_mgmt/index.rst:11
+msgid "The Device Management Protocol defines a set of supported operations. A device management agent can support a subset of the operations, but the Manage device and Unmanage device operations must be supported. A device supporting firmware action operations must also support observation."
+msgstr ""
+"El protocolo de gestión de dispositivos define un conjunto de operaciones admitidas. Un agente de gestión de dispositivos puede admitir un subconjunto de operaciones, pero es obligatorio que admita las operaciones Gestionar dispositivo y No gestionar dispositivo. Un dispositivo que admita operaciones de acción de firmware debe admitir también la observación."
+
+#: ../docs/devices/device_mgmt/index.rst:13
+msgid "The Device Management Protocol is built on top of MQTT.  For details specific to how Device Management Protocol interacts with MQTT please see `MQTT Connectivity for Devices <../mqtt.html>`__"
+msgstr ""
+"El protocolo de gestión de dispositivos está construido en la parte superior de MQTT.  Para obtener detalles concretos de cómo interactúa el protocolo de gestión de dispositivos con MQTT, consulte `Conectividad de MQTT para dispositivos <../mqtt.html>`__"
+
+#: ../docs/devices/device_mgmt/index.rst:17
+msgid "The Device Management Lifecycle"
+msgstr ""
+"Ciclo de vida de gestión de dispositivos"
+
+#: ../docs/devices/device_mgmt/index.rst:19
+msgid "A device and its associated device type are created in the IoT Platform using the dashboard or API."
+msgstr ""
+"En IoT Platform se crean un dispositivo y su tipo de dispositivo asociado mediante el panel de control y la API REST."
+
+#: ../docs/devices/device_mgmt/index.rst:20
+msgid "The device connects to the IoT Platform and uses the 'Manage Device' operation to become a managed device."
+msgstr ""
+"El dispositivo se conecta a IoT Platform y utiliza la operación 'Gestionar dispositivo' para convertirse en un dispositivo gestionado."
+
+#: ../docs/devices/device_mgmt/index.rst:21
+msgid "The device's metadata, as described in the Device Model can now be viewed and manipulated through device operations, for example, firmware update and device reboot."
+msgstr ""
+"Los metadatos del dispositivo, como se describe en el modelo de dispositivo, ahora se pueden ver y manipular mediante las operaciones de dispositivo, por ejemplo, la actualización de firmware y el reinicio del dispositivo."
+
+#: ../docs/devices/device_mgmt/index.rst:22
+msgid "The device can communicate updates through the device-management protocol, such as location or diagnostic information and error codes."
+msgstr ""
+"El dispositivo puede comunicar actualizaciones mediante el protocolo de gestión de dispositivos, por ejemplo, información de la ubicación o de diagnóstico y códigos de error."
+
+#: ../docs/devices/device_mgmt/index.rst:23
+msgid "In order to provide a way to deal with defunct devices in large device populations, the 'Manage device' operation request has an optional lifetime parameter. This lifetime parameter is the number of seconds within which the device must make another 'Manage device' request in order to avoid being marked as dormant and becoming an unmanaged device."
+msgstr ""
+"Con el fin de proporcionar una forma de gestionar los dispositivos inactivos en poblaciones grandes de dispositivos, la solicitud de una operación 'Gestionar dispositivo' tiene un parámetro de tiempo de vida opcional. Este parámetro de tiempo de vida es el número de segundos durante el cual el dispositivo debe enviar otra solicitud 'Gestionar dispositivo' para evitar que se marque como inactivo y convertirse en un dispositivo no gestionado."
+
+#: ../docs/devices/device_mgmt/index.rst:24
+msgid "When a device is decommissioned it can be removed from the IoT Platform using the dashboard or REST API."
+msgstr ""
+"Cuando un dispositivo se pone fuera de servicio, se puede eliminar de IoT Platform mediante el panel de control o la API REST."
+
+#: ../docs/devices/device_mgmt/index.rst:28
+msgid "Return Code Summary"
+msgstr ""
+"Resumen de códigos de retorno"
+
+#: ../docs/devices/device_mgmt/index.rst:30
+msgid "There are several return codes which are sent in response to the actions listed above."
+msgstr ""
+"Hay siete códigos de retorno que se envían en respuesta a las acciones listadas anteriormente."
+
+#: ../docs/devices/device_mgmt/index.rst:32
+msgid "200: Operation succeeded"
+msgstr ""
+"200: La operación ha finalizado correctamente"
+
+#: ../docs/devices/device_mgmt/index.rst:33
+msgid "202: Accepted (for initiating commands)"
+msgstr ""
+"202: Aceptado (para iniciar mandatos)"
+
+#: ../docs/devices/device_mgmt/index.rst:34
+msgid "204: Changed (for attribute updates)"
+msgstr ""
+"204: Modificado (para actualizaciones de atributo)"
+
+#: ../docs/devices/device_mgmt/index.rst:35
+msgid "400: Bad request, for example, if a device is not in the appropriate state for this command"
+msgstr ""
+"400: Solicitud incorrecta, por ejemplo, si el estado del dispositivo no es correcto para este mandato"
+
+#: ../docs/devices/device_mgmt/index.rst:36
+msgid "404: Attribute was not found, this code is also used if the operation was published to an invalid topic."
+msgstr ""
+"404: El atributo no se ha encontrado, este código también se utiliza si la operación se ha publicado para un tema no válido."
+
+#: ../docs/devices/device_mgmt/index.rst:37
+msgid "409: Resource could not be updated due to a conflict, for example, the resource is being updated by two simultaneous requests, so update could be retried later"
+msgstr ""
+"409: El recurso no se puede actualizar debido a un conflicto, por ejemplo, dos solicitudes simultáneas están actualizando el recurso, por lo tanto, la actualización se puede intentar más tarde"
+
+#: ../docs/devices/device_mgmt/index.rst:38
+msgid "500: Unexpected device error"
+msgstr ""
+"500: Error de dispositivo inesperado"
+
+#: ../docs/devices/device_mgmt/index.rst:39
+msgid "501: Operation not implemented"
+msgstr ""
+"501: Operación no implementada"
+
+#: ../docs/devices/device_mgmt/index.rst:48
+msgid "Manage Device"
+msgstr ""
+"Gestionar dispositivo"
+
+#: ../docs/devices/device_mgmt/index.rst:50
+msgid "A device uses this request to become a managed device. It should be the first device management request sent by the device after connecting to the IoT Platform. It would be usual for a device management agent to send this whenever it starts or restarts."
+msgstr ""
+"Un dispositivo utiliza esta solicitud para convertirse en un dispositivo gestionado. Debe ser la primera solicitud de gestión de dispositivos enviada por el dispositivo después de conectarse a IoT Platform. Lo normal es que un agente de gestión de dispositivos envíe esta solicitud siempre que se inicie o se reinicie."
+
+#: ../docs/devices/device_mgmt/index.rst:52
+#: ../docs/devices/device_mgmt/index.rst:129
+msgid "Support for this operation is mandatory for any managed devices."
+msgstr ""
+"Es obligatorio que todos los dispositivos gestionados cuenten con soporte para esta operación."
+
+#: ../docs/devices/device_mgmt/index.rst:56
+#: ../docs/devices/device_mgmt/index.rst:132
+#: ../docs/devices/device_mgmt/index.rst:186
+#: ../docs/devices/device_mgmt/index.rst:199
+#: ../docs/devices/device_mgmt/index.rst:300
+#: ../docs/devices/device_mgmt/index.rst:337
+#: ../docs/devices/device_mgmt/index.rst:390
+#: ../docs/devices/device_mgmt/index.rst:437
+#: ../docs/devices/device_mgmt/index.rst:496
+#: ../docs/devices/device_mgmt/index.rst:544
+#: ../docs/devices/device_mgmt/index.rst:604
+#: ../docs/devices/device_mgmt/index.rst:656
+msgid "Topic"
+msgstr ""
+"Tema"
+
+#: ../docs/devices/device_mgmt/index.rst:64
+#: ../docs/devices/device_mgmt/index.rst:139
+#: ../docs/devices/device_mgmt/index.rst:207
+#: ../docs/devices/device_mgmt/index.rst:344
+#: ../docs/devices/device_mgmt/index.rst:397
+#: ../docs/devices/device_mgmt/index.rst:444
+msgid "Message Format"
+msgstr ""
+"Formato del mensaje"
+
+#: ../docs/devices/device_mgmt/index.rst:66
+msgid "For the request, the ``d`` field and all of its sub-fields are optional. The ``metadata`` and ``deviceInfo`` field values replace the corresponding attributes for the sending device if they are sent."
+msgstr ""
+"En la solicitud, el campo 'd' y todos sus subcampos son opcionales. Los valores de campo 'metadata' y 'deviceInfo' sustituyen a los atributos correspondientes del dispositivo que realiza el envío si se envían."
+
+#: ../docs/devices/device_mgmt/index.rst:68
+msgid "The optional ``lifetime`` field specifies the length of time in seconds within which the device must send another 'Manage device' request in order to avoid being reverted to an unmanaged device and marked as dormant. If omitted or if set to ``0``, the managed device will not become dormant.  When set, the minimum supported setting is ``3600`` (1 hour)."
+msgstr ""
+"El campo opcional 'lifetime' especifica el periodo de tiempo en segundos durante el cual el dispositivo debe enviar otra solicitud 'Gestionar dispositivo' para evitar convertirse en un dispositivo no gestionado y marcarse como inactivo. Si se omite o si se establece en '0'. el dispositivo gestionado no pasará a estar inactivo.  Cuando se establece, el valor mínimo admitido es '3600' (1 hora)."
+
+#: ../docs/devices/device_mgmt/index.rst:70
+msgid "Optional ``supports.deviceActions`` and ``supports.firmwareActions`` indicate the capabilities of the device management agent. If ``supports.deviceActions`` is set, the agent supports Reboot and Factory Reset actions. For a device that does not distinguish between rebooting and factory reset, it is acceptable to use the same behaviour for both actions. If ``supports.firmwareActions`` is set, the agent supports Firmware Download and Firmware Update actions."
+msgstr ""
+"Los campos 'supports.deviceActions' y 'supports.firmwareActions' indican las capacidades del agente de gestión de dispositivos. Si se configura 'supports.deviceActions', el agente admite las acciones Reinicio y Restablecimiento a configuración de fábrica. Para un dispositivo que no distingue entre el reinicio y el restablecimiento a configuración de fábrica, es válido utilizar el mismo comportamiento para las dos acciones. Si se configura 'supports.firmwareActions', el agente admite las acciones Descarga de firmware y Actualización de firmware."
+
+#: ../docs/devices/device_mgmt/index.rst:72
+#: ../docs/devices/device_mgmt/index.rst:141
+#: ../docs/devices/device_mgmt/index.rst:218
+#: ../docs/devices/device_mgmt/index.rst:348
+#: ../docs/devices/device_mgmt/index.rst:399
+#: ../docs/devices/device_mgmt/index.rst:451
+#: ../docs/devices/device_mgmt/index.rst:505
+#: ../docs/devices/device_mgmt/index.rst:557
+#: ../docs/devices/device_mgmt/index.rst:614
+#: ../docs/devices/device_mgmt/index.rst:665
+msgid "Request Format:"
+msgstr ""
+"Formato de solicitud:"
+
+#: ../docs/devices/device_mgmt/index.rst:99
+#: ../docs/devices/device_mgmt/index.rst:149
+#: ../docs/devices/device_mgmt/index.rst:235
+#: ../docs/devices/device_mgmt/index.rst:360
+#: ../docs/devices/device_mgmt/index.rst:407
+#: ../docs/devices/device_mgmt/index.rst:466
+#: ../docs/devices/device_mgmt/index.rst:513
+#: ../docs/devices/device_mgmt/index.rst:570
+#: ../docs/devices/device_mgmt/index.rst:627
+#: ../docs/devices/device_mgmt/index.rst:677
+msgid "Response Format:"
+msgstr ""
+"Formato de respuesta:"
+
+#: ../docs/devices/device_mgmt/index.rst:110
+#: ../docs/devices/device_mgmt/index.rst:159
+#: ../docs/devices/device_mgmt/index.rst:245
+#: ../docs/devices/device_mgmt/index.rst:371
+#: ../docs/devices/device_mgmt/index.rst:418
+#: ../docs/devices/device_mgmt/index.rst:477
+#: ../docs/devices/device_mgmt/index.rst:523
+#: ../docs/devices/device_mgmt/index.rst:687
+msgid "Response Codes"
+msgstr ""
+"Códigos de respuesta"
+
+#: ../docs/devices/device_mgmt/index.rst:112
+#: ../docs/devices/device_mgmt/index.rst:161
+#: ../docs/devices/device_mgmt/index.rst:247
+#: ../docs/devices/device_mgmt/index.rst:373
+#: ../docs/devices/device_mgmt/index.rst:420
+#: ../docs/devices/device_mgmt/index.rst:479
+#: ../docs/devices/device_mgmt/index.rst:525
+#: ../docs/devices/device_mgmt/index.rst:689
+msgid "200: The operation was successful."
+msgstr ""
+"200: La operación se realizó correctamente."
+
+#: ../docs/devices/device_mgmt/index.rst:113
+#: ../docs/devices/device_mgmt/index.rst:162
+#: ../docs/devices/device_mgmt/index.rst:248
+#: ../docs/devices/device_mgmt/index.rst:374
+#: ../docs/devices/device_mgmt/index.rst:421
+#: ../docs/devices/device_mgmt/index.rst:480
+#: ../docs/devices/device_mgmt/index.rst:526
+#: ../docs/devices/device_mgmt/index.rst:690
+msgid "400: The input message does not match the expected format, or one of the values is out of the valid range."
+msgstr ""
+"400: El mensaje de entrada no coincide con el formato esperado, o uno de los valores está fuera del rango válido."
+
+#: ../docs/devices/device_mgmt/index.rst:114
+#: ../docs/devices/device_mgmt/index.rst:163
+#: ../docs/devices/device_mgmt/index.rst:249
+#: ../docs/devices/device_mgmt/index.rst:375
+#: ../docs/devices/device_mgmt/index.rst:422
+#: ../docs/devices/device_mgmt/index.rst:481
+#: ../docs/devices/device_mgmt/index.rst:527
+msgid "404: The topic name is incorrect, or the device is not in the database."
+msgstr ""
+"404: El nombre del tema no es correcto, o el dispositivo no está en la base de datos."
+
+#: ../docs/devices/device_mgmt/index.rst:115
+#: ../docs/devices/device_mgmt/index.rst:164
+#: ../docs/devices/device_mgmt/index.rst:250
+#: ../docs/devices/device_mgmt/index.rst:376
+#: ../docs/devices/device_mgmt/index.rst:423
+#: ../docs/devices/device_mgmt/index.rst:482
+#: ../docs/devices/device_mgmt/index.rst:528
+#: ../docs/devices/device_mgmt/index.rst:692
+msgid "409: A conflict occurred during the device database update. To resolve this, simplify the operation is necessary."
+msgstr ""
+"409: Se ha producido un conflicto durante la actualización de base de datos del dispositivo. Para resolverlo, simplifique la operación si es necesario."
+
+#: ../docs/devices/device_mgmt/index.rst:125
+msgid "Unmanage Device"
+msgstr ""
+"No gestionar dispositivo"
+
+#: ../docs/devices/device_mgmt/index.rst:127
+msgid "A device uses this request when it no longer needs to be managed. The IoT Platform will no longer send new device management requests to this device and all device management requests from this device will be rejected other than a 'Manage device' request."
+msgstr ""
+"Un dispositivo utiliza esta solicitud cuando ya no necesita ser gestionado. IoT Platform ya no enviará nuevas solicitudes de gestión de dispositivos a este dispositivo, y todas las solicitudes de gestión de dispositivos procedentes de este dispositivo se rechazarán, excepto la solicitud 'Gestionar dispositivo'."
+
+#: ../docs/devices/device_mgmt/index.rst:173
+msgid "Update Location"
+msgstr ""
+"Actualizar ubicación"
+
+#: ../docs/devices/device_mgmt/index.rst:175
+msgid "Devices can change their location over time. The update of the location can happen in two ways:"
+msgstr ""
+"Los dispositivos pueden cambiar su ubicación con el tiempo. La actualización de la ubicación puede realizarse de dos formas:"
+
+#: ../docs/devices/device_mgmt/index.rst:177
+msgid "The device itself notifies the IoT Platform about the location update: The device retrieves its location from a GPS receiver and sends a device management message to the IoT Platform to update its location. The timestamp captures the time at which the location was retrieved from the GPS receiver. This means that the timestamp is valid, even if the transmission of the location message was delayed. In the event that the timestamp is omitted from the device management message sent, the current date and time on message receipt will be used when the device's location metadata is updated."
+msgstr ""
+"El propio dispositivo notifica la actualización de la ubicación a IoT Platform: El dispositivo obtiene su ubicación a partir de un receptor GPS y envía un mensaje de gestión de dispositivos a IoT Platform para actualizar su ubicación. La indicación de fecha y hora recupera la hora a la que se obtuvo la ubicación del receptor GPS. Esto significa que la indicación de fecha y hora es válida, aunque se retrase la transmisión del mensaje de ubicación. En el caso de que la indicación de fecha y hora se omita en el mensaje de gestión de dispositivos enviado, la hora y fecha actuales de la recepción del mensaje se utilizarán cuando se actualicen los metadatos de ubicación del dispositivo."
+
+#: ../docs/devices/device_mgmt/index.rst:179
+msgid "A user / app updates the location of a device using the Rest API: The IoT Platform REST API is used to set the location metadata of a static device. This can be done at the time that the device is registered, or later if required. It is optional whether to include a timestamp. If omitted, the current date and time will be set as the device’s location metadata."
+msgstr ""
+"Un usuario o una aplicación actualizan la ubicación de un dispositivo mediante la API REST: La API REST de IoT Platform se utiliza para establecer los metadatos de ubicación de un dispositivo estático. Esto puede realizarse en el momento de registro del dispositivo, o más adelante si es necesario. La inclusión de una indicación de fecha y hora es opcional. Si se omite, la fecha y hora actuales se establecerán como los metadatos de ubicación del dispositivo."
+
+#: ../docs/devices/device_mgmt/index.rst:182
+#: ../docs/devices/device_mgmt/index.rst:216
+msgid "Location update triggered by device"
+msgstr ""
+"Actualización de ubicación desencadenada por dispositivo"
+
+#: ../docs/devices/device_mgmt/index.rst:183
+msgid "Devices that can determine their location can choose to notify the IoT Platform device management server about location changes."
+msgstr ""
+"Los dispositivos con capacidad para determinar su propia ubicación pueden optar por notificar los cambios de ubicación al servidor de gestión de dispositivos de IoT Platform."
+
+#: ../docs/devices/device_mgmt/index.rst:194
+#: ../docs/devices/device_mgmt/index.rst:253
+msgid "Location update triggered by user or app"
+msgstr ""
+"Actualización de ubicación desencadenada por usuario o aplicación"
+
+#: ../docs/devices/device_mgmt/index.rst:196
+msgid "When a user or application updates the location of an active managed device the device retrieves an update message:"
+msgstr ""
+"Si un usuario o una aplicación actualizan la ubicación de un dispositivo gestionado activo, dicho dispositivo recupera un mensaje de actualización:"
+
+#: ../docs/devices/device_mgmt/index.rst:209
+msgid "The \"measuredDateTime\" is the date of location measurement. The \"updatedDateTime\" is the date of the update to the device information. For efficiency reasons, the IoT Platform may batch updates to location information so the updates may be slightly delayed. The \"latitude\" and \"longitude\" should be specified in decimal degrees using WGS84."
+msgstr ""
+"El valor \"measuredDateTime\" es la fecha de la medición de ubicación. El valor \"updatedDateTime\" es la fecha de la actualización de la información del dispositivo. Por motivos de eficiencia, IoT Platform puede realizar actualizaciones por lotes de la información de ubicación, por lo que las actualizaciones pueden retrasarse ligeramente. Los valores \"latitude\" y \"longitude\" deben especificarse en grados decimales mediante WGS84."
+
+#: ../docs/devices/device_mgmt/index.rst:211
+msgid "Whenever location is updated, the values provided for latitude, longitude, elevation and uncertainty are considered as a single multi-value update. The latitude and longitude are mandatory and must both be provided with each update.  Elevation and uncertainty are optional and can be omitted."
+msgstr ""
+"Siempre que se actualiza la ubicación, los valores suministrados para la latitud, longitud, elevación e incertidumbre se consideran como una actualización única de varios valores. La latitud y la longitud son obligatorios y ambos deben proporcionarse con cada actualización.  La elevación y la incertidumbre son opcionales y se pueden omitir."
+
+#: ../docs/devices/device_mgmt/index.rst:213
+msgid "If an optional value is provided on an update and then omitted on a later update, the earlier value is deleted by the later update. Each update is considered as a complete multi-value set."
+msgstr ""
+"Si se suministra un valor opcional en una actualización y posteriormente se omite en una actualización posterior, el valor más antiguo se suprime por la actualización posterior. Cada actualización se considera como un conjunto completo de varios valores."
+
+#: ../docs/devices/device_mgmt/index.rst:255
+#: ../docs/devices/device_mgmt/index.rst:310
+msgid "Payload Format:"
+msgstr ""
+"Formato de carga útil:"
+
+#: ../docs/devices/device_mgmt/index.rst:278
+msgid "Please note: there is no reqId as no response by device is required."
+msgstr ""
+"Nota: No hay ningún reqId, ya que no se requiere ninguna respuesta del dispositivo."
+
+#: ../docs/devices/device_mgmt/index.rst:287
+msgid "Update Device Attributes"
+msgstr ""
+"Actualizar atributos de dispositivo"
+
+#: ../docs/devices/device_mgmt/index.rst:289
+msgid "The IoT Platform can send this request to a device to update values of one or more device attributes. Attributes that can be updated by the Rest API are location, metadata, device information and firmware."
+msgstr ""
+"IoT Platform puede enviar esta solicitud a un dispositivo para actualizar los valores de uno o varios atributos de dispositivo. Los atributos que se pueden actualizar con la API REST son: ubicación, metadatos, información de dispositivo y firmware."
+
+#: ../docs/devices/device_mgmt/index.rst:291
+msgid "The \"value\" is the new value of the device attribute. It is a complex field matching the device model. Only writeable fields should be updated as a result of this operation. Values can be updated in:"
+msgstr ""
+"El campo \"value\" es el nuevo valor del atributo de dispositivo. Se trata de un campo complejo que coincide con el modelo de dispositivo. Solo se deben actualizar los campos modificables como resultado de esta operación. Los valores se puede actualizar en:"
+
+#: ../docs/devices/device_mgmt/index.rst:293
+msgid "location (see Update location section for details)"
+msgstr ""
+"location (consulte la sección Actualizar ubicación para obtener más detalles)"
+
+#: ../docs/devices/device_mgmt/index.rst:294
+msgid "metadata (Optional)"
+msgstr ""
+"metadata (Opcional)"
+
+#: ../docs/devices/device_mgmt/index.rst:295
+msgid "deviceInfo (Optional)"
+msgstr ""
+"deviceInfo (Opcional)"
+
+#: ../docs/devices/device_mgmt/index.rst:296
+msgid "mgmt.firmware (see Firmware update process for details)"
+msgstr ""
+"mgmt.firmware (consulte la sección Proceso de actualización de firmware para obtener más detalles)"
+
+#: ../docs/devices/device_mgmt/index.rst:308
+#: ../docs/devices/device_mgmt/index.rst:503
+#: ../docs/devices/device_mgmt/index.rst:551
+#: ../docs/devices/device_mgmt/index.rst:612
+#: ../docs/devices/device_mgmt/index.rst:663
+msgid "Message format"
+msgstr ""
+"Formato de mensaje"
+
+#: ../docs/devices/device_mgmt/index.rst:332
+msgid "Add Error Code"
+msgstr ""
+"Añadir código de error"
+
+#: ../docs/devices/device_mgmt/index.rst:334
+msgid "Devices can choose to notify the IoT Platform device management server about changes in their error status."
+msgstr ""
+"Los dispositivos pueden optar por notificar al servidor de gestión de dispositivos de IoT Platform los cambios producidos en sus estados de error."
+
+#: ../docs/devices/device_mgmt/index.rst:346
+msgid "The \"errorCode\" is a current device error code that needs to be added to the IoT Platform."
+msgstr ""
+"\"errorCode\" es un código de error de dispositivo actual que es necesario añadir a IoT Platform."
+
+#: ../docs/devices/device_mgmt/index.rst:385
+msgid "Clear Error Codes"
+msgstr ""
+"Borrar códigos de error"
+
+#: ../docs/devices/device_mgmt/index.rst:387
+msgid "Devices can request that the Internet of Things Foundation clear all of their error codes."
+msgstr ""
+"Los dispositivos pueden solicitar que Internet of Things Foundation borre todos sus códigos de error."
+
+#: ../docs/devices/device_mgmt/index.rst:432
+msgid "Add Log"
+msgstr ""
+"Añadir registro"
+
+#: ../docs/devices/device_mgmt/index.rst:434
+msgid "Devices can choose to notify IoTF device management support about changes a new log entry. Log entry includes a log messages, its timestamp and severity, as well as an optional base64-encoded binary diagnostic data."
+msgstr ""
+"Los dispositivos pueden optar por notificar al servicio de soporte de gestión de dispositivos de IoTF los cambios en una entrada de registro nueva. La entrada de registro incluye mensajes de error, su marca de fecha y hora y gravedad, así como datos de diagnóstico binarios codificados en base 64."
+
+#: ../docs/devices/device_mgmt/index.rst:446
+msgid "\"message\" is a diagnostic message that needs to be added to IoTF. \"timestamp\" is a date and time of the log entry in ISO8601 format. \"data\" is an optional base64-encoded diagnostic data. \"severity\" is a severity of the message (0: informational, 1: warning, 2: error)."
+msgstr ""
+"\"message\" es un mensaje de diagnóstico que es necesario añadir a IoTF. \"timestamp\" es la fecha y la hora de la entrada de registro en formato ISO8601. \"data\" son datos de diagnóstico opcionales codificados en base64. \"severity\" es la gravedad del mensaje (0: informativo, 1: aviso, 2: error)."
+
+#: ../docs/devices/device_mgmt/index.rst:491
+msgid "Clear Logs"
+msgstr ""
+"Borrar registros"
+
+#: ../docs/devices/device_mgmt/index.rst:493
+msgid "Devices can request that the Internet of Things Foundation clear all of their log entries."
+msgstr ""
+"Los dispositivos pueden solicitar que Internet of Things Foundation borre todas sus entradas de registro."
+
+#: ../docs/devices/device_mgmt/index.rst:537
+msgid "Observe Attribute Changes"
+msgstr ""
+"Observar cambios en atributos"
+
+#: ../docs/devices/device_mgmt/index.rst:539
+msgid "The IoT Platform can send this request to a device to observe changes of one or more device attributes. When the device receives this request, it must send a notification request (\"notify\" message) to the IoT Platform whenever the observed attributes value changes."
+msgstr ""
+"IoT Platform puede enviar esta solicitud a un dispositivo para observar los cambios de uno o más atributos de dispositivo. Cuando el dispositivo recibe esta solicitud, debe enviar una solicitud de notificación (mensaje \"notify\") a la IoT Platform siempre que cambie el valor de los atributos observados."
+
+#: ../docs/devices/device_mgmt/index.rst:541
+#: ../docs/devices/device_mgmt/index.rst:601
+#: ../docs/devices/device_mgmt/index.rst:652
+msgid "Devices must implement observe, notify & cancel operations in order to support :ref:`firmware-actions-update`."
+msgstr ""
+"Los dispositivos deben implementar las operaciones de observación, notificación y cancelación para admitir :ref:`firmware-actions-update`."
+
+#: ../docs/devices/device_mgmt/index.rst:553
+msgid "The \"fields\" field is an array of the device attribute names from the device model. For example, values could be \"location\", \"mgmt.firmware\" or \"mgmt.firmware.state\". If a complex field, such as \"mgmt.firmware\" is specified, it is expected that its underlying fields are updated at the same time, such that only a single notify message is generated."
+msgstr ""
+"El campo \"fields\" es una matriz de los nombres de atributo de dispositivo procedente del modelo de dispositivo. Por ejemplo, los valores podrían ser \"location\", \"mgmt.firmware\" o \"mgmt.firmware.state\". Si se especifica un campo complejo, por ejemplo, \"mgmt.firmware\", se espera que sus campos subyacentes se actualicen al mismo tiempo, ya que solo se genera un mensaje de notificación."
+
+#: ../docs/devices/device_mgmt/index.rst:555
+msgid "The \"message\" field used in the response can be specified if \"rc\" is not 200. If any field value which was to be observed could not be retrieved, \"rc\" should be set to 404 (if not found) or 500 (any other reason). When values for fields to be observed cannot be found, \"fields\" should contain an array of elements with \"field\" set to the name of each field that could not be read, \"value\" fields should be omitted. For the response code to be set to 200, both \"field\" and \"value\" must be specified, \"value\" is the current value of an attribute identified by \"field\" content."
+msgstr ""
+"El campo \"message\" utilizado en la respuesta se puede especificar si \"rc\" no es 200. Si algún valor de campo que es necesario observar no se ha podido recuperar, \"rc\" se debe establecer en 404 (si no se encuentra) o en 500 (cualquier otro motivo). Cuando los valores de los campos para observar no se encuentren, \"fields\" debe contener una matriz de elementos con \"field\" establecido en el nombre de cada campo que no se ha podido leer y deben omitirse los campos \"value\". Para poder establecer el código de respuesta en 200, es necesario especificar \"field\" y \"value\"; \"value\" es el valor actual de un atributo identificado mediante el contenido de \"field\"."
+
+#: ../docs/devices/device_mgmt/index.rst:595
+msgid "Cancel Attribute Observation"
+msgstr ""
+"Cancelar la observación de los atributos"
+
+#: ../docs/devices/device_mgmt/index.rst:597
+msgid "The IoT Platform can send this request to a device to cancel the current observation of one or more device attributes. The \"fields\" is an array of the device attribute names from the device model, for example, values could be \"location\", \"mgmt.firmware\" or \"mgmt.firmware.state\"."
+msgstr ""
+"IoT Platform puede enviar esta solicitud a un dispositivo para cancelar la observación actual de los cambios de uno o varios atributos de dispositivo. El campo \"fields\" es una matriz de nombres de atributo de dispositivo procedentes del modelo de dispositivo; por ejemplo, los valores podrían ser \"location\", \"mgmt.firmware\" o \"mgmt.firmware.state\"."
+
+#: ../docs/devices/device_mgmt/index.rst:599
+msgid "The \"message\" field must be specified if \"rc\" is not 200."
+msgstr ""
+"El campo \"message\" se debe especificar si \"rc\" no es 200."
+
+#: ../docs/devices/device_mgmt/index.rst:644
+msgid "Notify Attribute Changes"
+msgstr ""
+"Notificar cambios en atributos"
+
+#: ../docs/devices/device_mgmt/index.rst:646
+msgid "The IoT Platform can make an observation request referring to a specific attribute or set of values. When the value of the attribute or attributes changes, the device must send a notification containing the latest value."
+msgstr ""
+"IoT Platform puede realizar una solicitud de observación que se refiera a un atributo específico o a conjunto de valores. Cuando el valor del atributo o los atributos cambie, el dispositivo debe enviar una notificación que contenga el valor más reciente."
+
+#: ../docs/devices/device_mgmt/index.rst:648
+msgid "The \"field_name\" value is the name of the attribute that has changed, the \"field_value\" is the current value of the attribute. The attribute can be a complex field, if multiple values in a complex field are updated as a result of a single operation, only a single notification message should be sent."
+msgstr ""
+"El valor \"field_name\" es el nombre del atributo que se ha modificado; \"field_value\" es el valor actual del atributo. El atributo puede ser un campo complejo, si varios valores de un campo complejo se actualizan como resultado de un sola operación, solo debe enviarse un mensaje de notificación."
+
+#: ../docs/devices/device_mgmt/index.rst:650
+msgid "If notify request is processed successfully, \"rc\" should be set to 200. If the request is not correct, \"rc\" should be set to 400. If the field specified in the notify request is not being observed, \"rc\" should be set to 404."
+msgstr ""
+"Si la solicitud de notificación se procesa correctamente, \"rc\" debe establecerse en 200. Si la solicitud no es correcta, \"rc\" debe establecerse en 400. Si no se ha observado el campo especificado en la solicitud de notificación, \"rc\" debe establecerse en 404."
+
+#: ../docs/devices/device_mgmt/index.rst:691
+msgid "404: The topic name is incorrect, the device is not in the database, or there is no observation for the field reported."
+msgstr ""
+"404: El nombre del tema no es correcto, el dispositivo no está en la base de datos o no hay observación para el campo notificado."
+
+#: ../docs/devices/device_mgmt/index.rst:693
+msgid "500: An internal error occurred, contact IBM Support."
+msgstr ""
+"500: Se ha producido un error interno, póngase en contacto con el soporte de IBM."
+

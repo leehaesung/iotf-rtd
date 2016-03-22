@@ -1,0 +1,143 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/getting_started/quickstart/index.rst:2
+msgid "Quickstart"
+msgstr ""
+"Quickstart"
+
+#: ../docs/getting_started/quickstart/index.rst:4
+msgid "`Quickstart <https://quickstart.internetofthings.ibmcloud.com>`_ is an open sandbox allowing developers to quickly and easily get devices connected to the Watson IoT platform with registration required.  Any  device that can run an MQTT client can be connected to Quickstart within mimimum fuss, `DeveloperWorks Recipes <https://developer.ibm.com/recipes>`_ features dozens of community produced tutorials for connecting different devices to the service, including but not limited to:"
+msgstr ""
+"`Quickstart <https://quickstart.internetofthings.ibmcloud.com>`_ é um ambiente de simulação aberto que permite aos desenvolvedores ter de maneira rápida e fácil dispositivos conectados à plataforma Watson IoT com registro requerido. Qualquer dispositivo que pode executar um cliente MQTT pode ser conectado ao Quickstart com o mínimo esforço, `Receitas do DeveloperWorks <https://developer.ibm.com/recipes>`_ dezenas de recursos de tutoriais produzidos pela comunidade para conexão de diferentes dispositivos ao serviço incluindo, mas não se limitando a:"
+
+#: ../docs/getting_started/quickstart/index.rst:6
+msgid "`OpenBlocks IoT BX1G <https://developer.ibm.com/recipes/tutorials/openblocks-iot-bx1g-for-iot-foundation-quickstart/>`_"
+msgstr ""
+"`OpenBlocks IoT BX1G <https://developer.ibm.com/recipes/tutorials/openblocks-iot-bx1g-for-iot-foundation-quickstart/>`_"
+
+#: ../docs/getting_started/quickstart/index.rst:7
+msgid "`Reactive Blocks <https://developer.ibm.com/recipes/tutorials/reactive-blocks-and-java-to-iot-foundation-part-1-quickstart/>`_"
+msgstr ""
+"`Bloqueios Reativos <https://developer.ibm.com/recipes/tutorials/reactive-blocks-and-java-to-iot-foundation-part-1-quickstart/>`_"
+
+#: ../docs/getting_started/quickstart/index.rst:11
+msgid "Simulated Device"
+msgstr ""
+"Dispositivo Simulado"
+
+#: ../docs/getting_started/quickstart/index.rst:12
+msgid "In addition to these, we have developed a simple browser-based simulated device, designed for mobile devices, that can be used to connect any device with a web browser to the service.  Open the following URL on a mobile phone or tablet in your favourite browser: http://quickstart.internetofthings.ibmcloud.com/iotsensor."
+msgstr ""
+"Além desses, desenvolvemos um dispositivo simulado simples baseado em navegador, projetado para dispositivos móveis, que pode ser usado para conectar qualquer dispositivo com um navegador da web ao serviço. Abra a seguinte URL em um telefone celular ou tablet em seu navegador favorito: http://quickstart.internetofthings.ibmcloud.com/iotsensor."
+
+#: ../docs/getting_started/quickstart/index.rst:14
+msgid "This will launch a browser-based simulated device connecting to the Watson IoT platform. There are three sensors which you can manipulate using the on-screen controls:"
+msgstr ""
+"Isto ativará um dispositivo simulado baseado em navegador conectando-se à plataforma Watson IoT. Há três sensores que podem ser manipulados usando os controles na tela:"
+
+#: ../docs/getting_started/quickstart/index.rst:16
+msgid "Temperature"
+msgstr ""
+"Temperatura"
+
+#: ../docs/getting_started/quickstart/index.rst:17
+msgid "Humidity"
+msgstr ""
+"Umidade"
+
+#: ../docs/getting_started/quickstart/index.rst:18
+msgid "Object temperature"
+msgstr ""
+"Temperatura do objeto"
+
+#: ../docs/getting_started/quickstart/index.rst:24
+msgid "Data Visualization"
+msgstr ""
+"Visualização de Dados"
+
+#: ../docs/getting_started/quickstart/index.rst:25
+msgid "Leaving the simulated device running on your phone/tablet launch the `Quickstart application <http://quickstart.internetofthings.ibmcloud.com>`_ and enter the 12 character generated ID displayed on your phone/tablet in the upper right-hand corner."
+msgstr ""
+"Deixando o dispositivo simulado em execução em seu telefone/tablet, ative o `aplicativo Quickstart <http://quickstart.internetofthings.ibmcloud.com>`_ e insira o ID gerado por 12 caracteres exibido em seu telefone/tablet no canto superior direito."
+
+#: ../docs/getting_started/quickstart/index.rst:29
+msgid "Now, as you adjust the sensor values in your simulated device you will be able to see the data from your device visualized in real time in the Quickstart application."
+msgstr ""
+"Agora, conforme você ajustar os valores do sensor em seu dispositivo simulado, será capaz de ver os dados de seu dispositivo visualizados em tempo real no aplicativo Quickstart."
+
+#: ../docs/getting_started/quickstart/index.rst:35
+msgid "Mosquitto Demonstration"
+msgstr ""
+"Demonstração do Mosquitto"
+
+#: ../docs/getting_started/quickstart/index.rst:36
+msgid "`Mosquitto <http://mosquitto.org/>`_ is a cross platform open source MQTT client that is perfect for experimenting with the Watson IoT platform service.  Once you have installed mosquitto pick an ``applicationId``, a ``deviceId`` that have a good chance to be unique (otherwise your experiment will clash with someone else running through this same demonstration)."
+msgstr ""
+"`Mosquitto <http://mosquitto.org/>`_ é um cliente MQTT de software livre de plataforma cruzada que é perfeito para experiência com o serviço da plataforma Watson IoT. Assim que tiver instalado o mosquitto, selecione um ``applicationId`` e um ``deviceId`` que tenham uma boa chance de serem exclusivos (caso contrário, a sua experiência estrará em conflito com outra pessoa que executa por meio desta mesma demonstração)."
+
+#: ../docs/getting_started/quickstart/index.rst:39
+msgid "There are a couple of restrictions you must consider when dedicing on these IDs:"
+msgstr ""
+"Existem inúmeras restrições que você deve considerar ao dedicir sobre estes IDs:"
+
+#: ../docs/getting_started/quickstart/index.rst:41
+msgid "Maximum length of 36 characters"
+msgstr ""
+"Comprimento máximo de 36 caracteres"
+
+#: ../docs/getting_started/quickstart/index.rst:42
+msgid "Must comprise only alpha-numeric characters (``a-z``, ``A-Z``, ``0-9``) and the following special characters:"
+msgstr ""
+"Deve abranger apenas caracteres alfanuméricos (` a-z``, ``A-Z`, ``0-9``) e os seguintes caracteres especiais:"
+
+#: ../docs/getting_started/quickstart/index.rst:44
+msgid "dash (``-``)"
+msgstr ""
+"traço (``-``)"
+
+#: ../docs/getting_started/quickstart/index.rst:45
+msgid "underscore (``_``)"
+msgstr ""
+"sublinhado (``_``)"
+
+#: ../docs/getting_started/quickstart/index.rst:46
+msgid "dot (``.``)"
+msgstr ""
+"ponto (``.``)"
+
+#: ../docs/getting_started/quickstart/index.rst:49
+msgid "With your ``applicationId`` and ``deviceId`` in hand the first thing you want to do is create a connection representing your application using ``mosquitto_sub``:"
+msgstr ""
+"Com seu ``applicationId`` e ``deviceId` em mãos, a primeira coisa que você deseja fazer é criar uma conexão que represente seu aplicativo usando ``mosquitto_sub``:"
+
+#: ../docs/getting_started/quickstart/index.rst:55
+msgid "Leave that process running, it is now time to turn your attention towards creating your device.  We will connect a device of type ``mosquitto`` and send two events to the service using ``mosquitto_pub``:"
+msgstr ""
+"Deixe esse processo em execução, agora é o momento de voltar sua atenção para a criação de seu dispositivo. Conectaremos um dispositivo do tipo ``mosquitto`` e enviaremos dois eventos ao serviço usando ``mosquitto_pub``:"
+
+#: ../docs/getting_started/quickstart/index.rst:62
+msgid "Returning to your application terminal you should see the two events that you published almost instantly:"
+msgstr ""
+"Retornando ao seu terminal de aplicativo, você deve ver os dois eventos que publicou quase instantaneamente:"
+
+#: ../docs/getting_started/quickstart/index.rst:70
+msgid "That's all there is to it.  You have successfully connected a device and an application to the Watson IoT platform over MQTT, sent an event from the device to the service and recieved that event in your application."
+msgstr ""
+"Por enquanto, é isso.  Você conectou com êxito um dispositivo e um aplicativo à plataforma Watson IoT sobre o MQTT, enviou um evento do dispositivo para o serviço e recebeu esse evento em seu aplicativo."
+

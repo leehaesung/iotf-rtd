@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/reference/security/index.rst:3
+msgid "Securing the Watson IoT platform"
+msgstr ""
+"Watson IoT platform 보안 설정"
+
+#: ../docs/reference/security/index.rst:5
+msgid "The IBM Watson IoT platform is a fully managed, cloud-hosted service that makes it simple to derive value from Internet of Things (IoT) devices."
+msgstr ""
+"IBM Watson IoT Platform은 완전히 관리되는 클라우드 호스팅 서비스로서, IoT(Internet of Things) 디바이스에서 간편하게 값을 파생시킬 수 있습니다. "
+
+#: ../docs/reference/security/index.rst:9
+msgid "The following document aims to answer common questions about how your organization's data is protected. Focusing on specific areas:"
+msgstr ""
+"다음 문서의 목적은 조직의 데이터를 보호하는 방법에 대한 일반적인 질문에 답하는 것입니다. 다음과 같은 특정 영역에 초점을 둡니다. "
+
+#: ../docs/reference/security/index.rst:12
+msgid "Authentication: assuring the identity of users, devices or applications attempting to access your organization's information."
+msgstr ""
+"인증: 조직의 정보에 액세스를 시도하는 사용자, 디바이스 또는 애플리케이션의 ID를 보증합니다. "
+
+#: ../docs/reference/security/index.rst:14
+msgid "Authorization: assuring that users, devices and applications have permission to access your organization's information."
+msgstr ""
+"권한: 사용자, 디바이스 및 애플리케이션이 조직의 정보에 액세스하는 데 필요한 권한을 가지고 있음을 보증합니다. "
+
+#: ../docs/reference/security/index.rst:16
+msgid "Encryption: assuring that data is only readable by authorized parties and cannot be intercepted."
+msgstr ""
+"암호화: 권한 부여된 당사자만 데이터를 읽을 수 있고 데이터를 인터셉트할 수 없음을 보증합니다. "
+
+#: ../docs/reference/security/index.rst:23
+msgid "Terminology"
+msgstr ""
+"용어"
+
+#: ../docs/reference/security/index.rst:32
+msgid "How do we secure management of your organization?"
+msgstr ""
+"조직 관리에 보안을 설정하는 방법"
+
+#: ../docs/reference/security/index.rst:33
+msgid "The browser-based GUI and REST APIs are fronted by HTTPS, with a certificate signed by DigiCert enabling you to trust that you're connecting to the genuine Watson IoT platform."
+msgstr ""
+"브라우저 기반 GUI 및 REST API는 HTTPS와 마주하고 있으며, 정품 Watson IoT Platform에 연결하고 있다는 신뢰를 줄 수 있는 DigiCert에서 서명한 인증서를 가지고 있습니다. "
+
+#: ../docs/reference/security/index.rst:37
+msgid "GUI: authenticated via your IBM ID."
+msgstr ""
+"GUI: IBM ID를 통해 인증됩니다. "
+
+#: ../docs/reference/security/index.rst:38
+msgid "REST API: once you create an API key through the GUI, you can use this to make authenticated REST calls against your organization."
+msgstr ""
+"REST API: GUI를 통해 API 키를 작성하고 나면 이를 사용하여 조직에 대해 인증된 REST 호출을 작성할 수 있습니다. "
+
+#: ../docs/reference/security/index.rst:48
+msgid "How do we secure your device and application credentials?"
+msgstr ""
+"디바이스 및 애플리케이션 신임 정보에 보안을 설정하는 방법"
+
+#: ../docs/reference/security/index.rst:49
+msgid "When devices are registered or API keys are generated, the authentication token is salted and hashed. This means your organization's credentials can never be recovered from our systems - even in the unlikely event that the Watson IoT platform is compromised."
+msgstr ""
+"디바이스가 등록되거나 API 키가 생성되면 인증 토큰이 솔트(salt)되고 해시됩니다. 즉, Watson IoT Platform의 안전을 위협하는 예상 밖의 경우에도 사용자 조직의 신임 정보를 당사의 시스템에서 복구할 수 없습니다. "
+
+#: ../docs/reference/security/index.rst:54
+msgid "Device credentials and API keys can be individually revoked if they are compromised."
+msgstr ""
+"디바이스 신임 정보 및 API 키는 위태롭게 되는 경우 개별적으로 취소될 수 있습니다. "
+
+#: ../docs/reference/security/index.rst:64
+msgid "How do we ensure your devices connect securely to the Watson IoT platform?"
+msgstr ""
+"사용자 디바이스가 Watson IoT Platform에 안전하게 연결되도록 보장하는 방법"
+
+#: ../docs/reference/security/index.rst:65
+msgid "Devices connect through a unique combination of clientId and authentication token that only you know."
+msgstr ""
+"디바이스는 사용자만 알고 있는 클라이언트 ID 및 인증 토큰의 고유 조합을 통해 연결됩니다. "
+
+#: ../docs/reference/security/index.rst:67
+msgid "Full support for connectivity over TLS (v1.2) is provided."
+msgstr ""
+"TLS(v1.2)를 통한 연결에 대한 전체 지원이 제공됩니다. "
+
+#: ../docs/reference/security/index.rst:68
+msgid "Open standards are used (MQTT v3.1.1) to allow easy interop across many platforms and languages."
+msgstr ""
+"많은 플랫폼 및 언어에서 쉽게 상호 운영될 수 있도록 개방형 표준이 사용됩니다(MQTT v3.1.1). "
+
+#: ../docs/reference/security/index.rst:78
+msgid "How do we prevent data leaking between devices?"
+msgstr ""
+"디바이스 간 데이터 유출을 방지하는 방법"
+
+#: ../docs/reference/security/index.rst:79
+msgid "Secure messaging patterns are baked in. Once authenticated, devices are only authorized to publish and subscribe to a restricted topic space:"
+msgstr ""
+"보안 메시징 패턴이 빌드됩니다. 인증되고 나면 디바이스에는 제한된 주제 공간을 공개하고 구독할 수 있는 권한만 부여됩니다. "
+
+#: ../docs/reference/security/index.rst:82
+msgid "/iot-2/evt/+/fmt/+"
+msgstr ""
+"/iot-2/evt/+/fmt/+"
+
+#: ../docs/reference/security/index.rst:83
+msgid "/iot-2/cmd/+"
+msgstr ""
+"/iot-2/cmd/+"
+
+#: ../docs/reference/security/index.rst:85
+msgid "All devices work with the same topic space. The authentication credentials provided by the client connecting dictate to which device this topic space will be scoped by the Watson IoT platform.  This prevents devices from being able to impersonate another device."
+msgstr ""
+"모든 디바이스가 동일한 주제 공간에 대해 작업합니다. 연결하는 클라이언트에서 제공한 인증 신임 정보는 Watson IoT Platform에서 이 주제 공간의 범위를 지정할 디바이스를 지시합니다. 이를 수행하면 디바이스가 다른 디바이스를 위장하는 것이 방지됩니다. "
+
+#: ../docs/reference/security/index.rst:90
+msgid "The only way to impersonate another device is by obtaining compromised security credentials for the device."
+msgstr ""
+"다른 디바이스를 위장하는 유일한 방법은 해당 디바이스에 대해 안전을 위협하는 보안 신임 정보를 얻는 것입니다. "
+
+#: ../docs/reference/security/index.rst:97
+msgid "Applications can subscribe and publish on both the event and command topics for all devices in the organization. Applications can analyse data from many devices simultaneously, and can also simulate or proxy devices in addition to forming the complementary side of a full duplex communication loop."
+msgstr ""
+"애플리케이션은 조직의 모든 디바이스에 대한 이벤트 및 명령 주제 모두에서 구독하고 공개할 수 있습니다. 애플리케이션은 많은 디바이스의 데이터를 동시에 분석할 수 있으며 전이중 통신 루프의 보완 측을 형성하는 것 외에도 디바이스를 시뮬레이션하거나 프록시 설정할 수도 있습니다."
+
+#: ../docs/reference/security/index.rst:107
+msgid "How do we prevent data leaking between organizations?"
+msgstr ""
+"조직 간 데이터 유출을 방지하는 방법"
+
+#: ../docs/reference/security/index.rst:108
+msgid "The topic space in which devices and applications operate is scoped within a single organization. When authenticated, the Watson IoT platform transforms the topic structure using an organization ID based on the client authentication, making it impossible for data from one organization to be accessed from another."
+msgstr ""
+"디바이스 및 애플리케이션이 작동하는 주제 공간은 단일 조직 내에서 범위가 지정됩니다. 인증된 경우, 한 조직의 데이터에 다른 조직에서 액세스하지 못하게 하므로 Watson IoT Platform은 클라이언트 인증을 기반으로 조직 ID를 사용하여 주제 구조를 변환합니다. "
+

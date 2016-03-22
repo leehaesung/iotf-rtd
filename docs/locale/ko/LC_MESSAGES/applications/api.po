@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/applications/api.rst:2
+msgid "HTTP API for Applications"
+msgstr ""
+"애플리케이션용 HTTP API"
+
+#: ../docs/applications/api.rst:4
+msgid "The IoT Platform API can be used to interact with your organization in the IoT Platform."
+msgstr ""
+"IoT Platform API를 사용하여 IoT Platform에서 조직과 상호작용할 수 있습니다. "
+
+#: ../docs/applications/api.rst:7
+msgid "API Capabilities"
+msgstr ""
+"API 기능"
+
+#: ../docs/applications/api.rst:9
+msgid "The IoT Platform API supports the following functionality for applications:"
+msgstr ""
+"IoT Platform API는 애플리케이션에 대해 다음과 같은 기능을 지원합니다. "
+
+#: ../docs/applications/api.rst:11
+msgid "View organization details."
+msgstr ""
+"조직 세부사항을 보십시오."
+
+#: ../docs/applications/api.rst:12
+msgid "Bulk device operations (list all, add, remove)."
+msgstr ""
+"벌크 디바이스 오퍼레이션(모두 나열, 추가, 제거)."
+
+#: ../docs/applications/api.rst:13
+msgid "Device type operations (list all, create, delete, view details, update)."
+msgstr ""
+"디바이스 유형 오퍼레이션(모두 나열, 작성, 삭제, 세부사항 보기, 업데이트)."
+
+#: ../docs/applications/api.rst:14
+msgid "Device operations (list devices, add, remove, view details, update, view location, view management information)."
+msgstr ""
+"디바이스 오퍼레이션(디바이스 나열, 추가, 제거, 세부사항 보기, 업데이트, 위치 보기, 관리 정보 보기)."
+
+#: ../docs/applications/api.rst:15
+msgid "Device diagnostic operations (clear log, retrieve logs, add log information, delete logs, get specific log, clear error codes, get device error codes, add an error code)."
+msgstr ""
+"디바이스 진단 오퍼레이션(로그 지우기, 로그 검색, 로그 정보 추가, 로그 삭제, 특정 로그 가져오기, 오류 코드 지우기, 디바이스 오류 코드 가져오기, 오류 코드 추가)."
+
+#: ../docs/applications/api.rst:16
+msgid "Connection problem determination (list device connection log events)."
+msgstr ""
+"연결 문제점 판별(디바이스 연결 로그 이벤트 나열)."
+
+#: ../docs/applications/api.rst:17
+msgid "Historical event retrieval (view events from all devices, view events from a device type, view events for a specific device)."
+msgstr ""
+"히스토리 이벤트 검색(모든 디바이스에서 이벤트 보기, 디바이스 유형에서 이벤트 보기, 특정 디바이스의 이벤트 보기)."
+
+#: ../docs/applications/api.rst:18
+msgid "Device management request operations (list device management requests, initiate a request, clear request status, get details of a request, get list of request statuses for each affected device,  get request status for a specific device)."
+msgstr ""
+"디바이스 관리 요청 오퍼레이션(디바이스 관리 요청 나열, 요청 시작, 요청 상태 지우기, 요청 세부사항 가져오기, 영향을 받는 각 디바이스의 요청 상태 목록 가져오기, 특정 디바이스의 요청 상태 가져오기)"
+
+#: ../docs/applications/api.rst:19
+msgid "Usage management (retrieve number of active devices over a period of time, retrieve amount of storage used by historical event data, retrieve total amount of data used)."
+msgstr ""
+"사용법 관리(특정 기간 동안 활성 디바이스의 수 검색, 히스토리 이벤트 데이터에서 사용되는 스토리지량 검색, 사용된 총 데이터량 검색)."
+
+#: ../docs/applications/api.rst:20
+msgid "Publish events on behalf of devices (beta)"
+msgstr ""
+"디바이스를 대신해 이벤트 공개(베타)"
+
+#: ../docs/applications/api.rst:21
+msgid "Service status queries (retrieve service statuses for an organization)."
+msgstr ""
+"서비스 상태 조회(조직의 서비스 상태 검색)."
+
+#: ../docs/applications/api.rst:28
+msgid "IoT Platform API Version 2"
+msgstr ""
+"IoT Platform API 버전 2"
+
+#: ../docs/applications/api.rst:30
+msgid "The current version of the IoT Platform API is `version 2 <../swagger/v0002.html>`_.  We strongly recommend that all users build their solutions based on the version 2 APIs."
+msgstr ""
+"IoT Platform API의 현재 버전은 `버전 2 <../swagger/v0002.html>`_입니다.  모든 사용자가 버전 2 API를 기반으로 솔루션을 빌드할 것을 강력하게 권장합니다. "
+
+#: ../docs/applications/api.rst:38
+msgid "IoT Platform API Version 1"
+msgstr ""
+"IoT Platform API 버전 1"
+
+#: ../docs/applications/api.rst:40
+msgid "`Version 1 <../swagger/v0001.html>`_ of the API is still supported, however it should now be considered a deprecated API, many features listed above are not available in the version 1 API."
+msgstr ""
+"API `버전 1 <../swagger/v0001.html>`_은 계속 지원되지만, 더 이상 사용되지 않는 API로 간주되어 버전 1 API에서는 위에 나열된 대부분의 기능을 사용할 수 없습니다. "
+
+#: ../docs/applications/api.rst:45
+msgid "Many of the API paths relating to devices have changed."
+msgstr ""
+"디바이스와 관련한 다수의 API 경로가 변경되었습니다."
+
+#: ../docs/applications/api.rst:46
+msgid "Version 1 of the API does not support any device type operations, other than listing all device types."
+msgstr ""
+"버전 1의 API는 모든 디바이스 유형을 나열하지만 임의의 디바이스 유형 오퍼레이션을 지원하지는 않습니다."
+
+#: ../docs/applications/api.rst:47
+msgid "Operations related to device management, device management requests, diagnostic information, or location cannot be performed using version 1 of the API."
+msgstr ""
+"디바이스 관리, 디바이스 관리 요청, 진단 정보 또는 위치와 관련된 오퍼레이션은 API 버전 1을 사용하여 수행될 수 없습니다."
+

@@ -1,0 +1,223 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/libraries/embedded_c.rst:2
+msgid "Embedded C for Device Developers"
+msgstr ""
+"デバイス開発者用の Embedded C"
+
+#: ../docs/devices/libraries/embedded_c.rst:4
+msgid "See `iotf-embeddedc <https://github.com/ibm-messaging/iotf-embeddedc>`_ on GitHub"
+msgstr ""
+"GitHub の `iotf-embeddedc <https://github.com/ibm-messaging/iotf-embeddedc>`_ を参照してください。"
+
+#: ../docs/devices/libraries/embedded_c.rst:8
+msgid "Dependencies"
+msgstr ""
+"従属関係"
+
+#: ../docs/devices/libraries/embedded_c.rst:10
+msgid "`Eclipse Paho Embedded C library <http://git.eclipse.org/c/paho/org.eclipse.paho.mqtt.embedded-c.git/>`__ - provides an MQTT C client library, check `here <http://www.eclipse.org/paho/clients/c/embedded/>`__ for more information."
+msgstr ""
+"`Eclipse Paho Embedded C ライブラリー <http://git.eclipse.org/c/paho/org.eclipse.paho.mqtt.embedded-c.git/>`__ - MQTT C クライアント・ライブラリーを提供しています。詳細については、`こちら <http://www.eclipse.org/paho/clients/c/embedded/>`__ を参照してください。"
+
+#: ../docs/devices/libraries/embedded_c.rst:14
+msgid "Installation"
+msgstr ""
+"インストール"
+
+#: ../docs/devices/libraries/embedded_c.rst:15
+msgid "To install the IoT Platform client library for Embedded C follow the instructions below."
+msgstr ""
+"Embedded C 用の IoT Platform クライアント・ライブラリーをインストールするには、以下の手順に従ってください。"
+
+#: ../docs/devices/libraries/embedded_c.rst:17
+msgid "To install the latest version of the library, enter the following code in your command line."
+msgstr ""
+"最新バージョンのライブラリーをインストールするには、コマンド・ラインに以下のコードを入力してください。"
+
+#: ../docs/devices/libraries/embedded_c.rst:23
+msgid "Copy the Paho library .tar file that was downloaded in the previous step to the *lib* directory."
+msgstr ""
+"前の手順でダウンロードした Paho ライブラリーの .tar ファイルを *lib* ディレクトリーにコピーします。"
+
+#: ../docs/devices/libraries/embedded_c.rst:30
+msgid "Extract the library file"
+msgstr ""
+"ライブラリー・ファイルを解凍します。"
+
+#: ../docs/devices/libraries/embedded_c.rst:38
+msgid "When downloaded, the client has the following file structure:"
+msgstr ""
+"ダウンロード時に、クライアントのファイル構造は次のようになっています。"
+
+#: ../docs/devices/libraries/embedded_c.rst:54
+msgid "Initializing the Client Library"
+msgstr ""
+"クライアント・ライブラリーを初期化しています"
+
+#: ../docs/devices/libraries/embedded_c.rst:56
+msgid "After downloading the client library, it must be initialized and connected to the IoT Platform. There are 2 ways to initialize the IoT Platform Client Library for Embedded C:"
+msgstr ""
+"ダウンロードしたクライアント・ライブラリーは、初期化して IoT Platform に接続する必要があります。Embedded C 用の IoT Platform クライアント・ライブラリーは、次の 2 とおりの方法で初期化できます。"
+
+#: ../docs/devices/libraries/embedded_c.rst:59
+msgid "Passing as Parameters"
+msgstr ""
+"パラメーターとして引き渡し"
+
+#: ../docs/devices/libraries/embedded_c.rst:61
+msgid "The 'initialize' function takes the following details to connect to the IoT Platform service:"
+msgstr ""
+"「initialize」関数は、IoT Platform サービスに接続するために以下の詳細を必要とします。"
+
+#: ../docs/devices/libraries/embedded_c.rst:63
+msgid "client - Pointer to the *iotfclient*"
+msgstr ""
+"client - *iotfclient* を指すポインター"
+
+#: ../docs/devices/libraries/embedded_c.rst:64
+msgid "org - Your organization ID"
+msgstr ""
+"org - 組織 ID"
+
+#: ../docs/devices/libraries/embedded_c.rst:65
+msgid "type - The type of your device"
+msgstr ""
+"type - デバイスのタイプ"
+
+#: ../docs/devices/libraries/embedded_c.rst:66
+msgid "id - The device ID"
+msgstr ""
+"id - デバイス ID"
+
+#: ../docs/devices/libraries/embedded_c.rst:67
+msgid "authmethod - Method of authentication (the only value currently supported is \"token\")"
+msgstr ""
+"authmethod - 認証方式 (現在サポートされている値は \"token\" のみ)"
+
+#: ../docs/devices/libraries/embedded_c.rst:68
+msgid "authtoken - API key token (required if auth-method is \"token\")"
+msgstr ""
+"authtoken - API キー・トークン (auth-method が \"token\" である場合に必須)"
+
+#: ../docs/devices/libraries/embedded_c.rst:84
+msgid "Using a Configuration File"
+msgstr ""
+"構成ファイルの使用"
+
+#: ../docs/devices/libraries/embedded_c.rst:86
+msgid "You can also use a configuration file to initialize the Embedded C client library. The function 'initialize\\_configfile' takes the configuration file path as a parameter."
+msgstr ""
+"構成ファイルを使用して Embedded C クライアント・ライブラリーを初期化できます。関数「initialize&#xa5;&#xa5;_configfile」は、構成ファイルのパスをパラメーターとして取ります。"
+
+#: ../docs/devices/libraries/embedded_c.rst:99
+msgid "The configuration file must use the following format."
+msgstr ""
+"構成ファイルは、次の形式を使用する必要があります。"
+
+#: ../docs/devices/libraries/embedded_c.rst:111
+msgid "Connecting to the Service"
+msgstr ""
+"サービスに接続"
+
+#: ../docs/devices/libraries/embedded_c.rst:113
+msgid "After initializing the IoT Platform Embedded C client library, you can connect to the IoT Platform by calling the 'connectiotf' function."
+msgstr ""
+"IoT Platform Embedded C クライアント・ライブラリーの初期化後、「connectiotf」関数を呼び出すことで IoT Platform に接続できます。"
+
+#: ../docs/devices/libraries/embedded_c.rst:141
+msgid "Handling commands"
+msgstr ""
+"コマンドの処理"
+
+#: ../docs/devices/libraries/embedded_c.rst:143
+msgid "When the device client connects, it automatically subscribes to any command for this device. To process specific commands you need to register a command callback function by calling the function 'setCommandHandler'. The commands are returned as:"
+msgstr ""
+"デバイス・クライアントは、接続時に自動的にこのデバイスのコマンドをサブスクライブします。特定のコマンドを処理するには、関数「setCommandHandler」を呼び出してコマンド・コールバック関数を登録する必要があります。コマンドは以下のように返されます。"
+
+#: ../docs/devices/libraries/embedded_c.rst:145
+msgid "commandName - name of the command invoked"
+msgstr ""
+"commandName - 呼び出されるコマンドの名前"
+
+#: ../docs/devices/libraries/embedded_c.rst:146
+msgid "format - e.g json, xml"
+msgstr ""
+"format - 例: json、xml"
+
+#: ../docs/devices/libraries/embedded_c.rst:147
+msgid "payload"
+msgstr ""
+"payload"
+
+#: ../docs/devices/libraries/embedded_c.rst:169
+msgid "The 'yield' function must be called periodically to receive commands."
+msgstr ""
+"コマンドを受け取るには、定期的に「yield」関数を呼び出す必要があります。"
+
+#: ../docs/devices/libraries/embedded_c.rst:173
+msgid "Publishing events"
+msgstr ""
+"イベントのパブリッシング"
+
+#: ../docs/devices/libraries/embedded_c.rst:175
+msgid "Events can be published by using:"
+msgstr ""
+"イベントは、以下を使用してパブリッシュできます。"
+
+#: ../docs/devices/libraries/embedded_c.rst:177
+msgid "eventType - Type of event to be published e.g status, gps"
+msgstr ""
+"eventType - パブリッシュされるイベントのタイプ。例: status、gps"
+
+#: ../docs/devices/libraries/embedded_c.rst:178
+msgid "eventFormat - Format of the event e.g json"
+msgstr ""
+"eventFormat - イベントの形式。例: json"
+
+#: ../docs/devices/libraries/embedded_c.rst:179
+msgid "data - Payload of the event"
+msgstr ""
+"data - イベントのペイロード"
+
+#: ../docs/devices/libraries/embedded_c.rst:180
+msgid "QoS - qos for the publish event. Supported values : QOS0, QOS1, QOS2"
+msgstr ""
+"QoS - パブリッシュ・イベントの qos。サポートされる値: QOS0、QOS1、QOS2"
+
+#: ../docs/devices/libraries/embedded_c.rst:194
+msgid "Disconnect Client"
+msgstr ""
+"クライアントの切断"
+
+#: ../docs/devices/libraries/embedded_c.rst:196
+msgid "To disconnect the client and release the connections, run the following code snippet."
+msgstr ""
+"クライアントを切断して接続を解放するには、次のコード・スニペットを実行します。"
+
+#: ../docs/devices/libraries/embedded_c.rst:212
+msgid "Samples"
+msgstr ""
+"サンプル"
+
+#: ../docs/devices/libraries/embedded_c.rst:214
+msgid "Sample device and application code is provided in `GitHub <https://github.com/ibm-messaging/iotf-embeddedc/tree/master/samples>`_."
+msgstr ""
+"サンプル・デバイスおよびアプリケーション・コードは、`GitHub <https://github.com/ibm-messaging/iotf-embeddedc/tree/master/samples>`_ で提供されています。"
+

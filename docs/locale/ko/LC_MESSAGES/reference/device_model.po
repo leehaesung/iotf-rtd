@@ -1,0 +1,894 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/reference/device_model.rst:3
+msgid "Device Model"
+msgstr ""
+"디바이스 모델"
+
+#: ../docs/reference/device_model.rst:5
+msgid "The device model describes the metadata and management characteristics of a device. The device database in the Watson IoT platform is the master source of device information. Applications and managed devices are able to send updates to the database such as a location or the progress of a firmware update. Once these updates are received by the Watson IoT platform, the device database is updated, making the information available to applications."
+msgstr ""
+"디바이스 모델은 디바이스의 관리 특성 및 메타데이터에 대해 설명합니다. Watson IoT Platform에 있는 디바이스 데이터베이스는 디바이스 정보에 대한 마스터 소스입니다. 애플리케이션 및 관리 디바이스가 펌웨어 업데이트의 진행상태 또는 위치 등 데이터베이스에 대한 업데이트를 보낼 수 있습니다. Watson IoT Platform에서 이러한 업데이트를 수신하면 디바이스 데이터베이스가 업데이트되므로 애플리케이션에서 정보를 사용할 수 있게 됩니다. "
+
+#: ../docs/reference/device_model.rst:12
+msgid "With the exception of the management extension, the entire device model is available for both managed and unmanaged devices. However, an unmanaged device can not directly update its device model in the database."
+msgstr ""
+"관리 확장기능을 제외하고 전체 디바이스 모델이 관리 및 비관리 디바이스 둘 다에 대해 사용 가능합니다. 그러나 비관리 디바이스는 데이터베이스에서 디바이스 모델을 직접 업데이트할 수 없습니다."
+
+#: ../docs/reference/device_model.rst:20
+msgid "Device Identification"
+msgstr ""
+"디바이스 식별"
+
+#: ../docs/reference/device_model.rst:22
+msgid "Every device has a typeId and deviceId attribute. Typically, the typeId represents the model of your device, whilst the deviceId can represent its serial number. Within your Watson IoT platform organization, the combination of typeId and deviceId must be unique for each device."
+msgstr ""
+"모든 디바이스에 typeId 및 deviceId 속성이 있습니다. 일반적으로, typeId는 디바이스의 모델을 나타내고 deviceId는 일련 번호를 나타낼 수 있습니다. Watson IoT Platform 조직 내에서 typeId 및 deviceId의 조합은 디바이스마다 고유해야 합니다."
+
+#: ../docs/reference/device_model.rst:26
+msgid "In addition, the Watson IoT platform constructs a further identifier for each device based on your organizationId, the device's typeId and the device's deviceId. This identifier - the clientId - allows you to identify unequivocally an individual device."
+msgstr ""
+"또한 Watson IoT Platform은 organizationId, 디바이스의 typeId 및 디바이스의 deviceId를 기반으로 디바이스마다 추가 ID를 생성합니다. 이 ID, clientId를 통해 개별 디바이스를 명백히 식별할 수 있습니다."
+
+#: ../docs/reference/device_model.rst:28
+msgid "The characters which can be used in these identifiers are restricted so they can be used straightforwardly in communication protocols and REST APIs. There are a number of optional device identifiers for use with the device management protocol. These identifiers are:"
+msgstr ""
+"통신 프로토콜 및 REST API에서 간단하게 사용할 수 있도록 이러한 ID에 사용할 수 있는 문자가 제한됩니다. 디바이스 관리 프로토콜과 함께 사용할 다수의 선택적 디바이스 ID가 있습니다. 이러한 ID는 다음과 같습니다."
+
+#: ../docs/reference/device_model.rst:32
+msgid "deviceInfo.manufacturer"
+msgstr ""
+"deviceInfo.manufacturer"
+
+#: ../docs/reference/device_model.rst:33
+msgid "deviceInfo.serialNumber"
+msgstr ""
+"deviceInfo.serialNumber"
+
+#: ../docs/reference/device_model.rst:34
+msgid "deviceInfo.model"
+msgstr ""
+"deviceInfo.model"
+
+#: ../docs/reference/device_model.rst:35
+msgid "deviceInfo.deviceClass"
+msgstr ""
+"deviceInfo.deviceClass"
+
+#: ../docs/reference/device_model.rst:36
+msgid "deviceInfo.description"
+msgstr ""
+"deviceInfo.description"
+
+#: ../docs/reference/device_model.rst:38
+msgid "For more information on the identifiers and descriptions of their comparative identifiers in other device management standards, see Device Model Attributes Reference."
+msgstr ""
+"기타 디바이스 관리 표준에서 비교되는 ID에 대한 설명 및 ID에 대한 자세한 정보는 디바이스 모델 속성 참조를 참조하십시오."
+
+#: ../docs/reference/device_model.rst:46
+msgid "Identifiers and Device Type"
+msgstr ""
+"ID 및 디바이스 유형"
+
+#: ../docs/reference/device_model.rst:48
+msgid "Each device connected to the Watson IoT platform is associated with a device type. Device types are intended to be groups of devices which share characteristics or behaviour."
+msgstr ""
+"Watson IoT Platform에 연결된 각 디바이스는 디바이스 유형과 연관됩니다. 디바이스 유형은 특성 또는 동작을 공유하는 디바이스의 그룹이 되도록 계획됩니다."
+
+#: ../docs/reference/device_model.rst:52
+msgid "A device type has a set of attributes. When a device is added to the Watson IoT platform, the attributes in its device type are used as a template overridden by device-specific attributes. For example, the device type could have a value for the ``deviceInfo.fwVersion`` attribute reflecting the firmware version at the time of manufacture, and this value would be copied from the device type into the devices as they are added. However, if a device was added which already had a value for ``deviceInfo.fwVersion``, it would not be overridden by the device type."
+msgstr ""
+"디바이스 유형에는 속성 세트가 있습니다. 디바이스가 Watson IoT Platform에 추가되면 디바이스 유형의 속성이 디바이스별 속성에서 대체된 템플리트로 사용됩니다. 예를 들어, 디바이스 유형에는 제조업체의 시간에 펌웨어 버전을 반영하는 ``deviceInfo.fwVersion`` 속성의 값일 수 있고 이 값은 추가 시 디바이스 유형에서 디바이스로 복사됩니다. 그러나 ``deviceInfo.fwVersion``에 대해 이미 값이 있는 디바이스가 추가된 경우 디바이스 유형으로 대체되지 않습니다."
+
+#: ../docs/reference/device_model.rst:59
+msgid "When a device type is updated, future registered devices will reflect the modified device type template. However, existing devices of this device type are unaffected and remain unchanged."
+msgstr ""
+"디바이스 유형이 업데이트되면 등록된 추가 디바이스가 수정된 디바이스 유형 템플리트를 반영합니다. 그러나 이 디바이스 유형의 기존 디바이스는 영향을 받지 않고 계속 변경되지 않습니다."
+
+#: ../docs/reference/device_model.rst:68
+msgid "Attributes"
+msgstr ""
+"속성"
+
+#: ../docs/reference/device_model.rst:70
+msgid "The table below shows the list of attributes which can apply to devices in the Watson IoT platform. Additionally, italicized attributes can also apply to device types."
+msgstr ""
+"다음 표는 Watson IoT Platform에서 디바이스에 적용할 수 있는 속성 목록을 보여줍니다. 또한 이탤릭체 속성은 디바이스 유형에도 적용될 수 있습니다."
+
+#: ../docs/reference/device_model.rst:72
+msgid "API/DMA: Can be updated by API/Device Management Agent"
+msgstr ""
+"API/DMA: API/디바이스 관리 에이전트에서 업데이트될 수 있음"
+
+#: ../docs/reference/device_model.rst:74
+msgid "R: Read only"
+msgstr ""
+"R: 읽기 전용"
+
+#: ../docs/reference/device_model.rst:75
+msgid "W: Write and read"
+msgstr ""
+"W: 쓰기 및 읽기"
+
+#: ../docs/reference/device_model.rst:76
+msgid "A: Append"
+msgstr ""
+"A: 추가"
+
+#: ../docs/reference/device_model.rst:79
+#: ../docs/reference/device_model.rst:158
+#: ../docs/reference/device_model.rst:183
+#: ../docs/reference/device_model.rst:207
+msgid "Attribute"
+msgstr ""
+"속성"
+
+#: ../docs/reference/device_model.rst:79
+#: ../docs/reference/device_model.rst:158
+#: ../docs/reference/device_model.rst:183
+#: ../docs/reference/device_model.rst:207
+msgid "Type"
+msgstr ""
+"유형"
+
+#: ../docs/reference/device_model.rst:79
+#: ../docs/reference/device_model.rst:158
+#: ../docs/reference/device_model.rst:183
+#: ../docs/reference/device_model.rst:207
+msgid "Description"
+msgstr ""
+"설명"
+
+#: ../docs/reference/device_model.rst:79
+#: ../docs/reference/device_model.rst:158
+#: ../docs/reference/device_model.rst:183
+#: ../docs/reference/device_model.rst:207
+msgid "API"
+msgstr ""
+"API"
+
+#: ../docs/reference/device_model.rst:79
+#: ../docs/reference/device_model.rst:158
+#: ../docs/reference/device_model.rst:183
+#: ../docs/reference/device_model.rst:207
+msgid "DMA"
+msgstr ""
+"DMA"
+
+#: ../docs/reference/device_model.rst:81
+msgid "clientId"
+msgstr ""
+"clientId"
+
+#: ../docs/reference/device_model.rst:81
+#: ../docs/reference/device_model.rst:83
+#: ../docs/reference/device_model.rst:85
+#: ../docs/reference/device_model.rst:87
+#: ../docs/reference/device_model.rst:89
+#: ../docs/reference/device_model.rst:91
+#: ../docs/reference/device_model.rst:95
+#: ../docs/reference/device_model.rst:97
+#: ../docs/reference/device_model.rst:99
+#: ../docs/reference/device_model.rst:101
+#: ../docs/reference/device_model.rst:103
+#: ../docs/reference/device_model.rst:105
+#: ../docs/reference/device_model.rst:108
+#: ../docs/reference/device_model.rst:110
+#: ../docs/reference/device_model.rst:115
+#: ../docs/reference/device_model.rst:117
+#: ../docs/reference/device_model.rst:120
+#: ../docs/reference/device_model.rst:122
+#: ../docs/reference/device_model.rst:124
+#: ../docs/reference/device_model.rst:126
+#: ../docs/reference/device_model.rst:165
+#: ../docs/reference/device_model.rst:167
+#: ../docs/reference/device_model.rst:169
+#: ../docs/reference/device_model.rst:191
+#: ../docs/reference/device_model.rst:193
+#: ../docs/reference/device_model.rst:211
+#: ../docs/reference/device_model.rst:214
+#: ../docs/reference/device_model.rst:223
+#: ../docs/reference/device_model.rst:225
+#: ../docs/reference/device_model.rst:227
+#: ../docs/reference/device_model.rst:229
+#: ../docs/reference/device_model.rst:236
+msgid "string"
+msgstr ""
+"문자열"
+
+#: ../docs/reference/device_model.rst:81
+msgid "The client ID used with MQTT connections"
+msgstr ""
+"MQTT 연결과 함께 사용되는 클라이언트 ID"
+
+#: ../docs/reference/device_model.rst:81
+#: ../docs/reference/device_model.rst:83
+#: ../docs/reference/device_model.rst:85
+#: ../docs/reference/device_model.rst:87
+#: ../docs/reference/device_model.rst:89
+#: ../docs/reference/device_model.rst:91
+#: ../docs/reference/device_model.rst:115
+#: ../docs/reference/device_model.rst:117
+#: ../docs/reference/device_model.rst:120
+#: ../docs/reference/device_model.rst:122
+#: ../docs/reference/device_model.rst:124
+#: ../docs/reference/device_model.rst:126
+#: ../docs/reference/device_model.rst:193
+#: ../docs/reference/device_model.rst:209
+#: ../docs/reference/device_model.rst:211
+#: ../docs/reference/device_model.rst:214
+#: ../docs/reference/device_model.rst:217
+#: ../docs/reference/device_model.rst:220
+#: ../docs/reference/device_model.rst:223
+#: ../docs/reference/device_model.rst:225
+#: ../docs/reference/device_model.rst:227
+#: ../docs/reference/device_model.rst:229
+#: ../docs/reference/device_model.rst:232
+#: ../docs/reference/device_model.rst:234
+#: ../docs/reference/device_model.rst:236
+msgid "R"
+msgstr ""
+"R"
+
+#: ../docs/reference/device_model.rst:83
+msgid "*typeId*"
+msgstr ""
+"*typeId*"
+
+#: ../docs/reference/device_model.rst:83
+msgid "Device type"
+msgstr ""
+"디바이스 유형"
+
+#: ../docs/reference/device_model.rst:85
+msgid "deviceId"
+msgstr ""
+"deviceId"
+
+#: ../docs/reference/device_model.rst:85
+msgid "Device ID"
+msgstr ""
+"디바이스 ID"
+
+#: ../docs/reference/device_model.rst:87
+msgid "classId"
+msgstr ""
+"classId"
+
+#: ../docs/reference/device_model.rst:87
+msgid "Class of device (\"Device\" or \"Gateway\")"
+msgstr ""
+"디바이스의 클래스(\"Device\" 또는 \"Gateway\")"
+
+#: ../docs/reference/device_model.rst:89
+msgid "gatewayTypeId"
+msgstr ""
+"gatewayTypeId"
+
+#: ../docs/reference/device_model.rst:89
+msgid "Type ID of the gateway this device is using"
+msgstr ""
+"해당 디바이스가 사용하고 있는 게이트웨이의 유형 ID"
+
+#: ../docs/reference/device_model.rst:91
+msgid "gatewayId"
+msgstr ""
+"gatewayId"
+
+#: ../docs/reference/device_model.rst:91
+msgid "Device ID of the gateway this device is using"
+msgstr ""
+"해당 디바이스가 사용하고 있는 게이트웨이의 디바이스 ID"
+
+#: ../docs/reference/device_model.rst:93
+msgid "status.alert"
+msgstr ""
+"status.alert"
+
+#: ../docs/reference/device_model.rst:93
+#: ../docs/reference/device_model.rst:209
+#: ../docs/reference/device_model.rst:217
+#: ../docs/reference/device_model.rst:220
+msgid "boolean"
+msgstr ""
+"부울"
+
+#: ../docs/reference/device_model.rst:93
+msgid "Whether the device has an alert"
+msgstr ""
+"디바이스에 경보가 있는지 여부"
+
+#: ../docs/reference/device_model.rst:93
+#: ../docs/reference/device_model.rst:95
+#: ../docs/reference/device_model.rst:95
+#: ../docs/reference/device_model.rst:97
+#: ../docs/reference/device_model.rst:97
+#: ../docs/reference/device_model.rst:99
+#: ../docs/reference/device_model.rst:99
+#: ../docs/reference/device_model.rst:101
+#: ../docs/reference/device_model.rst:101
+#: ../docs/reference/device_model.rst:103
+#: ../docs/reference/device_model.rst:103
+#: ../docs/reference/device_model.rst:105
+#: ../docs/reference/device_model.rst:105
+#: ../docs/reference/device_model.rst:108
+#: ../docs/reference/device_model.rst:108
+#: ../docs/reference/device_model.rst:110
+#: ../docs/reference/device_model.rst:110
+#: ../docs/reference/device_model.rst:113
+#: ../docs/reference/device_model.rst:113
+#: ../docs/reference/device_model.rst:185
+#: ../docs/reference/device_model.rst:185
+#: ../docs/reference/device_model.rst:187
+#: ../docs/reference/device_model.rst:187
+#: ../docs/reference/device_model.rst:189
+#: ../docs/reference/device_model.rst:189
+#: ../docs/reference/device_model.rst:191
+#: ../docs/reference/device_model.rst:191
+#: ../docs/reference/device_model.rst:195
+#: ../docs/reference/device_model.rst:195
+#: ../docs/reference/device_model.rst:223
+#: ../docs/reference/device_model.rst:225
+#: ../docs/reference/device_model.rst:227
+#: ../docs/reference/device_model.rst:229
+#: ../docs/reference/device_model.rst:232
+#: ../docs/reference/device_model.rst:234
+msgid "W"
+msgstr ""
+"W"
+
+#: ../docs/reference/device_model.rst:95
+msgid "*deviceInfo.serialNumber*"
+msgstr ""
+"*deviceInfo.serialNumber*"
+
+#: ../docs/reference/device_model.rst:95
+msgid "The serial number of the device"
+msgstr ""
+"디바이스의 일련 번호"
+
+#: ../docs/reference/device_model.rst:97
+msgid "*deviceInfo.manufacturer*"
+msgstr ""
+"*deviceInfo.manufacturer*"
+
+#: ../docs/reference/device_model.rst:97
+msgid "The manufacturer of the device"
+msgstr ""
+"디바이스의 제조업체"
+
+#: ../docs/reference/device_model.rst:99
+msgid "*deviceInfo.model*"
+msgstr ""
+"*deviceInfo.model*"
+
+#: ../docs/reference/device_model.rst:99
+msgid "The model of the device"
+msgstr ""
+"디바이스의 모델"
+
+#: ../docs/reference/device_model.rst:101
+msgid "*deviceInfo.deviceClass*"
+msgstr ""
+"*deviceInfo.deviceClass*"
+
+#: ../docs/reference/device_model.rst:101
+msgid "The class of the device"
+msgstr ""
+"디바이스의 클래스"
+
+#: ../docs/reference/device_model.rst:103
+msgid "*deviceInfo.description*"
+msgstr ""
+"*deviceInfo.description*"
+
+#: ../docs/reference/device_model.rst:103
+msgid "The descriptive name of the device"
+msgstr ""
+"디바이스의 설명 이름"
+
+#: ../docs/reference/device_model.rst:105
+msgid "*deviceInfo.fwVersion*"
+msgstr ""
+"*deviceInfo.fwVersion*"
+
+#: ../docs/reference/device_model.rst:105
+msgid "The firmware version currently known to be on the device"
+msgstr ""
+"디바이스에 있는 것으로 현재 알려진 펌웨어 버전"
+
+#: ../docs/reference/device_model.rst:108
+msgid "*deviceInfo.hwVersion*"
+msgstr ""
+"*deviceInfo.hwVersion*"
+
+#: ../docs/reference/device_model.rst:108
+msgid "The hardware version of the device"
+msgstr ""
+"디바이스의 하드웨어 버전"
+
+#: ../docs/reference/device_model.rst:110
+msgid "*deviceInfo.descriptiveLocation*"
+msgstr ""
+"*deviceInfo.descriptiveLocation*"
+
+#: ../docs/reference/device_model.rst:110
+msgid "The descriptive location, such as a room or building number, or a geopgraphical region"
+msgstr ""
+"룸 또는 빌딩 번호나 지리적 지역 등의 설명적 위치"
+
+#: ../docs/reference/device_model.rst:113
+msgid "*metadata*"
+msgstr ""
+"*metadata*"
+
+#: ../docs/reference/device_model.rst:113
+msgid "complex"
+msgstr ""
+"복합"
+
+#: ../docs/reference/device_model.rst:113
+msgid "Free-form metadata"
+msgstr ""
+"자유 양식 메타데이터"
+
+#: ../docs/reference/device_model.rst:115
+msgid "added.auth.id"
+msgstr ""
+"added.auth.id"
+
+#: ../docs/reference/device_model.rst:115
+msgid "ID that added the device"
+msgstr ""
+"디바이스를 추가한 ID"
+
+#: ../docs/reference/device_model.rst:117
+msgid "added.dateTime"
+msgstr ""
+"added.dateTime"
+
+#: ../docs/reference/device_model.rst:117
+msgid "ISO8601 date-time: Date and time the device was added"
+msgstr ""
+"ISO8601 date-time: 디바이스가 추가된 날짜 및 시간"
+
+#: ../docs/reference/device_model.rst:120
+msgid "refs.diag.errorCodes"
+msgstr ""
+"refs.diag.errorCodes"
+
+#: ../docs/reference/device_model.rst:120
+msgid "URI of diag extension for error codes, if present"
+msgstr ""
+"표시된 경우 오류 코드에 대한 진단 확장기능의 URI"
+
+#: ../docs/reference/device_model.rst:122
+msgid "refs.diag.logs"
+msgstr ""
+"refs.diag.logs"
+
+#: ../docs/reference/device_model.rst:122
+msgid "URI of diag extension for logs, if present"
+msgstr ""
+"표시된 경우 로그에 대한 진단 확장기능의 URI"
+
+#: ../docs/reference/device_model.rst:124
+msgid "refs.location"
+msgstr ""
+"refs.location"
+
+#: ../docs/reference/device_model.rst:124
+msgid "URI of location extension, if present"
+msgstr ""
+"표시된 경우 위치 확장기능의 URI"
+
+#: ../docs/reference/device_model.rst:126
+msgid "refs.mgmt"
+msgstr ""
+"refs.mgmt"
+
+#: ../docs/reference/device_model.rst:126
+msgid "URI of mgmt extension, is present"
+msgstr ""
+"표시된 경우 mgmt 확장기능의 URI"
+
+#: ../docs/reference/device_model.rst:132
+msgid "Extended Attributes"
+msgstr ""
+"확장된 속성"
+
+#: ../docs/reference/device_model.rst:134
+msgid "In addition to core attributes listed above, there are additional attributes which are treated as extensions to the core device model. Simple queries about the device return information from the core device model, but not the extensions. Information from the extensions must be specifically requested."
+msgstr ""
+"위에 나열된 코어 속성에 더하여, 코어 디바이스 모델에 확장기능으로 처리되는 추가 속성이 있습니다. 디바이스에 대한 단순 조회에서는 코어 디바이스 모델에서 정보를 리턴하지만, 확장기능은 아닙니다. 확장기능의 정보를 특히 요청해야 합니다."
+
+#: ../docs/reference/device_model.rst:140
+msgid "Extension Name"
+msgstr ""
+"확장기능 이름"
+
+#: ../docs/reference/device_model.rst:140
+msgid "Prefix of attributes"
+msgstr ""
+"속성의 접두부"
+
+#: ../docs/reference/device_model.rst:140
+msgid "Purpose"
+msgstr ""
+"용도"
+
+#: ../docs/reference/device_model.rst:142
+msgid "Diagnostics"
+msgstr ""
+"진단"
+
+#: ../docs/reference/device_model.rst:142
+msgid "diag"
+msgstr ""
+"diag"
+
+#: ../docs/reference/device_model.rst:142
+msgid "Error logs and diagnostic information"
+msgstr ""
+"오류 로그 및 진단 정보"
+
+#: ../docs/reference/device_model.rst:144
+msgid "Location"
+msgstr ""
+"위치"
+
+#: ../docs/reference/device_model.rst:144
+msgid "location"
+msgstr ""
+"위치"
+
+#: ../docs/reference/device_model.rst:144
+msgid "Location of the device, potentially updated regularly"
+msgstr ""
+"디바이스의 위치로서, 정기적으로 업데이트될 수 있음"
+
+#: ../docs/reference/device_model.rst:146
+msgid "Device management"
+msgstr ""
+"디바이스 관리"
+
+#: ../docs/reference/device_model.rst:146
+msgid "mgmt"
+msgstr ""
+"mgmt"
+
+#: ../docs/reference/device_model.rst:146
+msgid "Device management actions, e.g. firmware update"
+msgstr ""
+"디바이스 관리 조치(예: 펌웨어 업데이트)"
+
+#: ../docs/reference/device_model.rst:151
+msgid "Diagnostics Extension"
+msgstr ""
+"진단 확장기능"
+
+#: ../docs/reference/device_model.rst:153
+msgid "The diagnostics attributes are optional, and only present for devices with error log information. These attributes are intended for diagnosing device problems, not troubleshooting connectivity to the Watson IoT platform. In order to retrieve the information in these attributes, it must be queried separately, because the information stored in these attributes could potentially be very large."
+msgstr ""
+"진단 속성이 선택적이고 오류 로그 정보가 포함된 디바이스에 대해서만 표시됩니다. 이러한 속성은 디바이스 문제점을 진단하는 데 사용되므로, Watson IoT Platform에 대한 연결 문제점을 해결하지는 않습니다. 이러한 속성에서 정보를 검색하려면 이러한 속성에 저장된 정보가 잠재적으로 매우 클 수 있으므로 별도로 조회해야 합니다."
+
+#: ../docs/reference/device_model.rst:155
+msgid "Diagnostic log information is an array of entries which can have entries appended using an API, however, this can cause earlier entries to be lost, to keep the size of diagnostic logs manageable. Each entry consists of a message, an indication of severity, a timestamp and an optional byte-array of data."
+msgstr ""
+"진단 로그 정보가 API를 통해 항목이 추가되어 있을 수 있는 항목의 배열이지만, 이로 인해 이전의 항목이 유실되고 진단 로그의 크기가 관리 가능하도록 유지할 수 있습니다. 각 항목은 메시지, 심각도의 표시, 시간소인 및 데이터의 선택적 바이트-배열로 구성됩니다."
+
+#: ../docs/reference/device_model.rst:160
+msgid "diag.errorCodes[]"
+msgstr ""
+"diag.errorCodes[]"
+
+#: ../docs/reference/device_model.rst:160
+msgid "array of integer(s)"
+msgstr ""
+"정수의 배열"
+
+#: ../docs/reference/device_model.rst:160
+msgid "Array of error codes"
+msgstr ""
+"오류 코드의 배열"
+
+#: ../docs/reference/device_model.rst:160
+#: ../docs/reference/device_model.rst:160
+#: ../docs/reference/device_model.rst:163
+#: ../docs/reference/device_model.rst:163
+msgid "A"
+msgstr ""
+"A"
+
+#: ../docs/reference/device_model.rst:163
+msgid "diag.log[]"
+msgstr ""
+"diag.log[]"
+
+#: ../docs/reference/device_model.rst:163
+msgid "array"
+msgstr ""
+"배열"
+
+#: ../docs/reference/device_model.rst:163
+msgid "Array of diagnostic data"
+msgstr ""
+"진단 데이터의 배열"
+
+#: ../docs/reference/device_model.rst:165
+msgid "diag.log[].message"
+msgstr ""
+"diag.log[].message"
+
+#: ../docs/reference/device_model.rst:165
+msgid "Diagnostic message"
+msgstr ""
+"진단 메시지"
+
+#: ../docs/reference/device_model.rst:167
+msgid "diag.log[].timestamp"
+msgstr ""
+"diag.log[].timestamp"
+
+#: ../docs/reference/device_model.rst:167
+msgid "ISO8601 date-time: Date and time of log entry"
+msgstr ""
+"ISO8601 date-time: 로그 항목의 날짜 및 시간"
+
+#: ../docs/reference/device_model.rst:169
+msgid "diag.log[].logData"
+msgstr ""
+"diag.log[].logData"
+
+#: ../docs/reference/device_model.rst:169
+msgid "byte: Diagnostic data, base-64 encoded"
+msgstr ""
+"바이트: 진단 데이터, base-64 인코딩됨"
+
+#: ../docs/reference/device_model.rst:171
+msgid "diag.log[].severity"
+msgstr ""
+"diag.log[].severity"
+
+#: ../docs/reference/device_model.rst:171
+#: ../docs/reference/device_model.rst:185
+#: ../docs/reference/device_model.rst:187
+#: ../docs/reference/device_model.rst:189
+#: ../docs/reference/device_model.rst:195
+#: ../docs/reference/device_model.rst:232
+#: ../docs/reference/device_model.rst:234
+msgid "number"
+msgstr ""
+"수"
+
+#: ../docs/reference/device_model.rst:171
+msgid "Severity of message, 0: informational, 1: warning, 2: error"
+msgstr ""
+"메시지의 심각도, 0: 정보용, 1: 경고, 2: 오류"
+
+#: ../docs/reference/device_model.rst:176
+msgid "Location Extension"
+msgstr ""
+"위치 확장기능"
+
+#: ../docs/reference/device_model.rst:178
+msgid "These attributes are optional and only present for devices with location information. The location information is stored separately in order to allow the use of storage mechanisms better suited to dynamic information in the event of frequently updated information, for example, in the case of a mobile device."
+msgstr ""
+"이러한 속성은 선택적이고 위치 정보가 포함된 디바이스에 대해서만 표시됩니다. 위치 정보는 모바일 디바이스의 경우와 같이 자주 업데이트되는 정보의 이벤트에서 동적 정보에 더 잘 맞는 스토리지 메커니즘의 사용을 허용하기 위해 별도로 저장됩니다."
+
+#: ../docs/reference/device_model.rst:180
+msgid "For solutions which place significant importance on frequent location updates, it is expected that the location would be treated as part of the device's event payload, enabling higher update rates, simple historical storage, and analytics."
+msgstr ""
+"위치를 자주 업데이트해야 하는 솔루션의 경우, 위치가 디바이스의 이벤트 페이로드의 파트로 처리되어 더 높은 업데이트 비율, 단순한 히스토리 스토리지 및 분석을 가능하게 할 것으로 예상됩니다."
+
+#: ../docs/reference/device_model.rst:185
+msgid "location.longitude"
+msgstr ""
+"location.longitude"
+
+#: ../docs/reference/device_model.rst:185
+msgid "Longitude in decimal degrees using WGS84"
+msgstr ""
+"WGS84를 통한 10진수 도의 경도"
+
+#: ../docs/reference/device_model.rst:187
+msgid "location.latitude"
+msgstr ""
+"location.latitude"
+
+#: ../docs/reference/device_model.rst:187
+msgid "Latitude in decimal degrees using WGS84"
+msgstr ""
+"WGS84를 통한 10진수 도의 위도"
+
+#: ../docs/reference/device_model.rst:189
+msgid "location.elevation"
+msgstr ""
+"location.elevation"
+
+#: ../docs/reference/device_model.rst:189
+msgid "Elevation in metres using WGS84"
+msgstr ""
+"WGS84를 통한 미터로 된 엘리베이션"
+
+#: ../docs/reference/device_model.rst:191
+msgid "location.measuredDateTime"
+msgstr ""
+"location.measuredDateTime"
+
+#: ../docs/reference/device_model.rst:191
+msgid "ISO8601 date-time: Date and time of location measurement"
+msgstr ""
+"ISO8601 date-time: 위치 측정의 날짜 및 시간"
+
+#: ../docs/reference/device_model.rst:193
+msgid "location.updatedDateTime"
+msgstr ""
+"location.updatedDateTime"
+
+#: ../docs/reference/device_model.rst:193
+msgid "ISO8601 date-time: Date and time"
+msgstr ""
+"ISO8601 date-time: 날짜 및 시간"
+
+#: ../docs/reference/device_model.rst:195
+msgid "location.accuracy"
+msgstr ""
+"location.accuracy"
+
+#: ../docs/reference/device_model.rst:195
+msgid "Accuracy of the position in metres"
+msgstr ""
+"미터로 된 위치의 정확도"
+
+#: ../docs/reference/device_model.rst:200
+msgid "Device Management Extension"
+msgstr ""
+"디바이스 관리 확장기능"
+
+#: ../docs/reference/device_model.rst:202
+msgid "The ``mgmt.`` attributes are only present for managed devices. When a managed device becomes dormant, it becomes unmanaged and the ``mgmt.`` attributes are deleted. The ``mgmt.`` attributes are set by the Watson IoT platform as a result of processing device management requests. These attributes cannot be directly written using the API."
+msgstr ""
+"``mgmt.`` 속성은 관리 디바이스에 대해서만 나타납니다. 관리 디바이스가 휴지 상태가 되면 비관리가 되고 ``mgmt.`` 속성이 삭제됩니다. ``mgmt.`` 속성은 디바이스 관리 요청을 처리하는 결과로 Watson IoT Platform에서 설정됩니다. 이러한 속성은 API를 통해 직접 작성할 수 없습니다."
+
+#: ../docs/reference/device_model.rst:204
+msgid "Devices have a management lifecycle, defined by their status as managed devices. The device management agent on the device is responsible for sending a Manage Device request using the device management protocol. To deal with defunct devices in large device populations, a managed device can be set to send a Manage Device request regularly, allowing the Watson IoT platform to notice when a device has become dormant. To facilitate this functionality, the Manage Device request has an optional lifetime parameter, When the Watson IoT platform receives a Manage Device request with a lifetime, it calculates the time before which another Manage Device request is required and stores it in the  \"mgmt.dormantDateTime\" attribute."
+msgstr ""
+"디바이스에 관리 디바이스로 상태에서 정의되는 관리 라이프사이클이 있습니다. 디바이스의 디바이스 관리 에이전트는 디바이스 관리 프로토콜을 통해 디바이스 관리 요청 전송을 담당합니다. 다수의 디바이스에서 존재하지 않는 디바이스를 처리하려고 관리 디바이스가 디바이스 관리 요청을 정기적으로 보내도록 설정되어 Watson IoT Platform에서 디바이스 휴지 상태를 알릴 수 있습니다. 이 기능을 쉽게 사용할 수 있도록 디바이스 관리 요청에 선택적 lifetime 매개변수가 있습니다. Watson IoT Platform에서 lifetime이 포함된 디바이스 관리 요청을 수신하면 다른 디바이스 관리 요청이 필요할 때까지의 시간을 계산하여 \"mgmt.dormantDateTime\" 속성에 저장합니다. "
+
+#: ../docs/reference/device_model.rst:209
+msgid "mgmt.dormant"
+msgstr ""
+"mgmt.dormant"
+
+#: ../docs/reference/device_model.rst:209
+msgid "Whether the device has become dormant"
+msgstr ""
+"디바이스가 휴지 상태가 되었는지 여부"
+
+#: ../docs/reference/device_model.rst:211
+msgid "mgmt.dormantDateTime"
+msgstr ""
+"mgmt.dormantDateTime"
+
+#: ../docs/reference/device_model.rst:211
+msgid "ISO8601 date-time: Date and time at which the managed device will become dormant"
+msgstr ""
+"ISO8601 date-time: 관리 디바이스가 휴지 상태가 되는 날짜 및 시간"
+
+#: ../docs/reference/device_model.rst:214
+msgid "mgmt.lastActivityDateTime"
+msgstr ""
+"mgmt.lastActivityDateTime"
+
+#: ../docs/reference/device_model.rst:214
+msgid "ISO8601 date-time: Date and time of last activity, updated periodically"
+msgstr ""
+"ISO8601 date-time: 마지막 활동의 날짜 및 시간으로 정기적으로 업데이트됨"
+
+#: ../docs/reference/device_model.rst:217
+msgid "mgmt.supports.deviceActions"
+msgstr ""
+"mgmt.supports.deviceActions"
+
+#: ../docs/reference/device_model.rst:217
+msgid "Whether the device supports Reboot and Factory Reset actions"
+msgstr ""
+"디바이스가 다시 부팅 및 팩토리 재설정 조치를 지원하는지 여부"
+
+#: ../docs/reference/device_model.rst:220
+msgid "mgmt.supports.firmwareActions"
+msgstr ""
+"mgmt.supports.firmwareActions"
+
+#: ../docs/reference/device_model.rst:220
+msgid "Whether the device supports Firmware Download and Firmware Update actions"
+msgstr ""
+"디바이스가 펌웨어 다운로드 및 펌웨어 업데이트 조치를 지원하는지 여부"
+
+#: ../docs/reference/device_model.rst:223
+msgid "mgmt.firmware.version"
+msgstr ""
+"mgmt.firmware.version"
+
+#: ../docs/reference/device_model.rst:223
+msgid "The version of the firmware on the device"
+msgstr ""
+"디바이스의 펌웨어 버전"
+
+#: ../docs/reference/device_model.rst:225
+msgid "mgmt.firmware.name"
+msgstr ""
+"mgmt.firmware.name"
+
+#: ../docs/reference/device_model.rst:225
+msgid "The name of the firmware to be used on the device"
+msgstr ""
+"디바이스에서 사용될 펌웨어의 이름"
+
+#: ../docs/reference/device_model.rst:227
+msgid "mgmt.firmware.uri"
+msgstr ""
+"mgmt.firmware.uri"
+
+#: ../docs/reference/device_model.rst:227
+msgid "The URI from which the firmware image can be downloaded"
+msgstr ""
+"펌웨어 이미지를 다운로드할 수 있는 URI"
+
+#: ../docs/reference/device_model.rst:229
+msgid "mgmt.firmware.verifier"
+msgstr ""
+"mgmt.firmware.verifier"
+
+#: ../docs/reference/device_model.rst:229
+msgid "The verifier such as a checksum for the firmware image to validate its integrity"
+msgstr ""
+"무결성을 유효성 검증할 펌웨어 이미지에 대한 체크섬 등의 검사기"
+
+#: ../docs/reference/device_model.rst:232
+msgid "mgmt.firmware.state"
+msgstr ""
+"mgmt.firmware.state"
+
+#: ../docs/reference/device_model.rst:232
+msgid "Indicates the state of firmware download"
+msgstr ""
+"펌웨어 다운로드의 상태를 표시함"
+
+#: ../docs/reference/device_model.rst:234
+msgid "mgmt.firmware.updateStatus"
+msgstr ""
+"mgmt.firmware.updateStatus"
+
+#: ../docs/reference/device_model.rst:234
+msgid "Indicates the status of the update"
+msgstr ""
+"업데이트의 상태를 표시함"
+
+#: ../docs/reference/device_model.rst:236
+msgid "mgmt.firmware.updatedDateTime"
+msgstr ""
+"mgmt.firmware.updatedDateTime"
+
+#: ../docs/reference/device_model.rst:236
+msgid "ISO8601 date-time: Date of last update"
+msgstr ""
+"ISO8601 date-time: 마지막 업데이트의 날짜"
+

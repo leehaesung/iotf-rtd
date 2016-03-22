@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/api.rst:2
+msgid "HTTP API for Devices"
+msgstr ""
+"API HTTP per i dispositivi"
+
+#: ../docs/devices/api.rst:4
+msgid "This feature is currently available as part of a limited beta.  Future updates may include changes incompatible with the current version of this feature.  Try it out and `let us know what you think <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_"
+msgstr ""
+"Questa funzione è attualmente disponibile come parte di una versione beta limitata. Futuri aggiornamenti possono includere modifiche incompatibili con la versione corrente di questa funzione. Provatelo e fateci sapere cosa ne pensate <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_"
+
+#: ../docs/devices/api.rst:10
+msgid "Publish an event"
+msgstr ""
+"Pubblica un evento"
+
+#: ../docs/devices/api.rst:12
+msgid "As an alternative to MQTT it is possible for devices to submit events to the IoT Platform over an HTTP API.  Devices may submit a ``POST`` request to: ``https://${orgid}.internetofthings.ibmcloud.com>/api/v0002/device/types/${typeId}/devices/${deviceId}/events/${eventId}``"
+msgstr ""
+"In alternativa a MQTT i dispositivi possono inoltrare eventi a IoT Platform attraverso un'API HTTP.  I dispositivi possono inoltrare una richiesta ``POST`` a: ``https://${orgid}.internetofthings.ibmcloud.com>/api/v0002/device/types/${typeId}/devices/${deviceId}/events/${eventId}``"
+
+#: ../docs/devices/api.rst:14
+msgid "For full details, see the relevant `API documentation <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html#/>`__.  The request body (event payload) can have any content, however, MQTT message payload guidelines should be followed."
+msgstr ""
+"Per i dettagli completi, consultare la documentazione API pertinente <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html#/>`__.  Il corpo della richiesta (payload evento) può avere qualsiasi contenuto, tuttavia è necessario attenersi alle linee guida per il payload dei messaggi MQTT."
+
+#: ../docs/devices/api.rst:16
+msgid "When connecting a device or application to Quickstart you should use the following URL instead:  ``http://quickstart.internetofthings.ibmcloud.com>/api/v0002/device/types/${typeId}/devices/${deviceId}/events/${eventId}``"
+msgstr ""
+"Durante la connessione di un dispositivo o di un'applicazione a Quickstart si dovrebbe utilizzare, invece, l'URL:  ``http://quickstart.internetofthings.ibmcloud.com>/api/v0002/device/types/${typeId}/devices/${deviceId}/events/${eventId}``"
+
+#: ../docs/devices/api.rst:18
+msgid "HTTP messaging only covers the ability to submit device events currently.  Device management and command control require MQTT connectivity in your device."
+msgstr ""
+"Attualmente la messaggistica HTTP prevede solo la possibilità di inoltrare eventi del dispositivo. Il controllo del comando e della gestione dispositivo richiedono la connettività MQTT nel dispositivo."
+
+#: ../docs/devices/api.rst:23
+msgid "Authentication"
+msgstr ""
+"Autenticazione"
+
+#: ../docs/devices/api.rst:25
+msgid "Requests must include an authorization header. Basic authentication the only method supported. Applications are authenticated by API keys, when an application makes any request to the IoT Platform API it must present an API as it's credentials:"
+msgstr ""
+"Le richieste devono includere un'intestazione di autorizzazione. L'autenticazione di base è l'unico metodo supportato. Le applicazioni vengono autenticate mediante chiavi API, quando un'applicazione effettua una richiesta a IoT Platform API, deve presentare un'API come sue credenziali:"
+
+#: ../docs/devices/api.rst:29
+msgid "username = \"use-token-auth\""
+msgstr ""
+"nome utente = \"use-token-auth\""
+
+#: ../docs/devices/api.rst:30
+msgid "password = Authentication token"
+msgstr ""
+"password = token di autenticazione"
+
+#: ../docs/devices/api.rst:33
+msgid "Content-Type"
+msgstr ""
+"Tipo-contenuto"
+
+#: ../docs/devices/api.rst:35
+msgid "A ``Content-Type`` request header must be provided with the request. The following table shows the supported types and how they are mapped to the IoT Platform internal formats."
+msgstr ""
+"È necessario che venga fornita un'intestazione ``Tipo-contenuto`` insieme alla richiesta. La seguente tabella mostra i tipi supportati e come sono associati ai formati interni IoT Platform."
+
+#: ../docs/devices/api.rst:38
+msgid "Content-Type Header"
+msgstr ""
+"Intestazione Content-Type"
+
+#: ../docs/devices/api.rst:38
+msgid "IoT Platform Format"
+msgstr ""
+"Formato IoT Platform"
+
+#: ../docs/devices/api.rst:40
+msgid "text/plain"
+msgstr ""
+"testo/semplice"
+
+#: ../docs/devices/api.rst:40
+msgid "text"
+msgstr ""
+"testo"
+
+#: ../docs/devices/api.rst:42
+msgid "application/json"
+msgstr ""
+"applicazione/json"
+
+#: ../docs/devices/api.rst:42
+msgid "json"
+msgstr ""
+"json"
+
+#: ../docs/devices/api.rst:44
+msgid "application/xml"
+msgstr ""
+"applicazione/xml"
+
+#: ../docs/devices/api.rst:44
+msgid "xml"
+msgstr ""
+"xml"
+
+#: ../docs/devices/api.rst:46
+msgid "application/octet-stream"
+msgstr ""
+"applicazione/octet-stream"
+
+#: ../docs/devices/api.rst:46
+msgid "bin"
+msgstr ""
+"bin"
+
+#: ../docs/devices/api.rst:51
+msgid "Quality of Service"
+msgstr ""
+"QoS (Quality of Service)"
+
+#: ../docs/devices/api.rst:53
+msgid "The HTTP(S) protocol provides \"at most once\" best effort delivery, analagous to the QoS0 quality of service provided by the MQTT protocol. When using QoS0, or the HTTP(S) equivalent, to deliver event messages, the device or application must implement retry logic to guarantee delivery."
+msgstr ""
+"Il protocollo HTTP(S) fornisce una consegna best effort \"al massimo una volta\", in modo simile al servizio QoS0 fornito dal protocollo MQTT. Quando si utilizza QoS0, o l'equivalente HTTP(S), per consegnare i messaggi di evento, il dispositivo o l'applicazione devono implementare la logica retry per garantire la consegna."
+
+#: ../docs/devices/api.rst:55
+msgid "For more information on the MQTT protocol and Quality of Service levels, please see `MQTT for the IoT Platform <../reference/mqtt/index.html>`__ documentation."
+msgstr ""
+"Per ulteriori informazioni sul protocollo MQTT e sui livelli di QoS (Quality of Service), consultare la documentazione `MQTT per IoT Platform <../reference/mqtt/index.html>`__."
+

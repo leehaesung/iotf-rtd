@@ -1,0 +1,284 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/applications/libraries/nodejs.rst:2
+msgid "Node.js for Application Developers"
+msgstr ""
+"Node.js für Anwendungsentwickler"
+
+#: ../docs/applications/libraries/nodejs.rst:4
+msgid "See `iot-nodejs <https://github.com/ibm-messaging/iot-nodejs>`_ in GitHub"
+msgstr ""
+"Siehe `iot-nodejs <https://github.com/ibm-messaging/iot-nodejs>`_ in GitHub"
+
+#: ../docs/applications/libraries/nodejs.rst:5
+msgid "See `ibmiotf <https://www.npmjs.com/package/ibmiotf>`_ on NPM"
+msgstr ""
+"Siehe `ibmiotf <https://www.npmjs.com/package/ibmiotf>`_ in NPM"
+
+#: ../docs/applications/libraries/nodejs.rst:12
+msgid "Constructor"
+msgstr ""
+"Konstruktor"
+
+#: ../docs/applications/libraries/nodejs.rst:14
+msgid "The constructor builds the application client instance. It accepts an configuration json containing the following : - org - Your organization ID - id - The unique ID of your application within your organization. - auth-key - API key - auth-token - API key token"
+msgstr ""
+"Die Instanz des Anwendungsclients wird vom Konstruktor erstellt. Er akzeptiert eine Konfigurations-JSON, die folgendes enthält: - org - Ihre Organisations-ID - id - Die eindeutige ID Ihrer Anwendung innerhalb Ihrer Organisation. - auth-key - API-Schlüssel - auth-token - API-Schlüsseltoken"
+
+#: ../docs/applications/libraries/nodejs.rst:20
+msgid "If you want to use quickstart, then send only the first two properties."
+msgstr ""
+"Wenn Sie einen Schnellstart ausführen möchten, senden Sie nur die beiden ersten Eigenschaften."
+
+#: ../docs/applications/libraries/nodejs.rst:35
+msgid "Using a configuration file"
+msgstr ""
+"Konfigurationsdatei verwenden"
+
+#: ../docs/applications/libraries/nodejs.rst:37
+msgid "Instead of passing the configuration json directly, you can also use a configuration file. Use the following code snippet"
+msgstr ""
+"Anstatt die Konfigurations-JSON direkt weiterzugeben, können Sie auch eine Konfigurationsdatei verwenden. Verwenden Sie das folgenden Codefragment:"
+
+#: ../docs/applications/libraries/nodejs.rst:46
+msgid "The configuration file must be in the format of"
+msgstr ""
+"Die Konfigurationsdatei muss im folgenden Format vorliegen:"
+
+#: ../docs/applications/libraries/nodejs.rst:60
+msgid "Connecting to the IoT Platform"
+msgstr ""
+"Herstellen der Verbindung zu IoT Platform"
+
+#: ../docs/applications/libraries/nodejs.rst:62
+msgid "Connect to the IoT Platform by calling the *connect* function."
+msgstr ""
+"Stellen Sie die Verbindung zu IoT Platform her, indem Sie die Funktion *connect* aufrufen."
+
+#: ../docs/applications/libraries/nodejs.rst:78
+msgid "After the successful connection to the IoT Platform service, the application client sends a *connect* event. So all the logic can be implemented inside this callback function."
+msgstr ""
+"Nachdem die Verbindung zum IoT Platform-Service erfolgreich hergestellt wurde, sendet der Anwendungsclient ein Ereignis *connect*. Somit kann die gesamte Logik in dieser Callback-Funktion implementiert werden."
+
+#: ../docs/applications/libraries/nodejs.rst:85
+msgid "Subscribing to device events"
+msgstr ""
+"Geräteereignisse subskribieren"
+
+#: ../docs/applications/libraries/nodejs.rst:87
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"Ereignisse sind der Mechanismus, mit dem Geräte Daten in IoT Platform publizieren. Das Gerät steuert den Inhalt des Ereignisses und ordnet einen Namen für jedes von dem Gerät gesendete Ereignis zu."
+
+#: ../docs/applications/libraries/nodejs.rst:89
+msgid "When an event is received by the IoT Platform, the credentials of the connection on which the event was received are used to determine from which device the event was sent. Using this architecture, it is impossible for a device to impersonate another device."
+msgstr ""
+"Wenn ein Ereignis von IoT Platform empfangen wird, werden die Identifikationsdaten der Verbindung, über die das Ereignis empfangen wurde, dazu verwendet, das Gerät zu ermitteln, von dem das Ereignis gesendet wurde. Mit dieser Architektur ist es für ein Gerät unmöglich, die Identität eines anderen Geräts anzunehmen."
+
+#: ../docs/applications/libraries/nodejs.rst:91
+msgid "By default, applications will subscribe to all events from all connected devices. Use the type, id, event and msgFormat parameters to control the scope of the subscription. A single client can support multiple subscriptions. The code samples below give examples of how to subscribe to devices dependent on device type, id, event and msgFormat parameters."
+msgstr ""
+"Standardmäßig subskribieren Anwendungen alle Ereignisse von allen verbundenen Geräte. Verwenden Sie die Parameter type, id, event und msgFormat, um den Geltungsbereich der Subskription zu steuern. Ein einzelner Client kann mehrere Subskriptionen unterstützen. Die nachfolgenden Codebeispiele zeigen beispielhaft die Vorgehensweise beim Subskribieren bei Geräte abhängig von den Geräteparametern type, id, event und msgFormat."
+
+#: ../docs/applications/libraries/nodejs.rst:94
+msgid "To subscribe to all events from all devices"
+msgstr ""
+"Zum Subskribieren aller Ereignisse von allen Geräte"
+
+#: ../docs/applications/libraries/nodejs.rst:112
+msgid "To subscribe to all events from all devices of a specific type"
+msgstr ""
+"Zum Subskribieren aller Ereignisse von allen Geräte eines bestimmten Typs"
+
+#: ../docs/applications/libraries/nodejs.rst:129
+msgid "To subscribe to a specific event from all devices"
+msgstr ""
+"Zum Subskribieren eines bestimmten Ereignisses von allen Geräte"
+
+#: ../docs/applications/libraries/nodejs.rst:147
+msgid "To subscribe to a specific event from two or more different devices"
+msgstr ""
+"Zum Subskribieren eines bestimmten Ereignisses von zwei oder mehr verschiedenen Geräte"
+
+#: ../docs/applications/libraries/nodejs.rst:165
+msgid "To subscribe to all events published by a device in json format"
+msgstr ""
+"Zum Subskribieren aller Ereignisse, die von einem Gerät im json-Format publiziert werden"
+
+#: ../docs/applications/libraries/nodejs.rst:184
+msgid "Handling events from devices"
+msgstr ""
+"Ereignisse von Geräten verarbeiten"
+
+#: ../docs/applications/libraries/nodejs.rst:186
+msgid "To process the events received by your subscriptions you need to implement a device event callback method. The ibmiotf application client emits the event *deviceEvent*. This function has the following properties:"
+msgstr ""
+"Zum Verarbeiten der Ereignisse, die von Ihren Subskriptionen empfangen wurden, müssen Sie eine Ereignis-Callback-Methode implementieren. Vom ibmiotf-Anwendungsclient wird das Ereignis *deviceEvent* ausgegeben. Diese Funktion weist folgende Eigenschaften auf:"
+
+#: ../docs/applications/libraries/nodejs.rst:188
+#: ../docs/applications/libraries/nodejs.rst:285
+msgid "deviceType"
+msgstr ""
+"deviceType"
+
+#: ../docs/applications/libraries/nodejs.rst:189
+#: ../docs/applications/libraries/nodejs.rst:286
+msgid "deviceId"
+msgstr ""
+"deviceId"
+
+#: ../docs/applications/libraries/nodejs.rst:190
+msgid "eventType"
+msgstr ""
+"eventType"
+
+#: ../docs/applications/libraries/nodejs.rst:191
+msgid "format"
+msgstr ""
+"format"
+
+#: ../docs/applications/libraries/nodejs.rst:192
+msgid "payload - Device event payload"
+msgstr ""
+"payload - Geräteereignisnutzdaten"
+
+#: ../docs/applications/libraries/nodejs.rst:193
+msgid "topic - Original topic"
+msgstr ""
+"topic - Ursprüngliches Thema"
+
+#: ../docs/applications/libraries/nodejs.rst:220
+msgid "Subscribing to device status"
+msgstr ""
+"Gerätestatus subskribieren"
+
+#: ../docs/applications/libraries/nodejs.rst:222
+msgid "By default, this will subscribe to status updates for all connected devices. Use the type and id parameters to control the scope of the subscription. A single client can support multiple subscriptions."
+msgstr ""
+"Standardmäßig werden hiermit Statusaktualisierungen für alle verbundenen Geräte subskribiert. Verwenden Sie die Parameter type und id, um den Geltungsbereich der Subskription zu steuern. Ein einzelner Client kann mehrere Subskriptionen unterstützen."
+
+#: ../docs/applications/libraries/nodejs.rst:225
+msgid "Subscribe to status updates for all devices"
+msgstr ""
+"Statusaktualisierungen für alle Geräte subskribieren"
+
+#: ../docs/applications/libraries/nodejs.rst:244
+msgid "Subscribe to status updates for all devices of a specific type"
+msgstr ""
+"Statusaktualisierungen für alle Geräte eines bestimmten Typs subskribieren"
+
+#: ../docs/applications/libraries/nodejs.rst:262
+msgid "Subscribe to status updates for two different devices"
+msgstr ""
+"Statusaktualisierungen für zwei verschiedene Geräte subskribieren"
+
+#: ../docs/applications/libraries/nodejs.rst:281
+msgid "Handling status updates from devices"
+msgstr ""
+"Statusaktualisierungen von Geräten verarbeiten"
+
+#: ../docs/applications/libraries/nodejs.rst:283
+msgid "To process the status updates received by your subscriptions you need to implement an device status callback method. The ibmiotf application client emits the event *deviceStatus*. This function has the following properties:"
+msgstr ""
+"Zum Verarbeiten der Statusaktualisierungen, die von Ihren Subskriptionen empfangen wurden, müssen Sie eine Callback-Methode für den Gerätestatus implementieren. Vom ibmiotf-Anwendungsclient wird das Ereignis *deviceStatus* ausgegeben. Diese Funktion weist folgende Eigenschaften auf:"
+
+#: ../docs/applications/libraries/nodejs.rst:287
+msgid "payload - Device status payload"
+msgstr ""
+"payload - Gerätestatusnutzdaten"
+
+#: ../docs/applications/libraries/nodejs.rst:288
+msgid "topic"
+msgstr ""
+"topic"
+
+#: ../docs/applications/libraries/nodejs.rst:316
+msgid "Publishing events from devices"
+msgstr ""
+"Ereignisse von Geräten publizieren"
+
+#: ../docs/applications/libraries/nodejs.rst:318
+msgid "Applications can publish events as if they originated from a Device. The function requires:"
+msgstr ""
+"Anwendungen können Ereignisse so publizieren, als ob sie von einem Gerät stammen. Für die Funktion ist Folgendes erforderlich:"
+
+#: ../docs/applications/libraries/nodejs.rst:320
+#: ../docs/applications/libraries/nodejs.rst:351
+msgid "DeviceType"
+msgstr ""
+"DeviceType"
+
+#: ../docs/applications/libraries/nodejs.rst:321
+#: ../docs/applications/libraries/nodejs.rst:352
+msgid "Device ID"
+msgstr ""
+"Geräte-ID"
+
+#: ../docs/applications/libraries/nodejs.rst:322
+msgid "Event Type"
+msgstr ""
+"Ereignistyp"
+
+#: ../docs/applications/libraries/nodejs.rst:323
+#: ../docs/applications/libraries/nodejs.rst:354
+msgid "Format"
+msgstr ""
+"Format"
+
+#: ../docs/applications/libraries/nodejs.rst:324
+#: ../docs/applications/libraries/nodejs.rst:355
+msgid "Data"
+msgstr ""
+"Daten"
+
+#: ../docs/applications/libraries/nodejs.rst:347
+msgid "Publishing commands to devices"
+msgstr ""
+"Befehle für Geräte publizieren"
+
+#: ../docs/applications/libraries/nodejs.rst:349
+msgid "Applications can publish commands to connected devices. The function requires:"
+msgstr ""
+"Anwendungen können Befehle an verbundene Geräte publizieren. Für die Funktion ist Folgendes erforderlich:"
+
+#: ../docs/applications/libraries/nodejs.rst:353
+msgid "Command Type"
+msgstr ""
+"Befehlstyp"
+
+#: ../docs/applications/libraries/nodejs.rst:378
+msgid "Disconnect Client"
+msgstr ""
+"Verbindung des Clients trennen"
+
+#: ../docs/applications/libraries/nodejs.rst:380
+msgid "Disconnects the client and releases the connections"
+msgstr ""
+"Trennt die Verbindung des Clients und gibt die Verbindungen frei"
+
+#: ../docs/applications/libraries/nodejs.rst:404
+msgid "Check Connection Status"
+msgstr ""
+"Verbindungsstatus überprüfen"
+
+#: ../docs/applications/libraries/nodejs.rst:406
+msgid "*isConnected* gives the current status of the application client connection"
+msgstr ""
+"*isConnected* gibt den aktuellen Status der Verbindung des Anwendungsclients an."
+

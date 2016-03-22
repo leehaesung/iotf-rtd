@@ -1,0 +1,894 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/reference/device_model.rst:3
+msgid "Device Model"
+msgstr ""
+"裝置模型"
+
+#: ../docs/reference/device_model.rst:5
+msgid "The device model describes the metadata and management characteristics of a device. The device database in the Watson IoT platform is the master source of device information. Applications and managed devices are able to send updates to the database such as a location or the progress of a firmware update. Once these updates are received by the Watson IoT platform, the device database is updated, making the information available to applications."
+msgstr ""
+"裝置模型說明裝置的 meta 資料及管理性質。Watson IoT Platform 中的裝置資料庫是裝置資訊的主要來源。應用程式及受管理裝置能夠傳送更新至資料庫，如：位置或韌體更新的進度。Watson IoT Platform 接收到這些更新之後，即會更新裝置資料庫，讓資訊可供應用程式使用。"
+
+#: ../docs/reference/device_model.rst:12
+msgid "With the exception of the management extension, the entire device model is available for both managed and unmanaged devices. However, an unmanaged device can not directly update its device model in the database."
+msgstr ""
+"除了管理延伸規格外，整個裝置模型都可供受管理及未受管理的裝置使用。不過，未受管理的裝置無法直接更新其在資料庫中的裝置模型。"
+
+#: ../docs/reference/device_model.rst:20
+msgid "Device Identification"
+msgstr ""
+"裝置識別"
+
+#: ../docs/reference/device_model.rst:22
+msgid "Every device has a typeId and deviceId attribute. Typically, the typeId represents the model of your device, whilst the deviceId can represent its serial number. Within your Watson IoT platform organization, the combination of typeId and deviceId must be unique for each device."
+msgstr ""
+"每一個裝置都有 typeId 及 deviceId 屬性。一般而言，typeId 代表裝置的型號，而 deviceId 可代表其序號。在 Watson IoT Platform 組織內，每一個裝置的 typeId 及 deviceId 的組合都必須是唯一的。"
+
+#: ../docs/reference/device_model.rst:26
+msgid "In addition, the Watson IoT platform constructs a further identifier for each device based on your organizationId, the device's typeId and the device's deviceId. This identifier - the clientId - allows you to identify unequivocally an individual device."
+msgstr ""
+"此外，Watson IoT Platform 會根據您的 organizationId、裝置的 typeId 及裝置的 deviceId，進一步建構每一個裝置的 ID。這個 ID - clientId - 可讓您明確地識別個別裝置。"
+
+#: ../docs/reference/device_model.rst:28
+msgid "The characters which can be used in these identifiers are restricted so they can be used straightforwardly in communication protocols and REST APIs. There are a number of optional device identifiers for use with the device management protocol. These identifiers are:"
+msgstr ""
+"在這些 ID 中可使用的字元有限，因此可在通訊協定及 REST API 中直接使用。有許多選用的裝置 ID 可與裝置管理通訊協定搭配使用。這些 ID 如下："
+
+#: ../docs/reference/device_model.rst:32
+msgid "deviceInfo.manufacturer"
+msgstr ""
+"deviceInfo.manufacturer"
+
+#: ../docs/reference/device_model.rst:33
+msgid "deviceInfo.serialNumber"
+msgstr ""
+"deviceInfo.serialNumber"
+
+#: ../docs/reference/device_model.rst:34
+msgid "deviceInfo.model"
+msgstr ""
+"deviceInfo.model"
+
+#: ../docs/reference/device_model.rst:35
+msgid "deviceInfo.deviceClass"
+msgstr ""
+"deviceInfo.deviceClass"
+
+#: ../docs/reference/device_model.rst:36
+msgid "deviceInfo.description"
+msgstr ""
+"deviceInfo.description"
+
+#: ../docs/reference/device_model.rst:38
+msgid "For more information on the identifiers and descriptions of their comparative identifiers in other device management standards, see Device Model Attributes Reference."
+msgstr ""
+"如需 ID 以及在其他裝置管理標準中的比較 ID 的說明，請參閱「裝置模型屬性參考手冊」。"
+
+#: ../docs/reference/device_model.rst:46
+msgid "Identifiers and Device Type"
+msgstr ""
+"ID 與裝置類型"
+
+#: ../docs/reference/device_model.rst:48
+msgid "Each device connected to the Watson IoT platform is associated with a device type. Device types are intended to be groups of devices which share characteristics or behaviour."
+msgstr ""
+"每一個連接至 Watson IoT Platform 的裝置都會與一種裝置類型相關聯。裝置類型是指共用性質或行為的裝置群組。"
+
+#: ../docs/reference/device_model.rst:52
+msgid "A device type has a set of attributes. When a device is added to the Watson IoT platform, the attributes in its device type are used as a template overridden by device-specific attributes. For example, the device type could have a value for the ``deviceInfo.fwVersion`` attribute reflecting the firmware version at the time of manufacture, and this value would be copied from the device type into the devices as they are added. However, if a device was added which already had a value for ``deviceInfo.fwVersion``, it would not be overridden by the device type."
+msgstr ""
+"裝置類型有一組屬性。當裝置新增至 Watson IoT Platform 時，其裝置類型中的屬性會用來作為範本，再置換成裝置專屬的屬性。例如，裝置類型可以有 ``deviceInfo.fwVersion`` 屬性的值，反映製造時的韌體版本；這個值可能是在新增裝置時，從裝置類型複製到裝置中。不過，如果新增裝置時，其已經有 ``deviceInfo.fwVersion`` 的值，則不會被裝置類型置換掉。"
+
+#: ../docs/reference/device_model.rst:59
+msgid "When a device type is updated, future registered devices will reflect the modified device type template. However, existing devices of this device type are unaffected and remain unchanged."
+msgstr ""
+"當裝置類型更新時，未來登錄的裝置將會反映修改後的裝置類型範本。不過，這種裝置類型的現有裝置並不受影響，而且會維持不變。"
+
+#: ../docs/reference/device_model.rst:68
+msgid "Attributes"
+msgstr ""
+"屬性"
+
+#: ../docs/reference/device_model.rst:70
+msgid "The table below shows the list of attributes which can apply to devices in the Watson IoT platform. Additionally, italicized attributes can also apply to device types."
+msgstr ""
+"下表顯示可在 Watson IoT Platform 中套用至裝置的屬性清單。此外，以斜體表示的屬性也可套用至裝置類型。"
+
+#: ../docs/reference/device_model.rst:72
+msgid "API/DMA: Can be updated by API/Device Management Agent"
+msgstr ""
+"API/DMA：可透過 API/裝置管理代理程式更新"
+
+#: ../docs/reference/device_model.rst:74
+msgid "R: Read only"
+msgstr ""
+"R：唯讀"
+
+#: ../docs/reference/device_model.rst:75
+msgid "W: Write and read"
+msgstr ""
+"W：讀寫"
+
+#: ../docs/reference/device_model.rst:76
+msgid "A: Append"
+msgstr ""
+"A：附加"
+
+#: ../docs/reference/device_model.rst:79
+#: ../docs/reference/device_model.rst:158
+#: ../docs/reference/device_model.rst:183
+#: ../docs/reference/device_model.rst:207
+msgid "Attribute"
+msgstr ""
+"屬性"
+
+#: ../docs/reference/device_model.rst:79
+#: ../docs/reference/device_model.rst:158
+#: ../docs/reference/device_model.rst:183
+#: ../docs/reference/device_model.rst:207
+msgid "Type"
+msgstr ""
+"類型"
+
+#: ../docs/reference/device_model.rst:79
+#: ../docs/reference/device_model.rst:158
+#: ../docs/reference/device_model.rst:183
+#: ../docs/reference/device_model.rst:207
+msgid "Description"
+msgstr ""
+"說明"
+
+#: ../docs/reference/device_model.rst:79
+#: ../docs/reference/device_model.rst:158
+#: ../docs/reference/device_model.rst:183
+#: ../docs/reference/device_model.rst:207
+msgid "API"
+msgstr ""
+"API"
+
+#: ../docs/reference/device_model.rst:79
+#: ../docs/reference/device_model.rst:158
+#: ../docs/reference/device_model.rst:183
+#: ../docs/reference/device_model.rst:207
+msgid "DMA"
+msgstr ""
+"DMA"
+
+#: ../docs/reference/device_model.rst:81
+msgid "clientId"
+msgstr ""
+"clientId"
+
+#: ../docs/reference/device_model.rst:81
+#: ../docs/reference/device_model.rst:83
+#: ../docs/reference/device_model.rst:85
+#: ../docs/reference/device_model.rst:87
+#: ../docs/reference/device_model.rst:89
+#: ../docs/reference/device_model.rst:91
+#: ../docs/reference/device_model.rst:95
+#: ../docs/reference/device_model.rst:97
+#: ../docs/reference/device_model.rst:99
+#: ../docs/reference/device_model.rst:101
+#: ../docs/reference/device_model.rst:103
+#: ../docs/reference/device_model.rst:105
+#: ../docs/reference/device_model.rst:108
+#: ../docs/reference/device_model.rst:110
+#: ../docs/reference/device_model.rst:115
+#: ../docs/reference/device_model.rst:117
+#: ../docs/reference/device_model.rst:120
+#: ../docs/reference/device_model.rst:122
+#: ../docs/reference/device_model.rst:124
+#: ../docs/reference/device_model.rst:126
+#: ../docs/reference/device_model.rst:165
+#: ../docs/reference/device_model.rst:167
+#: ../docs/reference/device_model.rst:169
+#: ../docs/reference/device_model.rst:191
+#: ../docs/reference/device_model.rst:193
+#: ../docs/reference/device_model.rst:211
+#: ../docs/reference/device_model.rst:214
+#: ../docs/reference/device_model.rst:223
+#: ../docs/reference/device_model.rst:225
+#: ../docs/reference/device_model.rst:227
+#: ../docs/reference/device_model.rst:229
+#: ../docs/reference/device_model.rst:236
+msgid "string"
+msgstr ""
+"字串"
+
+#: ../docs/reference/device_model.rst:81
+msgid "The client ID used with MQTT connections"
+msgstr ""
+"與 MQTT 連線搭配使用的用戶端 ID"
+
+#: ../docs/reference/device_model.rst:81
+#: ../docs/reference/device_model.rst:83
+#: ../docs/reference/device_model.rst:85
+#: ../docs/reference/device_model.rst:87
+#: ../docs/reference/device_model.rst:89
+#: ../docs/reference/device_model.rst:91
+#: ../docs/reference/device_model.rst:115
+#: ../docs/reference/device_model.rst:117
+#: ../docs/reference/device_model.rst:120
+#: ../docs/reference/device_model.rst:122
+#: ../docs/reference/device_model.rst:124
+#: ../docs/reference/device_model.rst:126
+#: ../docs/reference/device_model.rst:193
+#: ../docs/reference/device_model.rst:209
+#: ../docs/reference/device_model.rst:211
+#: ../docs/reference/device_model.rst:214
+#: ../docs/reference/device_model.rst:217
+#: ../docs/reference/device_model.rst:220
+#: ../docs/reference/device_model.rst:223
+#: ../docs/reference/device_model.rst:225
+#: ../docs/reference/device_model.rst:227
+#: ../docs/reference/device_model.rst:229
+#: ../docs/reference/device_model.rst:232
+#: ../docs/reference/device_model.rst:234
+#: ../docs/reference/device_model.rst:236
+msgid "R"
+msgstr ""
+"R"
+
+#: ../docs/reference/device_model.rst:83
+msgid "*typeId*"
+msgstr ""
+"*typeId*"
+
+#: ../docs/reference/device_model.rst:83
+msgid "Device type"
+msgstr ""
+"裝置類型"
+
+#: ../docs/reference/device_model.rst:85
+msgid "deviceId"
+msgstr ""
+"deviceId"
+
+#: ../docs/reference/device_model.rst:85
+msgid "Device ID"
+msgstr ""
+"裝置 ID"
+
+#: ../docs/reference/device_model.rst:87
+msgid "classId"
+msgstr ""
+"classId"
+
+#: ../docs/reference/device_model.rst:87
+msgid "Class of device (\"Device\" or \"Gateway\")"
+msgstr ""
+"裝置的類別（\"Device\" 或 \"Gateway\"）"
+
+#: ../docs/reference/device_model.rst:89
+msgid "gatewayTypeId"
+msgstr ""
+"gatewayTypeId"
+
+#: ../docs/reference/device_model.rst:89
+msgid "Type ID of the gateway this device is using"
+msgstr ""
+"此裝置正在使用之閘道的類型 ID"
+
+#: ../docs/reference/device_model.rst:91
+msgid "gatewayId"
+msgstr ""
+"gatewayId"
+
+#: ../docs/reference/device_model.rst:91
+msgid "Device ID of the gateway this device is using"
+msgstr ""
+"此裝置正在使用之閘道的裝置 ID"
+
+#: ../docs/reference/device_model.rst:93
+msgid "status.alert"
+msgstr ""
+"status.alert"
+
+#: ../docs/reference/device_model.rst:93
+#: ../docs/reference/device_model.rst:209
+#: ../docs/reference/device_model.rst:217
+#: ../docs/reference/device_model.rst:220
+msgid "boolean"
+msgstr ""
+"布林"
+
+#: ../docs/reference/device_model.rst:93
+msgid "Whether the device has an alert"
+msgstr ""
+"裝置是否有警示"
+
+#: ../docs/reference/device_model.rst:93
+#: ../docs/reference/device_model.rst:95
+#: ../docs/reference/device_model.rst:95
+#: ../docs/reference/device_model.rst:97
+#: ../docs/reference/device_model.rst:97
+#: ../docs/reference/device_model.rst:99
+#: ../docs/reference/device_model.rst:99
+#: ../docs/reference/device_model.rst:101
+#: ../docs/reference/device_model.rst:101
+#: ../docs/reference/device_model.rst:103
+#: ../docs/reference/device_model.rst:103
+#: ../docs/reference/device_model.rst:105
+#: ../docs/reference/device_model.rst:105
+#: ../docs/reference/device_model.rst:108
+#: ../docs/reference/device_model.rst:108
+#: ../docs/reference/device_model.rst:110
+#: ../docs/reference/device_model.rst:110
+#: ../docs/reference/device_model.rst:113
+#: ../docs/reference/device_model.rst:113
+#: ../docs/reference/device_model.rst:185
+#: ../docs/reference/device_model.rst:185
+#: ../docs/reference/device_model.rst:187
+#: ../docs/reference/device_model.rst:187
+#: ../docs/reference/device_model.rst:189
+#: ../docs/reference/device_model.rst:189
+#: ../docs/reference/device_model.rst:191
+#: ../docs/reference/device_model.rst:191
+#: ../docs/reference/device_model.rst:195
+#: ../docs/reference/device_model.rst:195
+#: ../docs/reference/device_model.rst:223
+#: ../docs/reference/device_model.rst:225
+#: ../docs/reference/device_model.rst:227
+#: ../docs/reference/device_model.rst:229
+#: ../docs/reference/device_model.rst:232
+#: ../docs/reference/device_model.rst:234
+msgid "W"
+msgstr ""
+"W"
+
+#: ../docs/reference/device_model.rst:95
+msgid "*deviceInfo.serialNumber*"
+msgstr ""
+"*deviceInfo.serialNumber*"
+
+#: ../docs/reference/device_model.rst:95
+msgid "The serial number of the device"
+msgstr ""
+"裝置的序號"
+
+#: ../docs/reference/device_model.rst:97
+msgid "*deviceInfo.manufacturer*"
+msgstr ""
+"*deviceInfo.manufacturer*"
+
+#: ../docs/reference/device_model.rst:97
+msgid "The manufacturer of the device"
+msgstr ""
+"裝置的製造商"
+
+#: ../docs/reference/device_model.rst:99
+msgid "*deviceInfo.model*"
+msgstr ""
+"*deviceInfo.model*"
+
+#: ../docs/reference/device_model.rst:99
+msgid "The model of the device"
+msgstr ""
+"裝置的型號"
+
+#: ../docs/reference/device_model.rst:101
+msgid "*deviceInfo.deviceClass*"
+msgstr ""
+"*deviceInfo.deviceClass*"
+
+#: ../docs/reference/device_model.rst:101
+msgid "The class of the device"
+msgstr ""
+"裝置的類別"
+
+#: ../docs/reference/device_model.rst:103
+msgid "*deviceInfo.description*"
+msgstr ""
+"*deviceInfo.description*"
+
+#: ../docs/reference/device_model.rst:103
+msgid "The descriptive name of the device"
+msgstr ""
+"裝置的敘述性名稱"
+
+#: ../docs/reference/device_model.rst:105
+msgid "*deviceInfo.fwVersion*"
+msgstr ""
+"*deviceInfo.fwVersion*"
+
+#: ../docs/reference/device_model.rst:105
+msgid "The firmware version currently known to be on the device"
+msgstr ""
+"裝置上目前已知的韌體版本"
+
+#: ../docs/reference/device_model.rst:108
+msgid "*deviceInfo.hwVersion*"
+msgstr ""
+"*deviceInfo.hwVersion*"
+
+#: ../docs/reference/device_model.rst:108
+msgid "The hardware version of the device"
+msgstr ""
+"裝置的硬體版本"
+
+#: ../docs/reference/device_model.rst:110
+msgid "*deviceInfo.descriptiveLocation*"
+msgstr ""
+"*deviceInfo.descriptiveLocation*"
+
+#: ../docs/reference/device_model.rst:110
+msgid "The descriptive location, such as a room or building number, or a geopgraphical region"
+msgstr ""
+"敘述性位置（如：房間號碼或門牌號碼），或地理區域"
+
+#: ../docs/reference/device_model.rst:113
+msgid "*metadata*"
+msgstr ""
+"*metadata*"
+
+#: ../docs/reference/device_model.rst:113
+msgid "complex"
+msgstr ""
+"複式"
+
+#: ../docs/reference/device_model.rst:113
+msgid "Free-form metadata"
+msgstr ""
+"開放式 meta 資料"
+
+#: ../docs/reference/device_model.rst:115
+msgid "added.auth.id"
+msgstr ""
+"added.auth.id"
+
+#: ../docs/reference/device_model.rst:115
+msgid "ID that added the device"
+msgstr ""
+"新增裝置的 ID"
+
+#: ../docs/reference/device_model.rst:117
+msgid "added.dateTime"
+msgstr ""
+"added.dateTime"
+
+#: ../docs/reference/device_model.rst:117
+msgid "ISO8601 date-time: Date and time the device was added"
+msgstr ""
+"ISO8601 日期時間：新增裝置的日期和時間"
+
+#: ../docs/reference/device_model.rst:120
+msgid "refs.diag.errorCodes"
+msgstr ""
+"refs.diag.errorCodes"
+
+#: ../docs/reference/device_model.rst:120
+msgid "URI of diag extension for error codes, if present"
+msgstr ""
+"錯誤碼的診斷延伸規格 URI（如果存在的話）"
+
+#: ../docs/reference/device_model.rst:122
+msgid "refs.diag.logs"
+msgstr ""
+"refs.diag.logs"
+
+#: ../docs/reference/device_model.rst:122
+msgid "URI of diag extension for logs, if present"
+msgstr ""
+"日誌的診斷延伸規格 URI（如果存在的話）"
+
+#: ../docs/reference/device_model.rst:124
+msgid "refs.location"
+msgstr ""
+"refs.location"
+
+#: ../docs/reference/device_model.rst:124
+msgid "URI of location extension, if present"
+msgstr ""
+"位置延伸規格的 URI（如果存在的話）"
+
+#: ../docs/reference/device_model.rst:126
+msgid "refs.mgmt"
+msgstr ""
+"refs.mgmt"
+
+#: ../docs/reference/device_model.rst:126
+msgid "URI of mgmt extension, is present"
+msgstr ""
+"管理延伸規格的 URI（如果存在的話）"
+
+#: ../docs/reference/device_model.rst:132
+msgid "Extended Attributes"
+msgstr ""
+"延伸屬性"
+
+#: ../docs/reference/device_model.rst:134
+msgid "In addition to core attributes listed above, there are additional attributes which are treated as extensions to the core device model. Simple queries about the device return information from the core device model, but not the extensions. Information from the extensions must be specifically requested."
+msgstr ""
+"除了上述核心屬性之外，還有其他屬性也被視為核心裝置模型的延伸規格。與裝置相關的簡單查詢會從核心裝置模型傳回資訊，但不會傳回延伸規格。來自延伸規格的資訊必須明確要求。"
+
+#: ../docs/reference/device_model.rst:140
+msgid "Extension Name"
+msgstr ""
+"延伸名稱"
+
+#: ../docs/reference/device_model.rst:140
+msgid "Prefix of attributes"
+msgstr ""
+"屬性的字首"
+
+#: ../docs/reference/device_model.rst:140
+msgid "Purpose"
+msgstr ""
+"目的"
+
+#: ../docs/reference/device_model.rst:142
+msgid "Diagnostics"
+msgstr ""
+"診斷"
+
+#: ../docs/reference/device_model.rst:142
+msgid "diag"
+msgstr ""
+"診斷"
+
+#: ../docs/reference/device_model.rst:142
+msgid "Error logs and diagnostic information"
+msgstr ""
+"錯誤日誌與診斷資訊"
+
+#: ../docs/reference/device_model.rst:144
+msgid "Location"
+msgstr ""
+"位置"
+
+#: ../docs/reference/device_model.rst:144
+msgid "location"
+msgstr ""
+"位置"
+
+#: ../docs/reference/device_model.rst:144
+msgid "Location of the device, potentially updated regularly"
+msgstr ""
+"裝置的位置，可能會定期更新"
+
+#: ../docs/reference/device_model.rst:146
+msgid "Device management"
+msgstr ""
+"裝置管理"
+
+#: ../docs/reference/device_model.rst:146
+msgid "mgmt"
+msgstr ""
+"管理"
+
+#: ../docs/reference/device_model.rst:146
+msgid "Device management actions, e.g. firmware update"
+msgstr ""
+"裝置管理動作，例如：韌體更新"
+
+#: ../docs/reference/device_model.rst:151
+msgid "Diagnostics Extension"
+msgstr ""
+"診斷延伸規格"
+
+#: ../docs/reference/device_model.rst:153
+msgid "The diagnostics attributes are optional, and only present for devices with error log information. These attributes are intended for diagnosing device problems, not troubleshooting connectivity to the Watson IoT platform. In order to retrieve the information in these attributes, it must be queried separately, because the information stored in these attributes could potentially be very large."
+msgstr ""
+"診斷屬性是選用的，只有含錯誤日誌資訊的裝置有這些屬性。這些屬性的目的是要診斷裝置問題，而非針對 Watson IoT Platform 的連線功能進行疑難排解。為了擷取這些屬性中的資訊，其必須分開查詢，因為這些屬性中儲存的資訊可能非常大。"
+
+#: ../docs/reference/device_model.rst:155
+msgid "Diagnostic log information is an array of entries which can have entries appended using an API, however, this can cause earlier entries to be lost, to keep the size of diagnostic logs manageable. Each entry consists of a message, an indication of severity, a timestamp and an optional byte-array of data."
+msgstr ""
+"診斷日誌資訊是個項目的陣列，其可利用 API 來附加項目；不過，這可能會導致之前的項目遺失，使得診斷日誌維持在可管理的大小。每一個項目都包含一則訊息、嚴重性指示、時間戳記，以及選用的資料位元組陣列。"
+
+#: ../docs/reference/device_model.rst:160
+msgid "diag.errorCodes[]"
+msgstr ""
+"diag.errorCodes[]"
+
+#: ../docs/reference/device_model.rst:160
+msgid "array of integer(s)"
+msgstr ""
+"整數的陣列"
+
+#: ../docs/reference/device_model.rst:160
+msgid "Array of error codes"
+msgstr ""
+"錯誤碼的陣列"
+
+#: ../docs/reference/device_model.rst:160
+#: ../docs/reference/device_model.rst:160
+#: ../docs/reference/device_model.rst:163
+#: ../docs/reference/device_model.rst:163
+msgid "A"
+msgstr ""
+"A"
+
+#: ../docs/reference/device_model.rst:163
+msgid "diag.log[]"
+msgstr ""
+"diag.log[]"
+
+#: ../docs/reference/device_model.rst:163
+msgid "array"
+msgstr ""
+"陣列"
+
+#: ../docs/reference/device_model.rst:163
+msgid "Array of diagnostic data"
+msgstr ""
+"診斷資料的陣列"
+
+#: ../docs/reference/device_model.rst:165
+msgid "diag.log[].message"
+msgstr ""
+"diag.log[].message"
+
+#: ../docs/reference/device_model.rst:165
+msgid "Diagnostic message"
+msgstr ""
+"診斷訊息"
+
+#: ../docs/reference/device_model.rst:167
+msgid "diag.log[].timestamp"
+msgstr ""
+"diag.log[].timestamp"
+
+#: ../docs/reference/device_model.rst:167
+msgid "ISO8601 date-time: Date and time of log entry"
+msgstr ""
+"ISO8601 日期時間：日誌項目的日期和時間"
+
+#: ../docs/reference/device_model.rst:169
+msgid "diag.log[].logData"
+msgstr ""
+"diag.log[].logData"
+
+#: ../docs/reference/device_model.rst:169
+msgid "byte: Diagnostic data, base-64 encoded"
+msgstr ""
+"位元組：診斷資料，Base-64 編碼"
+
+#: ../docs/reference/device_model.rst:171
+msgid "diag.log[].severity"
+msgstr ""
+"diag.log[].severity"
+
+#: ../docs/reference/device_model.rst:171
+#: ../docs/reference/device_model.rst:185
+#: ../docs/reference/device_model.rst:187
+#: ../docs/reference/device_model.rst:189
+#: ../docs/reference/device_model.rst:195
+#: ../docs/reference/device_model.rst:232
+#: ../docs/reference/device_model.rst:234
+msgid "number"
+msgstr ""
+"數字"
+
+#: ../docs/reference/device_model.rst:171
+msgid "Severity of message, 0: informational, 1: warning, 2: error"
+msgstr ""
+"訊息嚴重性，0：參考資訊，1：警告，2：錯誤"
+
+#: ../docs/reference/device_model.rst:176
+msgid "Location Extension"
+msgstr ""
+"位置延伸規格"
+
+#: ../docs/reference/device_model.rst:178
+msgid "These attributes are optional and only present for devices with location information. The location information is stored separately in order to allow the use of storage mechanisms better suited to dynamic information in the event of frequently updated information, for example, in the case of a mobile device."
+msgstr ""
+"這些屬性是選用的，只有含位置資訊的裝置有這些屬性。位置資訊會分開儲存，以讓使用儲存體機制時更適合經常更新的動態資訊，例如：行動式裝置的資訊。"
+
+#: ../docs/reference/device_model.rst:180
+msgid "For solutions which place significant importance on frequent location updates, it is expected that the location would be treated as part of the device's event payload, enabling higher update rates, simple historical storage, and analytics."
+msgstr ""
+"如果經常更新位置非常重要，解決方案是位置應該被視為裝置事件內容的一部分，以提高更新率、簡化儲存歷程以及分析。"
+
+#: ../docs/reference/device_model.rst:185
+msgid "location.longitude"
+msgstr ""
+"location.longitude"
+
+#: ../docs/reference/device_model.rst:185
+msgid "Longitude in decimal degrees using WGS84"
+msgstr ""
+"經度，使用 WGS84 的十進位制"
+
+#: ../docs/reference/device_model.rst:187
+msgid "location.latitude"
+msgstr ""
+"location.latitude"
+
+#: ../docs/reference/device_model.rst:187
+msgid "Latitude in decimal degrees using WGS84"
+msgstr ""
+"緯度，使用 WGS84 的十進位制"
+
+#: ../docs/reference/device_model.rst:189
+msgid "location.elevation"
+msgstr ""
+"location.elevation"
+
+#: ../docs/reference/device_model.rst:189
+msgid "Elevation in metres using WGS84"
+msgstr ""
+"海拔高度，使用 WGS84 的公尺數"
+
+#: ../docs/reference/device_model.rst:191
+msgid "location.measuredDateTime"
+msgstr ""
+"location.measuredDateTime"
+
+#: ../docs/reference/device_model.rst:191
+msgid "ISO8601 date-time: Date and time of location measurement"
+msgstr ""
+"ISO8601 日期時間：測量位置的日期和時間"
+
+#: ../docs/reference/device_model.rst:193
+msgid "location.updatedDateTime"
+msgstr ""
+"location.updatedDateTime"
+
+#: ../docs/reference/device_model.rst:193
+msgid "ISO8601 date-time: Date and time"
+msgstr ""
+"ISO8601 日期時間：日期和時間"
+
+#: ../docs/reference/device_model.rst:195
+msgid "location.accuracy"
+msgstr ""
+"location.accuracy"
+
+#: ../docs/reference/device_model.rst:195
+msgid "Accuracy of the position in metres"
+msgstr ""
+"位置的正確性（公尺）"
+
+#: ../docs/reference/device_model.rst:200
+msgid "Device Management Extension"
+msgstr ""
+"裝置管理延伸規格"
+
+#: ../docs/reference/device_model.rst:202
+msgid "The ``mgmt.`` attributes are only present for managed devices. When a managed device becomes dormant, it becomes unmanaged and the ``mgmt.`` attributes are deleted. The ``mgmt.`` attributes are set by the Watson IoT platform as a result of processing device management requests. These attributes cannot be directly written using the API."
+msgstr ""
+"只有受管理裝置有 ``mgmt.`` 屬性。當受管理裝置變成休眠時，即成為未受管理的裝置，並會刪除 ``mgmt.`` 屬性。在處理裝置管理要求之後，Watson IoT Platform 即會設定 ``mgmt.`` 屬性。這些屬性不能直接使用 API 撰寫。"
+
+#: ../docs/reference/device_model.rst:204
+msgid "Devices have a management lifecycle, defined by their status as managed devices. The device management agent on the device is responsible for sending a Manage Device request using the device management protocol. To deal with defunct devices in large device populations, a managed device can be set to send a Manage Device request regularly, allowing the Watson IoT platform to notice when a device has become dormant. To facilitate this functionality, the Manage Device request has an optional lifetime parameter, When the Watson IoT platform receives a Manage Device request with a lifetime, it calculates the time before which another Manage Device request is required and stores it in the  \"mgmt.dormantDateTime\" attribute."
+msgstr ""
+"裝置有管理生命週期，並依照其狀態定義為受管理裝置。裝置上的裝置管理代理程式會負責使用裝置管理通訊協定來傳送「管理裝置」要求。若要處理大量裝置群中已失效的裝置，可以設定受管理裝置來定期傳送「管理裝置」要求，讓 Watson IoT Platform 注意到裝置已變成休眠。為了方便執行這項功能，「管理裝置」要求有一個選用的生命期限參數；當 Watson IoT Platform 接收到含有生命期限的「管理裝置」要求時，其會計算需要另一個「管理裝置」要求之前的時間，並將它儲存在 \"mgmt.dormantDateTime\" 屬性中。"
+
+#: ../docs/reference/device_model.rst:209
+msgid "mgmt.dormant"
+msgstr ""
+"mgmt.dormant"
+
+#: ../docs/reference/device_model.rst:209
+msgid "Whether the device has become dormant"
+msgstr ""
+"裝置是否已變成休眠"
+
+#: ../docs/reference/device_model.rst:211
+msgid "mgmt.dormantDateTime"
+msgstr ""
+"mgmt.dormantDateTime"
+
+#: ../docs/reference/device_model.rst:211
+msgid "ISO8601 date-time: Date and time at which the managed device will become dormant"
+msgstr ""
+"ISO8601 日期時間：受管理裝置變成休眠的日期和時間"
+
+#: ../docs/reference/device_model.rst:214
+msgid "mgmt.lastActivityDateTime"
+msgstr ""
+"mgmt.lastActivityDateTime"
+
+#: ../docs/reference/device_model.rst:214
+msgid "ISO8601 date-time: Date and time of last activity, updated periodically"
+msgstr ""
+"ISO8601 日期時間：前次活動的日期和時間，定期更新"
+
+#: ../docs/reference/device_model.rst:217
+msgid "mgmt.supports.deviceActions"
+msgstr ""
+"mgmt.supports.deviceActions"
+
+#: ../docs/reference/device_model.rst:217
+msgid "Whether the device supports Reboot and Factory Reset actions"
+msgstr ""
+"裝置是否支援「重新開機」及「重設為原廠設定」動作"
+
+#: ../docs/reference/device_model.rst:220
+msgid "mgmt.supports.firmwareActions"
+msgstr ""
+"mgmt.supports.firmwareActions"
+
+#: ../docs/reference/device_model.rst:220
+msgid "Whether the device supports Firmware Download and Firmware Update actions"
+msgstr ""
+"裝置是否支援「韌體下載」及「韌體更新」動作"
+
+#: ../docs/reference/device_model.rst:223
+msgid "mgmt.firmware.version"
+msgstr ""
+"mgmt.firmware.version"
+
+#: ../docs/reference/device_model.rst:223
+msgid "The version of the firmware on the device"
+msgstr ""
+"裝置上的韌體版本"
+
+#: ../docs/reference/device_model.rst:225
+msgid "mgmt.firmware.name"
+msgstr ""
+"mgmt.firmware.name"
+
+#: ../docs/reference/device_model.rst:225
+msgid "The name of the firmware to be used on the device"
+msgstr ""
+"裝置上使用的韌體名稱"
+
+#: ../docs/reference/device_model.rst:227
+msgid "mgmt.firmware.uri"
+msgstr ""
+"mgmt.firmware.uri"
+
+#: ../docs/reference/device_model.rst:227
+msgid "The URI from which the firmware image can be downloaded"
+msgstr ""
+"可下載韌體映像檔的 URI"
+
+#: ../docs/reference/device_model.rst:229
+msgid "mgmt.firmware.verifier"
+msgstr ""
+"mgmt.firmware.verifier"
+
+#: ../docs/reference/device_model.rst:229
+msgid "The verifier such as a checksum for the firmware image to validate its integrity"
+msgstr ""
+"韌體映像檔用來驗證其完整性的驗證器（如：總和檢查）"
+
+#: ../docs/reference/device_model.rst:232
+msgid "mgmt.firmware.state"
+msgstr ""
+"mgmt.firmware.state"
+
+#: ../docs/reference/device_model.rst:232
+msgid "Indicates the state of firmware download"
+msgstr ""
+"指出韌體下載的狀態"
+
+#: ../docs/reference/device_model.rst:234
+msgid "mgmt.firmware.updateStatus"
+msgstr ""
+"mgmt.firmware.updateStatus"
+
+#: ../docs/reference/device_model.rst:234
+msgid "Indicates the status of the update"
+msgstr ""
+"指出更新的狀態"
+
+#: ../docs/reference/device_model.rst:236
+msgid "mgmt.firmware.updatedDateTime"
+msgstr ""
+"mgmt.firmware.updatedDateTime"
+
+#: ../docs/reference/device_model.rst:236
+msgid "ISO8601 date-time: Date of last update"
+msgstr ""
+"ISO8601 日期時間：前次更新的日期"
+

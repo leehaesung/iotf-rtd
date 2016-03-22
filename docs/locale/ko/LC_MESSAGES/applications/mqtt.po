@@ -1,0 +1,412 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/applications/mqtt.rst:2
+msgid "MQTT Connectivity for Applications"
+msgstr ""
+"애플리케이션을 위한 MQTT 연결"
+
+#: ../docs/applications/mqtt.rst:6
+msgid "Client connection"
+msgstr ""
+"클라이언트 연결"
+
+#: ../docs/applications/mqtt.rst:7
+msgid "Every registered organization has a unique endpoint which must be used when connecting MQTT clients for applications in that organization."
+msgstr ""
+"등록된 모든 조직에는 해당 조직의 애플리케이션에 대해 MQTT 클라이언트를 연결할 때 사용해야 하는 고유 엔드포인트가 있습니다. "
+
+#: ../docs/applications/mqtt.rst:10
+msgid "**org\\_id**.messaging.internetofthings.ibmcloud.com"
+msgstr ""
+"**org\\_id**.messaging.internetofthings.ibmcloud.com"
+
+#: ../docs/applications/mqtt.rst:14
+msgid "Unencrypted client connection"
+msgstr ""
+"암호화되지 않은 클라이언트 연결"
+
+#: ../docs/applications/mqtt.rst:16
+msgid "Connect on port **1883**"
+msgstr ""
+"포트 **1883**에서 연결"
+
+#: ../docs/applications/mqtt.rst:18
+msgid "All information your application submits is being sent in plain text (including the API key and authentication token). We recommend the use of an encrypted connection whenever possible."
+msgstr ""
+"애플리케이션이 제출하는 모든 정보는 일반 텍스트로 전송됩니다(API 키 및 인증 토큰 포함). 가능할 때마다 암호화된 연결을 사용하는 것이 좋습니다."
+
+#: ../docs/applications/mqtt.rst:24
+msgid "Encrypted client connection"
+msgstr ""
+"암호화된 클라이언트 연결"
+
+#: ../docs/applications/mqtt.rst:26
+msgid "Connect on port **8883** or **443** for websockets."
+msgstr ""
+"웹 소켓을 위해 포트 **8883** 또는 **443**에서 연결합니다. "
+
+#: ../docs/applications/mqtt.rst:28
+msgid "In many client libraries you will need to provide the server's public certificate in pem format.  The following file contains the entire certificate chain for \\*.messaging.internetofthings.ibmcloud.com: messaging.pem_"
+msgstr ""
+"다수의 클라이언트 라이브러리에서 사용자는 pem 형식으로 서버의 공용 인증서를 제공해야 합니다. 다음 파일에는 \\*.messaging.internetofthings.ibmcloud.com: messaging.pem에 대한 전체 인증서 체인이 포함되어 있습니다. "
+
+#: ../docs/applications/mqtt.rst:34
+msgid "Some SSL client libraries have been shown to not handle wildcarded domains, in which case, if you can not change libraries, you will need to turn off certificate checking."
+msgstr ""
+"일부 SSL 클라이언트 라이브러리는 와일드카드 도메인을 처리하지 않는 것으로 표시되었으며 이 경우 라이브러리를 변경할 수 없으면 인증서 확인을 꺼야 합니다. "
+
+#: ../docs/applications/mqtt.rst:38
+msgid "The IoT Platform requires TLS v1.2. We suggest the following cipher suites: ECDHE-RSA-AES256-GCM-SHA384, AES256-GCM-SHA384, ECDHE-RSA-AES128-GCM-SHA256 or AES128-GCM-SHA256 *(as of Jun 1 2015)*."
+msgstr ""
+"IoT Platform에는 TLS v1.2가 필요합니다. ECDHE-RSA-AES256-GCM-SHA384, AES256-GCM-SHA384, ECDHE-RSA-AES128-GCM-SHA256 또는 AES128-GCM-SHA256 암호 스위트를 추천합니다. *(2015년 1월 1일 현재)*"
+
+#: ../docs/applications/mqtt.rst:43
+msgid "MQTT client identifier"
+msgstr ""
+"MQTT 클라이언트 ID"
+
+#: ../docs/applications/mqtt.rst:45
+msgid "An application must authenticate using a client ID in the following format:"
+msgstr ""
+"애플리케이션은 다음 형식의 클라이언트 ID를 사용하여 인증해야 합니다. "
+
+#: ../docs/applications/mqtt.rst:47
+msgid "a:**org\\_id**:**app_id**"
+msgstr ""
+"a:**org\\_id**:**app_id**"
+
+#: ../docs/applications/mqtt.rst:49
+msgid "**a** indicates the client is an application"
+msgstr ""
+"**a**는 클라이언트가 애플리케이션임을 표시함"
+
+#: ../docs/applications/mqtt.rst:50
+#: ../docs/applications/mqtt.rst:182
+msgid "**org\\_id** is your unique organization ID, assigned when you sign up with the service.  It will be a 6 character alphanumeric string."
+msgstr ""
+"**org\\_id**는 서비스에 등록할 때 지정된 고유 조직 ID입니다. 이 ID는 6자 영숫자 문자열입니다. "
+
+#: ../docs/applications/mqtt.rst:52
+#: ../docs/applications/mqtt.rst:184
+msgid "**app\\_id** is a user-defined unique string identifier for this client."
+msgstr ""
+"**app\\_id**는 이 클라이언트의 사용자 정의 고유 문자열 ID입니다. "
+
+#: ../docs/applications/mqtt.rst:53
+msgid "We do not impose any rules on the **app\\_id** component of the client ID"
+msgstr ""
+"클라이언트 ID의 **app\\_id** 컴포넌트에는 규칙을 부과하지 않음"
+
+#: ../docs/applications/mqtt.rst:54
+msgid "When connecting to the Quickstart service no authentication is required"
+msgstr ""
+"Quickstart 서비스에 연결하는 경우에는 인증이 필요하지 않음"
+
+#: ../docs/applications/mqtt.rst:55
+msgid "An application does not need to be registered before it can connect"
+msgstr ""
+"애플리케이션을 연결하기 위해 먼저 애플리케이션을 등록하지 않아도 됨"
+
+#: ../docs/applications/mqtt.rst:57
+msgid "Only one MQTT client can connect using any given client ID.  As soon as a second client in your organization connects using an **app\\_id** that you have already connected the first client will be disconnected."
+msgstr ""
+"지정된 클라이언트 ID를 사용하여 하나의 MQTT 클라이언트만 연결할 수 있습니다. 사용자가 이미 연결한 **app\\_id**를 사용하여 조직의 두 번째 클라이언트가 연결되는 즉시 첫 번째 클라이언트의 연결이 끊깁니다. "
+
+#: ../docs/applications/mqtt.rst:64
+msgid "MQTT authentication"
+msgstr ""
+"MQTT 인증"
+
+#: ../docs/applications/mqtt.rst:66
+msgid "Applications require an API Key to connect into an organization.  When an API Key is registered a token will be generated that must be used with that API key."
+msgstr ""
+"애플리케이션이 조직에 연결하려면 API 키가 필요합니다. API 키가 등록되면 해당 API 키와 함께 사용해야 하는 토큰이 생성됩니다. "
+
+#: ../docs/applications/mqtt.rst:69
+msgid "The API key will look something like this: a-**org\\_id**-a84ps90Ajs"
+msgstr ""
+"이 API 키의 모양은 a-**org\\_id**-a84ps90Ajs와 비슷합니다. "
+
+#: ../docs/applications/mqtt.rst:71
+msgid "The token will look something like this: MP$08VKz!8rXwnR-Q*"
+msgstr ""
+"이 토큰의 모양은 MP$08VKz!8rXwnR-Q*와 비슷합니다. "
+
+#: ../docs/applications/mqtt.rst:73
+msgid "When making an MQTT connection using an API key the following applies:"
+msgstr ""
+"API 키를 사용하여 MQTT 연결을 작성하는 경우 다음이 적용됩니다. "
+
+#: ../docs/applications/mqtt.rst:75
+msgid "MQTT client ID: a:**org\\id**:**app\\_id**"
+msgstr ""
+"MQTT 클라이언트 ID: a:**org\\id**:**app\\_id**"
+
+#: ../docs/applications/mqtt.rst:76
+msgid "MQTT username must be the API key: a-**org\\_id**-a84ps90Ajs"
+msgstr ""
+"MQTT 사용자 이름은 API 키여야 합니다(a-**org\\_id**-a84ps90Ajs). "
+
+#: ../docs/applications/mqtt.rst:77
+msgid "MQTT password must be the authentication token: MP$08VKz!8rXwnR-Q*"
+msgstr ""
+"MQTT 비밀번호는 인증 토큰이어야 합니다(MP$08VKz!8rXwnR-Q*). "
+
+#: ../docs/applications/mqtt.rst:81
+msgid "Publishing device events"
+msgstr ""
+"디바이스 이벤트 공개"
+
+#: ../docs/applications/mqtt.rst:82
+msgid "An application can publish events as if they came from any registered device."
+msgstr ""
+"애플리케이션은 이벤트가 등록된 디바이스에서 제공된 것처럼 이벤트를 공개할 수 있습니다. "
+
+#: ../docs/applications/mqtt.rst:84
+msgid "Publish to topic iot-2/type/**device\\_type**/id/**device\\_id**/evt/**event\\_id**/fmt/**format\\_string**"
+msgstr ""
+"주제 iot-2/type/**device\\_type**/id/**device\\_id**/evt/**event\\_id**/fmt/**format\\_string**에 공개"
+
+#: ../docs/applications/mqtt.rst:86
+msgid "You may have a number of devices that are already generating bespoke data that you wish to send to the IoT Platform.  One way to get that data into the service would be to write an application that processes the data and publishes it to the IoT Platform."
+msgstr ""
+"IoT Platform에 전송할 맞춤형 데이터를 이미 생성 중인 다수의 디바이스가 있을 수 있습니다. 해당 데이터를 서비스로 가져오는 한 가지 방법은 해당 데이터를 처리하는 애플리케이션을 작성하여 IoT Platform에 공개하는 것입니다. "
+
+#: ../docs/applications/mqtt.rst:92
+msgid "Publishing device commands"
+msgstr ""
+"디바이스 명령 공개"
+
+#: ../docs/applications/mqtt.rst:93
+msgid "An application can publish a command to any registered device."
+msgstr ""
+"애플리케이션은 모든 등록된 디바이스에 명령을 공개할 수 있습니다. "
+
+#: ../docs/applications/mqtt.rst:95
+msgid "Publish to topic iot-2/type/**device\\_type**/id/**device\\_id**/cmd/**command\\_id**/fmt/**format\\_string**"
+msgstr ""
+"주제 iot-2/type/**device\\_type**/id/**device\\_id**/cmd/**command\\_id**/fmt/**format\\_string**에 공개"
+
+#: ../docs/applications/mqtt.rst:99
+msgid "Subscribing to device events"
+msgstr ""
+"디바이스 이벤트 구독"
+
+#: ../docs/applications/mqtt.rst:100
+msgid "An application can subscribe to events from one or more devices."
+msgstr ""
+"애플리케이션은 하나 이상의 디바이스로부터의 이벤트를 구독할 수 있습니다. "
+
+#: ../docs/applications/mqtt.rst:102
+msgid "Subscribe to topic iot-2/type/**device\\_type**/id/**device\\_id**/evt/**event\\_id**/fmt/**format\\_string**"
+msgstr ""
+"주제 iot-2/type/**device\\_type**/id/**device\\_id**/evt/**event\\_id**/fmt/**format\\_string** 구독"
+
+#: ../docs/applications/mqtt.rst:104
+#: ../docs/applications/mqtt.rst:120
+msgid "The MQTT \"any\" wildcard character (+) may be used for any of the following components if you want to subscribe to more than one type of event, or events from more than a single device."
+msgstr ""
+"둘 이상의 이벤트 유형을 구독하거나 둘 이상의 디바이스로부터의 이벤트를 구독하려는 경우 다음의 컴포넌트에 대해 MQTT \"임의의\" 와일드카드 문자(+)를 사용할 수 있습니다. "
+
+#: ../docs/applications/mqtt.rst:108
+#: ../docs/applications/mqtt.rst:124
+#: ../docs/applications/mqtt.rst:139
+#: ../docs/applications/mqtt.rst:164
+msgid "device\\_type"
+msgstr ""
+"device\\_type"
+
+#: ../docs/applications/mqtt.rst:109
+#: ../docs/applications/mqtt.rst:125
+#: ../docs/applications/mqtt.rst:140
+msgid "device\\_id"
+msgstr ""
+"device\\_id"
+
+#: ../docs/applications/mqtt.rst:110
+msgid "event\\_id"
+msgstr ""
+"event\\_id"
+
+#: ../docs/applications/mqtt.rst:111
+#: ../docs/applications/mqtt.rst:127
+msgid "format\\_string"
+msgstr ""
+"format\\_string"
+
+#: ../docs/applications/mqtt.rst:115
+msgid "Subscribing to device commands"
+msgstr ""
+"디바이스 명령 구독"
+
+#: ../docs/applications/mqtt.rst:116
+msgid "An application can subscribe to commands being sent to one or more devices."
+msgstr ""
+"애플리케이션은 하나 이상의 디바이스에 전송 중인 명령을 구독할 수 있습니다. "
+
+#: ../docs/applications/mqtt.rst:118
+msgid "Subscribe to topic iot-2/type/**device\\_type**/id/**device\\_id**/cmd/**command\\_id**/fmt/**format\\_string**"
+msgstr ""
+"주제 iot-2/type/**device\\_type**/id/**device\\_id**/cmd/**command\\_id**/fmt/**format\\_string** 구독"
+
+#: ../docs/applications/mqtt.rst:126
+msgid "cmd\\_id"
+msgstr ""
+"cmd\\_id"
+
+#: ../docs/applications/mqtt.rst:131
+msgid "Subscribing to device status messages"
+msgstr ""
+"디바이스 상태 메시지 구독"
+
+#: ../docs/applications/mqtt.rst:132
+msgid "An application can subscribe to monitor status of one or more devices."
+msgstr ""
+"애플리케이션은 하나 이상의 디바이스의 모니터 상태를 구독할 수 있습니다. "
+
+#: ../docs/applications/mqtt.rst:134
+msgid "Subscribe to topic iot-2/type/**device\\_type**/id/**device\\_id**/mon"
+msgstr ""
+"주제 iot-2/type/**device\\_type**/id/**device\\_id**/mon 구독"
+
+#: ../docs/applications/mqtt.rst:136
+msgid "The MQTT \"any\" wildcard character (+) may be used for any of the following components if you want to subscribe to updates from more than one device."
+msgstr ""
+"둘 이상의 디바이스로부터의 업데이트를 구독하려는 경우 다음의 컴포넌트에 대해 MQTT \"임의의\" 와일드카드 문자(+)를 사용할 수 있습니다. "
+
+#: ../docs/applications/mqtt.rst:144
+msgid "Subscribing to application status messages"
+msgstr ""
+"애플리케이션 상태 메시지 구독"
+
+#: ../docs/applications/mqtt.rst:145
+msgid "An application can subscribe to monitor status of one or more applications."
+msgstr ""
+"애플리케이션은 하나 이상의 애플리케이션의 모니터 상태를 구독할 수 있습니다. "
+
+#: ../docs/applications/mqtt.rst:147
+msgid "Subscribe to topic iot-2/app/**app\\_id**/mon"
+msgstr ""
+"주제 iot-2/app/**app\\_id**/mon 구독"
+
+#: ../docs/applications/mqtt.rst:149
+msgid "The MQTT \"any\" wildcard character (+) may be used for **app\\_id** if you want to subscribe for updates for all applications."
+msgstr ""
+"모든 애플리케이션에 대한 업데이트를 위해 구독하려는 경우 **app\\_id**에 대해 MQTT \"임의의\" 와일드카드 문자(+)를 사용할 수 있습니다. "
+
+#: ../docs/applications/mqtt.rst:154
+msgid "Quickstart restrictions"
+msgstr ""
+"Quickstart 제한사항"
+
+#: ../docs/applications/mqtt.rst:156
+msgid "If you are writing application code that wants to support use with Quickstart you must take into account the following features present in the registered service that are not supported in Quickstart:"
+msgstr ""
+"Quickstart와 함께 사용하도록 지원할 애플리케이션 코드를 작성하는 경우에는 Quickstart에서 지원되지 않는 등록된 서비스에 있는 다음과 같은 기능을 고려해야 합니다. "
+
+#: ../docs/applications/mqtt.rst:160
+msgid "Publishing commands"
+msgstr ""
+"명령 공개"
+
+#: ../docs/applications/mqtt.rst:161
+msgid "Subscribing to commands"
+msgstr ""
+"명령 구독"
+
+#: ../docs/applications/mqtt.rst:162
+msgid "Use of the MQTT \"any\" wildcard character (+) for the following topic components:"
+msgstr ""
+"다음의 주제 컴포넌트에 대해 MQTT \"임의의\" 와일드카드 문자(+) 사용: "
+
+#: ../docs/applications/mqtt.rst:165
+msgid "app\\_id"
+msgstr ""
+"app\\_id"
+
+#: ../docs/applications/mqtt.rst:166
+msgid "MQTT connection over SSL"
+msgstr ""
+"SSL을 통한 MQTT 연결"
+
+#: ../docs/applications/mqtt.rst:170
+msgid "Scalable Applications"
+msgstr ""
+"확장 가능 애플리케이션"
+
+#: ../docs/applications/mqtt.rst:172
+msgid "You can build scalable applications which will load balance messages across multiple instances of your application by making a few changes to how your application connects to the IoT Platform. Applications taking advantage of this feature must only attempt to make non-durable subscriptions. A bit of experimentation may be needed to understand how many clients are needed for the optimum balance in load."
+msgstr ""
+"애플리케이션이 IoT Platform에 연결하는 방법을 약간 변경하여 애플리케이션의 여러 인스턴스에 걸쳐 메시지를 로드 밸런싱하는 확장 가능 애플리케이션을 빌드할 수 있습니다. 이 기능을 이용하는 애플리케이션은 비지속 구독 작성만을 시도해야 합니다. 로드에서 최적의 밸런스에 필요한 클라이언트 수를 파악하는 데 약간의 실험이 필요할 수 있습니다."
+
+#: ../docs/applications/mqtt.rst:179
+msgid "Supply a client id of the form **A**:**org\\_id**:**app\\_id**"
+msgstr ""
+"**A**:**org\\_id**:**app\\_id** 양식의 클라이언트 ID 제공"
+
+#: ../docs/applications/mqtt.rst:181
+msgid "**A** indicates the client is a scalable application"
+msgstr ""
+"**A**는 클라이언트가 확장 가능 애플리케이션임을 표시함"
+
+#: ../docs/applications/mqtt.rst:185
+msgid "Create a non-durable subscription"
+msgstr ""
+"비지속 구독 작성"
+
+#: ../docs/applications/mqtt.rst:187
+msgid "Only non-durable subscriptions are supported for scalable applications. Please note that the client id must begin with a capital 'A' in order to designated as a scalable application by the IoT Platform. Multiple clients that are part of the scalable application should use the exact same client id."
+msgstr ""
+"비지속 구독만 확장 가능 애플리케이션에 지원됩니다. IoT Platform에서 확장 가능 애플리케이션으로 지정하려면 클라이언트 ID가 대문자 'A'로 시작해야 합니다. 확장 가능 애플리케이션의 파트인 여러 클라이언트가 정확히 동일한 클라이언트 ID를 사용해야 합니다."
+
+#: ../docs/applications/mqtt.rst:194
+msgid "How It Works"
+msgstr ""
+"작동 방식"
+
+#: ../docs/applications/mqtt.rst:195
+msgid "The IoT Platform service extends the MQTT 3.1.1 specification to provide support for shared subscriptions. Shared subscription can provide simple load balancing functionality for applications. A shared subscription might be needed if a back-end enterprise application can not keep up with the number of messages being published to a specific topic space. For example if many devices were publishing messages that are being processed by a single application. It might be helpful to leverage the load balancing capability of a shared subscription. IoT Platform shared subscription support is limited to non-durable subscriptions only."
+msgstr ""
+"IoT Platform 서비스는 MQTT 3.1.1 스펙을 확장하여 공유 구독에 대한 지원을 제공합니다. 공유된 구독에서는 애플리케이션에 대해 단순한 로드 밸런싱 기능을 제공할 수 있습니다. 백엔드 엔터프라이즈 애플리케이션이 특정 주제 공간에 공개 중인 메시지의 수를 추적할 수 없는 경우 공유된 구독이 필요할 수 있습니다. 예를 들어, 다수의 디바이스가 단일 애플리케이션에서 처리 중인 메시지를 공개 중인 경우가 있습니다. 공유된 구독의 로드 밸런싱 기능을 활용하는 데 유용할 수 있습니다. IoT Platform 공유 구독 지원은 비지속 구독으로만 제한됩니다. "
+
+#: ../docs/applications/mqtt.rst:203
+msgid "A simple example of an auto-scaling application:"
+msgstr ""
+"Auto Scaling 애플리케이션의 단순 예제:"
+
+#: ../docs/applications/mqtt.rst:205
+msgid "client 1 connects as A:abc123:myApplication and subscribes to all device events client 1 will receive 100% of the device events published"
+msgstr ""
+"클라이언트 1은 A:abc123:myApplication으로 연결하고 모든 디바이스 이벤트를 구독합니다. 클라이언트 1이 공개된 디바이스 이벤트를 100% 수신합니다."
+
+#: ../docs/applications/mqtt.rst:207
+msgid "client 2 connects as A:abc123:myApplication and subscribes to all device events now, client 1 and client 2 will share all of the events published between them. that is the load is now shared between client 1 and client 2."
+msgstr ""
+"클라이언트 2는 A:abc123:myApplication으로 연결하고 현재 모든 디바이스 이벤트를 구독합니다. 클라이언트 1 및 클라이언트 2가 사이에 공개된 모든 이벤트를 공유합니다. 즉, 로드가 클라이언트 1 및 클라이언트 2 사이에 현재 공유되어 있습니다."
+
+#: ../docs/applications/mqtt.rst:210
+msgid "client 3 connects as A:abc123:myApplication and subscribes to all device events now, instance 1, 2 and 3 will process the events shared amongst all three instances"
+msgstr ""
+"클라이언트 3은 A:abc123:myApplication으로 연결하고 현재 모든 디바이스 이벤트를 구독합니다. 인스턴스 1, 2 및 3이 3개의 인스턴스 모두에서 공유되는 이벤트를 처리합니다."
+
+#: ../docs/applications/mqtt.rst:212
+msgid "clients 2 and 3 unsubscribe from all device events now, although instance 2 and 3 are still connected to the service, instance 1 will be receiving  all device events published"
+msgstr ""
+"인스턴스 2 및 3이 계속 서비스에 연결된 경우에도 클라이언트 2 및 3이 현재 모든 디바이스 이벤트에서 구독 해제합니다. 인스턴스 1은 공개된 모든 디바이스 이벤트를 수신합니다."
+

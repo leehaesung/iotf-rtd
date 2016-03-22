@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/libraries/c_sharp.rst:2
+msgid "C# for Device Developers"
+msgstr ""
+"C# para desarrolladores de dispositivos"
+
+#: ../docs/devices/libraries/c_sharp.rst:4
+msgid "See `iot-csharp <https://github.com/IoT-Analytics/iot-csharp>`_ in GitHub"
+msgstr ""
+"Consulte `iot-csharp <https://github.com/IoT-Analytics/iot-csharp>`_ en GitHub"
+
+#: ../docs/devices/libraries/c_sharp.rst:8
+msgid "Constructor"
+msgstr ""
+"Constructor"
+
+#: ../docs/devices/libraries/c_sharp.rst:9
+msgid "The constructor builds the client instance, and accepts arguments containing the following definitions:"
+msgstr ""
+"El constructor crea la instancia de cliente y acepta argumentos que contienen las definiciones siguientes:"
+
+#: ../docs/devices/libraries/c_sharp.rst:11
+msgid "``orgId`` - Your organization ID."
+msgstr ""
+"``orgId`` - ID de la organización."
+
+#: ../docs/devices/libraries/c_sharp.rst:12
+msgid "``deviceType`` - The type of your device."
+msgstr ""
+"``deviceType`` - Tipo del dispositivo."
+
+#: ../docs/devices/libraries/c_sharp.rst:13
+msgid "``deviceId`` - The ID of your device."
+msgstr ""
+"``deviceId`` - ID del dispositivo."
+
+#: ../docs/devices/libraries/c_sharp.rst:14
+msgid "``auth-method`` - Method of authentication (the only value currently supported is \"token\")."
+msgstr ""
+"``auth-method`` - Método de autenticación (el único valor soportado actualmente es \"token\")."
+
+#: ../docs/devices/libraries/c_sharp.rst:15
+msgid "``auth-token`` - API key token (required if auth-method is \"token\")."
+msgstr ""
+"``auth-token`` - Señal de clave de API (necesario si auth-method es \"token\")."
+
+#: ../docs/devices/libraries/c_sharp.rst:18
+msgid "If deviceId and deviceType are provided, the client will connect to the IoT Platform Quickstart, and default to an unregistered device. The argument lists creates definitions which are used to interact with the IoT Platform module."
+msgstr ""
+"Si se proporcionan deviceId y deviceType, el cliente se conectará a Quickstart de IoT Platform y tomará de forma predeterminada un dispositivo no registrado. La lista de argumentos crea definiciones que se utilizan para interactuar con el módulo de IoT Platform."
+
+#: ../docs/devices/libraries/c_sharp.rst:32
+msgid "Publishing events"
+msgstr ""
+"Publicación de sucesos"
+
+#: ../docs/devices/libraries/c_sharp.rst:33
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"Los sucesos son el mecanismo mediante el cual los dispositivos publican datos en IoT Platform. El dispositivo controla el contenido del suceso y asigna un nombre para cada suceso que envía."
+
+#: ../docs/devices/libraries/c_sharp.rst:35
+msgid "When an event is received by the IoT Platform the credentials of the connection on which the event was received are used to determine which device sent the event. With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"Cuando IoT Platform recibe un suceso, se utilizan las credenciales de la conexión en la que se ha recibido el suceso para determinar qué dispositivo ha enviado el suceso. Con esta arquitectura es imposible que un dispositivo suplante a otro dispositivo."
+
+#: ../docs/devices/libraries/c_sharp.rst:37
+msgid "Events can be published at any of the three `quality of service (QoS) levels <../mqtt.html#/qoslevels>`_, defined by the MQTT protocol. By default events will be published as QoS level 0."
+msgstr ""
+"Los sucesos se pueden publicar en cualquiera de los tres `niveles de calidad de servicio (QoS) <../mqtt.html#/qoslevels>`_, definidos por el protocolo MQTT. De forma predeterminada los sucesos se publicarán como el nivel 0 de calidad de servicio."
+
+#: ../docs/devices/libraries/c_sharp.rst:40
+msgid "Publish event using default quality of service"
+msgstr ""
+"Publicar suceso utilizando calidad de servicio predeterminada"
+
+#: ../docs/devices/libraries/c_sharp.rst:49
+msgid "Publish event using user-defined quality of service"
+msgstr ""
+"Publicar suceso utilizando calidad de servicio definida por el usuario"
+
+#: ../docs/devices/libraries/c_sharp.rst:50
+msgid "Events can be published at higher MQTT quality of service levels, but events published at QoS levels above 0 may be slower then QoS 0 events, because of the extra confirmation of receipt used in QoS levels above 0."
+msgstr ""
+"Los sucesos se pueden publicar con niveles de calidad de servicio de MQTT más altos, pero los sucesos publicados con un nivel de calidad de servicio por encima de 0 pueden ser más lento que los sucesos del QoS 0, debido a la confirmación de recibo adicional que utilizan los niveles de calidad de servicio por encima de 0."
+
+#: ../docs/devices/libraries/c_sharp.rst:59
+msgid "Handling commands"
+msgstr ""
+"Manejo de mandatos"
+
+#: ../docs/devices/libraries/c_sharp.rst:60
+msgid "When the device client connects, it automatically subscribes to any commands for this device. To process specific commands, you must register a command callback method."
+msgstr ""
+"Cuando el cliente de dispositivo se conecta, se suscribe automáticamente a cualquier mandato para ese dispositivo. Para procesar mandatos específicos, debe registrar un método de devolución de llamada de mandato."
+

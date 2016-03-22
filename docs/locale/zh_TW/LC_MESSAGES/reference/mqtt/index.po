@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/reference/mqtt/index.rst:4
+msgid "MQTT"
+msgstr ""
+"MQTT"
+
+#: ../docs/reference/mqtt/index.rst:6
+msgid "The primary mechanism that devices and applications use to communicate with the IBM Watson IoT platform is MQTT; this is a protocol designed for the efficient exchange of real-time data with sensor and mobile devices."
+msgstr ""
+"裝置和應用程式用來與 IBM Watson IoT Platform 進行通訊的主要機制是 MQTT；這是為了與感應器和行動式裝置有效交換即時資料而設計的通訊協定。"
+
+#: ../docs/reference/mqtt/index.rst:11
+msgid "MQTT runs over TCP/IP and, while it is possible to code directly to TCP/IP, you might prefer to use a library that handles the details of the MQTT protocol for you. You will find there's a wide range of MQTT client libraries available at mqtt.org_, with the best place to start looking being the `Eclipse Paho project`_. IBM contributes to the development and support of many of these libraries."
+msgstr ""
+"MQTT 是透過 TCP/IP 執行，雖然可以將程式直接撰寫到 TCP/IP，但您或許想要使用程式庫來為您處理 MQTT 通訊協定的詳細資料。您將發現 mqtt.org_ 有非常多的 MQTT 用戶端程式庫可用，而開始探索的最好去處是 `Eclipse Paho 專案`_。IBM 對這些程式庫的開發和支援做出貢獻。"
+
+#: ../docs/reference/mqtt/index.rst:21
+msgid "MQTT 3.1 is the version of the protocol that is in widest use today. Version 3.1.1 contains a number of minor enhancements, and has been ratified as an OASIS Standard."
+msgstr ""
+"MQTT 3.1 是目前最廣泛使用的通訊協定版本。3.1.1 版包含許多次要加強功能，已核定為 OASIS 標準。"
+
+#: ../docs/reference/mqtt/index.rst:24
+msgid "One reason for using version 3.1.1 is that the maximum length of the MQTT Client Identifier (ClientId) is increased from the 23 character limit imposed by 3.1. The IoT service will often require longer ClientId's and will accept long ClientId's with either version of the protocol however some 3.1 client libraries check the ClientId and enforce the 23 character limit."
+msgstr ""
+"使用 3.1.1 版的原因之一，是 MQTT 用戶端 ID (ClientId) 的長度上限已從 3.1 強制執行的 23 個字元限制增加。IoT 服務通常需要較長的 ClientId，而且會接受任一通訊協定版本較長的 ClientId，但是部分 3.1 用戶端程式庫會檢查 ClientId 並施行 23 個字元限制。"
+
+#: ../docs/reference/mqtt/index.rst:33
+msgid "Device and application clients"
+msgstr ""
+"裝置和應用程式用戶端"
+
+#: ../docs/reference/mqtt/index.rst:34
+msgid "We define two primary classes of thing: Devices & Applications"
+msgstr ""
+"我們定義事物的兩個主要類別：裝置和應用程式"
+
+#: ../docs/reference/mqtt/index.rst:36
+msgid "The class of thing that your MQTT client identifies itself to the service as will determine the capabilities of your client once connected as well as the mechanism through which you will need to authenticate."
+msgstr ""
+"MQTT 用戶端在服務中用以識別自己的事物類別將決定連接後的用戶端功能，以及您需要透過哪個機制進行鑑別。"
+
+#: ../docs/reference/mqtt/index.rst:40
+msgid "Applications and devices also work with different MQTT topic spaces.  Devices work within a device-scoped topic space, whereas applications have full access to the topic space for an entire organization."
+msgstr ""
+"應用程式和裝置也使用不同的 MQTT 主題空間。裝置是在裝置範圍的主題空間內運作，而應用程式則對整個組織的主題空間具有完整存取權。"
+
+#: ../docs/reference/mqtt/index.rst:44
+msgid ":doc:`../../devices/mqtt`"
+msgstr ""
+":doc:`../../devices/mqtt`"
+
+#: ../docs/reference/mqtt/index.rst:45
+msgid ":doc:`../../applications/mqtt`"
+msgstr ""
+":doc:`../../applications/mqtt`"
+
+#: ../docs/reference/mqtt/index.rst:46
+msgid ":doc:`../../gateways/mqtt`"
+msgstr ""
+":doc:`../../gateways/mqtt`"
+
+#: ../docs/reference/mqtt/index.rst:52
+msgid "Quality of service"
+msgstr ""
+"服務品質"
+
+#: ../docs/reference/mqtt/index.rst:53
+msgid "The MQTT protocol provides three qualities of service for delivering messages between clients and servers: \"at most once\", \"at least once\" and \"exactly once\". Events and commands can be sent using any quality of service level, however you should carefully consider whether what the right level is for your needs.  It is not a simple case that QoS2 is \"better\" than QoS0."
+msgstr ""
+"MQTT 通訊協定提供三種服務品質在用戶端與伺服器之間傳遞訊息：「最多一次」、「最少一次」及「正好一次」。事件和指令可利用任何服務品質等級傳送，不過您應審慎考量何種等級最符合您的需求。它並不是 QoS2 比 QoS0「更好」這麼簡單。"
+
+#: ../docs/reference/mqtt/index.rst:61
+msgid "At most once (QoS0)"
+msgstr ""
+"最多一次 (QoS0)"
+
+#: ../docs/reference/mqtt/index.rst:62
+msgid "The message is delivered at most once, or it might not be delivered at all. Delivery across the network is not acknowledged, and the message is not stored. The message could be lost if the client is disconnected, or if the server fails. QoS0 is the fastest mode of transfer. It is sometimes called \"fire and forget\"."
+msgstr ""
+"訊息最多傳遞一次，或者完全不傳遞。不會確認透過網路的遞送，也不會儲存訊息。如果用戶端中斷連線，或伺服器故障，則可能失去訊息。QoS0 是最快的傳送模式。它有時稱為「發後即忘」模式。"
+
+#: ../docs/reference/mqtt/index.rst:68
+msgid "The MQTT protocol does not require servers to forward publications at QoS0 to a client. If the client is disconnected at the time the server receives the publication, the publication might be discarded, depending on the server implementation."
+msgstr ""
+"MQTT 通訊協定不需要伺服器以 QoS0 轉遞出版品至用戶端。如果用戶端在伺服器接收出版品時中斷連線，視伺服器實作而定，有可能會捨棄該出版品。"
+
+#: ../docs/reference/mqtt/index.rst:73
+msgid "When sending real-time data on an interval we recommend using QoS0.  If a single message goes missing it does not really matter as another message will be sent shortly after containing newer data.  In this scenario the extra cost of using higher quality of service does not result in any tangible benefit."
+msgstr ""
+"如果是根據時間間隔來傳送即時資料，我們建議使用 QoS0。遺漏單一訊息沒有多大關係，因為不久之後就會傳送另一則包含更新資料的訊息。在此實務範例中，使用更高服務品質的額外成本不會帶來任何實質利益。"
+
+#: ../docs/reference/mqtt/index.rst:80
+msgid "At least once (QoS1)"
+msgstr ""
+"最少一次 (QoS1)"
+
+#: ../docs/reference/mqtt/index.rst:81
+msgid "The message is always delivered at least once. It might be delivered multiple times if there is a failure before an acknowledgment is received by the sender. The message must be stored locally at the sender, until the sender receives confirmation that the message has been published by the receiver. The message is stored in case the message must be sent again."
+msgstr ""
+"訊息一律至少遞送一次。如果在傳送者收到確認通知之前發生失敗狀況，則可能會將其遞送多次。訊息必須儲存在傳送者本端，直到傳送者接收到確認，表示接收者已發佈該訊息。儲存訊息是為了萬一必須重新傳送訊息。"
+
+#: ../docs/reference/mqtt/index.rst:89
+msgid "Exactly once (QoS2)"
+msgstr ""
+"正好一次 (QoS2)"
+
+#: ../docs/reference/mqtt/index.rst:90
+msgid "The message is always delivered exactly once. The message must be stored locally at the sender, until the sender receives confirmation that the message has been published by the receiver. The message is stored in case the message must be sent again. QoS2 is the safest, but slowest mode of transfer. A more sophisticated handshaking and acknowledgement sequence is used than for QoS1 to ensure no duplication of messages occurs."
+msgstr ""
+"訊息一律只遞送一次。訊息必須儲存在傳送者本端，直到傳送者接收到確認，表示接收者已發佈該訊息。儲存訊息是為了萬一必須重新傳送訊息。QoS2 是最安全但傳送速度最慢的模式。會使用比 QoS1 更準確的信號交換和確認序列，以確保不會發生訊息重複。"
+
+#: ../docs/reference/mqtt/index.rst:97
+msgid "When sending commands we recommend using QoS2.  In many cases, when processing commands you want to know that the command will only be actioned, and that it will be actioned only once.  This is one of the clearest examples of when the additional overhead of QoS2 has a clear benefit."
+msgstr ""
+"傳送指令時，我們建議使用 QoS2。在許多情況下，當處理指令時，您想知道只會處理該指令，而且只會處理一次。QoS2 的額外負荷何時會有明顯的好處，這是最清楚的範例之一。"
+
+#: ../docs/reference/mqtt/index.rst:104
+msgid "Subscription Buffers and Clean Session"
+msgstr ""
+"訂閱緩衝區和清除階段作業"
+
+#: ../docs/reference/mqtt/index.rst:105
+msgid "Each subscription from either a device or application is allocated a buffer of 5000 messages.  This allows for any application or device to fall behind the live data it is processing and build up a backlog of up to 5000 pending messages for each subscription it has made.  Once the buffer fills up, any new message will result in the oldest message in the buffer being discarded."
+msgstr ""
+"會配置 5000 個訊息的緩衝區給來自裝置或應用程式的每一個訂閱。這可讓任何應用程式或裝置落後於它正在處理的現用資料，並為它所建立的每一個訂閱建置最多含 5000 個擱置訊息的待辦事項。當緩衝區填滿時，如有任何新訊息，將導致緩衝區中最舊的訊息遭捨棄。"
+
+#: ../docs/reference/mqtt/index.rst:111
+msgid "The subscription buffer can be accessed using MQTT clean session option.  If clean session is set to false, a subscriber will start receiving messages from the buffer. If clean session is set to true, the buffer is reset."
+msgstr ""
+"可使用 MQTT 清除階段作業選項來存取此訂閱緩衝區。如果清除階段作業是設為 false，訂閱者將開始從緩衝區接收訊息。如果清除階段作業設為 true，則重設緩衝區。"
+
+#: ../docs/reference/mqtt/index.rst:115
+msgid "This limit applies regardless of the quality of service setting used. Thus it is possible that a message sent at QoS1 or QoS2 may not be delivered to an application that is unable to keep up with the messages rate for the subscription(s) it has made."
+msgstr ""
+"不論使用何種服務品質設定，均適用此限制。因此，以 QoS1 或 QoS2 傳送的訊息可能無法傳遞至跟不上它所建立訂閱的訊息速率的應用程式。"
+
+#: ../docs/reference/mqtt/index.rst:122
+msgid "Message Payload"
+msgstr ""
+"訊息內容"
+
+#: ../docs/reference/mqtt/index.rst:124
+msgid "The Watson IoT platform supports sending and recieving messages in any format."
+msgstr ""
+"Watson IoT Platform 支援以任何格式傳送及接收訊息。"
+
+#: ../docs/reference/mqtt/index.rst:128
+msgid "Watson IoT Platform Maximum Message Payload Size"
+msgstr ""
+"Watson IoT Platform 訊息內容大小上限"
+
+#: ../docs/reference/mqtt/index.rst:130
+msgid "The maximum payload size is 4 kilobytes (kB).  If messages with payloads larger than this limit are sent, the client will be disconnected and the following log message will appear in the Diagnostic Logs if the client is a device:"
+msgstr ""
+"內容大小上限為 4 KB。如果傳送的訊息包含內容大於此限制，則會中斷用戶端連線，如果用戶端為裝置，則會在「診斷日誌」中出現下列日誌訊息："
+
+#: ../docs/reference/mqtt/index.rst:134
+msgid "Closed connection from x.x.x.x. The message size is too large for this endpoint."
+msgstr ""
+"已關閉來自 x.x.x.x 的連線。對此端點而言，訊息大小太大。"
+

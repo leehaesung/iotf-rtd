@@ -1,0 +1,521 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/device_mgmt/index.rst:2
+msgid "Device Management Protocol"
+msgstr ""
+"Protocoles de gestion des terminaux"
+
+#: ../docs/devices/device_mgmt/index.rst:5
+msgid "Introduction"
+msgstr ""
+"Introduction"
+
+#: ../docs/devices/device_mgmt/index.rst:7
+msgid "The Device Management capabilities in the IoT Platform create a new class of connected devices, Managed Devices."
+msgstr ""
+"Les fonctionnalités de gestion des terminaux d'IoT Platform créent une classe de terminaux connectés, appelés terminaux gérés."
+
+#: ../docs/devices/device_mgmt/index.rst:9
+msgid "Managed Devices must, by definition, contain a management agent which can understand the IoT Platform Device Management Protocol, and send a Manage Device request to the IoT Platform Device Management server. Managed devices can access the device management operations as explained later in this document."
+msgstr ""
+"Par définition, les terminaux gérés doivent inclure un agent de gestion capable de comprendre le protocole de gestion des terminaux IoT Platform, et d'envoyer une demande de gestion des terminaux au serveur de gestion des terminaux IoT Platform correspondant. Les terminaux gérés peuvent accéder aux opérations de gestion des terminaux, comme expliqué ultérieurement dans ce document."
+
+#: ../docs/devices/device_mgmt/index.rst:11
+msgid "The Device Management Protocol defines a set of supported operations. A device management agent can support a subset of the operations, but the Manage device and Unmanage device operations must be supported. A device supporting firmware action operations must also support observation."
+msgstr ""
+"Le protocole de gestion des terminaux définit un ensemble d'opérations prises en charge. Un agent de gestion des terminaux peut prendre en charge un sous-ensemble de ces opérations mais les opérations de gestion d'un terminal et d'annulation de la gestion d'un terminal doivent être prises en charge. Un terminal qui prend en charge les opérations impliquant des actions sur le microprogramme doit également prendre en charge l'action d'observation."
+
+#: ../docs/devices/device_mgmt/index.rst:13
+msgid "The Device Management Protocol is built on top of MQTT.  For details specific to how Device Management Protocol interacts with MQTT please see `MQTT Connectivity for Devices <../mqtt.html>`__"
+msgstr ""
+"Le protocole de gestion des terminaux se trouve au-dessus de MQTT.  Pour des détails sur la façon dont le protocole de gestion des terminaux interagit avec MQTT, voir `Connectivité MQTT des terminaux <../mqtt.html>`__"
+
+#: ../docs/devices/device_mgmt/index.rst:17
+msgid "The Device Management Lifecycle"
+msgstr ""
+"Cycle de vie de la gestion des terminaux"
+
+#: ../docs/devices/device_mgmt/index.rst:19
+msgid "A device and its associated device type are created in the IoT Platform using the dashboard or API."
+msgstr ""
+"Un terminal et le type de terminal associé sont créés dans IoT Platform à l'aide du tableau de bord ou de l'API. "
+
+#: ../docs/devices/device_mgmt/index.rst:20
+msgid "The device connects to the IoT Platform and uses the 'Manage Device' operation to become a managed device."
+msgstr ""
+"Le terminal se connecte à IoT Platform et utilise l'opération 'Gérer le terminal' pour devenir un terminal géré."
+
+#: ../docs/devices/device_mgmt/index.rst:21
+msgid "The device's metadata, as described in the Device Model can now be viewed and manipulated through device operations, for example, firmware update and device reboot."
+msgstr ""
+"Les métadonnées du terminal, telles qu'elles sont décrites dans le modèle de terminal, peuvent désormais être affichées et manipulées via l'exécution d'opérations sur le terminal, par exemple la mise à jour du microprogramme et le réamorçage du terminal."
+
+#: ../docs/devices/device_mgmt/index.rst:22
+msgid "The device can communicate updates through the device-management protocol, such as location or diagnostic information and error codes."
+msgstr ""
+"Le terminal peut transmettre des mises à jour via le protocole de gestion des terminaux, comme des informations d'emplacement ou de diagnostic ou des codes d'erreur."
+
+#: ../docs/devices/device_mgmt/index.rst:23
+msgid "In order to provide a way to deal with defunct devices in large device populations, the 'Manage device' operation request has an optional lifetime parameter. This lifetime parameter is the number of seconds within which the device must make another 'Manage device' request in order to avoid being marked as dormant and becoming an unmanaged device."
+msgstr ""
+"Pour prendre en charge les terminaux obsolètes dans des parcs de terminaux volumineux, la demande de l'opération 'Gérer le terminal' inclut un paramètre de durée de vie (lifetime) facultatif. Ce paramètre correspond au nombre de secondes au cours desquelles le terminal doit effectuer une autre demande 'Gérer le terminal' pour éviter d'être considéré comme un terminal en veille et devenir un terminal non géré."
+
+#: ../docs/devices/device_mgmt/index.rst:24
+msgid "When a device is decommissioned it can be removed from the IoT Platform using the dashboard or REST API."
+msgstr ""
+"Lorsqu'un terminal n'est plus utilisé, il peut être supprimé d'IoT Platform à l'aide du tableau de bord ou de l'API REST."
+
+#: ../docs/devices/device_mgmt/index.rst:28
+msgid "Return Code Summary"
+msgstr ""
+"Récapitulatif des codes retour"
+
+#: ../docs/devices/device_mgmt/index.rst:30
+msgid "There are several return codes which are sent in response to the actions listed above."
+msgstr ""
+"Plusieurs codes retour peuvent être envoyés en réponse aux actions indiquées ci-dessus."
+
+#: ../docs/devices/device_mgmt/index.rst:32
+msgid "200: Operation succeeded"
+msgstr ""
+"200 : Réussite de l'opération"
+
+#: ../docs/devices/device_mgmt/index.rst:33
+msgid "202: Accepted (for initiating commands)"
+msgstr ""
+"202 : Accepté (pour le lancement de commandes)"
+
+#: ../docs/devices/device_mgmt/index.rst:34
+msgid "204: Changed (for attribute updates)"
+msgstr ""
+"204 : Modifié (pour les mises à jour d'attributs)"
+
+#: ../docs/devices/device_mgmt/index.rst:35
+msgid "400: Bad request, for example, if a device is not in the appropriate state for this command"
+msgstr ""
+"400 : Demande erronée, par exemple si un terminal ne se trouve pas dans l'état approprié pour cette commande"
+
+#: ../docs/devices/device_mgmt/index.rst:36
+msgid "404: Attribute was not found, this code is also used if the operation was published to an invalid topic."
+msgstr ""
+"404 : Attribut introuvable. Ce code est également utilisé si l'opération a été publiée dans un sujet non valide."
+
+#: ../docs/devices/device_mgmt/index.rst:37
+msgid "409: Resource could not be updated due to a conflict, for example, the resource is being updated by two simultaneous requests, so update could be retried later"
+msgstr ""
+"409 : La ressource n'a pas pu être mise à jour en raison d'un conflit, par exemple lorsqu'elle est mise à jour par deux demandes simultanées. La tentative de mise à jour peut donc être effectuée ultérieurement."
+
+#: ../docs/devices/device_mgmt/index.rst:38
+msgid "500: Unexpected device error"
+msgstr ""
+"500 : Erreur inattendue du terminal"
+
+#: ../docs/devices/device_mgmt/index.rst:39
+msgid "501: Operation not implemented"
+msgstr ""
+"501 : Opération non mise en oeuvre"
+
+#: ../docs/devices/device_mgmt/index.rst:48
+msgid "Manage Device"
+msgstr ""
+"Gérer le terminal"
+
+#: ../docs/devices/device_mgmt/index.rst:50
+msgid "A device uses this request to become a managed device. It should be the first device management request sent by the device after connecting to the IoT Platform. It would be usual for a device management agent to send this whenever it starts or restarts."
+msgstr ""
+"Un terminal utilise cette demande pour devenir un terminal géré. Cette demande doit être la première demande de gestion envoyée par le terminal après sa connexion à IoT Platform. Un agent de gestion des terminaux envoie généralement cette demande à chaque démarrage ou redémarrage."
+
+#: ../docs/devices/device_mgmt/index.rst:52
+#: ../docs/devices/device_mgmt/index.rst:129
+msgid "Support for this operation is mandatory for any managed devices."
+msgstr ""
+"La prise en charge de cette opération est obligatoire pour tous les terminaux gérés. "
+
+#: ../docs/devices/device_mgmt/index.rst:56
+#: ../docs/devices/device_mgmt/index.rst:132
+#: ../docs/devices/device_mgmt/index.rst:186
+#: ../docs/devices/device_mgmt/index.rst:199
+#: ../docs/devices/device_mgmt/index.rst:300
+#: ../docs/devices/device_mgmt/index.rst:337
+#: ../docs/devices/device_mgmt/index.rst:390
+#: ../docs/devices/device_mgmt/index.rst:437
+#: ../docs/devices/device_mgmt/index.rst:496
+#: ../docs/devices/device_mgmt/index.rst:544
+#: ../docs/devices/device_mgmt/index.rst:604
+#: ../docs/devices/device_mgmt/index.rst:656
+msgid "Topic"
+msgstr ""
+"Sujet"
+
+#: ../docs/devices/device_mgmt/index.rst:64
+#: ../docs/devices/device_mgmt/index.rst:139
+#: ../docs/devices/device_mgmt/index.rst:207
+#: ../docs/devices/device_mgmt/index.rst:344
+#: ../docs/devices/device_mgmt/index.rst:397
+#: ../docs/devices/device_mgmt/index.rst:444
+msgid "Message Format"
+msgstr ""
+"Format du message"
+
+#: ../docs/devices/device_mgmt/index.rst:66
+msgid "For the request, the ``d`` field and all of its sub-fields are optional. The ``metadata`` and ``deviceInfo`` field values replace the corresponding attributes for the sending device if they are sent."
+msgstr ""
+"Pour la demande, la zone ``d`` et toutes ses sous-zones sont facultatives. Les valeurs des zones ``metadata`` et ``deviceInfo`` remplacent les attributs correspondants du terminal d'envoi, si elles sont envoyées."
+
+#: ../docs/devices/device_mgmt/index.rst:68
+msgid "The optional ``lifetime`` field specifies the length of time in seconds within which the device must send another 'Manage device' request in order to avoid being reverted to an unmanaged device and marked as dormant. If omitted or if set to ``0``, the managed device will not become dormant.  When set, the minimum supported setting is ``3600`` (1 hour)."
+msgstr ""
+"La zone facultative ``lifetime`` indique la période, en secondes, au cours de laquelle le terminal doit envoyer une autre demande 'Gérer le terminal' pour éviter de revenir à l'état d'un terminal non géré et passer en mode veille. Si la zone est omise ou correspond à ``0``, le terminal géré n'est pas mis en veille.  Si la zone est définie, la valeur minimale acceptée est ``3600`` (1 heure)."
+
+#: ../docs/devices/device_mgmt/index.rst:70
+msgid "Optional ``supports.deviceActions`` and ``supports.firmwareActions`` indicate the capabilities of the device management agent. If ``supports.deviceActions`` is set, the agent supports Reboot and Factory Reset actions. For a device that does not distinguish between rebooting and factory reset, it is acceptable to use the same behaviour for both actions. If ``supports.firmwareActions`` is set, the agent supports Firmware Download and Firmware Update actions."
+msgstr ""
+"Facultatif. ``supports.deviceActions`` et ``supports.firmwareActions`` indiquent les fonctionnalités de l'agent de gestion des terminaux. Si ``supports.deviceActions`` est défini, l'agent prend en charge les actions Réamorcer et Réinitialiser avec les paramètres d'usine. Pour un terminal qui ne fait pas de distinction entre le réamorçage et la réinitialisation avec les paramètres d'usine, vous pouvez utiliser le même comportement pour les deux actions. Si ``supports.firmwareActions`` est défini, l'agent prend en charge les actions Télécharger le microprogramme et Mettre à jour le microprogramme."
+
+#: ../docs/devices/device_mgmt/index.rst:72
+#: ../docs/devices/device_mgmt/index.rst:141
+#: ../docs/devices/device_mgmt/index.rst:218
+#: ../docs/devices/device_mgmt/index.rst:348
+#: ../docs/devices/device_mgmt/index.rst:399
+#: ../docs/devices/device_mgmt/index.rst:451
+#: ../docs/devices/device_mgmt/index.rst:505
+#: ../docs/devices/device_mgmt/index.rst:557
+#: ../docs/devices/device_mgmt/index.rst:614
+#: ../docs/devices/device_mgmt/index.rst:665
+msgid "Request Format:"
+msgstr ""
+"Format de la demande :"
+
+#: ../docs/devices/device_mgmt/index.rst:99
+#: ../docs/devices/device_mgmt/index.rst:149
+#: ../docs/devices/device_mgmt/index.rst:235
+#: ../docs/devices/device_mgmt/index.rst:360
+#: ../docs/devices/device_mgmt/index.rst:407
+#: ../docs/devices/device_mgmt/index.rst:466
+#: ../docs/devices/device_mgmt/index.rst:513
+#: ../docs/devices/device_mgmt/index.rst:570
+#: ../docs/devices/device_mgmt/index.rst:627
+#: ../docs/devices/device_mgmt/index.rst:677
+msgid "Response Format:"
+msgstr ""
+"Format de la réponse :"
+
+#: ../docs/devices/device_mgmt/index.rst:110
+#: ../docs/devices/device_mgmt/index.rst:159
+#: ../docs/devices/device_mgmt/index.rst:245
+#: ../docs/devices/device_mgmt/index.rst:371
+#: ../docs/devices/device_mgmt/index.rst:418
+#: ../docs/devices/device_mgmt/index.rst:477
+#: ../docs/devices/device_mgmt/index.rst:523
+#: ../docs/devices/device_mgmt/index.rst:687
+msgid "Response Codes"
+msgstr ""
+"Codes de réponse "
+
+#: ../docs/devices/device_mgmt/index.rst:112
+#: ../docs/devices/device_mgmt/index.rst:161
+#: ../docs/devices/device_mgmt/index.rst:247
+#: ../docs/devices/device_mgmt/index.rst:373
+#: ../docs/devices/device_mgmt/index.rst:420
+#: ../docs/devices/device_mgmt/index.rst:479
+#: ../docs/devices/device_mgmt/index.rst:525
+#: ../docs/devices/device_mgmt/index.rst:689
+msgid "200: The operation was successful."
+msgstr ""
+"200 : L'opération a abouti."
+
+#: ../docs/devices/device_mgmt/index.rst:113
+#: ../docs/devices/device_mgmt/index.rst:162
+#: ../docs/devices/device_mgmt/index.rst:248
+#: ../docs/devices/device_mgmt/index.rst:374
+#: ../docs/devices/device_mgmt/index.rst:421
+#: ../docs/devices/device_mgmt/index.rst:480
+#: ../docs/devices/device_mgmt/index.rst:526
+#: ../docs/devices/device_mgmt/index.rst:690
+msgid "400: The input message does not match the expected format, or one of the values is out of the valid range."
+msgstr ""
+"400 : Le message d'entrée ne correspond pas au format attendu ou une des valeurs n'est pas comprise dans la plage valide."
+
+#: ../docs/devices/device_mgmt/index.rst:114
+#: ../docs/devices/device_mgmt/index.rst:163
+#: ../docs/devices/device_mgmt/index.rst:249
+#: ../docs/devices/device_mgmt/index.rst:375
+#: ../docs/devices/device_mgmt/index.rst:422
+#: ../docs/devices/device_mgmt/index.rst:481
+#: ../docs/devices/device_mgmt/index.rst:527
+msgid "404: The topic name is incorrect, or the device is not in the database."
+msgstr ""
+"404 : Le nom de sujet est incorrect ou le terminal n'est pas dans la base de données."
+
+#: ../docs/devices/device_mgmt/index.rst:115
+#: ../docs/devices/device_mgmt/index.rst:164
+#: ../docs/devices/device_mgmt/index.rst:250
+#: ../docs/devices/device_mgmt/index.rst:376
+#: ../docs/devices/device_mgmt/index.rst:423
+#: ../docs/devices/device_mgmt/index.rst:482
+#: ../docs/devices/device_mgmt/index.rst:528
+#: ../docs/devices/device_mgmt/index.rst:692
+msgid "409: A conflict occurred during the device database update. To resolve this, simplify the operation is necessary."
+msgstr ""
+"409 : Un conflit s'est produit au cours de la mise à jour de la base de données de terminaux. Pour résoudre ce problème, simplifiez si nécessaire l'opération."
+
+#: ../docs/devices/device_mgmt/index.rst:125
+msgid "Unmanage Device"
+msgstr ""
+"Annuler la gestion du terminal"
+
+#: ../docs/devices/device_mgmt/index.rst:127
+msgid "A device uses this request when it no longer needs to be managed. The IoT Platform will no longer send new device management requests to this device and all device management requests from this device will be rejected other than a 'Manage device' request."
+msgstr ""
+"Un terminal utilise cette demande lorsqu'il n'a plus besoin d'être géré. IoT Platform n'envoie plus de nouvelles demandes de gestion des terminaux à ce terminal et toutes les demandes de gestion des terminaux émises depuis ce terminal sont rejetées, à l'exception d'une demande 'Gérer le terminal'."
+
+#: ../docs/devices/device_mgmt/index.rst:173
+msgid "Update Location"
+msgstr ""
+"Mettre à jour l'emplacement"
+
+#: ../docs/devices/device_mgmt/index.rst:175
+msgid "Devices can change their location over time. The update of the location can happen in two ways:"
+msgstr ""
+"Les terminaux peuvent changer d'emplacement au fil du temps. La mise à jour de l'emplacement peut être effectuée de deux manières :"
+
+#: ../docs/devices/device_mgmt/index.rst:177
+msgid "The device itself notifies the IoT Platform about the location update: The device retrieves its location from a GPS receiver and sends a device management message to the IoT Platform to update its location. The timestamp captures the time at which the location was retrieved from the GPS receiver. This means that the timestamp is valid, even if the transmission of the location message was delayed. In the event that the timestamp is omitted from the device management message sent, the current date and time on message receipt will be used when the device's location metadata is updated."
+msgstr ""
+"Le terminal signale lui-même la mise à jour de son emplacement à IoT Platform : il extrait son emplacement d'un récepteur GPS et envoie un message de gestion du terminal à IoT Platform pour mettre à jour son emplacement. L'horodatage capture l'heure à laquelle l'emplacement a été extrait du récepteur GPS. Cela signifie que l'horodatage est valide même si la transmission du message d'emplacement a été retardée. Si l'horodatage ne figure pas dans le message de gestion du terminal envoyé, la date et l'heure de réception du message sont utilisées lors de la mise à jour des métadonnées d'emplacement du terminal."
+
+#: ../docs/devices/device_mgmt/index.rst:179
+msgid "A user / app updates the location of a device using the Rest API: The IoT Platform REST API is used to set the location metadata of a static device. This can be done at the time that the device is registered, or later if required. It is optional whether to include a timestamp. If omitted, the current date and time will be set as the device’s location metadata."
+msgstr ""
+"Un utilisateur ou une application met à jour l'emplacement d'un terminal à l'aide de l'API REST : l'API REST d'IoT Platform permet de définir les métadonnées d'emplacement d'un terminal statique. Cette opération peut être effectuée lors de l'enregistrement du terminal ou ultérieurement, si nécessaire. L'ajout d'un horodatage est facultatif. Si l'horodatage est omis, la date et l'heure en cours sont utilisées en tant que métadonnées d'emplacement du terminal."
+
+#: ../docs/devices/device_mgmt/index.rst:182
+#: ../docs/devices/device_mgmt/index.rst:216
+msgid "Location update triggered by device"
+msgstr ""
+"Mise à jour de l'emplacement déclenchée par un terminal"
+
+#: ../docs/devices/device_mgmt/index.rst:183
+msgid "Devices that can determine their location can choose to notify the IoT Platform device management server about location changes."
+msgstr ""
+"Les terminaux qui peuvent déterminer leur emplacement peuvent décider de signaler la modification de leur emplacement au serveur de gestion des terminaux IoT Platform. "
+
+#: ../docs/devices/device_mgmt/index.rst:194
+#: ../docs/devices/device_mgmt/index.rst:253
+msgid "Location update triggered by user or app"
+msgstr ""
+"Mise à jour de l'emplacement déclenchée par un utilisateur ou une application"
+
+#: ../docs/devices/device_mgmt/index.rst:196
+msgid "When a user or application updates the location of an active managed device the device retrieves an update message:"
+msgstr ""
+"Lorsqu'un utilisateur ou une application met à jour l'emplacement d'un terminal géré actif, le terminal extrait un message de mise à jour : "
+
+#: ../docs/devices/device_mgmt/index.rst:209
+msgid "The \"measuredDateTime\" is the date of location measurement. The \"updatedDateTime\" is the date of the update to the device information. For efficiency reasons, the IoT Platform may batch updates to location information so the updates may be slightly delayed. The \"latitude\" and \"longitude\" should be specified in decimal degrees using WGS84."
+msgstr ""
+"La valeur de \"measuredDateTime\" représente la date de la mesure de l'emplacement. La valeur de \"updatedDateTime\" représente la date de mise à jour des informations du terminal. Dans un souci d'efficacité, IoT Platform peut regrouper par lots les mises à jour des informations d'emplacement, ce qui peut retarder légèrement leur application. Les valeurs de \"latitude\" et de \"longitude\" doivent être exprimées en degrés décimaux à l'aide de WGS84."
+
+#: ../docs/devices/device_mgmt/index.rst:211
+msgid "Whenever location is updated, the values provided for latitude, longitude, elevation and uncertainty are considered as a single multi-value update. The latitude and longitude are mandatory and must both be provided with each update.  Elevation and uncertainty are optional and can be omitted."
+msgstr ""
+"Lorsque l'emplacement est mis à jour, les valeurs fournies pour longitude, elevation et uncertainty sont considérées comme une seule mise à jour comportant plusieurs valeurs. Les valeurs de latitude et de longitude sont obligatoires et doivent être indiquées pour chaque mise à jour.  Les valeurs définies pour elevation et uncertainty sont facultatives et peuvent être omises."
+
+#: ../docs/devices/device_mgmt/index.rst:213
+msgid "If an optional value is provided on an update and then omitted on a later update, the earlier value is deleted by the later update. Each update is considered as a complete multi-value set."
+msgstr ""
+"Si une valeur facultative est indiquée pour une mise à jour, puis omise lors d'une mise à jour ultérieure, la valeur précédente est supprimée par la mise à jour plus récente. Chaque mise à jour est considérée comme un ensemble complet incluant plusieurs valeurs."
+
+#: ../docs/devices/device_mgmt/index.rst:255
+#: ../docs/devices/device_mgmt/index.rst:310
+msgid "Payload Format:"
+msgstr ""
+"Format du contenu :"
+
+#: ../docs/devices/device_mgmt/index.rst:278
+msgid "Please note: there is no reqId as no response by device is required."
+msgstr ""
+"Remarque : il n'y a pas de reqId car aucune réponse du terminal n'est nécessaire."
+
+#: ../docs/devices/device_mgmt/index.rst:287
+msgid "Update Device Attributes"
+msgstr ""
+"Mettre à jour les attributs du terminal"
+
+#: ../docs/devices/device_mgmt/index.rst:289
+msgid "The IoT Platform can send this request to a device to update values of one or more device attributes. Attributes that can be updated by the Rest API are location, metadata, device information and firmware."
+msgstr ""
+"IoT Platform peut envoyer cette demande à un terminal pour mettre à jour les valeurs d'un ou de plusieurs attributs du terminal. Les attributs qui peuvent être mis à jour par l'API REST sont location, metadata, device information et firmware."
+
+#: ../docs/devices/device_mgmt/index.rst:291
+msgid "The \"value\" is the new value of the device attribute. It is a complex field matching the device model. Only writeable fields should be updated as a result of this operation. Values can be updated in:"
+msgstr ""
+"La zone \"value\" représente la nouvelle valeur de l'attribut du terminal. Cette zone est une zone complexe qui correspond au modèle du terminal. Seules les zones accessibles en écriture doivent être mises à jour lors de cette opération. Les valeurs peuvent être mises à jour dans :"
+
+#: ../docs/devices/device_mgmt/index.rst:293
+msgid "location (see Update location section for details)"
+msgstr ""
+"location (pour plus d'informations, reportez-vous à la section Mettre à jour l'emplacement)"
+
+#: ../docs/devices/device_mgmt/index.rst:294
+msgid "metadata (Optional)"
+msgstr ""
+"metadata (facultatif)"
+
+#: ../docs/devices/device_mgmt/index.rst:295
+msgid "deviceInfo (Optional)"
+msgstr ""
+"deviceInfo (facultatif)"
+
+#: ../docs/devices/device_mgmt/index.rst:296
+msgid "mgmt.firmware (see Firmware update process for details)"
+msgstr ""
+"mgmt.firmware (pour plus d'informations, reportez-vous à la procédure de mise à jour du microprogramme)"
+
+#: ../docs/devices/device_mgmt/index.rst:308
+#: ../docs/devices/device_mgmt/index.rst:503
+#: ../docs/devices/device_mgmt/index.rst:551
+#: ../docs/devices/device_mgmt/index.rst:612
+#: ../docs/devices/device_mgmt/index.rst:663
+msgid "Message format"
+msgstr ""
+"Format du message"
+
+#: ../docs/devices/device_mgmt/index.rst:332
+msgid "Add Error Code"
+msgstr ""
+"Ajouter un code d'erreur"
+
+#: ../docs/devices/device_mgmt/index.rst:334
+msgid "Devices can choose to notify the IoT Platform device management server about changes in their error status."
+msgstr ""
+"Les terminaux peuvent signaler au serveur de gestion des terminaux IoT Platform les modifications de leur statut d'erreur."
+
+#: ../docs/devices/device_mgmt/index.rst:346
+msgid "The \"errorCode\" is a current device error code that needs to be added to the IoT Platform."
+msgstr ""
+"La valeur \"errorCode\" représente le code d'erreur en cours du terminal, qui doit être ajouté à IoT Platform. "
+
+#: ../docs/devices/device_mgmt/index.rst:385
+msgid "Clear Error Codes"
+msgstr ""
+"Effacer des codes d'erreur"
+
+#: ../docs/devices/device_mgmt/index.rst:387
+msgid "Devices can request that the Internet of Things Foundation clear all of their error codes."
+msgstr ""
+"Les terminaux peuvent demander à Internet of Things Foundation d'effacer tous leurs codes d'erreur."
+
+#: ../docs/devices/device_mgmt/index.rst:432
+msgid "Add Log"
+msgstr ""
+"Ajouter un journal"
+
+#: ../docs/devices/device_mgmt/index.rst:434
+msgid "Devices can choose to notify IoTF device management support about changes a new log entry. Log entry includes a log messages, its timestamp and severity, as well as an optional base64-encoded binary diagnostic data."
+msgstr ""
+"Les terminaux peuvent signaler la création d'une entrée de journal à la fonction de gestion des terminaux IoTF. L'entrée de journal inclut des messages de journal, l'horodatage et le niveau de gravité associés, ainsi que des données de diagnostic binaires facultatives codées en base64."
+
+#: ../docs/devices/device_mgmt/index.rst:446
+msgid "\"message\" is a diagnostic message that needs to be added to IoTF. \"timestamp\" is a date and time of the log entry in ISO8601 format. \"data\" is an optional base64-encoded diagnostic data. \"severity\" is a severity of the message (0: informational, 1: warning, 2: error)."
+msgstr ""
+"La zone \"message\" représente un message de diagnostic qui doit être ajouté à IoTF. La zone \"timestamp\" représente la date et à l'heure de l'entrée de journal au format ISO8601. La zone \"data\" représente des données de diagnostic facultatives, codées en base64. La zone \"severity\" représente le niveau de gravité du message (0 : informations, 1 : avertissement, 2 : erreur)."
+
+#: ../docs/devices/device_mgmt/index.rst:491
+msgid "Clear Logs"
+msgstr ""
+"Effacer des journaux"
+
+#: ../docs/devices/device_mgmt/index.rst:493
+msgid "Devices can request that the Internet of Things Foundation clear all of their log entries."
+msgstr ""
+"Les terminaux peuvent demander à Internet of Things Foundation d'effacer toutes leurs entrées de journal."
+
+#: ../docs/devices/device_mgmt/index.rst:537
+msgid "Observe Attribute Changes"
+msgstr ""
+"Observer les modifications d'attributs"
+
+#: ../docs/devices/device_mgmt/index.rst:539
+msgid "The IoT Platform can send this request to a device to observe changes of one or more device attributes. When the device receives this request, it must send a notification request (\"notify\" message) to the IoT Platform whenever the observed attributes value changes."
+msgstr ""
+"IoT Platform peut envoyer cette demande à un terminal pour observer les modifications d'un ou de plusieurs attributs du terminal. Lorsque le terminal reçoit cette demande, il doit envoyer une demande de notification (message \"notify\") à IoT Platform à chaque modification de la valeur des attributs observés."
+
+#: ../docs/devices/device_mgmt/index.rst:541
+#: ../docs/devices/device_mgmt/index.rst:601
+#: ../docs/devices/device_mgmt/index.rst:652
+msgid "Devices must implement observe, notify & cancel operations in order to support :ref:`firmware-actions-update`."
+msgstr ""
+"Les terminaux doivent effectuer des opérations d'observation, de notification et d'annulation pour prendre en charge l'opération :ref:`firmware-actions-update`."
+
+#: ../docs/devices/device_mgmt/index.rst:553
+msgid "The \"fields\" field is an array of the device attribute names from the device model. For example, values could be \"location\", \"mgmt.firmware\" or \"mgmt.firmware.state\". If a complex field, such as \"mgmt.firmware\" is specified, it is expected that its underlying fields are updated at the same time, such that only a single notify message is generated."
+msgstr ""
+"La zone \"fields\" est un tableau contenant les noms d'attributs du terminal, établis à partir du modèle de terminal. Par exemple, les valeurs peuvent être \"location\", \"mgmt.firmware\" ou \"mgmt.firmware.state\". Si une zone complexe, comme \"mgmt.firmware\", est indiquée, ses zones sous-jacentes doivent être mises à jour en même temps pour générer un seul message de notification."
+
+#: ../docs/devices/device_mgmt/index.rst:555
+msgid "The \"message\" field used in the response can be specified if \"rc\" is not 200. If any field value which was to be observed could not be retrieved, \"rc\" should be set to 404 (if not found) or 500 (any other reason). When values for fields to be observed cannot be found, \"fields\" should contain an array of elements with \"field\" set to the name of each field that could not be read, \"value\" fields should be omitted. For the response code to be set to 200, both \"field\" and \"value\" must be specified, \"value\" is the current value of an attribute identified by \"field\" content."
+msgstr ""
+"La zone \"message\" utilisée dans la réponse peut être indiquée si \"rc\" ne correspond pas à 200. Si une valeur d'une zone à observer ne peut pas être extraite, \"rc\" doit correspondre à 404 (zone introuvable) ou à 500 (autre motif). Lorsque les valeurs des zones à observer sont introuvables, la zone \"fields\" doit inclure un tableau d'éléments avec une zone \"field\" correspondant au nom de chaque zone qui n'a pas pu être lu. Les zones \"value\" doivent être omises. Pour définir le code de réponse 200, les zones \"field\" et \"value\" doivent être indiquées. La zone \"value\" représente la valeur actuelle d'un attribut identifié par le contenu de la zone \"field\"."
+
+#: ../docs/devices/device_mgmt/index.rst:595
+msgid "Cancel Attribute Observation"
+msgstr ""
+"Annuler l'observation d'attributs"
+
+#: ../docs/devices/device_mgmt/index.rst:597
+msgid "The IoT Platform can send this request to a device to cancel the current observation of one or more device attributes. The \"fields\" is an array of the device attribute names from the device model, for example, values could be \"location\", \"mgmt.firmware\" or \"mgmt.firmware.state\"."
+msgstr ""
+"IoT Platform peut envoyer cette demande à un terminal pour annuler l'observation en cours d'un ou de plusieurs attributs du terminal. La zone \"fields\" est un tableau contenant les noms d'attributs du terminal, établis à partir du modèle de terminal. Par exemple, les valeurs peuvent être \"location\", \"mgmt.firmware\" ou \"mgmt.firmware.state\"."
+
+#: ../docs/devices/device_mgmt/index.rst:599
+msgid "The \"message\" field must be specified if \"rc\" is not 200."
+msgstr ""
+"La zone \"message\" doit être indiquée si la valeur de \"rc\" n'est pas 200."
+
+#: ../docs/devices/device_mgmt/index.rst:644
+msgid "Notify Attribute Changes"
+msgstr ""
+"Notifier les modifications d'attributs"
+
+#: ../docs/devices/device_mgmt/index.rst:646
+msgid "The IoT Platform can make an observation request referring to a specific attribute or set of values. When the value of the attribute or attributes changes, the device must send a notification containing the latest value."
+msgstr ""
+"IoT Platform peut effectuer une demande d'observation applicable à un attribut spécifique ou à un ensemble de valeurs. Lorsque la valeur d'un ou de plusieurs attributs est modifiée, le terminal doit envoyer une notification contenant la valeur la plus récente."
+
+#: ../docs/devices/device_mgmt/index.rst:648
+msgid "The \"field_name\" value is the name of the attribute that has changed, the \"field_value\" is the current value of the attribute. The attribute can be a complex field, if multiple values in a complex field are updated as a result of a single operation, only a single notification message should be sent."
+msgstr ""
+"La valeur de \"field_name\" représente le nom de l'attribut qui a été modifié. La valeur de \"field_value\" représente la valeur actuelle de l'attribut. L'attribut peut être une zone complexe. Si plusieurs valeurs d'une zone complexe sont mises à jour lors d'une même opération, un seul message de notification doit être envoyé."
+
+#: ../docs/devices/device_mgmt/index.rst:650
+msgid "If notify request is processed successfully, \"rc\" should be set to 200. If the request is not correct, \"rc\" should be set to 400. If the field specified in the notify request is not being observed, \"rc\" should be set to 404."
+msgstr ""
+"Si la demande de notification est traitée correctement, la valeur de \"rc\" doit être 200. Si la demande est incorrecte, la valeur de \"rc\" doit être 400. Si la zone indiquée dans la demande de notification n'est pas observée, la valeur de \"rc\" doit être 404."
+
+#: ../docs/devices/device_mgmt/index.rst:691
+msgid "404: The topic name is incorrect, the device is not in the database, or there is no observation for the field reported."
+msgstr ""
+"404 : Le nom de sujet est incorrect, le terminal n'est pas dans la base de données ou la zone signalée ne contient aucune observation."
+
+#: ../docs/devices/device_mgmt/index.rst:693
+msgid "500: An internal error occurred, contact IBM Support."
+msgstr ""
+"500 : Une erreur interne s'est produite, contactez le support IBM."
+

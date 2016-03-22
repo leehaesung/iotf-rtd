@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/reference/extensions/index.rst:2
+msgid "External Service Integrations"
+msgstr ""
+"外部服務整合"
+
+#: ../docs/reference/extensions/index.rst:5
+msgid "Overview"
+msgstr ""
+"概觀"
+
+#: ../docs/reference/extensions/index.rst:6
+msgid "External service integration allows you to bind metadata or function supported by another service to your Watson IoT account."
+msgstr ""
+"外部服務整合可讓您將另一個服務支援的 meta 資料或函數連結至您的 Watson IoT 帳戶。"
+
+#: ../docs/reference/extensions/index.rst:10
+msgid "Jasper"
+msgstr ""
+"Jasper"
+
+#: ../docs/reference/extensions/index.rst:12
+msgid "Jasper is an administration and management platform for SIM devices. Jasper has been integrated into the IBM Watson IoT platform dashboard, making it possible to administer Jasper devices through your Watson IoT platform organization dashboard."
+msgstr ""
+"Jasper 是 SIM 裝置的系統管理和管理平台。Jasper 已整合至 IBM Watson IoT Platform 儀表板中，讓您能夠透過 Watson IoT Platform 組織儀表板來管理 Jasper 裝置。"
+
+#: ../docs/reference/extensions/index.rst:14
+msgid "Jasper integration is currently available as part of a limited beta.  Future updates may include changes incompatible with the current version of this feature."
+msgstr ""
+"受限測試版目前提供 Jasper 整合。未來更新可能包括與此功能的現行版本不相容的變更。"
+
+#: ../docs/reference/extensions/index.rst:19
+msgid "Supported Operations"
+msgstr ""
+"支援的作業"
+
+#: ../docs/reference/extensions/index.rst:21
+msgid "The built-in Jasper integration provided by our platform provides support for the following Jasper operations:"
+msgstr ""
+"我們的平台提供的內建 Jasper 整合可提供下列 Jasper 作業的支援："
+
+#: ../docs/reference/extensions/index.rst:23
+msgid "View overall Jasper data"
+msgstr ""
+"檢視整體 Jasper 資料"
+
+#: ../docs/reference/extensions/index.rst:25
+msgid "Shows: Status, Rate Plan, month-to-date data usage, month-to-date SMS usage, month-to-date voice usage, overage limits, date added, and date modified."
+msgstr ""
+"顯示：狀態、費率方案、月初至今的資料使用情形、月初至今的 SMS 使用情形、月初至今的語音使用情形、超額限制、新增日期和修改日期。"
+
+#: ../docs/reference/extensions/index.rst:26
+msgid "Change SIM activation state."
+msgstr ""
+"變更 SIM 啟動狀態。"
+
+#: ../docs/reference/extensions/index.rst:28
+msgid "Select from: Inventory, Activation Ready, Activated, Deactivated, and Retired."
+msgstr ""
+"從下列項目中選取：庫存、啟動就緒、已啟動、已關閉、已淘汰。"
+
+#: ../docs/reference/extensions/index.rst:29
+msgid "View SIM Usage"
+msgstr ""
+"檢視 SIM 使用情形"
+
+#: ../docs/reference/extensions/index.rst:31
+msgid "Shows: Cycle start date, billable and total data, billable and total SMS, billable and total voice."
+msgstr ""
+"顯示：週期開始日期、可入帳資料和資料總計、可入帳 SMS 和 SMS 總計、可入帳語音和語音總計。"
+
+#: ../docs/reference/extensions/index.rst:32
+msgid "The cycle start date can be set using a YYYY-MM-DD format."
+msgstr ""
+"週期開始日期可使用 YYYY-MM-DD 格式來設定。"
+
+#: ../docs/reference/extensions/index.rst:33
+msgid "Send SMS to SIM"
+msgstr ""
+"傳送 SMS 至 SIM"
+
+#: ../docs/reference/extensions/index.rst:34
+msgid "Change rate plan"
+msgstr ""
+"變更費率方案"
+
+#: ../docs/reference/extensions/index.rst:37
+msgid "These operations can be accessed in the device drilldown of a Jasper connected device after the configuration steps below are completed."
+msgstr ""
+"這些作業將可在下列配置步驟完成後，在已連接 Jasper 的裝置中透過裝置往下探查來存取。"
+
+#: ../docs/reference/extensions/index.rst:41
+msgid "Configuration"
+msgstr ""
+"配置"
+
+#: ../docs/reference/extensions/index.rst:43
+msgid "In order to connect your Watson IoT Platform platform organization with your Jasper account, there are two stages of configuration which must first be performed. The first stage of configuration is Organization Configuration."
+msgstr ""
+"若要將您的 Watson IoT Platform 平台組織與 Jasper 帳戶相連接，必須先執行兩個配置階段。第一個配置階段是「組織配置」。"
+
+#: ../docs/reference/extensions/index.rst:47
+msgid "Extension Enablement"
+msgstr ""
+"延伸啟用"
+
+#: ../docs/reference/extensions/index.rst:49
+msgid "To enable Jasper integrtion with your Watson IoT organization follow these steps:"
+msgstr ""
+"若要啟用 Jasper 與 Watson IoT 組織的整合，請遵循下列步驟："
+
+#: ../docs/reference/extensions/index.rst:51
+msgid "When in your Watson IoT platform dashboard, click the wrench icon on the right to open the Configuration Settings."
+msgstr ""
+"在 Watson IoT Platform 儀表板中，按一下右側的板手圖示，以開啟「配置設定」。"
+
+#: ../docs/reference/extensions/index.rst:52
+msgid "Scroll down the to the Extensions section, and set Jasper to 'On'."
+msgstr ""
+"向下捲動至「延伸」區段，並將 Jasper 設為「開啟」。"
+
+#: ../docs/reference/extensions/index.rst:53
+msgid "Enter your Jasper username, password, license key, and API endpoint."
+msgstr ""
+"輸入您的 Jasper 使用者名稱、密碼、授權金鑰和 API 端點。"
+
+#: ../docs/reference/extensions/index.rst:56
+msgid "Device Configuration"
+msgstr ""
+"裝置配置"
+
+#: ../docs/reference/extensions/index.rst:58
+msgid "Devices which are connected to both your Watson IoT platform organization and your Jasper account can be configured to display data from Jasper in the Watson IoT platform dashboard. Jasper configuration cannot be applied as part of the Add Device process, only already connected devices can be configured with Jasper. To configure your Jasper-connected devices, follow these steps:"
+msgstr ""
+"同時連接至您的 Watson IoT Platform 組織和 Jasper 帳戶的裝置，可配置為在 Watson IoT Platform 儀表板中顯示來自 Jasper 的資料。Jasper 配置無法在「新增裝置」程序中套用，只有已連接的裝置，才可進行 Jasper 配置。若要對已連接 Jasper 的裝置進行配置，請遵循下列步驟："
+
+#: ../docs/reference/extensions/index.rst:60
+msgid "In the devices tab of your Watson IoT platform dashboard, find the Jasper-connected device to be configured."
+msgstr ""
+"在 Watson IoT Platform 儀表板的「裝置」標籤中，尋找已連接 Jasper 而要配置的裝置。"
+
+#: ../docs/reference/extensions/index.rst:61
+msgid "Select the device to open the Device Drilldown view."
+msgstr ""
+"選取裝置，以開啟「裝置往下探查」視圖。"
+
+#: ../docs/reference/extensions/index.rst:62
+msgid "Scroll down to the 'Extension Configuration section. The extension configuration must be entered as JSON in the following format:"
+msgstr ""
+"向下捲動至「延伸配置」區段。延伸配置必須以下列格式輸入為 JSON："
+
+#: ../docs/reference/extensions/index.rst:72
+msgid "When this has been entered, click 'Confirm changes' to save the configuration."
+msgstr ""
+"輸入此項目後，請按一下「確認變更」以儲存配置。"
+
+#: ../docs/reference/extensions/index.rst:74
+msgid "If the Organization configuration has been completed correctly, the Extensions section should now appear below the Extensions Configuration section in the Device Drilldown."
+msgstr ""
+"如果「組織」配置已正確完成，「延伸」區段此時應會出現在「裝置往下探查」中的「延伸配置」區段下。"
+

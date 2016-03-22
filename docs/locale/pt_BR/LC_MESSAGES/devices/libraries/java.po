@@ -1,0 +1,208 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/libraries/java.rst:2
+msgid "Java for Device Developers"
+msgstr ""
+"Java para Desenvolvedores de Dispositivo"
+
+#: ../docs/devices/libraries/java.rst:4
+msgid "See `iot-java <https://github.com/ibm-messaging/iot-java>`_ in GitHub"
+msgstr ""
+"Consulte `iot-java <https://github.com/ibm-messaging/iot-java>`_ no GitHub"
+
+#: ../docs/devices/libraries/java.rst:8
+msgid "Constructor"
+msgstr ""
+"Construtor"
+
+#: ../docs/devices/libraries/java.rst:10
+msgid "The constructor builds the client instance, and accepts a Properties object containing the following definitions:"
+msgstr ""
+"O construtor constrói a instância do cliente e aceita um objeto Propriedades contendo as seguintes definições:"
+
+#: ../docs/devices/libraries/java.rst:12
+msgid "org - Your organization ID. (This is a required field. In case of quickstart flow, provide org as quickstart.)"
+msgstr ""
+"org - O ID da organização. (Este é um campo obrigatório. No caso de fluxo de iniciação rápida, forneça org como iniciação rápida.)"
+
+#: ../docs/devices/libraries/java.rst:13
+msgid "type - The type of your device. (This is a required field.)"
+msgstr ""
+"type - O tipo do dispositivo. (Este é um campo obrigatório.)"
+
+#: ../docs/devices/libraries/java.rst:14
+msgid "id - The ID of your device. (This is a required field."
+msgstr ""
+"ID - O ID do dispositivo. (Este é um campo obrigatório."
+
+#: ../docs/devices/libraries/java.rst:15
+msgid "auth-method - Method of authentication (This is an optional field, needed only for registered flow and the only value currently supported is \"token\")."
+msgstr ""
+"auth-method - Método de autenticação (Esse é um campo opcional, necessário somente para fluxo registrado e o único valor atualmente suportado é \"token\")."
+
+#: ../docs/devices/libraries/java.rst:16
+msgid "auth-token - API key token (This is an optional field, needed only for registered flow)."
+msgstr ""
+"auth-token - Token de chave API (Esse é um campo opcional, necessário somente para fluxo registrado)."
+
+#: ../docs/devices/libraries/java.rst:17
+msgid "clean-session - true or false (required only if you want to connect the application in durable subscription. By default the clean-session is set to true)."
+msgstr ""
+"clean-session - true ou false (necessário apenas se você deseja conectar o aplicativo em assinatura durável. Por padrão, a sessão de limpeza é configurada como true)."
+
+#: ../docs/devices/libraries/java.rst:19
+msgid "One must set ``clean-session`` to false to connect the device in durable subscription. Refer to `Subscription Buffers and Clean Session <https://docs.internetofthings.ibmcloud.com/reference/mqtt/index.html#/subscription-buffers-and-clean-session#subscription-buffers-and-clean-session>`__ for more information about the clean session."
+msgstr ""
+"Deve-se configurar ``clean-session`` como false para conectar o dispositivo em assinatura durável. Consulte `Buffers de Assinatura e Sessão de Limpeza <https://docs.internetofthings.ibmcloud.com/reference/mqtt/index.html#/subscription-buffers-and-clean-session#subscription-buffers-and-clean-session>`__ para obter mais informações sobre a sessão de limpeza."
+
+#: ../docs/devices/libraries/java.rst:21
+msgid "The Properties object creates definitions which are used to interact with the IoT Platform module."
+msgstr ""
+"O objeto Propriedades cria definições que são usadas para interagir com o módulo do IoT Platform."
+
+#: ../docs/devices/libraries/java.rst:23
+msgid "The following code shows a device publishing events in a Quickstart mode."
+msgstr ""
+"O código a seguir mostra um dispositivo publicando eventos em um modo Quickstart."
+
+#: ../docs/devices/libraries/java.rst:73
+msgid "The following program shows a device publishing events in a registered flow"
+msgstr ""
+"O programa a seguir mostra um dispositivo publicando eventos em um fluxo registrado."
+
+#: ../docs/devices/libraries/java.rst:125
+msgid "Using a configuration file"
+msgstr ""
+"Usando um arquivo de configuração"
+
+#: ../docs/devices/libraries/java.rst:127
+msgid "Instead of including a Properties object directly, you can use a configuration file containing the name-value pairs for Properties. If you are using a configuration file containing a Properties object, use the following code format."
+msgstr ""
+"Em vez de incluir um objeto Propriedades diretamente, você pode usar um arquivo de configuração contendo os pares nome-valor para Propriedades. Se você estiver usando um arquivo de configuração contendo um objeto Propriedades, use o formato de código a seguir."
+
+#: ../docs/devices/libraries/java.rst:169
+msgid "The content of the configuration file must be in the following format:"
+msgstr ""
+"O conteúdo do arquivo de configuração deve estar no seguinte formato:"
+
+#: ../docs/devices/libraries/java.rst:185
+msgid "Publishing events"
+msgstr ""
+"Publicando eventos"
+
+#: ../docs/devices/libraries/java.rst:186
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"Eventos são o mecanismo pelo qual dispositivos publicam dados no IoT Platform. O dispositivo controla o conteúdo do evento e designa um nome para cada evento que envia."
+
+#: ../docs/devices/libraries/java.rst:188
+msgid "When an event is received by the IBM IoT Platform the credentials of the connection on which the event was received are used to determine from which device the event was sent. With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"Quando um evento é recebido pelo IBM IoT Platform, as credenciais da conexão na qual o evento foi recebido são usadas para determinar a partir de qual dispositivo o evento foi enviado. Com essa arquitetura, é impossível para um dispositivo personificar outro dispositivo."
+
+#: ../docs/devices/libraries/java.rst:190
+msgid "Events can be published at any of the three `quality of service levels <../messaging/mqtt.html#/>` defined by the MQTT protocol.  By default events will be published as qos level 0."
+msgstr ""
+"Os eventos podem ser publicados em qualquer um dos três `níveis de qualidade de serviço <../messaging/mqtt.html#/>` definidos pelo protocolo MQTT.  Por padrão, os eventos serão publicados como qos nível 0."
+
+#: ../docs/devices/libraries/java.rst:193
+msgid "Publish event using default quality of service"
+msgstr ""
+"Publicar evento usando a qualidade de serviço padrão"
+
+#: ../docs/devices/libraries/java.rst:210
+msgid "Publish event using user-defined quality of service"
+msgstr ""
+"Publicar evento usando a qualidade de serviço definida pelo usuário"
+
+#: ../docs/devices/libraries/java.rst:212
+msgid "Events can be published at higher MQTT quality of servive levels, but these events may take slower than QoS level 0, because of the extra confirmation of receipt. Also Quickstart flow allows only Qos of 0"
+msgstr ""
+"Os eventos podem ser publicados em níveis de qualidade de serviço MQTT superiores, mas esses eventos podem ser mais lentos que o QoS nível 0 por causa da confirmação de recebimento extra. Além disso, o fluxo Quickstart permite apenas Qos de 0"
+
+#: ../docs/devices/libraries/java.rst:228
+msgid "Publish event using HTTP(s)"
+msgstr ""
+"Publicar evento usando HTTP(s)"
+
+#: ../docs/devices/libraries/java.rst:229
+msgid "Apart from MQTT, the devices can publish events to the IoT Platform using HTTP(s) by following 3 simple steps,"
+msgstr ""
+"Além de MQTT, os dispositivos podem publicar eventos no IoT Platform usando HTTP(s) seguindo 3 etapas simples,"
+
+#: ../docs/devices/libraries/java.rst:231
+msgid "Construct a DeviceClient instance using the properties file"
+msgstr ""
+"Construa uma instância DeviceClient utilizando o arquivo de propriedades"
+
+#: ../docs/devices/libraries/java.rst:232
+msgid "Construct an event that needs to be published"
+msgstr ""
+"Construa um evento que precisa ser publicado"
+
+#: ../docs/devices/libraries/java.rst:233
+msgid "Specify the event name and publish the event using publishEventOverHTTP() method as follows,"
+msgstr ""
+"Especifique o nome do evento e publique o evento utilizando o método publishEventOverHTTP(), conforme a seguir,"
+
+#: ../docs/devices/libraries/java.rst:246
+msgid "The complete code can be found in the device example `HttpDeviceEventPublish <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdeviceclient/src/com/ibm/iotf/sample/client/device/HttpDeviceEventPublish.java>`__"
+msgstr ""
+"O código completo pode ser encontrado no exemplo de dispositivo `HttpDeviceEventPublish <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdeviceclient/src/com/ibm/iotf/sample/client/device/HttpDeviceEventPublish.java>`__"
+
+#: ../docs/devices/libraries/java.rst:248
+msgid "Based on the settings in the properties file, the publishEventOverHTTP() method either publishes the event in Quickstart or in Registered flow. When the Organization ID mentioned in the properties file is quickstart, publishEventOverHTTP() method publishes the event to the IoT Platform quickstart service and publishes the event in plain HTTP format. But when valid registered organization is mentioned in the properties file, this method always publishes the event in HTTPS (HTTP over SSL), so all the communication is secured."
+msgstr ""
+"Com base nas configurações no arquivo de propriedades, o método publishEventOverHTTP() ou publica o evento registrado no fluxo ou na Iniciação Rápida. Quando o ID da Organização mencionado no arquivo de propriedades é quickstart, o método publishEventOverHTTP() publica o evento para o serviço quickstart do IoT Platform e publica o evento em formato HTTP simples. Mas quando uma organização registrada válida é mencionada no arquivo de propriedades, esse método sempre publica o evento em HTTPS (HTTP sobre SSL), de forma que toda a comunicação é protegida."
+
+#: ../docs/devices/libraries/java.rst:250
+msgid "The event in HTTP(s) is published at most once QoS, so the device needs to implement the retry logic when there is an error."
+msgstr ""
+"O evento em HTTP(s) é publicado no máximo uma vez no QoS, portanto, o dispositivo precisa implementar a lógica de nova tentativa quando houver um erro."
+
+#: ../docs/devices/libraries/java.rst:255
+msgid "Handling commands"
+msgstr ""
+"Manipulando comandos"
+
+#: ../docs/devices/libraries/java.rst:256
+msgid "When the device client connects it automatically subscribes to any commands for this device. To process specific commands you need to register a command callback method. The messages are returned as an instance of the Command class which has the following properties:"
+msgstr ""
+"Quando o cliente do dispositivo se conecta, ele automaticamente assina qualquer comando para esse dispositivo. Para processar comandos específicos, você precisa registrar um método de retorno de chamada de comando. As mensagens são retornadas como uma instância da classe Comando, que possui as seguintes propriedades:"
+
+#: ../docs/devices/libraries/java.rst:259
+msgid "payload - java.lang.String"
+msgstr ""
+"carga útil - java.lang.String"
+
+#: ../docs/devices/libraries/java.rst:260
+msgid "format - java.lang.String"
+msgstr ""
+"formato - java.lang.String"
+
+#: ../docs/devices/libraries/java.rst:261
+msgid "command - java.lang.String"
+msgstr ""
+"comando - java.lang.String"
+
+#: ../docs/devices/libraries/java.rst:262
+msgid "timestamp - org.joda.time.DateTime"
+msgstr ""
+"registro de data e hora - org.joda.time.DateTime"
+

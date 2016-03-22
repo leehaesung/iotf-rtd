@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/libraries/nodejs.rst:2
+msgid "Node.js for Device Developers"
+msgstr ""
+"Node.js para desarrolladores de dispositivos"
+
+#: ../docs/devices/libraries/nodejs.rst:4
+msgid "See `iot-nodejs <https://github.com/ibm-messaging/iot-nodejs>`_ in GitHub"
+msgstr ""
+"Consulte `iot-nodejs <https://github.com/ibm-messaging/iot-nodejs>`_ en GitHub"
+
+#: ../docs/devices/libraries/nodejs.rst:5
+msgid "See `ibmiotf <https://www.npmjs.com/package/ibmiotf>`_ on NPM"
+msgstr ""
+"Consulte `ibmiotf <https://www.npmjs.com/package/ibmiotf>`_ en NPM"
+
+#: ../docs/devices/libraries/nodejs.rst:8
+msgid "Constructor"
+msgstr ""
+"Constructor"
+
+#: ../docs/devices/libraries/nodejs.rst:10
+msgid "The constructor builds the device client instance. It accepts a configuration json containing the following definitions:"
+msgstr ""
+"El constructor crea la instancia del cliente de dispositivo. Acepta un json de configuración que contenga las siguientes definiciones:"
+
+#: ../docs/devices/libraries/nodejs.rst:12
+msgid "``org`` - Your organization ID"
+msgstr ""
+"``org`` - El ID de la organización."
+
+#: ../docs/devices/libraries/nodejs.rst:13
+msgid "``type`` - The type of your device"
+msgstr ""
+"``type`` - El tipo del dispositivo."
+
+#: ../docs/devices/libraries/nodejs.rst:14
+msgid "``id`` - The ID of your device"
+msgstr ""
+"``id`` - El ID del dispositivo."
+
+#: ../docs/devices/libraries/nodejs.rst:15
+msgid "``auth-method`` - Method of authentication (the only value currently supported is ``token``)"
+msgstr ""
+"``auth-method`` - El método de autenticación (el único valor soportado actualmente es ``token``)."
+
+#: ../docs/devices/libraries/nodejs.rst:16
+msgid "``auth-token`` - API key token (required if auth-method is ``token``)"
+msgstr ""
+"``auth-token`` - La señal de la clave de API (necesaria si auth-method es ``token``)."
+
+#: ../docs/devices/libraries/nodejs.rst:18
+msgid "If you want to use Quickstart, then send only the first three properties."
+msgstr ""
+"Si desea utilizar Quickstart, envíe solo las tres primeras propiedades."
+
+#: ../docs/devices/libraries/nodejs.rst:34
+msgid "Using a configuration file"
+msgstr ""
+"Utilización de un archivo de configuración"
+
+#: ../docs/devices/libraries/nodejs.rst:36
+msgid "Instead of passing the configuration json directly, you can also use a configuration file. Use the following code snippet:"
+msgstr ""
+"En lugar de pasar el json de configuración directamente, puede también utilizar un archivo de configuración. Utilice el fragmento de código siguiente:"
+
+#: ../docs/devices/libraries/nodejs.rst:45
+msgid "The configuration file must be in the format of"
+msgstr ""
+"El archivo de configuración de aplicación debe estar en el formato siguiente:"
+
+#: ../docs/devices/libraries/nodejs.rst:56
+msgid "Connecting to the IoT Platform"
+msgstr ""
+"Conexión a IoT Platform"
+
+#: ../docs/devices/libraries/nodejs.rst:58
+msgid "Connect to the IoT Platform by calling the *connect* function."
+msgstr ""
+"Conéctese a IoT Platform llamando a la función *connect*."
+
+#: ../docs/devices/libraries/nodejs.rst:73
+msgid "After the successful connection to the IoT Platform service, the device client sends a *connect* event. So all the device logic can be implemented inside this callback function."
+msgstr ""
+"Tras una conexión correcta al servicio de IoT Platform, el cliente del dispositivo envía un suceso *connect*. De esta forma, toda la lógica de dispositivo puede implementarse dentro de esta función de devolución de llamada."
+
+#: ../docs/devices/libraries/nodejs.rst:76
+msgid "Publishing events"
+msgstr ""
+"Publicación de sucesos"
+
+#: ../docs/devices/libraries/nodejs.rst:78
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"Los sucesos son el mecanismo mediante el cual los dispositivos publican datos en IoT Platform. El dispositivo controla el contenido del suceso y asigna un nombre a cada suceso que envía."
+
+#: ../docs/devices/libraries/nodejs.rst:80
+msgid "When an event is received by the IoT Platform the credentials of the connection on which the event was received are used to determine from which device the event was sent. With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"Cuando IoT Platform recibe un suceso, se utilizan las credenciales de la conexión en la que se ha recibido dicho suceso para determinar desde qué dispositivo se ha enviado el suceso. Con esta arquitectura, es imposible que un dispositivo pueda suplantar a otro."
+
+#: ../docs/devices/libraries/nodejs.rst:82
+msgid "Events can be published at any of the three quality of service levels defined by the MQTT protocol. By default events will be published as QoS level 0. Please not that if you are using the Internet of Things Quickstart service, events can only be published at QoS level 0."
+msgstr ""
+"Los sucesos se pueden publicar en cualquiera de los tres niveles de calidad de servicio definidos por el protocolo MQTT. De forma predeterminada, los sucesos se publicarán con el nivel de QoS 0. Tenga en cuenta que si va a utilizar el servicio Quickstart de Internet of Things, solo se podrán publicar sucesos con un nivel QoS de 0."
+
+#: ../docs/devices/libraries/nodejs.rst:84
+msgid "Events can be published by using: -   eventType - Type of event to be published e.g status, gps. -   eventFormat - Format of the event e.g json. -   data - Payload of the event. -   QoS - MQTT quality of service for the publish event. Supported values : 0,1,2."
+msgstr ""
+"Los sucesos se pueden publicar utilizando: -   eventType - Tipo de suceso para publicar; por ejemplo, estado, gps. eventFormat - Formato del suceso, por ejemplo, json -   data - Carga útil del suceso. -   QoS - Calidad de servicio de MQTT del suceso de publicación. Los valores admitidos: 0,1,2."
+
+#: ../docs/devices/libraries/nodejs.rst:107
+msgid "Handling commands"
+msgstr ""
+"Manejo de mandatos"
+
+#: ../docs/devices/libraries/nodejs.rst:109
+msgid "When the device client connects, it automatically subscribes to any command for this device. To process specific commands you need to register a command callback function. The device client sends *command* when a command is received. The callback function has the following properties."
+msgstr ""
+"Cuando el cliente de dispositivo se conecta, se suscribe automáticamente a cualquier mandato para este dispositivo. Para procesar mandatos específicos, necesita registrar una función de devolución de llamada de mandato. El cliente de dispositivo envía *command* cuando se recibe un mandato. La función de devolución de llamada tiene las siguientes propiedades."
+
+#: ../docs/devices/libraries/nodejs.rst:111
+msgid "commandName - name of the command invoked"
+msgstr ""
+"commandName - nombre del mandato invocado"
+
+#: ../docs/devices/libraries/nodejs.rst:112
+msgid "format - e.g json, xml"
+msgstr ""
+"format - por ejemplo json, xml"
+
+#: ../docs/devices/libraries/nodejs.rst:113
+msgid "payload - payload for the command"
+msgstr ""
+"payload - carga útil del mandato"
+
+#: ../docs/devices/libraries/nodejs.rst:114
+msgid "topic - actual topic where the command was received"
+msgstr ""
+"topic - tema donde se recibe el mandato"
+
+#: ../docs/devices/libraries/nodejs.rst:140
+msgid "Disconnect Client"
+msgstr ""
+"Desconectar cliente"
+
+#: ../docs/devices/libraries/nodejs.rst:142
+msgid "Disconnects the client and releases the connections"
+msgstr ""
+"Desconecta el cliente y libera las conexiones"
+
+#: ../docs/devices/libraries/nodejs.rst:164
+msgid "Check Connection Status"
+msgstr ""
+"Comprobar estado de conexión"
+
+#: ../docs/devices/libraries/nodejs.rst:166
+msgid "*isConnected* gives the current status of the client connection"
+msgstr ""
+"*isConnected* proporciona el estado actual de la conexión de cliente"
+

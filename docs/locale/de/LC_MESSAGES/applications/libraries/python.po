@@ -1,0 +1,883 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/applications/libraries/python.rst:2
+msgid "Python for Application Developers"
+msgstr ""
+"Python für Anwendungsentwickler"
+
+#: ../docs/applications/libraries/python.rst:4
+msgid "See `iot-python <https://github.com/ibm-messaging/iot-python>`_ in GitHub"
+msgstr ""
+"Siehe `iot-python <https://github.com/ibm-messaging/iot-python>`_ in GitHub"
+
+#: ../docs/applications/libraries/python.rst:5
+msgid "See `ibmiotf <https://pypi.python.org/pypi/ibmiotf>`_ on PyPi"
+msgstr ""
+"Siehe `ibmiotf <https://pypi.python.org/pypi/ibmiotf>`_ in PyPi"
+
+#: ../docs/applications/libraries/python.rst:8
+msgid "Constructor"
+msgstr ""
+"Konstruktor"
+
+#: ../docs/applications/libraries/python.rst:10
+msgid "The constructor builds the client instance, and accepts an options dict containing the following definitions:"
+msgstr ""
+"Der Konstruktor erstellt die Clientinstanz und akzeptiert ein Optionsverzeichnis, das die folgenden Definitionen enthält:"
+
+#: ../docs/applications/libraries/python.rst:12
+msgid "``org`` - Your organization ID."
+msgstr ""
+"``org`` - Ihre Organisations-ID."
+
+#: ../docs/applications/libraries/python.rst:13
+msgid "``id`` - The unique ID of your application within your organization."
+msgstr ""
+"``id`` - Die eindeutige ID Ihrer Anwendung innerhalb Ihrer Organisation."
+
+#: ../docs/applications/libraries/python.rst:14
+msgid "``auth-method`` - Method of authentication (the only value currently supported is ``apikey``)."
+msgstr ""
+"``auth-method`` - die Methode der Authentifizierung (der einzige derzeit unterstützte Wert ist ``apikey``)."
+
+#: ../docs/applications/libraries/python.rst:15
+msgid "``auth-key`` - API key (required if auth-method is ``apikey``)."
+msgstr ""
+"``auth-key`` - Der API-Schlüssel (erforderlich, falls 'auth-method' den Wert ``apikey`` aufweist)."
+
+#: ../docs/applications/libraries/python.rst:16
+msgid "``auth-token`` - API key token (required if auth-method is ``apikey``)."
+msgstr ""
+"``auth-token`` - Das API-Schlüsseltoken (erforderlich, falls 'auth-method' den Wert ``apikey`` aufweist)."
+
+#: ../docs/applications/libraries/python.rst:18
+msgid "If no options dict is provided, the client will connect to the IoT Platform Quickstart, and default to an unregistered device. The options dict creates definitions which are used to interact with the IoT Platform module."
+msgstr ""
+"Wenn kein Options-Dict angegeben ist, stellt der Client die Verbindung zu IoT Platform Quickstart her und verwendet standardmäßig ein nicht registriertes Gerät. Das Options-Dict erstellt Definitionen, die für die Interaktion mit dem IoT Platform-Modul verwendet werden."
+
+#: ../docs/applications/libraries/python.rst:37
+msgid "Using a configuration file"
+msgstr ""
+"Konfigurationsdatei verwenden"
+
+#: ../docs/applications/libraries/python.rst:39
+msgid "If you are not using an options dict as shown above, you include a configuration file containing an options dict. If you are using a configuration file containing an options dict, use the following code format."
+msgstr ""
+"Wenn Sie kein Options-Dict (wie oben gezeigt) verwenden, nehmen Sie eine Konfigurationsdatei auf, die ein Options-Dict enthält. Wenn Sie eine Konfigurationsdatei verwenden, die ein Options-Dict enthält, verwenden Sie das folgende Codeformat."
+
+#: ../docs/applications/libraries/python.rst:50
+msgid "The application configuration file must be in the following format:"
+msgstr ""
+"Die Anwendungskonfigurationsdatei muss im folgenden Format vorliegen:"
+
+#: ../docs/applications/libraries/python.rst:66
+msgid "API calls"
+msgstr ""
+"API-Aufrufe"
+
+#: ../docs/applications/libraries/python.rst:68
+msgid "Each method in the APIClient responds with either a valid response (JSON or boolean) in the case of success or IoTFCReSTException in the case of failure. The IoTFCReSTException contains the following properties that application can parse to get more information about the failure."
+msgstr ""
+"Jede Methode im API-Client reagiert entweder mit einer gültigen Antwort (JSON- oder boolesches Format) im Erfolgsfall oder mit einer IoTFCReSTException-Ausnahmebedingung im Falle eines Fehlers. Die IoTFCReSTException-Ausnahmebedingung enthält die folgenden Eigenschaften, die die Anwendung parsen kann, um weitere Informationen zum Fehler zu erhalten."
+
+#: ../docs/applications/libraries/python.rst:70
+msgid "httpcode - HTTP Status Code"
+msgstr ""
+"httpcode - HTTP-Statuscode"
+
+#: ../docs/applications/libraries/python.rst:71
+msgid "message - Exception message containing the reason for the failure"
+msgstr ""
+"message - Ausnahmebedingungsnachricht mit der Fehlerursache"
+
+#: ../docs/applications/libraries/python.rst:72
+msgid "response - JsonElement containing the partial response if any otherwise null"
+msgstr ""
+"response - JSON-Element mit der Teilantwort, falls vorhanden, andernfalls null."
+
+#: ../docs/applications/libraries/python.rst:74
+msgid "So in the case of failure, application needs to parse the response to see if the action is partially successful or not."
+msgstr ""
+"Bei einem Fehler muss die Anwendung die Antwort parsen, um festzustellen, ob die Aktion teilweise erfolgreich war."
+
+#: ../docs/applications/libraries/python.rst:81
+msgid "Subscribing to device events"
+msgstr ""
+"Geräteereignisse subskribieren"
+
+#: ../docs/applications/libraries/python.rst:82
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"Ereignisse sind der Mechanismus, mit dem Geräte Daten in IoT Platform publizieren. Das Gerät steuert den Inhalt des Ereignisses und ordnet einen Namen für jedes von dem Gerät gesendete Ereignis zu."
+
+#: ../docs/applications/libraries/python.rst:84
+msgid "When an event is received by the IoT Platform the credentials of the connection on which the event was received are used to determine from which device the event was sent. With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"Wenn ein Ereignis von IoT Platform empfangen wird, werden die Identifikationsdaten der Verbindung, über die das Ereignis empfangen wurde, dazu verwendet, das Gerät zu ermitteln, von dem das Ereignis gesendet wurde. Mit dieser Architektur ist es für ein Gerät unmöglich, die Identität eines anderen Geräts anzunehmen."
+
+#: ../docs/applications/libraries/python.rst:86
+msgid "By default, applications will subscribe to all events from all connected devices. Use the type, id, event and msgFormat parameters to control the scope of the subscription. A single client can support multiple subscriptions. The code samples below give examples of how to subscribe to devices dependent on device type, id, event and msgFormat parameters."
+msgstr ""
+"Standardmäßig subskribieren Anwendungen alle Ereignisse von allen verbundenen Geräte. Verwenden Sie die Parameter type, id, event und msgFormat, um den Geltungsbereich der Subskription zu steuern. Ein einzelner Client kann mehrere Subskriptionen unterstützen. Die nachfolgenden Codebeispiele zeigen beispielhaft die Vorgehensweise beim Subskribieren bei Geräte abhängig von den Geräteparametern type, id, event und msgFormat."
+
+#: ../docs/applications/libraries/python.rst:90
+msgid "To subscribe to all events from all devices"
+msgstr ""
+"Zum Subskribieren aller Ereignisse von allen Geräte"
+
+#: ../docs/applications/libraries/python.rst:104
+msgid "To subscribe to all events from all devices of a specific type"
+msgstr ""
+"Zum Subskribieren aller Ereignisse von allen Geräte eines bestimmten Typs"
+
+#: ../docs/applications/libraries/python.rst:118
+msgid "To subscribe to a specific event from all devices"
+msgstr ""
+"Zum Subskribieren eines bestimmten Ereignisses von allen Geräte"
+
+#: ../docs/applications/libraries/python.rst:132
+msgid "To subscribe to a specific event from two or more different devices"
+msgstr ""
+"Zum Subskribieren eines bestimmten Ereignisses von zwei oder mehr verschiedenen Geräte"
+
+#: ../docs/applications/libraries/python.rst:147
+msgid "To subscribe to all events published by a device in json format"
+msgstr ""
+"Zum Subskribieren aller Ereignisse, die von einem Gerät im json-Format publiziert werden"
+
+#: ../docs/applications/libraries/python.rst:164
+msgid "Handling events from devices"
+msgstr ""
+"Ereignisse von Geräten verarbeiten"
+
+#: ../docs/applications/libraries/python.rst:165
+msgid "To process the events received by your subscriptions you need to register an event callback method. The messages are returned as an instance of the Event class:"
+msgstr ""
+"Zum Verarbeiten der Ereignisse, die von Ihren Subskriptionen empfangen wurden, müssen Sie eine Ereignis-Callback-Methode registrieren. Die Nachrichten werden als eine Instanz der Ereignisklasse zurückgegeben:"
+
+#: ../docs/applications/libraries/python.rst:167
+msgid "event.device - string (uniquely identifies the device across all types of devices in the organization)"
+msgstr ""
+"event.device - Zeichenfolge (kennzeichnet eindeutig das Gerät über alle Typen von Geräten in der Organisation)"
+
+#: ../docs/applications/libraries/python.rst:168
+msgid "event.deviceType - string"
+msgstr ""
+"event.deviceType - Zeichenfolge"
+
+#: ../docs/applications/libraries/python.rst:169
+msgid "event.deviceId - string"
+msgstr ""
+"event.deviceId - Zeichenfolge"
+
+#: ../docs/applications/libraries/python.rst:170
+msgid "event.event - string"
+msgstr ""
+"event.event - Zeichenfolge"
+
+#: ../docs/applications/libraries/python.rst:171
+msgid "event.format - string"
+msgstr ""
+"event.format - Zeichenfolge"
+
+#: ../docs/applications/libraries/python.rst:172
+msgid "event.data - dict"
+msgstr ""
+"event.data - Dict"
+
+#: ../docs/applications/libraries/python.rst:173
+msgid "event.timestamp - datetime"
+msgstr ""
+"event.timestamp - Datum/Uhrzeit"
+
+#: ../docs/applications/libraries/python.rst:196
+msgid "Subscribing to device status"
+msgstr ""
+"Gerätestatus subskribieren"
+
+#: ../docs/applications/libraries/python.rst:197
+msgid "By default, this will subscribe to status updates for all connected devices. Use the type and id parameters to control the scope of the subscription. A single client can support multiple subscriptions."
+msgstr ""
+"Standardmäßig werden hiermit Statusaktualisierungen für alle verbundenen Geräte subskribiert. Verwenden Sie die Parameter type und id, um den Geltungsbereich der Subskription zu steuern. Ein einzelner Client kann mehrere Subskriptionen unterstützen."
+
+#: ../docs/applications/libraries/python.rst:200
+msgid "Subscribe to status updates for all devices"
+msgstr ""
+"Statusaktualisierungen für alle Geräte subskribieren"
+
+#: ../docs/applications/libraries/python.rst:214
+msgid "Subscribe to status updates for all devices of a specific type"
+msgstr ""
+"Statusaktualisierungen für alle Geräte eines bestimmten Typs subskribieren"
+
+#: ../docs/applications/libraries/python.rst:228
+msgid "Subscribe to status updates for two different devices"
+msgstr ""
+"Statusaktualisierungen für zwei verschiedene Geräte subskribieren"
+
+#: ../docs/applications/libraries/python.rst:246
+msgid "Handling status updates from devices"
+msgstr ""
+"Statusaktualisierungen von Geräten verarbeiten"
+
+#: ../docs/applications/libraries/python.rst:247
+msgid "To process the status updates received by your subscriptions you need to register an event callback method. The messages are returned as an instance of the Status class:"
+msgstr ""
+"Zum Verarbeiten der Statusaktualisierungen, die von Ihren Subskriptionen empfangen wurden, müssen Sie eine Ereignis-Callback-Methode registrieren. Die Nachrichten werden als eine Instanz der Statusklasse zurückgegeben:"
+
+#: ../docs/applications/libraries/python.rst:249
+msgid "The following properties are set for both \"Connect\" and \"Disconnect\" status events:"
+msgstr ""
+"Die folgenden Eigenschaften werden für die Statusereignisse \"Connect\" und \"Disconnect\" gesetzt:"
+
+#: ../docs/applications/libraries/python.rst:251
+msgid "status.clientAddr - string"
+msgstr ""
+"status.clientAddr - Zeichenfolge"
+
+#: ../docs/applications/libraries/python.rst:252
+msgid "status.protocol - string"
+msgstr ""
+"status.protocol - Zeichenfolge"
+
+#: ../docs/applications/libraries/python.rst:253
+msgid "status.clientId - string"
+msgstr ""
+"status.clientId - Zeichenfolge"
+
+#: ../docs/applications/libraries/python.rst:254
+msgid "status.user - string"
+msgstr ""
+"status.user - Zeichenfolge"
+
+#: ../docs/applications/libraries/python.rst:255
+msgid "status.time - datetime"
+msgstr ""
+"status.time - Datum/Uhrzeit"
+
+#: ../docs/applications/libraries/python.rst:256
+msgid "status.action - string"
+msgstr ""
+"status.action - Zeichenfolge"
+
+#: ../docs/applications/libraries/python.rst:257
+msgid "status.connectTime - datetime"
+msgstr ""
+"status.connectTime - Datum/Uhrzeit"
+
+#: ../docs/applications/libraries/python.rst:258
+msgid "status.port - integer"
+msgstr ""
+"status.port - ganze Zahl"
+
+#: ../docs/applications/libraries/python.rst:260
+msgid "The following properties are only set when the action is \"Disconnect\":"
+msgstr ""
+"Die folgenden Eigenschaften werden nur dann gesetzt, wenn die Aktion \"Disconnect\" lautet:"
+
+#: ../docs/applications/libraries/python.rst:262
+msgid "status.writeMsg - integer"
+msgstr ""
+"status.writeMsg - ganze Zahl"
+
+#: ../docs/applications/libraries/python.rst:263
+msgid "status.readMsg - integer"
+msgstr ""
+"status.readMsg - ganze Zahl"
+
+#: ../docs/applications/libraries/python.rst:264
+msgid "status.reason - string"
+msgstr ""
+"status.reason - Zeichenfolge"
+
+#: ../docs/applications/libraries/python.rst:265
+msgid "status.readBytes - integer"
+msgstr ""
+"status.readBytes - ganze Zahl"
+
+#: ../docs/applications/libraries/python.rst:266
+msgid "status.writeBytes - integer"
+msgstr ""
+"status.writeBytes - ganze Zahl"
+
+#: ../docs/applications/libraries/python.rst:292
+msgid "Publishing events from devices"
+msgstr ""
+"Ereignisse von Geräten publizieren"
+
+#: ../docs/applications/libraries/python.rst:293
+msgid "Applications can publish events as if they originated from a Device"
+msgstr ""
+"Anwendungen können Ereignisse so publizieren, als ob sie von einem Gerät stammen"
+
+#: ../docs/applications/libraries/python.rst:311
+msgid "Publishing commands to devices"
+msgstr ""
+"Befehle für Geräte publizieren"
+
+#: ../docs/applications/libraries/python.rst:312
+msgid "Applications can publish commands to connected devices"
+msgstr ""
+"Anwendungen können Befehle an verbundene Geräte publizieren"
+
+#: ../docs/applications/libraries/python.rst:330
+msgid "Organization details"
+msgstr ""
+"Organisationsdetails"
+
+#: ../docs/applications/libraries/python.rst:332
+msgid "Applications can use the ``getOrganizationDetails()`` method to retrieve the details about the configuration of the organization."
+msgstr ""
+"Anwendungen können mithilfe der Methode ``getOrganizationDetails()`` Details zur Konfiguration der Organisation abrufen."
+
+#: ../docs/applications/libraries/python.rst:347
+msgid "Refer to the Organization Configuration section of the `IBM IoT Platform API <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html>`__ for information about the request & response model and http status code."
+msgstr ""
+"Der Abschnitt zur Organisationskonfiguration in der Dokumentation `IBM IoT Platform API <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html>`__ enthält Informationen zum Anforderungs-/Antwortmodell und zum HTTP-Statuscode."
+
+#: ../docs/applications/libraries/python.rst:355
+msgid "Bulk device operations"
+msgstr ""
+"Massengeräteoperationen"
+
+#: ../docs/applications/libraries/python.rst:357
+msgid "Applications can use bulk operations to get, add or remove devices in bulk."
+msgstr ""
+"Applications können Massenoperationen verwenden, um eine große Anzahl von Geräten abzurufen, hinzuzufügen oder zu entfernen."
+
+#: ../docs/applications/libraries/python.rst:359
+msgid "Refer to the Bulk Operations section of the `IBM IoT Platform API <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html#!/Bulk_Operations/>`__ for information about the list of query parameters, the request & response model and http status code."
+msgstr ""
+"Der Abschnitt zu Massenoperationen in der Dokumentation `IBM IoT Platform API <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html#!/Bulk_Operations/>`__ enthält Informationen zur Liste der Abfrageparameter, zum Anforderungs-/Antwortmodell und zum HTTP-Statuscode."
+
+#: ../docs/applications/libraries/python.rst:362
+msgid "Retrieve device information"
+msgstr ""
+"Geräteinformationen abrufen"
+
+#: ../docs/applications/libraries/python.rst:364
+msgid "Bulk device information can be retrieved using the ``getAllDevices()`` method. This method retrieves information on all registered devices in the organization, each request can contain a maximum of 512KB."
+msgstr ""
+"Massendaten für Geräte können mithilfe der Methode ``getAllDevices()`` abgerufen werden. Mit dieser Methode werden Informationen zu allen registrierten Geräten in der Organisation abgerufen, wobei jede Anforderung maximal 512 KB enthalten kann."
+
+#: ../docs/applications/libraries/python.rst:367
+msgid "The response contains parameters required by the application to retrieve the dictionary *results* from the response to get the array of devices returned. Other parameters in the response are required to make further calls, for example, the ``_bookmark`` element can be used to page through results. Issue the first request without specifying a bookmark, then take the bookmark returned in the response and provide it on the request for the next page. Repeat until the end of the result set indicated by the absence of a bookmark. Each request must use exactly the same values for the other parameters, or the results are undefined."
+msgstr ""
+"Die Antwort enthält Parameter, die von der Anwendung benötigt werden, um die Wörterverzeichnis*ergebnisse* aus der Antwort abzurufen und die zurückgegebene Gruppe von Geräten zu erhalten. Andere Parameter in der Antwort sind für weitere Aufrufe erforderlich (z. B. kann das Element ``_bookmark`` zum Blättern in den Ergebnissen verwendet werden). Setzen Sie die erste Anforderung ohne Angabe eines Lesezeichens ab, verwenden Sie dann das in der Antwort zurückgegebene Lesezeichen und geben Sie es in der Anforderung für die nächste Seite an. Wiederholen Sie diesen Vorgang, bis das Ende der Ergebnismenge erreicht ist. Dies wird dadurch gekennzeichnet, dass kein Lesezeichen vorhanden ist. Jede Anforderung muss genau dieselben Werte für die anderen Parameter verwenden, da andernfalls die Ergebnisse nicht definiert sind."
+
+#: ../docs/applications/libraries/python.rst:389
+msgid "Add Devices in bulk"
+msgstr ""
+"Geräte über eine Massenoperation hinzufügen"
+
+#: ../docs/applications/libraries/python.rst:391
+msgid "The ``addMultipleDevices()`` method can be used to add one or more devices to your IoT Platform organization, the maximum size of a request is set to 512KB.  The response will contain the generated authentication tokens for each added device. These authentication tokens must be recorded when processing the response, as lost authentication tokens cannot be retrieved."
+msgstr ""
+"Die Methode ``addMultipleDevices()`` kann dazu verwendet werden, ein oder mehrere Geräte zu Ihrer IoT Platform-Organisation hinzuzufügen. Die maximale Größe einer Anforderung beträgt 512 KB. Die Antwort enthält die generierten Authentifizierungstoken für jedes hinzugefügte Gerät. Diese Authentifizierungstoken müssen beim Verarbeiten der Antwort erfasst werden, da verloren gegangene Authentifizierungstoken nicht wiederhergestellt werden können."
+
+#: ../docs/applications/libraries/python.rst:416
+msgid "Delete Devices in bulk"
+msgstr ""
+"Geräte über eine Massenoperation löschen"
+
+#: ../docs/applications/libraries/python.rst:418
+msgid "The ``deleteMultipleDevices()`` method can be used to delete multiple devices from an IoT Platform organization, each request can contain a maximum of 512KB."
+msgstr ""
+"Die Methode ``deleteMultipleDevices()`` kann dazu verwendet werden, mehrere Geräte in einer IoT Platform-Organisation zu löschen, wobei jede Anforderung maximal 512 KB enthalten kann."
+
+#: ../docs/applications/libraries/python.rst:443
+msgid "Device Type Operations"
+msgstr ""
+"Gerätetypenoperationen"
+
+#: ../docs/applications/libraries/python.rst:445
+msgid "Device types can be used as templates for adding device information to devices as they are added to your organization. Applications can use the IoT Platform API to list, create, delete, view, or update device types in your organization."
+msgstr ""
+"Gerätetypen können als Vorlagen für das Hinzufügen von Geräteinformationen zu Geräten genutzt werden, wenn diese zur Organisation hinzugefügt werden. Anwendungen können die IoT Platform-API verwenden, um Gerätettypen in Ihrer Organisation aufzulisten, zu erstellen, zu löschen, anzuzeigen oder zu aktualisieren."
+
+#: ../docs/applications/libraries/python.rst:449
+msgid "Refer to the Device Types section of the `IBM IoT Platform API <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html>`__ documentation for information about the list of query parameters, the request & response model, and http status codes."
+msgstr ""
+"Der Abschnitt zu Gerätetypen in der Dokumentation `IBM IoT Platform API <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html>`__ enthält Informationen zur Liste der Abfrageparameter, zum Anforderungs/Antwortmodell und zu den HTTP-Statuscodes."
+
+#: ../docs/applications/libraries/python.rst:454
+msgid "Get all Device Types"
+msgstr ""
+"Alle Gerätetypen abrufen"
+
+#: ../docs/applications/libraries/python.rst:456
+msgid "The ``getAllDeviceTypes()`` method can be used to retrieve all device types in your IoT Platform organization. The response contains parameters and application needs to retrieve the dictionary *results* from the response to get the array of devices returned. Other parameters in the response are required to make further call, for example, the *_bookmark* element can be used to page through results. Issue the first request without specifying a bookmark, then take the bookmark returned in the response and provide it on the request for the next page. Repeat until the end of the result set indicated by the absence of a bookmark. Each request must use exactly the same values for the other parameters, or the results are undefined."
+msgstr ""
+"Die Methode ``getAllDeviceTypes()`` kann dazu verwendet werden, alle Gerätetypen in Ihrer IoT Platform-Organisation abzurufen. Die Antwort enthält Parameter, die von der Anwendung benötigt werden, um die Wörterverzeichnis*ergebnisse* aus der Antwort abzurufen und die zurückgegebene Gruppe von Geräten zu erhalten. Andere Parameter in der Antwort sind für weitere Aufrufe erforderlich, z. B. kann das Element *_bookmark* zum Blättern in den Ergebnissen verwendet werden. Setzen Sie die erste Anforderung ohne Angabe eines Lesezeichens ab, verwenden Sie dann das in der Antwort zurückgegebene Lesezeichen und geben Sie es in der Anforderung für die nächste Seite an. Wiederholen Sie diesen Vorgang, bis das Ende der Ergebnismenge erreicht ist. Dies wird dadurch gekennzeichnet, dass kein Lesezeichen vorhanden ist. Jede Anforderung muss genau dieselben Werte für die anderen Parameter verwenden, da andernfalls die Ergebnisse nicht definiert sind."
+
+#: ../docs/applications/libraries/python.rst:485
+msgid "Add a Device Type"
+msgstr ""
+"Gerätetyp hinzufügen"
+
+#: ../docs/applications/libraries/python.rst:487
+msgid "The ``addDeviceType()`` method can be used to register a device type to IoT Platform. In each request, you must first define the device information, and device metadata elements which you want to be applied to all devices of this type. The device information element is comprised of several variables, including, serial number, manufacturer, model, class, description, firmware and hardware versions, and descriptive location. The metadata element is comprised of custom variables and values which can be defined by the user."
+msgstr ""
+"Die Methode ``addDeviceType()`` kann dazu verwendet werden, einen Gerätetyp in IoT Platform zu registrieren. In jeder Anforderung müssen Sie zuerst die Geräteinformationen und die Gerätemetadatenelemente, die für alle Geräte dieses Typs angewendet werden sollen, definieren. Das Geräteinformationselement besteht aus mehreren Variablen, wie z. B. Seriennummer, Hersteller, Modell, Klasse, Beschreibung, Firmware- und Hardwareversion sowie beschreibender Standort. Das Metadatenelement besteht aus angepassten Variablen und Werten, die vom Benutzer definiert werden können."
+
+#: ../docs/applications/libraries/python.rst:523
+msgid "Delete a Device Type"
+msgstr ""
+"Gerätetyp löschen"
+
+#: ../docs/applications/libraries/python.rst:525
+msgid "The ``deleteDeviceType()`` method can be used to delete a device type from your IoT Platform organization."
+msgstr ""
+"Die Methode ``deleteDeviceType()`` kann dazu verwendet werden, einen Gerätetyp in Ihrer IoT Platform-Organisation zu löschen."
+
+#: ../docs/applications/libraries/python.rst:542
+msgid "Get a Device Type"
+msgstr ""
+"Gerätetyp abrufen"
+
+#: ../docs/applications/libraries/python.rst:544
+msgid "The ``getDeviceType()`` method retrieves information on a given device type. The ``typeId`` of the device type you wish to retrieve must be used as a parameter"
+msgstr ""
+"Die Methode ``getDeviceType()`` ruft Informationen zu einem bestimmten Gerätetyp ab. Die Typ-ID (``typeId``) des Gerätetyps, den Sie abrufen möchten, muss als Parameter verwendet werden."
+
+#: ../docs/applications/libraries/python.rst:561
+msgid "Update a Device Type"
+msgstr ""
+"Gerätetyp aktualisieren"
+
+#: ../docs/applications/libraries/python.rst:563
+msgid "The ``updateDeviceType()`` method can be used to modify the properties of a device type. When using this method, several parameters must be defined. Firstly, the ``typeId`` of the device type to be updated must be specified, then the ``description``, ``deviceInfo``, and ``metadata`` elements."
+msgstr ""
+"Die Methode ``updateDeviceType()`` kann dazu verwendet werden, die Eigenschaften eines Gerätetyps zu modifizieren. Bei der Verwendung dieser Methode muss eine Reihe von Parametern definiert werden. Zuerst muss die Typ-ID (``typeId``) des zu aktualisierenden Gerätetyps angegeben werden, anschließend müssen die Elemente ``description``, ``deviceInfo`` und ``metadata`` angegeben werden."
+
+#: ../docs/applications/libraries/python.rst:599
+msgid "Device operations"
+msgstr ""
+"Geräteoperationen"
+
+#: ../docs/applications/libraries/python.rst:601
+msgid "Device operations made available through the API include listing, adding, removing, viewing, updating, viewing location and viewing  device management information of devices in an IoT Platform organization."
+msgstr ""
+"Zu den über die API verfügbar gemachten Geräteoperationen gehört Folgendes: Auflisten, Hinzufügen, Entfernen, Anzeigen, Aktualisieren , Standortinformationen anzeigen und Gerätemanagementinformationen anzeigen für Geräte in einer IoT Platform-Organisation."
+
+#: ../docs/applications/libraries/python.rst:603
+msgid "Refer to the Device section of the `IoT Platform API <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html>`__ for information about the list of query parameters, the request & response model and http status code."
+msgstr ""
+"Der Abschnitt zu Geräten in der Dokumentation `IoT Platform API <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html>`__ enthält Informationen zur Liste der Abfrageparameter, zum Anforderungs-/Antwortmodell und zum HTTP-Statuscode."
+
+#: ../docs/applications/libraries/python.rst:606
+msgid "Get Devices of a particular Device Type"
+msgstr ""
+"Geräte eines bestimmten Gerätetyps abrufen"
+
+#: ../docs/applications/libraries/python.rst:608
+msgid "The *retrieveDevices()* method can be used to retrieve all the devices of a particular device type in an organization from IoT Platform. For example,"
+msgstr ""
+"Die Methode *retrieveDevices()* kann dazu verwendet werden, alle Geräte eines bestimmten Gerätetyps in einer Organisation aus IoT Platform abzurufen. Beispiel:"
+
+#: ../docs/applications/libraries/python.rst:615
+msgid "The response contains parameters and application needs to retrieve the dictionary *results* from the response to get the array of devices returned. Other parameters in the response are required to make further call, for example, the *_bookmark* element can be used to page through results. Issue the first request without specifying a bookmark, then take the bookmark returned in the response and provide it on the request for the next page. Repeat until the end of the result set indicated by the absence of a bookmark. Each request must use exactly the same values for the other parameters, or the results are undefined."
+msgstr ""
+"Die Antwort enthält Parameter, die von der Anwendung benötigt werden, um die Wörterverzeichnis*ergebnisse* aus der Antwort abzurufen und die zurückgegebene Gruppe von Geräten zu erhalten. Andere Parameter in der Antwort sind für weitere Aufrufe erforderlich, z. B. kann das Element *_bookmark* zum Blättern in den Ergebnissen verwendet werden. Setzen Sie die erste Anforderung ohne Angabe eines Lesezeichens ab, verwenden Sie dann das in der Antwort zurückgegebene Lesezeichen und geben Sie es in der Anforderung für die nächste Seite an. Wiederholen Sie diesen Vorgang, bis das Ende der Ergebnismenge erreicht ist. Dies wird dadurch gekennzeichnet, dass kein Lesezeichen vorhanden ist. Jede Anforderung muss genau dieselben Werte für die anderen Parameter verwenden, da andernfalls die Ergebnisse nicht definiert sind."
+
+#: ../docs/applications/libraries/python.rst:617
+#: ../docs/applications/libraries/python.rst:889
+msgid "In order to pass the *_bookmark* or any other condition, the overloaded method must be used. The overloaded method takes the parameters in the form of dictionary as shown below,"
+msgstr ""
+"Für die Übergabe des Elements *_bookmark* oder einer anderen Bedingung muss die überladene Methode verwendet werden. Die überladene Methode verwendet die Parameter im Wörterverzeichnisformat, wie im Folgenden dargestellt,"
+
+#: ../docs/applications/libraries/python.rst:623
+msgid "The above snippet sorts the response based on device id and uses the bookmark to page through the results."
+msgstr ""
+"Mit dem oben dargestellten Snippet wird die Antwort auf der Basis der Geräte-ID sortiert und das Lesezeichen verwendet, um in den Ergebnissen zu blättern."
+
+#: ../docs/applications/libraries/python.rst:626
+msgid "Add a Device"
+msgstr ""
+"Gerät hinzufügen"
+
+#: ../docs/applications/libraries/python.rst:628
+msgid "The *registerDevice()* method is used to add a device to an IoT Platform organization. The *registerDevice()* method adds a single device to your IoT Platform organization. The parameters which can be set when adding a device are:"
+msgstr ""
+"Die Methode *registerDevice()* wird dazu verwendet, ein Gerät in einer IoT Platform-Organisation hinzuzufügen. Die Methode *registerDevice()* fügt ein einzelnes Gerät zu Ihrer IoT Platform-Organisation hinzu. Die folgenden Parameter können beim Hinzufügen eines Geräts festgelegt werden:"
+
+#: ../docs/applications/libraries/python.rst:630
+msgid "deviceTypeId: *Optional*. Assigns a device type to the device. Where there is a clash between variables defined by the device type and variables defined by under deviceInfo, the device specific variables will take precedence."
+msgstr ""
+"deviceTypeId: *Optional*. Weist dem Gerät einen Gerätetyp zu. Wenn zwischen den durch den Gerätetyp definierten Variablen und den unter 'deviceInfo' definierten Variablen ein Konflikt besteht, haben die gerätespezifischen Variablen Vorrang."
+
+#: ../docs/applications/libraries/python.rst:631
+msgid "deviceId: *Mandatory*."
+msgstr ""
+"deviceId: *Obligatorisch*."
+
+#: ../docs/applications/libraries/python.rst:632
+msgid "authToken: *Optional*. If no authentication token is supplied, one will be generated and included in the response."
+msgstr ""
+"authToken: *Optional*. Wenn kein Authentifizierungstoken angegeben wird, wird eines generiert und in die Antwort eingefügt."
+
+#: ../docs/applications/libraries/python.rst:633
+msgid "deviceInfo: *Optional*. This parameter is optional, and can contain a number of variables, including: serialNumber, manufacturer, model, deviceClass, description, firmware and hardware versions, and descriptiveLocation."
+msgstr ""
+"deviceInfo: *Optional*. Dieser Parameter ist optional und kann eine Reihe von Variablen enthalten, wie z. B. Seriennummer, Hersteller, Modell, Geräteklasse, Beschreibung, Firmware- und Hardwareversion sowie beschreibender Standort."
+
+#: ../docs/applications/libraries/python.rst:634
+msgid "metadata: *Optional*. Metadata can optionally be added in the form of custom field:value string pairs. An example is given in the code sample below."
+msgstr ""
+"metadata: *Optional*. Metadaten können optional in Form von angepassten 'Feld:Wert'-Zeichenfolgepaaren hinzugefügt werden. Das nachfolgende Codebeispiel veranschaulicht dies."
+
+#: ../docs/applications/libraries/python.rst:635
+msgid "location: *Optional*. This parameter contains the longitude, latitude, elevation, accuracy, and mesauredDateTime variables."
+msgstr ""
+"location: *Optional*. Dieser Parameter enthält die Variablen für Längengrad, Breitengrad, Höhe, Genauigkeit und Datum/Uhrzeit der Messung."
+
+#: ../docs/applications/libraries/python.rst:637
+msgid "For more information on the parameters presented here, and the response format and codes, please see the relevant section of `API documentation <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html#!/Devices/post_device_types_typeId_devices>`__."
+msgstr ""
+"Weitere Informationen zu den hier dargestellten Parametern sowie zum Antwortformat und den Antwortcodes finden Sie im relevanten Abschnitt in der `API-Dokumentation <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html#!/Devices/post_device_types_typeId_devices>`__."
+
+#: ../docs/applications/libraries/python.rst:639
+msgid "When using the *registerDevice()* method, you must define the mandatory deviceID parameter, and any of the optional parameters you require for your device, then call the method using the parameters you've selected."
+msgstr ""
+"Bei der Verwendung der Methode *registerDevice()* müssen Sie den obligatorischen Parameter 'deviceID' sowie alle optionalen Parameter, die für das jeweilige Gerät erforderlich sind, definieren und anschließend die Methode mit den ausgewählten Parametern aufrufen."
+
+#: ../docs/applications/libraries/python.rst:642
+#: ../docs/applications/libraries/python.rst:703
+#: ../docs/applications/libraries/python.rst:746
+msgid "Sample"
+msgstr ""
+"Beispiel"
+
+#: ../docs/applications/libraries/python.rst:644
+msgid "The following code sample should be inserted after the constructor code in a .py file. This code demonstrates defining the deviceId, authToken, metadata, deviceInfo parameters, and location parameters and then using the method with those parameters and adding a device type."
+msgstr ""
+"Das folgende Codebeispiel muss in einer .py-Datei nach dem Konstruktorcode eingefügt werden. Dieser Code veranschaulicht die Definition der Parameter für die Geräte-ID, das Authentifizierungstoken, die Metadaten, die Geräteinformationen und den Standort sowie die anschließende Verwendung der Methode mit diesen Parametern und das Hinzufügen eines Gerätetyps."
+
+#: ../docs/applications/libraries/python.rst:658
+msgid "Delete a Device"
+msgstr ""
+"Gerät löschen"
+
+#: ../docs/applications/libraries/python.rst:660
+msgid "The *deleteDevice()* method is used to remove a device from an IoT Platform organization. When deleting a device using this method, the parameters which must be specified in the method are the deviceTypeId, and the deviceId."
+msgstr ""
+"Die Methode *deleteDevice()* wird verwendet, um ein Gerät aus einer IoT Platform-Organisation zu entfernen. Beim Löschen eines Geräts mithilfe dieser Methode müssen in der Methode die Parameter 'deviceTypeId' und 'deviceId' angegeben werden."
+
+#: ../docs/applications/libraries/python.rst:662
+#: ../docs/applications/libraries/python.rst:674
+msgid "The following code snippet provides an example of the format required for this method."
+msgstr ""
+"Das folgende Code-Snippet ist ein Beispiel des für diese Methode erforderlichen Formats."
+
+#: ../docs/applications/libraries/python.rst:670
+msgid "Get a Device"
+msgstr ""
+"Gerät abrufen"
+
+#: ../docs/applications/libraries/python.rst:672
+msgid "The *getDevice()* method can be used to retrieve a device from an IoT Platform organization. When retrieving device details using this method, the parameters which must be specified in the method are the deviceTypeId, and the deviceId."
+msgstr ""
+"Die Methode *getDevice()* kann dazu verwendet werden, ein Gerät aus einer IoT Platform-Organisation abzurufen. Beim Abrufen von Gerätedetails mithilfe dieser Methode müssen in der Methode die Parameter 'deviceTypeId' und 'deviceId' angegeben werden."
+
+#: ../docs/applications/libraries/python.rst:682
+msgid "Get all Devices"
+msgstr ""
+"Alle Geräte abrufen"
+
+#: ../docs/applications/libraries/python.rst:684
+msgid "The *getAllDevices()* method can be used to retrieve all devices within an IoT Platform organization."
+msgstr ""
+"Die Methode *getAllDevices()* kann dazu verwendet werden, alle Geräte in einer IoT Platform-Organisation abzurufen."
+
+#: ../docs/applications/libraries/python.rst:692
+msgid "Update a Device"
+msgstr ""
+"Gerät aktualisieren"
+
+#: ../docs/applications/libraries/python.rst:694
+msgid "The *updateDevice()* method is used to modify one or more properties of a device. Any property in the deviceInfo or metadata parameters can be updated. In order to update a device property, it must be defined above the method. The status parameter should contain \"alert\": True. The Alert property controls whether a device will display error codes in the IoT Platform user interface, and should be set by default to 'True'."
+msgstr ""
+"Die Methode *updateDevice()* wird dazu verwendet, eine oder mehrere Eigenschaften eines Geräts zu modifizieren. Jede beliebige Eigenschaft des Parameters 'deviceInfo' bzw. 'metadata' kann aktualisiert werden. Zum Aktualisieren einer Geräteeigenschaft muss dieser oberhalb der Methode definiert sein. Der Statusparameter muss die Angabe \"alert\": True enthalten. Die Eigenschaft 'Alert' steuert, ob für ein Gerät Fehlercodes in der Benutzerschnittstelle von IoT Platform angezeigt werden, und sie muss standardmäßig auf 'True' gesetzt werden."
+
+#: ../docs/applications/libraries/python.rst:705
+msgid "In this sample, the following code identifies a specific device, and updates several properties under the deviceInfo parameter."
+msgstr ""
+"In diesem Beispiel wird durch den folgenden Code ein bestimmtes Gerät identifiziert und eine Reihe von Eigenschaften unter dem Parameter 'deviceInfo' aktualisiert."
+
+#: ../docs/applications/libraries/python.rst:714
+msgid "Get Location Information"
+msgstr ""
+"Positionsinformationen abrufen"
+
+#: ../docs/applications/libraries/python.rst:716
+msgid "The *getDeviceLocation()* method can be used to retrieve the location information of a device. The parameters required for retrieving the location data are deviceTypeId and deviceId."
+msgstr ""
+"Die Methode *getDeviceLocation()* kann dazu verwendet werden, die Standortinformationen eines Geräts abzurufen. Zum Abrufen von Standortdaten sind die Parameter 'deviceTypeId' und 'deviceId' erforderlich."
+
+#: ../docs/applications/libraries/python.rst:722
+msgid "The response to this method contains the longitude, latitude, elevation, accuracy, measuredTimeStamp, and updatedTimeStamp properties."
+msgstr ""
+"Die Antwort auf diese Methode enthält die Eigenschaften für Längengrad, Breitengrad, Höhe, Genauigkeit, Datum/Uhrzeit der Messung und Datum/Uhrzeit der Aktualisierung."
+
+#: ../docs/applications/libraries/python.rst:726
+msgid "Update Location Information"
+msgstr ""
+"Positionsinformationen aktualisieren"
+
+#: ../docs/applications/libraries/python.rst:728
+msgid "The *updateDeviceLocation()* method is used to modify the location information for a device. Simlarly to updating device properties, the deviceLocation parameter must be defined with the changes you wish to apply. The code sample below demonstrates changing the location data for a given device."
+msgstr ""
+"Die Methode *updateDeviceLocation()* wird dazu verwendet, die Standortinformationen für ein Gerät zu modifizieren. Ähnlich wie bei der Aktualisierung von Geräteeigenschaften muss für die anzuwendenden Änderungen der Parameter 'deviceLocation' angegeben werden. Das nachfolgende Codebeispiel veranschaulicht die Änderung von Standortdaten für ein bestimmtes Gerät."
+
+#: ../docs/applications/libraries/python.rst:735
+msgid "If no date is supplied, the entry is added with the current date and time."
+msgstr ""
+"Wird kein Datum angegeben, wird der Eintrag mit dem aktuellen Datum und der aktuellen Uhrzeit hinzugefügt."
+
+#: ../docs/applications/libraries/python.rst:739
+msgid "Get Device Management Information"
+msgstr ""
+"Gerätemanagementinformationen abrufen"
+
+#: ../docs/applications/libraries/python.rst:741
+msgid "The *getDeviceManagementInformation()* method is used to get the device management information for a device. The response contains the last activity date-time, the device's dormant status (true/false), support for device and firmware actions, and firmware data. For a comprehensive list of response content, please see the relevant API documentation."
+msgstr ""
+"Die Methode *getDeviceManagementInformation()* wird dazu verwendet, die Gerätemanagementinformationen für ein Gerät abzurufen. Die Antwort enthält Datum und Uhrzeit der letzten Aktivität, den Ruhestatus des Geräts (true/false), Unterstützung für Geräte- und Firmwareaktionen sowie Firmwaredaten. Eine umfassende Liste der Antwortinhalte finden Sie in der relevanten API-Dokumentation."
+
+#: ../docs/applications/libraries/python.rst:743
+msgid "The following code sample will return the device management information for a device with the deviceId \"00aabbccde03\", with deviceTypeId \"iotsample-arduino\"."
+msgstr ""
+"Mit dem folgenden Codebeispiel werden die Gerätemanagementinformationen für ein Gerät mit der Geräte-ID \"00aabbccde03\" und der Gerätetyp-ID \"iotsample-arduino\" zurückgegeben."
+
+#: ../docs/applications/libraries/python.rst:756
+msgid "Device diagnostic operations"
+msgstr ""
+"Gerätediagnoseoperationen"
+
+#: ../docs/applications/libraries/python.rst:758
+msgid "Applications can use device diagnostic operations to clear logs, retrieve all or specific logs for a device, add log information, delete logs, clear error codes, get device error codes, and add an error codes."
+msgstr ""
+"Anwendungen können Gerätediagnoseoperationen verwenden, um Protokolle zu löschen, alle oder bestimmte Protokolle für ein Gerät abzurufen, Protokollinformationen hinzuzufügen, Protokolle zu löschen, Fehlercodes zu löschen, Gerätefehlercodes abzurufen und Fehlercodes hinzuzufügen."
+
+#: ../docs/applications/libraries/python.rst:760
+msgid "For more detailed information on query and response models, response codes, and query paramters, please see the relevant API documentation."
+msgstr ""
+"Detailliertere Informationen zu Abfrage- und Antwortmodellen, Antwortcodes und Abfrageparametern finden Sie in der entsprechenden API-Dokumentation."
+
+#: ../docs/applications/libraries/python.rst:763
+msgid "Get Diagnostic logs"
+msgstr ""
+"Diagnoseprotokolle abrufen"
+
+#: ../docs/applications/libraries/python.rst:765
+msgid "The *getAllDiagnosticLogs()* method is used to retrieve all diagnostic logs for a specific device. The *getAllDiagnosticLogs()* method requires the deviceTypeId and deviceId parameters."
+msgstr ""
+"Die Methode *getAllDiagnosticLogs()* wird dazu verwendet, alle Diagnoseprotokolle für ein bestimmtes Gerät abzurufen. Die Methode *getAllDiagnosticLogs()* benötigt die Parameter 'deviceTypeId' und 'deviceId'."
+
+#: ../docs/applications/libraries/python.rst:771
+msgid "The response model for this method contains the logId, message, severity, data, and timestamp."
+msgstr ""
+"Das Antwortmodell für diese Methode enthält Variablen 'logID', 'message', 'severity', 'data' und 'timestamp'."
+
+#: ../docs/applications/libraries/python.rst:774
+msgid "Clear Diagnostic logs for a Device"
+msgstr ""
+"Diagnoseprotokolle für ein Gerät löschen"
+
+#: ../docs/applications/libraries/python.rst:776
+msgid "The *clearAllDiagnosticLogs()* method is used to delete all diagnostic logs for a specific device. The required parameters are deviceTypeId and deviceId. Care should be taken when deleting logs, as logs cannot be recovered once deleted."
+msgstr ""
+"Die Methode *clearAllDiagnosticLogs()* wird dazu verwendet, alle Diagnoseprotokolle für ein bestimmtes Gerät zu löschen. Die Parameter 'deviceTypeId' und 'deviceId' sind erforderlich. Beim Löschen von Protokollen muss vorsichtig vorgegangen werden, da gelöschte Protokolle nicht wiederhergestellt werden können."
+
+#: ../docs/applications/libraries/python.rst:784
+msgid "Add a Diagnostic log"
+msgstr ""
+"Diagnoseprotokoll hinzufügen"
+
+#: ../docs/applications/libraries/python.rst:786
+msgid "The *addDiagnosticLog()* method is used to add an entry in the diagnostic log of the device. The log may be pruned as the new entry is added. If no date is supplied, the entry is added with the current date and time. To use this method, first define a 'logs' parameter with the following variables:"
+msgstr ""
+"Die Methode *addDiagnosticLog()* wird dazu verwendet, einen Eintrag im Diagnoseprotokoll des Geräts hinzuzufügen. Das Protokoll kann beim Hinzufügen des neuen Eintrags bereinigt werden. Wird kein Datum angegeben, wird der Eintrag mit dem aktuellen Datum und der aktuellen Uhrzeit hinzugefügt. Zur Verwendung dieser Methode definieren Sie zuerst den Parameter 'logs' mit den folgenden Variablen:"
+
+#: ../docs/applications/libraries/python.rst:788
+msgid "message: This variable is mandatory, and contains the new diagnostic message."
+msgstr ""
+"message: Diese Variable ist obligatorisch und enthält die neue Diagnosenachricht."
+
+#: ../docs/applications/libraries/python.rst:789
+msgid "severity: This variable is optional. If used it corresponds to the severity of the diagnostic log, and should be 0, 1, or 2, corresponding to the informational, warning, and error categories."
+msgstr ""
+"severity: Diese Variable ist optional. Wenn sie verwendet wird, entspricht sie dem Schweregrad des Diagnoseprotokolls und muss den Wert 0, 1 oder 2 für die Kategorien 'Informationsnachricht', 'Warnung' bzw. 'Fehlernachricht' aufweisen."
+
+#: ../docs/applications/libraries/python.rst:790
+msgid "data: This variable is optional, and should contain diagnostic data."
+msgstr ""
+"data: Diese Variable ist optional und enthält Diagnosedaten."
+
+#: ../docs/applications/libraries/python.rst:791
+#: ../docs/applications/libraries/python.rst:849
+msgid "timestamp: This variable is optional, and contains the date and time of the log entry in ISO8601 format. If this variable is not included, it is automatically added with the current date and time."
+msgstr ""
+"timestamp: Diese Variable ist optional und enthält das Datum und die Uhrzeit des Protokolleintrags im ISO8601-Format. Wird diese Variable nicht angegeben, wird der Eintrag automatisch mit dem aktuellen Datum und der aktuellen Uhrzeit hinzugefügt."
+
+#: ../docs/applications/libraries/python.rst:793
+msgid "The other necessary paramteres required in the method are the deviceTypeId and deviceId for the specific device."
+msgstr ""
+"Darüber hinaus sind in der Methode die Parameter 'deviceTypeId' und 'deviceId' für das jeweilige Gerät erforderlich."
+
+#: ../docs/applications/libraries/python.rst:795
+msgid "The code sample below contains an example of the method."
+msgstr ""
+"Das unten aufgeführte Codebeispiel enthält ein Beispiel der Methode."
+
+#: ../docs/applications/libraries/python.rst:804
+msgid "Retrieve a specific Diagnostic log"
+msgstr ""
+"Bestimmtes Diagnoseprotokoll abrufen"
+
+#: ../docs/applications/libraries/python.rst:806
+msgid "The *getDiagnosticLog()* method is used to retrieve a specific diagnostic log for a specified device based on the log id. The required parameters for this method are the deviceTypeId, deviceId, and logId."
+msgstr ""
+"Die Methode *getDiagnosticLog()* wird dazu verwendet, ein bestimmtes Diagnoseprotokoll für ein angegebenes Gerät auf der Basis der Protokoll-ID abzurufen. Für diese Methode sind die Parameter 'deviceTypeId', 'deviceId' und 'logId' erforderlich."
+
+#: ../docs/applications/libraries/python.rst:814
+msgid "Delete a Diagnostic log"
+msgstr ""
+"Diagnoseprotokoll löschen"
+
+#: ../docs/applications/libraries/python.rst:816
+msgid "The *deleteDiagnosticLog()* can be used to delete a specific diagnostic log. In order to specify a diagnostic log, the deviceTypeId, deviceId, and logId parameters should be supplied."
+msgstr ""
+"Die Methode *deleteDiagnosticLog()* kann dazu verwendet werden, ein bestimmtes Diagnoseprotokoll zu löschen. Zur Angabe eines Diagnoseprotokolls müssen die Parameter 'deviceTypeId', 'deviceId' und 'logId' angegeben werden."
+
+#: ../docs/applications/libraries/python.rst:824
+msgid "Retrieve Device Error Codes"
+msgstr ""
+"Gerätefehlercodes abrufen"
+
+#: ../docs/applications/libraries/python.rst:826
+msgid "The *getAllDiagnosticErrorCodes()* method is used to retrieve all diagnostic error codes associated with a specific device."
+msgstr ""
+"Die Methode *getAllDiagnosticErrorCodes()* wird dazu verwendet, alle Diagnosefehlercodes abzurufen, die einem bestimmten Gerät zugeordnet sind."
+
+#: ../docs/applications/libraries/python.rst:834
+msgid "Clear Diagnostic Error Codes"
+msgstr ""
+"Diagnosefehlercodes löschen"
+
+#: ../docs/applications/libraries/python.rst:836
+msgid "The *clearAllErrorCodes()* method is used to clear the list of error codes associated with the device. The list is replaced with a single error code of zero."
+msgstr ""
+"Die Methode *clearAllErrorCodes()* wird dazu verwendet, die Liste der Fehlercodes, die dem Gerät zugeordnet sind, zu löschen. Die Liste wird durch den einzelnen Fehlercode 0 ersetzt."
+
+#: ../docs/applications/libraries/python.rst:844
+msgid "Add single Diagnostic ErrorCode"
+msgstr ""
+"Einzelnen Diagnosefehlercode hinzufügen"
+
+#: ../docs/applications/libraries/python.rst:846
+msgid "The *addErrorCode()* method is used to add an error code to the list of error codes associated with the device. The list may be pruned as the new entry is added. The parameters required in the method are deviceTypeId, deviceId, and errorCode. The errorCode parameter contains the following variables:"
+msgstr ""
+"Die Methode *addErrorCode()* wird dazu verwendet, einen Fehlercode zur Liste der Fehlercodes hinzuzufügen, die dem Gerät zugeordnet sind. Die Liste kann beim Hinzufügen des neuen Eintrags bereinigt werden. In dieser Methode sind die Parameter 'deviceTypeId', 'deviceId' und 'errorCode' erforderlich. Der Parameter 'errorCode' enthält die folgenden Variablen:"
+
+#: ../docs/applications/libraries/python.rst:848
+msgid "errorCode: This variable is mandatory and should be set as an integer. This sets the number of the error code to be created."
+msgstr ""
+"errorCode: Diese Variable ist obligatorisch und muss als ganze Zahl definiert werden. Hiermit wird die Nummer des zu erstellenden Fehlercodes festgelegt."
+
+#: ../docs/applications/libraries/python.rst:859
+msgid "Connection problem determination"
+msgstr ""
+"Problembestimmung bei Verbindungsproblemen"
+
+#: ../docs/applications/libraries/python.rst:861
+msgid "The *getDeviceConnectionLogs()* method is used to list connection log events for a device. This information can be used to help diagnose connectivity problems between the device and the IoT Platform service. The entries record successful connection, unsuccessful connection attempts, intentional disconnection and server-initiated disconnection events."
+msgstr ""
+"Die Methode *getDeviceConnectionLogs()* wird dazu verwendet, Verbindungsprotokollereignisse für ein Gerät aufzulisten. Diese Informationen können dazu verwendet werden, Konnektivitätsprobleme zwischen dem Gerät und dem IoT Platform-Service zu diagnostizieren. Mit den Einträgen werden erfolgreiche Verbindungen, nicht erfolgreiche Verbindungsversuche, absichtliche Verbindungstrennungsereignisse und vom Server initiierte Verbindungstrennungsereignisse aufgezeichnet."
+
+#: ../docs/applications/libraries/python.rst:867
+msgid "The response includes a list of log entries, containing log messages and timestamps."
+msgstr ""
+"Die Antwort enthält eine Liste mit Protokolleinträgen, die Protokollnachrichten und Zeitmarken umfasst."
+
+#: ../docs/applications/libraries/python.rst:872
+msgid "Historical Event Retrieval"
+msgstr ""
+"Abrufen historischer Ereignisse"
+
+#: ../docs/applications/libraries/python.rst:874
+msgid "These operations can be used to view events from all devices, view events from a device type or to view events for a specific device."
+msgstr ""
+"Diese Operationen können dazu verwendet werden, Ereignisse aller Geräte, Ereignisse eines bestimmten Gerätetyps und Ereignisse eines bestimmten Geräts anzuzeigen."
+
+#: ../docs/applications/libraries/python.rst:876
+msgid "Refer to the Historical Event Retrieval section of the `IBM IoT Platform API <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html>`__ for information about the list of query parameters, the request & response model and http status code."
+msgstr ""
+"Der Abschnitt zum Abrufen historischer Ereignisse in der Dokumentation `IBM IoT Platform API <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html>`__ enthält Informationen zur Liste der Abfrageparameter, zum Anforderungs-/Antwortmodell und zum HTTP-Statuscode."
+
+#: ../docs/applications/libraries/python.rst:879
+msgid "View events from all devices"
+msgstr ""
+"Ereignisse aller Geräte anzeigen"
+
+#: ../docs/applications/libraries/python.rst:881
+msgid "Method getHistoricalEvents() can be used to view events across all devices registered to the organization."
+msgstr ""
+"Die Methode 'getHistoricalEvents()' kann dazu verwendet werden, Ereignisse aller Geräte anzuzeigen, die für die Organisation registriert sind."
+
+#: ../docs/applications/libraries/python.rst:887
+msgid "The response will contain some parameters and the application needs to retrieve the JSON element *events* from the response to get the array of events returned. Other parameters in the response are required to make further call, for example, the *_bookmark* element can be used to page through results. Issue the first request without specifying a bookmark, then take the bookmark returned in the response and provide it on the request for the next page. Repeat until the end of the result set indicated by the absence of a bookmark. Each request must use exactly the same values for the other parameters, or the results are undefined."
+msgstr ""
+"Die Antwort enthält einige Parameter und die Anwendung muss das JSON-Element *events* aus der Antwort abrufen, um die Gruppe der zurückgegebenen Ereignisse zu erhalten. Andere Parameter in der Antwort sind für weitere Aufrufe erforderlich, z. B. kann das Element *_bookmark* zum Blättern in den Ergebnissen verwendet werden. Setzen Sie die erste Anforderung ohne Angabe eines Lesezeichens ab, verwenden Sie dann das in der Antwort zurückgegebene Lesezeichen und geben Sie es in der Anforderung für die nächste Seite an. Wiederholen Sie diesen Vorgang, bis das Ende der Ergebnismenge erreicht ist. Dies wird dadurch gekennzeichnet, dass kein Lesezeichen vorhanden ist. Jede Anforderung muss genau dieselben Werte für die anderen Parameter verwenden, da andernfalls die Ergebnisse nicht definiert sind."
+
+#: ../docs/applications/libraries/python.rst:898
+msgid "The above snippet returns the events between the start and end time."
+msgstr ""
+"Das oben angeführte Code-Snippet gibt die Ereignisse zwischen Start- und Endzeit zurück."
+
+#: ../docs/applications/libraries/python.rst:901
+msgid "View events from a device type"
+msgstr ""
+"Ereignisse eines Gerätetyps anzeigen"
+
+#: ../docs/applications/libraries/python.rst:903
+msgid "The *getHistoricalEvents()* method is used to view events from all the devices of a particular device type."
+msgstr ""
+"Die Methode *getHistoricalEvents()* wird dazu verwendet, Ereignisse aller Geräte eines bestimmten Gerätetyps anzuzeigen."
+
+#: ../docs/applications/libraries/python.rst:909
+msgid "The response will contain some parameters and the application needs to retrieve the JSON element *events* from the response to get the array of events returned. As mentioned in the *view events from all devices* section, the overloaded method can be used to control the output."
+msgstr ""
+"Die Antwort enthält einige Parameter und die Anwendung muss das JSON-Element *events* aus der Antwort abrufen, um die Gruppe der zurückgegebenen Ereignisse zu erhalten. Wie im Abschnitt *Ereignisse aller Geräte anzeigen* erwähnt, kann die überladene Methode zur Steuerung der Ausgabe verwendet werden."
+
+#: ../docs/applications/libraries/python.rst:913
+msgid "View events from a device"
+msgstr ""
+"Ereignisse eines Geräts anzeigen"
+
+#: ../docs/applications/libraries/python.rst:915
+msgid "The *getHistoricalEvents()* method is used to view events from a specific device. DeviceTypeId and deviceId parameters are required in order to use this method."
+msgstr ""
+"Die Methode *getHistoricalEvents()* wird dazu verwendet, Ereignisse eines bestimmten Geräts anzuzeigen. Zur Verwendung dieser Methode sind die Parameter 'DeviceTypeId' und 'deviceId' erforderlich."
+
+#: ../docs/applications/libraries/python.rst:921
+msgid "The response will contain more parameters and application needs to retrieve the JSON element *events* from the response to get the array of events returned."
+msgstr ""
+"Die Antwort enthält weitere Parameter und die Anwendung muss das JSON-Element *events* aus der Antwort abrufen, um die Gruppe der zurückgegebenen Ereignisse zu erhalten."
+

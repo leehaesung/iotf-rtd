@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/gateways/dashboard.rst:2
+msgid "Connecting and Using a Gateway Device using the IoT Platform Dashboard"
+msgstr ""
+"Connexion et utilisation d'un terminal de passerelle avec le tableau de bord IoT Platform "
+
+#: ../docs/gateways/dashboard.rst:4
+msgid "This task describes the process of connecting a gateway device, which connects itself, and devices behind the gateway, and sends data from itself and devices behind it to the IoT Platform."
+msgstr ""
+"Cette tâche décrit le processus de connexion d'un terminal de passerelle qui se connecte lui-même ainsi que les terminaux situés derrière la passerelle, et qui envoie ses données ainsi que des données depuis les terminaux à IoT Platform. "
+
+#: ../docs/gateways/dashboard.rst:6
+msgid "Gateways can also subscribe to commands on behalf of devices connected to the gateway."
+msgstr ""
+"Une passerelle peut également s'abonner à des commandes pour le compte des terminaux qui lui sont connectés. "
+
+#: ../docs/gateways/dashboard.rst:9
+msgid "Prerequisites"
+msgstr ""
+"Conditions préalables"
+
+#: ../docs/gateways/dashboard.rst:11
+msgid "This task assumes that you already have an IoT Platform organization."
+msgstr ""
+"Cette tâche suppose que vous disposez déjà d'une organisation IoT Platform. "
+
+#: ../docs/gateways/dashboard.rst:14
+msgid "Procedure"
+msgstr ""
+"Procédure"
+
+#: ../docs/gateways/dashboard.rst:16
+msgid "Creating a device type for your gateway: A gateway has more rights than a normal device, and can send and receive device data on behalf of other devices."
+msgstr ""
+"Création d'un type de terminal pour votre passerelle : une passerelle dispose de davantage de droits qu'un terminal standard, et peut envoyer et recevoir des données de terminal pour le compte d'autres terminaux. "
+
+#: ../docs/gateways/dashboard.rst:18
+msgid "In your organization dashboard 'Devices' tab, select the 'Device Types' sub-tab. Click 'Create Type'. Click 'Create gateway type', and follow the instructions in the flow, including adding any device properties and metadata. Click 'Create' to complete the flow and create the device type."
+msgstr ""
+"Dans l'onglet 'Terminaux' du tableau de bord de votre organisation, sélectionnez le sous-onglet 'Types de terminaux'. Cliquez sur 'Créer un type'. Cliquez sur 'Créer un type de passerelle' et suivez les instructions du flux ; ajoutez notamment les métadonnées et les propriétés de terminal nécessaires. Cliquez sur 'Créer' pour terminer le flux et créer le type de terminal. "
+
+#: ../docs/gateways/dashboard.rst:20
+msgid "To create a gateway device:"
+msgstr ""
+"Pour créer un terminal de passerelle : "
+
+#: ../docs/gateways/dashboard.rst:22
+msgid "In your organization dashboard 'Devices' tab, select the 'Browse' sub-tab and click 'Add device'. Select the gateway device type created in the previous step. Follow the 'Add device' flow, entering the mandatory *deviceId* property, and any other optional properties."
+msgstr ""
+"Dans l'onglet 'Terminaux' du tableau de bord de votre organisation, sélectionnez le sous-onglet 'Parcourir' et cliquez sur 'Ajouter un terminal'. Sélectionnez le type de terminal de passerelle créé à l'étape précédente. Suivez le flux 'Ajouter un terminal' en entrant la propriété *deviceId* obligatoire et d'autres propriétés facultatives. "
+
+#: ../docs/gateways/dashboard.rst:24
+msgid "After creating a gateway device, the authentication token provided should be saved for use in configuring the gateway to connect to the IoT Platform."
+msgstr ""
+"Une fois le terminal de passerelle créé, vous devez sauvegarder le jeton d'authentification fourni pour la configuration de la passerelle en vue de sa connexion à IoT Platform."
+
+#: ../docs/gateways/dashboard.rst:26
+msgid "Connecting the gateway to the IoT Platform."
+msgstr ""
+"Connexion de la passerelle à IoT Platform "
+
+#: ../docs/gateways/dashboard.rst:28
+msgid "There are a range of recipes available for connecting devices to the IoT Platform platform. Connecting a gateway requires the same steps as connecting a normal device with one exception. When connecting a normal device, the clientId uses the following format:"
+msgstr ""
+"Plusieurs recettes sont disponibles pour connecter des terminaux à IoT Platform. Pour connecter une passerelle, vous devez effectuer les mêmes opérations que pour la connexion d'un terminal standard, à une exception près. Lorsque vous connectez un terminal standard, l'ID client est au format suivant : "
+
+#: ../docs/gateways/dashboard.rst:30
+msgid "``d:<orgId>:<typeId>:<deviceId>``"
+msgstr ""
+"``d:<orgId>:<typeId>:<deviceId>``"
+
+#: ../docs/gateways/dashboard.rst:32
+msgid "When connecting a gateway device, the clientId replaces ``d`` with ``g``:"
+msgstr ""
+"Lorsque vous connectez un terminal de passerelle, ``d`` est remplacé par ``g`` dans l'ID client : "
+
+#: ../docs/gateways/dashboard.rst:34
+msgid "``g:<orgId>:<typeId>:<deviceId>``"
+msgstr ""
+"``g:<orgId>:<typeId>:<deviceId>``"
+
+#: ../docs/gateways/dashboard.rst:36
+msgid "Set up devices that are connected to the gateway and are to be connected to the IoT Platform:"
+msgstr ""
+"Configurez les terminaux qui sont connectés à la passerelle et qui doivent être connectés à IoT Platform :"
+
+#: ../docs/gateways/dashboard.rst:38
+msgid "Create a device type for the device or devices which are to connect through the gateway. The devices should have *gatewayId* and *gatewayTypeId* properties matching the *deviceId* and *deviceTypeId* of the gateway they are connecting through. Add the devices which are connected to the gateway to the IoT Platform."
+msgstr ""
+"Créez un type de terminal pour le terminal ou les terminaux devant être connectés via la passerelle. Les propriétés *gatewayId* et *gatewayTypeId* des terminaux doivent correspondre aux propriétés *deviceId* et *deviceTypeId* de la passerelle via laquelle ils se connectent. Ajoutez les terminaux qui sont connectés à la passerelle à IoT Platform."
+
+#: ../docs/gateways/dashboard.rst:40
+msgid "The devices connected to the gateway should now be visible in your IoT Platform organization dashboard."
+msgstr ""
+"A présent, les terminaux connectés à la passerelle devraient s'afficher dans le tableau de bord de votre organisation IoT Platform. "
+

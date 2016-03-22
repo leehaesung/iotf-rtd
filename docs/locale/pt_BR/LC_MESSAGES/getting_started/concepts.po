@@ -1,0 +1,193 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/getting_started/concepts.rst:2
+msgid "Concepts"
+msgstr ""
+"Conceitos"
+
+#: ../docs/getting_started/concepts.rst:5
+msgid "Organizations"
+msgstr ""
+"Organizações"
+
+#: ../docs/getting_started/concepts.rst:6
+msgid "When you register with the Watson IoT platform you are given an organization ID, this is a unique 6 character identifier for your account."
+msgstr ""
+"Ao registrar com a plataforma Watson IoT, você recebe um ID da organização, este é um identificador exclusivo de 6 caracteres para sua conta."
+
+#: ../docs/getting_started/concepts.rst:9
+msgid "**Organizations** ensure your data is only accessible from your devices and applications.  Once registered, devices and API keys are bound to a single organization.  When an application connects to the service using an API key it registers with the organization that \"owns\" the API key."
+msgstr ""
+"**Organizations** assegura que seus dados sejam acessíveis apenas de seus dispositivos e aplicativos.  Depois de registrados, os dispositivos e chaves API são ligados a uma única organização.  Quando um aplicativo se conecta ao serviço usando uma chave API, ele é registrado com a organização que \"possui\" a chave API."
+
+#: ../docs/getting_started/concepts.rst:14
+msgid "For your security it is impossible for cross-organization communication within the Watson IoT platform eco-system, intentional or otherwise.  The only way to transmit data between two organizations it to explicitly create two applications, one within each organization, that communicate with each other to act as a relay between the organizations."
+msgstr ""
+"Para sua segurança, é impossível a comunicação na organização dentro do ecossistema da plataforma Watson IoT, intencional ou de outra forma. A única maneira de transmitir dados entre duas organizações é criar explicitamente dois aplicativos, um dentro de cada organização, que se comunicam um com o outro para agir como uma retransmissão entre as organizações."
+
+#: ../docs/getting_started/concepts.rst:22
+msgid "Devices"
+msgstr ""
+"Dispositivos"
+
+#: ../docs/getting_started/concepts.rst:23
+msgid "A device can be anything that has a connection to the internet and has data it wants to get into the cloud."
+msgstr ""
+"Um dispositivo pode ser qualquer coisa que tenha uma conexão com a Internet e que tenha dados que ele queira colocar na nuvem."
+
+#: ../docs/getting_started/concepts.rst:25
+msgid "A device is not able to directly interact with other devices."
+msgstr ""
+"Um dispositivo não é capaz de interagir diretamente com outros dispositivos."
+
+#: ../docs/getting_started/concepts.rst:26
+msgid "Devices are able to accept commands from applications."
+msgstr ""
+"Os dispositivos são capazes de aceitar comandos de aplicativos."
+
+#: ../docs/getting_started/concepts.rst:27
+msgid "Devices uniquely identify themselves to the Watson IoT platform with an authentication token that will only be accepted for that device."
+msgstr ""
+"Os dispositivos identificam unicamente a si mesmos para a plataforma Watson IoT com um token de autenticação que será aceito apenas para esse dispositivo."
+
+#: ../docs/getting_started/concepts.rst:29
+msgid "Devices must be registered before they can connect to the Watson IoT platform."
+msgstr ""
+"Os dispositivos devem ser registrados antes que possam se conectar à plataforma Watson IoT."
+
+#: ../docs/getting_started/concepts.rst:32
+msgid "Managed and Unmanaged Devices"
+msgstr ""
+"Dispositivos Gerenciados e Não Gerenciados"
+
+#: ../docs/getting_started/concepts.rst:33
+msgid "**Managed devices** are defined as devices which contain a management agent. A management agent is a set of logic which allows the device to interact with the Watson IoT platform Device Management service via the Device Management protocol. Managed devices can perform device management operations including location updates, firmware download and updates, and reboot and factory reset."
+msgstr ""
+"**Dispositivos gerenciados** são definidos como dispositivos que contêm um agente de gerenciamento. Um agente de gerenciamento é um conjunto de lógicas que permite que o dispositivo interaja com o serviço de Gerenciamento de Dispositivo da plataforma Watson IoT por meio do protocolo de Gerenciamento de Dispositivos. Os dispositivos gerenciados podem executar operações de gerenciamento de dispositivos, incluindo atualizações de local, download e atualizações de firmware e reinicialização e reconfiguração de fábrica."
+
+#: ../docs/getting_started/concepts.rst:38
+msgid "An **unmanaged device** is a device without a management agent. An unmanaged device can still connect to the Watson IoT platform and send and receive events and commands. However, it cannot send any device management requests, or perform any of the device management operations."
+msgstr ""
+"Um **dispositivo não gerenciado** é um dispositivo que não tem um agente de gerenciamento. Um dispositivo não gerenciado ainda pode se conectar à plataforma Watson IoT e enviar e receber eventos e comandos. No entanto, ele não pode enviar solicitações de gerenciamento de dispositivos ou executar qualquer uma das operações de gerenciamento de dispositivos."
+
+#: ../docs/getting_started/concepts.rst:45
+msgid "Applications"
+msgstr ""
+"Aplicativos"
+
+#: ../docs/getting_started/concepts.rst:46
+msgid "An application is anything that has a connection to the internet and wants to interact with data from devices and/or control the behaviour of those devices in some manner."
+msgstr ""
+"Um aplicativo é qualquer coisa que tenha uma conexão com a Internet e que queira interagir com dados de dispositivos e/ou controlar o comportamento desses dispositivos de alguma maneira."
+
+#: ../docs/getting_started/concepts.rst:49
+msgid "Applications identify themselves to the Watson IoT platform with an API key and a unique application ID."
+msgstr ""
+"Os aplicativos se identificam para a plataforma Watson IoT com uma chave de API e um ID de aplicativo exclusivo."
+
+#: ../docs/getting_started/concepts.rst:51
+msgid "Applications do not need to be registered before they can connect to the Watson IoT platform, however they must present a valid API key that has previously been registered."
+msgstr ""
+"Aplicativos não precisam ser registrados antes de poderem se conectar à plataforma Watson IoT, no entanto, eles devem apresentar uma chave de API válida que tenha sido registrada anteriormente."
+
+#: ../docs/getting_started/concepts.rst:58
+msgid "Gateway Devices"
+msgstr ""
+"Dispositivos de Gateway"
+
+#: ../docs/getting_started/concepts.rst:60
+msgid "Gateway support is currently available as part of a limited beta.  Future updates may include changes incompatible with the current version of this feature.  Try it out and `let us know what you think <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_"
+msgstr ""
+"O suporte ao gateway está disponível atualmente como parte de uma versão beta limitada. Atualizações futuras poderão incluir mudanças incompatíveis com a versão atual deste recurso.  Experimente e nos dê sua opinião <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_"
+
+#: ../docs/getting_started/concepts.rst:64
+msgid "Gateways are a specialized class of Device. They have the combined capabilities of an Application and a Device allowing them to serve as access points providing connectivity to the service for other devices without the ability to directly connect."
+msgstr ""
+"Os gateways são uma classe especializada de Dispositivo. Eles têm os recursos combinados de um Aplicativo e um Dispositivo, permitindo que eles sirvam como pontos de acesso, fornecendo conectividade ao serviço para outros dispositivos sem a capacidade para conectar-se diretamente."
+
+#: ../docs/getting_started/concepts.rst:67
+msgid "Gateway devices can register new devices and can send and receive data on behalf of devices connected to them."
+msgstr ""
+"Dispositivos de gateway podem registrar novos dispositivos e podem enviar e receber dados em nome de dispositivos conectados a eles."
+
+#: ../docs/getting_started/concepts.rst:69
+msgid "Gateway Devices must be registered before they can connect to the service"
+msgstr ""
+"Dispositivos de Gateway devem ser registrados antes que possam se conectar ao serviço"
+
+#: ../docs/getting_started/concepts.rst:74
+msgid "Events"
+msgstr ""
+"Eventos"
+
+#: ../docs/getting_started/concepts.rst:75
+msgid "Events are the mechanism by which **devices** publish data to the Watson IoT platform.  The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"Eventos são o mecanismo pelo qual **dispositivos** publicam dados na plataforma Watson IoT. O dispositivo controla o conteúdo do evento e designa um nome para cada evento que envia."
+
+#: ../docs/getting_started/concepts.rst:78
+msgid "When an event is received by the Watson IoT platform from a device the credentials of the connection on which the event was received are used to determine from which device the event was sent.  With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"Quando um evento é recebido pela plataforma Watson IoT a partir de um dispositivo, as credenciais da conexão na qual o evento foi recebido são usadas para determinar a partir de qual dispositivo o evento foi enviado. Com essa arquitetura, é impossível para um dispositivo personificar outro dispositivo."
+
+#: ../docs/getting_started/concepts.rst:83
+msgid "**Devices** are unable to receive events, regardless of whether they are its own events or those of another device."
+msgstr ""
+"**Devices** são incapazes de receber eventos, independentemente se eles são seus próprios eventos ou de outro dispositivo."
+
+#: ../docs/getting_started/concepts.rst:85
+msgid "**Applications** are able to process events from devices in real time.  When an application receives an event it has visibility of the source of the event and the data contained in that event.  Applications can be configured to subscribe to all events from all devices, a subset of events, a subset of devices or a combination of these events."
+msgstr ""
+"**Applications** são capazes de processar eventos de dispositivos em tempo real.  Quando um aplicativo recebe um evento, ele tem visibilidade da origem do evento e dos dados contidos nesse evento.  Os aplicativos podem ser configurados para assinar todos os eventos de todos os dispositivos, um subconjunto de eventos, um subconjunto de dispositivos ou uma combinação desses eventos."
+
+#: ../docs/getting_started/concepts.rst:93
+msgid "Historical Event Storage"
+msgstr ""
+"Armazenamento de Eventos Históricos"
+
+#: ../docs/getting_started/concepts.rst:95
+msgid "Historical event storage allows users to store the data from devices added to their Watson IoT platform organization. Historical event storage activity and duration can be controlled from the settings panel in the Watson IoT platform dashboard."
+msgstr ""
+"O armazenamento de eventos históricos permite que usuários armazenem dados de dispositivos incluídos em sua organização da plataforma do Watson IoT. A atividade e duração do armazenamento de eventos históricos podem ser controladas a partir do painel de configurações no painel da plataforma Watson IoT."
+
+#: ../docs/getting_started/concepts.rst:99
+msgid "When changing settings for historical data storage, keep in mind that storing data for longer periods of time will affect your billing. Also, care should be taken when disabling historical data storage, as upon disabling data storage for your organization, all stored data will be deleted, and cannot be recovered."
+msgstr ""
+"Ao mudar configurações para armazenamento de dados históricos, tenha em mente que armazenar dados por longos períodos de tempo afetará seu faturamento. Além disso, tome cuidado ao desativar o armazenamento de dados históricos, pois mediante a desativação do armazenamento de dados de sua organização, todos os dados armazenados serão excluídos e não poderão ser recuperados."
+
+#: ../docs/getting_started/concepts.rst:104
+msgid "Historical event storage uses an MQTT Quality of Service level of 0 (delivery at most once), so some data may be lost."
+msgstr ""
+"O armazenamento de eventos históricos utiliza um nível de qualidade de serviço MQTT de 0 (entrega no máximo uma vez), portanto alguns dados podem ser perdidos."
+
+#: ../docs/getting_started/concepts.rst:110
+msgid "Commands"
+msgstr ""
+"Comandos"
+
+#: ../docs/getting_started/concepts.rst:111
+msgid "**Commands** are the mechanism by which **applications** can communicate with **devices**.  Only applications can send commands, which must be issued to specific devices."
+msgstr ""
+"**Commands** são o mecanismo pelo qual os **applications** podem se comunicar com **devices**.  Apenas os aplicativos podem enviar comandos, que devem ser emitidos para dispositivos específicos."
+
+#: ../docs/getting_started/concepts.rst:115
+msgid "The device must determine which action to take on receipt of any given command, and even controls which commands it will subscribe to in the first place.  It is possible to design your device to listen for any command, or to simply subscribe to a set of specific commands."
+msgstr ""
+"O dispositivo deve determinar qual ação executar no recebimento de qualquer comando fornecido e também controla quais comandos assinará em primeiro lugar.  É possível projetar seu dispositivo para atender a qualquer comando ou simplesmente assinar um conjunto de comandos específicos."
+

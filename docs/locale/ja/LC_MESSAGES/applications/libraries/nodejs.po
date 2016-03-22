@@ -1,0 +1,284 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/applications/libraries/nodejs.rst:2
+msgid "Node.js for Application Developers"
+msgstr ""
+"アプリケーション開発者用の Node.js"
+
+#: ../docs/applications/libraries/nodejs.rst:4
+msgid "See `iot-nodejs <https://github.com/ibm-messaging/iot-nodejs>`_ in GitHub"
+msgstr ""
+"GitHub の `iot-nodejs <https://github.com/ibm-messaging/iot-nodejs>`_ を参照してください。"
+
+#: ../docs/applications/libraries/nodejs.rst:5
+msgid "See `ibmiotf <https://www.npmjs.com/package/ibmiotf>`_ on NPM"
+msgstr ""
+"NPM の `ibmiotf <https://www.npmjs.com/package/ibmiotf>`_ を参照してください。"
+
+#: ../docs/applications/libraries/nodejs.rst:12
+msgid "Constructor"
+msgstr ""
+"コンストラクター"
+
+#: ../docs/applications/libraries/nodejs.rst:14
+msgid "The constructor builds the application client instance. It accepts an configuration json containing the following : - org - Your organization ID - id - The unique ID of your application within your organization. - auth-key - API key - auth-token - API key token"
+msgstr ""
+"コンストラクターはアプリケーション・クライアント・インスタンスを作成します。これは、以下を含む構成 json を受け入れます。- org - 組織 ID - id - 組織内のアプリケーションの固有 ID。- auth-key - API キー - auth-token - API キー・トークン"
+
+#: ../docs/applications/libraries/nodejs.rst:20
+msgid "If you want to use quickstart, then send only the first two properties."
+msgstr ""
+"Quickstart を使用する場合は、最初の 2 つのプロパティーのみを送信します。"
+
+#: ../docs/applications/libraries/nodejs.rst:35
+msgid "Using a configuration file"
+msgstr ""
+"構成ファイルの使用"
+
+#: ../docs/applications/libraries/nodejs.rst:37
+msgid "Instead of passing the configuration json directly, you can also use a configuration file. Use the following code snippet"
+msgstr ""
+"構成 json を直接渡す代わりに、構成ファイルを使用することもできます。以下のコード・スニペットを使用します"
+
+#: ../docs/applications/libraries/nodejs.rst:46
+msgid "The configuration file must be in the format of"
+msgstr ""
+"構成ファイルは、以下の形式でなければなりません"
+
+#: ../docs/applications/libraries/nodejs.rst:60
+msgid "Connecting to the IoT Platform"
+msgstr ""
+"IoT Platform への接続"
+
+#: ../docs/applications/libraries/nodejs.rst:62
+msgid "Connect to the IoT Platform by calling the *connect* function."
+msgstr ""
+"*connect* 関数を呼び出して IoT Platform に接続します。"
+
+#: ../docs/applications/libraries/nodejs.rst:78
+msgid "After the successful connection to the IoT Platform service, the application client sends a *connect* event. So all the logic can be implemented inside this callback function."
+msgstr ""
+"IoT Platform サービスへの接続に成功すると、アプリケーション・クライアントは *connect* イベントを送信します。このため、すべてのロジックはこのコールバック関数の内部に実装できます。"
+
+#: ../docs/applications/libraries/nodejs.rst:85
+msgid "Subscribing to device events"
+msgstr ""
+"デバイス・イベントへのサブスクライブ"
+
+#: ../docs/applications/libraries/nodejs.rst:87
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"イベントは、デバイスが IoT Platform にデータをパブリッシュするためのメカニズムです。デバイスはイベントのコンテンツを制御し、送信するイベントごとに名前を割り当てます。"
+
+#: ../docs/applications/libraries/nodejs.rst:89
+msgid "When an event is received by the IoT Platform, the credentials of the connection on which the event was received are used to determine from which device the event was sent. Using this architecture, it is impossible for a device to impersonate another device."
+msgstr ""
+"IoT Platform は、イベントを受け取ると、そのイベントを受け取った接続の資格情報に基づいて、イベントの送信元のデバイスを特定します。このアーキテクチャーによって、デバイスが別のデバイスの名前を使用することが不可能になります。"
+
+#: ../docs/applications/libraries/nodejs.rst:91
+msgid "By default, applications will subscribe to all events from all connected devices. Use the type, id, event and msgFormat parameters to control the scope of the subscription. A single client can support multiple subscriptions. The code samples below give examples of how to subscribe to devices dependent on device type, id, event and msgFormat parameters."
+msgstr ""
+"デフォルトでは、アプリケーションはすべての接続デバイスの全イベントをサブスクライブします。type、id、event、および msgFormat パラメーターを使用して、サブスクリプションのスコープを制御します。単一のクライアントで複数のサブスクリプションをサポートできます。以下のコード・サンプルは、デバイスの type、id、event、および msgFormat パラメーターに基づいてデバイスをサブスクライブする方法の例を示しています。"
+
+#: ../docs/applications/libraries/nodejs.rst:94
+msgid "To subscribe to all events from all devices"
+msgstr ""
+"すべてのデバイスの全イベントをサブスクライブする場合"
+
+#: ../docs/applications/libraries/nodejs.rst:112
+msgid "To subscribe to all events from all devices of a specific type"
+msgstr ""
+"特定のタイプのすべてのデバイスの全イベントをサブスクライブする場合"
+
+#: ../docs/applications/libraries/nodejs.rst:129
+msgid "To subscribe to a specific event from all devices"
+msgstr ""
+"すべてのデバイスの特定のイベントをサブスクライブする場合"
+
+#: ../docs/applications/libraries/nodejs.rst:147
+msgid "To subscribe to a specific event from two or more different devices"
+msgstr ""
+"複数の異なるデバイスの特定のイベントをサブスクライブする場合"
+
+#: ../docs/applications/libraries/nodejs.rst:165
+msgid "To subscribe to all events published by a device in json format"
+msgstr ""
+"json 形式でデバイスがパブリッシュした全イベントをサブスクライブする場合"
+
+#: ../docs/applications/libraries/nodejs.rst:184
+msgid "Handling events from devices"
+msgstr ""
+"デバイスのイベントの処理"
+
+#: ../docs/applications/libraries/nodejs.rst:186
+msgid "To process the events received by your subscriptions you need to implement a device event callback method. The ibmiotf application client emits the event *deviceEvent*. This function has the following properties:"
+msgstr ""
+"サブスクリプションによって受信したイベントを処理するには、デバイス・イベント・コールバック・メソッドを実装する必要があります。ibmiotf アプリケーション・クライアントはイベント *deviceEvent* を発行します。この関数のプロパティーは、以下のとおりです。"
+
+#: ../docs/applications/libraries/nodejs.rst:188
+#: ../docs/applications/libraries/nodejs.rst:285
+msgid "deviceType"
+msgstr ""
+"deviceType"
+
+#: ../docs/applications/libraries/nodejs.rst:189
+#: ../docs/applications/libraries/nodejs.rst:286
+msgid "deviceId"
+msgstr ""
+"deviceId"
+
+#: ../docs/applications/libraries/nodejs.rst:190
+msgid "eventType"
+msgstr ""
+"eventType"
+
+#: ../docs/applications/libraries/nodejs.rst:191
+msgid "format"
+msgstr ""
+"format"
+
+#: ../docs/applications/libraries/nodejs.rst:192
+msgid "payload - Device event payload"
+msgstr ""
+"payload - デバイスのイベント・ペイロード"
+
+#: ../docs/applications/libraries/nodejs.rst:193
+msgid "topic - Original topic"
+msgstr ""
+"topic - 元のトピック"
+
+#: ../docs/applications/libraries/nodejs.rst:220
+msgid "Subscribing to device status"
+msgstr ""
+"デバイス・ステータスへのサブスクライブ"
+
+#: ../docs/applications/libraries/nodejs.rst:222
+msgid "By default, this will subscribe to status updates for all connected devices. Use the type and id parameters to control the scope of the subscription. A single client can support multiple subscriptions."
+msgstr ""
+"デフォルトで、これはすべての接続デバイスのステータスの更新をサブスクライブします。type および id パラメーターを使用して、サブスクリプションのスコープを制御します。単一のクライアントで複数のサブスクリプションをサポートできます。"
+
+#: ../docs/applications/libraries/nodejs.rst:225
+msgid "Subscribe to status updates for all devices"
+msgstr ""
+"すべてのデバイスのステータス更新をサブスクライブ"
+
+#: ../docs/applications/libraries/nodejs.rst:244
+msgid "Subscribe to status updates for all devices of a specific type"
+msgstr ""
+"特定のタイプのすべてのデバイスのステータス更新をサブスクライブ"
+
+#: ../docs/applications/libraries/nodejs.rst:262
+msgid "Subscribe to status updates for two different devices"
+msgstr ""
+"2 つの異なるデバイスのステータス更新をサブスクライブ"
+
+#: ../docs/applications/libraries/nodejs.rst:281
+msgid "Handling status updates from devices"
+msgstr ""
+"デバイスのステータス更新の処理"
+
+#: ../docs/applications/libraries/nodejs.rst:283
+msgid "To process the status updates received by your subscriptions you need to implement an device status callback method. The ibmiotf application client emits the event *deviceStatus*. This function has the following properties:"
+msgstr ""
+"サブスクリプションによって受信したステータス更新を処理するには、デバイス・ステータス・コールバック・メソッドを実装する必要があります。ibmiotf アプリケーション・クライアントはイベント *deviceStatus* を発行します。この関数のプロパティーは、以下のとおりです。"
+
+#: ../docs/applications/libraries/nodejs.rst:287
+msgid "payload - Device status payload"
+msgstr ""
+"payload - デバイス・ステータスのペイロード"
+
+#: ../docs/applications/libraries/nodejs.rst:288
+msgid "topic"
+msgstr ""
+"topic"
+
+#: ../docs/applications/libraries/nodejs.rst:316
+msgid "Publishing events from devices"
+msgstr ""
+"デバイスのイベントのパブリッシュ"
+
+#: ../docs/applications/libraries/nodejs.rst:318
+msgid "Applications can publish events as if they originated from a Device. The function requires:"
+msgstr ""
+"アプリケーションは、イベントをデバイスから発信されたかのようにパブリッシュできます。この機能には以下が必要です。"
+
+#: ../docs/applications/libraries/nodejs.rst:320
+#: ../docs/applications/libraries/nodejs.rst:351
+msgid "DeviceType"
+msgstr ""
+"デバイス・タイプ"
+
+#: ../docs/applications/libraries/nodejs.rst:321
+#: ../docs/applications/libraries/nodejs.rst:352
+msgid "Device ID"
+msgstr ""
+"デバイス ID"
+
+#: ../docs/applications/libraries/nodejs.rst:322
+msgid "Event Type"
+msgstr ""
+"イベント・タイプ"
+
+#: ../docs/applications/libraries/nodejs.rst:323
+#: ../docs/applications/libraries/nodejs.rst:354
+msgid "Format"
+msgstr ""
+"形式"
+
+#: ../docs/applications/libraries/nodejs.rst:324
+#: ../docs/applications/libraries/nodejs.rst:355
+msgid "Data"
+msgstr ""
+"データ"
+
+#: ../docs/applications/libraries/nodejs.rst:347
+msgid "Publishing commands to devices"
+msgstr ""
+"コマンドをデバイスにパブリッシュ"
+
+#: ../docs/applications/libraries/nodejs.rst:349
+msgid "Applications can publish commands to connected devices. The function requires:"
+msgstr ""
+"アプリケーションはコマンドを接続デバイスにパブリッシュできます。この機能には以下が必要です。"
+
+#: ../docs/applications/libraries/nodejs.rst:353
+msgid "Command Type"
+msgstr ""
+"コマンド・タイプ"
+
+#: ../docs/applications/libraries/nodejs.rst:378
+msgid "Disconnect Client"
+msgstr ""
+"クライアントの切断"
+
+#: ../docs/applications/libraries/nodejs.rst:380
+msgid "Disconnects the client and releases the connections"
+msgstr ""
+"クライアントを切断し、接続をリリースします"
+
+#: ../docs/applications/libraries/nodejs.rst:404
+msgid "Check Connection Status"
+msgstr ""
+"接続状況の検査"
+
+#: ../docs/applications/libraries/nodejs.rst:406
+msgid "*isConnected* gives the current status of the application client connection"
+msgstr ""
+"*isConnected* はアプリケーション・クライアントの接続の現在のステータスを示します"
+

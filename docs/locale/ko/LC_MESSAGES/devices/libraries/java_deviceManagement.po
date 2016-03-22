@@ -1,0 +1,665 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:3
+msgid "Java Client Library - Managed Devices"
+msgstr ""
+"Java 클라이언트 라이브러리 - 관리 디바이스"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:6
+msgid "Introduction"
+msgstr ""
+"소개"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:8
+msgid "This client library describes how to use devices with the Java ibmiotf client library. For help with getting started with this module, see `Java Client Library - Introduction <../java/javaintro.html>`__."
+msgstr ""
+"이 클라이언트 라이브러리는 Java ibmiotf 클라이언트 라이브러리를 가진 디바이스를 사용하는 방법을 설명합니다. 이 모듈 시작에 대한 도움말은 `Java 클라이언트 라이브러리 - 소개 <../java/javaintro.html>`__를 참조하십시오. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:10
+msgid "This section contains information on how devices can  to the IoT Platform Device Management service using Java and perform device management operations like firmware update, location update, and diagnostics update."
+msgstr ""
+"이 절에서는 Java를 사용하여 디바이스를 IoT Platform 디바이스 관리 서비스에 연결하고 펌웨어 업데이트, 위치 업데이트 및 진단 업데이트와 같은 디바이스 관리 오퍼레이션을 수행하는 방법에 대한 정보를 다룹니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:12
+msgid "The Device section contains information on how devices can publish events and handle commands using the Java ibmiotf Client Library."
+msgstr ""
+"디바이스 절에는 디바이스가 Java ibmiotf 클라이언트 라이브러리를 사용하여 이벤트를 공개하고 명령을 처리하는 방법에 대한 정보가 있습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:14
+msgid "The Applications section contains information on how applications can use the Java ibmiotf Client Library to interact with devices."
+msgstr ""
+"애플리케이션 절은 애플리케이션이 Java ibmiotf 클라이언트 라이브러리를 사용하여 디바이스와 상호작용할 수 있는 방법에 대한 정보를 포함합니다."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:18
+msgid "Device Management"
+msgstr ""
+"디바이스 관리"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:19
+msgid "The `device management <../reference/device_mgmt.html>`__ feature enhances the IoT Platform service with new capabilities for managing devices. Device management makes a distinction between managed and unmanaged devices:"
+msgstr ""
+"`디바이스 관리 <../reference/device_mgmt.html>`__ 기능은 디바이스를 관리하기 위한 새로운 기능을 통해 IoT Platform 서비스를 향상시킵니다. 디바이스 관리에서는 관리 디바이스와 비관리 디바이스를 명확하게 구분합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:21
+msgid "**Managed Devices** are defined as devices which have a management agent installed. The management agent sends and receives device metadata and responds to device management commands from the IoT Platform."
+msgstr ""
+"관리 에이전트가 설치되어 있는 디바이스로 **Managed Devices**가 정의됩니다. 관리 에이전트는 디바이스 메타데이터를 전송하고 수신하며 IoT Platform에서 디바이스 관리 명령에 응답합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:22
+msgid "**Unmanaged Devices** are any devices which do not have a device management agent. All devices begin their lifecycle as unmanaged devices, and can transition to managed devices by sending a message from a device management agent to the IoT Platform."
+msgstr ""
+"**Unmanaged Devices**는 디바이스 관리 에이전트가 없는 디바이스입니다. 모든 디바이스는 비관리 디바이스로 라이프사이클을 시작하며, 디바이스 관리 에이전트에서 IoT Platform으로 메시지를 전송하여 관리 디바이스로 전이할 수 있습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:27
+msgid "Connecting to the IoT Platform Device Management Service"
+msgstr ""
+"IoT Platform 디바이스 관리 서비스에 연결"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:30
+msgid "Create DeviceData"
+msgstr ""
+"DeviceData 작성"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:31
+msgid "The `device model <../reference/device_model.html>`__ describes the metadata and management characteristics of a device. The device database in the IoT Platform is the master source of device information. Applications and managed devices are able to send updates to the database such as a location or the progress of a firmware update. Once these updates are received by the IoT Platform, the device database is updated, making the information available to applications."
+msgstr ""
+"`디바이스 모델 <../reference/device_model.html>`__에서는 디바이스의 메타데이터 및 관리 특성에 대해 설명합니다. IoT Platform에 있는 디바이스 데이터베이스는 디바이스 정보에 대한 마스터 소스입니다. 애플리케이션 및 관리 디바이스가 펌웨어 업데이트의 진행상태 또는 위치 등 데이터베이스에 대한 업데이트를 보낼 수 있습니다. IoT Platform에서 이러한 업데이트를 수신하면 디바이스 데이터베이스가 업데이트되므로 애플리케이션에서 정보를 사용할 수 있게 됩니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:33
+msgid "The device model in the ibmiotf client library is represented as DeviceData and to create a DeviceData one needs to create the following objects,"
+msgstr ""
+"ibmiotf 클라이언트 라이브러리의 디바이스 모델은 DeviceData로 표시되며 DeviceData를 작성하려면 다음 오브젝트를 작성해야 합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:35
+msgid "DeviceInfo (mandatory)"
+msgstr ""
+"DeviceInfo(필수사항)"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:36
+msgid "DeviceLocation (required if the device supports location update)"
+msgstr ""
+"DeviceLocation(디바이스가 위치 업데이트를 지원하는 경우 필수사항)"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:37
+msgid "DiagnosticErrorCode (required if the device wants to update the ErrorCode)"
+msgstr ""
+"DiagnosticErrorCode(디바이스가 ErrorCode를 업데이트할 경우 필수사항)"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:38
+msgid "DiagnosticLog (required if the device wants to update Log information)"
+msgstr ""
+"DiagnosticLog(디바이스가 로그 정보를 업데이트할 경우 필수사항)"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:39
+msgid "DeviceFirmware (required if the device supports Firmware Actions)"
+msgstr ""
+"DeviceFirmware(디바이스가 펌웨어 조치를 지원하는 경우 필수사항)"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:40
+msgid "DeviceMetadata (optional)"
+msgstr ""
+"DeviceMetadata(선택사항)"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:42
+msgid "The following code snippet shows how to create the mandatory object DeviceInfo along with an optional object DeviceMetadata with sample data:"
+msgstr ""
+"다음의 코드 스니펫은 선택적 오브젝트 DeviceMetadata를 샘플 데이터로 사용하여 필수 오브젝트 DeviceInfo를 작성하는 방법을 표시합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:64
+msgid "The following code snippet shows how to create the DeviceData object with the above created DeviceInfo and DeviceMetadata objects:"
+msgstr ""
+"다음의 코드 스니펫은 위에서 작성된 DeviceInfo 및 DeviceMetadata 오브젝트를 사용하여 DeviceData 오브젝트를 작성하는 방법을 표시합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:73
+msgid "Construct ManagedDevice"
+msgstr ""
+"ManagedDevice 생성"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:74
+msgid "ManagedDevice - A device class that connects the device as managed device to IoT Platform and enables the device to perform one or more Device Management operations. Also the ManagedDevice instance can be used to do normal device operations like publishing device events and listening for commands from application."
+msgstr ""
+"ManagedDevice - 디바이스를 IoT Platform에 관리 디바이스로 연결하고 디바이스가 하나 이상의 디바이스 관리 오퍼레이션을 수행할 수 있도록 지원하는 디바이스 클래스입니다. 또한 ManagedDevice 인스턴스를 사용하면 디바이스 이벤트 공개 및 애플리케이션의 명령 청취와 같은 일반 디바이스 오퍼레이션을 수행할 수 있습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:76
+msgid "ManagedDevice exposes 2 different constructors to support different user patterns,"
+msgstr ""
+"ManagedDevice는 여러 가지 다른 사용자 패턴을 지원하기 위해 두 개의 다른 생성자를 표시합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:78
+msgid "**Constructor One**"
+msgstr ""
+"**생성자 1**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:80
+msgid "Constructs a ManagedDevice instance by accepting the DeviceData and the following properties,"
+msgstr ""
+"DeviceData 및 다음 특성을 허용하여 ManagedDevice 인스턴스를 생성합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:82
+msgid "Organization-ID - Your organization ID."
+msgstr ""
+"Organization-ID - 사용자의 조직 ID입니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:83
+msgid "Device-Type - The type of your device."
+msgstr ""
+"Device-Type - 사용자의 디바이스 유형입니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:84
+msgid "Device-ID - The ID of your device."
+msgstr ""
+"Device-ID - 사용자 디바이스의 ID입니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:85
+msgid "Authentication-Method - Method of authentication (The only value currently supported is \"token\")."
+msgstr ""
+"Authentication-Method - 인증 방법입니다(현재 \"token\" 값만 지원됨). "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:86
+msgid "Authentication-Token - API key token"
+msgstr ""
+"Authentication-Token - API 키 토큰입니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:88
+msgid "All these properties are required to interact with the IoT Platform."
+msgstr ""
+"이러한 모든 특성은 IoT Platform과 상호작용하는 데 필요합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:90
+msgid "The following code shows how to create a ManagedDevice instance:"
+msgstr ""
+"다음의 코드는 ManagedDevice 인스턴스를 작성하는 방법을 표시합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:103
+msgid "The existing users of DeviceClient might observe that the names of these properties have changed slightly. These names have been changed to mirror the names in the IoT Platform Dashboard, but the existing users who want to migrate from the DeviceClient to the ManagedDevice can still use the old format and construct the ManagedDevice instance as follows:"
+msgstr ""
+"DeviceClient의 기존 사용자는 이러한 특성의 이름이 약간 변경되었음을 확인할 수 있습니다. 이러한 이름은 IoT Platform 대시보드의 이름을 반영하여 변경되었지만 DeviceClient에서 ManagedDevice로 마이그레이션하려는 기존 사용자는 이전 형식을 계속 사용하여 다음과 같이 ManagedDevice 인스턴스를 생성할 수 있습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:115
+msgid "**Constructor Two**"
+msgstr ""
+"**생성자 2**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:117
+msgid "Construct a ManagedDevice instance by accepting the DeviceData and the MqttClient instance. This constructor requires the DeviceData to be created with additional device attributes like Device Type and Device Id as follows:"
+msgstr ""
+"DeviceData 및 MqttClient 인스턴스를 허용하여 ManagedDevice 인스턴스를 생성합니다. 이 생성자는 다음과 같이 디바이스 유형 및 디바이스 ID와 같은 추가 디바이스 속성을 사용하여 DeviceData를 작성해야 합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:135
+msgid "Note this constructor helps the custom device users to create a ManagedDevice instance with the already created and connected MqttClient instance to take advantage of device management operations. But we recommend the users to use the library for all the device functionalities."
+msgstr ""
+"이 생성자는 디바이스 관리 오퍼레이션을 활용하기 위해 사용자 정의 디바이스 사용자가 이미 작성되고 연결된 MqttClient 인스턴스를 사용하여 ManagedDevice 인스턴스를 작성하는 데 도움이 된다는 점을 참고하십시오. 그러나 사용자는 모든 디바이스 기능의 라이브러리를 사용하도록 권장됩니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:138
+msgid "Manage"
+msgstr ""
+"관리"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:139
+msgid "The device can invoke manage() method to participate in device management activities. The manage request will initiate a connect request internally if the device is not connected to the IoT Platform already:"
+msgstr ""
+"디바이스는 manage() 메소드를 호출하여 디바이스 관리 활동에 참여할 수 있습니다. 디바이스가 IoT Platform에 아직 연결되지 않은 경우 관리 요청은 연결 요청을 내부적으로 시작합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:145
+msgid "The device can use overloaded manage (lifetime) method to register the device for a given timeframe. The timeframe specifies the length of time within which the device must send another **Manage device** request in order to avoid being reverted to an unmanaged device and marked as dormant."
+msgstr ""
+"디바이스는 오버로드 관리(영구) 메소드를 사용하여 지정된 시간 범위 동안 디바이스를 등록할 수 있습니다. 시간 범위는 비관리 디바이스로 되돌아가고 휴지 상태로 표시되는 것을 방지하기 위해 디바이스가 다른 **디바이스 관리** 요청을 전송해야 하는 시간 길이를 지정합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:151
+msgid "Refer to the `documentation <../device_mgmt/operations/manage.html>`__ for more information about the manage operation."
+msgstr ""
+"관리 오퍼레이션에 대한 자세한 정보는 `문서 <../device_mgmt/operations/manage.html>`__의 내용을 참조하십시오. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:154
+msgid "Unmanage"
+msgstr ""
+"비관리"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:156
+msgid "A device can invoke unmanage() method when it no longer needs to be managed. The IoT Platform will no longer send new device management requests to this device and all device management requests from this device will be rejected other than a **Manage device** request."
+msgstr ""
+"디바이스는 더 이상 관리 상태일 필요가 없는 경우 unmanage() 메소드를 호출할 수 있습니다. 그러면 IoT Platform이 더 이상 이 디바이스에 새 디바이스 관리 요청을 보내지 않으며, **디바이스 관리** 요청을 제외한 이 디바이스의 모든 디바이스 관리 요청이 거부됩니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:162
+msgid "Refer to the `documentation <../device_mgmt/operations/manage.html>`__ for more information about the Unmanage operation."
+msgstr ""
+"비관리 오퍼레이션에 대한 자세한 정보는 `문서 <../device_mgmt/operations/manage.html>`__의 내용을 참조하십시오. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:165
+msgid "Location Update"
+msgstr ""
+"위치 업데이트"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:167
+msgid "Devices that can determine their location can choose to notify the IoT Platform about location changes. In order to update the location, the device needs to create DeviceData instance with the DeviceLocation object first."
+msgstr ""
+"위치를 판별할 수 있는 디바이스는 IoT Platform에 위치 변경을 알리도록 선택할 수 있습니다. 위치를 업데이트하려면 디바이스는 먼저 DeviceLocation 오브젝트를 사용하여 DeviceData 인스턴스를 작성해야 합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:182
+msgid "Once the device is connected to IoT Platform, the location can be updated by invoking the following method:"
+msgstr ""
+"디바이스가 IoT Platform에 연결되면 다음 메소드를 호출하여 위치를 업데이트할 수 있습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:193
+msgid "Later, any new location can be updated by changing the properties of the DeviceLocation object:"
+msgstr ""
+"이후에 DeviceLocation 오브젝트의 특성을 변경하여 새 위치를 업데이트할 수 있습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:204
+msgid "The update() method informs the IoT Platform about the new location."
+msgstr ""
+"update() 메소드는 IoT Platform에 새 위치를 알립니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:206
+msgid "Refer to the `documentation <../device_mgmt/operations/update.html>`__ for more information about the Location update."
+msgstr ""
+"위치 업데이트에 대한 자세한 정보는 `문서 <../device_mgmt/operations/update.html>`__의 내용을 참조하십시오. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:209
+msgid "Append/Clear ErrorCodes"
+msgstr ""
+"ErrorCode 추가/지우기"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:211
+msgid "Devices can choose to notify the IoT Platform about changes in their error status. In order to send the ErrorCodes the device needs to construct a DiagnosticErrorCode object as follows:"
+msgstr ""
+"디바이스는 IoT Platform에 오류 상태의 변경을 알리도록 선택할 수 있습니다. ErrorCode를 보내려면 디바이스는 다음과 같이 DiagnosticErrorCode 오브젝트를 생성해야 합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:223
+msgid "Once the device is connected to IoT Platform, the ErrorCode can be sent by calling the send() method as follows:"
+msgstr ""
+"디바이스가 IoT Platform에 연결되면 다음과 같이 send() 메소드를 호출하여 ErrorCode를 보낼 수 있습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:229
+msgid "Later, any new ErrorCodes can be easily added to the IoT Platform by calling the append method as follows:"
+msgstr ""
+"나중에 다음과 같이 append 메소드를 호출하여 IoT Platform에 새 ErrorCode를 쉽게 추가할 수 있습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:240
+msgid "Also, the ErrorCodes can be cleared from IoT Platform by calling the clear() method as follows:"
+msgstr ""
+"또한 다음과 같이 clear() 메소드를 호출하여 IoT Platform에서 ErrorCode를 지울 수 있습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:252
+msgid "Append/Clear Log messages"
+msgstr ""
+"로그 메시지 추가/지우기"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:253
+msgid "Devices can choose to notify the IoT Platform about changes by adding a new log entry. Log entry includes a log messages, its timestamp and severity, as well as an optional base64-encoded binary diagnostic data. In order to send log messages, the device needs to construct a DiagnosticLog object as follows:"
+msgstr ""
+"디바이스는 새 로그 항목을 추가하여 IoT Platform에 변경사항을 알리도록 선택할 수 있습니다. 로그 항목에는 선택적 base64 인코딩된 2진 진단 데이터와 로그 메시지, 해당 시간소인 및 심각도가 포함됩니다. 로그 메시지를 보내려면 디바이스는 다음과 같이 DiagnosticLog 오브젝트를 생성해야 합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:268
+msgid "Once the device is connected to IoT Platform, the log message can be sent by calling the send() method as follows:"
+msgstr ""
+"디바이스가 IoT Platform에 연결되면 다음과 같이 send() 메소드를 호출하여 로그 메시지를 보낼 수 있습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:274
+msgid "Later, any new log messages can be easily added to the IoT Platform by calling the append method as follows:"
+msgstr ""
+"나중에 다음과 같이 append 메소드를 호출하여 IoT Platform에 새 로그 메시지를 쉽게 추가할 수 있습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:286
+msgid "Also, the log messages can be cleared from IoT Platform by calling the clear method as follows:"
+msgstr ""
+"또한 다음과 같이 clear 메소드를 호출하여 IoT Platform에서 로그 메시지를 지울 수 있습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:297
+msgid "The device diagnostics operations are intended to provide information on device errors, and does not provide diagnostic information relating to the devices connection to the IoT Platform."
+msgstr ""
+"디바이스 진단 오퍼레이션은 디바이스 오류에 대한 정보를 제공하기 위한 것으로, IoT Platform에 대한 디바이스 연결과 관련된 진단 정보를 제공하지 않습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:299
+msgid "Refer to the `documentation <../device_mgmt/operations/diagnostics.html>`__ for more information about the Diagnostics operation."
+msgstr ""
+"진단 오퍼레이션에 대한 자세한 정보는 `문서 <../device_mgmt/operations/diagnostics.html>`__의 내용을 참조하십시오. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:302
+msgid "Firmware Actions"
+msgstr ""
+"펌웨어 조치"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:303
+msgid "The firmware update process is separated into two distinct actions:"
+msgstr ""
+"펌웨어 업데이트 프로세스는 두 개의 개별 조치로 구분됩니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:305
+msgid "Downloading Firmware"
+msgstr ""
+"펌웨어 다운로드"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:306
+msgid "Updating Firmware."
+msgstr ""
+"펌웨어 업데이트"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:308
+msgid "The device needs to do the following activities to support Firmware Actions:"
+msgstr ""
+"디바이스는 펌웨어 조치를 지원하기 위해 다음 활동을 수행해야 합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:310
+msgid "**1. Construct DeviceFirmware Object**"
+msgstr ""
+"**1. DeviceFirmware 오브젝트 생성**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:312
+msgid "In order to perform Firmware actions the device needs to construct the DeviceFirmware object and add it to DeviceData as follows:"
+msgstr ""
+"펌웨어 조치를 수행하기 위해 디바이스는 DeviceFirmware 오브젝트를 생성하고 다음과 같이 DeviceData에 추가해야 합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:334
+msgid "The DeviceFirmware object represents the current firmware of the device and will be used to report the status of the Firmware Download and Firmware Update actions to IoT Platform."
+msgstr ""
+"DeviceFirmware 오브젝트는 디바이스의 현재 펌웨어를 나타내며, 펌웨어 다운로드 및 펌웨어 업데이트 조치의 상태를 IoT Platform에 보고하는 데 사용됩니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:336
+msgid "**2. Inform the server about the Firmware action support**"
+msgstr ""
+"**2. 펌웨어 조치 지원에 대해 서버에 알림**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:338
+msgid "The device needs to set the firmware action flag to true in order for the server to initiate the firmware request. This can be achieved by invoking a following method with a boolean value:"
+msgstr ""
+"서버가 펌웨어 요청을 시작하도록 디바이스는 펌웨어 조치 플래그를 true로 설정해야 합니다. 부울 값으로 다음 메소드를 호출하면 가능합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:345
+msgid "As the manage request informs the IoT Platform about the firmware action support, manage() method needs to be called right after setting the firmware action support."
+msgstr ""
+"관리 요청이 IoT Platform에 펌웨어 조치 지원을 알리므로 펌웨어 조치 지원을 설정한 후 즉시 manage() 메소드를 호출해야 합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:347
+msgid "**3. Create the Firmware Action Handler**"
+msgstr ""
+"**3. 펌웨어 조치 핸들러 작성**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:349
+msgid "In order to support the Firmware action, the device needs to create a handler and add it to ManagedDevice. The handler must extend a DeviceFirmwareHandler class and implement the following methods:"
+msgstr ""
+"펌웨어 조치를 지원하기 위해 디바이스는 핸들러를 작성하고 ManagedDevice에 추가해야 합니다. 핸들러는 DeviceFirmwareHandler 클래스를 확장하고 다음 메소드를 구현해야 합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:356
+msgid "**3.1 Sample implementation of downloadFirmware**"
+msgstr ""
+"**3.1 downloadFirmware의 샘플 구현**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:358
+msgid "The implementation must add logic to download the firmware and report the status of the download via DeviceFirmware object. If the Firmware Download operation is successful, then the state of the firmware to be set to DOWNLOADED and UpdateStatus should be set to SUCCESS."
+msgstr ""
+"구현에서는 DeviceFirmware 오브젝트를 통해 펌웨어를 다운로드하고 다운로드 상태를 보고하는 로직을 추가해야 합니다. 펌웨어 다운로드 오퍼레이션이 완료되면 펌웨어 상태를 DOWNLOADED로 설정하고 UpdateStatus를 SUCCESS로 설정해야 합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:360
+msgid "If an error occurs during Firmware Download the state should be set to IDLE and updateStatus should be set to one of the error status values:"
+msgstr ""
+"펌웨어 다운로드 중 오류가 발생한 경우 상태를 IDLE로 설정하고 updateStatus를 오류 상태 값 중 하나로 설정해야 합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:362
+#: ../docs/devices/libraries/java_deviceManagement.rst:460
+msgid "OUT_OF_MEMORY"
+msgstr ""
+"OUT_OF_MEMORY"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:363
+msgid "CONNECTION_LOST"
+msgstr ""
+"CONNECTION_LOST"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:364
+msgid "INVALID_URI"
+msgstr ""
+"INVALID_URI"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:366
+msgid "A sample Firmware Download implementation for a Raspberry Pi device is shown below:"
+msgstr ""
+"Raspberry Pi 디바이스의 샘플 펌웨어 다운로드 구현은 다음과 같습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:425
+msgid "Device can check the integrity of the downloaded firmware image using the verifier and report the status back to IoT Platform. The verifier can be set by the device during the startup (while creating the DeviceFirmware Object) or as part of the Download Firmware request by the application. A sample code to verify the same is below:"
+msgstr ""
+"디바이스는 검사기를 사용하여 다운로드된 펌웨어 이미지의 무결성을 검사하고 IoT Platform에 상태를 다시 보고할 수 있습니다. 시작 중(DeviceFirmware 오브젝트를 작성하는 중) 또는 애플리케이션의 펌웨어 다운로드 요청의 일부분으로 디바이스가 검사기를 설정할 수 있습니다. 동일하게 검사하기 위한 샘플 코드는 다음과 같습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:452
+#: ../docs/devices/libraries/java_deviceManagement.rst:496
+msgid "The complete code can be found in the device management sample `RasPiFirmwareHandlerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/RasPiFirmwareHandlerSample.java>`__."
+msgstr ""
+"전체 코드는 디바이스 관리 샘플 `RasPiFirmwareHandlerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/RasPiFirmwareHandlerSample.java>`__에서 찾을 수 있습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:454
+msgid "**3.2 Sample implementation of updateFirmware**"
+msgstr ""
+"**3.2 updateFirmware의 샘플 구현**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:456
+msgid "The implementation must add logic to install the downloaded firmware and report the status of the update via DeviceFirmware object. If the Firmware Update operation is successful, then the state of the firmware should to be set to IDLE and UpdateStatus should be set to SUCCESS."
+msgstr ""
+"구현에서는 DeviceFirmware 오브젝트를 통해 다운로드된 펌웨어를 설치하고 업데이트 상태를 보고하는 로직을 추가해야 합니다. 펌웨어 업데이트 오퍼레이션이 완료되면 펌웨어 상태를 IDLE로 설정하고 UpdateStatus를 SUCCESS로 설정해야 합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:458
+msgid "If an error occurs during Firmware Update, updateStatus should be set to one of the error status values:"
+msgstr ""
+"펌웨어 업데이트 중 오류가 발생한 경우 updateStatus를 오류 상태 값 중 하나로 설정해야 합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:461
+msgid "UNSUPPORTED_IMAGE"
+msgstr ""
+"UNSUPPORTED_IMAGE"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:463
+msgid "A sample Firmware Update implementation for a Raspberry Pi device is shown below:"
+msgstr ""
+"Raspberry Pi 디바이스의 샘플 펌웨어 업데이트 구현은 다음과 같습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:498
+msgid "**4. Add the handler to ManagedDevice**"
+msgstr ""
+"**4. ManagedDevice에 핸들러 추가**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:500
+msgid "The created handler needs to be added to the ManagedDevice instance so that the ibmiotf client library invokes the corresponding method when there is a Firmware action request from IoT Platform."
+msgstr ""
+"IoT Platform에서 제공하는 펌웨어 조치 요청이 있는 경우 ibmiotf 클라이언트 라이브러리가 해당 메소드를 호출하도록, 작성된 핸들러를 ManagedDevice 인스턴스에 추가해야 합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:507
+msgid "Refer to `this page <../device_mgmt/operations/firmware_actions.html>`__ for more information about the Firmware action."
+msgstr ""
+"펌웨어 조치에 대한 자세한 정보는 `이 페이지 <../device_mgmt/operations/firmware_actions.html>`__를 참조하십시오. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:510
+msgid "Device Actions"
+msgstr ""
+"디바이스 조치"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:511
+msgid "The IoT Platform supports the following device actions:"
+msgstr ""
+"IoT Platform은 다음과 같은 디바이스 조치를 지원합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:513
+msgid "Reboot"
+msgstr ""
+"다시 부팅"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:514
+msgid "Factory Reset"
+msgstr ""
+"팩토리 재설정"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:516
+msgid "The device needs to do the following activities to support Device Actions:"
+msgstr ""
+"디바이스는 디바이스 조치를 지원하기 위해 다음 활동을 수행해야 합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:518
+msgid "**1. Inform server about the Device Actions support**"
+msgstr ""
+"**1. 디바이스 조치 지원에 대해 서버에 알림**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:520
+msgid "In order to perform Reboot and Factory Reset, the device needs to inform the IoT Platform about its support first. This can achieved by invoking a following method with a boolean value:"
+msgstr ""
+"다시 부팅 및 팩토리 재설정을 수행하려면 디바이스는 먼저 해당 지원에 대해 IoT Platform에 알려야 합니다. 부울 값으로 다음 메소드를 호출하면 가능합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:527
+msgid "As the manage request informs the IoT Platform about the device action support, manage() method needs to be called right after setting the device action support."
+msgstr ""
+"관리 요청이 IoT Platform에 디바이스 조치 지원을 알리므로 디바이스 조치 지원을 설정한 후 즉시 manage() 메소드를 호출해야 합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:529
+msgid "**2. Create the Device Action Handler**"
+msgstr ""
+"**2. 디바이스 조치 핸들러 작성**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:531
+msgid "In order to support the device action, the device needs to create a handler and add it to ManagedDevice. The handler must extend a DeviceActionHandler class and provide implementation for the following methods:"
+msgstr ""
+"디바이스 조치를 지원하기 위해 디바이스는 핸들러를 작성하고 ManagedDevice에 추가해야 합니다. 핸들러는 DeviceActionHandler 클래스를 확장하고 다음 메소드에 대한 구현을 제공해야 합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:538
+msgid "**2.1 Sample implementation of handleReboot**"
+msgstr ""
+"**2.1 handleReboot의 샘플 구현**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:540
+msgid "The implementation must add a logic to reboot the device and report the status of the reboot via DeviceAction object. The device needs to update the status along with a optional message only when there is a failure (because the successful operation reboots the device and the device code will not have a control to update the IoT Platform). A sample reboot implementation for a Raspberry Pi device is shown below:"
+msgstr ""
+"구현에서는 DeviceAction 오브젝트를 통해 디바이스를 다시 부팅하고 다시 부팅 상태를 보고하는 로직을 추가해야 합니다. 디바이스는 장애가 있는 경우에만 선택적 메시지와 함께 상태를 업데이트해야 합니다. 왜냐하면 오퍼레이션이 성공적으로 완료되면 디바이스가 다시 부팅되고 디바이스 코드는 IoT Platform을 업데이트할 수 있는 권한을 갖지 않게 됩니다. Raspberry Pi 디바이스의 샘플 다시 부팅 구현은 다음과 같습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:563
+msgid "The complete code can be found in the device management sample `DeviceActionHandlerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/DeviceActionHandlerSample.java>`__."
+msgstr ""
+"전체 코드는 디바이스 관리 샘플 `DeviceActionHandlerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/DeviceActionHandlerSample.java>`__에서 찾을 수 있습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:565
+msgid "**2.2 Sample implementation of handleFactoryReset**"
+msgstr ""
+"**2.2 handleFactoryReset의 샘플 구현**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:567
+msgid "The implementation must add a logic to reset the device to factory settings and report the status via DeviceAction object. The device needs to update the status along with a optional message only when there is a failure (because as part of this process, the device reboots and the device will not have a control to update status to IoT Platform). The skeleton of the Factory Reset implementation is shown below:"
+msgstr ""
+"구현에서는 DeviceAction 오브젝트를 통해 디바이스를 팩토리 설정으로 재설정하고 상태를 보고하는 로직을 추가해야 합니다. 디바이스는 장애가 있는 경우에만 선택적 메시지와 함께 상태를 업데이트해야 합니다. 왜냐하면 이 프로세스의 일부분으로 디바이스가 다시 부팅되고 디바이스는 IoT Platform에 대한 상태를 업데이트할 수 있는 권한을 갖지 않게 됩니다. 팩토리 재설정 구현의 스켈레톤은 다음과 같습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:582
+msgid "**3. Add the handler to ManagedDevice**"
+msgstr ""
+"**3. ManagedDevice에 핸들러 추가**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:584
+msgid "The created handler needs to be added to the ManagedDevice instance so that the ibmiotf client library invokes the corresponding method when there is a device action request from IoT Platform."
+msgstr ""
+"IoT Platform에서 제공하는 디바이스 조치 요청이 있는 경우 ibmiotf 클라이언트 라이브러리가 해당 메소드를 호출하도록, 작성된 핸들러를 ManagedDevice 인스턴스에 추가해야 합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:591
+msgid "Refer to `this page <../device_mgmt/operations/device_actions.html>`__ for more information about the Device Action."
+msgstr ""
+"디바이스 조치에 대한 자세한 정보는 `이 페이지 <../device_mgmt/operations/device_actions.html>`__를 참조하십시오. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:594
+msgid "Listen for Device attribute changes"
+msgstr ""
+"디바이스 속성 변경 청취"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:596
+msgid "This ibmiotf client library updates the corresponding objects whenever there is an update request from the IoT Platform, these update requests are initiated by the application either directly or indirectly (Firmware Update) via the IoT Platform ReST API. Apart from updating these attributes, the library provides a mechanism where the device can be notified whenever a device attribute is updated."
+msgstr ""
+"이 ibmiotf 클라이언트 라이브러리는 IoT Platform의 업데이트 요청이 있을 때마다 해당 오브젝트를 업데이트하며, 이러한 업데이트 요청은 직접 또는 IoT Platform ReST API를 통해 간접적으로(펌웨어 업데이트) 애플리케이션에서 시작됩니다. 이러한 속성의 업데이트 외에 라이브러리는 디바이스 속성이 업데이트될 때마다 디바이스에 알릴 수 있는 메커니즘을 제공합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:598
+msgid "Attributes that can be updated by this operation are location, metadata, device information and firmware."
+msgstr ""
+"이 오퍼레이션에서 업데이트될 수 있는 속성은 위치, 메타데이터, 디바이스 정보 및 펌웨어입니다."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:600
+msgid "In order to get notified, the device needs to add a property change listener on those objects that it is interested."
+msgstr ""
+"알림을 받으려면 디바이스는 관심이 있는 오브젝트에서 특성 변경 리스너를 추가해야 합니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:609
+msgid "Also, the device needs to implement the propertyChange() method where it receives the notification. A sample implementation is as follows:"
+msgstr ""
+"또한 디바이스는 알림을 받은 경우 propertyChange() 메소드를 구현해야 합니다. 샘플 구현은 다음과 같습니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:642
+msgid "Refer to `this page <../device_mgmt/operations/update.html>`__ for more information about updating the device attributes."
+msgstr ""
+"디바이스 속성 업데이트에 대한 자세한 정보는 `이 페이지 <../device_mgmt/operations/update.html>`__를 참조하십시오. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:645
+msgid "Examples"
+msgstr ""
+"예제"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:646
+msgid "`SampleRasPiDMAgent <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/SampleRasPiDMAgent.java>`__ - A sample agent code that shows how to perform various device management operations on Raspberry Pi."
+msgstr ""
+"`SampleRasPiDMAgent <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/SampleRasPiDMAgent.java>`__ - Raspberry Pi에서 다양한 디바이스 관리 오퍼레이션을 수행하는 방법을 표시하는 샘플 에이전트 코드입니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:647
+msgid "`SampleRasPiManagedDevice <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/SampleRasPiManagedDevice.java>`__ - A sample code that shows how one can perform both device operations and management operations."
+msgstr ""
+"`SampleRasPiManagedDevice <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/SampleRasPiManagedDevice.java>`__ - 디바이스 오퍼레이션과 관리 오퍼레이션을 모두 수행하는 방법을 표시하는 샘플 코드입니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:648
+msgid "`SampleRasPiDMAgentWithCustomMqttAsyncClient <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/SampleRasPiDMAgentWithCustomMqttAsyncClient.java>`__ - A sample agent code with custom MqttAsyncClient."
+msgstr ""
+"`SampleRasPiDMAgentWithCustomMqttAsyncClient <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/SampleRasPiDMAgentWithCustomMqttAsyncClient.java>`__ - 사용자 정의 MqttAsyncClient를 사용하는 샘플 에이전트 코드입니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:649
+msgid "`SampleRasPiDMAgentWithCustomMqttClient <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/SampleRasPiDMAgentWithCustomMqttClient.java>`__ - A sample agent code with custom MqttClient."
+msgstr ""
+"`SampleRasPiDMAgentWithCustomMqttClient <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/SampleRasPiDMAgentWithCustomMqttClient.java>`__ - 사용자 정의 MqttClient를 사용하는 샘플 에이전트 코드입니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:650
+msgid "`RasPiFirmwareHandlerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/RasPiFirmwareHandlerSample.java>`__ - A sample implementation of FirmwareHandler for Raspberry Pi."
+msgstr ""
+"`RasPiFirmwareHandlerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/RasPiFirmwareHandlerSample.java>`__ - Raspberry Pi에 대한 FirmwareHandler의 샘플 구현입니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:651
+msgid "`DeviceActionHandlerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/DeviceActionHandlerSample.java>`__ - A sample implementation of DeviceActionHandler"
+msgstr ""
+"`DeviceActionHandlerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/DeviceActionHandlerSample.java>`__ - DeviceActionHandler의 샘플 구현입니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:652
+msgid "`ManagedDeviceWithLifetimeSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/ManagedDeviceWithLifetimeSample.java>`__ - A sample that shows how to send regular manage request with lifetime specified."
+msgstr ""
+"`ManagedDeviceWithLifetimeSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/ManagedDeviceWithLifetimeSample.java>`__ - 영구를 지정하여 일반 관리 요청을 보내는 방법을 표시하는 샘플입니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:653
+msgid "`DeviceAttributesUpdateListenerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/DeviceAttributesUpdateListenerSample.java>`__ - A sample listener code that shows how to listen for a various device attribute changes ."
+msgstr ""
+"`DeviceAttributesUpdateListenerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/DeviceAttributesUpdateListenerSample.java>`__ - 다양한 디바이스 속성 변경을 청취하는 방법을 표시하는 샘플 리스너 코드입니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:654
+msgid "`NonBlockingDiagnosticsErrorCodeUpdateSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/NonBlockingDiagnosticsErrorCodeUpdateSample.java>`__ - A sample that shows how to add ErrorCode without waiting for response from the server."
+msgstr ""
+"`NonBlockingDiagnosticsErrorCodeUpdateSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/NonBlockingDiagnosticsErrorCodeUpdateSample.java>`__ - 서버로부터 응답을 기다리지 않고 ErrorCode를 추가하는 방법을 표시하는 샘플입니다. "
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:657
+msgid "Recipe"
+msgstr ""
+"지침서"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:659
+msgid "Refer to `the recipe <https://developer.ibm.com/recipes/tutorials/connect-raspberry-pi-as-managed-device-to-ibm-iot-foundation/>`__ that shows how to connect the Raspberry Pi device as managed device to IoT Platform to perform various device management operations in step by step using this client library."
+msgstr ""
+"Raspberry Pi 디바이스를 IoT Platform에 관리 디바이스로 연결하여 이 클라이언트 라이브러리를 통해 다양한 디바이스 관리 오퍼레이션을 단계별로 수행하는 방법을 보여주는 `지침서 <https://developer.ibm.com/recipes/tutorials/connect-raspberry-pi-as-managed-device-to-ibm-iot-foundation/>`_를 참조하십시오. "
+

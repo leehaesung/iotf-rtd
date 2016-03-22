@@ -1,0 +1,149 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/getting_started/features.rst:2
+msgid "Feature Overview"
+msgstr ""
+"Présentation de la fonction "
+
+#: ../docs/getting_started/features.rst:5
+msgid "Device Registry"
+msgstr ""
+"Registre des terminaux "
+
+#: ../docs/getting_started/features.rst:6
+msgid "Manage your inventory, configure security, and store metadata for millions of unique devices.  Define device types to represent individual device models and apply default metadata to all devices of that type."
+msgstr ""
+"Gérez votre stock, configurez la sécurité et stockez des métadonnées pour des millions de terminaux uniques. Définissez des types de terminaux afin de représenter des modèles de terminal individuels et d'appliquer des métadonnées par défaut à tous les terminaux de ce type. "
+
+#: ../docs/getting_started/features.rst:11
+msgid "Connectivity"
+msgstr ""
+"Connectivité"
+
+#: ../docs/getting_started/features.rst:12
+msgid "Securely connect your devices, gateways and applications directly to the Watson IoT platform via MQTT.  See the section on MQTT in the :ref:`reference material <ref-mqtt>` to learn more about the advantages of using this protocol.  Model the data from your device as events and control the flow of events into your applications."
+msgstr ""
+"Connectez vos terminaux, vos passerelles et vos applications en toute sécurité directement à Watson IoT Platform via MQTT. Consultez la section relative à MQTT dans :ref:`reference material <ref-mqtt>` pour en savoir plus sur les avantages que présente l'utilisation de ce protocole. Modélisez les données depuis votre terminal sous forme d'événements et contrôlez le flot d'événements dans vos applications. "
+
+#: ../docs/getting_started/features.rst:19
+msgid "Gateway Support"
+msgstr ""
+"Prise en charge de la passerelle "
+
+#: ../docs/getting_started/features.rst:20
+msgid "In many cases a direct connection can not be made between the service and a device, the Watson IoT platform allows gateway devices to connect that can provide indirect connectivity for multiple devices."
+msgstr ""
+"Souvent, il n'est pas possible d'établir une connexion directe entre le service et un terminal. Watson IoT Platform permet la connexion de terminaux de passerelle afin de fournir une connectivité indirecte pour plusieurs terminaux. "
+
+#: ../docs/getting_started/features.rst:23
+#: ../docs/getting_started/features.rst:42
+msgid "This feature is currently available as part of a limited beta.  Future updates may include changes incompatible with the current version of this feature.  Try it out and `let us know what you think <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_"
+msgstr ""
+"Cette fonction est actuellement disponible dans le cadre d'une version bêta limitée. Il se peut que de futures mises à jour incluent des modifications incompatibles avec la version actuelle de cette fonction. Essayez-la et `faites-nous part de vos commentaires sur la page <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_"
+
+#: ../docs/getting_started/features.rst:29
+msgid "Device Management"
+msgstr ""
+"Gestion des terminaux"
+
+#: ../docs/getting_started/features.rst:30
+msgid "Optionally, allow the Watson IoT platform to manage the lifecycle of your devices by implementing support for the Watson IoT platform's device management protocol in your devices.  The means by which the device connects to the service does not affect the device management protocol, which functions the same for directly connected, indirectly connected, and gateway devices."
+msgstr ""
+"Si vous le souhaitez, autorisez Watson IoT Platform à gérer le cycle de vie de vos terminaux en implémentant la prise en charge du protocole de gestion des terminaux de Watson IoT Platform dans vos terminaux. Le moyen par lesquel le terminal se connecte au service n'a pas d'impact sur le protocole de gestion des terminaux, qui fonctionne de la même manière pour les terminaux connectés directement, les terminaux connectés indirectement et les terminaux de passerelle. "
+
+#: ../docs/getting_started/features.rst:37
+msgid "External Service Integration"
+msgstr ""
+"Intégration de service externe "
+
+#: ../docs/getting_started/features.rst:38
+msgid "The Watson IoT platform supports integration with external services to bring data and operations supported by other online services into the platform, allowing your application and device developers to seemlessly interact with those services without ever leaving the comfort of the Watson IoT platform APIs."
+msgstr ""
+"Watson IoT Platform prend en charge l'intégration à des services externes afin d'apporter des données et des opérations prises en charge par d'autres services en ligne dans la plateforme, ce qui permet à votre application et aux développeurs de terminaux d'interagir en toute transparence avec ces services sans jamais renoncer au confort des API Watson IoT Platform. "
+
+#: ../docs/getting_started/features.rst:48
+msgid "Historian"
+msgstr ""
+"Historique "
+
+#: ../docs/getting_started/features.rst:49
+msgid "Configure the Watson IoT platform to store a record of the events your devices generate."
+msgstr ""
+"Configurez Watson IoT Platform pour stocker un enregistrement des événements générés par vos terminaux. "
+
+#: ../docs/getting_started/features.rst:51
+msgid "**Message format restrictions apply to the Historian**"
+msgstr ""
+"**Des restrictions de format de message s'appliquent à l'historique**"
+
+#: ../docs/getting_started/features.rst:53
+msgid "The historian feature only supports JSON messages meeting specific critera:"
+msgstr ""
+"La fonction d'historique ne prend en charge que les messages JSON satisfaisant certains critères : "
+
+#: ../docs/getting_started/features.rst:55
+msgid "The message must be a valid JSON object (not an array) with only two top level elements: ``d`` and ``ts``"
+msgstr ""
+"Le message doit être un objet JSON valide (et non un tableau) incluant uniquement deux éléments de niveau supérieur : ``d`` et ``ts``"
+
+#: ../docs/getting_started/features.rst:57
+msgid "The message must be UTF-8 encoded"
+msgstr ""
+"Le message doit utiliser le codage UTF-8"
+
+#: ../docs/getting_started/features.rst:59
+msgid "**Data**"
+msgstr ""
+"**Données**"
+
+#: ../docs/getting_started/features.rst:61
+msgid "The **d** element is where you include all data for the event (or command) being transmitted in the message."
+msgstr ""
+"**d** est l'élément où vous placez toutes les données de l'événement (ou de la commande) transmises dans le message."
+
+#: ../docs/getting_started/features.rst:64
+msgid "This element is required for your message to meet the Watson IoT platform message specification."
+msgstr ""
+"Cet élément est requis pour que votre message satisfasse la spécification de message Watson IoT Platform. "
+
+#: ../docs/getting_started/features.rst:65
+msgid "This must always be a JSON object (not an array)"
+msgstr ""
+"Il doit toujours s'agir d'un objet JSON (non d'un tableau)"
+
+#: ../docs/getting_started/features.rst:66
+msgid "In the case where you wish to send no data the **d** element should still be present, but contain an empty object."
+msgstr ""
+"Si vous ne souhaitez pas envoyer de données, l'élément **d** doit toujours être indiqué mais il doit contenir un objet vide."
+
+#: ../docs/getting_started/features.rst:69
+msgid "**Timestamp**"
+msgstr ""
+"**Horodatage**"
+
+#: ../docs/getting_started/features.rst:71
+msgid "The **ts** element allows you to associate a timestamp with the event (or command). This is an optional element, if included its value should be a valid ISO8601 timestamp."
+msgstr ""
+"L'élément **ts** permet d'associer un horodatage à l'événement (ou à la commande). Il s'agit d'un élément facultatif. S'il est inclus, sa valeur doit être un horodatage ISO8601 valide. "
+
+#: ../docs/getting_started/features.rst:75
+msgid "**Example**"
+msgstr ""
+"**Exemple**"
+

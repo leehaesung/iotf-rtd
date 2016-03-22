@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/libraries/python.rst:2
+msgid "Python for Device Developers"
+msgstr ""
+"Python para Desenvolvedores de Dispositivos"
+
+#: ../docs/devices/libraries/python.rst:4
+msgid "See `iot-python <https://github.com/ibm-messaging/iot-python>`_ in GitHub"
+msgstr ""
+"Consulte `iot-python <https://github.com/ibm-messaging/iot-python>`_ no GitHub"
+
+#: ../docs/devices/libraries/python.rst:5
+msgid "See `ibmiotf <https://pypi.python.org/pypi/ibmiotf>`_ on PyPi"
+msgstr ""
+"Consulte `ibmiotf <https://pypi.python.org/pypi/ibmiotf>`_ no PyPi"
+
+#: ../docs/devices/libraries/python.rst:10
+msgid "Constructor"
+msgstr ""
+"Construtor"
+
+#: ../docs/devices/libraries/python.rst:12
+msgid "The constructor builds the client instance, and accepts an options dict containing the following definitions:"
+msgstr ""
+"O construtor constrói a instância do cliente e aceita um dic. de opções contendo as seguintes definições:"
+
+#: ../docs/devices/libraries/python.rst:14
+msgid "``org`` - Your organization ID."
+msgstr ""
+"``org`` - O ID de sua organização."
+
+#: ../docs/devices/libraries/python.rst:15
+msgid "``type`` - The type of your device."
+msgstr ""
+"``type`` - O tipo de seu dispositivo."
+
+#: ../docs/devices/libraries/python.rst:16
+msgid "``id`` - The ID of your device."
+msgstr ""
+"``id`` - O ID de seu dispositivo."
+
+#: ../docs/devices/libraries/python.rst:17
+msgid "``auth-method`` - Method of authentication (the only value currently supported is ``token``)."
+msgstr ""
+"``auth-method`` - Método de autenticação (o único valor suportado atualmente é ``token``)."
+
+#: ../docs/devices/libraries/python.rst:18
+msgid "``auth-token`` - API key token (required if auth-method is ``token``)."
+msgstr ""
+"``auth-token`` - Token de chave da API (necessário se o método de autenticação é ``token``)."
+
+#: ../docs/devices/libraries/python.rst:20
+msgid "If no options dict is provided, the client will connect to the IoT Platform Quickstart, and default to an unregistered device. The options dict creates definitions which are used to interact with the IoT Platform module."
+msgstr ""
+"Se nenhum dicionário de opções for fornecido, o cliente se conectará ao IoT Platform Quickstart e padronizará com um dispositivo não registado. O dicionário de opções cria definições que são usadas para interagir com o módulo do IoT Platform."
+
+#: ../docs/devices/libraries/python.rst:39
+msgid "Using a configuration file"
+msgstr ""
+"Usando um arquivo de configuração"
+
+#: ../docs/devices/libraries/python.rst:41
+msgid "Instead of including an options dict directly, you can use a configuration file containing an options dict. If you are using a configuration file containing an options dict, use the following code format."
+msgstr ""
+"Em vez de incluir um dic de opções diretamente, você pode usar um arquivo de configuração contendo um dic de opções. Se você estiver usando um arquivo de configuração contendo um dic de opções, use o seguinte formato de código."
+
+#: ../docs/devices/libraries/python.rst:52
+msgid "The content of the configuration file must be in the following format(need not contain **$** sign):"
+msgstr ""
+"O conteúdo do arquivo de configuração deve estar no seguinte formato (não precisa conter o sinal **$**):"
+
+#: ../docs/devices/libraries/python.rst:68
+msgid "Publishing events"
+msgstr ""
+"Publicando eventos"
+
+#: ../docs/devices/libraries/python.rst:69
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"Eventos são o mecanismo pelo qual dispositivos publicam dados no IoT Platform. O dispositivo controla o conteúdo do evento e designa um nome para cada evento que envia."
+
+#: ../docs/devices/libraries/python.rst:71
+msgid "When an event is received by the IoT Platform the credentials of the connection on which the event was received are used to determine from which device the event was sent. With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"Quando um evento é recebido pelo IoT Platform, as credenciais da conexão na qual o evento foi recebido são usadas para determinar a partir de qual dispositivo o evento foi enviado. Com essa arquitetura, é impossível para um dispositivo personificar outro dispositivo."
+
+#: ../docs/devices/libraries/python.rst:73
+msgid "Events can be published at any of the three :ref:`quality of service levels <qoslevels>` defined by the MQTT protocol.  By default events will be published as qos level 0."
+msgstr ""
+"Os eventos podem ser publicados em qualquer um dos três :ref:`níveis de qualidade de serviço <qoslevels>` definidos pelo protocolo MQTT.  Por padrão, os eventos serão publicados como qos nível 0."
+
+#: ../docs/devices/libraries/python.rst:76
+msgid "Publish event using default quality of service"
+msgstr ""
+"Publicar evento usando a qualidade de serviço padrão"
+
+#: ../docs/devices/libraries/python.rst:85
+msgid "Publish event using user-defined quality of service"
+msgstr ""
+"Publicar evento usando a qualidade de serviço definida pelo usuário"
+
+#: ../docs/devices/libraries/python.rst:87
+msgid "Events can be published at higher MQTT quality of servive levels, but these events may take slower then QoS level 0, because of the extra confirmation of receipt."
+msgstr ""
+"Os eventos podem ser publicados em níveis de qualidade de serviço MQTT superiores, mas esses eventos podem ser mais lentos que o QoS nível 0 por causa da confirmação de recebimento extra."
+
+#: ../docs/devices/libraries/python.rst:99
+msgid "Handling commands"
+msgstr ""
+"Manipulando comandos"
+
+#: ../docs/devices/libraries/python.rst:100
+msgid "When the device client connects it automatically subscribes to any command for this device.  To process specific commands you need to register a command callback method. The messages are returned as an instance of the Command class which has the following properties:"
+msgstr ""
+"Quando o cliente do dispositivo se conecta, ele automaticamente assina qualquer comando para esse dispositivo.  Para processar comandos específicos, você precisa registrar um método de retorno de chamada de comando. As mensagens são retornadas como uma instância da classe Comando, que possui as seguintes propriedades:"
+
+#: ../docs/devices/libraries/python.rst:105
+msgid "command - string"
+msgstr ""
+"comando - sequência"
+
+#: ../docs/devices/libraries/python.rst:106
+msgid "format - string"
+msgstr ""
+"formato - sequência"
+
+#: ../docs/devices/libraries/python.rst:107
+msgid "data - dict"
+msgstr ""
+"dados - dic"
+
+#: ../docs/devices/libraries/python.rst:108
+msgid "timestamp - datetime"
+msgstr ""
+"registro de data e hora - data/hora"
+
+#: ../docs/devices/libraries/python.rst:136
+msgid "Custom message format support"
+msgstr ""
+"Suporte ao formato de mensagem customizada"
+
+#: ../docs/devices/libraries/python.rst:137
+msgid "By default the library supports the encoding and decoding of Python dictionary objects as JSON when you use msgFormat \"json\".  When you use msgFormat \"json-iotf\" it will encode the message in accordance with the IoT Platform JSON Payload Specification.  To add support for your own custom message formats see the `sample in GitHub <https://github.com/ibm-messaging/iot-python/tree/master/samples/customMessageFormat>`__"
+msgstr ""
+"Por padrão, a biblioteca suporta a codificação e a decodificação de objetos do dicionário Python como JSON quando você usa msgFormat \"json\".  Quando você usa msgFormat \"json-iotf\", isso codificará a mensagem de acordo com a IoT Platform JSON Payload Specification. Para incluir suporte para seus próprios formatos de mensagem customizada, consulte `amostra em GitHub <https://github.com/ibm-messaging/iot-python/tree/master/samples/customMessageFormat>`__"
+
+#: ../docs/devices/libraries/python.rst:139
+msgid "Once you have created your custom encoder module it needs to be registered in the device client.  If you attempt to use an unknown message format when sending an event or the device receives a command send in a format that it does not know how to decode then the library will throw a MissingMessageDecoderException."
+msgstr ""
+"Depois de ter criado seu módulo de codificador customizado, ele precisará ser registrado no cliente do dispositivo.  Se você tentar usar um formato de mensagem desconhecido ao enviar um evento ou o dispositivo receber um comando enviar em um formato que ele não sabe como decodificar, a biblioteca lançará um MissingMessageDecoderException."
+

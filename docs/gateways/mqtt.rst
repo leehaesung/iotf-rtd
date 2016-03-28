@@ -169,9 +169,18 @@ its own ``typeId`` and ``deviceId``:
 
 Messages received on the notify topic will have the following format:
 
-  ..code:: json
+  .. code::
   
-    { "Request": "<Request_Type>", "Time": "<Timestamp>", "Topic": "<Topic>", "Type": "<Device_Type>", "Id": "<Device_Id>", "Client": "<Client_ID", "RC": <Return_Code>, "Message": "<Message>" }
+    { 
+      "Request": "<Request_Type>", 
+      "Time": "<Timestamp>", 
+      "Topic": "<Topic>", 
+      "Type": "<Device_Type>", 
+      "Id": "<Device_Id>", 
+      "Client": "<Client_ID", 
+      "RC": <Return_Code>, 
+      "Message": "<Message>" 
+    }
 
 - Request_Type: Either publish or subscribe
 - Timestamp: Time in ISO 8601 Format

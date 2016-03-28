@@ -56,11 +56,6 @@ Applications
 
 Gateway Devices
 ---------------
-
-.. important:: Gateway support is currently available as part of a limited beta.  Future updates 
-  may include changes incompatible with the current version of this feature.  Try it out and `let us know what you 
-  think <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_
-
 * Gateways are a specialized class of Device. They have the combined capabilities 
   of an Application and a Device allowing them to serve as access points providing 
   connectivity to the service for other devices without the ability to directly connect.
@@ -116,5 +111,4 @@ The device must determine which action to take on receipt of any given command,
 and even controls which commands it will subscribe to in the first place.  It is 
 possible to design your device to listen for any command, or to simply 
 subscribe to a set of specific commands.
-
 

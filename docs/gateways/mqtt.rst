@@ -1,11 +1,6 @@
 MQTT Connectivity for Gateways
 ==============================
 
-.. important:: This feature is currently available as part of a limited beta.  Future updates 
-  may include changes incompatible with the current version of this feature.  Try it out and `let us know what you 
-  think <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_
-
-
 MQTT client connection
 ----------------------
 Every registered organization has a unique endpoint which must be used when 
@@ -146,6 +141,57 @@ Example
 - Gateway 1 can subscribe any command sent to devices of type "mydevice": ``iot-2/type/mydevice/id/+/cmd/+/fmt/+``
 
 
+Gateway auto-registration
+-------------------------
+Gateway devices have the ability to automatically register devices which are connected to them. When a gateway publishes
+a message or subscribes to a topic on behalf of another device, that device will automatically be registered if it does
+not already exist.
+
+Registration requests from gateway devices are throttled to 10 pending requests at a time. If trying to connect many new devices
+to a gateway which have not previously been registered, then there may be some delay in the registration of the devices through
+the gateway.
+
+Gateway devices are limited to 500 active devices at a time. If exceeded, publish and subscribe requests for new devices 
+will be dropped. The count is reset on gateway disconnect.
+
+.. warning::
+  If the gateway fails to automatically register a device, then it will not attempt to register that device again for a short
+  period of time. Any messages or subscriptions from the failed device will be dropped during that time.
+  
+  
+Gateway notifications
+---------------------
+When errors occur during the validation of the publish or subscribe topic, or during automatic registration, a notification will be 
+sent to the gateway device. A gateway can receive these notifications by subscribing to the following topic, substituting in 
+its own ``typeId`` and ``deviceId``:
+
+  iot-2/type/\ **typeId**/id/\ **deviceId**/notify
+
+Messages received on the notify topic will have the following format:
+
+  ..code:: json
+  
+    { "Request": "<Request_Type>", "Time": "<Timestamp>", "Topic": "<Topic>", "Type": "<Device_Type>", "Id": "<Device_Id>", "Client": "<Client_ID", "RC": <Return_Code>, "Message": "<Message>" }
+
+- Request_Type: Either publish or subscribe
+- Timestamp: Time in ISO 8601 Format
+- Topic: The request topic from the gateway
+- Device_Type: The device type from the topic
+- Device_Id: The device id from the topic
+- ClientID: The client id of the request
+- RC: The return code
+- Message: The error message
+
+Notifications a gateway may receive:
+
+- Topic does not match with any allowed topic rules.
+- Device type is not valid.
+- Device id is not valid.
+- Maximum number of devices per gateway has been reached.
+- Maximum number of devices per organization has been reached.
+- Failed to create device due to internal errors.
+
+
 Managed Gateways
 ----------------
 
@@ -226,5 +272,4 @@ All messages are sent in JSON format. There are two types of message.
     - ``reqId`` is the request ID of the original request. This is used to correlate responses with 
       requests, and the device needs to ensure that all request IDs are unique.  When responding to IoT 
       Platform requests, the correct ``reqId`` value must be sent in the response.
-
 

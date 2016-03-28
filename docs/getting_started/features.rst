@@ -17,12 +17,8 @@ applications.
 
 Gateway Support
 ---------------
-In many cases a direct connection can not be made between the service and a device, the Watson IoT platform allows 
+In many cases where a direct connection can not be made between the service and a device, the Watson IoT platform allows 
 gateway devices to connect that can provide indirect connectivity for multiple devices.
-
-.. important:: This feature is currently available as part of a limited beta.  Future updates 
-  may include changes incompatible with the current version of this feature.  Try it out and `let us know what you 
-  think <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_
 
 
 Device Management

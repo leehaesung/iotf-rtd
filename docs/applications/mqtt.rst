@@ -87,6 +87,8 @@ An application can publish events as if they came from any registered device.
     that you wish to send to the IoT Platform.  One way to get that data into the service would
     be to write an application that processes the data and publishes it to the IoT Platform.
 
+.. important:: The message payload is limited to a maximum of 131072 bytes.  Messages larger than this will be rejected.
+
 
 Publishing device commands
 --------------------------
@@ -109,8 +111,6 @@ An application can subscribe to events from one or more devices.
     - device\_id
     - event\_id
     - format\_string
-    
-.. important:: The message payload is limited to a maximum of 131072 bytes.  Messages larger than this will be rejected.
 
 
 Subscribing to device commands

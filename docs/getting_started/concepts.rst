@@ -97,7 +97,7 @@ duration can be controlled from the settings panel in the Watson IoT platform da
     organization, all stored data will be deleted, and cannot be recovered.
 
 .. warning:: Historical event storage uses an MQTT Quality of Service level of 0 
-    (delivery at most once), so some data may be lost.
+    (delivery at most once), so some data may be lost. Please note that only messages of up to 4096 bytes are stored.
 
 
 

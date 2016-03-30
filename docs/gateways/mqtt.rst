@@ -23,7 +23,7 @@ Encrypted client connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Connect on port **8883** or **443** for websockets.
-
+it
 In many client libraries you will need to provide the server's public certificate 
 in pem format.  The following file contains the entire certificate chain for 
 \*.messaging.internetofthings.ibmcloud.com: messaging.pem_
@@ -106,7 +106,7 @@ Example
 | Device 1  | mydevice   | device1      |
 +-----------+------------+--------------+
 
-- Gateway 1 can publish it's own status events: ``iot-2/type/mygateway/id/gateway1/evt/status/fmt/json``
+- Gateway 1 can publish its own status events: ``iot-2/type/mygateway/id/gateway1/evt/status/fmt/json``
 - Gateway 1 can publish status events on behalf of Device 1: ``iot-2/type/mydevice/id/device1/evt/status/fmt/json``
 
 

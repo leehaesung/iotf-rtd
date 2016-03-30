@@ -109,7 +109,7 @@ Publishing events
 -  **event\_id** is the ID of the event, for example "status".  The event ID can be any string permitted by MQTT.  Subscriber applications must use this string in their subscription topic to receive the events published on this topic if wildcards are not used.
 -  **format\_string** is the format of the event payload, for example "json".  The format can be any string permitted by MQTT.  Subscriber applications must use this string in their subscription topic to receive events published on this topic if wildcards are not used.  If the format is not "json", then messages will not be stored in the Historian.
 
-.. important:: The message payload is limited to a maximum of 4096 bytes.  Messages larger than this will be rejected.
+.. important:: The message payload is limited to a maximum of 131072 bytes.  Messages larger than this will be rejected.
 
 
 Subscribing to commands

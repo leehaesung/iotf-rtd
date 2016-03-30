@@ -127,7 +127,7 @@ The Watson IoT platform supports sending and recieving messages in any format.
 Watson IoT Platform Maximum Message Payload Size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The maximum payload size is 4 kilobytes (kB).  If messages with payloads larger
+The maximum payload size is 131072 bytes.  If messages with payloads larger
 than this limit are sent, the client will be disconnected and the following log
 message will appear in the Diagnostic Logs if the client is a device:
 

@@ -109,6 +109,8 @@ An application can subscribe to events from one or more devices.
     - device\_id
     - event\_id
     - format\_string
+    
+.. important:: The message payload is limited to a maximum of 131072 bytes.  Messages larger than this will be rejected.
 
 
 Subscribing to device commands

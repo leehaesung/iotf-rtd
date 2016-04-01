@@ -55,9 +55,17 @@ A device uses this request to become a managed device. It should be the first de
 Topic
 ~~~~~~
 
+A device publishes this request to the following topic:
+
 .. code:: 
 
 	iotdevice-1/mgmt/manage
+
+The server responds to this request on the following topic:
+
+.. code:: 
+
+	iotdm-1/response
 
 
 Message Format
@@ -73,6 +81,9 @@ Request Format:
 
 .. code:: 
 
+	Outgoing message from the device:
+	
+	Topic: iotdevice-1/mgmt/manage
 	{
 		"d": {
 			"metadata":{},
@@ -100,6 +111,9 @@ Response Format:
 
 .. code::
 
+	Incoming message from the server:
+	
+	Topic: iotdm-1/response
 	{
 		"rc": 200,
 		"reqId": "string"
@@ -131,9 +145,18 @@ A device uses this request when it no longer needs to be managed. The IoT Platfo
 Topic
 ~~~~~~
 
-.. code::
+A device publishes this request to the following topic:
+
+.. code:: 
 
 	iotdevice-1/mgmt/unmanage
+
+The server responds to this request on the following topic:
+
+.. code:: 
+
+	iotdm-1/response
+	
 	
 Message Format
 ~~~~~~~~~~~~~~~
@@ -142,6 +165,9 @@ Request Format:
 
 .. code::
 
+	Outgoing message from the device:
+	
+	Topic: iotdevice-1/mgmt/unmanage
 	{
 		"reqId": "string"
 	}
@@ -150,6 +176,9 @@ Response Format:
 
 .. code:: 
 
+	Incoming message from the server:
+	
+	Topic: iotdm-1/response
 	{
 		"rc": 200,
 		"reqId": "string"
@@ -185,9 +214,17 @@ Devices that can determine their location can choose to notify the IoT Platform 
 Topic
 ~~~~~~
 
-.. code::
+A device publishes this request to the following topic:
+
+.. code:: 
 
 	iotdevice-1/device/update/location
+
+The server responds to this request on the following topic:
+
+.. code:: 
+
+	iotdm-1/response
 
 
 Location update triggered by user or app
@@ -198,7 +235,9 @@ When a user or application updates the location of an active managed device the 
 Topic
 ~~~~~~
 
-.. code::
+The server publishes this request to the following topic:
+
+.. code:: 
 
 	iotdm-1/device/update
 
@@ -219,6 +258,9 @@ Request Format:
 
 .. code:: json
 
+	Outgoing message from the device:
+	
+	Topic: iotdevice-1/device/update/location
 	{
 		"d": {
 			"longitude": number,
@@ -236,6 +278,9 @@ Response Format:
 
 .. code:: json 
 
+	Incoming message from the server:
+	
+	Topic: iotdm-1/response
 	{
 		"rc": 200,
 		"reqId": "string"
@@ -256,6 +301,9 @@ Payload Format:
 
 .. code:: json
 
+    Incoming message from the server:
+    
+    Topic: iotdm-1/device/update
     {
         "d": {
             "fields": [
@@ -299,6 +347,8 @@ The "value" is the new value of the device attribute. It is a complex field matc
 Topic
 ~~~~~~~
 
+The server publishes this request to the following topic:
+
 .. code:: 
 
 	iotdm-1/device/update
@@ -311,6 +361,9 @@ Payload Format:
 
 .. code:: 
 
+	Incoming message from the server:
+	
+	Topic: iotdm-1/device/update
 	{
 		"d": {
 			"fields": [
@@ -336,6 +389,8 @@ Devices can choose to notify the IoT Platform device management server about cha
 Topic
 ~~~~~~~
 
+A device publishes this request to the following topic:
+
 .. code:: 
 
 	iotdevice-1/add/diag/errorCodes
@@ -349,6 +404,9 @@ Request Format:
 
 .. code:: 
 
+	Outgoing message from the device:
+	
+	Topic: iotdevice-1/add/diag/errorCodes
 	{
 		"d": {
 			"errorCode": number
@@ -361,6 +419,9 @@ Response Format:
 
 .. code::
 
+	Incoming message from the server:
+	
+	Topic: iotdm-1/response
 	{
 		"rc": 200,
 		"reqId": "string"
@@ -389,6 +450,8 @@ Devices can request that the Internet of Things Foundation clear all of their er
 Topic
 ~~~~~~
 
+A device publishes this request to the following topic:
+
 .. code::
 
 	iotdevice-1/clear/diag/errorCodes
@@ -400,6 +463,9 @@ Request Format:
 
 .. code:: 
 
+	Outgoing message from the device:
+	
+	Topic: iotdevice-1/clear/diag/errorCodes
 	{
 		"reqId": "string"
 	}
@@ -408,6 +474,9 @@ Response Format:
 
 .. code::
 
+	Incoming message from the server:
+	
+	Topic: iotdm-1/response
 	{
 		"rc": 200,
 		"reqId": "string"
@@ -436,6 +505,8 @@ Devices can choose to notify IoTF device management support about changes a new 
 Topic
 ~~~~~
 
+A device publishes this request to the following topic:
+
 .. code:: 
 
 	iotdevice-1/add/diag/log
@@ -452,6 +523,9 @@ Request Format:
 
 .. code:: 
 
+	Outgoing message from the device:
+	
+	Topic: iotdevice-1/add/diag/log
 	{
 		"d": {
 			"message": string,
@@ -467,6 +541,9 @@ Response Format:
 
 .. code::
 
+	Incoming message from the server:
+	
+	Topic: iotdm-1/response
 	{
 		"rc": 200,
 		"reqId": "string"
@@ -495,6 +572,8 @@ Devices can request that the Internet of Things Foundation clear all of their lo
 Topic
 ~~~~~~
 
+A device publishes this request to the following topic:
+
 .. code::
 
 	iotdevice-1/clear/diag/log
@@ -506,6 +585,9 @@ Request Format:
 
 .. code:: 
 
+	Outgoing message from the device:
+	
+	Topic: iotdevice-1/clear/diag/log
 	{
 		"reqId": "string"
 	}
@@ -514,6 +596,9 @@ Response Format:
 
 .. code::
 
+	Incoming message from the device:
+	
+	Topic: iotdm-1/response
 	{
 		"rc": 200,
 		"reqId": "string"
@@ -543,6 +628,8 @@ The IoT Platform can send this request to a device to observe changes of one or 
 Topic
 ~~~~~~
 
+The server publishes this request to the following topic:
+
 .. code:: 
 
 	iotdm-1/observe
@@ -558,6 +645,9 @@ Request Format:
 
 .. code::
 
+	Incoming message from the server:
+	
+	Topic: iotdm-1/observe
 	{
 		"d": {
 			"fields": [
@@ -571,6 +661,9 @@ Response Format:
 
 .. code::
 
+	Outgoing message from the device:
+	
+	Topic: iotdevice-1/response
 	{
 		"rc": number,
 		"message": "string",
@@ -603,6 +696,7 @@ The "message" field must be specified if "rc" is not 200.
 Topic
 ~~~~~~
 
+The server publishes this request to the following topic:
 .. code::
 
 	iotdm-1/cancel

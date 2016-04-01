@@ -697,6 +697,7 @@ Topic
 ~~~~~~
 
 The server publishes this request to the following topic:
+
 .. code::
 
 	iotdm-1/cancel
@@ -709,6 +710,9 @@ Request Format:
 
 .. code::
 
+	Incoming message from the server:
+	
+	Topic: iotdm-1/cancel
 	{
 		"d": {
 			"fields": [
@@ -722,6 +726,9 @@ Response Format:
 
 .. code:: 
 
+	Outgoing message from the device:
+	
+	Topic: iotdevice-1/response
 	{
 		"rc": number,
 		"message": "string",
@@ -749,6 +756,8 @@ If notify request is processed successfully, "rc" should be set to 200. If the r
 Topic
 ~~~~~~
 
+A device publishes this request to the following topic:
+
 .. code::
 
 	iotdevice-1/notify
@@ -760,6 +769,9 @@ Request Format:
 
 .. code::
 
+	Outgoing message from the device:
+	
+	Topic: iotdevice-1/notify
 	{
 		"d": {
 			"field": "field_name",
@@ -772,6 +784,9 @@ Response Format:
 
 .. code::
 
+	Incoming message from the server:
+	
+	Topic: iotdm-1/response
 	{
 		"rc": number,
 		"reqId": "string"

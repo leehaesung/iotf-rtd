@@ -1,18 +1,33 @@
 Device Management Requests
 ==========================
 
+The IoT Platform provides some actions which can be initiated against sets of devices. These actions can be initiated through the dashboard as well as by using the REST API. The available actions are split into two groups, device actions and firmware actions.
+
+Device Actions
+--------------
+
+A device may specify that it supports device actions when it publishes a manage request. This indicates to the IoT Platform that the device is able to respond to device reboot and device reset actions.
+
 .. _device-actions-reboot:
 
 Device Actions - Reboot
 ----------------------
 
-The IoT Platform can send this request to reboot a device. The action is considered complete when the device sends a Manage device request following its reboot.
-	
-If this operation can be initiated immediately, set "rc" to 202, if reboot attempt fails, the "rc" is set to 500 and the "message" field should be set accordingly, if the reboot is not supported, set "rc" to 501 and optionally set "message" accordingly.
+The reboot action can be initiated by using either the IoT Platform dashboard, or the REST API.
 
+To initiate a device reboot using the REST API, issue a POST request to /mgmt/requests. The information provided is:
+
+- The action ``device/reboot``
+- A list of devices to reboot, with a maximum of 5000 devices
+
+If this operation can be initiated immediately, set ``rc`` to ``202``. If the reboot attempt fails, set the ``rc`` to ``500`` and set the ``message`` field accordingly, if the reboot is not supported, set ``rc`` to ``501`` and optionally set ``message`` accordingly.
+
+The reboot action is considered complete when the device sends a Manage device request following its reboot.
 
 Topic
 ~~~~~~
+
+The server publishes this request to a device on the following topic:
 
 .. code:: 
 
@@ -26,6 +41,9 @@ Request Format:
 
 .. code:: 
 
+	Incoming message from the server:
+	
+	Topic: iotdm-1/mgmt/initiate/device/reboot
 	{
 		"reqId": "string"
 	}
@@ -34,6 +52,9 @@ Response Format:
 
 .. code::
 
+	Outgoing message from the device:
+	
+	Topic: iotdevice-1/response
 	{
 		"rc": "response_code",
 		"message": "string",
@@ -49,10 +70,18 @@ Response Format:
 Device Actions - Factory Reset
 -----------------------------
 
-The IoT Platform can send this request to reset the device to factory settings, as part of this process, the device also reboots. The action is considered complete when the device sends a Manage device request following its reboot.
+The factory reset action can be initiated by using either the IoT Platform dashboard, or the REST API.
+
+To initiate a device factory reset using the REST API, issue a POST request to /mgmt/requests. The information provided is:
+
+- The action ``device/factoryReset``
+- A list of devices to reboot, with a maximum of 5000 devices
+
+The IoT Platform can send this request to reset the device to factory settings, as part of this process, the device also reboots. 
 
 The response code should be 202 if this action can be initiated immediately. If the factory reset attempt fails, the "rc" should be 500 and the "message" field should be set accordingly, if the factory reset action is not supported, set "rc" to 501 and optionally set "message" accordingly.
 
+The action is considered complete when the device sends a Manage device request following its reboot.
 Topic
 ~~~~~~
 

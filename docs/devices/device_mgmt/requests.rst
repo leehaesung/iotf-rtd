@@ -77,13 +77,14 @@ To initiate a device factory reset using the REST API, issue a POST request to /
 - The action ``device/factoryReset``
 - A list of devices to reboot, with a maximum of 5000 devices
 
-The IoT Platform can send this request to reset the device to factory settings, as part of this process, the device also reboots. 
+The response code should be set to ``202`` if this action can be initiated immediately. If the factory reset attempt fails, set the ``rc`` to ``500`` and set the ``message`` field accordingly, if the factory reset action is not supported, set ``rc`` to ``501`` and optionally set ``message`` accordingly.
 
-The response code should be 202 if this action can be initiated immediately. If the factory reset attempt fails, the "rc" should be 500 and the "message" field should be set accordingly, if the factory reset action is not supported, set "rc" to 501 and optionally set "message" accordingly.
+The factory reset action is considered complete when the device sends a Manage device request following its reboot.
 
-The action is considered complete when the device sends a Manage device request following its reboot.
 Topic
 ~~~~~~
+
+The server publishes this request to a device on the following topic:
 
 .. code::
 
@@ -97,6 +98,9 @@ Request Format:
 
 .. code::
 
+	Incoming message from the server:
+	
+	Topic: iotdm-1/mgmt/initiate/device/factory_reset
 	{
 		"reqId": "string"
 	}
@@ -105,6 +109,9 @@ Response Format:
 
 .. code::
 
+	Outgoing message from the device:
+	
+	Topic: iotdevice-1/response
 	{
 		"rc": "response_code",
 		"message": "string",

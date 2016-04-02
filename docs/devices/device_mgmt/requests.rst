@@ -20,7 +20,7 @@ To initiate a device reboot using the REST API, issue a POST request to /mgmt/re
 - The action ``device/reboot``
 - A list of devices to reboot, with a maximum of 5000 devices
 
-If this operation can be initiated immediately, set ``rc`` to ``202``. If the reboot attempt fails, set the ``rc`` to ``500`` and set the ``message`` field accordingly, if the reboot is not supported, set ``rc`` to ``501`` and optionally set ``message`` accordingly.
+If this operation can be initiated immediately, set ``rc`` to ``202``. If the reboot attempt fails, set ``rc`` to ``500`` and set the ``message`` field accordingly. If reboot is not supported, set ``rc`` to ``501`` and optionally set the ``message`` field accordingly.
 
 The reboot action is considered complete when the device sends a Manage device request following its reboot.
 
@@ -77,7 +77,7 @@ To initiate a device factory reset using the REST API, issue a POST request to /
 - The action ``device/factoryReset``
 - A list of devices to reboot, with a maximum of 5000 devices
 
-The response code should be set to ``202`` if this action can be initiated immediately. If the factory reset attempt fails, set the ``rc`` to ``500`` and set the ``message`` field accordingly, if the factory reset action is not supported, set ``rc`` to ``501`` and optionally set ``message`` accordingly.
+The response code should be set to ``202`` if this action can be initiated immediately. If the factory reset attempt fails, set ``rc`` to ``500`` and set the ``message`` field accordingly. If the factory reset action is not supported, set ``rc`` to ``501`` and optionally set the ``message`` field accordingly.
 
 The factory reset action is considered complete when the device sends a Manage device request following its reboot.
 

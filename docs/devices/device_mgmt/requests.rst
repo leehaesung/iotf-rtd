@@ -1,7 +1,7 @@
 Device Management Requests
 ==========================
 
-The IoT Platform provides some actions which can be initiated against sets of devices. These actions can be initiated through the dashboard as well as by using the REST API. The available actions are split into two groups, device actions and firmware actions.
+The IoT Platform provides some actions which can be initiated against one or more devices. These actions can be initiated through the dashboard as well as by using the REST API. The available actions are split into two groups, device actions and firmware actions.
 
 Device Actions
 --------------
@@ -272,7 +272,7 @@ This response will trigger the next request.
       "reqId" : "909b477c-cd37-4bee-83fa-1d568664fbe8",
       "d" : {
          "fields" : [ { 
-         	"fields" : "mgmt.firmware" 
+         	"field" : "mgmt.firmware" 
          	}
          ]
       }
@@ -329,7 +329,7 @@ Here some examples:
       "reqId" : "123456789"; 
       "d" : {
          "fields" : [ {
-         	"fields" : "mgmt.firmware",
+         	"field" : "mgmt.firmware",
          	"value" : {
             		"state" : 1
             	}
@@ -349,7 +349,7 @@ Here some examples:
       "reqId" : "1234567890"; 
       "d" : {
          "fields" : [ {
-         	"fields" : "mgmt.firmware",
+         	"field" : "mgmt.firmware",
          	"value" : {
             		"state" : 2
             	}

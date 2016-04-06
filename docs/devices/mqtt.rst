@@ -157,7 +157,7 @@ A managed device is required to subscribe to the following topic to handle reque
 - ``iotdm-1/#``
 
 
-A managed device will publish to topics specific to the type of management request being performed.
+A managed device will publish to topics specific to the type of management request being performed:
 
 - The managed device will publish device management responses on ``iotdevice-1/response``
 - For other topics a managed device may publish to, refer to `Device Management Protocol <device_mgmt/index.html>`__ and `Device Management Requests <device_mgmt/requests.html>`__.

@@ -152,22 +152,21 @@ connected, the device should use ``cleansession=false``.
 Topics
 ~~~~~~
 
-A managed device is required to subscribe to two topics to handle requests and responses from IoTF:
+A managed device is required to subscribe to the following topic to handle requests and responses from the IoT Platform:
 
-- The managed device will subscribe to device management reponses on ``iotdm-1/response/+``
-- The managed device will subscribe to device management requests on ``iotdm-1/+``
+- ``iotdm-1/#``
 
 
-A managed device will publish to two topics:
+A managed device will publish to topics specific to the type of management request being performed.
 
-- The managed device will publish device management responses on ``iotdevice-1/response/``
-- The managed device will publish device management requests on ``iotdevice-1/``
+- The managed device will publish device management responses on ``iotdevice-1/response``
+- For other topics a managed device may publish to, refer to `Device Management Protocol <device_mgmt/index.html>`__ and `Device Management Requests <device_mgmt/requests.html>`__.
 
 
 Message Format
 ~~~~~~~~~~~~~~
 
-All messages are sent in JSON format. There are two types of message.
+All messages are sent in JSON format. There are two types of messages. 
 
 1. Request
     Requests are formatted as follows:
@@ -200,3 +199,4 @@ All messages are sent in JSON format. There are two types of message.
       Platform requests, the correct ``reqId`` value must be sent in the response.
 
 
+For more details on particular request and response messages, refer to `Device Management Protocol <device_mgmt/index.html>`__ and `Device Management Requests <device_mgmt/requests.html>`__.

@@ -45,7 +45,7 @@ in pem format.  The following file contains the entire certificate chain for
     The Quickstart service does not currently support MQTT Quality of Service (QoS) levels greater than 0. This is the fastest and offers no confirmation of receipt.  If you are writing device code for use with Quickstart you must also take into account the following features present in the registered service that are not supported in Quickstart: 
 
     -  Subscribing to commands
-    -  MQTT connection over SSL
+    -  Device management protocol
     -  Clean or durable sessions
     
     Also, messages sent from devices at a rate greater than 1 per second may be discarded.

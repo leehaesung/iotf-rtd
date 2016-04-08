@@ -446,7 +446,11 @@ Here an example:
    {
       "reqId" : "909b477c-cd37-4bee-83fa-1d568664fbe8",
       "d" : {
-         "fields" : ["mgmt.firmware"]
+         "fields" : [
+            {
+               "field": "mgmt.firmware"
+            }
+         ]
       }
    }
 
@@ -500,7 +504,7 @@ Here some example exchange:
    
 In order to finish the firmware update request the device has to report its update status to the IoT Platform via a status message published on its ``iotdevice-1/notify``-topic.
 Once firmware update is completed, ``mgmt.firmware.updateStatus`` should be set to ``0`` (``Success``), ``mgmt.firmware.state`` should be set to ``0`` (``Idle``), downloaded firmware image can be deleted from the device and ``deviceInfo.fwVersion`` should be set to the value of ``mgmt.firmware.version``.
-Here an example notify message:
+Here is an example notify message:
 
 .. code:: 
    
@@ -510,11 +514,15 @@ Here an example notify message:
    Message:
    {
       "d" : {
-         "field" : "mgmt.firmware",
-         "value" : {
-            "state" : 0,
-            "updateStatus" : 0
-         }
+         "fields": [ 
+            {
+               "field" : "mgmt.firmware",
+               "value" : {
+                  "state" : 0,
+                  "updateStatus" : 0
+               }
+            }
+         ]
       }
    }
  
@@ -532,7 +540,8 @@ After a response with ``rc`` set to ``200`` was sent the firmware update request
    {
       "reqId" : "d9ca3635-64d5-46e2-93ee-7d1b573fb20f",
       "d" : {
-         "data" : [{
+         "fields" : [
+            {
                "field" : "mgmt.firmware"
             }
          ]

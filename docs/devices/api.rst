@@ -9,11 +9,11 @@ HTTP API for Devices
 Publish an event
 ----------------
 
-As an alternative to MQTT it is possible for devices to submit events to the IoT Platform over an HTTP API.  Devices may submit a ``POST`` request to: ``https://${orgid}.internetofthings.ibmcloud.com>/api/v0002/device/types/${typeId}/devices/${deviceId}/events/${eventId}``
+As an alternative to MQTT it is possible for devices to submit events to the IoT Platform over an HTTP API.  Devices may submit a ``POST`` request to: ``https://${orgid}.internetofthings.ibmcloud.com/api/v0002/device/types/${typeId}/devices/${deviceId}/events/${eventId}``
 
 For full details, see the relevant `API documentation <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html#/>`__.  The request body (event payload) can have any content, however, MQTT message payload guidelines should be followed.
 
-.. note:: When connecting a device or application to Quickstart you should use the following URL instead:  ``http://quickstart.internetofthings.ibmcloud.com>/api/v0002/device/types/${typeId}/devices/${deviceId}/events/${eventId}``
+.. note:: When connecting a device or application to Quickstart you should use the following URL instead:  ``http://quickstart.internetofthings.ibmcloud.com/api/v0002/device/types/${typeId}/devices/${deviceId}/events/${eventId}``
 
 .. important:: HTTP messaging only covers the ability to submit device events currently.  Device management 
     and command control require MQTT connectivity in your device.

@@ -51,6 +51,7 @@ Configure the Watson IoT platform to store a record of the events your devices g
   * The message must be a valid JSON object (not an array) with only two top level
     elements: ``d`` and ``ts``
   * The message must be UTF-8 encoded
+  * The message must be less than 4kb
 
   **Data**
   

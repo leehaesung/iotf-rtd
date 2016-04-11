@@ -83,6 +83,8 @@ Connect to the IoT Platform by calling the *connect* function.
 
 After the successful connection to the IoT Platform service, the device client sends a *connect* event. So all the device logic can be implemented inside this callback function.
 
+The Device Client automatically tries to reconnect when it loses connection. When the reconnection is successful, the client emits *reconnect* event. 
+
 Logging
 -------
 

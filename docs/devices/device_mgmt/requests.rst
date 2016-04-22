@@ -3,6 +3,20 @@ Device Management Requests
 
 The IoT Platform provides some actions which can be initiated against one or more devices. These actions can be initiated through the dashboard as well as by using the REST API. The available actions are split into two groups, device actions and firmware actions.
 
+Initiating Device Management Requests through the dashboard
+-----------------------------------------------------------
+
+Requests can be initiated through the dashboard by navigating to the Actions tab of the Devices page. The **Initiate Action** button provides a dialog for selecting an action, picking the devices to take the action against, and specifying any additional parameters that the selected action supports.
+
+Initiating Device Management Requests using the REST API
+--------------------------------------------------------
+
+Requests can be initiated using the following REST API:
+
+``POST https://<org>.internetofthings.ibmcloud.com/api/v0002/mgmt/requests``
+
+For more information on the request body, refer to the `API documentation <../../swagger/v0002.html>`__.
+
 Device Actions
 --------------
 
@@ -15,12 +29,30 @@ Device Actions - Reboot
 
 The reboot action can be initiated by using either the IoT Platform dashboard, or the REST API.
 
-To initiate a device reboot using the REST API, issue a POST request to /mgmt/requests. The information provided is:
+To initiate a device reboot using the REST API, issue a POST request to:
+
+``https://<org>.internetofthings.ibmcloud.com/api/v0002/mgmt/requests``
+
+The information provided is:
 
 - The action ``device/reboot``
 - A list of devices to reboot, with a maximum of 5000 devices
 
-If this operation can be initiated immediately, set ``rc`` to ``202``. If the reboot attempt fails, set ``rc`` to ``500`` and set the ``message`` field accordingly. If reboot is not supported, set ``rc`` to ``501`` and optionally set the ``message`` field accordingly.
+Example device reboot request:
+
+.. code::
+
+	{
+		"action": "device/reboot",
+		"devices": [
+			{
+				"typeId": "someType",
+				"deviceId": "someId"
+			}
+		]
+	}
+
+Once a request has been initiated, an MQTT message will be published to all devices specified in the request body. For each device, a response must be sent back indicating whether or not the reboot action can be initiated. If this operation can be initiated immediately, set ``rc`` to ``202``. If the reboot attempt fails, set ``rc`` to ``500`` and set the ``message`` field accordingly. If reboot is not supported, set ``rc`` to ``501`` and optionally set the ``message`` field accordingly.
 
 The reboot action is considered complete when the device sends a Manage device request following its reboot.
 
@@ -72,14 +104,32 @@ Device Actions - Factory Reset
 
 The factory reset action can be initiated by using either the IoT Platform dashboard, or the REST API.
 
-To initiate a device factory reset using the REST API, issue a POST request to /mgmt/requests. The information provided is:
+To initiate a device factory reset using the REST API, issue a POST request to:
+
+``https://<org>.internetofthings.ibmcloud.com/api/v0002/mgmt/requests``
+
+The information provided is:
 
 - The action ``device/factoryReset``
-- A list of devices to reboot, with a maximum of 5000 devices
+- A list of devices to reset, with a maximum of 5000 devices
 
-The response code should be set to ``202`` if this action can be initiated immediately. If the factory reset attempt fails, set ``rc`` to ``500`` and set the ``message`` field accordingly. If the factory reset action is not supported, set ``rc`` to ``501`` and optionally set the ``message`` field accordingly.
+Example device reset request:
 
-The factory reset action is considered complete when the device sends a Manage device request following its reboot.
+.. code::
+
+	{
+		"action": "device/factoryReset",
+		"devices": [
+			{
+				"typeId": "someType",
+				"deviceId": "someId"
+			}
+		]
+	}
+	
+Once a request has been initiated, an MQTT message will be published to all devices specified in the request body. For each device, a response must be sent back indicating whether or not the factory reset action can be initiated. The response code should be set to ``202`` if this action can be initiated immediately. If the factory reset attempt fails, set ``rc`` to ``500`` and set the ``message`` field accordingly. If the factory reset action is not supported, set ``rc`` to ``501`` and optionally set the ``message`` field accordingly.
+
+The factory reset action is considered complete when the device sends a Manage device request following its factory reset.
 
 Topic
 ~~~~~~
@@ -176,7 +226,11 @@ Firmware Actions - Download
 
 The Download Firmware action can be initiated by using either the IoT Platform dashboard, or the REST API.
 
-To initiate a firmware download using the REST API, issue a POST request to /mgmt/requests. The information provided is:
+To initiate a firmware download using the REST API, issue a POST request to:
+
+``https://<org>.internetofthings.ibmcloud.com/api/v0002/mgmt/requests``
+
+The information provided is:
 
 - The action ``firmware/download``
 - The URI for the firmware image
@@ -326,7 +380,7 @@ Here some examples:
    Topic: iotdevice-1/notify
    Message:
    {
-      "reqId" : "123456789"; 
+      "reqId" : "123456789",
       "d" : {
          "fields" : [ {
          	"field" : "mgmt.firmware",
@@ -346,7 +400,7 @@ Here some examples:
    Topic: iotdevice-1/notify
    Message:
    {
-      "reqId" : "1234567890"; 
+      "reqId" : "1234567890",
       "d" : {
          "fields" : [ {
          	"field" : "mgmt.firmware",
@@ -358,7 +412,7 @@ Here some examples:
    }
 |
 
-After the notification with ``mgmt.firmware.state`` set to ``2`` was published, a request will be triggered on the ``iotdm-1/cancel``-topic, which cancels the observation of the ``mgmt.firmware``-field. 
+After the notification with ``mgmt.firmware.state`` set to ``2`` was published, a request will be triggered on the ``iotdm-1/cancel``-topic, which cancels the observation of the ``mgmt.firmware`` field. 
 After a response with ``rc`` set to ``200`` was sent the firmware download is completed. Example:
 
 .. code:: 
@@ -414,12 +468,16 @@ Useful information regarding error handling:
 Firmware Actions - Update
 -------------------------
 
-The installation of the downloaded firmware is initiated using the REST API by issuing a POST request to /mgmt/requests. The information which should be provided is:
+The installation of the downloaded firmware is initiated using the REST API by issuing a POST request to:
+
+``https://<org>.internetofthings.ibmcloud.com/api/v0002/mgmt/requests``
+
+The information which should be provided is:
 
 - The action ``firmware/update``
 - The list of devices to receive the image, all of the same device type.
 
-Here an example request:
+Here is an example request:
 
 .. code ::
 
@@ -435,7 +493,8 @@ Here an example request:
 |
 
 In order to monitor the status of the firmware update the IoT Platform first triggers an observer request on the topic ``iotdm-1/observe``. When the device is ready to start the update process it sents a response with ``rc`` set to ``200``, ``mgmt.firmware.state`` set to ``0`` and ``mgmt.firmware.updateStatus`` set to ``0``.
-Here an example:
+
+Here is an example:
 
 .. code::
 
@@ -479,7 +538,8 @@ Here an example:
 Afterwards the device management server in the IoT Platform uses the device management protocol to request that the devices specified initiate the firmware installation by publishing using the topic ``iotdm-1/mgmt/initiate/firmware/update``.
 If this operation can be initiated immediately, ``rc`` should be set to ``202``.
 If firmware was not previously downloaded successfully, ``rc`` should be set to ``400``.
-Here some example exchange:
+
+Here is an example:
 
 .. code::
 
@@ -504,6 +564,7 @@ Here some example exchange:
    
 In order to finish the firmware update request the device has to report its update status to the IoT Platform via a status message published on its ``iotdevice-1/notify``-topic.
 Once firmware update is completed, ``mgmt.firmware.updateStatus`` should be set to ``0`` (``Success``), ``mgmt.firmware.state`` should be set to ``0`` (``Idle``), downloaded firmware image can be deleted from the device and ``deviceInfo.fwVersion`` should be set to the value of ``mgmt.firmware.version``.
+
 Here is an example notify message:
 
 .. code:: 

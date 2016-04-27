@@ -183,10 +183,7 @@ The content of the configuration file must be in the following format:
 Connecting to the Watson IoT Platform
 ----------------------------------------------------
 
-Connect to the Watson IoT Platform by calling the *connect* function. The connect function takes an optional boolean parameter autoRetr
-(by default autoRetry is true) that controls allows the library to retry the connection when there is an MqttException. Note that the
-library won't retry when there is a MqttSecurityException due to incorrect device registration details passed even if the autoRetry is set
-to true.
+Connect to the Watson IoT Platform by calling the connect function. The connect function takes an optional boolean parameter autoRetry (by default autoRetry is true) that controls allows the library to retry the connection when there is an MqttException. Note that the library won't retry when there is a MqttSecurityException due to incorrect device registration details passed even if the autoRetry is set to true. 
 
 .. code:: java
 

@@ -198,7 +198,7 @@ to true.
 After the successful connection to the IoTF service, the device client can perform the following operations, like publishing events and
 subscribe to device commands from application.
 
-+----
+----
 
 
 Publishing events

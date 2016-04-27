@@ -8,6 +8,7 @@ connecting MQTT clients for gateways in that organization.
 
 **org\_id**.messaging.internetofthings.ibmcloud.com
 
+.. note:: In the IoT Platform dashboard, devices and gateways which are connected directly to the IoT Platform display a status icon indicating that they are connected. The dashboard displays devices which are connected indirectly via a gateway as disconnected as it does not have any knowledge of a devices connectivity to the gateway.
 
 Unencrypted client connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -23,7 +24,6 @@ Encrypted client connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Connect on port **8883** or **443** for websockets.
-it
 In many client libraries you will need to provide the server's public certificate 
 in pem format.  The following file contains the entire certificate chain for 
 \*.messaging.internetofthings.ibmcloud.com: messaging.pem_
@@ -110,7 +110,7 @@ Example
 - Gateway 1 can publish status events on behalf of Device 1: ``iot-2/type/mydevice/id/device1/evt/status/fmt/json``
 
 
-.. important:: The message payload is limited to a maximum of 4096 bytes.  Messages larger than this will be rejected.
+.. important:: The message payload is limited to a maximum of 131072 bytes.  Messages larger than this will be rejected.
 
 
 Subscribing to commands
@@ -140,6 +140,9 @@ Example
 - Gateway 1 can subscribe to commands sent to Device 1: ``iot-2/type/mydevice/id/device1/cmd/+/fmt/+``
 - Gateway 1 can subscribe any command sent to devices of type "mydevice": ``iot-2/type/mydevice/id/+/cmd/+/fmt/+``
 
+
+.. warning::
+  MQTT persistent sessions (cleansession=false) do not roam for devices which connect to gateways. What this means is that if a device connects to gateway A, then later connects to gateway B, it will not receive any messages that had been published to gateway A for that device while it was disconnected. A gateway owns the MQTT client and subscription, not the devices which are connected to the gateway.
 
 Gateway auto-registration
 -------------------------

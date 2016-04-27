@@ -263,7 +263,7 @@ Apart from MQTT, the devices can publish events to the IoT Platform using HTTP(s
 			
     	int httpCode = myClient.publishEventOverHTTP("blink", event);
     	
-The complete code can be found in the device example `HttpDeviceEventPublish <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdeviceclient/src/com/ibm/iotf/sample/client/device/HttpDeviceEventPublish.java>`__
+The complete code can be found in the device example `HttpDeviceEventPublish <https://github.com/ibm-messaging/iot-device-samples/blob/master/java/device-samples/src/main/java/com/ibm/iotf/sample/client/device/HttpDeviceEventPublish.java>`__
 
 Based on the settings in the properties file, the publishEventOverHTTP() method either publishes the event in Quickstart or in Registered flow. When the Organization ID mentioned in the properties file is quickstart, publishEventOverHTTP() method publishes the event to the IoT Platform quickstart service and publishes the event in plain HTTP format. But when valid registered organization is mentioned in the properties file, this method always publishes the event in HTTPS (HTTP over SSL), so all the communication is secured.
 
@@ -355,4 +355,11 @@ The messages are returned as an instance of the Command class which has the foll
 		}
 	}
 
+----
 
+Samples
+------------------
+
+Refer to the `github repository <https://github.com/ibm-messaging/iot-device-samples/tree/master/java>`__ for a list of device and device management samples developed using this Watson IoT Java client library.
+
+----

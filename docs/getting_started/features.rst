@@ -88,7 +88,7 @@ Configure the Watson IoT platform to store a record of the events your devices g
 
 Last Event Cache
 -----------------
-The API can now return the last recorded value of an event-id for a specific device, or the last recorded value for each event-id reported by a specific device. The last event cache only applies to values send in the last 30 days. 
+The API can now return the last recorded value of an event-id for a specific device, or the last recorded value for each event-id reported by a specific device. The last event cache only applies to values sent in the last 30 days. 
 
 To request the most recent value for a specific event-id, use the following API request. This request will return the last recorded value for the event-id "power".
 

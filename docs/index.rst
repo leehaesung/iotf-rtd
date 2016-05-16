@@ -36,6 +36,7 @@ service.  If you are looking for tutorials you can find them on developerWorks R
     
     devices/device_mgmt/index
     devices/device_mgmt/requests
+    devices/device_mgmt/custom_actions
     
     devices/libraries/python
     devices/libraries/nodejs

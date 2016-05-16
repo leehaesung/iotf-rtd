@@ -468,7 +468,12 @@ Useful information regarding error handling:
 Firmware Actions - Update
 -------------------------
 
-The installation of the downloaded firmware is initiated using the REST API by issuing a POST request to:
+The firmware update action supports 2 scenarios:
+
+1. Installing firmware that is already on the device from a previously completed firmware download request, or
+2. Downloading and installing firmware within a single device management request.
+
+The firmware update action is initiated using the REST API by issuing a POST request to:
 
 ``https://<org>.internetofthings.ibmcloud.com/api/v0002/mgmt/requests``
 
@@ -476,6 +481,10 @@ The information which should be provided is:
 
 - The action ``firmware/update``
 - The list of devices to receive the image, all of the same device type.
+- Optional The URI for the firmware image
+- Optional verifier string to validate the image
+- Optional firmware name
+- Optional firmware version
 
 Here is an example request:
 
@@ -483,16 +492,75 @@ Here is an example request:
 
    {
       "action" : "firmware/update",
+      "parameters" : [{
+            "name" : "uri",
+            "value" : "some uri for firmware location"
+         }, {
+            "name" : "name",
+            "value" : "some firmware name"
+         }, {
+            "name" : "verifier",
+            "value" : "some validation code"
+         }, {
+            "name" : "version",
+            "value" : "some firmware version"
+         }
+      ],
       "devices" : [{
             "typeId" : "someType",
             "deviceId" : "someId"
          }
       ]
    }
-   
+  
 |
 
-In order to monitor the status of the firmware update the IoT Platform first triggers an observer request on the topic ``iotdm-1/observe``. When the device is ready to start the update process it sents a response with ``rc`` set to ``200``, ``mgmt.firmware.state`` set to ``0`` and ``mgmt.firmware.updateStatus`` set to ``0``.
+If any of the optional parameters are specified in the request, then the device management server will send a firmware details update to the device.
+The firmware details update request is sent on topic ``iotdm-1/device/update``.
+
+This request lets the device validate if the requested firmware differs from the currently installed firmware. If there is a difference, set ``rc`` to ``204``, which translates to the status ``Changed``.
+The following example shows which message is to be expected for the previously sent example firmware update request and what response should be sent, when a difference is detected:
+
+.. code::
+   
+   Incoming request from the IoT Platform:
+   
+   Topic: iotdm-1/device/update
+   Message: 
+   {
+      "reqId" : "f38faafc-53de-47a8-a940-e697552c3194",
+      "d" : {
+         "fields" : [{
+               "field" : "mgmt.firmware",
+               "value" : {
+                  "version" : "some firmware version",
+                  "name" : "some firmware name",
+                  "uri" : "some uri for firmware location",
+                  "verifier" : "some validation code",
+                  "state" : 0,
+                  "updateStatus" : 0,
+                  "updatedDateTime" : ""
+               }
+            }
+         ]
+      }
+   }
+   
+   Outgoing response from device:
+   
+   Topic: iotdevice-1/response
+   Message: 
+   {
+      "rc" : 204,
+      "reqId" : "f38faafc-53de-47a8-a940-e697552c3194"
+   }   
+   
+This response will trigger the next request.  
+
+|
+
+In order to monitor the status of the firmware update the IoT Platform sends an observe request on the topic ``iotdm-1/observe``. 
+When the device is ready to start the update process it sends a response with ``rc`` set to ``200``, ``mgmt.firmware.state`` set to ``0`` and ``mgmt.firmware.updateStatus`` set to ``0``.
 
 Here is an example:
 

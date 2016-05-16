@@ -150,12 +150,9 @@ Gateway devices have the ability to automatically register devices which are con
 a message or subscribes to a topic on behalf of another device, that device will automatically be registered if it does
 not already exist.
 
-Registration requests from gateway devices are throttled to 10 pending requests at a time. If trying to connect many new devices
+Registration requests from gateway devices are throttled to 128 pending requests at a time. If trying to connect many new devices
 to a gateway which have not previously been registered, then there may be some delay in the registration of the devices through
 the gateway.
-
-Gateway devices are limited to 500 active devices at a time. If exceeded, publish and subscribe requests for new devices 
-will be dropped. The count is reset on gateway disconnect.
 
 .. warning::
   If the gateway fails to automatically register a device, then it will not attempt to register that device again for a short

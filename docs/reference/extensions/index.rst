@@ -50,7 +50,7 @@ To enable Jasper integrtion with your Watson IoT organization follow these steps
 
 1. When in your Watson IoT platform dashboard, click the wrench icon on the right to open the Configuration Settings.
 2. Scroll down the to the Extensions section, and set Jasper to 'On'.
-3. Enter your Jasper username, password, license key, and API endpoint.
+3. Enter your Jasper username, password, license key, and API endpoint. The API endpoint must begin with ``http://`` or ``https://``. If the API endpoint begins with ``http://`` Watson IoT Platform will communicate with Jasper over an unencrypted connection. The API endpoint must begin with ``https://`` in order to use encryption. An example API endpoint is ``https://api.jasperwireless.com``.
 
 Device Configuration
 ^^^^^^^^^^^^^^^^^^^^

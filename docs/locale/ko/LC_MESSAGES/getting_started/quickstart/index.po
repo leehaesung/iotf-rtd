@@ -1,0 +1,143 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/getting_started/quickstart/index.rst:2
+msgid "Quickstart"
+msgstr ""
+"Quickstart"
+
+#: ../docs/getting_started/quickstart/index.rst:4
+msgid "`Quickstart <https://quickstart.internetofthings.ibmcloud.com>`_ is an open sandbox allowing developers to quickly and easily get devices connected to the Watson IoT platform with registration required.  Any  device that can run an MQTT client can be connected to Quickstart within mimimum fuss, `DeveloperWorks Recipes <https://developer.ibm.com/recipes>`_ features dozens of community produced tutorials for connecting different devices to the service, including but not limited to:"
+msgstr ""
+"`Quickstart <https://quickstart.internetofthings.ibmcloud.com>`_는 개발자가 디바이스를 Watson IoT Platform에 빠르고 쉽게 연결할 수 있도록 허용하는 개방형 샌드박스입니다. 단, 등록이 필요합니다. MQTT 클라이언트를 실행할 수 있는 디바이스라면 간편하게 Quickstart에 연결할 수 있습니다. DeveloperWorks Recipes <https://developer.ibm.com/recipes>`_ 는 여러 디바이스를 서비스에 연결하는 것과 관련된 많은 커뮤니티 생성 학습서를 제공합니다. 그러나 그것으로 한정되지는 않습니다. "
+
+#: ../docs/getting_started/quickstart/index.rst:6
+msgid "`OpenBlocks IoT BX1G <https://developer.ibm.com/recipes/tutorials/openblocks-iot-bx1g-for-iot-foundation-quickstart/>`_"
+msgstr ""
+"`OpenBlocks IoT BX1G <https://developer.ibm.com/recipes/tutorials/openblocks-iot-bx1g-for-iot-foundation-quickstart/>`_"
+
+#: ../docs/getting_started/quickstart/index.rst:7
+msgid "`Reactive Blocks <https://developer.ibm.com/recipes/tutorials/reactive-blocks-and-java-to-iot-foundation-part-1-quickstart/>`_"
+msgstr ""
+"`Reactive Blocks <https://developer.ibm.com/recipes/tutorials/reactive-blocks-and-java-to-iot-foundation-part-1-quickstart/>`_"
+
+#: ../docs/getting_started/quickstart/index.rst:11
+msgid "Simulated Device"
+msgstr ""
+"시뮬레이션된 디바이스"
+
+#: ../docs/getting_started/quickstart/index.rst:12
+msgid "In addition to these, we have developed a simple browser-based simulated device, designed for mobile devices, that can be used to connect any device with a web browser to the service.  Open the following URL on a mobile phone or tablet in your favourite browser: http://quickstart.internetofthings.ibmcloud.com/iotsensor."
+msgstr ""
+"이외에도, 모바일 디바이스용으로 설계된 단순한 브라우저 기반의 시뮬레이션된 디바이스를 개발했습니다. 이 디바이스를 사용하면 웹 브라우저가 있는 모든 디바이스를 서비스에 연결할 수 있습니다. 휴대전화 또는 태블릿에서 다음 URL을 선호하는 브라우저에서 여십시오. http://quickstart.internetofthings.ibmcloud.com/iotsensor "
+
+#: ../docs/getting_started/quickstart/index.rst:14
+msgid "This will launch a browser-based simulated device connecting to the Watson IoT platform. There are three sensors which you can manipulate using the on-screen controls:"
+msgstr ""
+"그러면 브라우저 기반의 시뮬레이션된 디바이스가 실행되어 Watson IoT Platform에 연결됩니다. 화면 컨트롤을 사용하여 조작할 수 있는 세 개의 센서가 있습니다. "
+
+#: ../docs/getting_started/quickstart/index.rst:16
+msgid "Temperature"
+msgstr ""
+"온도"
+
+#: ../docs/getting_started/quickstart/index.rst:17
+msgid "Humidity"
+msgstr ""
+"습도"
+
+#: ../docs/getting_started/quickstart/index.rst:18
+msgid "Object temperature"
+msgstr ""
+"오브젝트 온도"
+
+#: ../docs/getting_started/quickstart/index.rst:24
+msgid "Data Visualization"
+msgstr ""
+"데이터 시각화"
+
+#: ../docs/getting_started/quickstart/index.rst:25
+msgid "Leaving the simulated device running on your phone/tablet launch the `Quickstart application <http://quickstart.internetofthings.ibmcloud.com>`_ and enter the 12 character generated ID displayed on your phone/tablet in the upper right-hand corner."
+msgstr ""
+"시뮬레이션된 디바이스가 전화/태블릿에서 실행 중인 상태에서 `Quickstart 애플리케이션 <http://quickstart.internetofthings.ibmcloud.com>`_을 실행하고 전화/태블릿의 오른쪽 위에 표시되는 12자로 생성된 ID를 입력하십시오. "
+
+#: ../docs/getting_started/quickstart/index.rst:29
+msgid "Now, as you adjust the sensor values in your simulated device you will be able to see the data from your device visualized in real time in the Quickstart application."
+msgstr ""
+"이제 시뮬레이션된 디바이스에서 센서 값을 조정하는 것처럼, 시각화된 디바이스의 데이터를 Quickstart 애플리케이션에서 실시간으로 볼 수 있습니다. "
+
+#: ../docs/getting_started/quickstart/index.rst:35
+msgid "Mosquitto Demonstration"
+msgstr ""
+"Mosquitto 데모"
+
+#: ../docs/getting_started/quickstart/index.rst:36
+msgid "`Mosquitto <http://mosquitto.org/>`_ is a cross platform open source MQTT client that is perfect for experimenting with the Watson IoT platform service.  Once you have installed mosquitto pick an ``<applicationId>``, a ``<deviceId>`` that have a good chance to be unique (otherwise your experiment will clash with someone else running through this same demonstration)."
+msgstr ""
+"`Mosquitto <http://mosquitto.org/>`_는 크로스 플랫폼 오픈 소스 MQTT 클라이언트로서, Watson IoT Platform 서비스를 사용하여 테스트하는 데 안성맞춤입니다. mosquitto를 설치했으면 고유성을 보장하도록 ``<applicationId>``, ``<deviceId>``를 선택하십시오. (그렇지 않으면 사용자의 테스트가 동일한 데모를 통해 실행 중인 다른 사람과 충돌합니다.)"
+
+#: ../docs/getting_started/quickstart/index.rst:39
+msgid "There are a couple of restrictions you must consider when deciding on these IDs:"
+msgstr ""
+"해당 ID를 결정할 때 고려해야 할 두 가지 제한사항이 있습니다."
+
+#: ../docs/getting_started/quickstart/index.rst:41
+msgid "Maximum length of 36 characters"
+msgstr ""
+"최대 길이 36자"
+
+#: ../docs/getting_started/quickstart/index.rst:42
+msgid "Must comprise only alpha-numeric characters (``a-z``, ``A-Z``, ``0-9``) and the following special characters:"
+msgstr ""
+"영숫자 문자(``a-z``, ``A-Z``, ``0-9``) 및 다음 특수 문자만 포함해야 함:"
+
+#: ../docs/getting_started/quickstart/index.rst:44
+msgid "dash (``-``)"
+msgstr ""
+"대시(``-``)"
+
+#: ../docs/getting_started/quickstart/index.rst:45
+msgid "underscore (``_``)"
+msgstr ""
+"밑줄(``_``)"
+
+#: ../docs/getting_started/quickstart/index.rst:46
+msgid "dot (``.``)"
+msgstr ""
+"점(``.``)"
+
+#: ../docs/getting_started/quickstart/index.rst:49
+msgid "With your ``<applicationId>`` and ``<deviceId>`` in hand the first thing you want to do is create a connection representing your application using ``mosquitto_sub``. Using examples of ``<applicationId>`` = myApplicationId and ``<deviceId>`` = myDeviceId:"
+msgstr ""
+"``<applicationId>`` 및 ``<deviceId>``가 준비되면 먼저 ``mosquitto_sub``를 사용하는 애플리케이션을 나타내는 연결을 작성하십시오. ``<applicationId>``의 사용 예는 myApplicationId이며 ``<deviceId>``의 경우 myDeviceId입니다."
+
+#: ../docs/getting_started/quickstart/index.rst:55
+msgid "Leave that process running, it is now time to turn your attention towards creating your device.  We will connect a device of type ``mosquitto`` and send two events to the service using ``mosquitto_pub``:"
+msgstr ""
+"해당 프로세스가 실행 중인 상태에서 이제 디바이스를 작성하십시오. ``mosquitto`` 유형의 디바이스를 연결한 다음 ``mosquitto_pub``를 사용하여 서비스에 두 개의 이벤트를 전송할 것입니다. "
+
+#: ../docs/getting_started/quickstart/index.rst:62
+msgid "Returning to your application terminal you should see the two events that you published almost instantly:"
+msgstr ""
+"애플리케이션 터미널로 돌아오면 공개한 두 개의 이벤트가 즉시 표시되어야 합니다. "
+
+#: ../docs/getting_started/quickstart/index.rst:70
+msgid "That's all there is to it.  You have successfully connected a device and an application to the Watson IoT platform over MQTT, sent an event from the device to the service and recieved that event in your application."
+msgstr ""
+"이것으로 끝입니다. MQTT를 통해 디바이스와 애플리케이션을 Watson IoT Platform에 성공적으로 연결하고, 이벤트를 디바이스에서 서비스로 전송하여 애플리케이션에서 수신했습니다. "
+

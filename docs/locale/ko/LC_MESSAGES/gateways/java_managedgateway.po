@@ -1,0 +1,685 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/gateways/java_managedgateway.rst:3
+msgid "Java Client Library - Managed Gateway"
+msgstr ""
+"Java 클라이언트 라이브러리 - 관리 게이트웨이"
+
+#: ../docs/gateways/java_managedgateway.rst:6
+msgid "Introduction"
+msgstr ""
+"소개"
+
+#: ../docs/gateways/java_managedgateway.rst:8
+msgid "Gateway plays an important role in the device management of devices connected to it. Many of these devices will be too basic to be managed. For a managed device, the device management agent on the gateway acts as a proxy for the connected device. The protocol used by the gateway to manage the connected devices is arbitrary, and there need not be a device management agent on the connected devices. It is only necessary for the gateway to ensure that devices connected to it perform their responsibilities as managed devices, performing any translation and processing required to achieve this. The management agent in gateway will act as more than a transparent tunnel between the attached device and the Watson IoT Platform."
+msgstr ""
+"게이트웨이는 연결된 디바이스의 디바이스 관리에서 중요한 역할을 수행합니다. 많은 해당 디바이스가 관리하기에 너무 기본적입니다. 관리되는 디바이스의 경우, 게이트웨이의 디바이스 관리 에이전트가 연결된 디바이스에 대한 프록시 역할을 수행합니다. 연결된 디바이스를 관리하도록 게이트웨이에서 사용하는 프로토콜은 임의적이며 연결된 디바이스에 디바이스 관리 에이전트가 있어야 할 필요는 없습니다. 게이트웨이에 연결된 디바이스가 게이트웨이를 사용하는 데 필요한 변환 및 처리를 수행하면서 관리 디바이스로서의 책임을 수행하는지 확인하는 데만 필요합니다. 게이트웨이 내의 관리 에이전트는 접속된 디바이스 및 Watson IoT Platform 사이의 투명 터널 이상의 역할을 수행합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:10
+msgid "For example, It is unlikely that a device connected to a gateway will be able to download the firmware itself. In this case, the gateway’s device management agent will intercept the request to download the firmware and perform the download to its own storage. Then, when the device is instructed to perform the upgrade, the gateway’s device management agent will push the firmware to the device and update it."
+msgstr ""
+"예를 들어, 게이트웨이에 연결된 디바이스가 펌웨어 자체를 다운로드하는 경우는 거의 없습니다. 이 경우, 게이트웨이의 디바이스 관리 에이전트가 요청을 가로채어 펌웨어를 다운로드하고 자체 스토리지에 다운로드를 수행합니다. 그런 다음 디바이스에 업그레이드 수행 지시가 전달되면 게이트웨이의 디바이스 관리 에이전트가 펌웨어를 디바이스에 푸시하고 업데이트합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:12
+msgid "This section contains information on how gateways (and attached devices) can connect to the Internet of Things Platform Device Management service using Java and perform device management operations like firmware update, location update, and diagnostics update."
+msgstr ""
+"이 절에서는 Java를 사용하여 게이트웨이 및 접속된 디바이스를 Internet of Things Platform 디바이스 관리 서비스에 연결하고 펌웨어 업데이트, 위치 업데이트 및 진단 업데이트와 같은 디바이스 관리 오퍼레이션을 수행하는 방법에 대한 정보를 다룹니다."
+
+#: ../docs/gateways/java_managedgateway.rst:17
+msgid "Create DeviceData"
+msgstr ""
+"DeviceData 작성"
+
+#: ../docs/gateways/java_managedgateway.rst:18
+msgid "The `device model <https://docs.internetofthings.ibmcloud.com/reference/device_model.html>`__ describes the metadata and management characteristics of a device or a gateway. The device database in the IBM Watson Internet of Things Platform is the master source of device information. Applications and managed devices are able to send updates to the database such as a location or the progress of a firmware update. Once these updates are received by the IBM Watson Internet of Things Platform, the device database is updated, making the information available to applications."
+msgstr ""
+"`디바이스 모델 <https://docs.internetofthings.ibmcloud.com/reference/device_model.html>`__에서는 디바이스 또는 게이트웨이의 메타데이터 및 관리 특성에 대해 설명합니다. IBM Watson Internet of Things Platform에 있는 디바이스 데이터베이스는 디바이스 정보에 대한 마스터 소스입니다. 애플리케이션 및 관리 디바이스가 펌웨어 업데이트의 진행상태 또는 위치 등 데이터베이스에 대한 업데이트를 보낼 수 있습니다. IBM Watson Internet of Things Platform에서 해당 업데이트를 수신하면 디바이스 데이터베이스가 업데이트되므로 애플리케이션에서 정보를 사용할 수 있게 됩니다."
+
+#: ../docs/gateways/java_managedgateway.rst:20
+msgid "The device model in the WIoTP client library is represented as DeviceData and to create a DeviceData one needs to create the following objects,"
+msgstr ""
+"WIoTP 클라이언트 라이브러리의 디바이스 모델은 DeviceData로 표시되며 DeviceData를 작성하려면 다음 오브젝트를 작성해야 합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:22
+msgid "DeviceInfo (Optional)"
+msgstr ""
+"DeviceInfo(선택사항)"
+
+#: ../docs/gateways/java_managedgateway.rst:23
+msgid "DeviceLocation (Optional, required only if the device wants to be notified about the location set by the application through Watson IoT Platform API)"
+msgstr ""
+"DeviceLocation(선택사항, 디바이스가 Watson IoT Platform API를 통해 애플리케이션에서 설정한 위치에 대한 알림을 받기를 원하는 경우에만 필수)"
+
+#: ../docs/gateways/java_managedgateway.rst:24
+msgid "DeviceFirmware (Optional)"
+msgstr ""
+"DeviceFirmware(선택사항)"
+
+#: ../docs/gateways/java_managedgateway.rst:25
+msgid "DeviceMetadata (optional)"
+msgstr ""
+"DeviceMetadata(선택사항)"
+
+#: ../docs/gateways/java_managedgateway.rst:27
+msgid "The following code snippet shows how to create the object DeviceInfo along with DeviceMetadata with sample data:"
+msgstr ""
+"다음의 코드 스니펫은 DeviceMetadata를 샘플 데이터로 사용하여 오브젝트 DeviceInfo를 작성하는 방법을 표시합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:49
+msgid "The following code snippet shows how to create the DeviceData object with the above created DeviceInfo and DeviceMetadata objects:"
+msgstr ""
+"다음의 코드 스니펫은 위에서 작성된 DeviceInfo 및 DeviceMetadata 오브젝트를 사용하여 DeviceData 오브젝트를 작성하는 방법을 표시합니다. "
+
+#: ../docs/gateways/java_managedgateway.rst:58
+msgid "Each gateway and attached devices must have its own DeviceData to represent itself in the Platform. In the case of gateway, the DeviceData will be passed to the library as part of constructing the ManagedGateway instance, and in the case of attached device, the DeviceData will be passed as part of the sendDeviceManageRequest()."
+msgstr ""
+"각 게이트웨이 및 접속된 디바이스에는 Platform에서 자신을 표시하기 위한 자체 DeviceData가 있어야 합니다. 게이트웨이의 경우, DeviceData가 ManagedGateway 인스턴스 생성의 일부로 라이브러리에 전달되고 접속된 디바이스의 경우, DeviceData가 sendDeviceManageRequest()의 일부로 전달됩니다."
+
+#: ../docs/gateways/java_managedgateway.rst:63
+msgid "Construct ManagedGateway"
+msgstr ""
+"ManagedGateway 생성"
+
+#: ../docs/gateways/java_managedgateway.rst:64
+msgid "ManagedGateway - A gateway class that connects the gateway as managed gateway to IBM Watson Internet of Things Platform and enables the gateway to perform one or more Device Management operations for itself and attached devices. Also the ManagedGateway instance can be used to do normal gateway operations like publishing gateway events, attached device events and listening for commands from application."
+msgstr ""
+"ManagedGateway - 게이트웨이를 관리 게이트웨이로 IBM Watson Internet of Things Platform에 연결하고 게이트웨이 자체 및 접속된 디바이스에 대해 하나 이상의 디바이스 관리 오퍼레이션을 수행할 수 있도록 게이트웨이를 사용 설정하는 게이트웨이 클래스입니다. 또한 ManagedGateway 인스턴스를 사용하면 게이트웨이 이벤트, 접속된 디바이스 이벤트 공개 및 애플리케이션의 명령 청취와 같은 일반 게이트웨이 오퍼레이션을 수행할 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:66
+msgid "ManagedGateway exposes 2 different constructors to support different user patterns,"
+msgstr ""
+"ManagedGateway는 여러 가지 다른 사용자 패턴을 지원하도록 두 개의 다른 생성자를 표시합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:68
+msgid "**Constructor One**"
+msgstr ""
+"**생성자 1**"
+
+#: ../docs/gateways/java_managedgateway.rst:70
+msgid "Constructs a ManagedGateway instance by accepting the DeviceData and the following properties,"
+msgstr ""
+"DeviceData 및 다음 특성을 허용하여 ManagedGateway 인스턴스를 생성합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:72
+msgid "Organization-ID - Your organization ID."
+msgstr ""
+"Organization-ID - 사용자의 조직 ID입니다. "
+
+#: ../docs/gateways/java_managedgateway.rst:73
+msgid "Gateway-Type - The type of your gateway device."
+msgstr ""
+"Gateway-Type - 게이트웨이 디바이스의 유형입니다."
+
+#: ../docs/gateways/java_managedgateway.rst:74
+msgid "Gateway-ID - The ID of your gateway device."
+msgstr ""
+"Gateway-ID - 게이트웨이 디바이스의 ID입니다."
+
+#: ../docs/gateways/java_managedgateway.rst:75
+msgid "Authentication-Method - Method of authentication (The only value currently supported is \"token\")."
+msgstr ""
+"Authentication-Method - 인증 방법입니다(현재 \"token\" 값만 지원됨). "
+
+#: ../docs/gateways/java_managedgateway.rst:76
+msgid "Authentication-Token - API key token"
+msgstr ""
+"Authentication-Token - API 키 토큰입니다. "
+
+#: ../docs/gateways/java_managedgateway.rst:78
+msgid "All these properties are required to interact with the IBM Watson Internet of Things Platform."
+msgstr ""
+"이러한 모든 특성은 IBM Watson Internet of Things Platform과 상호작용하는 데 필요합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:80
+msgid "The following code shows how to create a ManagedGateway instance:"
+msgstr ""
+"다음 코드는 ManagedGateway 인스턴스를 작성하는 방법을 표시합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:93
+msgid "**Constructor Two**"
+msgstr ""
+"**생성자 2**"
+
+#: ../docs/gateways/java_managedgateway.rst:95
+msgid "Construct a ManagedGateway instance by accepting the DeviceData and the MqttClient instance. This constructor requires the DeviceData to be created with additional device attributes like Device Type and Device Id as follows:"
+msgstr ""
+"DeviceData 및 MqttClient 인스턴스를 허용하여 ManagedGateway 인스턴스를 생성합니다. 이 생성자는 다음과 같이 디바이스 유형 및 디바이스 ID와 같은 추가 디바이스 속성을 사용하여 DeviceData를 작성해야 합니다. "
+
+#: ../docs/gateways/java_managedgateway.rst:113
+msgid "Note this constructor helps the custom device users to create a ManagedGateway instance with the already created and connected MqttClient instance to take advantage of device management operations. But we recommend the users to use the library for all the device functionalities."
+msgstr ""
+"이 생성자는 디바이스 관리 오퍼레이션을 활용하기 위해 사용자 정의 디바이스 사용자가 이미 작성되고 연결된 MqttClient 인스턴스를 사용하여 ManagedGateway 인스턴스를 작성하는 데 도움이 된다는 점을 참고하십시오. 그러나 사용자는 모든 디바이스 기능의 라이브러리를 사용하도록 권장됩니다. "
+
+#: ../docs/gateways/java_managedgateway.rst:118
+msgid "Manage request - gateway"
+msgstr ""
+"관리 요청 - 게이트웨이"
+
+#: ../docs/gateways/java_managedgateway.rst:120
+msgid "The gateway can invoke sendGatewayManageRequest() method to participate in device management activities. The manage request will initiate a connect request internally if the device is not connected to the IBM Watson Internet of Things Platform already:"
+msgstr ""
+"게이트웨이는 sendGatewayManageRequest() 메소드를 호출하여 디바이스 관리 활동에 참여할 수 있습니다. 디바이스가 IBM Watson Internet of Things Platform에 아직 연결되지 않은 경우 관리 요청은 연결 요청을 내부적으로 시작합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:126
+msgid "As shown, this method accepts following 3 parameters,"
+msgstr ""
+"표시된 대로 이 메소드는 다음 세 개의 매개변수를 허용합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:128
+msgid "*lifetime* The length of time in seconds within which the gateway must send another **Manage** request in order to avoid being reverted to an unmanaged device and marked as dormant. If set to 0, the managed gateway will not become dormant. When set, the minimum supported setting is 3600 (1 hour)."
+msgstr ""
+"*lifetime* 비관리 디바이스로 되돌아가고 휴지 상태로 표시되는 것을 방지하려고 게이트웨이가 다른 **관리** 요청을 전송해야 하는 시간(초)입니다. 0으로 설정된 경우 관리 게이트웨이가 휴지 상태가 되지 않습니다. 설정된 경우 최소한으로 지원되는 설정값은 3600(1시간)입니다."
+
+#: ../docs/gateways/java_managedgateway.rst:129
+msgid "*supportFirmwareActions* Tells whether the gateway supports firmware actions or not. The gateway must add a firmware handler to handle the firmware requests."
+msgstr ""
+"*supportFirmwareActions* 게이트웨이가 펌웨어 조치를 지원하는지 여부를 표시합니다. 게이트웨이가 펌웨어 요청을 처리하도록 펌웨어 핸들러를 추가해야 합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:130
+msgid "*supportDeviceActions* Tells whether the gateway supports Device actions or not. The gateway must add a Device action handler to handle the reboot and factory reset requests."
+msgstr ""
+"*supportDeviceActions* 게이트웨이가 디바이스 조치를 지원하는지 여부를 표시합니다. 게이트웨이가 다시 부팅 및 팩토리 재설정 요청을 처리하도록 디바이스 조치 핸들러를 추가해야 합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:133
+msgid "Manage request - attached devices"
+msgstr ""
+"관리 요청 - 접속된 디바이스"
+
+#: ../docs/gateways/java_managedgateway.rst:135
+msgid "The gateway can invoke sendDeviceManageRequest() method to make the attached devices participate in the device management activities."
+msgstr ""
+"게이트웨이는 sendDeviceManageRequest() 메소드를 호출하여 접속된 디바이스가 디바이스 관리 활동에 참여하도록 만들 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:141
+msgid "As shown, this method accepts the details of the attached device apart from the lifetime and device/firmware support parameters. The gateway can also use the overloaded sendDeviceManageRequest() method to specify the DeviceData for the attached device."
+msgstr ""
+"표시된 대로, 이 메소드는 lifetime 및 device/firmware 지원 매개변수와 별도로 접속된 디바이스의 세부사항을 허용합니다. 또한 게이트웨이는 오버로드된 sendDeviceManageRequest() 메소드를 사용하여 접속된 디바이스에 대한 DeviceData를 지정할 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:143
+msgid "Refer to the `documentation <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/index.html#/manage-device#manage-device>`__ for more information about the manage operation."
+msgstr ""
+"관리 오퍼레이션에 대한 자세한 정보는 `문서 <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/index.html#/manage-device#manage-device>`__의 내용을 참조하십시오."
+
+#: ../docs/gateways/java_managedgateway.rst:148
+msgid "Unmanage request - gateway"
+msgstr ""
+"비관리 요청 - 게이트웨이"
+
+#: ../docs/gateways/java_managedgateway.rst:150
+msgid "A gateway can invoke sendGatewayUnmanageRequet() method when it no longer needs to be managed. The IBM Watson Internet of Things Platform will no longer send new device management requests for this gateway and all device management requests from the gateway (only for the gateway and not for the attached devices) will be rejected other than a **Manage** request."
+msgstr ""
+"게이트웨이가 관리될 필요가 없는 경우 sendGatewayUnmanageRequet() 메소드를 호출할 수 있습니다. 그러면 IBM Watson Internet of Things Platform이 더 이상 이 게이트웨이에 대해 새 디바이스 관리 요청을 보내지 않으며 **관리** 요청을 제외한 게이트웨이의 모든 디바이스 관리 요청(게이트웨이에만 해당되며 접속된 디바이스에는 해당되지 않음)이 거부됩니다."
+
+#: ../docs/gateways/java_managedgateway.rst:157
+msgid "Unmanage request - attached devices"
+msgstr ""
+"비관리 요청 - 접속된 디바이스"
+
+#: ../docs/gateways/java_managedgateway.rst:159
+msgid "The gateway can invoke sendDeviceUnmanageRequet() method to move the attached device from managed state to unmanaged state. The IBM Watson Internet of Things Platform will no longer send new device management requests for this device and all device management requests from the gateway for this attached device will be rejected other than a **Manage** request."
+msgstr ""
+"게이트웨이는 sendDeviceUnmanageRequet() 메소드를 호출하여 접속된 디바이스를 관리 상태에서 비관리 상태로 이동할 수 있습니다. 그러면 IBM Watson Internet of Things Platform이 더 이상 이 디바이스에 대해 새 디바이스 관리 요청을 보내지 않으며 **관리** 요청을 제외한 이 접속된 디바이스에 대한 게이트웨이에서의 모든 디바이스 관리 요청이 거부됩니다."
+
+#: ../docs/gateways/java_managedgateway.rst:165
+msgid "Refer to the `documentation <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/index.html#/unmanage-device#unmanage-device>`__ for more information about the Unmanage operation."
+msgstr ""
+"비관리 오퍼레이션에 대한 자세한 정보는 `문서 <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/index.html#/unmanage-device#unmanage-device>`__의 내용을 참조하십시오."
+
+#: ../docs/gateways/java_managedgateway.rst:170
+msgid "Location update - gateway"
+msgstr ""
+"위치 업데이트 - 게이트웨이"
+
+#: ../docs/gateways/java_managedgateway.rst:172
+msgid "Gateways that can determine their location can choose to notify the IBM Watson Internet of Things Platform about location changes. The gateway can invoke one of the overloaded updateLocation() method to update the location of the device."
+msgstr ""
+"위치를 판별할 수 있는 게이트웨이는 IBM Watson Internet of Things Platform에 위치 변경을 알리도록 선택할 수 있습니다. 게이트웨이는 오버로드된 updateLocation() 메소드 중의 하나를 호출하여 디바이스의 위치를 업데이트할 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:185
+msgid "Location update - attached devices"
+msgstr ""
+"위치 업데이트 - 접속된 디바이스"
+
+#: ../docs/gateways/java_managedgateway.rst:187
+msgid "The gateway can invoke corresponding device method updateDeviceLocation() to update the location of the attached devices. The overloaded method can be used to specify the measuredDateTime and etc.."
+msgstr ""
+"게이트웨이는 해당되는 디바이스 메소드 updateDeviceLocation()을 호출하여 접속된 디바이스의 위치를 업데이트할 수 있습니다. 오버로드된 메소드는 measuredDateTime 등을 지정하는 데 사용될 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:195
+msgid "Refer to the `documentation <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/index.html#/update-location#update-location>`__ for more information about the Location update."
+msgstr ""
+"위치 업데이트에 대한 자세한 정보는 `문서 <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/index.html#/update-location#update-location>`__의 내용을 참조하십시오."
+
+#: ../docs/gateways/java_managedgateway.rst:200
+msgid "Append/Clear ErrorCodes - gateway"
+msgstr ""
+"ErrorCode 추가/삭제 - 게이트웨이"
+
+#: ../docs/gateways/java_managedgateway.rst:202
+msgid "Gateways can choose to notify the IBM Watson Internet of Things Platform about changes in their error status. The gateway can invoke  addErrorCode() method to add the current errorcode to Watson IoT Platform."
+msgstr ""
+"게이트웨이는 IBM Watson Internet of Things Platform에 오류 상태의 변경을 알리도록 선택할 수 있습니다. 게이트웨이는 addErrorCode() 메소드를 호출하여 현재 오류 코드를 Watson IoT Platform에 추가할 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:208
+msgid "Also, the ErrorCodes of gateway can be cleared from IBM Watson Internet of Things Platform by calling the clearErrorCodes() method as follows:"
+msgstr ""
+"또한 게이트웨이의 오류 코드는 다음과 같이 clearErrorCodes() 메소드를 호출하여 IBM Watson Internet of Things Platform에서 지울 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:215
+msgid "Append/Clear ErrorCodes - attached devices"
+msgstr ""
+"ErrorCode 추가/삭제 - 접속된 디바이스"
+
+#: ../docs/gateways/java_managedgateway.rst:217
+msgid "Similarly, the gateway can invoke the corresponding device method to add/clear the errorcodes of the attached devices,"
+msgstr ""
+"마찬가지로 게이트웨이는 해당되는 디바이스 메소드를 호출하여 접속된 디바이스의 errorcode를 추가/삭제할 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:227
+msgid "Append/Clear Log messages - gateway"
+msgstr ""
+"로그 메시지 추가/삭제 - 게이트웨이"
+
+#: ../docs/gateways/java_managedgateway.rst:228
+msgid "Gateways can choose to notify the IBM Watson Internet of Things Platform about changes by adding a new log entry. Log entry includes a log messages, its timestamp and severity, as well as an optional base64-encoded binary diagnostic data. The gateways can invoke addGatewayLog() method to send log messages,"
+msgstr ""
+"게이트웨이는 새 로그 항목을 추가하여 IBM Watson Internet of Things Platform에 변경사항을 알리도록 선택할 수 있습니다. 로그 항목에는 선택적 base64 인코딩된 2진 진단 데이터와 로그 메시지, 해당 시간소인 및 심각도가 포함됩니다.게이트웨이는 addGatewayLog() 메소드를 호출하여 로그 메시지를 전송할 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:237
+msgid "Also, the log messages can be cleared from IBM Watson Internet of Things Platform by calling the clearLogs() method as follows:"
+msgstr ""
+"또한 로그 메시지는 다음과 같이 clearLogs() 메소드를 호출하여 IBM Watson Internet of Things Platform에서 지울 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:244
+msgid "Append/Clear Logs - attached devices"
+msgstr ""
+"로그 추가/삭제 - 접속된 디바이스"
+
+#: ../docs/gateways/java_managedgateway.rst:246
+msgid "Similarly, the gateway can invoke the corresponding device method to add/clear the Logs of the attached devices,"
+msgstr ""
+"마찬가지로 게이트웨이는 해당되는 디바이스 메소드를 호출하여 접속된 디바이스의 로그를 추가/삭제할 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:256
+msgid "and to clear the Logs of attached devices, invoke the clearDeviceLogs() method with the details of the attached device,"
+msgstr ""
+"또한 접속된 디바이스의 로그를 지우려면 접속된 디바이스의 세부사항을 사용하여 clearDeviceLogs() 메소드를 호출하십시오."
+
+#: ../docs/gateways/java_managedgateway.rst:258
+msgid "..code:: java"
+msgstr ""
+"..code:: java"
+
+#: ../docs/gateways/java_managedgateway.rst:260
+msgid "int rc = managedGateway.clearDeviceLogs(typeId, deviceId);"
+msgstr ""
+"int rc = managedGateway.clearDeviceLogs(typeId, deviceId);"
+
+#: ../docs/gateways/java_managedgateway.rst:262
+msgid "The device diagnostics operations are intended to provide information on gateway/device errors, and does not provide diagnostic information relating to the devices connection to the IBM Watson Internet of Things Platform."
+msgstr ""
+"디바이스 진단 오퍼레이션은 게이트웨이/디바이스 오류에 대한 정보를 제공하기 위한 것으로, IBM Watson Internet of Things Platform에 대한 디바이스 연결과 관련된 진단 정보를 제공하지 않습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:264
+msgid "Refer to the `documentation <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/index.html#/update-location#update-location>`__ for more information about the Diagnostics operation."
+msgstr ""
+"진단 오퍼레이션에 대한 자세한 정보는 `문서 <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/index.html#/update-location#update-location>`__의 내용을 참조하십시오."
+
+#: ../docs/gateways/java_managedgateway.rst:269
+msgid "Firmware Action"
+msgstr ""
+"펌웨어 조치"
+
+#: ../docs/gateways/java_managedgateway.rst:270
+msgid "The firmware update process is separated into two distinct actions:"
+msgstr ""
+"펌웨어 업데이트 프로세스는 두 개의 개별 조치로 구분됩니다. "
+
+#: ../docs/gateways/java_managedgateway.rst:272
+msgid "Downloading Firmware"
+msgstr ""
+"펌웨어 다운로드"
+
+#: ../docs/gateways/java_managedgateway.rst:273
+msgid "Updating Firmware."
+msgstr ""
+"펌웨어 업데이트"
+
+#: ../docs/gateways/java_managedgateway.rst:275
+msgid "The gateway needs to do the following activities to support Firmware Action for itself and for the attached devices:"
+msgstr ""
+"게이트웨이는 게이트웨이 및 접속된 디바이스에 대한 펌웨어 조치를 지원하도록 다음 활동을 수행해야 합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:277
+msgid "**1. Construct DeviceFirmware Object (Optional)**"
+msgstr ""
+"**1. DeviceFirmware 오브젝트 생성(선택사항)**"
+
+#: ../docs/gateways/java_managedgateway.rst:279
+msgid "In order to perform Firmware action, the gateway can optionally construct a DeviceFirmware object for itself and for attached devices and add it to DeviceData as follows:"
+msgstr ""
+"펌웨어 조치를 수행하도록 게이트웨이는 다음과 같이 필요에 따라 게이트웨이 및 접속된 디바이스에 대한 DeviceFirmware 오브젝트를 생성하고 DeviceData에 추가할 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:300
+msgid "And in the case of attached devices, the constructed DeviceData can be passed to the library while sending the manage request. i.e"
+msgstr ""
+"접속된 디바이스의 경우, 메시지 요청을 보내는 중에 생성된 DeviceData가 라이브러리에 전달될 수 있습니다. 예:"
+
+#: ../docs/gateways/java_managedgateway.rst:306
+msgid "The DeviceFirmware object represents the current firmware of the gateway or attached device and will be used to report the status of the Firmware Download and Firmware Update actions to IBM Watson Internet of Things Platform. In case this DeviceFirmware object is not constructed by the gateway, the library creates an empty object and reports the status to Watson IoT Platform."
+msgstr ""
+"DeviceFirmware 오브젝트는 게이트웨이 또는 접속된 디바이스의 현재 펌웨어를 나타내며, 펌웨어 다운로드 및 펌웨어 업데이트 조치의 상태를 IBM Watson Internet of Things Platform에 보고하는 데 사용됩니다. 이 경우, 이 DeviceFirmware 오브젝트는 게이트웨이에서 생성하지 않으며 라이브러리가 비어 있는 오브젝트를 작성하고 상태를 Watson IoT Platform에 보고합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:308
+msgid "**2. Inform the server about the Firmware action support**"
+msgstr ""
+"**2. 펌웨어 조치 지원에 대해 서버에 알림**"
+
+#: ../docs/gateways/java_managedgateway.rst:310
+msgid "The gateway/attached devices needs to set the firmware action flag to true in order for the server to initiate the firmware request. This can be achieved by passing true value for supportFirmwareActions parameter while sending the manage request."
+msgstr ""
+"서버가 펌웨어 요청을 시작하도록 게이트웨이/접속된 디바이스는 펌웨어 조치 플래그를 true로 설정해야 합니다. 관리 요청을 보내는 중에 supportFirmwareActions 매개변수에 대한 true 값을 전달하여 수행할 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:312
+msgid "The gateway can invoke the following method to inform the server about its firmware support,"
+msgstr ""
+"게이트웨이는 다음 메소드를 호출하여 서버에 펌웨어 지원에 대해 알릴 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:318
+msgid "Similarly, the gateway can invoke the corresponding device method to inform the firmware support of attached devices,"
+msgstr ""
+"마찬가지로 게이트웨이는 해당되는 디바이스 메소드를 호출하여 접속된 디바이스의 펌웨어 지원을 알릴 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:324
+msgid "Once the support is informed to the DM server, the server then forwards the firmware actions to the gateway for the gateway itself/attached devices."
+msgstr ""
+"일단 지원을 DM 서버에 알리면 서버가 펌웨어 조치를 게이트웨이 자체/접속된 디바이스에 대해 게이트웨이에 전달합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:326
+msgid "**3. Create the Firmware Action Handler**"
+msgstr ""
+"**3. 펌웨어 조치 핸들러 작성**"
+
+#: ../docs/gateways/java_managedgateway.rst:328
+msgid "In order to support the Firmware action, the gateway needs to create a handler and add it to managedGateway. The handler must extend a DeviceFirmwareHandler class and implement the following methods:"
+msgstr ""
+"펌웨어 조치를 지원하기 위해 게이트웨이는 핸들러를 작성하고 managedGateway에 추가해야 합니다. 핸들러는 DeviceFirmwareHandler 클래스를 확장하고 다음 메소드를 구현해야 합니다. "
+
+#: ../docs/gateways/java_managedgateway.rst:335
+msgid "**Note**: There must be only one handler added to the library for both the gateway and attached devices where the firmware download/update requests will be redirected. The implementation must create a thread (possibly a pool of threads) to handle multiple firmware requests at the same time. A sample handler implementation with a threadpool is `demonstrated here <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayFirmwareHandlerSample.java>`__"
+msgstr ""
+"**참고**: 펌웨어 다운로드/업데이트 요청을 경로 재지정할 게이트웨이 및 접속된 디바이스 둘 다에 대한 라이브러리에 하나의 핸들러만 추가되어야 합니다. 구현은 동시에 다중 펌웨어 요청을 처리하기 위해 스레드(또는 스레드 풀)를 작성해야 합니다. 스레드 풀이 있는 샘플 핸들러 구현은 `<https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayFirmwareHandlerSample.java>에서 설명합니다.`__"
+
+#: ../docs/gateways/java_managedgateway.rst:337
+msgid "**3.1 Sample implementation of downloadFirmware**"
+msgstr ""
+"**3.1 downloadFirmware의 샘플 구현**"
+
+#: ../docs/gateways/java_managedgateway.rst:339
+msgid "The implementation must add a logic to download the firmware and report the status of the download via DeviceFirmware object. If the Firmware Download operation is successful, then the state of the firmware to be set to DOWNLOADED and UpdateStatus should be set to SUCCESS."
+msgstr ""
+"구현에서는 DeviceFirmware 오브젝트를 통해 펌웨어를 다운로드하고 다운로드 상태를 보고하는 로직을 추가해야 합니다. 펌웨어 다운로드 오퍼레이션이 완료되면 펌웨어 상태를 DOWNLOADED로 설정하고 UpdateStatus를 SUCCESS로 설정해야 합니다. "
+
+#: ../docs/gateways/java_managedgateway.rst:341
+msgid "If an error occurs during Firmware Download the state should be set to IDLE and updateStatus should be set to one of the error status values:"
+msgstr ""
+"펌웨어 다운로드 중 오류가 발생한 경우 상태를 IDLE로 설정하고 updateStatus를 오류 상태 값 중 하나로 설정해야 합니다. "
+
+#: ../docs/gateways/java_managedgateway.rst:343
+#: ../docs/gateways/java_managedgateway.rst:441
+msgid "OUT_OF_MEMORY"
+msgstr ""
+"OUT_OF_MEMORY"
+
+#: ../docs/gateways/java_managedgateway.rst:344
+msgid "CONNECTION_LOST"
+msgstr ""
+"CONNECTION_LOST"
+
+#: ../docs/gateways/java_managedgateway.rst:345
+msgid "INVALID_URI"
+msgstr ""
+"INVALID_URI"
+
+#: ../docs/gateways/java_managedgateway.rst:347
+msgid "A sample Firmware Download implementation is shown below, (The below code doesn't include the threadpool part, refer to the `github sample <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayFirmwareHandlerSample.java>`__  for the complete implementation of the FirmwareHandler)."
+msgstr ""
+"샘플 펌웨어 다운로드 구현은 아래에 표시되어 있습니다. (아래 코드에는 스레드 풀 부분이 포함되어 있지 않습니다. FirmwareHandler의 전체 구현에 대해서는 `Github 샘플 <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayFirmwareHandlerSample.java>`__의 내용을 참조하십시오.)"
+
+#: ../docs/gateways/java_managedgateway.rst:406
+msgid "Gateway can check the integrity of the downloaded firmware image using the verifier and report the status back to IBM Watson Internet of Things Platform. The verifier can be set by the gateway during the startup (while creating the DeviceFirmware Object) or as part of the Download Firmware request by the application. A sample code to verify the same is below:"
+msgstr ""
+"게이트웨이는 검사기를 사용하여 다운로드된 펌웨어 이미지의 무결성을 검사하고 IBM Watson Internet of Things Platform에 상태를 다시 보고할 수 있습니다. 시작 중(DeviceFirmware 오브젝트를 작성하는 중) 또는 애플리케이션의 펌웨어 다운로드 요청의 일부분으로 게이트웨이가 검사기를 설정할 수 있습니다. 동일하게 검사하기 위한 샘플 코드는 다음과 같습니다. "
+
+#: ../docs/gateways/java_managedgateway.rst:433
+#: ../docs/gateways/java_managedgateway.rst:477
+msgid "The complete code can be found in the gateway management sample `GatewayFirmwareHandlerSample <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayFirmwareHandlerSample.java>`__."
+msgstr ""
+"전체 코드는 게이트웨이 관리 샘플 `GatewayFirmwareHandlerSample <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayFirmwareHandlerSample.java>`__에서 찾을 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:435
+msgid "**3.2 Sample implementation of updateFirmware**"
+msgstr ""
+"**3.2 updateFirmware의 샘플 구현**"
+
+#: ../docs/gateways/java_managedgateway.rst:437
+msgid "The implementation must create a separate thread and add a logic to install the downloaded firmware and report the status of the update via DeviceFirmware object. If the Firmware Update operation is successful, then the state of the firmware should to be set to IDLE and UpdateStatus should be set to SUCCESS."
+msgstr ""
+"구현에서는 별도의 스레드를 작성하고 DeviceFirmware 오브젝트를 통해 다운로드된 펌웨어를 설치하고 업데이트 상태를 보고하는 로직을 추가해야 합니다. 펌웨어 업데이트 오퍼레이션이 완료되면 펌웨어 상태를 IDLE로 설정하고 UpdateStatus를 SUCCESS로 설정해야 합니다. "
+
+#: ../docs/gateways/java_managedgateway.rst:439
+msgid "If an error occurs during Firmware Update, updateStatus should be set to one of the error status values:"
+msgstr ""
+"펌웨어 업데이트 중 오류가 발생한 경우 updateStatus를 오류 상태 값 중 하나로 설정해야 합니다. "
+
+#: ../docs/gateways/java_managedgateway.rst:442
+msgid "UNSUPPORTED_IMAGE"
+msgstr ""
+"UNSUPPORTED_IMAGE"
+
+#: ../docs/gateways/java_managedgateway.rst:444
+msgid "A sample Firmware Update implementation for a Raspberry Pi device is shown below:"
+msgstr ""
+"Raspberry Pi 디바이스의 샘플 펌웨어 업데이트 구현은 다음과 같습니다. "
+
+#: ../docs/gateways/java_managedgateway.rst:479
+msgid "**4. Add the handler to ManagedGateway**"
+msgstr ""
+"**4. ManagedGateway에 핸들러 추가**"
+
+#: ../docs/gateways/java_managedgateway.rst:481
+msgid "The created handler needs to be added to the ManagedGateway instance so that the WIoTP client library invokes the corresponding method when there is a Firmware action request from IBM Watson Internet of Things Platform."
+msgstr ""
+"IBM Watson Internet of Things Platform에서 제공하는 펌웨어 조치 요청이 있는 경우 WIoTP 클라이언트 라이브러리가 해당 메소드를 호출하도록, 작성된 핸들러를 ManagedGateway 인스턴스에 추가해야 합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:488
+msgid "Refer to `this page <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/requests.html#/firmware-actions#firmware-actions>`__ for more information about the Firmware action."
+msgstr ""
+"펌웨어 조치에 대한 자세한 정보는 `이 페이지 <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/requests.html#/firmware-actions#firmware-actions>`__의 내용을 참조하십시오."
+
+#: ../docs/gateways/java_managedgateway.rst:493
+msgid "Device Actions"
+msgstr ""
+"디바이스 조치"
+
+#: ../docs/gateways/java_managedgateway.rst:494
+msgid "The IBM Watson Internet of Things Platform supports the following device actions:"
+msgstr ""
+"IBM Watson Internet of Things Platform은 다음과 같은 디바이스 조치를 지원합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:496
+msgid "Reboot"
+msgstr ""
+"다시 부팅"
+
+#: ../docs/gateways/java_managedgateway.rst:497
+msgid "Factory Reset"
+msgstr ""
+"팩토리 재설정"
+
+#: ../docs/gateways/java_managedgateway.rst:499
+msgid "The gateway needs to do the following activities to support Device Actions for itself and for the attached devices:"
+msgstr ""
+"게이트웨이는 게이트웨이 및 접속된 디바이스에 대한 디바이스 조치를 지원하도록 다음 활동을 수행해야 합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:501
+msgid "**1. Inform server about the Device Actions support**"
+msgstr ""
+"**1. 디바이스 조치 지원에 대해 서버에 알림**"
+
+#: ../docs/gateways/java_managedgateway.rst:503
+msgid "In order to perform Reboot or Factory Reset action for itself and attached devices, the gateway needs to inform the IBM Watson Internet of Things Platform about the support first. This can be achieved by passing true value for supportDeviceActions parameter while sending the manage request."
+msgstr ""
+"게이트웨이 및 접속된 디바이스에 대한 다시 부팅 또는 팩토리 재설정 조치를 수행하려면 먼저 게이트웨이가 IBM Watson Internet of Things Platform에 지원에 대해 알려야 합니다. 관리 요청을 보내는 중에 supportDeviceActions 매개변수에 대한 true 값을 전달하여 수행할 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:505
+msgid "The gateway can invoke the following method to inform the server about its device action support,"
+msgstr ""
+"게이트웨이는 다음 메소드를 호출하여 서버에 디바이스 조치 지원에 대해 알릴 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:511
+msgid "Similarly, the gateway can invoke the corresponding device method to inform the device action support of attached devices,"
+msgstr ""
+"마찬가지로 게이트웨이는 해당되는 디바이스 메소드를 호출하여 접속된 디바이스의 디바이스 조치 지원을 알릴 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:517
+msgid "Once the support is informed to the DM server, the server then forwards the device action requests to the device."
+msgstr ""
+"일단 지원을 DM 서버에 알리면 서버가 디바이스 조치 요청을 디바이스에 전달합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:519
+msgid "**2. Create the Device Action Handler**"
+msgstr ""
+"**2. 디바이스 조치 핸들러 작성**"
+
+#: ../docs/gateways/java_managedgateway.rst:521
+msgid "In order to support the device action, the gateway needs to create a handler and add it to managedGateway instance. The handler must extend a DeviceActionHandler class and provide implementation for the following methods:"
+msgstr ""
+"디바이스 조치를 지원하도록 게이트웨이는 핸들러를 작성하고 managedGateway 인스턴스에 추가해야 합니다. 핸들러는 DeviceActionHandler 클래스를 확장하고 다음 메소드에 대한 구현을 제공해야 합니다. "
+
+#: ../docs/gateways/java_managedgateway.rst:528
+msgid "**Note:** There must be only one handler added to the library for both the gateway and attached devices where the device action requests will be redirected. The implementation must create a thread (possibly a pool of threads) to handle multiple device action requests at the same time. A sample handler implementation with a threadpool is `demonstrated here <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayActionHandlerSample.java>`__."
+msgstr ""
+"**참고**: 디바이스 조치 요청을 경로 재지정할 게이트웨이 및 접속된 디바이스 둘 다에 대한 라이브러리에 하나의 핸들러만 추가되어야 합니다. 구현은 동시에 다중 디바이스 조치 요청을 처리하도록 스레드(또는 스레드 풀)를 작성해야 합니다. 스레드 풀이 있는 샘플 핸들러 구현은 `demonstrated here <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayActionHandlerSample.java>에서 설명합니다.`__"
+
+#: ../docs/gateways/java_managedgateway.rst:530
+msgid "**2.1 Sample implementation of handleReboot**"
+msgstr ""
+"**2.1 handleReboot의 샘플 구현**"
+
+#: ../docs/gateways/java_managedgateway.rst:532
+msgid "The implementation must create a separate thread and add a logic to reboot the gateway/attached device and report the status of the reboot via DeviceAction object. Upon receiving the request, the gateway first needs to inform the server about the support(or failure) before proceeding with the actual reboot. And if the sample can not reboot the device or any other error during the reboot, the gateway can update the status along with an optional message. A sample reboot implementation for a Raspberry Pi device is shown below (The below code doesn't include the threadpool part, refer to the `github location <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayActionHandlerSample.java>`__ for the complete implementation of a sample device action handler)."
+msgstr ""
+"구현에서는 별도의 스레드를 작성하고 게이트웨이/접속된 디바이스를 다시 부팅하고 DeviceAction 오브젝트를 통해 다시 부팅 상태를 보고하는 로직을 추가해야 합니다. 요청을 수신하면 실제 다시 부팅을 진행하기 전에 먼저 게이트웨이가 서버에 지원(또는 실패)에 대해 알려야 합니다. 또한 샘플이 디바이스를 다시 부팅할 수 없거나 다시 부팅하는 동안 기타 오류가 발생하는 경우, 게이트웨이가 선택적 메시지와 함께 상태를 업데이트할 수 있습니다. Raspberry Pi 디바이스에 대한 샘플 다시 부팅은 아래에 표시되어 있습니다. (아래 코드에는 스레드 풀 부분이 포함되어 있지 않습니다. 샘플 디바이스 조치 핸들러의 전체 구현에 대해서는 `Github 위치 <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayActionHandlerSample.java>`__의 내용을 참조하십시오.)"
+
+#: ../docs/gateways/java_managedgateway.rst:555
+msgid "The complete code can be found in the device management sample `GatewayActionHandlerSample <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayActionHandlerSample.java>`__."
+msgstr ""
+"전체 코드는 디바이스 관리 샘플 `GatewayActionHandlerSample <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayActionHandlerSample.java>`__에서 찾을 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:557
+msgid "**2.2 Sample implementation of handleFactoryReset**"
+msgstr ""
+"**2.2 handleFactoryReset의 샘플 구현**"
+
+#: ../docs/gateways/java_managedgateway.rst:559
+msgid "The implementation must create a separate thread and add a logic to reset the gateway/attached device to factory settings and report the status of the reset via DeviceAction object. Upon receiving the request, the gateway first needs to inform the server about the support(or failure) before proceeding with the actual reset. The skeleton of the Factory Reset implementation is shown below:"
+msgstr ""
+"구현에서는 별도의 스레드를 작성하고 게이트웨이/접속된 디바이스를 팩토리 설정으로 재설정하고 DeviceAction 오브젝트를 통해 재설정 상태를 보고하는 로직을 추가해야 합니다. 요청을 수신하면 실제 재설정을 진행하기 전에 먼저 게이트웨이가 서버에 지원(또는 실패)에 대해 알려야 합니다. 팩토리 재설정 구현의 스켈레톤은 다음과 같습니다. "
+
+#: ../docs/gateways/java_managedgateway.rst:574
+msgid "**3. Add the handler to ManagedGateway**"
+msgstr ""
+"**3. ManagedGateway에 핸들러 추가**"
+
+#: ../docs/gateways/java_managedgateway.rst:576
+msgid "The created handler needs to be added to the ManagedGateway instance so that the WIoTP client library invokes the corresponding method when there is a device action request for this gateway or attached devices, from IBM Watson Internet of Things Platform."
+msgstr ""
+"IBM Watson Internet of Things Platform에서 제공하는 이 게이트웨이 또는 접속된 디바이스에 대한 디바이스 조치 요청이 있는 경우 WIoTP 클라이언트 라이브러리가 해당 메소드를 호출하도록, 작성된 핸들러를 ManagedGateway 인스턴스에 추가해야 합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:583
+msgid "Refer to `this page <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/requests.html#/device-actions-reboot#device-actions-reboot>`__ for more information about the Device Action."
+msgstr ""
+"디바이스 조치에 대한 자세한 정보는 `이 페이지 <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/requests.html#/device-actions-reboot#device-actions-reboot>`__의 내용을 참조하십시오."
+
+#: ../docs/gateways/java_managedgateway.rst:588
+msgid "Listen for Device attribute changes"
+msgstr ""
+"디바이스 속성 변경 청취"
+
+#: ../docs/gateways/java_managedgateway.rst:590
+msgid "This WIoTP client library updates the corresponding objects whenever there is an update request from the IBM Watson Internet of Things Platform, these update requests are initiated by the application either directly or indirectly (Firmware Update) via the IBM Watson Internet of Things Platform ReST API. Apart from updating these attributes, the library provides a mechanism where the gateway can be notified whenever a device attribute is updated."
+msgstr ""
+"이 WIoTP 클라이언트 라이브러리는 IBM Watson Internet of Things Platform의 업데이트 요청이 있을 때마다 해당 오브젝트를 업데이트하며, 이러한 업데이트 요청은 직접 또는 IBM Watson Internet of Things Platform REST API를 통해 간접적으로(펌웨어 업데이트) 애플리케이션에서 시작됩니다. 이러한 속성의 업데이트 외에 라이브러리는 디바이스 속성이 업데이트될 때마다 게이트웨이에 알릴 수 있는 메커니즘을 제공합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:592
+msgid "Attributes that can be updated by this operation are location, metadata, device information and firmware of the gateway/attached devices."
+msgstr ""
+"이 오퍼레이션에서 업데이트될 수 있는 속성은 위치, 메타데이터, 디바이스 정보 및 게이트웨이/접속된 디바이스의 펌웨어입니다."
+
+#: ../docs/gateways/java_managedgateway.rst:594
+msgid "In order to get notified, the gateway needs to add a property change listener on those objects that it is interested."
+msgstr ""
+"알림을 받으려면 게이트웨이는 관심이 있는 오브젝트에서 특성 변경 리스너를 추가해야 합니다."
+
+#: ../docs/gateways/java_managedgateway.rst:603
+msgid "Also, the gateway needs to implement the propertyChange() method where it receives the notification. A sample implementation is as follows:"
+msgstr ""
+"또한 게이트웨이는 알림을 받은 경우 propertyChange() 메소드를 구현해야 합니다. 샘플 구현은 다음과 같습니다. "
+
+#: ../docs/gateways/java_managedgateway.rst:636
+msgid "Refer to `this page <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/index.html#/update-device-attributes#update-device-attributes>`__ for more information about updating the device attributes."
+msgstr ""
+"디바이스 속성 업데이트에 대한 자세한 정보는 `이 페이지 <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/index.html#/update-device-attributes#update-device-attributes>`__의 내용을 참조하십시오."
+
+#: ../docs/gateways/java_managedgateway.rst:641
+msgid "Examples"
+msgstr ""
+"예제"
+
+#: ../docs/gateways/java_managedgateway.rst:642
+msgid "`ManagedRasPiGateway <https://github.com/ibm-messaging/gateway-samples/blob/master/java/gateway-samples/src/main/java/com/ibm/iotf/sample/client/gateway/devicemgmt/ManagedRasPiGateway.java>`__ - Gateway Device Management(DM) capabilities are demonstrated in this sample by managing the Arduino Uno device through the Raspberry Pi Gateway. If you do not have Raspberry Pi and Arduino UNO, don’t worry, you can still follow the sample to connect your device as a gateway and manage one or more attached devices."
+msgstr ""
+"`ManagedRasPiGateway <https://github.com/ibm-messaging/gateway-samples/blob/master/java/gateway-samples/src/main/java/com/ibm/iotf/sample/client/gateway/devicemgmt/ManagedRasPiGateway.java>`__ - 게이트웨이 디바이스 관리(DM) 기능은 Raspberry Pi 게이트웨이를 통해 Arduino Uno 디바이스를 관리함으로써 이 샘플에서 설명합니다. Raspberry Pi 및 Arduino UNO가 없는 경우에도 샘플에 따라 사용자의 디바이스를 게이트웨이로 연결하고 하나 이상의 접속된 디바이스를 관리할 수 있습니다."
+
+#: ../docs/gateways/java_managedgateway.rst:643
+msgid "`HomeGatewaySample <https://github.com/ibm-messaging/gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/HomeGatewaySample.java>`__ - A home gateway sample that manages few attached home devices like, Lights, Switches, Elevator, Oven and OutdoorTemperature."
+msgstr ""
+"`HomeGatewaySample <https://github.com/ibm-messaging/gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/HomeGatewaySample.java>`__ - 몇 개의 접속된 홈 디바이스(조명, 스위치, 엘리베이터, 오븐 및 실외 온도 등)를 관리하는 홈 게이트웨이 샘플입니다."
+
+#: ../docs/gateways/java_managedgateway.rst:644
+msgid "`GatewayFirmwareHandlerSample <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayFirmwareHandlerSample.java>`__ - A sample implementation of FirmwareHandler."
+msgstr ""
+"`GatewayFirmwareHandlerSample <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayFirmwareHandlerSample.java>`__ - FirmwareHandler의 샘플 구현입니다."
+
+#: ../docs/gateways/java_managedgateway.rst:645
+msgid "`GatewayActionHandlerSample <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayActionHandlerSample.java>`__ - A sample implementation of DeviceActionHandler."
+msgstr ""
+"`GatewayActionHandlerSample <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayActionHandlerSample.java>`__ - DeviceActionHandler의 샘플 구현입니다."
+
+#: ../docs/gateways/java_managedgateway.rst:650
+msgid "Recipe"
+msgstr ""
+"지침서"
+
+#: ../docs/gateways/java_managedgateway.rst:652
+msgid "Refer to `the recipe <https://developer.ibm.com/recipes/tutorials/raspberry-pi-as-managed-gateway-in-watson-iot-platform-part-1/>`__ that shows how to connect Raspberry Pi as Managed Gateway to IBM Watson IoT Platform and manage the attached devices. For example, update Arduino Uno device with a new sketch program, reboot Arduino Uno using the Watson IoT Platform device management protocol and etc.."
+msgstr ""
+"Raspberry Pi를 관리 게이트웨이로 IBM Watson IoT Platform에 연결하고 접속된 디바이스를 관리하는 방법을 보여주는 `지침서 <https://developer.ibm.com/recipes/tutorials/raspberry-pi-as-managed-gateway-in-watson-iot-platform-part-1/>`__의 내용을 참조하십시오. 예를 들어, 새 스케치 프로그램을 사용하여 Arduino Uno 디바이스를 업데이트하고 Watson IoT Platform 디바이스 관리 프로토콜을 사용하여 Arduino Uno를 다시 부팅하십시오."
+

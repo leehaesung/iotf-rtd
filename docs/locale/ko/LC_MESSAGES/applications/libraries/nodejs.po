@@ -1,0 +1,349 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/applications/libraries/nodejs.rst:2
+msgid "Node.js for Application Developers"
+msgstr ""
+"애플리케이션 개발자용 Node.js"
+
+#: ../docs/applications/libraries/nodejs.rst:4
+msgid "See `iot-nodejs <https://github.com/ibm-messaging/iot-nodejs>`_ in GitHub"
+msgstr ""
+"GitHub에서 `iot-nodejs <https://github.com/ibm-messaging/iot-nodejs>`_ 참조"
+
+#: ../docs/applications/libraries/nodejs.rst:5
+msgid "See the `samples for device <https://github.com/ibm-messaging/iot-nodejs/tree/master/samples>`_ in Github"
+msgstr ""
+"Github에서 `samples for device <https://github.com/ibm-messaging/iot-nodejs/tree/master/samples>`_ 참조"
+
+#: ../docs/applications/libraries/nodejs.rst:6
+msgid "See `ibmiotf <https://www.npmjs.com/package/ibmiotf>`_ on NPM"
+msgstr ""
+"NPM에서 `ibmiotf <https://www.npmjs.com/package/ibmiotf>`_ 참조"
+
+#: ../docs/applications/libraries/nodejs.rst:13
+msgid "Application"
+msgstr ""
+"애플리케이션"
+
+#: ../docs/applications/libraries/nodejs.rst:15
+msgid "*ApplicationClient* is application client for the Internet of Things Foundation service. This section contains information on how applications interact with devices."
+msgstr ""
+"*ApplicationClient*는 Internet of Things Foundation 서비스에 대한 애플리케이션 클라이언트입니다. 이 절은 애플리케이션이 디바이스와 상호작용하는 방법에 대한 정보를 포함합니다."
+
+#: ../docs/applications/libraries/nodejs.rst:20
+msgid "Constructor"
+msgstr ""
+"생성자"
+
+#: ../docs/applications/libraries/nodejs.rst:22
+msgid "The constructor builds the application client instance. It accepts an configuration json containing the following :"
+msgstr ""
+"생성자는 애플리케이션 클라이언트 인스턴스를 빌드합니다. 이는 다음을 포함한 구성 json을 승인합니다."
+
+#: ../docs/applications/libraries/nodejs.rst:25
+msgid "org - Your organization ID"
+msgstr ""
+"org - 조직 ID"
+
+#: ../docs/applications/libraries/nodejs.rst:26
+msgid "id - The unique ID of your application within your organization."
+msgstr ""
+"id - 조직 내 애플리케이션의 고유 ID."
+
+#: ../docs/applications/libraries/nodejs.rst:27
+msgid "auth-key - API key"
+msgstr ""
+"auth-key - API 키"
+
+#: ../docs/applications/libraries/nodejs.rst:28
+msgid "auth-token - API key token"
+msgstr ""
+"auth-token - API 키 토큰"
+
+#: ../docs/applications/libraries/nodejs.rst:29
+msgid "type - use 'shared' to enable shared subscription"
+msgstr ""
+"type - 공유 구독을 사용하려면 'shared' 사용"
+
+#: ../docs/applications/libraries/nodejs.rst:31
+msgid "If you want to use quickstart, then send only the first two properties."
+msgstr ""
+"quickstart를 사용하려면 처음 2개의 특성만 보내십시오."
+
+#: ../docs/applications/libraries/nodejs.rst:49
+msgid "Using a configuration file"
+msgstr ""
+"구성 파일 사용"
+
+#: ../docs/applications/libraries/nodejs.rst:51
+msgid "Instead of passing the configuration json directly, you can also use a configuration file. Use the following code snippet"
+msgstr ""
+"직접 구성 json을 전달하는 대신 구성 파일도 사용할 수 있습니다. 다음 코드 스니펫을 사용하십시오."
+
+#: ../docs/applications/libraries/nodejs.rst:62
+msgid "The configuration file must be in the format of"
+msgstr ""
+"구성 파일의 형식이 다음과 같아야 합니다."
+
+#: ../docs/applications/libraries/nodejs.rst:78
+msgid "Connecting to the IoT Platform"
+msgstr ""
+"IoT Platform에 연결"
+
+#: ../docs/applications/libraries/nodejs.rst:80
+msgid "Connect to the IBM Watson Internet of Things Platform by calling the *connect*"
+msgstr ""
+"*connect*를 호출하여 IBM Watson Internet of Things Platform에 연결하십시오."
+
+#: ../docs/applications/libraries/nodejs.rst:94
+msgid "After the successful connection to the IoT Platform service, the application client sends a *connect* event. So all the logic can be implemented inside this callback function."
+msgstr ""
+"IoT Platform 서비스에 성공적으로 연결되면 애플리케이션 클라이언트가 *connect* 이벤트를 전송합니다. 따라서 모든 로직이 이 콜백 함수 내에서 구현될 수 있습니다."
+
+#: ../docs/applications/libraries/nodejs.rst:96
+msgid "The Application Client automatically tries to reconnect when it loses connection. When the reconnection is successful, the client emits *reconnect* event."
+msgstr ""
+"애플리케이션 클라이언트의 연결이 끊기면 다시 연결하려고 자동으로 시도합니다. 다시 연결이 성공하면 클라이언트가 *reconnect* 이벤트를 생성합니다."
+
+#: ../docs/applications/libraries/nodejs.rst:100
+msgid "Logging"
+msgstr ""
+"로깅"
+
+#: ../docs/applications/libraries/nodejs.rst:102
+msgid "By default, all the logs of ```warn``` are logged. If you want to enable more logs, use the *log.setLevel* function. Supported log levels - *trace, debug, info, warn, error*."
+msgstr ""
+"기본적으로 ```warn```의 모든 로그가 로깅됩니다. 더 많은 로그를 사용하려면 *log.setLevel* 함수를 사용하십시오. 지원되는 로그 레벨 - *trace, debug, info, warn, error*."
+
+#: ../docs/applications/libraries/nodejs.rst:118
+msgid "Shared Subscription"
+msgstr ""
+"공유 구독"
+
+#: ../docs/applications/libraries/nodejs.rst:120
+msgid "Use this feature to build scalable applications which will load balance messages across multiple instances of the application. To enable this, pass 'type' as 'shared' in the configuration."
+msgstr ""
+"애플리케이션의 여러 인스턴스 간에 메시지를 로드 밸런싱하는 확장 가능 애플리케이션을 빌드하려면 이 기능을 사용하십시오. 이 기능을 사용하려면 구성에서 'type'을 'shared'로 전달하십시오."
+
+#: ../docs/applications/libraries/nodejs.rst:143
+msgid "Handling errors"
+msgstr ""
+"오류 처리"
+
+#: ../docs/applications/libraries/nodejs.rst:145
+msgid "When the application clients encounters an error, it emits an *error* event."
+msgstr ""
+"애플리케이션 클라이언트에 오류가 발생하면 *error* 이벤트를 생성합니다."
+
+#: ../docs/applications/libraries/nodejs.rst:164
+msgid "Subscribing to device events"
+msgstr ""
+"디바이스 이벤트 구독"
+
+#: ../docs/applications/libraries/nodejs.rst:166
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"이벤트는 디바이스가 데이터를 IoT Platform에 공개할 때 사용하는 메커니즘입니다. 디바이스는 이벤트의 컨텐츠를 제어하고 전송하는 각 이벤트에 대해 이름을 지정합니다. "
+
+#: ../docs/applications/libraries/nodejs.rst:168
+msgid "When an event is received by the IoT Platform, the credentials of the connection on which the event was received are used to determine from which device the event was sent. Using this architecture, it is impossible for a device to impersonate another device."
+msgstr ""
+"IoT Platform에서 이벤트를 수신하면 이벤트가 수신된 연결의 신임 정보를 사용하여 이벤트를 전송한 디바이스를 판별합니다. 이 아키텍처를 사용하면 한 디바이스가 다른 디바이스를 위장할 수 없습니다."
+
+#: ../docs/applications/libraries/nodejs.rst:170
+msgid "By default, applications will subscribe to all events from all connected devices. Use the type, id, event and msgFormat parameters to control the scope of the subscription. A single client can support multiple subscriptions. The code samples below give examples of how to subscribe to devices dependent on device type, id, event and msgFormat parameters."
+msgstr ""
+"기본적으로 애플리케이션은 연결된 모든 디바이스의 모든 이벤트를 구독합니다. 유형, id, 이벤트 및 msgFormat 매개변수를 사용하여 구독의 범위를 제어하십시오. 단일 클라이언트가 여러 구독을 지원할 수 있습니다. 아래의 코드 샘플에서는 디바이스 유형, id, 이벤트 및 msgFormat 매개변수에 종속된 디바이스를 구독하는 방법에 대한 예제를 제공합니다. "
+
+#: ../docs/applications/libraries/nodejs.rst:173
+msgid "To subscribe to all events from all devices"
+msgstr ""
+"모든 디바이스의 모든 이벤트 구독"
+
+#: ../docs/applications/libraries/nodejs.rst:188
+msgid "To subscribe to all events from all devices of a specific type"
+msgstr ""
+"특정 유형의 모든 디바이스의 모든 이벤트 구독"
+
+#: ../docs/applications/libraries/nodejs.rst:202
+msgid "To subscribe to a specific event from all devices"
+msgstr ""
+"모든 디바이스의 특정 이벤트 구독"
+
+#: ../docs/applications/libraries/nodejs.rst:217
+msgid "To subscribe to a specific event from two or more different devices"
+msgstr ""
+"둘 이상의 다른 디바이스의 특정 이벤트 구독"
+
+#: ../docs/applications/libraries/nodejs.rst:232
+msgid "To subscribe to all events published by a device in json format"
+msgstr ""
+"JSON 형식으로 디바이스가 공개하는 모든 이벤트 구독"
+
+#: ../docs/applications/libraries/nodejs.rst:248
+msgid "Handling events from devices"
+msgstr ""
+"디바이스의 이벤트 처리"
+
+#: ../docs/applications/libraries/nodejs.rst:250
+msgid "To process the events received by your subscriptions you need to implement a device event callback method. The ibmiotf application client emits the event *deviceEvent*. This function has the following properties:"
+msgstr ""
+"구독으로 수신한 이벤트를 처리하려면 디바이스 이벤트 콜백 메소드를 구현해야 합니다. ibmiotf 애플리케이션 클라이언트가 *deviceEvent* 이벤트를 생성합니다. 이 기능에는 다음 특성이 있습니다."
+
+#: ../docs/applications/libraries/nodejs.rst:252
+#: ../docs/applications/libraries/nodejs.rst:337
+msgid "deviceType"
+msgstr ""
+"deviceType"
+
+#: ../docs/applications/libraries/nodejs.rst:253
+#: ../docs/applications/libraries/nodejs.rst:338
+msgid "deviceId"
+msgstr ""
+"deviceId"
+
+#: ../docs/applications/libraries/nodejs.rst:254
+msgid "eventType"
+msgstr ""
+"eventType"
+
+#: ../docs/applications/libraries/nodejs.rst:255
+msgid "format"
+msgstr ""
+"format"
+
+#: ../docs/applications/libraries/nodejs.rst:256
+msgid "payload - Device event payload"
+msgstr ""
+"payload - 디바이스 이벤트 페이로드"
+
+#: ../docs/applications/libraries/nodejs.rst:257
+msgid "topic - Original topic"
+msgstr ""
+"topic - 기존 주제"
+
+#: ../docs/applications/libraries/nodejs.rst:281
+msgid "Subscribing to device status"
+msgstr ""
+"디바이스 상태 구독"
+
+#: ../docs/applications/libraries/nodejs.rst:283
+msgid "By default, this will subscribe to status updates for all connected devices. Use the type and id parameters to control the scope of the subscription. A single client can support multiple subscriptions."
+msgstr ""
+"기본적으로 이는 연결된 모든 디바이스에 대한 상태 업데이트를 구독합니다. 유형 및 id 매개변수를 사용하여 구독의 범위를 제어하십시오. 단일 클라이언트가 여러 구독을 지원할 수 있습니다. "
+
+#: ../docs/applications/libraries/nodejs.rst:286
+msgid "Subscribe to status updates for all devices"
+msgstr ""
+"모든 디바이스에 대한 상태 업데이트 구독"
+
+#: ../docs/applications/libraries/nodejs.rst:302
+msgid "Subscribe to status updates for all devices of a specific type"
+msgstr ""
+"특정 유형의 모든 디바이스에 대한 상태 업데이트 구독"
+
+#: ../docs/applications/libraries/nodejs.rst:317
+msgid "Subscribe to status updates for two different devices"
+msgstr ""
+"두 개의 다른 디바이스에 대한 상태 업데이트 구독"
+
+#: ../docs/applications/libraries/nodejs.rst:333
+msgid "Handling status updates from devices"
+msgstr ""
+"디바이스의 상태 업데이트 처리"
+
+#: ../docs/applications/libraries/nodejs.rst:335
+msgid "To process the status updates received by your subscriptions you need to implement an device status callback method. The ibmiotf application client emits the event *deviceStatus*. This function has the following properties:"
+msgstr ""
+"구독으로 수신한 상태 업데이트를 처리하려면 디바이스 상태 콜백 메소드를 구현해야 합니다. ibmiotf 애플리케이션 클라이언트가 *deviceStatus* 이벤트를 생성합니다. 이 기능에는 다음 특성이 있습니다."
+
+#: ../docs/applications/libraries/nodejs.rst:339
+msgid "payload - Device status payload"
+msgstr ""
+"payload - 디바이스 상태 페이로드"
+
+#: ../docs/applications/libraries/nodejs.rst:340
+msgid "topic"
+msgstr ""
+"주제"
+
+#: ../docs/applications/libraries/nodejs.rst:365
+msgid "Publishing events from devices"
+msgstr ""
+"디바이스의 이벤트 공개"
+
+#: ../docs/applications/libraries/nodejs.rst:367
+msgid "Applications can publish events as if they originated from a Device. The function requires:"
+msgstr ""
+"애플리케이션은 디바이스에서 시작된 것처럼 이벤트를 공개할 수 있습니다. 이 기능에는 다음이 필요합니다."
+
+#: ../docs/applications/libraries/nodejs.rst:369
+#: ../docs/applications/libraries/nodejs.rst:398
+msgid "DeviceType"
+msgstr ""
+"DeviceType"
+
+#: ../docs/applications/libraries/nodejs.rst:370
+#: ../docs/applications/libraries/nodejs.rst:399
+msgid "Device ID"
+msgstr ""
+"디바이스 ID"
+
+#: ../docs/applications/libraries/nodejs.rst:371
+msgid "Event Type"
+msgstr ""
+"이벤트 유형"
+
+#: ../docs/applications/libraries/nodejs.rst:372
+#: ../docs/applications/libraries/nodejs.rst:401
+msgid "Format"
+msgstr ""
+"형식"
+
+#: ../docs/applications/libraries/nodejs.rst:373
+#: ../docs/applications/libraries/nodejs.rst:402
+msgid "Data"
+msgstr ""
+"데이터"
+
+#: ../docs/applications/libraries/nodejs.rst:394
+msgid "Publishing commands to devices"
+msgstr ""
+"디바이스에 명령 공개"
+
+#: ../docs/applications/libraries/nodejs.rst:396
+msgid "Applications can publish commands to connected devices. The function requires:"
+msgstr ""
+"애플리케이션은 연결된 디바이스에 명령을 공개할 수 있습니다. 이 기능에는 다음이 필요합니다."
+
+#: ../docs/applications/libraries/nodejs.rst:400
+msgid "Command Type"
+msgstr ""
+"명령 유형"
+
+#: ../docs/applications/libraries/nodejs.rst:423
+msgid "Disconnect Client"
+msgstr ""
+"클라이언트 연결 끊기"
+
+#: ../docs/applications/libraries/nodejs.rst:425
+msgid "Disconnects the client and releases the connections"
+msgstr ""
+"클라이언트의 연결 끊기 및 연결 해제"
+

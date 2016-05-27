@@ -1,0 +1,679 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/device_mgmt/requests.rst:2
+msgid "Device Management Requests"
+msgstr ""
+"Richieste di gestione dispositivo"
+
+#: ../docs/devices/device_mgmt/requests.rst:4
+msgid "The IoT Platform provides some actions which can be initiated against one or more devices. These actions can be initiated through the dashboard as well as by using the REST API. The available actions are split into two groups, device actions and firmware actions."
+msgstr ""
+"IoT Platform fornisce alcune azioni che possono essere avviate su uno o più dispositivi. Queste azioni possono essere avviate mediante il dashboard ed utilizzando l'API REST. Le azioni disponibili sono suddivise in due gruppi, azioni dispositivo ed azioni firmware."
+
+#: ../docs/devices/device_mgmt/requests.rst:7
+msgid "Initiating Device Management Requests through the dashboard"
+msgstr ""
+"Avvio delle richieste di gestione dei dispositivi tramite dashboard"
+
+#: ../docs/devices/device_mgmt/requests.rst:9
+msgid "Requests can be initiated through the dashboard by navigating to the Actions tab of the Devices page. The **Initiate Action** button provides a dialog for selecting an action, picking the devices to take the action against, and specifying any additional parameters that the selected action supports."
+msgstr ""
+"Le richieste possono essere avviare tramite dashboard accedendo alla scheda Azioni della pagina Dispositivi. Il pulsante **Avvia azione** consente di accedere ad una finestra di dialogo per la selezione di un'azione, e del dispositivo su cui la stessa deve essere eseguita, ed inoltre di specificare eventuali parametri aggiuntivi supportati dall'azione selezionata. "
+
+#: ../docs/devices/device_mgmt/requests.rst:12
+msgid "Initiating Device Management Requests using the REST API"
+msgstr ""
+"Avvio delle richieste di gestione dei dispositivi tramite API REST"
+
+#: ../docs/devices/device_mgmt/requests.rst:14
+msgid "Requests can be initiated using the following REST API:"
+msgstr ""
+"Le richieste possono essere avviate utilizzando la seguente API REST:"
+
+#: ../docs/devices/device_mgmt/requests.rst:16
+msgid "``POST https://<org>.internetofthings.ibmcloud.com/api/v0002/mgmt/requests``"
+msgstr ""
+"``POST https://<org>.internetofthings.ibmcloud.com/api/v0002/mgmt/requests``"
+
+#: ../docs/devices/device_mgmt/requests.rst:18
+msgid "For more information on the request body, refer to the `API documentation <../../swagger/v0002.html>`__."
+msgstr ""
+"Per ulteriori informazioni sul corpo della richiesta, fare riferimento alla `Documentazione API <../../swagger/v0002.html>`__."
+
+#: ../docs/devices/device_mgmt/requests.rst:21
+msgid "Device Actions"
+msgstr ""
+"Azioni dispositivo"
+
+#: ../docs/devices/device_mgmt/requests.rst:23
+msgid "A device may specify that it supports device actions when it publishes a manage request. This indicates to the IoT Platform that the device is able to respond to device reboot and device reset actions."
+msgstr ""
+"Un dispositivo può specificare che supporta azioni dispositivo quando pubblica una richiesta di gestione. Ciò indica a IoT Platform che il dispositivo è in grado di rispondere ad azioni di reimpostazione e riavvio del dispositivo."
+
+#: ../docs/devices/device_mgmt/requests.rst:28
+msgid "Device Actions - Reboot"
+msgstr ""
+"Azioni dispositivo - Riavvio"
+
+#: ../docs/devices/device_mgmt/requests.rst:30
+msgid "The reboot action can be initiated by using either the IoT Platform dashboard, or the REST API."
+msgstr ""
+"L'azione di riavvio può essere avviata utilizzando il dashboard IoT Platform oppure l'API REST."
+
+#: ../docs/devices/device_mgmt/requests.rst:32
+msgid "To initiate a device reboot using the REST API, issue a POST request to:"
+msgstr ""
+"Per riavviare il dispositivo utilizzando l'API REST, inviare una richiesta POST a : "
+
+#: ../docs/devices/device_mgmt/requests.rst:34
+#: ../docs/devices/device_mgmt/requests.rst:109
+#: ../docs/devices/device_mgmt/requests.rst:231
+#: ../docs/devices/device_mgmt/requests.rst:478
+msgid "``https://<org>.internetofthings.ibmcloud.com/api/v0002/mgmt/requests``"
+msgstr ""
+"``https://<org>.internetofthings.ibmcloud.com/api/v0002/mgmt/requests``"
+
+#: ../docs/devices/device_mgmt/requests.rst:36
+#: ../docs/devices/device_mgmt/requests.rst:111
+#: ../docs/devices/device_mgmt/requests.rst:233
+msgid "The information provided is:"
+msgstr ""
+"Le informazioni fornite sono:"
+
+#: ../docs/devices/device_mgmt/requests.rst:38
+msgid "The action ``device/reboot``"
+msgstr ""
+"Azione ``device/reboot``"
+
+#: ../docs/devices/device_mgmt/requests.rst:39
+msgid "A list of devices to reboot, with a maximum of 5000 devices"
+msgstr ""
+"Un elenco di dispositivi da riavviare, con un massimo di 5000 dispositivi"
+
+#: ../docs/devices/device_mgmt/requests.rst:41
+msgid "Example device reboot request:"
+msgstr ""
+"Esempio di richiesta di riavvio del dispositivo:"
+
+#: ../docs/devices/device_mgmt/requests.rst:55
+msgid "Once a request has been initiated, an MQTT message will be published to all devices specified in the request body. For each device, a response must be sent back indicating whether or not the reboot action can be initiated. If this operation can be initiated immediately, set ``rc`` to ``202``. If the reboot attempt fails, set ``rc`` to ``500`` and set the ``message`` field accordingly. If reboot is not supported, set ``rc`` to ``501`` and optionally set the ``message`` field accordingly."
+msgstr ""
+"Una volta avviata una richiesta, verrà pubblicato un messaggio MQTT su tutti i dispositivi nel corpo della richiesta. È necessario che ciascun dispositivo risponda indicando se è possibile o meno avviare la richiesta di riavvio. Se questa operazione può essere avviata immediatamente, impostare ``rc`` su ``202``. Se il tentativo di riavvio ha esito negativo, impostare ``rc`` su ``500`` ed impostare il campo ``message`` di conseguenza. Se il riavvio non è supportato, impostare ``rc`` su ``501`` e, come opzione, impostare il campo ``message`` di conseguenza."
+
+#: ../docs/devices/device_mgmt/requests.rst:57
+msgid "The reboot action is considered complete when the device sends a Manage device request following its reboot."
+msgstr ""
+"L'azione di riavvio è considerata completa quando il dispositivo invia una richiesta Gestisci dispositivo dopo il riavvio."
+
+#: ../docs/devices/device_mgmt/requests.rst:60
+#: ../docs/devices/device_mgmt/requests.rst:135
+msgid "Topic"
+msgstr ""
+"Argomento"
+
+#: ../docs/devices/device_mgmt/requests.rst:62
+#: ../docs/devices/device_mgmt/requests.rst:137
+msgid "The server publishes this request to a device on the following topic:"
+msgstr ""
+"Il server pubblica questa richiesta su un dispositivo sul seguente argomento:"
+
+#: ../docs/devices/device_mgmt/requests.rst:70
+#: ../docs/devices/device_mgmt/requests.rst:145
+msgid "Message format"
+msgstr ""
+"Formato messaggio"
+
+#: ../docs/devices/device_mgmt/requests.rst:72
+#: ../docs/devices/device_mgmt/requests.rst:147
+msgid "Request Format:"
+msgstr ""
+"Formato richiesta:"
+
+#: ../docs/devices/device_mgmt/requests.rst:83
+#: ../docs/devices/device_mgmt/requests.rst:158
+msgid "Response Format:"
+msgstr ""
+"Formato risposta:"
+
+#: ../docs/devices/device_mgmt/requests.rst:103
+msgid "Device Actions - Factory Reset"
+msgstr ""
+"Azioni dispositivo - Reimpostazione delle impostazioni di fabbrica"
+
+#: ../docs/devices/device_mgmt/requests.rst:105
+msgid "The factory reset action can be initiated by using either the IoT Platform dashboard, or the REST API."
+msgstr ""
+"L'azione di reimpostazione delle impostazioni di fabbrica può essere avviata utilizzando il dashboard IoT Platform oppure l'API REST."
+
+#: ../docs/devices/device_mgmt/requests.rst:107
+msgid "To initiate a device factory reset using the REST API, issue a POST request to:"
+msgstr ""
+"Per avviare la reimpostazione alle impostazioni di fabbrica del dispositivo utilizzando l'API REST, inviare una richiesta POST a :"
+
+#: ../docs/devices/device_mgmt/requests.rst:113
+msgid "The action ``device/factoryReset``"
+msgstr ""
+"Azione ``device/factoryReset``"
+
+#: ../docs/devices/device_mgmt/requests.rst:114
+msgid "A list of devices to reset, with a maximum of 5000 devices"
+msgstr ""
+"Un elenco di dispositivi da reimpostare, con un massimo di 5000 dispositivi"
+
+#: ../docs/devices/device_mgmt/requests.rst:116
+msgid "Example device reset request:"
+msgstr ""
+"Esempio di richiesta di reimpostazione di un dispositivo:"
+
+#: ../docs/devices/device_mgmt/requests.rst:130
+msgid "Once a request has been initiated, an MQTT message will be published to all devices specified in the request body. For each device, a response must be sent back indicating whether or not the factory reset action can be initiated. The response code should be set to ``202`` if this action can be initiated immediately. If the factory reset attempt fails, set ``rc`` to ``500`` and set the ``message`` field accordingly. If the factory reset action is not supported, set ``rc`` to ``501`` and optionally set the ``message`` field accordingly."
+msgstr ""
+"Una volta avviata una richiesta, verrà pubblicato un messaggio MQTT su tutti i dispositivi nel corpo della richiesta. È necessario che ciascun dispositivo risponda indicando se è possibile o meno avviare la richiesta di reimpostazione alle impostazioni di fabbrica. Il codice di risposta deve essere impostato su ``202`` se questa azione può essere avviata immediatamente. Se il tentativo di reimpostazione delle impostazioni di fabbrica ha esito negativo, impostare ``rc`` su ``500`` ed impostare il campo ``message`` di conseguenza. Se l'azione di reimpostazione delle impostazioni di fabbrica non è supportata, impostare ``rc`` su ``501`` e, come opzione, impostare il campo ``message`` di conseguenza."
+
+#: ../docs/devices/device_mgmt/requests.rst:132
+msgid "The factory reset action is considered complete when the device sends a Manage device request following its factory reset."
+msgstr ""
+"L'azione di reimpostazione delle impostazioni di fabbrica è considerata completa quando il dispositivo invia una richiesta Gestisci dispositivo dopo la reimpostazione alle impostazioni di fabbrica."
+
+#: ../docs/devices/device_mgmt/requests.rst:176
+msgid "Firmware Actions"
+msgstr ""
+"Azioni firmware"
+
+#: ../docs/devices/device_mgmt/requests.rst:178
+msgid "The firmware level currently known to be on a given device is stored in the ``deviceInfo.fwVersion`` attribute. The ``mgmt.firmware`` attributes are used to perform a firmware update and observe its status."
+msgstr ""
+"Il livello di firmware che è noto sia presente attualmente su un dispositivo dato è memorizzato nell'attributo ``deviceInfo.fwVersion``. Gli attributi ``mgmt.firmware`` vengono utilizzati per eseguire un aggiornamento del firmware e osservarne lo stato."
+
+#: ../docs/devices/device_mgmt/requests.rst:181
+msgid "The managed device must support observation of the ``mgmt.firmware`` attribute in order to support firmware actions."
+msgstr ""
+"Il dispositivo gestito deve supportare l'osservazione dell'attributo ``mgmt.firmware`` per poter supportare le azioni firmware."
+
+#: ../docs/devices/device_mgmt/requests.rst:183
+msgid "The firmware update process is separated into two distinct actions, Downloading Firmware, and Updating Firmware. The status of each of these actions is stored in a separate attribute on the device. The ``mgmt.firmware.state`` attribute describes the status of the firmware download. The possible values for ``mgmt.firmware.state`` are:"
+msgstr ""
+"Il processo di aggiornamento del firmware è suddiviso in due azioni distinte, Scaricamento firmware e Aggiornamento firmware. Lo stato di ciascuna di queste azioni è memorizzato in un attributo separato sul dispositivo. L'attributo ``mgmt.firmware.state`` descrive lo stato dello scaricamento del firmware. I valori possibili per ``mgmt.firmware.state`` sono:"
+
+#: ../docs/devices/device_mgmt/requests.rst:188
+#: ../docs/devices/device_mgmt/requests.rst:202
+msgid "Value"
+msgstr ""
+"Valore"
+
+#: ../docs/devices/device_mgmt/requests.rst:188
+#: ../docs/devices/device_mgmt/requests.rst:202
+msgid "State"
+msgstr ""
+"Stato"
+
+#: ../docs/devices/device_mgmt/requests.rst:188
+#: ../docs/devices/device_mgmt/requests.rst:202
+msgid "Meaning"
+msgstr ""
+"Significato"
+
+#: ../docs/devices/device_mgmt/requests.rst:190
+#: ../docs/devices/device_mgmt/requests.rst:204
+msgid "0"
+msgstr ""
+"0"
+
+#: ../docs/devices/device_mgmt/requests.rst:190
+msgid "Idle"
+msgstr ""
+"Inattivo"
+
+#: ../docs/devices/device_mgmt/requests.rst:190
+msgid "The device is currently not in the process of downloading firmware"
+msgstr ""
+"Il dispositivo non è correntemente nel processo di scaricamento del firmware"
+
+#: ../docs/devices/device_mgmt/requests.rst:192
+#: ../docs/devices/device_mgmt/requests.rst:206
+msgid "1"
+msgstr ""
+"1"
+
+#: ../docs/devices/device_mgmt/requests.rst:192
+msgid "Downloading"
+msgstr ""
+"Scaricamento"
+
+#: ../docs/devices/device_mgmt/requests.rst:192
+msgid "The device is currently downloading firmware"
+msgstr ""
+"Il dispositivo sta correntemente scaricando il firmware"
+
+#: ../docs/devices/device_mgmt/requests.rst:194
+#: ../docs/devices/device_mgmt/requests.rst:208
+msgid "2"
+msgstr ""
+"2"
+
+#: ../docs/devices/device_mgmt/requests.rst:194
+msgid "Downloaded"
+msgstr ""
+"Scaricato"
+
+#: ../docs/devices/device_mgmt/requests.rst:194
+msgid "The device has successfully downloaded a firmware update and it is ready to install"
+msgstr ""
+"Il dispositivo ha correttamente scaricato un aggiornamento del firmware ed è pronto per l'installazione"
+
+#: ../docs/devices/device_mgmt/requests.rst:199
+msgid "The ``mgmt.firmware.updateStatus`` attribute describes the status of firmware update. The possible values for ``mgmt.firmware.updateStatus`` are:"
+msgstr ""
+"L'attributo ``mgmt.firmware.updateStatus`` descrive lo stato dell'aggiornamento del firmware. I valori possibili per ``mgmt.firmware.updateStatus`` sono:"
+
+#: ../docs/devices/device_mgmt/requests.rst:204
+msgid "Success"
+msgstr ""
+"Riuscito"
+
+#: ../docs/devices/device_mgmt/requests.rst:204
+msgid "The firmware has been successfully updated"
+msgstr ""
+"Il firmware è stato aggiornato correttamente"
+
+#: ../docs/devices/device_mgmt/requests.rst:206
+msgid "In Progress"
+msgstr ""
+"In corso"
+
+#: ../docs/devices/device_mgmt/requests.rst:206
+msgid "The firmware update has been initiated but is not yet complete"
+msgstr ""
+"L'aggiornamento del firmware è stato avviato ma non è ancora completato"
+
+#: ../docs/devices/device_mgmt/requests.rst:208
+msgid "Out of Memory"
+msgstr ""
+"Memoria insufficiente"
+
+#: ../docs/devices/device_mgmt/requests.rst:208
+msgid "An out of memory condition has been detected during the operation."
+msgstr ""
+"Una condizione di memoria insufficiente è stata rilevata durante l'operazione."
+
+#: ../docs/devices/device_mgmt/requests.rst:210
+msgid "3"
+msgstr ""
+"3"
+
+#: ../docs/devices/device_mgmt/requests.rst:210
+msgid "Connection Lost"
+msgstr ""
+"Connessione persa"
+
+#: ../docs/devices/device_mgmt/requests.rst:210
+msgid "The connection was lost during the firmware download"
+msgstr ""
+"La connessione è stata persa durante lo scaricamento del firmware"
+
+#: ../docs/devices/device_mgmt/requests.rst:212
+msgid "4"
+msgstr ""
+"4"
+
+#: ../docs/devices/device_mgmt/requests.rst:212
+msgid "Verification Failed"
+msgstr ""
+"Verifica non riuscita"
+
+#: ../docs/devices/device_mgmt/requests.rst:212
+msgid "The firmware did not pass verification"
+msgstr ""
+"Il firmware non ha superato la verifica"
+
+#: ../docs/devices/device_mgmt/requests.rst:214
+msgid "5"
+msgstr ""
+"5"
+
+#: ../docs/devices/device_mgmt/requests.rst:214
+msgid "Unsupported Image"
+msgstr ""
+"Immagine non supportata"
+
+#: ../docs/devices/device_mgmt/requests.rst:214
+msgid "The downloaded firmware image is not supported by the device"
+msgstr ""
+"L'immagine del firmware scaricata non è supportata dal dispositivo"
+
+#: ../docs/devices/device_mgmt/requests.rst:216
+msgid "6"
+msgstr ""
+"6"
+
+#: ../docs/devices/device_mgmt/requests.rst:216
+msgid "Invalid URI"
+msgstr ""
+"URI non valido"
+
+#: ../docs/devices/device_mgmt/requests.rst:216
+msgid "The device could not download the firmware from the provided URI"
+msgstr ""
+"Il dispositivo non è riuscito a scaricare il firmware dall'URI fornito"
+
+#: ../docs/devices/device_mgmt/requests.rst:225
+msgid "Firmware Actions - Download"
+msgstr ""
+"Azioni firmware - Download"
+
+#: ../docs/devices/device_mgmt/requests.rst:227
+msgid "The Download Firmware action can be initiated by using either the IoT Platform dashboard, or the REST API."
+msgstr ""
+"L'azione di esecuzione del download del firmware può essere iniziata utilizzando il dashboard IoT Platform o l'API REST."
+
+#: ../docs/devices/device_mgmt/requests.rst:229
+msgid "To initiate a firmware download using the REST API, issue a POST request to:"
+msgstr ""
+"Per avviare il download del firmware utilizzando l'API REST, emettere una richiesta POST a: "
+
+#: ../docs/devices/device_mgmt/requests.rst:235
+msgid "The action ``firmware/download``"
+msgstr ""
+"L'azione ``firmware/download``"
+
+#: ../docs/devices/device_mgmt/requests.rst:236
+msgid "The URI for the firmware image"
+msgstr ""
+"L'URI per l'immagine del firmware"
+
+#: ../docs/devices/device_mgmt/requests.rst:237
+msgid "A list of devices to receive the image, with a maximum of 5000 devices"
+msgstr ""
+"Un elenco di dispositivi per ricevere l'immagine, con un massimo di 5000 dispositivi"
+
+#: ../docs/devices/device_mgmt/requests.rst:238
+#: ../docs/devices/device_mgmt/requests.rst:485
+msgid "Optional verifier string to validate the image"
+msgstr ""
+"Facoltativamente una stringa verificatore per convalidare l'immagine"
+
+#: ../docs/devices/device_mgmt/requests.rst:239
+#: ../docs/devices/device_mgmt/requests.rst:486
+msgid "Optional firmware name"
+msgstr ""
+"Nome firmware facoltativo"
+
+#: ../docs/devices/device_mgmt/requests.rst:240
+#: ../docs/devices/device_mgmt/requests.rst:487
+msgid "Optional firmware version"
+msgstr ""
+"Versione firmware facoltativo"
+
+#: ../docs/devices/device_mgmt/requests.rst:242
+msgid "Example firmware download request on which all the following example messages are based:"
+msgstr ""
+"Richiesta di scaricamento del firmware di esempio su cui sono basati tutti i messaggi di esempio:"
+
+#: ../docs/devices/device_mgmt/requests.rst:269
+msgid "The device management server in the IoT Platform uses the Device Management Protocol to send a request to the devices, initiating the firmware download. There are multiple steps:"
+msgstr ""
+"Il server di gestione dispositivo in IoT Platform utilizza il protocollo di gestione dispositivo per inviare una richiesta ai dispositivi iniziando il download del firmware. Ci sono diversi passaggi:"
+
+#: ../docs/devices/device_mgmt/requests.rst:271
+msgid "Firmware details update request sent on topic ``iotdm-1/device/update``:"
+msgstr ""
+"Richiesta di aggiornamento dei dettagli del firmware inviata nell'argomento ``iotdm-1/device/update``:"
+
+#: ../docs/devices/device_mgmt/requests.rst:273
+msgid "This request let the device validate if the requested firmware differs from the currently installed firmware. If there is a difference, set ``rc`` to ``204``, which translates to the status ``Changed``. The following example shows which message is to be expected for the previously sent example firmware download request and what response should be sent, when a difference is detected:"
+msgstr ""
+"Questa richiesta consente al dispositivo di verificare se il firmware richiesto è differente dal firmware attualmente installato. Se esiste una differenza, impostare ``rc`` su ``204``, che corrisponde allo stato ``Modificato``. Il seguente esempio mostra quale messaggio è previsto per la richiesta di scaricamento del firmware di esempio inviata in precedenza e quale risposta dovrebbe essere inviata quando viene rilevata una differenza:"
+
+#: ../docs/devices/device_mgmt/requests.rst:310
+#: ../docs/devices/device_mgmt/requests.rst:558
+msgid "This response will trigger the next request."
+msgstr ""
+"Questa risposta attiverà la successiva richiesta."
+
+#: ../docs/devices/device_mgmt/requests.rst:314
+msgid "Observation request for firmware download status ``iotdm-1/observe``:"
+msgstr ""
+"Richiesta di osservazione per lo stato di scaricamento del firmware ``iotdm-1/observe``:"
+
+#: ../docs/devices/device_mgmt/requests.rst:316
+msgid "Verifies if the device is ready to start the firmware download. When the download can be started immediately, set ``rc`` to ``200`` (``Ok``), ``mgmt.firmware.state`` to ``0`` (``Idle``) and ``mgmt.firmware.updateStatus`` to ``0`` (``Idle``). Here an example exchange between the IoT Platform and device:"
+msgstr ""
+"Verifica se il dispositivo è pronto ad avviare lo scaricamento del firmware. Quando lo scaricamento può essere avviato immediatamente, impostare ``rc`` su ``200`` (``Ok``), ``mgmt.firmware.state`` su ``0`` (``Inattivo``) e ``mgmt.firmware.updateStatus`` su ``0`` (``Inattivo``). Di seguito è riportato un esempio di scambio tra IoT Platform e un dispositivo:"
+
+#: ../docs/devices/device_mgmt/requests.rst:344
+msgid "This exchange will trigger the last step."
+msgstr ""
+"Questo scambio attiverà l'ultimo passo."
+
+#: ../docs/devices/device_mgmt/requests.rst:348
+msgid "Initiate the download request sent on topic ``iotdm-1/mgmt/initiate/firmware/download``:"
+msgstr ""
+"Avviare la richiesta di download inviata nell'argomento ``iotdm-1/mgmt/initiate/firmware/download``:"
+
+#: ../docs/devices/device_mgmt/requests.rst:350
+msgid "This request tells a device to actually start the firmware download. If the action can be initiated immediately, set ``rc`` to ``202``. Here an example:"
+msgstr ""
+"Questa richiesta indica a un dispositivo di avviare lo scaricamento del firmware. Se l'azione può essere avviata immediatamente, impostare ``rc`` su ``202``. Di seguito, viene riportato un esempio:"
+
+#: ../docs/devices/device_mgmt/requests.rst:373
+msgid "After a firmware download is initiated this way, the device needs to report to the IoT Platform the status of the download. This is possible by publishing a message to the ``iotdevice-1/notify``-topic, where the ``mgmt.firmware.state`` is set to either ``1`` (``Downloading``) or ``2`` (``Downloaded``). Here some examples:"
+msgstr ""
+"Una volta che il download del firmware è iniziato in questo modo, il dispositivo deve riportare a IoT Platform lo stato del download. Ciò è possibile tramite la pubblicazione di un messaggio all'argomento ``iotdevice-1/notify``, dove ``mgmt.firmware.state`` è impostato su ``1`` (``Esecuzione download``) o ``2`` (``Scaricato``). Di seguito, alcuni esempi:"
+
+#: ../docs/devices/device_mgmt/requests.rst:415
+msgid "After the notification with ``mgmt.firmware.state`` set to ``2`` was published, a request will be triggered on the ``iotdm-1/cancel``-topic, which cancels the observation of the ``mgmt.firmware`` field. After a response with ``rc`` set to ``200`` was sent the firmware download is completed. Example:"
+msgstr ""
+"Una volta pubblicata la notifica con ``mgmt.firmware.state`` impostato su ``2``, verrà attivata una richiesta nell'argomento ``iotdm-1/cancel``, che annulla l'osservazione del campo ``mgmt.firmware``. Una volta inviata una risposta con ``rc`` impostato su ``200``, lo scaricamento del firmware è stato completato. Esempio:"
+
+#: ../docs/devices/device_mgmt/requests.rst:446
+msgid "Useful information regarding error handling:"
+msgstr ""
+"Informazioni utili sulla gestione degli errori:"
+
+#: ../docs/devices/device_mgmt/requests.rst:448
+msgid "If ``mgmt.firmware.state`` is not ``0`` (\"Idle\") an error should be reported with response code ``400``, and an optional message text.-"
+msgstr ""
+"Se ``mgmt.firmware.state`` non è ``0`` (\"Inattivo\"), è necessario notificare un errore con codice di risposta ``400`` e un messaggio di testo facoltativo.-"
+
+#: ../docs/devices/device_mgmt/requests.rst:449
+msgid "If ``mgmt.firmware.uri`` is not set or is not a valid URI, set ``rc`` to ``400``."
+msgstr ""
+"Se ``mgmt.firmware.uri`` non è impostato o non è un URI valido, impostare ``rc`` su ``400``."
+
+#: ../docs/devices/device_mgmt/requests.rst:450
+msgid "If firmware download attempt fails, set ``rc`` to ``500`` and optionally set ``message`` accordingly."
+msgstr ""
+"Se il tentativo di scaricamento firmware non riesce, impostare ``rc`` su ``500`` e facoltativamente impostare ``message`` di conseguenza."
+
+#: ../docs/devices/device_mgmt/requests.rst:451
+msgid "If firmware download is not supported, set ``rc`` to ``501`` and optionally set ``message`` accordingly."
+msgstr ""
+"Se lo scaricamento firmware non è supportato, impostare ``rc`` su ``501`` e facoltativamente impostare ``message`` di conseguenza."
+
+#: ../docs/devices/device_mgmt/requests.rst:452
+msgid "When an excecute request is received by the device, ``mgmt.firmware.state`` should change from ``0`` (Idle) to ``1`` (Downloading)."
+msgstr ""
+"Quando una richiesta di esecuzione viene ricevuta dal dispositivo, ``mgmt.firmware.state`` dovrebbe passare da ``0`` (Inattivo) a ``1`` (Scaricamento)."
+
+#: ../docs/devices/device_mgmt/requests.rst:453
+msgid "When the download has been completed successfully, ``mgmt.firmware.state`` should be set to ``2`` (Downloaded)."
+msgstr ""
+"Quando lo scaricamento è stato completato correttamente, ``mgmt.firmware.state`` deve essere impostato su ``2`` (Scaricato)."
+
+#: ../docs/devices/device_mgmt/requests.rst:454
+msgid "If an error occurrs during download ``mgmt.firmware.state`` should be set to ``0`` (Idle) and ``mgmt.firmware.updateStatus`` should be set to one of the error status values:"
+msgstr ""
+"Se si verifica un errore durante lo scaricamento ``mgmt.firmware.state`` deve essere impostato su ``0`` (Inattivo) e ``mgmt.firmware.updateStatus`` su uno dei valori dello stato di errore:"
+
+#: ../docs/devices/device_mgmt/requests.rst:456
+msgid "2 (Out of Memory)"
+msgstr ""
+"2 (Memoria insufficiente)"
+
+#: ../docs/devices/device_mgmt/requests.rst:457
+msgid "3 (Connection Lost)"
+msgstr ""
+"3 (Connessione persa)"
+
+#: ../docs/devices/device_mgmt/requests.rst:458
+msgid "6 (Invalid URI)"
+msgstr ""
+"6 (URI non valido)"
+
+#: ../docs/devices/device_mgmt/requests.rst:460
+msgid "If a firmware verifier has been set, the device should attempt to verify the firmware image. If the image verification fails, ``mgmt.firmware.state`` should be set to ``0`` (Idle) and ``mgmt.firmware.updateStatus`` should be set to the error status value ``4`` (Verification Failed)."
+msgstr ""
+"Se è stato impostato un verificatore del firmware, il dispositivo deve tentare di verificare l'immagine del firmware. Se la verifica dell'immagine ha esito negativo, ``mgmt.firmware.state`` deve essere impostato su ``0`` (Inattivo) e ``mgmt.firmware.updateStatus`` deve essere impostato sul valore di stato di errore ``4`` (Verifica non riuscita)."
+
+#: ../docs/devices/device_mgmt/requests.rst:469
+msgid "Firmware Actions - Update"
+msgstr ""
+"Azioni firmware - Aggiorna"
+
+#: ../docs/devices/device_mgmt/requests.rst:471
+msgid "The firmware update action supports 2 scenarios:"
+msgstr ""
+"L'azione di aggiornamento del firmware supporta 2 scenari:"
+
+#: ../docs/devices/device_mgmt/requests.rst:473
+msgid "Installing firmware that is already on the device from a previously completed firmware download request, or"
+msgstr ""
+"L'installazione di un firmware già presente sul dispositivo a seguito di una precedente richiesta di download del firmware completata. "
+
+#: ../docs/devices/device_mgmt/requests.rst:474
+msgid "Downloading and installing firmware within a single device management request."
+msgstr ""
+"Il download e l'installazione del firmware nell'ambito di una singola richiesta di gestione del dispositivo. "
+
+#: ../docs/devices/device_mgmt/requests.rst:476
+msgid "The firmware update action is initiated using the REST API by issuing a POST request to:"
+msgstr ""
+"L'azione di aggiornamento del firmware viene avviata utilizzando l'API REST emettendo una richiesta POST a :"
+
+#: ../docs/devices/device_mgmt/requests.rst:480
+msgid "The information which should be provided is:"
+msgstr ""
+"Le informazioni che dovrebbero essere fornite sono:"
+
+#: ../docs/devices/device_mgmt/requests.rst:482
+msgid "The action ``firmware/update``"
+msgstr ""
+"L'azione ``firmware/update``"
+
+#: ../docs/devices/device_mgmt/requests.rst:483
+msgid "The list of devices to receive the image, all of the same device type."
+msgstr ""
+"L'elenco di dispositivi per ricevere l'immagine, tutti dello stesso tipo di dispositivo."
+
+#: ../docs/devices/device_mgmt/requests.rst:484
+msgid "Optional The URI for the firmware image"
+msgstr ""
+"Facoltativo - L'URI per l'immagine del firmware"
+
+#: ../docs/devices/device_mgmt/requests.rst:489
+msgid "Here is an example request:"
+msgstr ""
+"Di seguito viene riportato un esempio della richiesta:"
+
+#: ../docs/devices/device_mgmt/requests.rst:518
+msgid "If any of the optional parameters are specified in the request, then the device management server will send a firmware details update to the device. The firmware details update request is sent on topic ``iotdm-1/device/update``."
+msgstr ""
+"Gli eventuali parametri facoltativi vengono specificati nella richiesta, quindi il server di gestione dei dispositivi invierà un aggiornamento dei dettagli del firmware al dispositivo. La richiesta di aggiornamento dei dettagli del firmware viene inviata nell'argomento ``iotdm-1/device/update``."
+
+#: ../docs/devices/device_mgmt/requests.rst:521
+msgid "This request lets the device validate if the requested firmware differs from the currently installed firmware. If there is a difference, set ``rc`` to ``204``, which translates to the status ``Changed``. The following example shows which message is to be expected for the previously sent example firmware update request and what response should be sent, when a difference is detected:"
+msgstr ""
+"Questa richiesta consente al dispositivo di verificare se il firmware richiesto è differente dal firmware attualmente installato. Se esiste una differenza, impostare ``rc`` su ``204``, che corrisponde allo stato ``Modificato``. Il seguente esempio riporta il messaggio previsto per la richiesta di aggiornamento del firmware di esempio inviata in precedenza e quale risposta dovrebbe essere inviata quando viene rilevata una differenza:"
+
+#: ../docs/devices/device_mgmt/requests.rst:562
+msgid "In order to monitor the status of the firmware update the IoT Platform sends an observe request on the topic ``iotdm-1/observe``. When the device is ready to start the update process it sends a response with ``rc`` set to ``200``, ``mgmt.firmware.state`` set to ``0`` and ``mgmt.firmware.updateStatus`` set to ``0``."
+msgstr ""
+"Per monitorare lo stato dell'aggiornamento del firmware IoT Platform invia una richiesta di osservazione nell'argomento ``iotdm-1/observe``. Quando il dispositivo è pronto ad avviare il processo di aggiornamento invia una risposta con ``rc`` impostato su ``200``, ``mgmt.firmware.state`` impostato su ``0`` e ``mgmt.firmware.updateStatus`` impostato su ``0``."
+
+#: ../docs/devices/device_mgmt/requests.rst:565
+#: ../docs/devices/device_mgmt/requests.rst:610
+msgid "Here is an example:"
+msgstr ""
+"Di seguito viene riportato un esempio:"
+
+#: ../docs/devices/device_mgmt/requests.rst:606
+msgid "Afterwards the device management server in the IoT Platform uses the device management protocol to request that the devices specified initiate the firmware installation by publishing using the topic ``iotdm-1/mgmt/initiate/firmware/update``. If this operation can be initiated immediately, ``rc`` should be set to ``202``. If firmware was not previously downloaded successfully, ``rc`` should be set to ``400``."
+msgstr ""
+"Successivamente, il server di gestione dispositivo in IoT Platform utilizza il protocollo di gestione dispositivo per richiedere che i dispositivi specificati inizino l'installazione del firmware mediante la pubblicazione utilizzando l'argomento ``iotdm-1/mgmt/initiate/firmware/update``. Se l'operazione può essere avviata immediatamente, l'``rc`` deve essere impostato su ``202``. Se il firmware non è stato precedentemente scaricato correttamente, ``rc`` deve essere impostato su ``400``."
+
+#: ../docs/devices/device_mgmt/requests.rst:633
+msgid "In order to finish the firmware update request the device has to report its update status to the IoT Platform via a status message published on its ``iotdevice-1/notify``-topic. Once firmware update is completed, ``mgmt.firmware.updateStatus`` should be set to ``0`` (``Success``), ``mgmt.firmware.state`` should be set to ``0`` (``Idle``), downloaded firmware image can be deleted from the device and ``deviceInfo.fwVersion`` should be set to the value of ``mgmt.firmware.version``."
+msgstr ""
+"Per terminare la richiesta di aggiornamento del firmware il dispositivo deve riportare lo stato di aggiornamento a IoT Platform mediante un messaggio di stato pubblicato sul relativo argomento``iotdevice-1/notify``. Una volta completato l'aggiornamento del firmware, ``mgmt.firmware.updateStatus`` deve essere impostato su ``0`` (``Riuscito``), ``mgmt.firmware.state`` deve essere impostato su ``0`` (``Inattivo``), l'immagine del firmware scaricata può essere eliminata dal dispositivo e ``deviceInfo.fwVersion`` deve essere impostato sul valore di ``mgmt.firmware.version``."
+
+#: ../docs/devices/device_mgmt/requests.rst:636
+msgid "Here is an example notify message:"
+msgstr ""
+"Di seguito è riportato un messaggio di notifica di esempio:"
+
+#: ../docs/devices/device_mgmt/requests.rst:660
+msgid "After the IoT Platform received the notify of a completed firmware update it will trigger a last request on the ``iotdm-1/cancel``-topic for cancelation of the observation of the ``mgmt.firmware``-field. After a response with ``rc`` set to ``200`` was sent the firmware update request is completed. Example:"
+msgstr ""
+"Una volta che IoT Platform ha ricevuto la notifica del completamento di un aggiornamento del firmware, attiverà un'ultima richiesta nell'argomento ``iotdm-1/cancel`` per l'annullamento dell'osservazione del campo ``mgmt.firmware``. Una volta inviata una risposta con ``rc`` impostato su ``200``, l'aggiornamento del firmware è completo. Esempio:"
+
+#: ../docs/devices/device_mgmt/requests.rst:692
+msgid "Useful information regarding error and process handling:"
+msgstr ""
+"Informazioni utili sulla gestione del processo e degli errori:"
+
+#: ../docs/devices/device_mgmt/requests.rst:694
+msgid "If firmware update attempt fails, ``rc`` should be set to ``500`` and the ``message`` field can optionally be set to contain relevant information."
+msgstr ""
+"Se il tentativo di aggiornamento del firmware non riesce, ``rc `` deve essere impostato su ``500`` e il campo ``message`` può essere facoltativamente impostato per contenere informazioni pertinenti."
+
+#: ../docs/devices/device_mgmt/requests.rst:695
+msgid "If firmware update is not supported ``rc`` should be set to ``501`` and the ``message`` field can optionally be set to contain relevant information."
+msgstr ""
+"Se l'aggiornamento del firmware non è supportato, ``rc `` deve essere impostato su ``501`` e il campo ``message`` può essere facoltativamente impostato per contenere informazioni pertinenti."
+
+#: ../docs/devices/device_mgmt/requests.rst:696
+msgid "If ``mgmt.firmware.state`` is not ``2`` (Downloaded), an error should be reported with ``rc`` set to ``400`` and an optional message text."
+msgstr ""
+"Se ``mgmt.firmware.state`` non è ``2`` (Scaricato), deve essere riportato un errore con ``rc`` impostato su ``400`` e un messaggio di testo facoltativo."
+
+#: ../docs/devices/device_mgmt/requests.rst:697
+msgid "Otherwise, ``mgmt.firmware.updateStatus`` should be set to ``1`` (In Progress) and firmware installation should start."
+msgstr ""
+"In caso contrario, ``mgmt.firmware.updateStatus`` deve essere impostato su ``1`` (In corso) e l'installazione del firmware dovrebbe iniziare."
+
+#: ../docs/devices/device_mgmt/requests.rst:698
+msgid "If firmware installation fails, ``mgmt.firmware.updateStatus`` should be set to either:"
+msgstr ""
+"Se l'installazione del firmware non riesce, ``mgmt.firmware.updateStatus`` deve essere impostato su:"
+
+#: ../docs/devices/device_mgmt/requests.rst:700
+msgid "``2`` (Out of Memory)"
+msgstr ""
+"``2`` (Memoria insufficiente)"
+
+#: ../docs/devices/device_mgmt/requests.rst:701
+msgid "``5`` (Unsupported Image)"
+msgstr ""
+"``5`` (Immagine non supportata)"
+
+#: ../docs/devices/device_mgmt/requests.rst:705
+msgid "All fields under ``mgmt.firmware`` must be set at the same time, so that if there is a current observation for ``mgmt.firmware``, only a single notify message is sent."
+msgstr ""
+"Tutti i campi in ``mgmt.firmware`` devono essere impostati contemporaneamente, così se esiste una osservazione corrente per ``mgmt.firmware``, viene inviato un solo messaggio di notifica."
+

@@ -1,0 +1,454 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:2
+msgid "Extending Device Management"
+msgstr ""
+"디바이스 관리 확장"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:4
+msgid "This feature is currently available as part of a limited beta.  Future updates may include changes incompatible with the current version of this feature.  Try it out and `let us know what you think <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_"
+msgstr ""
+"이 기능은 현재 제한된 베타의 일부로 제공됩니다. 추가 업데이트에는 이 기능의 현재 버전과 호환되지 않는 변경사항이 포함될 수 있습니다. 이 기능을 사용해 본 후 `의견을 알려주십시오 <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:8
+msgid "The IBM Watson IoT Platform provides the ability to extend the device management capabilities. This is done by adding device management extensions using either the REST APIs or the IoT Platform dashboard."
+msgstr ""
+"IBM Watson IoT Platform은 디바이스 관리 기능을 확장합니다. 확장성은 REST API 또는 IoT Platform 대시보드 중 하나를 사용하여 디바이스 관리 확장 기능을 추가하는 방식으로 구현됩니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:11
+msgid "Devices which connect to the IoT Platform may have a wide range of capabilities. The device management actions supported by default in the IoT Platform (*device reboot*, *factory reset*, *firmware download* and *firmware update*) may not be sufficient to manage everything which a device can do."
+msgstr ""
+"IoT Platform에 연결하는 디바이스는 다양한 기능을 가질 수 있습니다. 기본적으로 IoT Platform에서 지원되는 디바이스 관리 조치(*디바이스 다시 부팅*, *팩토리 재설정*, *펌웨어 다운로드* 및 *펌웨어 업데이트*)는 디바이스에서 수행할 수 있는 모든 작업을 관리하기에 충분하지 않을 수 있습니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:17
+msgid "Device Management Extension Packages"
+msgstr ""
+"디바이스 관리 확장 패키지"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:19
+msgid "An extension package is a JSON document which defines a set of device management actions. The actions can be initiated against one or more devices which support those actions. The actions are initiated in the same way as the default device management actions by using either the IoT Platform dashboard or the device management REST APIs."
+msgstr ""
+"확장 패키지는 디바이스 관리 조치 세트를 정의하는 JSON 문서입니다. 이러한 조치를 지원하는 하나 이상의 디바이스에 대해 조치를 시작할 수 있습니다. 조치는 IoT Platform 대시보드 또는 디바이스 관리 REST API 중 하나를 사용하여 기본 디바이스 관리 조치와 동일한 방법으로 시작됩니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:23
+msgid "Device management extension packages have the following format:"
+msgstr ""
+"디바이스 관리 확장 패키지에 포함된 형식은 다음과 같습니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:58
+msgid "Extension Package Properties:"
+msgstr ""
+"확장 패키지 특성: "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:60
+msgid "``bundleId``: Unique identifier for a device management extension. Required."
+msgstr ""
+"``bundleId``: 디바이스 관리 확장에 대한 고유 ID입니다. 필수입니다."
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:61
+msgid "``version``: Version string for a device management extension. Optional."
+msgstr ""
+"``version``: 디바이스 관리 확장에 대한 버전 문자열입니다. 선택사항입니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:62
+msgid "``provider``: Provider string for a device management extension. Maximum length of 1024 characters. Optional."
+msgstr ""
+"``provider``: 디바이스 관리 확장에 대한 제공업체 문자열입니다. 최대 길이 1024자입니다. 선택사항입니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:63
+msgid "``displayName``: Map of ``locale``: ``String`` key-value pairs used for display in the IoT Platform dashboard. Required. Must contain at least one entry."
+msgstr ""
+"``displayName``: IoT Platform 대시보드 표시에 사용되는 ``locale``: ``String`` 키-값 쌍의 맵핑입니다. 필수입니다. 하나 이상의 항목을 포함해야 합니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:64
+msgid "``description``: Map of ``locale``: ``String`` key-value pairs used for display in the IoT Platform dashboard. Optional. If specified, must contain at least one entry."
+msgstr ""
+"``description``: IoT Platform 대시보드 표시에 사용되는 ``locale``: ``String`` 키-값 쌍의 맵핑입니다. 선택사항입니다. 지정하는 경우 하나 이상의 항목을 포함해야 합니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:65
+msgid "``actions``: Map of ``actionId``: ``<action>`` key-value pairs which defines the actions contained within a device management extension. Required. Must contain at least one entry."
+msgstr ""
+"``actions``: 디바이스 관리 확장 내에 포함된 조치를 정의하는 ``actionId``: ``<action>`` 키-값 쌍의 맵핑입니다. 필수입니다. 하나 이상의 항목을 포함해야 합니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:67
+msgid "Properties per action:"
+msgstr ""
+"조치별 특성: "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:69
+msgid "``actionDisplayName``: Map of ``locale``: ``String`` key-value pairs used for display in the IoT Platform dashboard. Required. Must contain at least one entry."
+msgstr ""
+"``actionDisplayName``: IoT Platform 대시보드 표시에 사용되는 ``locale``: ``String`` 키-값 쌍의 맵핑입니다. 필수입니다. 하나 이상의 항목을 포함해야 합니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:70
+msgid "``description``:  Map of ``locale``: ``String`` key-value pairs used for display in the IoT Platform dashboard. Optional. If specified, must contain at least one entry."
+msgstr ""
+"``description``: IoT Platform 대시보드 표시에 사용되는 ``locale``: ``String`` 키-값 쌍의 맵핑입니다. 선택사항입니다. 지정하는 경우 하나 이상의 항목을 포함해야 합니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:71
+msgid "``parameters``: Array of parameters allowed for a particular action. Optional. If specified, must contain at least one entry."
+msgstr ""
+"``parameters``: 특정 조치에 허용된 매개변수의 배열입니다. 선택사항입니다. 지정하는 경우 하나 이상의 항목을 포함해야 합니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:73
+msgid "Properties per action parameter:"
+msgstr ""
+"조치 매개변수별 특성: "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:75
+msgid "``name``: Unique identifier for a parameter within an action. Required."
+msgstr ""
+"``name``: 조치 내의 매개변수에 대한 고유 ID입니다. 필수입니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:76
+msgid "``value``: Regular expression used for validating parameter values when a request is initiated. Optional. If not specified, value will not be validated."
+msgstr ""
+"``value``: 요청이 시작되는 경우 매개변수 값을 검증하는 데 사용되는 정규식입니다. 선택사항입니다. 지정되지 않은 경우 값이 검증되지 않습니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:77
+msgid "``required``: Boolean value specifying whether the parameter is required. Optional. Default: False"
+msgstr ""
+"``required``: 매개변수가 필수인지 지정하는 부울 값입니다. 선택사항입니다. 기본값: False"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:78
+msgid "``defaultValue``: Value to be used if the parameter is not provided when a request is initiated. Optional."
+msgstr ""
+"``defaultValue``: 요청이 시작될 때 매개변수가 제공되지 않는 경우 사용될 값입니다. 선택사항입니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:82
+msgid "The ``bundleId``, ``version``, ``actionId`` and ``parameterId`` values have the following restrictions:"
+msgstr ""
+"``bundleId``, ``version``, ``actionId`` 및 ``parameterId`` 값에 다음 제한사항이 적용됩니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:84
+msgid "Maximum length of 255 characters"
+msgstr ""
+"최대 길이 255자"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:85
+msgid "Must comprise only alpha-numeric characters (a-z, A-Z, 0-9) and the following special characters:"
+msgstr ""
+"영숫자 문자(a-z, A-Z, 0-9) 및 다음 특수 문자만 포함해야 함: "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:87
+msgid "dash (-)"
+msgstr ""
+"대시(-)"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:88
+msgid "underscore (_)"
+msgstr ""
+"밑줄(_)"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:89
+msgid "dot (.)"
+msgstr ""
+"점(.)"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:92
+msgid "Extension packages are managed in the IoT Platform using the following REST APIs."
+msgstr ""
+"확장 패키지는 IoT Platform에서 다음 REST API를 사용하여 관리됩니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:94
+msgid "List all device management extension packages:"
+msgstr ""
+"모든 디바이스 관리 확장 패키지 목록: "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:96
+msgid "``GET https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle``"
+msgstr ""
+"``GET https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:98
+msgid "Create a new device management extension package:"
+msgstr ""
+"새 디바이스 관리 확장 패키지 작성: "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:100
+#: ../docs/devices/device_mgmt/custom_actions.rst:331
+msgid "``POST https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle``"
+msgstr ""
+"``POST https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:102
+msgid "Get a specific device management extension package:"
+msgstr ""
+"특정 디바이스 관리 확장 패키지 가져오기: "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:104
+msgid "``GET https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle/{bundleId}``"
+msgstr ""
+"``GET https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle/{bundleId}``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:106
+msgid "Update a device management extension package:"
+msgstr ""
+"디바이스 관리 확장 패키지 업데이트: "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:108
+msgid "``PUT https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle/{bundleId}``"
+msgstr ""
+"``PUT https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle/{bundleId}``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:110
+msgid "Delete a device management extension package:"
+msgstr ""
+"디바이스 관리 확장 패키지 삭제: "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:112
+msgid "``DELETE https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle/{bundleId}``"
+msgstr ""
+"``DELETE https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle/{bundleId}``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:114
+msgid "For more information on the REST APIs for device management extension packages refer to the `version 2 API documentation <../../swagger/v0002.html>`_."
+msgstr ""
+"디바이스 관리 확장 패키지에 대한 REST API의 자세한 정보는 `버전 2 API 문서 <../../swagger/v0002.html>`_을 참조하십시오. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:119
+msgid "Supporting Custom Device Management Actions"
+msgstr ""
+"사용자 정의 디바이스 관리 조치 지원"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:121
+msgid "Device management actions defined in an extension package may only be initiated against devices which support those actions. A device specifies what types of actions it supports when it publishes a manage request to the IoT Platform. In order to allow a device to receive custom actions defined in a particular extension package, the device must specify that extension's bundle identifier in the supports object when publishing a manage request."
+msgstr ""
+"확장 패키지에 정의되어 있는 디바이스 관리 조치는 이러한 조치를 지원하는 디바이스에 대해서만 시작할 수 있습니다. IoT Platform에 관리 요청 공개 시 디바이스는 지원하는 조치의 유형을 지정합니다. 디바이스에서 특정 확장 패키지에 정의된 사용자 정의 조치를 수신하도록 허용하려면, 관리 요청을 공개할 때 디바이스가 해당 확장의 번들 ID를 지원 오브젝트에 지정해야 합니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:151
+msgid "For additional information about device manage requests, refer to `Device Management Protocol <index.html>`__."
+msgstr ""
+"디바이스 관리 요청에 대한 자세한 정보는 `디바이스 관리 프로토콜 <index.html>`__을 참조하십시오. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:155
+msgid "Initiating Custom Device Management Actions"
+msgstr ""
+"사용자 정의 디바이스 관리 조치 시작"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:157
+msgid "Custom device management actions are initiated using the same REST API as the default device management actions:"
+msgstr ""
+"사용자 정의 디바이스 관리 조치는 기본 디바이스 관리 조치와 동일한 REST API를 사용하여 시작됩니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:159
+msgid "``POST https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests``"
+msgstr ""
+"``POST https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:161
+msgid "The following information must be provided when initiating a request:"
+msgstr ""
+"요청을 시작할 때 다음 정보를 제공해야 합니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:163
+msgid "The action ``<bundleId>/<actionId>``"
+msgstr ""
+"조치 ``<bundleId>/<actionId>``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:164
+msgid "A list of devices to initiate the action against, with a maximum of 5000 devices"
+msgstr ""
+"최대 5000개의 디바이스를 포함해 조치를 시작할 디바이스의 목록"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:165
+msgid "A list of parameters as defined in the custom action definition"
+msgstr ""
+"사용자 정의 조치 정의에 정의되어 있는 매개변수의 목록"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:167
+msgid "The payload for initiating a request has the following format:"
+msgstr ""
+"요청을 시작하기 위한 페이로드에 포함된 형식은 다음과 같습니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:189
+msgid "Handling Custom Device Management Actions"
+msgstr ""
+"사용자 정의 디바이스 관리 조치 처리"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:191
+msgid "When a custom action is initiated against a device, an MQTT message will be published to the device. The message will contain any parameters that were specified as part of the request. When the device receives this message, it is expected to either execute the action or respond with an error code indicating that it cannot complete the action at this time."
+msgstr ""
+"사용자 정의 조치가 디바이스에 대해 시작되면 MQTT 메시지가 디바이스로 공개됩니다. 메시지에는 요청의 일부로 지정된 매개변수가 포함됩니다. 디바이스가 이 메시지를 수신하면, 조치를 실행하거나 지금은 조치를 완료할 수 없다는 오류 코드와 함께 응답할 것으로 예상됩니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:196
+msgid "To indicate that the action was completed successfully, a device should publish a response with ``rc`` set to ``200``."
+msgstr ""
+"조치가 완료되었음을 표시하려면, 디바이스는 ``rc``를 ``200``으로 설정하여 응답을 공개해야 합니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:199
+msgid "Below is an example exchange between the server and a device."
+msgstr ""
+"아래는 서버와 디바이스 간의 교환 예제입니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:230
+msgid "Example"
+msgstr ""
+"예제"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:232
+msgid "In this example, we will walk through defining a new device management extension and executing an action defined within that extension."
+msgstr ""
+"이 예제에서 새 디바이스 관리 확장을 정의하고, 해당 확장 내에서 정의된 조치를 수행하는 작업에 대해 자세히 보여드리겠습니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:235
+msgid "Some company manufactures ``exampleDeviceType`` devices. Users of these devices have the ability to manage plug-ins which run on the devices. To facilitate remote management of plug-ins on ``exampleDeviceType`` devices, the manufacturer provides a device management extension which users can import into their Watson IoT Platform organization."
+msgstr ""
+"일부 회사는 ``exampleDeviceType`` 디바이스를 제조합니다. 해당 디바이스의 사용자는 디바이스에서 실행하는 플러그인을 관리할 수 있는 기능을 가지고 있습니다. ``exampleDeviceType`` 디바이스에서 플러그인의 원격 관리를 쉽게 사용하도록 제조업체는 사용자의 Watson IoT Platform 조직으로 가져올 수 있는 디바이스 관리 확장을 제공합니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:239
+msgid "The extension JSON document used in this example:"
+msgstr ""
+"이 예제에 사용된 확장 JSON 문서: "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:322
+msgid "In this device management extension package, 4 actions are defined:"
+msgstr ""
+"이 디바이스 관리 확장 패키지에 4개의 조치가 정의됩니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:324
+msgid "installPlugin"
+msgstr ""
+"installPlugin"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:325
+msgid "enablePlugin"
+msgstr ""
+"enablePlugin"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:326
+msgid "disablePlugin"
+msgstr ""
+"disablePlugin"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:327
+msgid "uninstallPlugin"
+msgstr ""
+"uninstallPlugin"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:329
+msgid "The extension is added using the REST API:"
+msgstr ""
+"REST API를 사용하여 확장이 추가됩니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:333
+msgid "Devices registered in organization ``<orgId>`` are now able to specify that they support ``exampleDeviceType-actions-v1`` actions when publishing a manage request."
+msgstr ""
+"``<orgId>`` 조직에 등록된 디바이스는 이제 관리 요청 공개 시 디바이스가 ``exampleDeviceType-actions-v1`` 조치를 지원한다고 지정할 수 있습니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:336
+msgid "In this example, the manage request sent by a device would look like this:"
+msgstr ""
+"이 예제에서 디바이스가 전송한 관리 요청은 다음과 유사합니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:352
+msgid "The device should then receive the following response from the IoT Platform:"
+msgstr ""
+"디바이스는 IoT Platform에서 다음과 같은 응답을 수신해야 합니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:364
+msgid "At this point, an action defined in the ``exampleIoT-exampleDeviceType-v1`` extension can be initiated against some devices."
+msgstr ""
+"현재 ``exampleIoT-exampleDeviceType-v1`` 확장에 정의되어 있는 조치는 일부 디바이스에 대해 시작할 수 있습니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:366
+msgid "The payload for initiating an ``installPlugin`` action will look like the following:"
+msgstr ""
+"``installPlugin`` 조치를 시작하기 위한 페이로드는 다음과 유사합니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:394
+msgid "The request is initiated using the REST API:"
+msgstr ""
+"REST API를 사용하여 요청이 시작됩니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:400
+msgid "Devices ``device0`` and ``device1`` of type ``exampleDeviceType`` will then receive the following MQTT message:"
+msgstr ""
+"``exampleDeviceType`` 유형의 디바이스 ``device0`` 및 ``device1``은 다음 MQTT 메시지를 수신합니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:424
+msgid "Each device will take action on the message, installing the new plug-in. Once installation is complete, the devices respond with the following message to indicate that the action completed successfully:"
+msgstr ""
+"각 디바이스는 메시지에 대한 조치로서 새 플러그인을 설치합니다. 설치가 완료되면, 디바이스는 조치가 완료되었음을 표시하는 다음 메시지로 응답합니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:437
+msgid "At this point, the ``installPlugin`` action is now complete."
+msgstr ""
+"현재 ``installPlugin`` 조치가 완료되었습니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:441
+msgid "API Examples"
+msgstr ""
+"API 예제"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:443
+msgid "The following are examples of API requests that may be useful when performing device management actions:"
+msgstr ""
+"다음은 디바이스 관리 조치를 수행하는 경우 유용할 수 있는 API 요청의 예제입니다. "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:445
+msgid "Create a new device management extension:"
+msgstr ""
+"새 디바이스 관리 확장 작성: "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:447
+msgid "``curl -XPOST -d '<insert payload here>' -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle``"
+msgstr ""
+"``curl -XPOST -d '<여기에 페이로드 삽입>' -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:449
+msgid "List device management extensions:"
+msgstr ""
+"디바이스 관리 확장 목록: "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:451
+msgid "``curl -XGET -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle``"
+msgstr ""
+"``curl -XGET -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:453
+msgid "Initiate a device management request:"
+msgstr ""
+"디바이스 관리 요청 시작: "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:455
+msgid "``curl -XPOST -d '<insert payload here>' -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests``"
+msgstr ""
+"``curl -XPOST -d '<여기에 페이로드 삽입>' -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:457
+msgid "List in-progress or completed device management requests:"
+msgstr ""
+"진행 중이거나 완료된 디바이스 관리 요청 목록: "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:459
+msgid "``curl -XGET -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests``"
+msgstr ""
+"``curl -XGET -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:461
+msgid "View status of a particular device management request:"
+msgstr ""
+"특정 디바이스 관리 요청의 상태 보기: "
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:463
+msgid "``curl -XGET -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests/<requestId>``"
+msgstr ""
+"``curl -XGET -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests/<requestId>``"
+

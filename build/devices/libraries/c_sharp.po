@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-19 20:40-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/libraries/c_sharp.rst:2
+msgid "C# for Device Developers"
+msgstr ""
+
+#: ../docs/devices/libraries/c_sharp.rst:4
+msgid "See `iot-csharp <https://github.com/IoT-Analytics/iot-csharp>`_ in GitHub"
+msgstr ""
+
+#: ../docs/devices/libraries/c_sharp.rst:8
+msgid "Constructor"
+msgstr ""
+
+#: ../docs/devices/libraries/c_sharp.rst:9
+msgid "The constructor builds the client instance, and accepts arguments containing the following definitions:"
+msgstr ""
+
+#: ../docs/devices/libraries/c_sharp.rst:11
+msgid "``orgId`` - Your organization ID."
+msgstr ""
+
+#: ../docs/devices/libraries/c_sharp.rst:12
+msgid "``deviceType`` - The type of your device."
+msgstr ""
+
+#: ../docs/devices/libraries/c_sharp.rst:13
+msgid "``deviceId`` - The ID of your device."
+msgstr ""
+
+#: ../docs/devices/libraries/c_sharp.rst:14
+msgid "``auth-method`` - Method of authentication (the only value currently supported is \"token\")."
+msgstr ""
+
+#: ../docs/devices/libraries/c_sharp.rst:15
+msgid "``auth-token`` - API key token (required if auth-method is \"token\")."
+msgstr ""
+
+#: ../docs/devices/libraries/c_sharp.rst:18
+msgid "If deviceId and deviceType are provided, the client will connect to the IoT Platform Quickstart, and default to an unregistered device. The argument lists creates definitions which are used to interact with the IoT Platform module."
+msgstr ""
+
+#: ../docs/devices/libraries/c_sharp.rst:32
+msgid "Publishing events"
+msgstr ""
+
+#: ../docs/devices/libraries/c_sharp.rst:33
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+
+#: ../docs/devices/libraries/c_sharp.rst:35
+msgid "When an event is received by the IoT Platform the credentials of the connection on which the event was received are used to determine which device sent the event. With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+
+#: ../docs/devices/libraries/c_sharp.rst:37
+msgid "Events can be published at any of the three `quality of service (QoS) levels <../mqtt.html#/qoslevels>`_, defined by the MQTT protocol. By default events will be published as QoS level 0."
+msgstr ""
+
+#: ../docs/devices/libraries/c_sharp.rst:40
+msgid "Publish event using default quality of service"
+msgstr ""
+
+#: ../docs/devices/libraries/c_sharp.rst:49
+msgid "Publish event using user-defined quality of service"
+msgstr ""
+
+#: ../docs/devices/libraries/c_sharp.rst:50
+msgid "Events can be published at higher MQTT quality of service levels, but events published at QoS levels above 0 may be slower then QoS 0 events, because of the extra confirmation of receipt used in QoS levels above 0."
+msgstr ""
+
+#: ../docs/devices/libraries/c_sharp.rst:59
+msgid "Handling commands"
+msgstr ""
+
+#: ../docs/devices/libraries/c_sharp.rst:60
+msgid "When the device client connects, it automatically subscribes to any commands for this device. To process specific commands, you must register a command callback method."
+msgstr ""
+

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IBM IOT Foundation 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -810,7 +810,7 @@ msgstr ""
 #: ../docs/reference/device_model.rst:217
 msgid "Whether the device supports Reboot and Factory Reset actions"
 msgstr ""
-"裝置是否支援「重新開機」及「重設為原廠設定」動作"
+"裝置是否支援「重新啟動」及「重設為原廠設定」動作"
 
 #: ../docs/reference/device_model.rst:220
 msgid "mgmt.supports.firmwareActions"

@@ -1,9 +1,14 @@
-# 
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: IBM IOT Foundation 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-06 15:22+0100\n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -11,49 +16,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ..\docs\index.rst:8
-msgid "IBM Internet of Things Foundation"
+#: ../docs/index.rst:2
+msgid "Introduction"
 msgstr ""
+"簡介"
 
-#: ..\docs\index.rst:11
-msgid "About"
+#: ../docs/index.rst:4
+msgid "Welcome to the documentation/reference material for IBM's IoT Platform service.  If you are looking for tutorials you can find them on developerWorks Recipes_."
 msgstr ""
+"歡迎使用 IBM 的 IoT Platform 服務的文件/參考資料。如果您要尋找指導教學，可在 developerWorks Recipes_ 找到。"
 
-#: ..\docs\index.rst:12
-msgid ""
-"Welcome to the documentation/reference material for IBM's IOT Foundation "
-"service.  If you are looking for tutorials you can find them on "
-"DeveloperWorks_"
-msgstr ""
-
-#: ..\docs\index.rst:17
-msgid "The documentation is organized into a number of sections:"
-msgstr ""
-
-#: ..\docs\index.rst:21
-msgid "Reference Material"
-msgstr ""
-
-#: ..\docs\index.rst:32
-msgid "API"
-msgstr ""
-
-#: ..\docs\index.rst:42
-msgid "Client Libraries"
-msgstr ""
-
-#: ..\docs\index.rst:53
-msgid "Messaging"
-msgstr ""
-
-#: ..\docs\index.rst:66
+#: ../docs/index.rst:66
 msgid "Contribute"
 msgstr ""
+"提出"
 
-#: ..\docs\index.rst:67
-msgid ""
-"If it's not working for you, it's not working for us. The source of this "
-"documentation is available on GitHub_, we welcome both `suggestions for "
-"improvement`_ and community contributions via the use of issues and pull "
-"requests against our repository."
+#: ../docs/index.rst:67
+msgid "If it's not working for you, it's not working for us. The source of this documentation is available on GitHub_, we welcome both `suggestions for improvement`_ and community contributions via the use of issues and pull requests against our repository."
 msgstr ""
+"如果對您沒有用，對我們也沒有用。此文件的來源可在 GitHub_ 取得，我們歡迎您 `提供建議以求改進`_，也歡迎透過對我們的儲存庫使用問題和提取要求來貢獻社群。"
+

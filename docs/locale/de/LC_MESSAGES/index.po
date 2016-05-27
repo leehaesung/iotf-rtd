@@ -1,9 +1,14 @@
-# 
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: IBM IOT Foundation 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-06 15:22+0100\n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -11,49 +16,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ..\docs\index.rst:8
-msgid "IBM Internet of Things Foundation"
-msgstr "IBM Internet of Things Foundation"
+#: ../docs/index.rst:2
+msgid "Introduction"
+msgstr ""
+"Einführung"
 
-#: ..\docs\index.rst:11
-msgid "About"
-msgstr "Über die IOT Foundation"
+#: ../docs/index.rst:4
+msgid "Welcome to the documentation/reference material for IBM's IoT Platform service.  If you are looking for tutorials you can find them on developerWorks Recipes_."
+msgstr ""
+"Willkommen beim Dokumentations- und Referenzmaterial für den IBM IoT Platform-Service.  Lerntexte finden Sie in developerWorks Recipes_."
 
-#: ..\docs\index.rst:12
-msgid ""
-"Welcome to the documentation/reference material for IBM's IOT Foundation "
-"service.  If you are looking for tutorials you can find them on "
-"DeveloperWorks_"
-msgstr "Willkommen in der Dokumentation / Referenzmaterial für IBM IOT Foundation Service. Wenn Sie nach Tutorials suchen Sie können sie auf DeveloperWorks_ finden."
-
-#: ..\docs\index.rst:17
-msgid "The documentation is organized into a number of sections:"
-msgstr "Die Dokumentation ist in mehrere Abschnitte gegliedert:"
-
-#: ..\docs\index.rst:21
-msgid "Reference Material"
-msgstr "Referenzmaterial"
-
-#: ..\docs\index.rst:32
-msgid "API"
-msgstr "API"
-
-#: ..\docs\index.rst:42
-msgid "Client Libraries"
-msgstr "Client Libraries"
-
-#: ..\docs\index.rst:53
-msgid "Messaging"
-msgstr "Messaging"
-
-#: ..\docs\index.rst:66
+#: ../docs/index.rst:66
 msgid "Contribute"
-msgstr "Beitragen"
+msgstr ""
+"Beitragen"
 
-#: ..\docs\index.rst:67
-msgid ""
-"If it's not working for you, it's not working for us. The source of this "
-"documentation is available on GitHub_, we welcome both `suggestions for "
-"improvement`_ and community contributions via the use of issues and pull "
-"requests against our repository."
-msgstr "Wenn es nicht funktioniert für Sie, es ist nicht für uns arbeiten. Die Quelle dieser Dokumentation ist auf GitHub_ verfügbar, begrüßen wir beide ` Vorschläge improvement` und Community- Beiträge über die Verwendung von Fragen und Anfragen an unser Repository zu ziehen."
+#: ../docs/index.rst:67
+msgid "If it's not working for you, it's not working for us. The source of this documentation is available on GitHub_, we welcome both `suggestions for improvement`_ and community contributions via the use of issues and pull requests against our repository."
+msgstr ""
+"Ihre Probleme sind unsere Probleme. Die Quelle dieser Dokumentation ist auf GitHub_ verfügbar. Wir begrüßen sehr Ihre Vorschläge zur Verbesserung und die Community-Beiträge bei evtl. Problemen und setzen zur Problemlösung unser Repository ein."
+

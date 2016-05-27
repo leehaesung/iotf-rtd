@@ -1,0 +1,254 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/libraries/mbedcpp.rst:2
+msgid "mBed C++ for Device Developers"
+msgstr ""
+"mBed C++ pour les développeurs de terminaux"
+
+#: ../docs/devices/libraries/mbedcpp.rst:4
+msgid "See `ibmiotf <https://developer.mbed.org/teams/IBM_IoT/code/IBMIoTF/>`_ on `developer.mbed.org <https://developer.mbed.org/>`_"
+msgstr ""
+"Voir `ibmiotf <https://developer.mbed.org/teams/IBM_IoT/code/IBMIoTF/>`_ dans `developer.mbed.org <https://developer.mbed.org/>`_"
+
+#: ../docs/devices/libraries/mbedcpp.rst:6
+msgid "The `mBed C++ client library <https://developer.mbed.org/teams/IBM_IoT/code/IBMIoTF/>`_ can be used to connect `mBed devices <https://www.mbed.com/en/>`__ like `LPC1768 <https://developer.mbed.org/platforms/mbed-LPC1768/>`__, `FRDM-K64F <https://developer.mbed.org/platforms/FRDM-K64F/>`__ and etc.. to the IoT Platform Cloud service with ease. Although the library uses C++, it still avoids dynamic memory allocations and use of STL functions as the mBed devices sometimes have idiosyncratic memory models which make porting difficult. In any case, the library allows one to make memory use as predictable as possible."
+msgstr ""
+"La `bibliothèque client mBed C++ <https://developer.mbed.org/teams/IBM_IoT/code/IBMIoTF/>`_ peut être utilisée pour connecter facilement des `terminaux mBed <https://www.mbed.com/en/>`__ comme `LPC1768 <https://developer.mbed.org/platforms/mbed-LPC1768/>`__, `FRDM-K64F <https://developer.mbed.org/platforms/FRDM-K64F/>`__ et autres au service cloud d'IoT Platform. Bien que la bibliothèque utilise C++, elle évite les allocations de mémoire dynamiques et l'utilisation de fonctions STL car les terminaux mBed incluent parfois des modèles de mémoire idiosyncratiques qui rendent le portage difficile. Dans tous les cas, la bibliothèque permet de rendre l'utilisation de la mémoire aussi prévisible que possible."
+
+#: ../docs/devices/libraries/mbedcpp.rst:9
+msgid "Dependencies"
+msgstr ""
+"Dépendances"
+
+#: ../docs/devices/libraries/mbedcpp.rst:11
+msgid "`Eclipse Paho MQTT library <https://developer.mbed.org/teams/mqtt/code/MQTT/>`__ - Provides a MQTT client library for mBed devices, check `here <http://www.eclipse.org/paho/clients/c/embedded/>`__ for more information."
+msgstr ""
+"`Bibliothèque MQTT Eclipse Paho <https://developer.mbed.org/teams/mqtt/code/MQTT/>`__ - Fournit une bibliothèque client MQTT pour les terminaux mBed. Pour plus d'informations, reportez-vous à `ce sujet <http://www.eclipse.org/paho/clients/c/embedded/>`__."
+
+#: ../docs/devices/libraries/mbedcpp.rst:12
+msgid "`EthernetInterface library <https://developer.mbed.org/users/mbed_official/code/EthernetInterface/>`__ - A mBed IP library over Ethernet."
+msgstr ""
+"`Bibliothèque EthernetInterface  <https://developer.mbed.org/users/mbed_official/code/EthernetInterface/>`__ - Bibliothèque IP mBed sur Ethernet."
+
+#: ../docs/devices/libraries/mbedcpp.rst:15
+msgid "How to use the library"
+msgstr ""
+"Comment utiliser la bibliothèque"
+
+#: ../docs/devices/libraries/mbedcpp.rst:16
+msgid "Use the `mBed Compiler <https://developer.mbed.org/compiler/>`__ to create your applications using this mBed C++ IBMIoTF Client Library. The mBed Compiler provides a lightweight online C/C++ IDE that is pre-configured to let you quickly write programs, compile and download them to run on your mbed Microcontroller. In fact, you don't have to install or set up anything to get running with mbed."
+msgstr ""
+"Utilisez le `compilateur mBed <https://developer.mbed.org/compiler/>`__ pour créer les applications à l'aide de cette bibliothèque client mBed C++ IBMIoT. Le compilateur mBed fournit un environnement de développement intégré C/C++ en ligne, qui est préconfiguré pour vous permettre d'écrire, de compiler et de télécharger rapidement des programmes à exécuter sur le microcontrôleur mbed. Vous n'avez rien à installer ni à configurer pour commencer à utiliser mbed."
+
+#: ../docs/devices/libraries/mbedcpp.rst:19
+msgid "Refer to the step by step `mBed C++ Client Library for IBM IoT Platform Recipe <https://developer.ibm.com/recipes/tutorials/mbed-c-client-library-for-ibm-iot-foundation/>`__ that shows how one can use this library to connect an ARM mBed NXP LPC 1768 microcontroller to the IoT Platform."
+msgstr ""
+"Reportez-vous à la `recette étape par étape de la bibliothèque client mBed C++ pour IBM IoT Platform <https://developer.ibm.com/recipes/tutorials/mbed-c-client-library-for-ibm-iot-foundation/>`__ qui explique comment utiliser cette bibliothèque pour connecter un microcontrôleur ARM mBed NXP LPC 1768 à IoT Platform."
+
+#: ../docs/devices/libraries/mbedcpp.rst:22
+msgid "Constructor"
+msgstr ""
+"Constructeur"
+
+#: ../docs/devices/libraries/mbedcpp.rst:24
+msgid "The constructor builds the client instance, and accepts the following parameters:"
+msgstr ""
+"Le constructeur génère l'instance client et accepte les paramètres suivants :"
+
+#: ../docs/devices/libraries/mbedcpp.rst:26
+msgid "org - Your organization ID. (This is a required field. In case of quickstart flow, provide org as quickstart.)"
+msgstr ""
+"org - ID de votre organisation. (Cette zone est obligatoire. Dans le cas d'un flux Quickstart, indiquez quickstart comme organisation.)"
+
+#: ../docs/devices/libraries/mbedcpp.rst:27
+msgid "type - The type of your device. (This is a required field.)"
+msgstr ""
+"Type - Type de terminal. (Cette zone est obligatoire.)"
+
+#: ../docs/devices/libraries/mbedcpp.rst:28
+msgid "id - The ID of your device. (This is a required field."
+msgstr ""
+"id - ID de votre terminal. (Cette zone est obligatoire.)"
+
+#: ../docs/devices/libraries/mbedcpp.rst:29
+msgid "auth-method - Method of authentication (This is an optional field, needed only for registered flow and the only value currently supported is \"token\")."
+msgstr ""
+"auth-method - Méthode d'authentification. (Cette zone est facultative. Elle est nécessaire uniquement pour le flux enregistré. La seule valeur actuellement prise en charge est \"token\".)"
+
+#: ../docs/devices/libraries/mbedcpp.rst:30
+msgid "auth-token - API key token (This is an optional field, needed only for registered flow)."
+msgstr ""
+"auth-token - Jeton de clé d'API. (Cette zone est facultative. Elle est nécessaire uniquement pour le flux enregistré.)"
+
+#: ../docs/devices/libraries/mbedcpp.rst:32
+msgid "These arguments create definitions which are used to interact with the IoT Platform service."
+msgstr ""
+"Ces arguments créent des définitions qui permettent d'interagir avec le service IoT Platform."
+
+#: ../docs/devices/libraries/mbedcpp.rst:34
+msgid "The following code block shows how to create a DeviceClient instance to interact with the IoT Platform quickstart service."
+msgstr ""
+"Le bloc de code ci-dessous indique comment créer une instance DeviceClient pour interagir avec le service QuickStart d'IoT Platform."
+
+#: ../docs/devices/libraries/mbedcpp.rst:58
+msgid "As shown above, if the device id is not specified, the DeviceClient uses the MAC address of the device as device id and connects to the IoT Platform. The device code can use getDeviceId() method to retrieve the device id from the DeviceClient instance."
+msgstr ""
+"Comme expliqué ci-dessus, si l'ID terminal n'est pas indiqué, l'instance DeviceClient utilise l'adresse MAC du terminal comme ID terminal et se connecte à IoT Platform. Le code du terminal peut utiliser la méthode getDeviceId() pour extraire l'ID terminal de l'instance DeviceClient."
+
+#: ../docs/devices/libraries/mbedcpp.rst:60
+msgid "The following code block shows how to create a DeviceClient instance to interact with the IoT Platform Registered organization."
+msgstr ""
+"Le bloc de code ci-dessous indique comment créer une instance DeviceClient pour interagir avec l'organisation enregistrée IoT Platform."
+
+#: ../docs/devices/libraries/mbedcpp.rst:82
+msgid "Connecting to the IoT Platform"
+msgstr ""
+"Connexion à IoT Platform"
+
+#: ../docs/devices/libraries/mbedcpp.rst:84
+msgid "The device can connect to the IoT Platform by calling the connect function on the DeviceClient instance."
+msgstr ""
+"Le terminal peut se connecter à IoT Platform en appelant la fonction de connexion sur l'instance DeviceClient."
+
+#: ../docs/devices/libraries/mbedcpp.rst:98
+msgid "After the successful connection, the device can publish events to the IoT Platform and listen for commands."
+msgstr ""
+"Une fois la connexion établie, le terminal peut publier des événements dans IoT Platform et être à l'écoute des commandes."
+
+#: ../docs/devices/libraries/mbedcpp.rst:100
+msgid "Also, the device can query the status of the connection using the isConnected() method as follows,"
+msgstr ""
+"De plus, le terminal peut demander le statut de la connexion avec la méthode isConnected() comme suit."
+
+#: ../docs/devices/libraries/mbedcpp.rst:114
+msgid "Publishing events"
+msgstr ""
+"Publication d'événements"
+
+#: ../docs/devices/libraries/mbedcpp.rst:115
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"Les événements constituent le mécanisme par lequel les terminaux publient des données dans IoT Platform. Le terminal contrôle le contenu de l'événement et affecte un nom à chaque événement qu'il envoie."
+
+#: ../docs/devices/libraries/mbedcpp.rst:117
+msgid "When an event is received by the IBM IoT Platform the credentials of the connection on which the event was received are used to determine from which device the event was sent. With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"Lorsqu'un événement est reçu par IBM IoT Platform, les données d'identification de la connexion sur laquelle l'événement a été reçu sont utilisées pour identifier le terminal à partir duquel l'événement a été envoyé. Avec cette architecture, il est impossible pour un terminal de simuler les droits d'accès d'un autre terminal."
+
+#: ../docs/devices/libraries/mbedcpp.rst:119
+msgid "Events can be published at any of the three `quality of service levels <../messaging/mqtt.html#/>`__ defined by the MQTT protocol.  By default events will be published as qos level 0."
+msgstr ""
+"Les événements peuvent être publiés à l'aide de l'un des trois `niveaux de qualité de service <../messaging/mqtt.html#/>`__ définis par le protocole MQTT.  Par défaut, les événements sont publiés au niveau de qualité de service 0."
+
+#: ../docs/devices/libraries/mbedcpp.rst:122
+msgid "Publish event using default quality of service"
+msgstr ""
+"Publication d'un événement à l'aide de la qualité de service par défaut"
+
+#: ../docs/devices/libraries/mbedcpp.rst:124
+msgid "The below sample shows how to publish various data points of LPC1768 like x,y & z axis, joystick position, current temperature reading and etc.. to IoT Platform in JSON format."
+msgstr ""
+"L'exemple ci-dessous explique comment publier différents points de données de LPC1768, comme l'axe x,y et z, la position de la manette ou le relevé de températures en cours, au format JSON dans IoT Platform."
+
+#: ../docs/devices/libraries/mbedcpp.rst:142
+#: ../docs/devices/libraries/mbedcpp.rst:238
+msgid "The complete sample can be found `here <https://developer.mbed.org/teams/IBM_IoT/code/IBMIoTClientLibrarySample/file/e58533b6bc6b/src/Main.cpp>`__."
+msgstr ""
+"L'exemple complet est disponible `ici <https://developer.mbed.org/teams/IBM_IoT/code/IBMIoTClientLibrarySample/file/e58533b6bc6b/src/Main.cpp>`__."
+
+#: ../docs/devices/libraries/mbedcpp.rst:145
+msgid "Publish event using user-defined quality of service"
+msgstr ""
+"Publication d'un événement à l'aide d'une qualité de service définie par l'utilisateur"
+
+#: ../docs/devices/libraries/mbedcpp.rst:147
+msgid "Events can be published at higher MQTT quality of service levels, but these events may take slower than QoS level 0, because of the extra confirmation of receipt. Also quickstart flow allows only Qos of 0."
+msgstr ""
+"Les événements peuvent être publiés à des niveaux de qualité de service MQTT plus élevés mais la publication de ces événements risque de prendre plus temps qu'avec la qualité de service 0 en raison du délai nécessaire pour obtenir la confirmation de la réception. Le flux Quickstart permet d'utiliser uniquement la qualité de service 0."
+
+#: ../docs/devices/libraries/mbedcpp.rst:169
+msgid "Handling the connection lost error during the event publish"
+msgstr ""
+"Traitement de l'erreur signalant la perte de la connexion au cours de la publication d'événement"
+
+#: ../docs/devices/libraries/mbedcpp.rst:171
+msgid "When the publishEvent() method returns false, one can check the status of the connection and call reConnect() if the connection is lost,"
+msgstr ""
+"Lorsque la méthode publishEvent() renvoie la valeur false, vous pouvez vérifier le statut de la connexion et appeler reConnect() si la connexion a été perdue."
+
+#: ../docs/devices/libraries/mbedcpp.rst:189
+msgid "The library does not store the events published during the unconnected state, and hence, the device needs to call the publishEvent() method again to send those events once the connection is reestablished."
+msgstr ""
+"La bibliothèque ne stocke pas les événements publiés alors que l'état est non connecté. Par conséquent, le terminal doit appeler à nouveau la méthode publishEvent() afin d'envoyer ces événements une fois la connexion rétablie."
+
+#: ../docs/devices/libraries/mbedcpp.rst:195
+msgid "Handling commands"
+msgstr ""
+"Traitement des commandes"
+
+#: ../docs/devices/libraries/mbedcpp.rst:196
+msgid "When the device client connects, it automatically subscribes to any commands for this device. To process specific commands you need to register a command callback method. The messages are returned as an instance of the Command class which has the following properties:"
+msgstr ""
+"Lorsque le client du terminal se connecte, il s'abonne automatiquement aux commandes de ce terminal. Pour traiter des commandes, vous devez enregistrer une méthode de rappel de commande. Les messages sont renvoyés sous la forme d'une instance de la classe Command dotée des propriétés suivantes :"
+
+#: ../docs/devices/libraries/mbedcpp.rst:199
+msgid "command - name of the command invoked"
+msgstr ""
+"command - Nom de la commande appelée"
+
+#: ../docs/devices/libraries/mbedcpp.rst:200
+msgid "format - e.g json, xml"
+msgstr ""
+"format - Par exemple json, xml"
+
+#: ../docs/devices/libraries/mbedcpp.rst:201
+msgid "payload"
+msgstr ""
+"payload"
+
+#: ../docs/devices/libraries/mbedcpp.rst:203
+msgid "Following code defines a sample command callback function that processes the LED blink interval command from the application and adds the same to the DeviceClient instance."
+msgstr ""
+"Le code suivant définit un exemple de fonction de rappel de commande qui traite la commande de gestion de l'intervalle de clignotement d'un voyant provenant de l'application et ajoute les mêmes données à l'instance DeviceClient."
+
+#: ../docs/devices/libraries/mbedcpp.rst:240
+msgid "The 'client.yield()' function must be called periodically to receive commands."
+msgstr ""
+"La fonction 'client.yield()' doit être appelée régulièrement pour recevoir des commandes."
+
+#: ../docs/devices/libraries/mbedcpp.rst:245
+msgid "Disconnect Client"
+msgstr ""
+"Déconnexion du client"
+
+#: ../docs/devices/libraries/mbedcpp.rst:247
+msgid "To disconnect the client and release the connections, run the following code snippet."
+msgstr ""
+"Pour déconnecter le client et libérer les connexions, exécutez le fragment de code ci-dessous."
+
+#: ../docs/devices/libraries/mbedcpp.rst:258
+msgid "Samples"
+msgstr ""
+"Exemples"
+
+#: ../docs/devices/libraries/mbedcpp.rst:260
+msgid "`IBMIoTClientLibrarySample <https://developer.mbed.org/teams/IBM_IoT/code/IBMIoTClientLibrarySample/>`__ - A Sample code that showcases how to use IBMIoTF client library to connect the mbed LPC1768 or FRDM-K64F devices to the IBM Internet of Things Cloud service."
+msgstr ""
+"`IBMIoTClientLibrarySample <https://developer.mbed.org/teams/IBM_IoT/code/IBMIoTClientLibrarySample/>`__ - Exemple de code expliquant comment utiliser la bibliothèque client IBMIoTF pour connecter les terminaux mbed LPC1768 ou FRDM-K64F au service IBM Internet of Things Cloud."
+

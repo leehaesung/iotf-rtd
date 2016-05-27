@@ -1,0 +1,188 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/getting_started/concepts.rst:2
+msgid "Concepts"
+msgstr ""
+"概念"
+
+#: ../docs/getting_started/concepts.rst:5
+msgid "Organizations"
+msgstr ""
+"組織"
+
+#: ../docs/getting_started/concepts.rst:6
+msgid "When you register with the Watson IoT platform you are given an organization ID, this is a unique 6 character identifier for your account."
+msgstr ""
+"Watson IoT プラットフォームに登録すると、組織 ID を受け取ります。これは、そのアカウントに対応する 6 文字の固有 ID です。"
+
+#: ../docs/getting_started/concepts.rst:9
+msgid "**Organizations** ensure your data is only accessible from your devices and applications.  Once registered, devices and API keys are bound to a single organization.  When an application connects to the service using an API key it registers with the organization that \"owns\" the API key."
+msgstr ""
+"**組織**の部分は、そのデータにアクセスできるのが自分のデバイスおよびアプリケーションからのみであることを保証します。登録後、デバイスと API キーは単一の組織に結び付けられます。アプリケーションが API キーを使用してサービスに接続すると、API キーの「所有者」である組織に登録されることになります。"
+
+#: ../docs/getting_started/concepts.rst:14
+msgid "For your security it is impossible for cross-organization communication within the Watson IoT platform eco-system, intentional or otherwise.  The only way to transmit data between two organizations it to explicitly create two applications, one within each organization, that communicate with each other to act as a relay between the organizations."
+msgstr ""
+"セキュリティーのため、Watson IoT Platform エコシステムでは、意図的かどうかにかかわらず、組織を超えた通信はできないようになっています。2 つの組織の間でデータを送信する唯一の方法は、各組織に 1 つずつ、合計 2 つのアプリケーションを明示的に作成して、それらが相互に通信して組織間のリレーとして動作するようにすることです。"
+
+#: ../docs/getting_started/concepts.rst:22
+msgid "Devices"
+msgstr ""
+"デバイス"
+
+#: ../docs/getting_started/concepts.rst:23
+msgid "A device can be anything that has a connection to the internet and has data it wants to get into the cloud."
+msgstr ""
+"インターネットに接続されていて、クラウドにデータを入れる源となるどんなものでもデバイスにできます。"
+
+#: ../docs/getting_started/concepts.rst:25
+msgid "A device is not able to directly interact with other devices."
+msgstr ""
+"デバイスは、他のデバイスと直接やり取りできません。"
+
+#: ../docs/getting_started/concepts.rst:26
+msgid "Devices are able to accept commands from applications."
+msgstr ""
+"デバイスは、アプリケーションからコマンドを受け入れることが可能です。"
+
+#: ../docs/getting_started/concepts.rst:27
+msgid "Devices uniquely identify themselves to the Watson IoT platform with an authentication token that will only be accepted for that device."
+msgstr ""
+"Watson IoT プラットフォームに対し、デバイスは、そのデバイスとしてのみ受け入れられる認証トークンにより一意的に識別されます。"
+
+#: ../docs/getting_started/concepts.rst:29
+msgid "Devices must be registered before they can connect to the Watson IoT platform."
+msgstr ""
+"デバイスを Watson IoT プラットフォームに接続するには、まず登録する必要があります。"
+
+#: ../docs/getting_started/concepts.rst:32
+msgid "Managed and Unmanaged Devices"
+msgstr ""
+"管理対象デバイスと非管理対象デバイス"
+
+#: ../docs/getting_started/concepts.rst:33
+msgid "**Managed devices** are defined as devices which contain a management agent. A management agent is a set of logic which allows the device to interact with the Watson IoT platform Device Management service via the Device Management protocol. Managed devices can perform device management operations including location updates, firmware download and updates, and reboot and factory reset."
+msgstr ""
+"**管理対象デバイス**とは、管理エージェントを持つデバイスのことです。管理エージェントは、デバイスがデバイス管理プロトコルによって Watson IoT Platform デバイス管理サービスと対話するためのロジックのセットです。管理対象デバイスは、場所の更新、ファームウェアのダウンロードと更新、リブート、工場出荷時設定へのリセットなどのデバイス管理操作を実行することができます。"
+
+#: ../docs/getting_started/concepts.rst:38
+msgid "An **unmanaged device** is a device without a management agent. An unmanaged device can still connect to the Watson IoT platform and send and receive events and commands. However, it cannot send any device management requests, or perform any of the device management operations."
+msgstr ""
+"**非管理対象デバイス**とは、管理エージェントを持たないデバイスのことです。非管理対象デバイスでも、Watson IoT Platform に接続してイベントやコマンドを送受信できます。ただし、デバイス管理リクエストを送信したり、デバイス管理操作を実行したりすることはできません。"
+
+#: ../docs/getting_started/concepts.rst:45
+msgid "Applications"
+msgstr ""
+"アプリケーション"
+
+#: ../docs/getting_started/concepts.rst:46
+msgid "An application is anything that has a connection to the internet and wants to interact with data from devices and/or control the behaviour of those devices in some manner."
+msgstr ""
+"アプリケーションは、インターネットに接続されていて、デバイスとデータをやり取りしたり、何らかの方法でデバイスの動作を制御したりするなんらかのものです。"
+
+#: ../docs/getting_started/concepts.rst:49
+msgid "Applications identify themselves to the Watson IoT platform with an API key and a unique application ID."
+msgstr ""
+"Watson IoT プラットフォームに対して、アプリケーションは、API キーと固有のアプリケーション ID により識別されます。"
+
+#: ../docs/getting_started/concepts.rst:51
+msgid "Applications do not need to be registered before they can connect to the Watson IoT platform, however they must present a valid API key that has previously been registered."
+msgstr ""
+"アプリケーションが Watson IoT プラットフォームに接続するために登録は必要はありませんが、事前に登録されている有効な API キーを提示する必要があります。"
+
+#: ../docs/getting_started/concepts.rst:58
+msgid "Gateway Devices"
+msgstr ""
+"ゲートウェイ・デバイス"
+
+#: ../docs/getting_started/concepts.rst:59
+msgid "Gateways are a specialized class of Device. They have the combined capabilities of an Application and a Device allowing them to serve as access points providing connectivity to the service for other devices without the ability to directly connect."
+msgstr ""
+"ゲートウェイは、特殊なクラスのデバイスです。アプリケーションとデバイスの機能を組み合わせて、直接接続できない他のデバイスのためにサービスへの接続を提供するアクセス・ポイントとして機能します。"
+
+#: ../docs/getting_started/concepts.rst:62
+msgid "Gateway devices can register new devices and can send and receive data on behalf of devices connected to them."
+msgstr ""
+"ゲートウェイ・デバイスは、新しいデバイスを登録したり、接続しているデバイスの代わりにデータを送受信したりできます。"
+
+#: ../docs/getting_started/concepts.rst:64
+msgid "Gateway Devices must be registered before they can connect to the service"
+msgstr ""
+"ゲートウェイ・デバイスをサービスに接続するには、まずゲートウェイ・デバイスを登録する必要があります。"
+
+#: ../docs/getting_started/concepts.rst:69
+msgid "Events"
+msgstr ""
+"イベント"
+
+#: ../docs/getting_started/concepts.rst:70
+msgid "Events are the mechanism by which **devices** publish data to the Watson IoT platform.  The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"イベントは、**デバイス**が Watson IoT Platform にデータをパブリッシュするためのメカニズムです。デバイスはイベントのコンテンツを制御し、送信するイベントごとに名前を割り当てます。"
+
+#: ../docs/getting_started/concepts.rst:73
+msgid "When an event is received by the Watson IoT platform from a device the credentials of the connection on which the event was received are used to determine from which device the event was sent.  With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"Watson IoT Platform は、デバイスからイベントを受け取ると、そのイベントを受け取った接続の資格情報に基づいて、イベントの送信元のデバイスを特定します。このアーキテクチャーにより、デバイスは別のデバイスの偽名を使用することが不可能になります。"
+
+#: ../docs/getting_started/concepts.rst:78
+msgid "**Devices** are unable to receive events, regardless of whether they are its own events or those of another device."
+msgstr ""
+"**デバイス**は、それ自体のイベントであれ、別のデバイスのものであれ、イベントを受信できません。"
+
+#: ../docs/getting_started/concepts.rst:80
+msgid "**Applications** are able to process events from devices in real time.  When an application receives an event it has visibility of the source of the event and the data contained in that event.  Applications can be configured to subscribe to all events from all devices, a subset of events, a subset of devices or a combination of these events."
+msgstr ""
+"**アプリケーション**は、リアルタイムでデバイスからのイベントを処理できます。アプリケーションがイベントを受け取ると、その可視性は、イベントの発信元およびそのイベントに含まれるデータのものになります。アプリケーションは、すべてのデバイスからのすべてのイベント、イベントのサブセット、デバイスのサブセット、またはそれらのイベントの組み合わせをサブスクライブするように構成可能です。"
+
+#: ../docs/getting_started/concepts.rst:88
+msgid "Historical Event Storage"
+msgstr ""
+"履歴イベントの保管"
+
+#: ../docs/getting_started/concepts.rst:90
+msgid "Historical event storage allows users to store the data from devices added to their Watson IoT platform organization. Historical event storage activity and duration can be controlled from the settings panel in the Watson IoT platform dashboard."
+msgstr ""
+"履歴イベントの保管の機能を使用して、Watson IoT Platform の組織に追加されたデバイスから送られてくるデータを格納できます。履歴イベントの保管のアクティビティーと期間は、Watson IoT Platform のダッシュボードにある設定パネルから制御できます。"
+
+#: ../docs/getting_started/concepts.rst:94
+msgid "When changing settings for historical data storage, keep in mind that storing data for longer periods of time will affect your billing. Also, care should be taken when disabling historical data storage, as upon disabling data storage for your organization, all stored data will be deleted, and cannot be recovered."
+msgstr ""
+"履歴データの保管に関する設定を変更する場合は、データ保管期間を長くすると請求額に影響があることに注意してください。履歴データの保管を無効にする場合も、組織のデータ保管を無効にすると、保管されていたすべてのデータが削除され、復旧できなくなることに注意してください。"
+
+#: ../docs/getting_started/concepts.rst:99
+msgid "Historical event storage uses an MQTT Quality of Service level of 0 (delivery at most once), so some data may be lost. Please note that only messages of up to 4096 bytes are stored."
+msgstr ""
+"履歴イベントの保管では、MQTT サービス品質のレベル 0 (最大で 1 回配信) を使用するため、一部のデータが失われることがあります。最大 4096 バイトのメッセージのみが保管されることに注意してください。"
+
+#: ../docs/getting_started/concepts.rst:105
+msgid "Commands"
+msgstr ""
+"コマンド"
+
+#: ../docs/getting_started/concepts.rst:106
+msgid "**Commands** are the mechanism by which **applications** can communicate with **devices**.  Only applications can send commands, which must be issued to specific devices."
+msgstr ""
+"**コマンド** は、**アプリケーション** が **デバイス** と通信する手段となるメカニズムです。コマンドを送信できるのはアプリケーションのみであり、特定のデバイスに対して発行しなければなりません。"
+
+#: ../docs/getting_started/concepts.rst:110
+msgid "The device must determine which action to take on receipt of any given command, and even controls which commands it will subscribe to in the first place.  It is possible to design your device to listen for any command, or to simply subscribe to a set of specific commands."
+msgstr ""
+"デバイスは、特定のコマンドを受信した場合にどんなアクションを取るかを決定しなければならず、さらには、最初にどのコマンドをサブスクライブするかも制御します。デバイスは、コマンドを listen するように設計したり、単に特定のコマンドのセットをサブスクライブするように設計したりできます。"
+

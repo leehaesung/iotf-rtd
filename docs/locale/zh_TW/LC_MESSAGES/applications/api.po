@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/applications/api.rst:2
+msgid "HTTP API for Applications"
+msgstr ""
+"適用於應用程式的 HTTP API"
+
+#: ../docs/applications/api.rst:4
+msgid "The IoT Platform API can be used to interact with your organization in the IoT Platform."
+msgstr ""
+"IoT Platform API 可以用來在 IoT Platform 中與您的組織互動。"
+
+#: ../docs/applications/api.rst:7
+msgid "API Capabilities"
+msgstr ""
+"API 功能"
+
+#: ../docs/applications/api.rst:9
+msgid "The IoT Platform API supports the following functionality for applications:"
+msgstr ""
+"IoT Platform API 支援應用程式的下列功能："
+
+#: ../docs/applications/api.rst:11
+msgid "View organization details."
+msgstr ""
+"檢視組織詳細資料。"
+
+#: ../docs/applications/api.rst:12
+msgid "Bulk device operations (list all, add, remove)."
+msgstr ""
+"大量裝置作業（全部列出、新增、移除）。"
+
+#: ../docs/applications/api.rst:13
+msgid "Device type operations (list all, create, delete, view details, update)."
+msgstr ""
+"裝置類型作業（全部列出、建立、刪除、檢視詳細資料、更新）。"
+
+#: ../docs/applications/api.rst:14
+msgid "Device operations (list devices, add, remove, view details, update, view location, view management information)."
+msgstr ""
+"裝置作業（列出裝置、新增、移除、檢視詳細資料、更新、檢視位置、檢視管理資訊）。"
+
+#: ../docs/applications/api.rst:15
+msgid "Device diagnostic operations (clear log, retrieve logs, add log information, delete logs, get specific log, clear error codes, get device error codes, add an error code)."
+msgstr ""
+"裝置診斷作業（清除日誌、擷取日誌、新增日誌資訊、刪除日誌、取得特定日誌、清除錯誤碼、取得裝置錯誤碼、新增錯誤碼）。"
+
+#: ../docs/applications/api.rst:16
+msgid "Connection problem determination (list device connection log events)."
+msgstr ""
+"連線問題判斷（列出裝置連線日誌事件）。"
+
+#: ../docs/applications/api.rst:17
+msgid "Historical event retrieval (view events from all devices, view events from a device type, view events for a specific device)."
+msgstr ""
+"擷取歷程事件（檢視所有裝置的事件、檢視某一裝置類型的事件、檢視特定裝置的事件）。"
+
+#: ../docs/applications/api.rst:18
+msgid "Device management request operations (list device management requests, initiate a request, clear request status, get details of a request, get list of request statuses for each affected device,  get request status for a specific device)."
+msgstr ""
+"裝置管理要求作業（列出裝置管理要求、起始要求、清除要求狀態、取得要求的詳細資料、取得每一個受影響裝置的要求狀態清單、取得特定裝置的要求狀態）。"
+
+#: ../docs/applications/api.rst:19
+msgid "Usage management (retrieve number of active devices over a period of time, retrieve amount of storage used by historical event data, retrieve total amount of data used)."
+msgstr ""
+"使用情形管理（擷取一段時間內作用中的裝置數、擷取歷程事件資料所使用的儲存體量、擷取所使用的總資料量）。"
+
+#: ../docs/applications/api.rst:20
+msgid "Publish events on behalf of devices (beta)"
+msgstr ""
+"代表裝置發佈事件（測試版）"
+
+#: ../docs/applications/api.rst:21
+msgid "Service status queries (retrieve service statuses for an organization)."
+msgstr ""
+"服務狀態查詢（擷取組織的服務狀態）。"
+
+#: ../docs/applications/api.rst:28
+msgid "IoT Platform API Version 2"
+msgstr ""
+"IoT Platform API 第 2 版"
+
+#: ../docs/applications/api.rst:30
+msgid "The current version of the IoT Platform API is `version 2 <../swagger/v0002.html>`_.  We strongly recommend that all users build their solutions based on the version 2 APIs."
+msgstr ""
+"IoT Platform API 的現行版本為 `第 2 版 <../swagger/v0002.html>`_。強烈建議所有使用者根據第 2 版 API 建置其解決方案。"
+
+#: ../docs/applications/api.rst:38
+msgid "IoT Platform API Version 1"
+msgstr ""
+"IoT Platform API 第 1 版"
+
+#: ../docs/applications/api.rst:40
+msgid "`Version 1 <../swagger/v0001.html>`_ of the API is still supported, however it should now be considered a deprecated API, many features listed above are not available in the version 1 API."
+msgstr ""
+"仍然支援 `第 1 版 <../swagger/v0001.html>`_ API，不過，現在應該將它視為已淘汰的 API，因為上面列出的許多功能無法在第 1 版 API 中使用。"
+
+#: ../docs/applications/api.rst:45
+msgid "Many of the API paths relating to devices have changed."
+msgstr ""
+"許多與裝置相關的 API 路徑已變更。"
+
+#: ../docs/applications/api.rst:46
+msgid "Version 1 of the API does not support any device type operations, other than listing all device types."
+msgstr ""
+"第 1 版 API 不支援列出所有裝置類型以外的任何裝置類型作業。"
+
+#: ../docs/applications/api.rst:47
+msgid "Operations related to device management, device management requests, diagnostic information, or location cannot be performed using version 1 of the API."
+msgstr ""
+"與裝置管理、裝置管理要求、診斷資訊或位置相關的作業，無法使用第 1 版 API 來執行。"
+

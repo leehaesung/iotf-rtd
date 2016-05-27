@@ -1,0 +1,548 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/device_mgmt/index.rst:2
+msgid "Device Management Protocol"
+msgstr ""
+"デバイス管理プロトコル"
+
+#: ../docs/devices/device_mgmt/index.rst:5
+msgid "Introduction"
+msgstr ""
+"概要"
+
+#: ../docs/devices/device_mgmt/index.rst:7
+msgid "The Device Management capabilities in the IoT Platform create a new class of connected devices, Managed Devices."
+msgstr ""
+"IoT Platform のデバイス管理機能は、接続デバイスの新しいクラスである管理対象デバイスを作成します。"
+
+#: ../docs/devices/device_mgmt/index.rst:9
+msgid "Managed Devices must, by definition, contain a management agent which can understand the IoT Platform Device Management Protocol, and send a Manage Device request to the IoT Platform Device Management server. Managed devices can access the device management operations as explained later in this document."
+msgstr ""
+"管理対象デバイスには、この名前が示すとおり、管理エージェントが含まれていなければなりません。つまり、IoT Platform のデバイス管理プロトコルを理解して、管理デバイス・リクエストを IoT Platform のデバイス管理サーバーに送信できる管理エージェントです。本書内で後述していますが、管理対象デバイスは、デバイス管理操作にアクセスすることができます。"
+
+#: ../docs/devices/device_mgmt/index.rst:11
+msgid "The Device Management Protocol defines a set of supported operations. A device management agent can support a subset of the operations, but the Manage device and Unmanage device operations must be supported. A device supporting firmware action operations must also support observation."
+msgstr ""
+"デバイス管理プロトコルとは、サポートされる一連の操作を定義したものです。デバイス管理エージェントはこれらの操作のサブセットをサポートできますが、「デバイスを管理」操作と「デバイスを管理解除」操作のサポートは必須です。また、ファームウェア・アクション操作をサポートするデバイスでは、監視もサポートする必要があります。"
+
+#: ../docs/devices/device_mgmt/index.rst:13
+msgid "The Device Management Protocol is built on top of MQTT.  For details specific to how Device Management Protocol interacts with MQTT please see `MQTT Connectivity for Devices <../mqtt.html>`__"
+msgstr ""
+"デバイス管理プロトコルは、MQTT を基礎として作成されています。デバイス管理プロトコルと MQTT の対話方法の詳細については、`MQTT デバイス接続<../mqtt.html>`__ の資料を参照してください。"
+
+#: ../docs/devices/device_mgmt/index.rst:17
+msgid "The Device Management Lifecycle"
+msgstr ""
+"デバイス管理ライフサイクル"
+
+#: ../docs/devices/device_mgmt/index.rst:19
+msgid "A device and its associated device type are created in the IoT Platform using the dashboard or API."
+msgstr ""
+"デバイスおよびそれに関連したデバイス・タイプは、ダッシュボードまたは API を使用して IoT Platform に作成されます。"
+
+#: ../docs/devices/device_mgmt/index.rst:20
+msgid "The device connects to the IoT Platform and uses the 'Manage Device' operation to become a managed device."
+msgstr ""
+"デバイスは IoT Platform に接続し、「デバイスを管理」操作によって管理対象デバイスになります。"
+
+#: ../docs/devices/device_mgmt/index.rst:21
+msgid "The device's metadata, as described in the Device Model can now be viewed and manipulated through device operations, for example, firmware update and device reboot."
+msgstr ""
+"これで、「デバイス・モデル」で説明したようなデバイスのメタデータを表示し、ファームウェアの更新やデバイスのリブートなどのデバイス操作によって操作できるようになりました。"
+
+#: ../docs/devices/device_mgmt/index.rst:22
+msgid "The device can communicate updates through the device-management protocol, such as location or diagnostic information and error codes."
+msgstr ""
+"デバイスは、ロケーション、診断情報、エラー・コードなどの更新をデバイス管理プロトコルを介して伝達できます。"
+
+#: ../docs/devices/device_mgmt/index.rst:23
+msgid "In order to provide a way to deal with defunct devices in large device populations, the 'Manage device' operation request has an optional lifetime parameter. This lifetime parameter is the number of seconds within which the device must make another 'Manage device' request in order to avoid being marked as dormant and becoming an unmanaged device."
+msgstr ""
+"デバイスが多数存在する環境で機能不良デバイスに対処できるように、「デバイスを管理」操作リクエストにはオプションのライフタイム・パラメーターが用意されています。このライフタイム・パラメーターは、休止のマークが付けられて非管理対象デバイスにならないように、デバイスが次の「デバイスを管理」リクエストを行わなければならない制限時間 (秒) です。"
+
+#: ../docs/devices/device_mgmt/index.rst:24
+msgid "When a device is decommissioned it can be removed from the IoT Platform using the dashboard or REST API."
+msgstr ""
+"使用廃止にしたデバイスは、ダッシュボードまたは REST API を使用して IoT Platform から削除できます。"
+
+#: ../docs/devices/device_mgmt/index.rst:28
+msgid "Return Code Summary"
+msgstr ""
+"戻りコードの要約"
+
+#: ../docs/devices/device_mgmt/index.rst:30
+msgid "There are several return codes which are sent in response to the actions listed above."
+msgstr ""
+"上記のアクションに対する応答として送信される戻りコードはいくつかあります。"
+
+#: ../docs/devices/device_mgmt/index.rst:32
+msgid "200: Operation succeeded"
+msgstr ""
+"200: 操作が成功しました"
+
+#: ../docs/devices/device_mgmt/index.rst:33
+msgid "202: Accepted (for initiating commands)"
+msgstr ""
+"202: 受け入れられました (開始コマンドの場合)"
+
+#: ../docs/devices/device_mgmt/index.rst:34
+msgid "204: Changed (for attribute updates)"
+msgstr ""
+"204: 変更されました (属性更新の場合)"
+
+#: ../docs/devices/device_mgmt/index.rst:35
+msgid "400: Bad request, for example, if a device is not in the appropriate state for this command"
+msgstr ""
+"400: 不適切なリクエストです (デバイスがこのコマンドに適した状態にない場合など)"
+
+#: ../docs/devices/device_mgmt/index.rst:36
+msgid "404: Attribute was not found, this code is also used if the operation was published to an invalid topic."
+msgstr ""
+"404: 属性が見つかりません。このコードは、操作が無効なトピックにパブリッシュされた場合にも使用されます。"
+
+#: ../docs/devices/device_mgmt/index.rst:37
+msgid "409: Resource could not be updated due to a conflict, for example, the resource is being updated by two simultaneous requests, so update could be retried later"
+msgstr ""
+"409: (2 つのリクエストが同時にリソースを更新しようとしたなどの理由で) 競合のためにリソースを更新できませんでした。更新は後で再試行されます"
+
+#: ../docs/devices/device_mgmt/index.rst:38
+msgid "500: Unexpected device error"
+msgstr ""
+"500: 予期しないデバイス・エラー"
+
+#: ../docs/devices/device_mgmt/index.rst:39
+msgid "501: Operation not implemented"
+msgstr ""
+"501: 操作が実装されていません"
+
+#: ../docs/devices/device_mgmt/index.rst:48
+msgid "Manage Device"
+msgstr ""
+"デバイスを管理"
+
+#: ../docs/devices/device_mgmt/index.rst:50
+msgid "A device uses this request to become a managed device. It should be the first device management request sent by the device after connecting to the IoT Platform. It would be usual for a device management agent to send this whenever it starts or restarts."
+msgstr ""
+"デバイスはこのリクエストを使用して管理対象デバイスになります。これは、デバイスが IoT Platform に接続した後に送信する最初のデバイス管理リクエストでなければなりません。通常、デバイス管理エージェントは、開始または再始動するたびにこれを送信します。"
+
+#: ../docs/devices/device_mgmt/index.rst:52
+#: ../docs/devices/device_mgmt/index.rst:143
+msgid "Support for this operation is mandatory for any managed devices."
+msgstr ""
+"この操作のサポートは、すべての管理対象デバイスにとって必須です。"
+
+#: ../docs/devices/device_mgmt/index.rst:56
+#: ../docs/devices/device_mgmt/index.rst:146
+#: ../docs/devices/device_mgmt/index.rst:215
+#: ../docs/devices/device_mgmt/index.rst:236
+#: ../docs/devices/device_mgmt/index.rst:348
+#: ../docs/devices/device_mgmt/index.rst:390
+#: ../docs/devices/device_mgmt/index.rst:451
+#: ../docs/devices/device_mgmt/index.rst:506
+#: ../docs/devices/device_mgmt/index.rst:573
+#: ../docs/devices/device_mgmt/index.rst:629
+#: ../docs/devices/device_mgmt/index.rst:697
+#: ../docs/devices/device_mgmt/index.rst:757
+msgid "Topic"
+msgstr ""
+"トピック"
+
+#: ../docs/devices/device_mgmt/index.rst:58
+#: ../docs/devices/device_mgmt/index.rst:148
+#: ../docs/devices/device_mgmt/index.rst:217
+#: ../docs/devices/device_mgmt/index.rst:392
+#: ../docs/devices/device_mgmt/index.rst:453
+#: ../docs/devices/device_mgmt/index.rst:508
+#: ../docs/devices/device_mgmt/index.rst:575
+#: ../docs/devices/device_mgmt/index.rst:759
+msgid "A device publishes this request to the following topic:"
+msgstr ""
+"デバイスはこのリクエストを次のトピックにパブリッシュします。"
+
+#: ../docs/devices/device_mgmt/index.rst:64
+#: ../docs/devices/device_mgmt/index.rst:154
+#: ../docs/devices/device_mgmt/index.rst:223
+msgid "The server responds to this request on the following topic:"
+msgstr ""
+"サーバーはこのリクエストを次のトピックで応答します。"
+
+#: ../docs/devices/device_mgmt/index.rst:72
+#: ../docs/devices/device_mgmt/index.rst:162
+#: ../docs/devices/device_mgmt/index.rst:246
+#: ../docs/devices/device_mgmt/index.rst:399
+#: ../docs/devices/device_mgmt/index.rst:460
+#: ../docs/devices/device_mgmt/index.rst:515
+msgid "Message Format"
+msgstr ""
+"メッセージの形式"
+
+#: ../docs/devices/device_mgmt/index.rst:74
+msgid "For the request, the ``d`` field and all of its sub-fields are optional. The ``metadata`` and ``deviceInfo`` field values replace the corresponding attributes for the sending device if they are sent."
+msgstr ""
+"リクエストの ``d`` フィールドとそのすべてのサブフィールドはオプションです。``metadata`` および ``deviceInfo`` フィールド値を送信した場合は、それらの値が送信側デバイスの対応する属性を置き換えます。"
+
+#: ../docs/devices/device_mgmt/index.rst:76
+msgid "The optional ``lifetime`` field specifies the length of time in seconds within which the device must send another 'Manage device' request in order to avoid being reverted to an unmanaged device and marked as dormant. If omitted or if set to ``0``, the managed device will not become dormant.  When set, the minimum supported setting is ``3600`` (1 hour)."
+msgstr ""
+"オプションの ``lifetime`` フィールドは、デバイスが次の「デバイスを管理」リクエストを送信しなければならない制限時間 (秒数) を指定します。これを過ぎるとデバイスは非管理対象デバイスに戻り、「休止」のマークが付けられます。これを省略するか ``0`` に設定すると、管理対象デバイスは休止状態になりません。これを設定する場合、サポートされる最小設定値は ``3600`` (1 時間) です。"
+
+#: ../docs/devices/device_mgmt/index.rst:78
+msgid "Optional ``supports.deviceActions`` and ``supports.firmwareActions`` indicate the capabilities of the device management agent. If ``supports.deviceActions`` is set, the agent supports Reboot and Factory Reset actions. For a device that does not distinguish between rebooting and factory reset, it is acceptable to use the same behaviour for both actions. If ``supports.firmwareActions`` is set, the agent supports Firmware Download and Firmware Update actions."
+msgstr ""
+"オプションの ``supports.deviceActions`` および ``supports.firmwareActions`` はデバイス管理エージェントの機能を示します。``supports.deviceActions`` を設定した場合、エージェントはリブート・アクションと工場出荷時設定にリセット・アクションをサポートします。リブートと工場出荷時設定へのリセットが区別されないデバイスの場合は、両方のアクションに同じ動作を使用してかまいません。``supports.firmwareActions`` を設定した場合、エージェントはファームウェア・ダウンロード・アクションとファームウェア更新アクションをサポートします。"
+
+#: ../docs/devices/device_mgmt/index.rst:80
+#: ../docs/devices/device_mgmt/index.rst:164
+#: ../docs/devices/device_mgmt/index.rst:257
+#: ../docs/devices/device_mgmt/index.rst:403
+#: ../docs/devices/device_mgmt/index.rst:462
+#: ../docs/devices/device_mgmt/index.rst:522
+#: ../docs/devices/device_mgmt/index.rst:584
+#: ../docs/devices/device_mgmt/index.rst:644
+#: ../docs/devices/device_mgmt/index.rst:709
+#: ../docs/devices/device_mgmt/index.rst:768
+msgid "Request Format:"
+msgstr ""
+"リクエストの形式:"
+
+#: ../docs/devices/device_mgmt/index.rst:110
+#: ../docs/devices/device_mgmt/index.rst:175
+#: ../docs/devices/device_mgmt/index.rst:277
+#: ../docs/devices/device_mgmt/index.rst:418
+#: ../docs/devices/device_mgmt/index.rst:473
+#: ../docs/devices/device_mgmt/index.rst:540
+#: ../docs/devices/device_mgmt/index.rst:595
+#: ../docs/devices/device_mgmt/index.rst:660
+#: ../docs/devices/device_mgmt/index.rst:725
+#: ../docs/devices/device_mgmt/index.rst:783
+msgid "Response Format:"
+msgstr ""
+"レスポンスの形式:"
+
+#: ../docs/devices/device_mgmt/index.rst:124
+#: ../docs/devices/device_mgmt/index.rst:188
+#: ../docs/devices/device_mgmt/index.rst:290
+#: ../docs/devices/device_mgmt/index.rst:432
+#: ../docs/devices/device_mgmt/index.rst:487
+#: ../docs/devices/device_mgmt/index.rst:554
+#: ../docs/devices/device_mgmt/index.rst:608
+#: ../docs/devices/device_mgmt/index.rst:796
+msgid "Response Codes"
+msgstr ""
+"応答コード"
+
+#: ../docs/devices/device_mgmt/index.rst:126
+#: ../docs/devices/device_mgmt/index.rst:190
+#: ../docs/devices/device_mgmt/index.rst:292
+#: ../docs/devices/device_mgmt/index.rst:434
+#: ../docs/devices/device_mgmt/index.rst:489
+#: ../docs/devices/device_mgmt/index.rst:556
+#: ../docs/devices/device_mgmt/index.rst:610
+#: ../docs/devices/device_mgmt/index.rst:798
+msgid "200: The operation was successful."
+msgstr ""
+"200: 操作は正常に終了しました。"
+
+#: ../docs/devices/device_mgmt/index.rst:127
+#: ../docs/devices/device_mgmt/index.rst:191
+#: ../docs/devices/device_mgmt/index.rst:293
+#: ../docs/devices/device_mgmt/index.rst:435
+#: ../docs/devices/device_mgmt/index.rst:490
+#: ../docs/devices/device_mgmt/index.rst:557
+#: ../docs/devices/device_mgmt/index.rst:611
+#: ../docs/devices/device_mgmt/index.rst:799
+msgid "400: The input message does not match the expected format, or one of the values is out of the valid range."
+msgstr ""
+"400: 入力メッセージが予期される形式に一致しないか、値の 1 つが有効範囲外です。"
+
+#: ../docs/devices/device_mgmt/index.rst:128
+#: ../docs/devices/device_mgmt/index.rst:192
+#: ../docs/devices/device_mgmt/index.rst:294
+#: ../docs/devices/device_mgmt/index.rst:436
+#: ../docs/devices/device_mgmt/index.rst:491
+#: ../docs/devices/device_mgmt/index.rst:558
+#: ../docs/devices/device_mgmt/index.rst:612
+msgid "404: The topic name is incorrect, or the device is not in the database."
+msgstr ""
+"404: トピック名が正しくないか、デバイスがデータベースにありません。"
+
+#: ../docs/devices/device_mgmt/index.rst:129
+#: ../docs/devices/device_mgmt/index.rst:193
+#: ../docs/devices/device_mgmt/index.rst:295
+#: ../docs/devices/device_mgmt/index.rst:437
+#: ../docs/devices/device_mgmt/index.rst:492
+#: ../docs/devices/device_mgmt/index.rst:559
+#: ../docs/devices/device_mgmt/index.rst:613
+#: ../docs/devices/device_mgmt/index.rst:801
+msgid "409: A conflict occurred during the device database update. To resolve this, simplify the operation is necessary."
+msgstr ""
+"409: デバイスのデータベース更新中に競合が発生しました。これを解決するには、操作を簡略化することが必要です。"
+
+#: ../docs/devices/device_mgmt/index.rst:139
+msgid "Unmanage Device"
+msgstr ""
+"デバイスを管理解除"
+
+#: ../docs/devices/device_mgmt/index.rst:141
+msgid "A device uses this request when it no longer needs to be managed. The IoT Platform will no longer send new device management requests to this device and all device management requests from this device will be rejected other than a 'Manage device' request."
+msgstr ""
+"デバイスは、管理される必要がなくなったときにこのリクエストを使用します。IoT Platform は、新しいデバイス管理リクエストをこのデバイスに送信しなくなり、このデバイスからのすべてのデバイス管理リクエスト (「デバイスを管理」リクエストを除く) が拒否されるようになります。"
+
+#: ../docs/devices/device_mgmt/index.rst:202
+msgid "Update Location"
+msgstr ""
+"ロケーションの更新"
+
+#: ../docs/devices/device_mgmt/index.rst:204
+msgid "Devices can change their location over time. The update of the location can happen in two ways:"
+msgstr ""
+"デバイスは時間の経過とともにロケーションが変わる場合があります。ロケーションの更新は、以下の 2 つの方法で行われます。"
+
+#: ../docs/devices/device_mgmt/index.rst:206
+msgid "The device itself notifies the IoT Platform about the location update: The device retrieves its location from a GPS receiver and sends a device management message to the IoT Platform to update its location. The timestamp captures the time at which the location was retrieved from the GPS receiver. This means that the timestamp is valid, even if the transmission of the location message was delayed. In the event that the timestamp is omitted from the device management message sent, the current date and time on message receipt will be used when the device's location metadata is updated."
+msgstr ""
+"デバイス自身がロケーションの更新を IoT Platform に通知します。デバイスが GPS レシーバーから自身のロケーションを取得して、ロケーションを更新するためのデバイス管理メッセージを IoT Platform に送信します。タイム・スタンプは、GPS レシーバーからロケーションが取得された時間をキャプチャーします。つまり、ロケーション・メッセージの伝送が遅れた場合でもタイム・スタンプは有効です。送信されたデバイス管理メッセージ内でタイム・スタンプが省略されている場合は、デバイスのロケーション・メタデータを更新するときに、メッセージを受信したときの現在日時が使用されます。"
+
+#: ../docs/devices/device_mgmt/index.rst:208
+msgid "A user / app updates the location of a device using the Rest API: The IoT Platform REST API is used to set the location metadata of a static device. This can be done at the time that the device is registered, or later if required. It is optional whether to include a timestamp. If omitted, the current date and time will be set as the device’s location metadata."
+msgstr ""
+"ユーザーまたはアプリが Rest API を使用してデバイスのロケーションを更新します。IoT Platform の REST API を使用して、静的デバイスのロケーション・メタデータを設定します。デバイスの登録時、または必要に応じて後の時点でこれを行うことができます。タイム・スタンプを含めるかどうかはオプションです。省略した場合、現在の日時がデバイスのロケーション・メタデータとして設定されます。"
+
+#: ../docs/devices/device_mgmt/index.rst:211
+#: ../docs/devices/device_mgmt/index.rst:255
+msgid "Location update triggered by device"
+msgstr ""
+"デバイスによってトリガーされるロケーションの更新"
+
+#: ../docs/devices/device_mgmt/index.rst:212
+msgid "Devices that can determine their location can choose to notify the IoT Platform device management server about location changes."
+msgstr ""
+"ロケーションを判別できるデバイスは、ロケーションの変更を IoT Platform デバイス管理サーバーに通知することを選択できます。"
+
+#: ../docs/devices/device_mgmt/index.rst:231
+#: ../docs/devices/device_mgmt/index.rst:298
+msgid "Location update triggered by user or app"
+msgstr ""
+"ユーザーまたはアプリによってトリガーされるロケーションの更新"
+
+#: ../docs/devices/device_mgmt/index.rst:233
+msgid "When a user or application updates the location of an active managed device the device retrieves an update message:"
+msgstr ""
+"ユーザーまたはアプリケーションがアクティブな管理対象デバイスのロケーションを更新すると、そのデバイスは次のような更新メッセージを受け取ります。"
+
+#: ../docs/devices/device_mgmt/index.rst:238
+#: ../docs/devices/device_mgmt/index.rst:350
+#: ../docs/devices/device_mgmt/index.rst:631
+#: ../docs/devices/device_mgmt/index.rst:699
+msgid "The server publishes this request to the following topic:"
+msgstr ""
+"サーバーはこのリクエストを次のトピックにパブリッシュします。"
+
+#: ../docs/devices/device_mgmt/index.rst:248
+msgid "The \"measuredDateTime\" is the date of location measurement. The \"updatedDateTime\" is the date of the update to the device information. For efficiency reasons, the IoT Platform may batch updates to location information so the updates may be slightly delayed. The \"latitude\" and \"longitude\" should be specified in decimal degrees using WGS84."
+msgstr ""
+"\"measuredDateTime\" はロケーション計測の日付です。\"updatedDateTime\" はデバイス情報の更新の日付です。IoT Platform は、効率化のためにロケーション情報の更新をバッチ処理することがあるため、更新はわずかに遅れる可能性があります。\"latitude\" (緯度) と \"longitude\" (経度) は、WGS84 を使用して 10 進表記の度数で指定する必要があります。"
+
+#: ../docs/devices/device_mgmt/index.rst:250
+msgid "Whenever location is updated, the values provided for latitude, longitude, elevation and uncertainty are considered as a single multi-value update. The latitude and longitude are mandatory and must both be provided with each update.  Elevation and uncertainty are optional and can be omitted."
+msgstr ""
+"ロケーションが更新される際は必ず、緯度、経度、高度、および不確実性の値が、複数値から成る 1 つの更新と見なされます。緯度と経度は必須であり、すべての更新においてこの両方は指定する必要があります。高度と不確実性はオプションであり、省略可能です。"
+
+#: ../docs/devices/device_mgmt/index.rst:252
+msgid "If an optional value is provided on an update and then omitted on a later update, the earlier value is deleted by the later update. Each update is considered as a complete multi-value set."
+msgstr ""
+"ある更新でオプションの値を提供し、その後の更新で省略した場合、最初の値はその後の更新によって削除されます。それぞれの更新は完全にそろった複数値セットと見なされます。"
+
+#: ../docs/devices/device_mgmt/index.rst:300
+#: ../docs/devices/device_mgmt/index.rst:360
+msgid "Payload Format:"
+msgstr ""
+"ペイロードの形式:"
+
+#: ../docs/devices/device_mgmt/index.rst:326
+msgid "Please note: there is no reqId as no response by device is required."
+msgstr ""
+"デバイスによる応答は必要ないため、reqId が存在しないことに注意してください。"
+
+#: ../docs/devices/device_mgmt/index.rst:335
+msgid "Update Device Attributes"
+msgstr ""
+"デバイス属性の更新"
+
+#: ../docs/devices/device_mgmt/index.rst:337
+msgid "The IoT Platform can send this request to a device to update values of one or more device attributes. Attributes that can be updated by the Rest API are location, metadata, device information and firmware."
+msgstr ""
+"IoT Platform は、このリクエストをデバイスに送信して、1 つ以上のデバイス属性の値を更新できます。Rest API によって更新できる属性は、ロケーション、メタデータ、デバイス情報、およびファームウェアです。"
+
+#: ../docs/devices/device_mgmt/index.rst:339
+msgid "The \"value\" is the new value of the device attribute. It is a complex field matching the device model. Only writeable fields should be updated as a result of this operation. Values can be updated in:"
+msgstr ""
+"\"value\" はデバイス属性の新しい値です。これはデバイス・モデルに一致する複合フィールドです。この操作の結果として書き込み可能なフィールドだけを更新する必要があります。以下の値を更新できます。"
+
+#: ../docs/devices/device_mgmt/index.rst:341
+msgid "location (see Update location section for details)"
+msgstr ""
+"location (詳しくは『ロケーションの更新』セクションを参照)"
+
+#: ../docs/devices/device_mgmt/index.rst:342
+msgid "metadata (Optional)"
+msgstr ""
+"metadata (オプション)"
+
+#: ../docs/devices/device_mgmt/index.rst:343
+msgid "deviceInfo (Optional)"
+msgstr ""
+"deviceInfo (オプション)"
+
+#: ../docs/devices/device_mgmt/index.rst:344
+msgid "mgmt.firmware (see Firmware update process for details)"
+msgstr ""
+"mgmt.firmware (詳しくはファームウェア更新プロセスを参照)"
+
+#: ../docs/devices/device_mgmt/index.rst:358
+#: ../docs/devices/device_mgmt/index.rst:582
+#: ../docs/devices/device_mgmt/index.rst:638
+#: ../docs/devices/device_mgmt/index.rst:707
+#: ../docs/devices/device_mgmt/index.rst:766
+msgid "Message format"
+msgstr ""
+"メッセージの形式"
+
+#: ../docs/devices/device_mgmt/index.rst:385
+msgid "Add Error Code"
+msgstr ""
+"エラー・コードの追加"
+
+#: ../docs/devices/device_mgmt/index.rst:387
+msgid "Devices can choose to notify the IoT Platform device management server about changes in their error status."
+msgstr ""
+"デバイスはエラー状況の変化を IoT Platform デバイス管理サーバーに通知することを選択できます。"
+
+#: ../docs/devices/device_mgmt/index.rst:401
+msgid "The \"errorCode\" is a current device error code that needs to be added to the IoT Platform."
+msgstr ""
+"\"errorCode\" は、IoT Platform に追加する必要のある現在のデバイス・エラー・コードです。"
+
+#: ../docs/devices/device_mgmt/index.rst:446
+msgid "Clear Error Codes"
+msgstr ""
+"エラー・コードの消去"
+
+#: ../docs/devices/device_mgmt/index.rst:448
+msgid "Devices can request that the Internet of Things Foundation clear all of their error codes."
+msgstr ""
+"デバイスは、すべてのエラー・コードを消去するよう Internet of Things Foundation にリクエストすることができます。"
+
+#: ../docs/devices/device_mgmt/index.rst:501
+msgid "Add Log"
+msgstr ""
+"ログの追加"
+
+#: ../docs/devices/device_mgmt/index.rst:503
+msgid "Devices can choose to notify IoTF device management support about changes a new log entry. Log entry includes a log messages, its timestamp and severity, as well as an optional base64-encoded binary diagnostic data."
+msgstr ""
+"デバイスは、新しいログ・エントリーに関する変更を IoTF デバイス管理サポートに通知することを選択できます。ログ・エントリーには、ログ・メッセージ、タイム・スタンプと重大度、およびオプションで base64 でエンコードしたバイナリー診断データが含まれます。"
+
+#: ../docs/devices/device_mgmt/index.rst:517
+msgid "\"message\" is a diagnostic message that needs to be added to IoTF. \"timestamp\" is a date and time of the log entry in ISO8601 format. \"data\" is an optional base64-encoded diagnostic data. \"severity\" is a severity of the message (0: informational, 1: warning, 2: error)."
+msgstr ""
+"\"message\" は、IoTF に追加する必要のある診断メッセージです。\"timestamp\" はログ・エントリーの日時 (ISO8601 形式) です。\"data\" は、base64 でエンコードしたオプションの診断データです。\"severity\" はメッセージの重大度です (0: 通知、1: 警告、2: エラー)。"
+
+#: ../docs/devices/device_mgmt/index.rst:568
+msgid "Clear Logs"
+msgstr ""
+"ログの消去"
+
+#: ../docs/devices/device_mgmt/index.rst:570
+msgid "Devices can request that the Internet of Things Foundation clear all of their log entries."
+msgstr ""
+"デバイスは、すべてのログ・エントリーを消去するよう Internet of Things Foundation にリクエストすることができます。"
+
+#: ../docs/devices/device_mgmt/index.rst:622
+msgid "Observe Attribute Changes"
+msgstr ""
+"属性変更の監視"
+
+#: ../docs/devices/device_mgmt/index.rst:624
+msgid "The IoT Platform can send this request to a device to observe changes of one or more device attributes. When the device receives this request, it must send a notification request (\"notify\" message) to the IoT Platform whenever the observed attributes value changes."
+msgstr ""
+"IoT Platform は、1 つ以上のデバイス属性の変更を監視するためにこのリクエストをデバイスに送信できます。このリクエストを受け取ったデバイスは、監視対象の属性値が変更されるたびに通知リクエスト (\" 通知 \" メッセージ) を IoT Platform に送信する必要があります。"
+
+#: ../docs/devices/device_mgmt/index.rst:626
+#: ../docs/devices/device_mgmt/index.rst:694
+#: ../docs/devices/device_mgmt/index.rst:753
+msgid "Devices must implement observe, notify & cancel operations in order to support :ref:`firmware-actions-update`."
+msgstr ""
+":ref:`firmware-actions-update` をサポートするには、監視、通知、およびキャンセル操作をデバイスに実装する必要があります。"
+
+#: ../docs/devices/device_mgmt/index.rst:640
+msgid "The \"fields\" field is an array of the device attribute names from the device model. For example, values could be \"location\", \"mgmt.firmware\" or \"mgmt.firmware.state\". If a complex field, such as \"mgmt.firmware\" is specified, it is expected that its underlying fields are updated at the same time, such that only a single notify message is generated."
+msgstr ""
+"\"fields\" フィールドは、デバイス・モデルのデバイス属性名から成る配列です。値は、\"location\"、\"mgmt.firmware\"、\"mgmt.firmware.state\" などを指定できます。\"mgmt.firmware\" のような複合フィールドを指定した場合は、その複数の基礎フィールドが同時に更新された場合に通知メッセージが 1 つだけ生成されます。"
+
+#: ../docs/devices/device_mgmt/index.rst:642
+msgid "The \"message\" field used in the response can be specified if \"rc\" is not 200. If any field value which was to be observed could not be retrieved, \"rc\" should be set to 404 (if not found) or 500 (any other reason). When values for fields to be observed cannot be found, \"fields\" should contain an array of elements with \"field\" set to the name of each field that could not be read, \"value\" fields should be omitted. For the response code to be set to 200, both \"field\" and \"value\" must be specified, \"value\" is the current value of an attribute identified by \"field\" content."
+msgstr ""
+"\"rc\" が 200 でない場合は、レスポンスで使用する \"message\" フィールドを指定可能です。監視対象のフィールド値を取得できない場合は、\"rc\" を 404 (見つからない場合) または 500 (他のすべての理由) に設定します。監視対象のフィールドの値が見つからない場合、\"fields\" に含まれる配列の要素 \"field\" には読み取れなかった各フィールドの名前を設定し、\"value\" フィールドは省略します。応答コードを 200 に設定するためには、\"field\" と \"value\" の両方を指定する必要があります。\"value\" は \"field\" の内容で識別される属性の現行値です。"
+
+#: ../docs/devices/device_mgmt/index.rst:688
+msgid "Cancel Attribute Observation"
+msgstr ""
+"属性の監視のキャンセル"
+
+#: ../docs/devices/device_mgmt/index.rst:690
+msgid "The IoT Platform can send this request to a device to cancel the current observation of one or more device attributes. The \"fields\" is an array of the device attribute names from the device model, for example, values could be \"location\", \"mgmt.firmware\" or \"mgmt.firmware.state\"."
+msgstr ""
+"IoT Platform は、このリクエストをデバイスに送信して、現在行われている 1 つ以上のデバイス属性の監視をキャンセルすることができます。\"fields\" は、デバイス・モデルのデバイス属性名から成る配列です。値は、\"location\"、\"mgmt.firmware\"、\"mgmt.firmware.state\" などを指定できます。"
+
+#: ../docs/devices/device_mgmt/index.rst:692
+msgid "The \"message\" field must be specified if \"rc\" is not 200."
+msgstr ""
+"\"rc\" が 200 でない場合は、\"message\" フィールドを指定する必要があります。"
+
+#: ../docs/devices/device_mgmt/index.rst:745
+msgid "Notify Attribute Changes"
+msgstr ""
+"属性変更の通知"
+
+#: ../docs/devices/device_mgmt/index.rst:747
+msgid "The IoT Platform can make an observation request referring to a specific attribute or set of values. When the value of the attribute or attributes changes, the device must send a notification containing the latest value."
+msgstr ""
+"IoT Platform は、1 つの属性値または属性値のセットを参照する監視リクエストを送信できます。1 つまたは複数の属性の値が変更された場合、デバイスは最新の値を含む通知を送信する必要があります。"
+
+#: ../docs/devices/device_mgmt/index.rst:749
+msgid "The \"field_name\" value is the name of the attribute that has changed, the \"field_value\" is the current value of the attribute. The attribute can be a complex field, if multiple values in a complex field are updated as a result of a single operation, only a single notification message should be sent."
+msgstr ""
+"\"field_name\" 値は変更された属性の名前、\"field_value\" は属性の現行値です。属性は複合フィールドにすることも可能です。1 つの操作の結果として複合フィールド内の複数の値が更新された場合に、通知メッセージが 1 つだけ送信されます。"
+
+#: ../docs/devices/device_mgmt/index.rst:751
+msgid "If notify request is processed successfully, \"rc\" should be set to 200. If the request is not correct, \"rc\" should be set to 400. If the field specified in the notify request is not being observed, \"rc\" should be set to 404."
+msgstr ""
+"通知リクエストが正常に処理された場合は、\"rc\" を 200 に設定する必要があります。リクエストが正しくない場合は、\"rc\" を 400 に設定します。通知リクエストで指定されたフィールドが監視されていない場合は、\"rc\" を 404 に設定します。"
+
+#: ../docs/devices/device_mgmt/index.rst:800
+msgid "404: The topic name is incorrect, the device is not in the database, or there is no observation for the field reported."
+msgstr ""
+"404: トピック名が正しくないか、デバイスがデータベースにないか、フィールドの監視が報告されていません。"
+
+#: ../docs/devices/device_mgmt/index.rst:802
+msgid "500: An internal error occurred, contact IBM Support."
+msgstr ""
+"500: 内部エラーが発生しました。IBM サポートに連絡してください。"
+

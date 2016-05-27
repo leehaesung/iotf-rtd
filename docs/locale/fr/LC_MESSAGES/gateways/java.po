@@ -1,0 +1,298 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/gateways/java.rst:2
+msgid "Java for Gateway Developers"
+msgstr ""
+"Java pour les développeurs de passerelles"
+
+#: ../docs/gateways/java.rst:4
+msgid "See `iot-java <https://github.com/ibm-messaging/iot-java>`_ in GitHub"
+msgstr ""
+"Voir `iot-java <https://github.com/ibm-messaging/iot-java>`_ dans GitHub"
+
+#: ../docs/gateways/java.rst:7
+msgid "Constructor"
+msgstr ""
+"Constructeur"
+
+#: ../docs/gateways/java.rst:9
+msgid "The constructor builds the Gateway client instance, and accepts a Properties object containing the following definitions:"
+msgstr ""
+"Le constructeur génère l'instance de client de passerelle et accepte un objet Properties contenant les définitions suivantes :"
+
+#: ../docs/gateways/java.rst:11
+msgid "org - Your organization ID."
+msgstr ""
+"org - ID de votre organisation."
+
+#: ../docs/gateways/java.rst:12
+msgid "type - The type of your Gateway device."
+msgstr ""
+"type - type de votre terminal de passerelle."
+
+#: ../docs/gateways/java.rst:13
+msgid "id - The ID of your Gateway."
+msgstr ""
+"id - ID de votre passerelle."
+
+#: ../docs/gateways/java.rst:14
+msgid "auth-method - Method of authentication (The only value currently supported is \"token\")."
+msgstr ""
+"auth-method - Méthode d'authentification (la seule valeur actuellement admise est \"token\")."
+
+#: ../docs/gateways/java.rst:15
+msgid "auth-token - API key token."
+msgstr ""
+"auth-token - Jeton de clé d'API."
+
+#: ../docs/gateways/java.rst:17
+msgid "The Properties object creates definitions which are used to interact with the Watson Internet of Things Platform module."
+msgstr ""
+"L'objet Properties crée des définitions qui permettent d'interagir avec le module Watson Internet of Things Platform."
+
+#: ../docs/gateways/java.rst:19
+msgid "The following code snippet shows how to construct the GatewayClient instance,"
+msgstr ""
+"Le fragment de code suivant explique comment construire l'instance de client de passerelle (GatewayClient) :"
+
+#: ../docs/gateways/java.rst:33
+msgid "Using a configuration file"
+msgstr ""
+"Utilisation d'un fichier de configuration"
+
+#: ../docs/gateways/java.rst:35
+msgid "Instead of including a Properties object directly, you can use a configuration file containing the name-value pairs for Properties. If you are using a configuration file containing a Properties object, use the following code format."
+msgstr ""
+"Au lieu d'inclure un objet Properties directement, vous pouvez utiliser un fichier de configuration contenant les paires nom-valeur de l'objet Properties. Si vous utilisez un fichier de configuration contenant un objet Properties, utilisez le format de code suivant :"
+
+#: ../docs/gateways/java.rst:43
+msgid "The Gateway device configuration file must be in the following format:"
+msgstr ""
+"Le fichier de configuration du terminal de passerelle doit être au format suivant :"
+
+#: ../docs/gateways/java.rst:58
+msgid "Connecting to the Watson Internet of Things Platform"
+msgstr ""
+"Connexion à Watson Internet of Things Platform"
+
+#: ../docs/gateways/java.rst:60
+msgid "Connect to the Watson Internet of Things Platform by calling the *connect* function."
+msgstr ""
+"Connectez-vous à Watson Internet of Things Platform en appelant la fonction *connect*."
+
+#: ../docs/gateways/java.rst:70
+msgid "After the successful connection to the IBM Watson IoT Platform, the Gateway client can perform the following operations,"
+msgstr ""
+"Une fois la connexion à IBM Watson IoT Platform établie, le client de passerelle peut effectuer les opérations suivantes :"
+
+#: ../docs/gateways/java.rst:72
+msgid "Publish events for itself and on behalf of devices connected behind the Gateway."
+msgstr ""
+"Publier des événements pour lui-même et pour le compte de terminaux connectés derrière la passerelle."
+
+#: ../docs/gateways/java.rst:73
+msgid "Subscribe to commands for itself and on behalf of devices behind the Gateway."
+msgstr ""
+"S'abonner à des commandes pour lui-même et pour le compte de terminaux situés derrière la passerelle."
+
+#: ../docs/gateways/java.rst:78
+msgid "Register devices using the Watson IoT Platform API"
+msgstr ""
+"Enregistrez des terminaux avec l'API Watson IoT Platform."
+
+#: ../docs/gateways/java.rst:79
+msgid "There are different ways to register the devices behind the Gateway to IBM Watson IoT Platform,"
+msgstr ""
+"Vous pouvez enregistrer les terminaux situés derrière la passerelle auprès d'IBM Watson IoT Platform de plusieurs façons :"
+
+#: ../docs/gateways/java.rst:81
+msgid "**Auto registration**: The device gets added automatically in IBM Watson IoT Platform when Gateway publishes any event/subscribes to any commands for the devices connected to it."
+msgstr ""
+"**Enregistrement automatique** : le terminal est ajouté automatiquement dans IBM Watson IoT Platform lorsque la passerelle publie un événement ou s'abonne à des commandes pour le compte des terminaux qui lui sont connectés."
+
+#: ../docs/gateways/java.rst:82
+msgid "**API**: The Watson IoT Platform API can be used to register the devices to the Watson IoT Platform."
+msgstr ""
+"**API** : l'API Watson IoT Platform peut être utilisée pour enregistrer les terminaux auprès de Watson IoT Platform."
+
+#: ../docs/gateways/java.rst:84
+msgid "The Watson IoT Platform API can be used to register the devices (that are connected to the Gateway) to the Watson IoT Platform. The APIClient simplifies the interactions with Watson IoT Platform API. Get the APIClient instance by invoking the api() method as follows,"
+msgstr ""
+"L'API Watson IoT Platform peut être utilisée pour enregistrer les terminaux (qui sont connectés à la passerelle) auprès de Watson IoT Platform. APIClient simplifie les interactions avec l'API Watson IoT Platform. Obtenez l'instance APIClient en appelant la méthode api() comme suit :"
+
+#: ../docs/gateways/java.rst:97
+msgid "Once you get the handle of APIClient, you can add the devices. Following code snippet shows how to add a device to a Gateway in Watson IoT Platform,"
+msgstr ""
+"Après avoir obtenu le descripteur d'APIClient, vous pouvez ajouter les terminaux. Le fragment de code suivant explique comment ajouter un terminal à une passerelle dans Watson IoT Platform :"
+
+#: ../docs/gateways/java.rst:111
+msgid "The gwDeviceId and gwDeviceType are the Gateway properties to which this device will be attached to when its registered."
+msgstr ""
+"gwDeviceId et gwDeviceType sont les propriétés de passerelle auxquelles ce terminal sera associé lors de son enregistrement."
+
+#: ../docs/gateways/java.rst:117
+msgid "Publishing events"
+msgstr ""
+"Publication d'événements"
+
+#: ../docs/gateways/java.rst:118
+msgid "Events are the mechanism by which Gateways/devices publish data to the Watson IoT Platform. The Gateway/device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"Les événements constituent le mécanisme selon lequel les passerelles/les terminaux publient des données dans Watson IoT Platform. La passerelle/le terminal contrôle le contenu de l'événement et affecte un nom à chaque événement qu'elle ou il envoie."
+
+#: ../docs/gateways/java.rst:120
+msgid "**The Gateway can publish events from itself and on behalf of any device connected via the Gateway**."
+msgstr ""
+"**La passerelle peut publier des événements pour elle-même ou pour le compte de tout terminal connecté via la passerelle**."
+
+#: ../docs/gateways/java.rst:122
+msgid "When an event is received by the IBM Watson IoT Platform the credentials of the connection on which the event was received are used to determine from which Gateway the event was sent. With this architecture it is impossible for a Gateway to impersonate another device."
+msgstr ""
+"Lorsqu'un événement est reçu par IBM Watson IoT Platform, les données d'identification de la connexion sur laquelle l'événement a été reçu sont utilisées pour déterminer quelle est la passerelle depuis laquelle l'événement a été envoyé. Avec cette architecture, il est impossible pour une passerelle de simuler les droits d'accès d'un autre terminal."
+
+#: ../docs/gateways/java.rst:124
+msgid "Events can be published at any of the three `quality of service levels <../messaging/mqtt.html#/>`__ defined by the MQTT protocol.  By default events will be published as qos level 0."
+msgstr ""
+"Les événements peuvent être publiés à l'aide de l'un des trois `niveaux de qualité de service <../messaging/mqtt.html#/>`__ définis par le protocole MQTT.  Par défaut, les événements sont publiés au niveau de qualité de service 0."
+
+#: ../docs/gateways/java.rst:127
+msgid "Publish Gateway event using default quality of service"
+msgstr ""
+"Publication d'un événement de passerelle avec la qualité de service par défaut"
+
+#: ../docs/gateways/java.rst:140
+msgid "Publish Gateway event using user-defined quality of service"
+msgstr ""
+"Publication d'un événement de passerelle avec la qualité de service définie par l'utilisateur"
+
+#: ../docs/gateways/java.rst:142
+msgid "Events can be published at higher MQTT quality of service levels, but these events may take slower than QoS level 0, because of the extra confirmation of receipt."
+msgstr ""
+"Les événements peuvent être publiés à des niveaux de qualité de service MQTT plus élevés mais la publication de ces événements risque de prendre plus temps qu'avec la qualité de service 0 en raison du délai nécessaire pour obtenir la confirmation de la réception."
+
+#: ../docs/gateways/java.rst:156
+msgid "Publishing events from devices"
+msgstr ""
+"Publication d'événements à partir de terminaux"
+
+#: ../docs/gateways/java.rst:158
+msgid "The Gateway can publish events on behalf of any device connected via the Gateway by passing the appropriate typeId and deviceId based on the origin of the event:"
+msgstr ""
+"La passerelle peut publier des événements pour le compte de tout terminal connecté via la passerelle en transmettant les éléments typeId et deviceId appropriés en fonction de l'origine de l'événement :"
+
+#: ../docs/gateways/java.rst:173
+msgid "One can use the overloaded publishDeviceEvent() method to publish the device event in the desired quality of service. Refer to `MQTT Connectivity for Gateways <https://docs.internetofthings.ibmcloud.com/gateways/mqtt.html>`__ documentation to know more about the topic structure used."
+msgstr ""
+"Vous pouvez utiliser la méthode publishDeviceEvent() surchargée afin de publier l'événement de terminal avec la qualité de service de votre choix. Consultez la documentation `Connectivité MQTT pour les passerelles <https://docs.internetofthings.ibmcloud.com/gateways/mqtt.html>`__ pour en savoir plus sur la structure des sujets utilisée."
+
+#: ../docs/gateways/java.rst:179
+msgid "Handling commands"
+msgstr ""
+"Traitement des commandes"
+
+#: ../docs/gateways/java.rst:180
+msgid "The Gateway can subscribe to commands directed at the gateway itself and to any device connected via the gateway. When the Gateway client connects, it automatically subscribes to any commands for this Gateway. But to subscribe to any commands for the devices connected via the Gateway, use one of the overloaded subscribeToDeviceCommands() method, for example,"
+msgstr ""
+"La passerelle peut s'abonner à des commandes qui lui sont envoyées directement et qui sont envoyées à tout terminal connecté via la passerelle. Lorsque le client de passerelle se connecte, il s'abonne automatiquement aux commandes pour cette passerelle. Toutefois, afin de vous abonner à des commandes pour les terminaux connectés via la passerelle, utilisez la méthode subscribeToDeviceCommands() surchargée, par exemple :"
+
+#: ../docs/gateways/java.rst:189
+msgid "To process specific commands you need to register a command callback method. The messages are returned as an instance of the Command class which has the following properties:"
+msgstr ""
+"Pour traiter des commandes, vous devez enregistrer une méthode de rappel de commande. Les messages sont renvoyés sous la forme d'une instance de la classe Command dotée des propriétés suivantes :"
+
+#: ../docs/gateways/java.rst:191
+msgid "deviceType - The device type for which the command is received."
+msgstr ""
+"deviceType - Type de terminal pour lequel la commande est reçue."
+
+#: ../docs/gateways/java.rst:192
+msgid "deviceId - The device id for which the command is received, Could be the Gateway or any device connected via the Gateway."
+msgstr ""
+"deviceId - ID terminal pour lequel la commande est reçue. Il peut s'agir de la passerelle ou de tout terminal connecté via la passerelle."
+
+#: ../docs/gateways/java.rst:193
+msgid "payload - The command payload."
+msgstr ""
+"payload - Contenu de la commande."
+
+#: ../docs/gateways/java.rst:194
+msgid "format - The format of the command payload, currently only JSON format is supported in the Java Client Library."
+msgstr ""
+"format - Format du contenu de la commande ; actuellement, seul le format JSON est pris en charge dans la bibliothèque client Java."
+
+#: ../docs/gateways/java.rst:195
+msgid "command - The name of the command."
+msgstr ""
+"command - Nom de la commande."
+
+#: ../docs/gateways/java.rst:196
+msgid "timestamp - The org.joda.time.DateTime when the command is sent."
+msgstr ""
+"timestamp - org.joda.time.DateTime lorsque la commande est envoyée."
+
+#: ../docs/gateways/java.rst:198
+msgid "A sample implementation of the Command callback is shown below,"
+msgstr ""
+"Vous trouverez ci-dessous un exemple d'implémentation de rappel de commande :"
+
+#: ../docs/gateways/java.rst:234
+msgid "Once the Command callback is added to the GatewayClient, the processCommand() method is invoked whenever any command is published on the subscribed criteria, The following snippet shows how to add the command call back into GatewayClient instance,"
+msgstr ""
+"Une fois le rappel de commande ajouté à l'instance de client de passerelle (GatewayClient), la méthode processCommand() est appelée à chaque fois qu'une commande est publiée sur les critères d'abonnement. Le fragment suivant explique comment ajouter le rappel de commande dans l'instance de client de passerelle (GatewayClient) :"
+
+#: ../docs/gateways/java.rst:245
+msgid "Overloaded methods are available to control the command subscription."
+msgstr ""
+"Des méthodes surchargées sont disponibles pour contrôler l'abonnement aux commandes."
+
+#: ../docs/gateways/java.rst:250
+msgid "List Devices Connected through the Gateway"
+msgstr ""
+"Liste des terminaux connectés via la passerelle"
+
+#: ../docs/gateways/java.rst:252
+msgid "Invoke the method getDevicesConnectedThroughGateway() to retrieve all devices that are connected through the specified gateway(typeId, deviceId) to Watson IoT Platform:"
+msgstr ""
+"Appelez la méthode getDevicesConnectedThroughGateway() pour extraire tous les terminaux qui sont connectés via la passerelle spécifiée (typeId, deviceId) dans Watson IoT Platform :"
+
+#: ../docs/gateways/java.rst:261
+msgid "Examples"
+msgstr ""
+"Exemples"
+
+#: ../docs/gateways/java.rst:262
+msgid "`SampleRasPiGateway <https://github.com/ibm-messaging/iot-gateway-samples/tree/master/java/gateway-samples>`__ - This Java project contains 3 samples, which will help one to connect their own Gateway and devices behind the Gateway to IBM Watson Internet of Things Platform. All the samples use the Java Client Library for IBM Watson IoT Platform, that simplifies the Gateway interactions with the Platform."
+msgstr ""
+"`SampleRasPiGateway <https://github.com/ibm-messaging/iot-gateway-samples/tree/master/java/gateway-samples>`__ - Ce projet Java contient trois exemples qui expliquent comment connecter sa propre passerelle et ses propres terminaux situés derrière la passerelle à IBM Watson Internet of Things Platform. Ils utilisent tous la bibliothèque client Java pour IBM Watson IoT Platform, qui simplifie les interactions de la passerelle avec la plateforme."
+
+#: ../docs/gateways/java.rst:265
+msgid "Recipes"
+msgstr ""
+"Recettes"
+
+#: ../docs/gateways/java.rst:267
+msgid "Refer to `the recipe <https://developer.ibm.com/recipes/tutorials/connect-raspberry-pi-as-gateway-to-watson-iot-platform/>`__ that explains how to connect your Gateway and devices behind the Gateway to IBM Watson Internet of Things Platform with the sample present in this github project."
+msgstr ""
+"Voir la `recette <https://developer.ibm.com/recipes/tutorials/connect-raspberry-pi-as-gateway-to-watson-iot-platform/>`__ qui explique comment connecter votre passerelle et vos terminaux situés derrière la passerelle à IBM Watson Internet of Things Platform avec l'exemple présenté dans ce projet github."
+
+#: ../docs/gateways/java.rst:269
+msgid "Refer to `the recipe <https://developer.ibm.com/recipes/tutorials/raspberry-pi-as-managed-gateway-in-watson-iot-platform-part-1/>`__ that explains how to connect your Gateway as managed device in IBM Watson Internet of Things Platform and perform one or more device management operations."
+msgstr ""
+"Voir la `recette <https://developer.ibm.com/recipes/tutorials/raspberry-pi-as-managed-gateway-in-watson-iot-platform-part-1/>`__ qui explique comment connecter votre passerelle en tant que terminal géré dans IBM Watson Internet of Things Platform et effectuer une ou plusieurs opérations de gestion des terminaux."
+

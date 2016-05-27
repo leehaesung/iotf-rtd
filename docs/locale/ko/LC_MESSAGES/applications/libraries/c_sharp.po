@@ -1,0 +1,188 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/applications/libraries/c_sharp.rst:2
+msgid "C# for Application Developers"
+msgstr ""
+"애플리케이션 개발자용 C#"
+
+#: ../docs/applications/libraries/c_sharp.rst:4
+msgid "See `iot-csharp <https://github.com/IoT-Analytics/iot-csharp>`_ in GitHub"
+msgstr ""
+"GitHub에서 `iot-csharp <https://github.com/IoT-Analytics/iot-csharp>`_ 참조"
+
+#: ../docs/applications/libraries/c_sharp.rst:11
+msgid "Constructor"
+msgstr ""
+"생성자"
+
+#: ../docs/applications/libraries/c_sharp.rst:13
+msgid "The constructor builds the client instance, and accepts arguments containing the following definitions:"
+msgstr ""
+"생성자는 클라이언트 인스턴스를 빌드하고 다음 정의가 포함된 인수를 승인합니다."
+
+#: ../docs/applications/libraries/c_sharp.rst:15
+msgid "``orgId`` - Your organization ID."
+msgstr ""
+"``orgId`` - 조직 ID."
+
+#: ../docs/applications/libraries/c_sharp.rst:16
+msgid "``appId`` - The unique ID of your application within your organization."
+msgstr ""
+"``appId`` - 조직 내 애플리케이션의 고유 ID."
+
+#: ../docs/applications/libraries/c_sharp.rst:17
+msgid "``auth-key`` - API key (required if auth-method is ``apikey``)."
+msgstr ""
+"``auth-key`` - API 키(auth-method가 ``apikey``인 경우에는 필수)."
+
+#: ../docs/applications/libraries/c_sharp.rst:18
+msgid "``auth-token`` - API key token (required if auth-method is ``apikey``)."
+msgstr ""
+"``auth-token`` - API 키 토큰(auth-method가 ``apikey``인 경우에는 필수)."
+
+#: ../docs/applications/libraries/c_sharp.rst:20
+msgid "If only ``appId`` is provided, the client will connect to the IoT Platform Quickstart service and default to an unregistered device. The argument lists create definitions which are used to interact with the IoT Platform module."
+msgstr ""
+"``appId``만 제공할 경우 클라이언트가 IoT Platform Quickstart에 연결되며 등록되지 않은 디바이스로 기본값이 설정됩니다. 인수 목록은 IoT Platform 모듈과 상호작용하는 데 사용되는 정의를 작성합니다. "
+
+#: ../docs/applications/libraries/c_sharp.rst:32
+msgid "Subscribing to device events"
+msgstr ""
+"디바이스 이벤트 구독"
+
+#: ../docs/applications/libraries/c_sharp.rst:34
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"이벤트는 디바이스가 데이터를 IoT Platform에 공개할 때 사용하는 메커니즘입니다. 디바이스는 이벤트의 컨텐츠를 제어하고 전송하는 각 이벤트에 대해 이름을 지정합니다. "
+
+#: ../docs/applications/libraries/c_sharp.rst:36
+msgid "When an event is received by the IoT Foundation the credentials of the connection on which the event was received are used to determine from which device the event was sent. With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"IoT Foundation이 이벤트를 수신하면 이벤트가 수신된 연결의 신임 정보를 사용하여 이벤트를 전송한 디바이스를 판별합니다. 이 아키텍처를 사용하면 한 디바이스가 다른 디바이스를 위장할 수 없습니다. "
+
+#: ../docs/applications/libraries/c_sharp.rst:38
+msgid "By default, applications will subscribe to all events from all connected devices. Use the type, id, event and msgFormat parameters to control the scope of the subscription. A single client can support multiple subscriptions. The code samples below give examples of how to subscribe to devices dependent on device type, id, event and msgFormat parameters."
+msgstr ""
+"기본적으로 애플리케이션은 연결된 모든 디바이스의 모든 이벤트를 구독합니다. 유형, id, 이벤트 및 msgFormat 매개변수를 사용하여 구독의 범위를 제어하십시오. 단일 클라이언트가 여러 구독을 지원할 수 있습니다. 아래의 코드 샘플에서는 디바이스 유형, id, 이벤트 및 msgFormat 매개변수에 종속된 디바이스를 구독하는 방법에 대한 예제를 제공합니다. "
+
+#: ../docs/applications/libraries/c_sharp.rst:41
+msgid "To subscribe to all events from all devices"
+msgstr ""
+"모든 디바이스의 모든 이벤트 구독"
+
+#: ../docs/applications/libraries/c_sharp.rst:50
+msgid "To subscribe to all events from all devices of a specific type"
+msgstr ""
+"특정 유형의 모든 디바이스의 모든 이벤트 구독"
+
+#: ../docs/applications/libraries/c_sharp.rst:59
+msgid "To subscribe to a specific event from all devices"
+msgstr ""
+"모든 디바이스의 특정 이벤트 구독"
+
+#: ../docs/applications/libraries/c_sharp.rst:68
+msgid "To subscribe to a specific event from two or more different devices"
+msgstr ""
+"둘 이상의 다른 디바이스의 특정 이벤트 구독"
+
+#: ../docs/applications/libraries/c_sharp.rst:77
+msgid "To subscribe to all events published by a device in json format"
+msgstr ""
+"JSON 형식으로 디바이스가 공개하는 모든 이벤트 구독"
+
+#: ../docs/applications/libraries/c_sharp.rst:86
+msgid "Handling events from devices"
+msgstr ""
+"디바이스의 이벤트 처리"
+
+#: ../docs/applications/libraries/c_sharp.rst:88
+msgid "To process the events received by your subscriptions you need to register an event callback method."
+msgstr ""
+"구독으로 수신한 이벤트를 처리하려면 이벤트 콜백 메소드를 등록해야 합니다."
+
+#: ../docs/applications/libraries/c_sharp.rst:90
+msgid "``event.device`` - string (uniquely identifies the device across all types of devices in the organization)"
+msgstr ""
+"``event.device`` - 문자열(조직에 있는 모든 유형의 디바이스에서 디바이스를 고유하게 식별함)"
+
+#: ../docs/applications/libraries/c_sharp.rst:91
+msgid "``eventName`` - string"
+msgstr ""
+"``eventName`` - 문자열"
+
+#: ../docs/applications/libraries/c_sharp.rst:92
+msgid "``eventFormat`` - string"
+msgstr ""
+"``eventFormat`` - 문자열"
+
+#: ../docs/applications/libraries/c_sharp.rst:93
+msgid "``eventData`` - string"
+msgstr ""
+"``eventData`` - 문자열"
+
+#: ../docs/applications/libraries/c_sharp.rst:110
+msgid "Subscribing to device status"
+msgstr ""
+"디바이스 상태 구독"
+
+#: ../docs/applications/libraries/c_sharp.rst:112
+msgid "By default, this will subscribe to status updates for all connected devices. Use the type and id parameters to control the scope of the subscription. A single client can support multiple subscriptions."
+msgstr ""
+"기본적으로 이는 연결된 모든 디바이스에 대한 상태 업데이트를 구독합니다. 유형 및 id 매개변수를 사용하여 구독의 범위를 제어하십시오. 단일 클라이언트가 여러 구독을 지원할 수 있습니다. "
+
+#: ../docs/applications/libraries/c_sharp.rst:115
+msgid "Subscribe to status updates for all devices"
+msgstr ""
+"모든 디바이스에 대한 상태 업데이트 구독"
+
+#: ../docs/applications/libraries/c_sharp.rst:125
+msgid "Subscribe to status updates for two different devices"
+msgstr ""
+"두 개의 다른 디바이스에 대한 상태 업데이트 구독"
+
+#: ../docs/applications/libraries/c_sharp.rst:135
+msgid "Handling status updates from devices"
+msgstr ""
+"디바이스의 상태 업데이트 처리"
+
+#: ../docs/applications/libraries/c_sharp.rst:136
+msgid "To process the status updates received by your subscriptions you need to register an event callback method."
+msgstr ""
+"구독으로 수신한 상태 업데이트를 처리하려면 이벤트 콜백 메소드를 등록해야 합니다. "
+
+#: ../docs/applications/libraries/c_sharp.rst:155
+msgid "Publishing events from devices"
+msgstr ""
+"디바이스의 이벤트 공개"
+
+#: ../docs/applications/libraries/c_sharp.rst:157
+msgid "Applications can publish events as if they originated from a Device."
+msgstr ""
+"애플리케이션은 디바이스에서 시작된 것처럼 이벤트를 공개할 수 있습니다."
+
+#: ../docs/applications/libraries/c_sharp.rst:169
+msgid "Publishing commands to devices"
+msgstr ""
+"디바이스에 명령 공개"
+
+#: ../docs/applications/libraries/c_sharp.rst:171
+msgid "Applications can publish commands to connected devices."
+msgstr ""
+"애플리케이션은 연결된 디바이스에 명령을 공개할 수 있습니다."
+

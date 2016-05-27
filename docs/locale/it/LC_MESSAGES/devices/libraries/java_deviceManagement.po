@@ -1,0 +1,665 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:3
+msgid "Java Client Library - Managed Devices"
+msgstr ""
+"Libreria client Java - Dispositivi gestiti"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:6
+msgid "Introduction"
+msgstr ""
+"Introduzione"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:8
+msgid "This client library describes how to use devices with the Java ibmiotf client library. For help with getting started with this module, see `Java Client Library - Introduction <../java/javaintro.html>`__."
+msgstr ""
+"Questa libreria client descrive come utilizzare i dispositivi con la libreria client ibmiotf Java. Per una guida introduttiva per questo modulo, consultare `Libreria client Java - Introduzione <../java/javaintro.html>`__."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:10
+msgid "This section contains information on how devices can  to the IoT Platform Device Management service using Java and perform device management operations like firmware update, location update, and diagnostics update."
+msgstr ""
+"Questa sezione contiene le informazioni sul modo in cui i dispositivi possono connettersi al servizio di gestione dispositivo di IoT Platform utilizzando Java ed eseguire le operazioni di gestione dispositivo come l'aggiornamento del firmware, l'aggiornamento dell'ubicazione e l'aggiornamento della diagnostica."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:12
+msgid "The Device section contains information on how devices can publish events and handle commands using the Java ibmiotf Client Library."
+msgstr ""
+"La sezione Dispositivo contiene informazioni su come i dispositivi possono pubblicare gli eventi e gestire i comandi utilizzando la libreria client ibmiotf Java."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:14
+msgid "The Applications section contains information on how applications can use the Java ibmiotf Client Library to interact with devices."
+msgstr ""
+"La sezione Applicazioni contiene informazioni su come le applicazioni possono utilizzare la libreria client ibmiotf Java per interagire con i dispositivi."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:18
+msgid "Device Management"
+msgstr ""
+"Gestione dispositivo"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:19
+msgid "The `device management <../reference/device_mgmt.html>`__ feature enhances the IoT Platform service with new capabilities for managing devices. Device management makes a distinction between managed and unmanaged devices:"
+msgstr ""
+"La funzione di gestione dispositivo <../reference/device_mgmt.html>`__ migliora il servizio IoT Platform con nuove funzionalità per la gestione dei dispositivi. La gestione dispositivo effettua una distinzione tra i dispositivi gestiti e non gestiti:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:21
+msgid "**Managed Devices** are defined as devices which have a management agent installed. The management agent sends and receives device metadata and responds to device management commands from the IoT Platform."
+msgstr ""
+"**Dispositivi gestiti** sono definiti come dispositivi che hanno un agent di gestione installato. L'agent di gestione invia e riceve i metadati del dispositivo e risponde ai comandi di gestione dispositivo da IoT Platform."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:22
+msgid "**Unmanaged Devices** are any devices which do not have a device management agent. All devices begin their lifecycle as unmanaged devices, and can transition to managed devices by sending a message from a device management agent to the IoT Platform."
+msgstr ""
+"**Dispositivi non gestiti** * sono tutti i dispositivi che non dispongono di un agent di gestione dispositivo. Tutti i dispositivi iniziano il loro ciclo di vita come dispositivi non gestiti e possono trasformarsi in dispositivi gestiti inviando un messaggio da un agent di gestione dispositivo a IoT Platform."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:27
+msgid "Connecting to the IoT Platform Device Management Service"
+msgstr ""
+"Connessione al servizio gestione dispositivo IoT Platform"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:30
+msgid "Create DeviceData"
+msgstr ""
+"Crea DeviceData"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:31
+msgid "The `device model <../reference/device_model.html>`__ describes the metadata and management characteristics of a device. The device database in the IoT Platform is the master source of device information. Applications and managed devices are able to send updates to the database such as a location or the progress of a firmware update. Once these updates are received by the IoT Platform, the device database is updated, making the information available to applications."
+msgstr ""
+"Il `modello di dispositivo <../reference/device_model.html>`__ descrive le caratteristiche di gestione e metadati di un dispositivo. Il database del dispositivo in IoT Platform è l'origine principale delle informazioni sul dispositivo. Le applicazioni e i dispositivi gestiti sono in grado di inviare aggiornamenti al database come un'ubicazione o l'avanzamento di un aggiornamento firmware. Una volta che IoT Platform ha ricevuto questi aggiornamenti, il database del dispositivo viene aggiornato, rendendo disponibili le informazioni alle applicazioni."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:33
+msgid "The device model in the ibmiotf client library is represented as DeviceData and to create a DeviceData one needs to create the following objects,"
+msgstr ""
+"Il modello dispositivo nella libreria client ibmiotf è rappresentato come DeviceData e per creare un DeviceData è necessario creare i seguenti oggetti,"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:35
+msgid "DeviceInfo (mandatory)"
+msgstr ""
+"DeviceInfo (obbligatorio)"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:36
+msgid "DeviceLocation (required if the device supports location update)"
+msgstr ""
+"DeviceLocation (richiesto se il dispositivo supporta l'aggiornamento di ubicazione)"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:37
+msgid "DiagnosticErrorCode (required if the device wants to update the ErrorCode)"
+msgstr ""
+"DiagnosticErrorCode (richiesto se il dispositivo desidera aggiornare ErrorCode)"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:38
+msgid "DiagnosticLog (required if the device wants to update Log information)"
+msgstr ""
+"DiagnosticLog (richiesto se il dispositivo desidera aggiornare le informazioni log)"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:39
+msgid "DeviceFirmware (required if the device supports Firmware Actions)"
+msgstr ""
+"DeviceFirmware (richiesto se il dispositivo supporta le azioni firmware)"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:40
+msgid "DeviceMetadata (optional)"
+msgstr ""
+"DeviceMetadata (facoltativo)"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:42
+msgid "The following code snippet shows how to create the mandatory object DeviceInfo along with an optional object DeviceMetadata with sample data:"
+msgstr ""
+"Il seguente frammento di codice mostra come creare l'oggetto obbligatorio DeviceInfo insieme a un oggetto facoltativo DeviceMetadata con dati di esempio:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:64
+msgid "The following code snippet shows how to create the DeviceData object with the above created DeviceInfo and DeviceMetadata objects:"
+msgstr ""
+"Il seguente frammento di codice mostra come creare l'oggetto DeviceData con gli oggetti DeviceInfo e DeviceMetadata creati in precedenza:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:73
+msgid "Construct ManagedDevice"
+msgstr ""
+"Costruisci ManagedDevice"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:74
+msgid "ManagedDevice - A device class that connects the device as managed device to IoT Platform and enables the device to perform one or more Device Management operations. Also the ManagedDevice instance can be used to do normal device operations like publishing device events and listening for commands from application."
+msgstr ""
+"ManagedDevice - Una classe dispositivo che connette il dispositivo come dispositivo gestito a IoT Platform e abilita il dispositivo ad eseguire una o più operazioni di gestione dispositivo. Inoltre, l'istanza ManagedDevice può essere utilizzata per eseguire normali operazioni come la pubblicazione degli eventi dispositivo e l'ascolto di comandi dall'applicazione."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:76
+msgid "ManagedDevice exposes 2 different constructors to support different user patterns,"
+msgstr ""
+"ManagedDevice espone 2 diversi costruttori per supportare diversi schemi utente,"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:78
+msgid "**Constructor One**"
+msgstr ""
+"**Costruttore Uno**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:80
+msgid "Constructs a ManagedDevice instance by accepting the DeviceData and the following properties,"
+msgstr ""
+"Costruisce un'istanza ManagedDevice accettando DeviceData e le seguenti proprietà,"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:82
+msgid "Organization-ID - Your organization ID."
+msgstr ""
+"Organization-ID - L'ID dell'organizzazione."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:83
+msgid "Device-Type - The type of your device."
+msgstr ""
+"Device-Type - Il tipo di dispositivo."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:84
+msgid "Device-ID - The ID of your device."
+msgstr ""
+"Device-ID - L'ID del dispositivo."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:85
+msgid "Authentication-Method - Method of authentication (The only value currently supported is \"token\")."
+msgstr ""
+"Authentication-Method - Il metodo di autenticazione (il solo valore attualmente supportato è \"token\")."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:86
+msgid "Authentication-Token - API key token"
+msgstr ""
+"Authentication-Token - Il token della chiave API"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:88
+msgid "All these properties are required to interact with the IoT Platform."
+msgstr ""
+"Sono necessarie tutte queste proprietà per interagire con IoT Platform."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:90
+msgid "The following code shows how to create a ManagedDevice instance:"
+msgstr ""
+"Il seguente codice mostra come creare un'istanza ManagedDevice:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:103
+msgid "The existing users of DeviceClient might observe that the names of these properties have changed slightly. These names have been changed to mirror the names in the IoT Platform Dashboard, but the existing users who want to migrate from the DeviceClient to the ManagedDevice can still use the old format and construct the ManagedDevice instance as follows:"
+msgstr ""
+"Gli utenti esistenti di DeviceClient potrebbero notare che i nomi di queste proprietà sono stati leggermente modificati. Questi nomi sono stati modificati per riflettere i nomi nel dashboard Iot Platform, ma gli utenti esistenti che desiderano migrare da DeviceClient a ManagedDevice possono ancora utilizzare il vecchio formato e creare l'istanza ManagedDevice come riportato di seguito:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:115
+msgid "**Constructor Two**"
+msgstr ""
+"**Costruttore Due**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:117
+msgid "Construct a ManagedDevice instance by accepting the DeviceData and the MqttClient instance. This constructor requires the DeviceData to be created with additional device attributes like Device Type and Device Id as follows:"
+msgstr ""
+"Costruisce un'istanza ManagedDevice accettando DeviceData e l'istanza MqttClient. Questo costruttore richiede che DeviceData sia creato con ulteriori attributi dispositivo, come il tipo di dispositivo e l'ID dispositivo come illustrato di seguito:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:135
+msgid "Note this constructor helps the custom device users to create a ManagedDevice instance with the already created and connected MqttClient instance to take advantage of device management operations. But we recommend the users to use the library for all the device functionalities."
+msgstr ""
+"Tenere presente che questo costruttore aiuta gli utenti del dispositivo personalizzato a creare un'istanza ManagedDevice con l'istanza MqttClient già creata e connesso per sfruttare le operazioni di gestione dispositivo. Tuttavia, agli utenti è consigliato di utilizzare la libreria per tutte le funzionalità del dispositivo."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:138
+msgid "Manage"
+msgstr ""
+"Gestisci"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:139
+msgid "The device can invoke manage() method to participate in device management activities. The manage request will initiate a connect request internally if the device is not connected to the IoT Platform already:"
+msgstr ""
+"Il dispositivo può richiamare il metodo manage() per partecipare alle attività di gestione dispositivo. La richiesta avvierà una richiesta di connessione internamente se il dispositivo non è già connesso a IoT Platform ."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:145
+msgid "The device can use overloaded manage (lifetime) method to register the device for a given timeframe. The timeframe specifies the length of time within which the device must send another **Manage device** request in order to avoid being reverted to an unmanaged device and marked as dormant."
+msgstr ""
+"Il dispositivo può utilizzare il metodo manage (lifetime) sottoposto a overload per registrare il dispositivo per un periodo di tempo specificato. Il periodo specifica l'intervallo di tempo entro cui il dispositivo deve inviare un'altra richiesta **Gestisci dispositivo** per evitare di essere invertito in un dispositivo non gestito e contrassegnato come inattivo."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:151
+msgid "Refer to the `documentation <../device_mgmt/operations/manage.html>`__ for more information about the manage operation."
+msgstr ""
+"Fare riferimento alla documentazione <../device_mgmt/operations/manage.html>`__ per ulteriori informazioni sull'operazione di gestione."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:154
+msgid "Unmanage"
+msgstr ""
+"Annulla gestione"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:156
+msgid "A device can invoke unmanage() method when it no longer needs to be managed. The IoT Platform will no longer send new device management requests to this device and all device management requests from this device will be rejected other than a **Manage device** request."
+msgstr ""
+"Un dispositivo può richiamare il metodo unmanage() quando non è più necessario che sia un dispositivo gestito. IoT Platform non invierà più nuove richieste di gestione dispositivo a questo dispositivo e tutte le richieste di gestione dispositivo da questo dispositivo diverse da **Gestisci dispositivo** verranno respinte."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:162
+msgid "Refer to the `documentation <../device_mgmt/operations/manage.html>`__ for more information about the Unmanage operation."
+msgstr ""
+"Fare riferimento alla documentazione <../device_mgmt/operations/manage.html>`__ per ulteriori informazioni sull'operazione di annullamento della gestione."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:165
+msgid "Location Update"
+msgstr ""
+"Aggiornamento ubicazione"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:167
+msgid "Devices that can determine their location can choose to notify the IoT Platform about location changes. In order to update the location, the device needs to create DeviceData instance with the DeviceLocation object first."
+msgstr ""
+"I dispositivi che possono determinare la loro ubicazione possono scegliere di notificare a IoT Platform le modifiche dell'ubicazione. Per aggiornare l'ubicazione, il dispositivo deve prima creare un'istanza DeviceData con l'oggetto DeviceLocation."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:182
+msgid "Once the device is connected to IoT Platform, the location can be updated by invoking the following method:"
+msgstr ""
+"Una volta che il dispositivo è connesso a IoT Platform, l'ubicazione può essere aggiornata richiamando il seguente metodo:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:193
+msgid "Later, any new location can be updated by changing the properties of the DeviceLocation object:"
+msgstr ""
+"Successivamente, le nuove ubicazioni possono essere aggiornate modificando le proprietà dell'oggetto DeviceLocation:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:204
+msgid "The update() method informs the IoT Platform about the new location."
+msgstr ""
+"Il metodo update() informa IoT Platform circa la nuova ubicazione."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:206
+msgid "Refer to the `documentation <../device_mgmt/operations/update.html>`__ for more information about the Location update."
+msgstr ""
+"Fare riferimento alla documentazione <../device_mgmt/operations/update.html>`__ per ulteriori informazioni sull'aggiornamento dell'ubicazione."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:209
+msgid "Append/Clear ErrorCodes"
+msgstr ""
+"Aggiungi/Elimina ErrorCodes"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:211
+msgid "Devices can choose to notify the IoT Platform about changes in their error status. In order to send the ErrorCodes the device needs to construct a DiagnosticErrorCode object as follows:"
+msgstr ""
+"I dispositivi possono scegliere di notificare a IoT Platform le modifiche al loro stato di errore. Per inviare ErrorCodes il dispositivo deve costruire un oggetto DiagnosticErrorCode come illustrato di seguito:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:223
+msgid "Once the device is connected to IoT Platform, the ErrorCode can be sent by calling the send() method as follows:"
+msgstr ""
+"Una volta che il dispositivo è connesso a IoT Platform, ErrorCode può essere inviato richiamando il metodo send() come di seguito riportato."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:229
+msgid "Later, any new ErrorCodes can be easily added to the IoT Platform by calling the append method as follows:"
+msgstr ""
+"Successivamente, qualsiasi nuovo ErrorCodes può essere facilmente aggiunto a IoT Platform richiamando il metodo append come di seguito riportato:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:240
+msgid "Also, the ErrorCodes can be cleared from IoT Platform by calling the clear() method as follows:"
+msgstr ""
+"Inoltre, ErrorCodes può essere eliminato da IoT Platform richiamando il metodo clear() come di seguito riportato:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:252
+msgid "Append/Clear Log messages"
+msgstr ""
+"Aggiungi/Elimina messaggi log"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:253
+msgid "Devices can choose to notify the IoT Platform about changes by adding a new log entry. Log entry includes a log messages, its timestamp and severity, as well as an optional base64-encoded binary diagnostic data. In order to send log messages, the device needs to construct a DiagnosticLog object as follows:"
+msgstr ""
+"I dispositivi possono scegliere di notificare a IoT Platform le modifiche aggiungendo una nuova voce di log. La voce di log include messaggi di log, la sua registrazione data/ora e gravità, nonché dati di diagnostica binari codificati base64 facoltativi. Per inviare i messaggi di log, il dispositivo deve costruire un oggetto DiagnosticLog come illustrato di seguito:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:268
+msgid "Once the device is connected to IoT Platform, the log message can be sent by calling the send() method as follows:"
+msgstr ""
+"Una volta che il dispositivo è connesso a IoT Platform, il messaggio di log può essere inviato richiamando il metodo send() come di seguito riportato:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:274
+msgid "Later, any new log messages can be easily added to the IoT Platform by calling the append method as follows:"
+msgstr ""
+"Successivamente, qualsiasi nuovo messaggio di log può essere facilmente aggiunto a IoT Platform richiamando il metodo append come di seguito riportato:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:286
+msgid "Also, the log messages can be cleared from IoT Platform by calling the clear method as follows:"
+msgstr ""
+"Inoltre, i messaggi di log possono essere eliminati da IoT Platform richiamando il metodo clear come di seguito riportato:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:297
+msgid "The device diagnostics operations are intended to provide information on device errors, and does not provide diagnostic information relating to the devices connection to the IoT Platform."
+msgstr ""
+"Le operazioni di diagnostica del dispositivo sono destinate a fornire le informazioni sugli errori del dispositivo e non forniscono informazioni sulla diagnostica relative alla connessione dei dispositivi a IoT Platform."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:299
+msgid "Refer to the `documentation <../device_mgmt/operations/diagnostics.html>`__ for more information about the Diagnostics operation."
+msgstr ""
+"Fare riferimento alla documentazione <../device_mgmt/operations/diagnostics.html>`__ per ulteriori informazioni sulle operazioni di diagnostica."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:302
+msgid "Firmware Actions"
+msgstr ""
+"Azioni firmware"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:303
+msgid "The firmware update process is separated into two distinct actions:"
+msgstr ""
+"Il processo di aggiornamento del firmware è separato in due azioni distinte:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:305
+msgid "Downloading Firmware"
+msgstr ""
+"Scaricamento del firmware"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:306
+msgid "Updating Firmware."
+msgstr ""
+"Aggiornamento del firmware."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:308
+msgid "The device needs to do the following activities to support Firmware Actions:"
+msgstr ""
+"Il dispositivo deve completare le seguenti attività per supportare le azioni firmware:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:310
+msgid "**1. Construct DeviceFirmware Object**"
+msgstr ""
+"**1. Costruire l'oggetto DeviceFirmware**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:312
+msgid "In order to perform Firmware actions the device needs to construct the DeviceFirmware object and add it to DeviceData as follows:"
+msgstr ""
+"Per eseguire le azioni firmware, il dispositivo deve costruire l'oggetto DeviceFirmware e aggiungerlo a DeviceData come illustrato di seguito:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:334
+msgid "The DeviceFirmware object represents the current firmware of the device and will be used to report the status of the Firmware Download and Firmware Update actions to IoT Platform."
+msgstr ""
+"L'oggetto DeviceFirmware rappresenta il firmware corrente del dispositivo e verrà utilizzato per indicare lo stato delle azioni di download del firmware e di aggiornamento del firmware a IoT Platform."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:336
+msgid "**2. Inform the server about the Firmware action support**"
+msgstr ""
+"**2. Informare il server riguardo al supporto dell'azione firmware**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:338
+msgid "The device needs to set the firmware action flag to true in order for the server to initiate the firmware request. This can be achieved by invoking a following method with a boolean value:"
+msgstr ""
+"Il dispositivo deve impostare l'indicatore dell'azione firmware su true per consentire al server di avviare la richiesta firmware. Ciò può essere eseguito richiamando il seguente metodo con un valore booleano:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:345
+msgid "As the manage request informs the IoT Platform about the firmware action support, manage() method needs to be called right after setting the firmware action support."
+msgstr ""
+"Quando la richiesta di gestione informa IoT Platform del supporto dell'azione firmware, deve essere chiamato il metodo manage() subito dopo l'impostazione del supporto per l'azione firmware."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:347
+msgid "**3. Create the Firmware Action Handler**"
+msgstr ""
+"**3. Creare il gestore dell'azione firmware**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:349
+msgid "In order to support the Firmware action, the device needs to create a handler and add it to ManagedDevice. The handler must extend a DeviceFirmwareHandler class and implement the following methods:"
+msgstr ""
+"Per supportare l'azione firmware, il dispositivo deve creare un gestore e aggiungerlo a ManagedDevice. Il gestore deve estendere una classe DeviceFirmwareHandler e implementare i seguenti metodi:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:356
+msgid "**3.1 Sample implementation of downloadFirmware**"
+msgstr ""
+"**3.1 Implementazione di esempio di downloadFirmware**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:358
+msgid "The implementation must add logic to download the firmware and report the status of the download via DeviceFirmware object. If the Firmware Download operation is successful, then the state of the firmware to be set to DOWNLOADED and UpdateStatus should be set to SUCCESS."
+msgstr ""
+"L'implementazione deve aggiungere una logica per scaricare il firmware e notificare lo stato dello scaricamento tramite l'oggetto DeviceFirmware. Se l'operazione di scaricamento del firmware ha esito positivo, lo stato del firmware deve essere impostato su DOWNLOADED e UpdateStatus deve essere impostato su SUCCESS."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:360
+msgid "If an error occurs during Firmware Download the state should be set to IDLE and updateStatus should be set to one of the error status values:"
+msgstr ""
+"Se si verifica un errore durante lo scaricamento del firmware, lo stato deve essere impostato su IDLE e updateStatus deve essere impostato su uno dei valori dello stato di errore:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:362
+#: ../docs/devices/libraries/java_deviceManagement.rst:460
+msgid "OUT_OF_MEMORY"
+msgstr ""
+"OUT_OF_MEMORY"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:363
+msgid "CONNECTION_LOST"
+msgstr ""
+"CONNECTION_LOST"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:364
+msgid "INVALID_URI"
+msgstr ""
+"INVALID_URI"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:366
+msgid "A sample Firmware Download implementation for a Raspberry Pi device is shown below:"
+msgstr ""
+"Di seguito, viene illustrata un'implementazione di esempio dello scaricamento del firmware per un dispositivo Raspberry Pi:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:425
+msgid "Device can check the integrity of the downloaded firmware image using the verifier and report the status back to IoT Platform. The verifier can be set by the device during the startup (while creating the DeviceFirmware Object) or as part of the Download Firmware request by the application. A sample code to verify the same is below:"
+msgstr ""
+"Il dispositivo può verificare l'integrità dell'immagine firmware scaricata utilizzando il verificatore e riporta lo stato a IoT Platform. Il verificatore può essere impostato dal dispositivo durante l'avvio (durante la creazione dell'oggetto DeviceFirmware) oppure come parte della richiesta Scaricamento del firmware da parte dell'applicazione. Un codice di esempio per eseguire la stessa verifica è illustrato di seguito:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:452
+#: ../docs/devices/libraries/java_deviceManagement.rst:496
+msgid "The complete code can be found in the device management sample `RasPiFirmwareHandlerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/RasPiFirmwareHandlerSample.java>`__."
+msgstr ""
+"Il codice completo si trova nell'esempio di gestione dispositivo `RasPiFirmwareHandlerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/RasPiFirmwareHandlerSample.java>`__."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:454
+msgid "**3.2 Sample implementation of updateFirmware**"
+msgstr ""
+"**3.2 Implementazione di esempio di updateFirmware**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:456
+msgid "The implementation must add logic to install the downloaded firmware and report the status of the update via DeviceFirmware object. If the Firmware Update operation is successful, then the state of the firmware should to be set to IDLE and UpdateStatus should be set to SUCCESS."
+msgstr ""
+"L'implementazione deve aggiungere una logica per installare il firmware scaricato e notificare lo stato dell'aggiornamento tramite l'oggetto DeviceFirmware. Se l'operazione di aggiornamento del firmware ha esito positivo, lo stato del firmware deve essere impostato su IDLE e UpdateStatus deve essere impostato su SUCCESS."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:458
+msgid "If an error occurs during Firmware Update, updateStatus should be set to one of the error status values:"
+msgstr ""
+"Se si verifica un errore durante l'aggiornamento del firmware, updateStatus deve essere impostato su uno dei valori dello stato di errore illustrati di seguito:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:461
+msgid "UNSUPPORTED_IMAGE"
+msgstr ""
+"UNSUPPORTED_IMAGE"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:463
+msgid "A sample Firmware Update implementation for a Raspberry Pi device is shown below:"
+msgstr ""
+"Un'implementazione dell'aggiornamento del firmware per un dispositivo Raspberry Pi è illustrata di seguito:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:498
+msgid "**4. Add the handler to ManagedDevice**"
+msgstr ""
+"**4. Aggiunta del gestore a ManagedDevice**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:500
+msgid "The created handler needs to be added to the ManagedDevice instance so that the ibmiotf client library invokes the corresponding method when there is a Firmware action request from IoT Platform."
+msgstr ""
+"Il gestore creato deve essere aggiunto all'istanza ManagedDevice in modo che la libreria client ibmiotf richiami il corrispondente metodo quando è presente una richiesta di azione Firmware da IoT Platform."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:507
+msgid "Refer to `this page <../device_mgmt/operations/firmware_actions.html>`__ for more information about the Firmware action."
+msgstr ""
+"Fare riferimento a `questa pagina <../device_mgmt/operations/firmware_actions.html>`__ per ulteriori informazioni sull'azione firmware."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:510
+msgid "Device Actions"
+msgstr ""
+"Azioni dispositivo"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:511
+msgid "The IoT Platform supports the following device actions:"
+msgstr ""
+"IoT Platform supporta le seguenti azioni per il dispositivo:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:513
+msgid "Reboot"
+msgstr ""
+"Riavvia"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:514
+msgid "Factory Reset"
+msgstr ""
+"Reimpostazione alle impostazioni di fabbrica"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:516
+msgid "The device needs to do the following activities to support Device Actions:"
+msgstr ""
+"Il dispositivo deve completare le seguenti attività per supportare le azioni dispositivo:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:518
+msgid "**1. Inform server about the Device Actions support**"
+msgstr ""
+"**1. Informare il server del supporto alle azioni dispositivo**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:520
+msgid "In order to perform Reboot and Factory Reset, the device needs to inform the IoT Platform about its support first. This can achieved by invoking a following method with a boolean value:"
+msgstr ""
+"Per eseguire il riavvio e la reimpostazione alle impostazioni di fabbrica, è necessario che il dispositivo prima informi IoT Platform del relativo supporto. Ciò può essere eseguito richiamando il seguente metodo con un valore booleano:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:527
+msgid "As the manage request informs the IoT Platform about the device action support, manage() method needs to be called right after setting the device action support."
+msgstr ""
+"Quando la richiesta di gestione informa IoT Platform sul supporto dell'azione dispositivo, è necessario richiamare il metodo manage() subito dopo l'impostazione del supporto per l'azione dispositivo."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:529
+msgid "**2. Create the Device Action Handler**"
+msgstr ""
+"**2. Creare il gestore dell'azione dispositivo**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:531
+msgid "In order to support the device action, the device needs to create a handler and add it to ManagedDevice. The handler must extend a DeviceActionHandler class and provide implementation for the following methods:"
+msgstr ""
+"Per supportare l'azione dispositivo, il dispositivo deve creare un gestore e aggiungerlo a ManagedDevice. Il gestore deve estendere una classe DeviceActionHandler e fornire l'implementazione dei seguenti metodi:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:538
+msgid "**2.1 Sample implementation of handleReboot**"
+msgstr ""
+"**2.1 Implementazione di esempio di handleReboot**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:540
+msgid "The implementation must add a logic to reboot the device and report the status of the reboot via DeviceAction object. The device needs to update the status along with a optional message only when there is a failure (because the successful operation reboots the device and the device code will not have a control to update the IoT Platform). A sample reboot implementation for a Raspberry Pi device is shown below:"
+msgstr ""
+"L'implementazione deve aggiungere una logica per riavviare il dispositivo e notificare lo stato del riavvio tramite l'oggetto DeviceAction. Il dispositivo deve aggiornare lo stato insieme ad un messaggio facoltativo solo quando si è verificato un errore (perché l'operazione riuscita riavvia il dispositivo e il codice dispositivo non dovrà controllare l'aggiornamento di IoT Platform). Un'implementazione di esempio del riavvio per un dispositivo Raspberry Pi è illustrata di seguito:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:563
+msgid "The complete code can be found in the device management sample `DeviceActionHandlerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/DeviceActionHandlerSample.java>`__."
+msgstr ""
+"Il codice completo si trova nell'esempio di gestione dispositivo `DeviceActionHandlerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/DeviceActionHandlerSample.java>`__."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:565
+msgid "**2.2 Sample implementation of handleFactoryReset**"
+msgstr ""
+"**2.2 Implementazione di esempio di handleFactoryReset**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:567
+msgid "The implementation must add a logic to reset the device to factory settings and report the status via DeviceAction object. The device needs to update the status along with a optional message only when there is a failure (because as part of this process, the device reboots and the device will not have a control to update status to IoT Platform). The skeleton of the Factory Reset implementation is shown below:"
+msgstr ""
+"L'implementazione deve aggiungere una logica per reimpostare il dispositivo alle impostazioni di fabbrica e notificare lo stato tramite l'oggetto DeviceAction. È necessario che il dispositivo aggiorni lo stato insieme ad un messaggio facoltatrivo solo quando si verifica un errore (in quanto, in caso di esito positivo dell'operazione, questo processo prevede il riavvio del dispositivo e non dovrà controllare l'aggiornamento dello stato in IoT Platform). Lo skeleton dell'implementazione della reimpostazione alle impostazioni di fabbrica è illustrato di seguito:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:582
+msgid "**3. Add the handler to ManagedDevice**"
+msgstr ""
+"**3. Aggiunta del gestore a ManagedDevice**"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:584
+msgid "The created handler needs to be added to the ManagedDevice instance so that the ibmiotf client library invokes the corresponding method when there is a device action request from IoT Platform."
+msgstr ""
+"È necessario aggiungere il gestore creato all'istanza ManagedDevice in modo che la libreria client ibmiotf richiami il corrispondente metodo quando è presente una richiesta di azione dispositivo da IoT Platform."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:591
+msgid "Refer to `this page <../device_mgmt/operations/device_actions.html>`__ for more information about the Device Action."
+msgstr ""
+"Fare riferimento a `questa pagina <../device_mgmt/operations/device_actions.html>`__ per ulteriori informazioni sull'azione dispositivo."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:594
+msgid "Listen for Device attribute changes"
+msgstr ""
+"Ascolto di modifiche dell'attributo dispositivo"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:596
+msgid "This ibmiotf client library updates the corresponding objects whenever there is an update request from the IoT Platform, these update requests are initiated by the application either directly or indirectly (Firmware Update) via the IoT Platform ReST API. Apart from updating these attributes, the library provides a mechanism where the device can be notified whenever a device attribute is updated."
+msgstr ""
+"Questa libreria client ibmiotf aggiorna gli oggetti corrispondenti ogni volta che avviene una richiesta di aggiornamento da IoT Platform, queste richieste di aggiornamento vengono avviate dall'applicazione direttamente o indirettamente (Aggiornamento firmware) mediante l'API REST IoT Platform. Oltre ad aggiornare questi attributi, la libreria fornisce un meccanismo tramite il quale il dispositivo può ricevere notifiche quando viene aggiornato un attributo dispositivo."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:598
+msgid "Attributes that can be updated by this operation are location, metadata, device information and firmware."
+msgstr ""
+"Gli attributi che possono essere aggiornati da questa operazione sono l'ubicazione, i metadati, le informazioni del dispositivo e il firmware."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:600
+msgid "In order to get notified, the device needs to add a property change listener on those objects that it is interested."
+msgstr ""
+"Per ricevere la notifica, il dispositivo deve aggiungere un listener di modifica delle proprietà sugli oggetti a cui è interessato."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:609
+msgid "Also, the device needs to implement the propertyChange() method where it receives the notification. A sample implementation is as follows:"
+msgstr ""
+"Inoltre, il dispositivo deve implementare il metodo propertyChange() su cui riceve la notifica. Un'implementazione di esempio è illustrata di seguito:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:642
+msgid "Refer to `this page <../device_mgmt/operations/update.html>`__ for more information about updating the device attributes."
+msgstr ""
+"Fare riferimento a `questa pagina <../device_mgmt/operations/update.html>`__ per ulteriori informazioni sull'aggiornamento degli attributi dispositivo."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:645
+msgid "Examples"
+msgstr ""
+"Esempi:"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:646
+msgid "`SampleRasPiDMAgent <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/SampleRasPiDMAgent.java>`__ - A sample agent code that shows how to perform various device management operations on Raspberry Pi."
+msgstr ""
+"`SampleRasPiDMAgent <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/SampleRasPiDMAgent.java>`__ - Un codice agent di esempio che mostra come eseguire diverse operazioni di gestione dispositivo su Raspberry Pi."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:647
+msgid "`SampleRasPiManagedDevice <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/SampleRasPiManagedDevice.java>`__ - A sample code that shows how one can perform both device operations and management operations."
+msgstr ""
+"`SampleRasPiManagedDevice <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/SampleRasPiManagedDevice.java>`__ - Un codice di esempio che mostra come eseguire operazioni dispositivo e di gestione."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:648
+msgid "`SampleRasPiDMAgentWithCustomMqttAsyncClient <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/SampleRasPiDMAgentWithCustomMqttAsyncClient.java>`__ - A sample agent code with custom MqttAsyncClient."
+msgstr ""
+"`SampleRasPiDMAgentWithCustomMqttAsyncClient <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/SampleRasPiDMAgentWithCustomMqttAsyncClient.java>`__ - Un codice agent di esempio con MqttAsyncClient personalizzato."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:649
+msgid "`SampleRasPiDMAgentWithCustomMqttClient <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/SampleRasPiDMAgentWithCustomMqttClient.java>`__ - A sample agent code with custom MqttClient."
+msgstr ""
+"`SampleRasPiDMAgentWithCustomMqttClient <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/SampleRasPiDMAgentWithCustomMqttClient.java>`__ - Un codice agent di esempio con MqttClient personalizzato."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:650
+msgid "`RasPiFirmwareHandlerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/RasPiFirmwareHandlerSample.java>`__ - A sample implementation of FirmwareHandler for Raspberry Pi."
+msgstr ""
+"`RasPiFirmwareHandlerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/RasPiFirmwareHandlerSample.java>`__ - Un'implementazione di esempio di FirmwareHandler per Raspberry Pi."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:651
+msgid "`DeviceActionHandlerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/DeviceActionHandlerSample.java>`__ - A sample implementation of DeviceActionHandler"
+msgstr ""
+"`DeviceActionHandlerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/DeviceActionHandlerSample.java>`__ - Un'implementazione di esempio di DeviceActionHandler"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:652
+msgid "`ManagedDeviceWithLifetimeSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/ManagedDeviceWithLifetimeSample.java>`__ - A sample that shows how to send regular manage request with lifetime specified."
+msgstr ""
+"`ManagedDeviceWithLifetimeSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/ManagedDeviceWithLifetimeSample.java>`__ - Un esempio che mostra come inviare richieste di gestione regolari con la durata specificata."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:653
+msgid "`DeviceAttributesUpdateListenerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/DeviceAttributesUpdateListenerSample.java>`__ - A sample listener code that shows how to listen for a various device attribute changes ."
+msgstr ""
+"`DeviceAttributesUpdateListenerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/DeviceAttributesUpdateListenerSample.java>`__ - Un codice listener di esempio che mostra come ascoltare le modifiche dei vari attributi dispositivi."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:654
+msgid "`NonBlockingDiagnosticsErrorCodeUpdateSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/NonBlockingDiagnosticsErrorCodeUpdateSample.java>`__ - A sample that shows how to add ErrorCode without waiting for response from the server."
+msgstr ""
+"`NonBlockingDiagnosticsErrorCodeUpdateSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/NonBlockingDiagnosticsErrorCodeUpdateSample.java>`__ - Un esempio che mostra come aggiungere ErrorCode senza attendere una risposta dal server."
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:657
+msgid "Recipe"
+msgstr ""
+"Istruzioni specifiche"
+
+#: ../docs/devices/libraries/java_deviceManagement.rst:659
+msgid "Refer to `the recipe <https://developer.ibm.com/recipes/tutorials/connect-raspberry-pi-as-managed-device-to-ibm-iot-foundation/>`__ that shows how to connect the Raspberry Pi device as managed device to IoT Platform to perform various device management operations in step by step using this client library."
+msgstr ""
+"Fare riferimento all'istrzuione <https://developer.ibm.com/recipes/tutorials/connect-raspberry-pi-as-managed-device-to-ibm-iot-foundation/>`__ che mostra passo dopo passo in che modo connettere il dispositivo Raspberry Pi come dispositivo gestito a IoT Platform per eseguire diverse operazioni di gestione dispositivo utilizzando questa libreria client."
+

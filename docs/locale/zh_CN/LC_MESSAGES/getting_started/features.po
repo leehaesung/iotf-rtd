@@ -1,0 +1,183 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/getting_started/features.rst:2
+msgid "Feature Overview"
+msgstr ""
+"功能部件概述"
+
+#: ../docs/getting_started/features.rst:5
+msgid "Device Registry"
+msgstr ""
+"设备注册表"
+
+#: ../docs/getting_started/features.rst:6
+msgid "Manage your inventory, configure security, and store metadata for millions of unique devices.  Define device types to represent individual device models and apply default metadata to all devices of that type."
+msgstr ""
+"管理库存，配置安全性以及存储数百万唯一设备的元数据。定义设备类型以表示各设备型号，并将缺省元数据应用于该类型的所有设备。"
+
+#: ../docs/getting_started/features.rst:11
+msgid "Connectivity"
+msgstr ""
+"连接"
+
+#: ../docs/getting_started/features.rst:12
+msgid "Securely connect your devices, gateways and applications directly to the Watson IoT platform via MQTT.  See the section on MQTT in the :ref:`reference material <ref-mqtt>` to learn more about the advantages of using this protocol.  Model the data from your device as events and control the flow of events into your applications."
+msgstr ""
+"通过 MQTT 将设备、网关和应用程序安全地直接连接到 Watson IoT Platform。请参阅 :ref:`参考资料 <ref-mqtt>` 中有关 MQTT 的部分，以了解有关使用此协议的优势的更多信息。将设备中的数据作为事件进行建模，并控制事件进入应用程序的流程。"
+
+#: ../docs/getting_started/features.rst:19
+msgid "Gateway Support"
+msgstr ""
+"网关支持"
+
+#: ../docs/getting_started/features.rst:20
+msgid "In many cases where a direct connection can not be made between the service and a device, the Watson IoT platform allows gateway devices to connect that can provide indirect connectivity for multiple devices."
+msgstr ""
+"在许多情况下，无法在服务和设备之间进行直接连接，Watson IoT Platform 允许可为多个设备提供间接连接的网关设备进行连接。"
+
+#: ../docs/getting_started/features.rst:25
+msgid "Device Management"
+msgstr ""
+"设备管理"
+
+#: ../docs/getting_started/features.rst:26
+msgid "Optionally, allow the Watson IoT platform to manage the lifecycle of your devices by implementing support for the Watson IoT platform's device management protocol in your devices.  The means by which the device connects to the service does not affect the device management protocol, which functions the same for directly connected, indirectly connected, and gateway devices."
+msgstr ""
+"（可选）通过在设备中实现对 Watson IoT Platform 的设备管理协议的支持，允许 Watson IoT Platform 管理设备的生命周期。设备连接到服务所采用的方式不影响设备管理协议，其功能对于直接连接的设备、间接连接的设备和网关设备都相同。"
+
+#: ../docs/getting_started/features.rst:33
+msgid "External Service Integration"
+msgstr ""
+"外部服务集成"
+
+#: ../docs/getting_started/features.rst:34
+msgid "The Watson IoT platform supports integration with external services to bring data and operations supported by other online services into the platform, allowing your application and device developers to seemlessly interact with those services without ever leaving the comfort of the Watson IoT platform APIs."
+msgstr ""
+"Watson IoT Platform 支持与外部服务的集成，以将其他联机设备支持的数据和操作引入到平台中，从而使应用程序和设备开发人员能够一直轻松利用 Watson IoT Platform API 与这些服务无缝交互。"
+
+#: ../docs/getting_started/features.rst:38
+msgid "This feature is currently available as part of a limited beta.  Future updates may include changes incompatible with the current version of this feature.  Try it out and `let us know what you think <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_"
+msgstr ""
+"此功能目前作为受限测试版的一部分提供。将来的更新可能包含与此功能的当前版本不兼容的更改。试用并 `告知我们您的想法 <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_"
+
+#: ../docs/getting_started/features.rst:44
+msgid "Historian"
+msgstr ""
+"历史学家"
+
+#: ../docs/getting_started/features.rst:45
+msgid "Configure the Watson IoT platform to store a record of the events your devices generate."
+msgstr ""
+"配置 Watson IoT Platform 以存储设备生成的事件的记录。"
+
+#: ../docs/getting_started/features.rst:47
+msgid "**Message format restrictions apply to the Historian**"
+msgstr ""
+"**消息格式限制适用于历史学家**"
+
+#: ../docs/getting_started/features.rst:49
+msgid "The historian feature only supports JSON messages meeting specific critera:"
+msgstr ""
+"历史学家功能部件仅支持满足特定条件的 JSON 消息："
+
+#: ../docs/getting_started/features.rst:51
+msgid "The message must be a valid JSON object (not an array) with only two top level elements: ``d`` and ``ts``"
+msgstr ""
+"消息必须是仅有两个顶级元素（“d”和“ts”）的有效 JSON 对象（而非数组）"
+
+#: ../docs/getting_started/features.rst:53
+msgid "The message must be UTF-8 encoded"
+msgstr ""
+"消息必须为 UTF-8 编码消息"
+
+#: ../docs/getting_started/features.rst:54
+msgid "The message must be less than 4kb"
+msgstr ""
+"消息必须小于 4kb"
+
+#: ../docs/getting_started/features.rst:56
+msgid "**Data**"
+msgstr ""
+"**数据**"
+
+#: ../docs/getting_started/features.rst:58
+msgid "The **d** element is where you include all data for the event (or command) being transmitted in the message."
+msgstr ""
+"您将在 **d** 元素中包含消息中所传输的事件（或命令）的所有数据。"
+
+#: ../docs/getting_started/features.rst:61
+msgid "This element is required for your message to meet the Watson IoT platform message specification."
+msgstr ""
+"此元素对于消息满足 Watson IoT Platform 消息规范是必需的。"
+
+#: ../docs/getting_started/features.rst:62
+msgid "This must always be a JSON object (not an array)"
+msgstr ""
+"这必须始终为 JSON 对象（而不是数组）"
+
+#: ../docs/getting_started/features.rst:63
+msgid "In the case where you wish to send no data the **d** element should still be present, but contain an empty object."
+msgstr ""
+"如果您不希望发送任何数据，那么 **d** 元素仍应该存在，但包含空对象。"
+
+#: ../docs/getting_started/features.rst:66
+msgid "**Timestamp**"
+msgstr ""
+"**时间戳记**"
+
+#: ../docs/getting_started/features.rst:68
+msgid "The **ts** element allows you to associate a timestamp with the event (or command). This is an optional element, if included its value should be a valid ISO8601 timestamp."
+msgstr ""
+"通过 **ts** 元素，可以将时间戳记与事件（或命令）关联。这是可选元素，如果包含在内，那么其值应是有效的 ISO8601 时间戳记。"
+
+#: ../docs/getting_started/features.rst:72
+msgid "**Example**"
+msgstr ""
+"**示例**"
+
+#: ../docs/getting_started/features.rst:90
+msgid "Last Event Cache"
+msgstr ""
+"上次事件高速缓存"
+
+#: ../docs/getting_started/features.rst:91
+msgid "The API can now return the last recorded value of an event-id for a specific device, or the last recorded value for each event-id reported by a specific device. The last event cache only applies to values sent in the last 30 days."
+msgstr ""
+"API 现在可以返回特定设备的上次记录的 event-id 值，或者特定设备报告的每个 event-id 的上次记录值。上次事件高速缓存仅适用于过去 30 天内发送的值。"
+
+#: ../docs/getting_started/features.rst:93
+msgid "To request the most recent value for a specific event-id, use the following API request. This request will return the last recorded value for the event-id \"power\"."
+msgstr ""
+"要请求特定 event-id 的最新值，请使用以下 API 请求。此请求将返回 event-id“power”的最新记录值。"
+
+#: ../docs/getting_started/features.rst:99
+msgid "The response is returned as JSON in the following format:"
+msgstr ""
+"按照下列各式以 JSON 返回响应："
+
+#: ../docs/getting_started/features.rst:116
+msgid "Alternatively, to request the most recent value for each event-id reported by this device, use the following API request."
+msgstr ""
+"或者，要请求此设备报告的每个 event-id 的最新值，请使用以下 API 请求。"
+
+#: ../docs/getting_started/features.rst:122
+msgid "The response will include all event-id's sent by the device. In this instance, it returns values for the \"power\" and \"temperature\" events."
+msgstr ""
+"响应将包含此设备发送的所有 event-id。在此例中，返回“power”和“temperature”事件的值。"
+

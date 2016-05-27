@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/libraries/python.rst:2
+msgid "Python for Device Developers"
+msgstr ""
+"디바이스 개발자용 Python"
+
+#: ../docs/devices/libraries/python.rst:4
+msgid "See `iot-python <https://github.com/ibm-messaging/iot-python>`_ in GitHub"
+msgstr ""
+"GitHub에서 `iot-python <https://github.com/ibm-messaging/iot-python>`_ 참조"
+
+#: ../docs/devices/libraries/python.rst:5
+msgid "See `ibmiotf <https://pypi.python.org/pypi/ibmiotf>`_ on PyPi"
+msgstr ""
+"PyPi에서 `ibmiotf <https://pypi.python.org/pypi/ibmiotf>`_ 참조"
+
+#: ../docs/devices/libraries/python.rst:10
+msgid "Constructor"
+msgstr ""
+"생성자"
+
+#: ../docs/devices/libraries/python.rst:12
+msgid "The constructor builds the client instance, and accepts an options dict containing the following definitions:"
+msgstr ""
+"생성자는 클라이언트 인스턴스를 빌드하고 다음과 같은 정의가 포함된 옵션 dict를 승인합니다. "
+
+#: ../docs/devices/libraries/python.rst:14
+msgid "``org`` - Your organization ID."
+msgstr ""
+"``org`` - 조직 ID."
+
+#: ../docs/devices/libraries/python.rst:15
+msgid "``type`` - The type of your device."
+msgstr ""
+"``type`` - 디바이스의 유형."
+
+#: ../docs/devices/libraries/python.rst:16
+msgid "``id`` - The ID of your device."
+msgstr ""
+"``id`` - 디바이스의 ID"
+
+#: ../docs/devices/libraries/python.rst:17
+msgid "``auth-method`` - Method of authentication (the only value currently supported is ``token``)."
+msgstr ""
+"``auth-method`` - 인증 방법(현재 지원되는 유일한 값: ``token``)"
+
+#: ../docs/devices/libraries/python.rst:18
+msgid "``auth-token`` - API key token (required if auth-method is ``token``)."
+msgstr ""
+"``auth-token`` - API 키 토큰(auth-method가 ``token``인 경우 필수)"
+
+#: ../docs/devices/libraries/python.rst:20
+msgid "If no options dict is provided, the client will connect to the IoT Platform Quickstart, and default to an unregistered device. The options dict creates definitions which are used to interact with the IoT Platform module."
+msgstr ""
+"dict 옵션을 제공하지 않을 경우 클라이언트가 IoT Platform Quickstart에 연결되며 등록되지 않은 디바이스로 기본값이 설정됩니다. 옵션 dict는 IoT Platform 모듈과 상호작용하는 데 사용되는 정의를 작성합니다. "
+
+#: ../docs/devices/libraries/python.rst:39
+msgid "Using a configuration file"
+msgstr ""
+"구성 파일 사용"
+
+#: ../docs/devices/libraries/python.rst:41
+msgid "Instead of including an options dict directly, you can use a configuration file containing an options dict. If you are using a configuration file containing an options dict, use the following code format."
+msgstr ""
+"옵션 dict를 직접 포함하는 대신 옵션 dict가 포함된 구성 파일을 사용할 수 있습니다. 옵션 dict가 포함된 구성 파일을 사용하는 경우에는 다음의 코드 형식을 사용하십시오. "
+
+#: ../docs/devices/libraries/python.rst:52
+msgid "The content of the configuration file must be in the following format(need not contain **$** sign):"
+msgstr ""
+"구성 파일의 컨텐츠는 다음 형식이어야 합니다(**$** 부호를 포함하지 않아도 됨)."
+
+#: ../docs/devices/libraries/python.rst:68
+msgid "Publishing events"
+msgstr ""
+"이벤트 공개"
+
+#: ../docs/devices/libraries/python.rst:69
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"이벤트는 디바이스가 데이터를 IoT Platform에 공개할 때 사용하는 메커니즘입니다. 디바이스는 이벤트의 컨텐츠를 제어하고 전송하는 각 이벤트에 대해 이름을 지정합니다. "
+
+#: ../docs/devices/libraries/python.rst:71
+msgid "When an event is received by the IoT Platform the credentials of the connection on which the event was received are used to determine from which device the event was sent. With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"IoT Platform에서 이벤트를 수신하면 이벤트가 수신된 연결의 신임 정보를 사용하여 이벤트를 전송한 디바이스를 판별합니다. 이 아키텍처를 사용하면 한 디바이스가 다른 디바이스를 위장할 수 없습니다. "
+
+#: ../docs/devices/libraries/python.rst:73
+msgid "Events can be published at any of the three :ref:`quality of service levels <qoslevels>` defined by the MQTT protocol.  By default events will be published as qos level 0."
+msgstr ""
+"이벤트는 MQTT 프로토콜에서 정의한 세 가지 :ref:`서비스 품질(QoS) 레벨 <qoslevels>`에서 공개될 수 있습니다. 기본적으로 이벤트는 qos 레벨 0으로 공개됩니다. "
+
+#: ../docs/devices/libraries/python.rst:76
+msgid "Publish event using default quality of service"
+msgstr ""
+"기본 서비스 품질(QoS)을 사용하여 이벤트 공개"
+
+#: ../docs/devices/libraries/python.rst:85
+msgid "Publish event using user-defined quality of service"
+msgstr ""
+"사용자 정의 서비스 품질(QoS)을 사용하여 이벤트 공개"
+
+#: ../docs/devices/libraries/python.rst:87
+msgid "Events can be published at higher MQTT quality of servive levels, but these events may take slower then QoS level 0, because of the extra confirmation of receipt."
+msgstr ""
+"이벤트는 더 높은 MQTT 서비스 품질(QoS) 레벨에서 공개될 수 있지만 추가적인 수신 확인으로 인해 이 이벤트는 QoS 레벨 0보다 느릴 수 있습니다. "
+
+#: ../docs/devices/libraries/python.rst:99
+msgid "Handling commands"
+msgstr ""
+"명령 처리"
+
+#: ../docs/devices/libraries/python.rst:100
+msgid "When the device client connects it automatically subscribes to any command for this device.  To process specific commands you need to register a command callback method. The messages are returned as an instance of the Command class which has the following properties:"
+msgstr ""
+"디바이스 클라이언트는 연결되면 이 디바이스에 대한 명령을 자동으로 구독합니다. 특정 명령을 처리하려면 명령 콜백 메소드를 등록해야 합니다. 메시지는 다음과 같은 특성을 가진 명령 클래스의 인스턴스로 리턴됩니다. "
+
+#: ../docs/devices/libraries/python.rst:105
+msgid "command - string"
+msgstr ""
+"명령 - 문자열"
+
+#: ../docs/devices/libraries/python.rst:106
+msgid "format - string"
+msgstr ""
+"형식 - 문자열"
+
+#: ../docs/devices/libraries/python.rst:107
+msgid "data - dict"
+msgstr ""
+"데이터 - dict"
+
+#: ../docs/devices/libraries/python.rst:108
+msgid "timestamp - datetime"
+msgstr ""
+"시간소인 - 날짜/시간"
+
+#: ../docs/devices/libraries/python.rst:136
+msgid "Custom message format support"
+msgstr ""
+"사용자 정의 메시지 형식 지원"
+
+#: ../docs/devices/libraries/python.rst:137
+msgid "By default the library supports the encoding and decoding of Python dictionary objects as JSON when you use msgFormat \"json\".  When you use msgFormat \"json-iotf\" it will encode the message in accordance with the IoT Platform JSON Payload Specification.  To add support for your own custom message formats see the `sample in GitHub <https://github.com/ibm-messaging/iot-python/tree/master/samples/customMessageFormat>`__"
+msgstr ""
+"기본적으로 라이브러리는 사용자가 msgFormat \"json\"을 사용할 때 Python 사전 오브젝트를 JSON으로 인코딩 및 디코딩하는 것을 지원합니다. msgFormat \"json-iotf\"를 사용하는 경우에는 IoT Platform JSON 페이로드 스펙에 따라 메시지가 인코딩됩니다. 자체 사용자 정의 메시지 형식에 대한 지원을 추가하려면 `GitHub의 샘플(<https://github.com/ibm-messaging/iot-python/tree/master/samples/customMessageFormat>)`을 참조하십시오. "
+
+#: ../docs/devices/libraries/python.rst:139
+msgid "Once you have created your custom encoder module it needs to be registered in the device client.  If you attempt to use an unknown message format when sending an event or the device receives a command send in a format that it does not know how to decode then the library will throw a MissingMessageDecoderException."
+msgstr ""
+"사용자 정의 인코더 모듈을 작성한 후에는 디바이스 클라이언트에서 이를 등록해야 합니다. 이벤트를 전송할 때 알 수 없는 메시지를 사용하거나 디바이스가 디코딩 방법을 모르는 형식의 명령 전송을 수신하는 경우 라이브러리에는 MissingMessageDecoderException이 발생합니다. "
+

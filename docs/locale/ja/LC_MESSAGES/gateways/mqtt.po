@@ -1,0 +1,547 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/gateways/mqtt.rst:2
+msgid "MQTT Connectivity for Gateways"
+msgstr ""
+"MQTT ゲートウェイ接続"
+
+#: ../docs/gateways/mqtt.rst:5
+msgid "MQTT client connection"
+msgstr ""
+"MQTT クライアント接続"
+
+#: ../docs/gateways/mqtt.rst:6
+msgid "Every registered organization has a unique endpoint which must be used when connecting MQTT clients for gateways in that organization."
+msgstr ""
+"どの登録済み組織にも固有のエンドポイントがあり、その組織でゲートウェイの MQTT クライアントを接続する際には、そのエンドポイントを使用する必要があります。"
+
+#: ../docs/gateways/mqtt.rst:9
+msgid "**org\\_id**.messaging.internetofthings.ibmcloud.com"
+msgstr ""
+"**org\\_id**.messaging.internetofthings.ibmcloud.com"
+
+#: ../docs/gateways/mqtt.rst:11
+msgid "In the IoT Platform dashboard, devices and gateways which are connected directly to the IoT Platform display a status icon indicating that they are connected. The dashboard displays devices which are connected indirectly via a gateway as disconnected as it does not have any knowledge of a devices connectivity to the gateway."
+msgstr ""
+"IoT Platform に直接接続されているデバイスやゲートウェイについては、それらが接続されていることを示す状況アイコンが IoT Platform ダッシュボードに表示されます。ゲートウェイに対するデバイス接続は認識されないため、ゲートウェイを介して間接的に接続されているデバイスは、切断されているものとしてダッシュボードに表示されます。"
+
+#: ../docs/gateways/mqtt.rst:14
+msgid "Unencrypted client connection"
+msgstr ""
+"非暗号化クライアント接続"
+
+#: ../docs/gateways/mqtt.rst:16
+msgid "Connect on port **1883**"
+msgstr ""
+"ポート **1883** での接続"
+
+#: ../docs/gateways/mqtt.rst:18
+msgid "All information your gateway submits is being sent in plain text (including the authentication credentials for your gateway). We recommend the use of an encrypted connection whenever possible."
+msgstr ""
+"ゲートウェイが送信するすべての情報は、プレーン・テキストで送信されます (ゲートウェイの認証資格情報を含む)。可能な限り、暗号化接続を使用することをお勧めします。"
+
+#: ../docs/gateways/mqtt.rst:24
+msgid "Encrypted client connection"
+msgstr ""
+"暗号化クライアント接続"
+
+#: ../docs/gateways/mqtt.rst:26
+msgid "Connect on port **8883** or **443** for websockets. In many client libraries you will need to provide the server's public certificate in pem format.  The following file contains the entire certificate chain for \\*.messaging.internetofthings.ibmcloud.com: messaging.pem_"
+msgstr ""
+"Web ソケットのポート **8883** または **443** での接続。多くのクライアント・ライブラリーでは、サーバーの公開証明書を pem 形式で提供する必要があります。以下のファイルには、\\*.messaging.internetofthings.ibmcloud.com: messaging.pem_ の証明書チェーン全体が含まれています。"
+
+#: ../docs/gateways/mqtt.rst:33
+msgid "Some SSL client libraries have been shown to not handle wildcarded domains, in which case, if you can not change libraries, you will need to turn off certificate checking."
+msgstr ""
+"SSL クライアント・ライブラリーの中には、ドメイン部分のワイルドカードを処理しないものがあります。その場合、ライブラリーを変更できないのであれば、証明書チェックをオフにするしかありません。"
+
+#: ../docs/gateways/mqtt.rst:37
+msgid "The IoT Platform requires TLS v1.2. We suggest the following cipher suites: ECDHE-RSA-AES256-GCM-SHA384, AES256-GCM-SHA384, ECDHE-RSA-AES128-GCM-SHA256 or AES128-GCM-SHA256 *(as of Jun 1 2015)*."
+msgstr ""
+"IoT Platform では TLS v1.2 が必要です。推奨される暗号スイートは次のとおり: ECDHE-RSA-AES256-GCM-SHA384、AES256-GCM-SHA384、ECDHE-RSA-AES128-GCM-SHA256、または AES128-GCM-SHA256 *(2015 年 6 月 1 日現在)"
+
+#: ../docs/gateways/mqtt.rst:42
+msgid "MQTT client identifier"
+msgstr ""
+"MQTT クライアント ID"
+
+#: ../docs/gateways/mqtt.rst:44
+msgid "A gateway must authenticate using a client ID in the following format:"
+msgstr ""
+"ゲートウェイは、以下の形式のクライアント ID を使用して認証する必要があります。"
+
+#: ../docs/gateways/mqtt.rst:46
+msgid "g:**orgId**:**typeId**:**deviceId**"
+msgstr ""
+"g:**orgId**:**typeId**:**deviceId**"
+
+#: ../docs/gateways/mqtt.rst:48
+msgid "**g** idenfities your client as a gateway"
+msgstr ""
+"**g** は、ゲートウェイとして使用するクライアントです"
+
+#: ../docs/gateways/mqtt.rst:49
+msgid "**orgId** is your unique organization ID, assigned when you sign up with the service.  It will be a 6 character alphanumeric string."
+msgstr ""
+"**orgId** は、サービス登録時に割り当てられる固有の組織 ID です。これは 6 文字の英数字ストリングです。"
+
+#: ../docs/gateways/mqtt.rst:51
+msgid "**typeId** is intended to be used as an identifier of the type of gateway connecting, it may be useful to think of this as analogous to a model number."
+msgstr ""
+"**typeId** は、接続するゲートウェイのタイプ ID として使用するためのものであり、型式番号のようなものと考えることができます。"
+
+#: ../docs/gateways/mqtt.rst:54
+msgid "**deviceId** must uniquely identify a gateway device across all gateways of a specific type, it may be useful to think of this as analogous to a serial number."
+msgstr ""
+"**deviceId** は、特定のタイプのすべてのゲートウェイの間で 1 つのゲートウェイ・デバイスを一意的に識別するものでなければなりません。これは、シリアル番号のようなものと考えることができます。"
+
+#: ../docs/gateways/mqtt.rst:58
+msgid "You can use any scheme of your choice when assigning values for ``typeId`` and ``deviceId``, however the following restrictions apply to both:"
+msgstr ""
+"``typeId`` と ``deviceId`` の値を割り当てるときには任意のスキームを使用できますが、どちらにも以下の制限が適用されます。"
+
+#: ../docs/gateways/mqtt.rst:61
+msgid "Maximum length of 36 characters"
+msgstr ""
+"最大長 36 文字"
+
+#: ../docs/gateways/mqtt.rst:62
+msgid "Must comprise only alpha-numeric characters (``a-z``, ``A-Z``, ``0-9``) and the following special characters:"
+msgstr ""
+"英数字 (``a-z``、``A-Z``、``0-9``) および以下の特殊文字のみで構成する必要があります。"
+
+#: ../docs/gateways/mqtt.rst:64
+msgid "dash (``-``)"
+msgstr ""
+"ダッシュ (``-``)"
+
+#: ../docs/gateways/mqtt.rst:65
+msgid "underscore (``_``)"
+msgstr ""
+"下線 (``_``)"
+
+#: ../docs/gateways/mqtt.rst:66
+msgid "dot (``.``)"
+msgstr ""
+"ドット (``.``)"
+
+#: ../docs/gateways/mqtt.rst:70
+msgid "MQTT authentication"
+msgstr ""
+"MQTT 認証"
+
+#: ../docs/gateways/mqtt.rst:73
+msgid "Username"
+msgstr ""
+"ユーザー名"
+
+#: ../docs/gateways/mqtt.rst:75
+msgid "The service currently only supports token-based authentication for devices, as such there is only one valid username for gateways today."
+msgstr ""
+"現在、サービスがデバイスに対してサポートしているのはトークン・ベースの認証のみであるため、ゲートウェイの有効なユーザー名は 1 つのみです。"
+
+#: ../docs/gateways/mqtt.rst:78
+msgid "A value of ``use-token-auth`` indicates to the service that the authentication token for the gateway will be passed as the password for the MQTT connection."
+msgstr ""
+"値を ``use-token-auth`` にすると、ゲートウェイの認証トークンが MQTT 接続のパスワードとして渡されることをサービスに対して通知することになります。"
+
+#: ../docs/gateways/mqtt.rst:83
+msgid "Password"
+msgstr ""
+"パスワード"
+
+#: ../docs/gateways/mqtt.rst:85
+msgid "When using token based authentication submit the device authentication token as the password when making your MQTT connection."
+msgstr ""
+"トークン・ベースの認証を使用する場合、MQTT 接続時にデバイス認証トークンをパスワードとして送信します。"
+
+#: ../docs/gateways/mqtt.rst:90
+msgid "Publishing events"
+msgstr ""
+"イベントのパブリッシング"
+
+#: ../docs/gateways/mqtt.rst:92
+msgid "A gateway can publish events from itself and on behalf of any device connected via the gateway by using the following topic and substituting in the appropriate ``typeId`` and ``deviceId`` based on the intended origin of the event:"
+msgstr ""
+"ゲートウェイは、以下のトピックを使用し、イベントの生成元に基づいて ``typeId`` と ``deviceId`` を適切な値に置き換えることで、ゲートウェイ自体のイベントをパブリッシュすることも、ゲートウェイを経由して接続しているデバイスの代わりにイベントをパブリッシュすることもできます。"
+
+#: ../docs/gateways/mqtt.rst:97
+msgid "iot-2/type/\\ **typeId**/id/\\ **deviceId**/evt/\\ **eventId**/fmt/\\ **formatString**"
+msgstr ""
+"iot-2/type/\\ **typeId**/id/\\ **deviceId**/evt/\\ **eventId**/fmt/\\ **formatString**"
+
+#: ../docs/gateways/mqtt.rst:100
+#: ../docs/gateways/mqtt.rst:129
+msgid "Example"
+msgstr ""
+"例"
+
+#: ../docs/gateways/mqtt.rst:102
+#: ../docs/gateways/mqtt.rst:132
+msgid "``typeId``"
+msgstr ""
+"``typeId``"
+
+#: ../docs/gateways/mqtt.rst:102
+#: ../docs/gateways/mqtt.rst:132
+msgid "``deviceId``"
+msgstr ""
+"``deviceId``"
+
+#: ../docs/gateways/mqtt.rst:104
+#: ../docs/gateways/mqtt.rst:134
+msgid "Gateway 1"
+msgstr ""
+"ゲートウェイ 1"
+
+#: ../docs/gateways/mqtt.rst:104
+#: ../docs/gateways/mqtt.rst:134
+msgid "mygateway"
+msgstr ""
+"mygateway"
+
+#: ../docs/gateways/mqtt.rst:104
+#: ../docs/gateways/mqtt.rst:134
+msgid "gateway1"
+msgstr ""
+"gateway1"
+
+#: ../docs/gateways/mqtt.rst:106
+#: ../docs/gateways/mqtt.rst:136
+msgid "Device 1"
+msgstr ""
+"デバイス 1"
+
+#: ../docs/gateways/mqtt.rst:106
+#: ../docs/gateways/mqtt.rst:136
+msgid "mydevice"
+msgstr ""
+"mydevice"
+
+#: ../docs/gateways/mqtt.rst:106
+#: ../docs/gateways/mqtt.rst:136
+msgid "device1"
+msgstr ""
+"device1"
+
+#: ../docs/gateways/mqtt.rst:109
+msgid "Gateway 1 can publish its own status events: ``iot-2/type/mygateway/id/gateway1/evt/status/fmt/json``"
+msgstr ""
+"ゲートウェイ 1 が、ゲートウェイ自体のステータス・イベントをパブリッシュする場合は、``iot-2/type/mygateway/id/gateway1/evt/status/fmt/json`` になります。"
+
+#: ../docs/gateways/mqtt.rst:110
+msgid "Gateway 1 can publish status events on behalf of Device 1: ``iot-2/type/mydevice/id/device1/evt/status/fmt/json``"
+msgstr ""
+"ゲートウェイ 1 が、デバイス 1 の代わりにステータス・イベントをパブリッシュする場合は、``iot-2/type/mydevice/id/device1/evt/status/fmt/json`` になります。"
+
+#: ../docs/gateways/mqtt.rst:113
+msgid "The message payload is limited to a maximum of 131072 bytes.  Messages larger than this will be rejected."
+msgstr ""
+"メッセージ・ペイロードは最大 131072 バイトに制限されます。これより大きいメッセージは拒否されます。"
+
+#: ../docs/gateways/mqtt.rst:117
+msgid "Subscribing to commands"
+msgstr ""
+"コマンドのサブスクライブ"
+
+#: ../docs/gateways/mqtt.rst:119
+msgid "A gateway can subscribe to commands directed at the gateway itself and to any device connected via the gateway by using the following topic and substituting in the appropriate ``typeId`` and ``deviceId``:"
+msgstr ""
+"ゲートウェイは、以下のトピックを使用し、``typeId`` と ``deviceId`` を適切な値に置き換えることで、ゲートウェイ自体に対するコマンドをサブスクライブすることも、ゲートウェイを経由して接続しているデバイスに対するコマンドをサブスクライブすることもできます。"
+
+#: ../docs/gateways/mqtt.rst:123
+msgid "iot-2/type/\\ **typeId**/id/\\ **deviceId**/cmd/\\ **commandId**/fmt/\\ **formatString**"
+msgstr ""
+"iot-2/type/\\ **typeId**/id/\\ **deviceId**/cmd/\\ **commandId**/fmt/\\ **formatString**"
+
+#: ../docs/gateways/mqtt.rst:125
+msgid "The MQTT ``+`` wildcard can be used for ``typeId``, ``deviceId``, ``commandId`` and ``formatString`` to subscribe to multiple command sources."
+msgstr ""
+"``typeId``、``deviceId``、``commandId``、``formatString`` に MQTT の ``+`` ワイルドカードを使用すると、複数のコマンド・ソースをサブスクライブできます。"
+
+#: ../docs/gateways/mqtt.rst:139
+msgid "Gateway 1 can subscribe to commands directed at the gateway: ``iot-2/type/mygateway/id/gateway1/cmd/+/fmt/+``"
+msgstr ""
+"ゲートウェイ 1 が、ゲートウェイ自体に対するコマンドをサブスクライブする場合は、``iot-2/type/mygateway/id/gateway1/cmd/+/fmt/+`` になります。"
+
+#: ../docs/gateways/mqtt.rst:140
+msgid "Gateway 1 can subscribe to commands sent to Device 1: ``iot-2/type/mydevice/id/device1/cmd/+/fmt/+``"
+msgstr ""
+"ゲートウェイ 1 が、デバイス 1 に送信されたコマンドをサブスクライブする場合は、``iot-2/type/mydevice/id/device1/cmd/+/fmt/+`` になります。"
+
+#: ../docs/gateways/mqtt.rst:141
+msgid "Gateway 1 can subscribe any command sent to devices of type \"mydevice\": ``iot-2/type/mydevice/id/+/cmd/+/fmt/+``"
+msgstr ""
+"ゲートウェイ 1 がタイプ \"mydevice\" のすべてのデバイスに対して送信されたすべてのコマンドをサブスクライブする場合は、``iot-2/type/mydevice/id/+/cmd/+/fmt/+`` になります。"
+
+#: ../docs/gateways/mqtt.rst:145
+msgid "MQTT persistent sessions (cleansession=false) do not roam for devices which connect to gateways. What this means is that if a device connects to gateway A, then later connects to gateway B, it will not receive any messages that had been published to gateway A for that device while it was disconnected. A gateway owns the MQTT client and subscription, not the devices which are connected to the gateway."
+msgstr ""
+"MQTT 持続セッション (cleansession=false) では、ゲートウェイに接続するデバイスに対するローミングは行われません。つまり、デバイスがゲートウェイ A に接続し、その後にゲートウェイ B に接続した場合、デバイスが切断されている間にデバイス宛てにゲートウェイ A に対してパブリッシュされたメッセージを、ゲートウェイは受け取りません。ゲートウェイが所有するのは、ゲートウェイに接続されたデバイスではなく、MQTT クライアントとサブスクリプションです。"
+
+#: ../docs/gateways/mqtt.rst:148
+msgid "Gateway auto-registration"
+msgstr ""
+"ゲートウェイ自動登録"
+
+#: ../docs/gateways/mqtt.rst:149
+msgid "Gateway devices have the ability to automatically register devices which are connected to them. When a gateway publishes a message or subscribes to a topic on behalf of another device, that device will automatically be registered if it does not already exist."
+msgstr ""
+"ゲートウェイ・デバイスは、自身に接続されているデバイスを自動的に登録することができます。ゲートウェイが別のデバイスの代わりにメッセージをパブリッシュするかトピックをサブスクライブすると、そのデバイスは、まだ存在しなければ自動的に登録されます。"
+
+#: ../docs/gateways/mqtt.rst:153
+msgid "Registration requests from gateway devices are throttled to 128 pending requests at a time. If trying to connect many new devices to a gateway which have not previously been registered, then there may be some delay in the registration of the devices through the gateway."
+msgstr ""
+"ゲートウェイ・デバイスからの登録リクエストは、保留中のリクエストが一度に 128 個を超えないように絞られます。まだ登録されていない新しいデバイスを多数ゲートウェイに接続しようとすると、ゲートウェイを介したデバイスの登録がある程度遅れる場合があります。"
+
+#: ../docs/gateways/mqtt.rst:158
+msgid "If the gateway fails to automatically register a device, then it will not attempt to register that device again for a short period of time. Any messages or subscriptions from the failed device will be dropped during that time."
+msgstr ""
+"ゲートウェイがデバイスの自動登録に失敗した場合、ゲートウェイは少しの間そのデバイスの登録を再試行しません。その間、失敗したデバイスからのメッセージやサブスクリプションはすべてドロップされます。"
+
+#: ../docs/gateways/mqtt.rst:163
+msgid "Gateway notifications"
+msgstr ""
+"ゲートウェイ通知"
+
+#: ../docs/gateways/mqtt.rst:164
+msgid "When errors occur during the validation of the publish or subscribe topic, or during automatic registration, a notification will be sent to the gateway device. A gateway can receive these notifications by subscribing to the following topic, substituting in its own ``typeId`` and ``deviceId``:"
+msgstr ""
+"パブリッシュ・トピックまたはサブスクライブ・トピックの検証中、あるいは自動登録中にエラーが発生した場合は、ゲートウェイ・デバイスに通知が送信されます。ゲートウェイは、次のトピックをサブスクライブし、自身の ``typeId`` および ``deviceId`` を置き換えることで、これらの通知を受信できます。"
+
+#: ../docs/gateways/mqtt.rst:168
+msgid "iot-2/type/\\ **typeId**/id/\\ **deviceId**/notify"
+msgstr ""
+"iot-2/type/\\ **typeId**/id/\\ **deviceId**/notify"
+
+#: ../docs/gateways/mqtt.rst:170
+msgid "Messages received on the notify topic will have the following format:"
+msgstr ""
+"通知トピックで受け取るメッセージは、次の形式になります。"
+
+#: ../docs/gateways/mqtt.rst:185
+msgid "Request_Type: Either publish or subscribe"
+msgstr ""
+"Request_Type: publish または subscribe"
+
+#: ../docs/gateways/mqtt.rst:186
+msgid "Timestamp: Time in ISO 8601 Format"
+msgstr ""
+"Timestamp: ISO 8601 形式の時刻"
+
+#: ../docs/gateways/mqtt.rst:187
+msgid "Topic: The request topic from the gateway"
+msgstr ""
+"Topic: ゲートウェイからのリクエスト・トピック"
+
+#: ../docs/gateways/mqtt.rst:188
+msgid "Device_Type: The device type from the topic"
+msgstr ""
+"Device_Type: トピックからのデバイス・タイプ"
+
+#: ../docs/gateways/mqtt.rst:189
+msgid "Device_Id: The device id from the topic"
+msgstr ""
+"Device_Id: トピックからのデバイス ID"
+
+#: ../docs/gateways/mqtt.rst:190
+msgid "ClientID: The client id of the request"
+msgstr ""
+"ClientID: リクエストのクライアント ID"
+
+#: ../docs/gateways/mqtt.rst:191
+msgid "RC: The return code"
+msgstr ""
+"RC: 戻りコード"
+
+#: ../docs/gateways/mqtt.rst:192
+msgid "Message: The error message"
+msgstr ""
+"Message: エラー・メッセージ"
+
+#: ../docs/gateways/mqtt.rst:194
+msgid "Notifications a gateway may receive:"
+msgstr ""
+"ゲートウェイが受け取る可能性がある通知:"
+
+#: ../docs/gateways/mqtt.rst:196
+msgid "Topic does not match with any allowed topic rules."
+msgstr ""
+"トピックは許可されたどのトピック・ルールとも一致しません。"
+
+#: ../docs/gateways/mqtt.rst:197
+msgid "Device type is not valid."
+msgstr ""
+"デバイス・タイプが無効です。"
+
+#: ../docs/gateways/mqtt.rst:198
+msgid "Device id is not valid."
+msgstr ""
+"デバイス ID が無効です。"
+
+#: ../docs/gateways/mqtt.rst:199
+msgid "Maximum number of devices per gateway has been reached."
+msgstr ""
+"ゲートウェイ当たりの最大デバイス数に達しました。"
+
+#: ../docs/gateways/mqtt.rst:200
+msgid "Maximum number of devices per organization has been reached."
+msgstr ""
+"組織当たりの最大デバイス数に達しました。"
+
+#: ../docs/gateways/mqtt.rst:201
+msgid "Failed to create device due to internal errors."
+msgstr ""
+"内部エラーのためにデバイスを作成できませんでした。"
+
+#: ../docs/gateways/mqtt.rst:205
+msgid "Managed Gateways"
+msgstr ""
+"管理対象ゲートウェイ"
+
+#: ../docs/gateways/mqtt.rst:207
+msgid "Support for device lifecycle management is optional, the device management protocol used by IoT Platform utilises the same MQTT connection that your gateway already uses for events and command control."
+msgstr ""
+"デバイス・ライフサイクル管理のサポートはオプションです。IoT Platform で使用するデバイス管理プロトコルは、ゲートウェイがイベントやコマンドの制御のために既に使用しているのと同じ MQTT 接続を使用します。"
+
+#: ../docs/gateways/mqtt.rst:212
+msgid "Quality of Service Levels and Clean Session"
+msgstr ""
+"サービス品質レベルとクリーン・セッション"
+
+#: ../docs/gateways/mqtt.rst:214
+msgid "Managed gateways can publish messages with Quality of Service (QoS) level of 0 or 1. If QoS 1 is used, messages from the gateway will be queued if necessary. Messages from the gateway must not be retained messages."
+msgstr ""
+"管理対象ゲートウェイは、サービス品質 (QoS) レベルが 0 または 1 のメッセージをパブリッシュできます。QoS 1 を使用すると、そのゲートウェイからのメッセージが必要に応じてキューに入れられます。そのゲートウェイからのメッセージは、保存メッセージにしないでください。"
+
+#: ../docs/gateways/mqtt.rst:218
+msgid "The IoT Platform publishes requests with a QoS level of 1 to support queuing of messages.  In order to queue messages sent while a managed gateway is not connected, the device should use ``cleansession=false``."
+msgstr ""
+"IoT Platform は、メッセージのキューイングをサポートするために QoS レベル 1 でリクエストをパブリッシュします。管理対象ゲートウェイが接続されていないときに送信されたメッセージをキューに入れる場合は、そのデバイスで ``cleansession=false`` を使用する必要があります。"
+
+#: ../docs/gateways/mqtt.rst:223
+msgid "If your managed gateway uses a durable subscription (cleansession=false) you need to be aware that device management commands sent to your gateway while it is offline will be reported as failed operations, however, when the gateway later connects those requests will be actioned by the gateway."
+msgstr ""
+"管理対象ゲートウェイで永続サブスクリプションを使用する (cleansession=false) 場合は、オフライン時にゲートウェイに送信されたデバイス管理コマンドが、失敗した操作として報告されますが、それらのリクエストは、後でゲートウェイが接続したときに処理されることに注意してください。"
+
+#: ../docs/gateways/mqtt.rst:228
+msgid "When handling failures it is important to take this into account if you are using durable subscriptions for your managed gateways."
+msgstr ""
+"管理対象ゲートウェイで永続サブスクリプションを使用する場合は、失敗に対処する際に、この点を考慮する必要があります。"
+
+#: ../docs/gateways/mqtt.rst:233
+msgid "Topics"
+msgstr ""
+"トピック"
+
+#: ../docs/gateways/mqtt.rst:235
+msgid "A managed gateway is required to subscribe to two topics to handle requests and responses from IoT Platform:"
+msgstr ""
+"IoT Platform からのリクエストと応答を処理するために、管理対象ゲートウェイは以下の 2 つのトピックをサブスクライブする必要があります。"
+
+#: ../docs/gateways/mqtt.rst:237
+msgid "The managed gateway will subscribe to device management reponses on ``iotdm-1/type/<typeId>/id/<deviceId>/response/+``"
+msgstr ""
+"管理対象ゲートウェイは、``iotdm-1/type/<typeId>/id/<deviceId>/response/+`` でデバイス管理応答をサブスクライブします。"
+
+#: ../docs/gateways/mqtt.rst:238
+msgid "The managed gateway will subscribe to device management requests on ``iotdm-1/type/<typeId>/id/<deviceId>/+``"
+msgstr ""
+"管理対象ゲートウェイは、``iotdm-1/type/<typeId>/id/<deviceId>/+`` でデバイス管理リクエストをサブスクライブします。"
+
+#: ../docs/gateways/mqtt.rst:241
+msgid "A managed gateway will publish to two topics:"
+msgstr ""
+"管理対象ゲートウェイは、以下の 2 つのトピックにパブリッシュします。"
+
+#: ../docs/gateways/mqtt.rst:243
+msgid "The managed gateway will publish device management responses on ``iotdevice-1/type/<typeId>/id/<deviceId>/response/``"
+msgstr ""
+"管理対象ゲートウェイは、``iotdevice-1/type/<typeId>/id/<deviceId>/response/`` にデバイス管理応答をパブリッシュします。"
+
+#: ../docs/gateways/mqtt.rst:244
+msgid "The managed gateway will publish device management requests on ``iotdevice-1/type/<typeId>/id/<deviceId>/``"
+msgstr ""
+"管理対象ゲートウェイは、``iotdevice-1/type/<typeId>/id/<deviceId>/`` にデバイス管理リクエストをパブリッシュします。"
+
+#: ../docs/gateways/mqtt.rst:246
+msgid "The gateway is able to process device management protocol messages for both itself and on behalf other connected devices by using the relevant <typeId> and <deviceId>."
+msgstr ""
+"ゲートウェイは、適切な <typeId> と <deviceId> を使用して、ゲートウェイ自体のデバイス管理プロトコル・メッセージを処理することも、接続している他のデバイスの代わりにデバイス管理プロトコル・メッセージを処理することもできます。"
+
+#: ../docs/gateways/mqtt.rst:251
+msgid "Message Format"
+msgstr ""
+"メッセージの形式"
+
+#: ../docs/gateways/mqtt.rst:253
+msgid "All messages are sent in JSON format. There are two types of message."
+msgstr ""
+"すべてのメッセージは JSON 形式で送信されます。メッセージには 2 つのタイプがあります。"
+
+#: ../docs/gateways/mqtt.rst:264
+msgid "Request"
+msgstr ""
+"リクエスト"
+
+#: ../docs/gateways/mqtt.rst:256
+msgid "Requests are formatted as follows:"
+msgstr ""
+"リクエストのフォーマットは以下のとおりです。"
+
+#: ../docs/gateways/mqtt.rst:262
+msgid "``d`` carries any data relevant to the request"
+msgstr ""
+"``d`` は、リクエストに関連するデータです。"
+
+#: ../docs/gateways/mqtt.rst:263
+msgid "``reqId`` is an identifier of the request, and must be copied into a response. If a response is not required, the field should be omitted."
+msgstr ""
+"``reqId`` は、リクエストの ID であり、応答にコピーする必要があります。応答が不要な場合は、このフィールドを省略する必要があります。"
+
+#: ../docs/gateways/mqtt.rst:283
+msgid "Response"
+msgstr ""
+"応答"
+
+#: ../docs/gateways/mqtt.rst:267
+msgid "Responses are formatted as follows:"
+msgstr ""
+"応答のフォーマットは以下のとおりです。"
+
+#: ../docs/gateways/mqtt.rst:278
+msgid "\"rc\" is a result code of the original request."
+msgstr ""
+"\"rc\" は、元のリクエストの結果コードです。"
+
+#: ../docs/gateways/mqtt.rst:279
+msgid "``message`` is an optional element with a text description of the response code."
+msgstr ""
+"``message`` はオプション要素で、応答コードのテキスト記述が入ります。"
+
+#: ../docs/gateways/mqtt.rst:280
+msgid "``d`` is an optional data element accompanying the response."
+msgstr ""
+"``d`` は、応答に付随するオプションのデータ要素です。"
+
+#: ../docs/gateways/mqtt.rst:281
+msgid "``reqId`` is the request ID of the original request. This is used to correlate responses with requests, and the device needs to ensure that all request IDs are unique.  When responding to IoT Platform requests, the correct ``reqId`` value must be sent in the response."
+msgstr ""
+"``reqId`` は、元のリクエストのリクエスト ID です。この ID によって応答をリクエストと対応付けるため、デバイスはすべてのリクエスト ID を固有の ID にする必要があります。IoT Platform のリクエストに応答するときに、正しい ``reqId`` 値を応答に含めて送信する必要があります。"
+

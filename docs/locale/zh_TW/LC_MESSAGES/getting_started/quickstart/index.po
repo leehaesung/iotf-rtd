@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IBM IOT Foundation 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,14 +87,14 @@ msgstr ""
 "Mosquitto 示範"
 
 #: ../docs/getting_started/quickstart/index.rst:36
-msgid "`Mosquitto <http://mosquitto.org/>`_ is a cross platform open source MQTT client that is perfect for experimenting with the Watson IoT platform service.  Once you have installed mosquitto pick an ``applicationId``, a ``deviceId`` that have a good chance to be unique (otherwise your experiment will clash with someone else running through this same demonstration)."
+msgid "`Mosquitto <http://mosquitto.org/>`_ is a cross platform open source MQTT client that is perfect for experimenting with the Watson IoT platform service.  Once you have installed mosquitto pick an ``<applicationId>``, a ``<deviceId>`` that have a good chance to be unique (otherwise your experiment will clash with someone else running through this same demonstration)."
 msgstr ""
-"`Mosquitto <http://mosquitto.org/>`_ 是跨平台的開放程式碼 MQTT 用戶端，非常適合於實驗 Watson IoT Platform 服務。安裝了 Mosquitto 之後，請挑選很有機會成為唯一的 ``applicationId`` 和 ``deviceId``，否則您的實驗將與透過此相同示範執行的某個實驗相衝突。"
+"`Mosquitto <http://mosquitto.org/>`_ 是跨平台的開放程式碼 MQTT 用戶端，非常適合於實驗 Watson IoT Platform 服務。安裝了 Mosquitto 之後，請挑選很有可能是唯一的 ``<applicationId>`` 及 ``<deviceId>``（否則您的實驗將與透過此相同示範執行的其他實驗相衝突）。"
 
 #: ../docs/getting_started/quickstart/index.rst:39
-msgid "There are a couple of restrictions you must consider when dedicing on these IDs:"
+msgid "There are a couple of restrictions you must consider when deciding on these IDs:"
 msgstr ""
-"有數個您在決定這些 ID 時需要考量的限制："
+"在決定這些 ID 時，您必須考量多項限制："
 
 #: ../docs/getting_started/quickstart/index.rst:41
 msgid "Maximum length of 36 characters"
@@ -122,9 +122,9 @@ msgstr ""
 "句點 (``.``)"
 
 #: ../docs/getting_started/quickstart/index.rst:49
-msgid "With your ``applicationId`` and ``deviceId`` in hand the first thing you want to do is create a connection representing your application using ``mosquitto_sub``:"
+msgid "With your ``<applicationId>`` and ``<deviceId>`` in hand the first thing you want to do is create a connection representing your application using ``mosquitto_sub``. Using examples of ``<applicationId>`` = myApplicationId and ``<deviceId>`` = myDeviceId:"
 msgstr ""
-"一旦 ``applicationId`` 和 ``deviceId`` 在手，您想要做的第一件事就是使用 ``mosquitto_sub`` 建立一個連線，代表您的應用程式："
+"確定 ``<applicationId>`` 及 ``<deviceId>`` 之後，您要做的第一件事就是使用 ``mosquitto_sub`` 建立代表應用程式的連線。使用範例 ``<applicationId>`` = myApplicationId 及 ``<deviceId>`` = myDeviceId："
 
 #: ../docs/getting_started/quickstart/index.rst:55
 msgid "Leave that process running, it is now time to turn your attention towards creating your device.  We will connect a device of type ``mosquitto`` and send two events to the service using ``mosquitto_pub``:"

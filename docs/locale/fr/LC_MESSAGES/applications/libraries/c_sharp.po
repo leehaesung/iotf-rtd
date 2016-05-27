@@ -1,0 +1,188 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/applications/libraries/c_sharp.rst:2
+msgid "C# for Application Developers"
+msgstr ""
+"C# pour les développeurs d'applications"
+
+#: ../docs/applications/libraries/c_sharp.rst:4
+msgid "See `iot-csharp <https://github.com/IoT-Analytics/iot-csharp>`_ in GitHub"
+msgstr ""
+"Voir `iot-csharp <https://github.com/IoT-Analytics/iot-csharp>`_ dans GitHub"
+
+#: ../docs/applications/libraries/c_sharp.rst:11
+msgid "Constructor"
+msgstr ""
+"Constructeur"
+
+#: ../docs/applications/libraries/c_sharp.rst:13
+msgid "The constructor builds the client instance, and accepts arguments containing the following definitions:"
+msgstr ""
+"Le constructeur génère l'instance client et accepte les arguments incluant les définitions suivantes :"
+
+#: ../docs/applications/libraries/c_sharp.rst:15
+msgid "``orgId`` - Your organization ID."
+msgstr ""
+"``orgId`` - ID de votre organisation."
+
+#: ../docs/applications/libraries/c_sharp.rst:16
+msgid "``appId`` - The unique ID of your application within your organization."
+msgstr ""
+"``appId`` - ID unique de votre application au sein de votre organisation."
+
+#: ../docs/applications/libraries/c_sharp.rst:17
+msgid "``auth-key`` - API key (required if auth-method is ``apikey``)."
+msgstr ""
+"``auth-key`` - Clé d'API (requise si auth-method est ``apikey``)."
+
+#: ../docs/applications/libraries/c_sharp.rst:18
+msgid "``auth-token`` - API key token (required if auth-method is ``apikey``)."
+msgstr ""
+"``auth-token`` - Jeton de clé d'API (requis si auth-method est ``apikey``)."
+
+#: ../docs/applications/libraries/c_sharp.rst:20
+msgid "If only ``appId`` is provided, the client will connect to the IoT Platform Quickstart service and default to an unregistered device. The argument lists create definitions which are used to interact with the IoT Platform module."
+msgstr ""
+"Si vous indiquez uniquement ``appId``, le client se connecte au service Quickstart d'IoT Platform et est associé par défaut à un terminal non enregistré. Les listes d'arguments créent des définitions qui permettent d'interagir avec le module IoT Platform."
+
+#: ../docs/applications/libraries/c_sharp.rst:32
+msgid "Subscribing to device events"
+msgstr ""
+"Abonnement aux événements d'un terminal"
+
+#: ../docs/applications/libraries/c_sharp.rst:34
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"Les événements constituent le mécanisme par lequel les terminaux publient des données dans IoT Platform. Le terminal contrôle le contenu de l'événement et affecte un nom à chaque événement qu'il envoie."
+
+#: ../docs/applications/libraries/c_sharp.rst:36
+msgid "When an event is received by the IoT Foundation the credentials of the connection on which the event was received are used to determine from which device the event was sent. With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"Lorsqu'un événement est reçu par IoT Foundation, les données d'identification de la connexion sur laquelle l'événement a été reçu sont utilisées pour identifier le terminal qui a envoyé l'événement. Avec cette architecture, un terminal ne peut en aucun cas simuler les droits d'accès d'un autre terminal."
+
+#: ../docs/applications/libraries/c_sharp.rst:38
+msgid "By default, applications will subscribe to all events from all connected devices. Use the type, id, event and msgFormat parameters to control the scope of the subscription. A single client can support multiple subscriptions. The code samples below give examples of how to subscribe to devices dependent on device type, id, event and msgFormat parameters."
+msgstr ""
+"Par défaut, les applications sont abonnées à tous les événements de tous les terminaux connectés. Utilisez les paramètres type, id, event et msgFormat pour contrôler la portée de l'abonnement. Un même client peut prendre en charge plusieurs abonnements. Les exemples de code ci-après expliquent comment s'abonner à des terminaux en fonction des paramètres type, id, event et msgFormat."
+
+#: ../docs/applications/libraries/c_sharp.rst:41
+msgid "To subscribe to all events from all devices"
+msgstr ""
+"Abonnement à tous les événements de tous les terminaux"
+
+#: ../docs/applications/libraries/c_sharp.rst:50
+msgid "To subscribe to all events from all devices of a specific type"
+msgstr ""
+"Abonnement à tous les événements de tous les terminaux d'un type donné"
+
+#: ../docs/applications/libraries/c_sharp.rst:59
+msgid "To subscribe to a specific event from all devices"
+msgstr ""
+"Abonnement à un événement spécifique de tous les terminaux"
+
+#: ../docs/applications/libraries/c_sharp.rst:68
+msgid "To subscribe to a specific event from two or more different devices"
+msgstr ""
+"Abonnement à un événement spécifique de plusieurs terminaux"
+
+#: ../docs/applications/libraries/c_sharp.rst:77
+msgid "To subscribe to all events published by a device in json format"
+msgstr ""
+"Abonnement à tous les événements publiés par un terminal au format json"
+
+#: ../docs/applications/libraries/c_sharp.rst:86
+msgid "Handling events from devices"
+msgstr ""
+"Traitement des événements provenant des terminaux"
+
+#: ../docs/applications/libraries/c_sharp.rst:88
+msgid "To process the events received by your subscriptions you need to register an event callback method."
+msgstr ""
+"Pour traiter les événements reçus via vos abonnements, vous devez enregistrer une méthode de rappel d'événement."
+
+#: ../docs/applications/libraries/c_sharp.rst:90
+msgid "``event.device`` - string (uniquely identifies the device across all types of devices in the organization)"
+msgstr ""
+"``event.device`` - Chaîne (qui identifie de manière unique le terminal parmi tous les types de terminaux de l'organisation)"
+
+#: ../docs/applications/libraries/c_sharp.rst:91
+msgid "``eventName`` - string"
+msgstr ""
+"``eventName`` - chaîne"
+
+#: ../docs/applications/libraries/c_sharp.rst:92
+msgid "``eventFormat`` - string"
+msgstr ""
+"``eventFormat`` - chaîne"
+
+#: ../docs/applications/libraries/c_sharp.rst:93
+msgid "``eventData`` - string"
+msgstr ""
+"``eventData`` - chaîne"
+
+#: ../docs/applications/libraries/c_sharp.rst:110
+msgid "Subscribing to device status"
+msgstr ""
+"Abonnement au statut des terminaux"
+
+#: ../docs/applications/libraries/c_sharp.rst:112
+msgid "By default, this will subscribe to status updates for all connected devices. Use the type and id parameters to control the scope of the subscription. A single client can support multiple subscriptions."
+msgstr ""
+"Par défaut, vous êtes abonné aux mises à jour du statut de tous les terminaux connectés. Utilisez les paramètres type et id pour contrôler la portée de l'abonnement. Un même client peut prendre en charge plusieurs abonnements."
+
+#: ../docs/applications/libraries/c_sharp.rst:115
+msgid "Subscribe to status updates for all devices"
+msgstr ""
+"Abonnement aux mises à jour du statut de tous les terminaux"
+
+#: ../docs/applications/libraries/c_sharp.rst:125
+msgid "Subscribe to status updates for two different devices"
+msgstr ""
+"Abonnement aux mises à jour du statut de deux terminaux différents"
+
+#: ../docs/applications/libraries/c_sharp.rst:135
+msgid "Handling status updates from devices"
+msgstr ""
+"Traitement des mises à jour du statut des terminaux"
+
+#: ../docs/applications/libraries/c_sharp.rst:136
+msgid "To process the status updates received by your subscriptions you need to register an event callback method."
+msgstr ""
+"Pour traiter les mises à jour du statut reçues via vos abonnements, vous devez enregistrer une méthode de rappel d'événement."
+
+#: ../docs/applications/libraries/c_sharp.rst:155
+msgid "Publishing events from devices"
+msgstr ""
+"Publication d'événements à partir de terminaux"
+
+#: ../docs/applications/libraries/c_sharp.rst:157
+msgid "Applications can publish events as if they originated from a Device."
+msgstr ""
+"Les applications peuvent publier des événements comme s'ils provenaient d'un terminal."
+
+#: ../docs/applications/libraries/c_sharp.rst:169
+msgid "Publishing commands to devices"
+msgstr ""
+"Publication de commandes sur des terminaux"
+
+#: ../docs/applications/libraries/c_sharp.rst:171
+msgid "Applications can publish commands to connected devices."
+msgstr ""
+"Les applications peuvent publier des commandes sur des terminaux connectés."
+

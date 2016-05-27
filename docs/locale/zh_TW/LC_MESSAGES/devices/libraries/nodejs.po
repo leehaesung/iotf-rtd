@@ -1,0 +1,218 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/libraries/nodejs.rst:2
+msgid "Node.js for Device Developers"
+msgstr ""
+"適用於裝置開發人員的 Node.js"
+
+#: ../docs/devices/libraries/nodejs.rst:4
+msgid "See `iot-nodejs <https://github.com/ibm-messaging/iot-nodejs>`_ in GitHub"
+msgstr ""
+"請參閱 GitHub 中的 `iot-nodejs <https://github.com/ibm-messaging/iot-nodejs>`_"
+
+#: ../docs/devices/libraries/nodejs.rst:5
+msgid "See the `samples for device <https://github.com/ibm-messaging/iot-nodejs/tree/master/samples>`_ in Github"
+msgstr ""
+"請參閱 Github 中的 `裝置範例 <https://github.com/ibm-messaging/iot-nodejs/tree/master/samples>`_"
+
+#: ../docs/devices/libraries/nodejs.rst:6
+msgid "See `ibmiotf <https://www.npmjs.com/package/ibmiotf>`_ on NPM"
+msgstr ""
+"請參閱 NPM 上的 `ibmiotf <https://www.npmjs.com/package/ibmiotf>`_"
+
+#: ../docs/devices/libraries/nodejs.rst:9
+msgid "Constructor"
+msgstr ""
+"建構子"
+
+#: ../docs/devices/libraries/nodejs.rst:11
+msgid "The constructor builds the device client instance. It accepts a configuration json containing the following definitions:"
+msgstr ""
+"建構子會建置裝置用戶端實例。它接受包含下列定義的配置 json："
+
+#: ../docs/devices/libraries/nodejs.rst:13
+msgid "``org`` - Your organization ID"
+msgstr ""
+"``org`` - 組織 ID"
+
+#: ../docs/devices/libraries/nodejs.rst:14
+msgid "``type`` - The type of your device"
+msgstr ""
+"``type`` - 裝置的類型"
+
+#: ../docs/devices/libraries/nodejs.rst:15
+msgid "``id`` - The ID of your device"
+msgstr ""
+"``id`` - 裝置的 ID"
+
+#: ../docs/devices/libraries/nodejs.rst:16
+msgid "``auth-method`` - Method of authentication (the only value currently supported is ``token``)"
+msgstr ""
+"``auth-method`` - 鑑別的方法（目前唯一支援的值是 ``token``）"
+
+#: ../docs/devices/libraries/nodejs.rst:17
+msgid "``auth-token`` - API key token (required if auth-method is ``token``)"
+msgstr ""
+"``auth-token`` - API 金鑰記號（如果 auth-method 為 ``token`` 則需要）"
+
+#: ../docs/devices/libraries/nodejs.rst:19
+msgid "If you want to use Quickstart, then send only the first three properties."
+msgstr ""
+"如果您要使用 Quickstart，請只傳送前三個內容。"
+
+#: ../docs/devices/libraries/nodejs.rst:36
+msgid "Using a configuration file"
+msgstr ""
+"使用配置檔"
+
+#: ../docs/devices/libraries/nodejs.rst:38
+msgid "Instead of passing the configuration json directly, you can also use a configuration json file. Use the following code snippet:"
+msgstr ""
+"您也可以使用配置 json 檔，而不直接傳遞配置 json。請使用下列程式碼 Snippet："
+
+#: ../docs/devices/libraries/nodejs.rst:46
+msgid "The configuration file `device.json` must be in the format of"
+msgstr ""
+"配置檔 `device.json` 的格式必須如下"
+
+#: ../docs/devices/libraries/nodejs.rst:59
+msgid "Connecting to the IoT Platform"
+msgstr ""
+"連接至 IoT Platform"
+
+#: ../docs/devices/libraries/nodejs.rst:61
+msgid "Connect to the IoT Platform by calling the *connect* function."
+msgstr ""
+"呼叫 *connect* 函數以連接至 IoT Platform"
+
+#: ../docs/devices/libraries/nodejs.rst:84
+msgid "After the successful connection to the IoT Platform service, the device client sends a *connect* event. So all the device logic can be implemented inside this callback function."
+msgstr ""
+"成功連線至 IoT Platform 服務之後，裝置用戶端會傳送 *connect* 事件。因此所有裝置邏輯都可以在此回呼函數內實作。"
+
+#: ../docs/devices/libraries/nodejs.rst:86
+msgid "The Device Client automatically tries to reconnect when it loses connection. When the reconnection is successful, the client emits *reconnect* event."
+msgstr ""
+"「裝置用戶端」在其連線中斷時會自動嘗試重新連接。順利完成重新連線時，用戶端會發出 *reconnect* 事件。"
+
+#: ../docs/devices/libraries/nodejs.rst:89
+msgid "Logging"
+msgstr ""
+"記載"
+
+#: ../docs/devices/libraries/nodejs.rst:91
+msgid "By default, all the logs of ``warn`` are logged. If you want to enable more logs, use the *log.setLevel* function. Supported log levels - *trace, debug, info, warn, error*."
+msgstr ""
+"依預設，會記載所有 ``warn`` 日誌。如果要啟用其他日誌，請使用 *log.setLevel* 函數。支援的記載層次 - *trace、debug、info、warn、error*。"
+
+#: ../docs/devices/libraries/nodejs.rst:107
+msgid "Publishing events"
+msgstr ""
+"發佈事件"
+
+#: ../docs/devices/libraries/nodejs.rst:109
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"事件是裝置藉以將資料發佈到 IoT Platform 的機制。裝置可控制事件的內容，並為它傳送的每一個事件指派一個名稱。"
+
+#: ../docs/devices/libraries/nodejs.rst:111
+msgid "When an event is received by the IoT Platform the credentials of the connection on which the event was received are used to determine from which device the event was sent. With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"當 IoT Platform 接收事件時，會使用接收事件的連線認證來判斷是哪個裝置傳送了事件。使用此架構，裝置就不可能假冒成另一個裝置。"
+
+#: ../docs/devices/libraries/nodejs.rst:113
+msgid "Events can be published at any of the three quality of service levels defined by the MQTT protocol. By default events will be published as QoS level 0. Please not that if you are using the Internet of Things Quickstart service, events can only be published at QoS level 0."
+msgstr ""
+"發佈的事件可以是 MQTT 通訊協定所定義的三個服務品質等級之一。依預設，事件會發佈為 QoS 等級 0。請注意，如果您是使用 Internet of Things Quickstart 服務，事件只能發佈為 QoS 等級 0。"
+
+#: ../docs/devices/libraries/nodejs.rst:115
+msgid "Events can be published by using:"
+msgstr ""
+"可使用下列各項來發佈事件："
+
+#: ../docs/devices/libraries/nodejs.rst:118
+msgid "eventType - Type of event to be published e.g status, gps."
+msgstr ""
+"eventType - 要發佈的事件類型，例如 status、gps。"
+
+#: ../docs/devices/libraries/nodejs.rst:119
+msgid "eventFormat - Format of the event e.g json."
+msgstr ""
+"eventFormat - 事件的格式，例如 json。"
+
+#: ../docs/devices/libraries/nodejs.rst:120
+msgid "data - Payload of the event.(Must be buffer/String)"
+msgstr ""
+"data - 事件的內容。（必須是緩衝區/字串）"
+
+#: ../docs/devices/libraries/nodejs.rst:121
+msgid "QoS - MQTT quality of service for the publish event. Supported values : 0,1,2."
+msgstr ""
+"QoS - 發佈事件的 MQTT 服務品質。支援的值：0、1、2。"
+
+#: ../docs/devices/libraries/nodejs.rst:139
+msgid "Handling commands"
+msgstr ""
+"處理指令"
+
+#: ../docs/devices/libraries/nodejs.rst:141
+msgid "When the device client connects, it automatically subscribes to any command for this device. To process specific commands you need to register a command callback function. The device client sends *command* when a command is received. The callback function has the following properties."
+msgstr ""
+"當裝置用戶端連接時，它會自動訂閱此裝置的任何指令。若要處理特定指令，您需要登錄指令回呼函數。收到指令時，裝置用戶端會傳送 *command*。回呼函數具有下列內容。"
+
+#: ../docs/devices/libraries/nodejs.rst:143
+msgid "commandName - name of the command invoked"
+msgstr ""
+"commandName - 呼叫的指令名稱"
+
+#: ../docs/devices/libraries/nodejs.rst:144
+msgid "format - e.g json, xml"
+msgstr ""
+"格式 - 例如 json、xml"
+
+#: ../docs/devices/libraries/nodejs.rst:145
+msgid "payload - payload for the command"
+msgstr ""
+"payload - 指令的內容"
+
+#: ../docs/devices/libraries/nodejs.rst:146
+msgid "topic - actual topic where the command was received"
+msgstr ""
+"topic - 收到指令的實際主題"
+
+#: ../docs/devices/libraries/nodejs.rst:171
+msgid "Handling errors"
+msgstr ""
+"處理錯誤"
+
+#: ../docs/devices/libraries/nodejs.rst:173
+msgid "When the device clients encounters an error, it emits an *error* event."
+msgstr ""
+"當裝置用戶端遇到錯誤時，它會發出 *error* 事件。"
+
+#: ../docs/devices/libraries/nodejs.rst:194
+msgid "Disconnect Client"
+msgstr ""
+"中斷連接用戶端"
+
+#: ../docs/devices/libraries/nodejs.rst:196
+msgid "Disconnects the client and releases the connections"
+msgstr ""
+"切斷用戶端並釋放連線"
+

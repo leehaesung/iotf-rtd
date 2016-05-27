@@ -1,0 +1,548 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/device_mgmt/index.rst:2
+msgid "Device Management Protocol"
+msgstr ""
+"设备管理协议"
+
+#: ../docs/devices/device_mgmt/index.rst:5
+msgid "Introduction"
+msgstr ""
+"简介"
+
+#: ../docs/devices/device_mgmt/index.rst:7
+msgid "The Device Management capabilities in the IoT Platform create a new class of connected devices, Managed Devices."
+msgstr ""
+"IoT Platform 中的“设备管理”功能可创建新一类的已连接设备，即“受管设备”。"
+
+#: ../docs/devices/device_mgmt/index.rst:9
+msgid "Managed Devices must, by definition, contain a management agent which can understand the IoT Platform Device Management Protocol, and send a Manage Device request to the IoT Platform Device Management server. Managed devices can access the device management operations as explained later in this document."
+msgstr ""
+"根据定义，受管设备必须包含一个管理代理程序，该代理程序可理解“IoT Platform 设备管理协议”，并可向“IoT Platform 设备管理”服务器发送“管理设备”请求。如本文档后续部分所述，受管设备可以访问设备管理操作。"
+
+#: ../docs/devices/device_mgmt/index.rst:11
+msgid "The Device Management Protocol defines a set of supported operations. A device management agent can support a subset of the operations, but the Manage device and Unmanage device operations must be supported. A device supporting firmware action operations must also support observation."
+msgstr ""
+"设备管理协议定义了一组受支持的操作。设备管理代理程序可以支持其中一部分操作，但必须支持“管理设备”和“取消管理设备”操作。支持固件操作的设备还必须支持观察。"
+
+#: ../docs/devices/device_mgmt/index.rst:13
+msgid "The Device Management Protocol is built on top of MQTT.  For details specific to how Device Management Protocol interacts with MQTT please see `MQTT Connectivity for Devices <../mqtt.html>`__"
+msgstr ""
+"设备管理协议基于 MQTT 构建。有关设备管理协议如何与 MQTT 进行交互的特定详细信息，请参阅 `设备的 MQTT 连接 <../mqtt.html>`__"
+
+#: ../docs/devices/device_mgmt/index.rst:17
+msgid "The Device Management Lifecycle"
+msgstr ""
+"设备管理生命周期"
+
+#: ../docs/devices/device_mgmt/index.rst:19
+msgid "A device and its associated device type are created in the IoT Platform using the dashboard or API."
+msgstr ""
+"在 IoT Platform 中使用仪表板或 API 创建设备及相关设备类型。"
+
+#: ../docs/devices/device_mgmt/index.rst:20
+msgid "The device connects to the IoT Platform and uses the 'Manage Device' operation to become a managed device."
+msgstr ""
+"设备必须连接到 IoT Platform 并使用“管理设备”操作，才能成为受管设备。"
+
+#: ../docs/devices/device_mgmt/index.rst:21
+msgid "The device's metadata, as described in the Device Model can now be viewed and manipulated through device operations, for example, firmware update and device reboot."
+msgstr ""
+"现在，可以通过设备操作（例如，固件更新和设备重新引导）来查看和操纵设备的元数据（如设备模型中所述）。"
+
+#: ../docs/devices/device_mgmt/index.rst:22
+msgid "The device can communicate updates through the device-management protocol, such as location or diagnostic information and error codes."
+msgstr ""
+"设备可以通过设备管理协议来传达更新（例如，位置或诊断信息，以及错误代码）。"
+
+#: ../docs/devices/device_mgmt/index.rst:23
+msgid "In order to provide a way to deal with defunct devices in large device populations, the 'Manage device' operation request has an optional lifetime parameter. This lifetime parameter is the number of seconds within which the device must make another 'Manage device' request in order to avoid being marked as dormant and becoming an unmanaged device."
+msgstr ""
+"为了能够在设备众多的情况下处理失效的设备，“管理设备”操作请求中提供了一个可选的生命周期参数。此生命周期参数包含的是一个秒数，设备必须在这段时间内发出另一个“管理设备”请求，才能避免被标记为停止而成为非受管设备。"
+
+#: ../docs/devices/device_mgmt/index.rst:24
+msgid "When a device is decommissioned it can be removed from the IoT Platform using the dashboard or REST API."
+msgstr ""
+"设备退役后，可以使用仪表板或 REST API 从 IoT Platform 中移除该设备。"
+
+#: ../docs/devices/device_mgmt/index.rst:28
+msgid "Return Code Summary"
+msgstr ""
+"返回码摘要"
+
+#: ../docs/devices/device_mgmt/index.rst:30
+msgid "There are several return codes which are sent in response to the actions listed above."
+msgstr ""
+"上述操作的响应中会发送多种返回码。"
+
+#: ../docs/devices/device_mgmt/index.rst:32
+msgid "200: Operation succeeded"
+msgstr ""
+"200：操作成功"
+
+#: ../docs/devices/device_mgmt/index.rst:33
+msgid "202: Accepted (for initiating commands)"
+msgstr ""
+"202：已接受（针对正在启动的命令）"
+
+#: ../docs/devices/device_mgmt/index.rst:34
+msgid "204: Changed (for attribute updates)"
+msgstr ""
+"204：已更改（针对属性更新）"
+
+#: ../docs/devices/device_mgmt/index.rst:35
+msgid "400: Bad request, for example, if a device is not in the appropriate state for this command"
+msgstr ""
+"400：错误请求（例如，当设备的状态不适合执行该命令时）"
+
+#: ../docs/devices/device_mgmt/index.rst:36
+msgid "404: Attribute was not found, this code is also used if the operation was published to an invalid topic."
+msgstr ""
+"404：未找到属性，如果操作被发布至无效主题，那么也会使用此代码。"
+
+#: ../docs/devices/device_mgmt/index.rst:37
+msgid "409: Resource could not be updated due to a conflict, for example, the resource is being updated by two simultaneous requests, so update could be retried later"
+msgstr ""
+"409：由于发生冲突而无法更新资源（例如，两个并发请求正在更新该资源，因此可以稍后重试更新）"
+
+#: ../docs/devices/device_mgmt/index.rst:38
+msgid "500: Unexpected device error"
+msgstr ""
+"500：意外的设备错误"
+
+#: ../docs/devices/device_mgmt/index.rst:39
+msgid "501: Operation not implemented"
+msgstr ""
+"501：未实施操作"
+
+#: ../docs/devices/device_mgmt/index.rst:48
+msgid "Manage Device"
+msgstr ""
+"管理设备"
+
+#: ../docs/devices/device_mgmt/index.rst:50
+msgid "A device uses this request to become a managed device. It should be the first device management request sent by the device after connecting to the IoT Platform. It would be usual for a device management agent to send this whenever it starts or restarts."
+msgstr ""
+"设备可通过此请求成为受管设备。这应该是设备在连接到 IoT Platform 后发送的第一个设备管理请求。设备管理代理程序在启动或重新启动时通常会发送此请求。"
+
+#: ../docs/devices/device_mgmt/index.rst:52
+#: ../docs/devices/device_mgmt/index.rst:143
+msgid "Support for this operation is mandatory for any managed devices."
+msgstr ""
+"任何受管设备都需要支持此操作。"
+
+#: ../docs/devices/device_mgmt/index.rst:56
+#: ../docs/devices/device_mgmt/index.rst:146
+#: ../docs/devices/device_mgmt/index.rst:215
+#: ../docs/devices/device_mgmt/index.rst:236
+#: ../docs/devices/device_mgmt/index.rst:348
+#: ../docs/devices/device_mgmt/index.rst:390
+#: ../docs/devices/device_mgmt/index.rst:451
+#: ../docs/devices/device_mgmt/index.rst:506
+#: ../docs/devices/device_mgmt/index.rst:573
+#: ../docs/devices/device_mgmt/index.rst:629
+#: ../docs/devices/device_mgmt/index.rst:697
+#: ../docs/devices/device_mgmt/index.rst:757
+msgid "Topic"
+msgstr ""
+"主题"
+
+#: ../docs/devices/device_mgmt/index.rst:58
+#: ../docs/devices/device_mgmt/index.rst:148
+#: ../docs/devices/device_mgmt/index.rst:217
+#: ../docs/devices/device_mgmt/index.rst:392
+#: ../docs/devices/device_mgmt/index.rst:453
+#: ../docs/devices/device_mgmt/index.rst:508
+#: ../docs/devices/device_mgmt/index.rst:575
+#: ../docs/devices/device_mgmt/index.rst:759
+msgid "A device publishes this request to the following topic:"
+msgstr ""
+"设备将此请求发布到以下主题："
+
+#: ../docs/devices/device_mgmt/index.rst:64
+#: ../docs/devices/device_mgmt/index.rst:154
+#: ../docs/devices/device_mgmt/index.rst:223
+msgid "The server responds to this request on the following topic:"
+msgstr ""
+"服务器在以下主题上对此请求做出响应："
+
+#: ../docs/devices/device_mgmt/index.rst:72
+#: ../docs/devices/device_mgmt/index.rst:162
+#: ../docs/devices/device_mgmt/index.rst:246
+#: ../docs/devices/device_mgmt/index.rst:399
+#: ../docs/devices/device_mgmt/index.rst:460
+#: ../docs/devices/device_mgmt/index.rst:515
+msgid "Message Format"
+msgstr ""
+"消息格式"
+
+#: ../docs/devices/device_mgmt/index.rst:74
+msgid "For the request, the ``d`` field and all of its sub-fields are optional. The ``metadata`` and ``deviceInfo`` field values replace the corresponding attributes for the sending device if they are sent."
+msgstr ""
+"对于此请求，“d”字段及其所有子字段都是可选字段。“metadata”和“deviceInfo”字段值将替换发送设备的对应属性（如果发送了这些属性）。"
+
+#: ../docs/devices/device_mgmt/index.rst:76
+msgid "The optional ``lifetime`` field specifies the length of time in seconds within which the device must send another 'Manage device' request in order to avoid being reverted to an unmanaged device and marked as dormant. If omitted or if set to ``0``, the managed device will not become dormant.  When set, the minimum supported setting is ``3600`` (1 hour)."
+msgstr ""
+"可选的“lifetime”字段用于指定时间长度（以秒计），设备必须在这段时间内发送另一个“管理设备”请求，才能避免被还原为非受管设备且标记为停止。如果省略了此字段或将其设置为“0”，那么受管设备不会停止。设置此字段时，支持的最低设置为“3600”（1 小时）。"
+
+#: ../docs/devices/device_mgmt/index.rst:78
+msgid "Optional ``supports.deviceActions`` and ``supports.firmwareActions`` indicate the capabilities of the device management agent. If ``supports.deviceActions`` is set, the agent supports Reboot and Factory Reset actions. For a device that does not distinguish between rebooting and factory reset, it is acceptable to use the same behaviour for both actions. If ``supports.firmwareActions`` is set, the agent supports Firmware Download and Firmware Update actions."
+msgstr ""
+"可选的“supports.deviceActions”和“supports.firmwareActions”用于指示设备管理代理程序的功能。如果设置“supports.deviceActions”，那么代理程序支持“重新引导”和“恢复工厂设置”操作。对于不区分重新引导和恢复工厂设置的设备，可接受对这两种操作使用相同的行为。如果设置“supports.firmwareActions”，那么代理程序支持“固件下载”和“固件更新”操作。"
+
+#: ../docs/devices/device_mgmt/index.rst:80
+#: ../docs/devices/device_mgmt/index.rst:164
+#: ../docs/devices/device_mgmt/index.rst:257
+#: ../docs/devices/device_mgmt/index.rst:403
+#: ../docs/devices/device_mgmt/index.rst:462
+#: ../docs/devices/device_mgmt/index.rst:522
+#: ../docs/devices/device_mgmt/index.rst:584
+#: ../docs/devices/device_mgmt/index.rst:644
+#: ../docs/devices/device_mgmt/index.rst:709
+#: ../docs/devices/device_mgmt/index.rst:768
+msgid "Request Format:"
+msgstr ""
+"请求格式："
+
+#: ../docs/devices/device_mgmt/index.rst:110
+#: ../docs/devices/device_mgmt/index.rst:175
+#: ../docs/devices/device_mgmt/index.rst:277
+#: ../docs/devices/device_mgmt/index.rst:418
+#: ../docs/devices/device_mgmt/index.rst:473
+#: ../docs/devices/device_mgmt/index.rst:540
+#: ../docs/devices/device_mgmt/index.rst:595
+#: ../docs/devices/device_mgmt/index.rst:660
+#: ../docs/devices/device_mgmt/index.rst:725
+#: ../docs/devices/device_mgmt/index.rst:783
+msgid "Response Format:"
+msgstr ""
+"响应格式："
+
+#: ../docs/devices/device_mgmt/index.rst:124
+#: ../docs/devices/device_mgmt/index.rst:188
+#: ../docs/devices/device_mgmt/index.rst:290
+#: ../docs/devices/device_mgmt/index.rst:432
+#: ../docs/devices/device_mgmt/index.rst:487
+#: ../docs/devices/device_mgmt/index.rst:554
+#: ../docs/devices/device_mgmt/index.rst:608
+#: ../docs/devices/device_mgmt/index.rst:796
+msgid "Response Codes"
+msgstr ""
+"响应代码"
+
+#: ../docs/devices/device_mgmt/index.rst:126
+#: ../docs/devices/device_mgmt/index.rst:190
+#: ../docs/devices/device_mgmt/index.rst:292
+#: ../docs/devices/device_mgmt/index.rst:434
+#: ../docs/devices/device_mgmt/index.rst:489
+#: ../docs/devices/device_mgmt/index.rst:556
+#: ../docs/devices/device_mgmt/index.rst:610
+#: ../docs/devices/device_mgmt/index.rst:798
+msgid "200: The operation was successful."
+msgstr ""
+"200：操作成功。"
+
+#: ../docs/devices/device_mgmt/index.rst:127
+#: ../docs/devices/device_mgmt/index.rst:191
+#: ../docs/devices/device_mgmt/index.rst:293
+#: ../docs/devices/device_mgmt/index.rst:435
+#: ../docs/devices/device_mgmt/index.rst:490
+#: ../docs/devices/device_mgmt/index.rst:557
+#: ../docs/devices/device_mgmt/index.rst:611
+#: ../docs/devices/device_mgmt/index.rst:799
+msgid "400: The input message does not match the expected format, or one of the values is out of the valid range."
+msgstr ""
+"400：输入消息与期望的格式不匹配，或者其中一个值超出有效范围。"
+
+#: ../docs/devices/device_mgmt/index.rst:128
+#: ../docs/devices/device_mgmt/index.rst:192
+#: ../docs/devices/device_mgmt/index.rst:294
+#: ../docs/devices/device_mgmt/index.rst:436
+#: ../docs/devices/device_mgmt/index.rst:491
+#: ../docs/devices/device_mgmt/index.rst:558
+#: ../docs/devices/device_mgmt/index.rst:612
+msgid "404: The topic name is incorrect, or the device is not in the database."
+msgstr ""
+"404：主题名称不正确，或者此设备不在数据库中。"
+
+#: ../docs/devices/device_mgmt/index.rst:129
+#: ../docs/devices/device_mgmt/index.rst:193
+#: ../docs/devices/device_mgmt/index.rst:295
+#: ../docs/devices/device_mgmt/index.rst:437
+#: ../docs/devices/device_mgmt/index.rst:492
+#: ../docs/devices/device_mgmt/index.rst:559
+#: ../docs/devices/device_mgmt/index.rst:613
+#: ../docs/devices/device_mgmt/index.rst:801
+msgid "409: A conflict occurred during the device database update. To resolve this, simplify the operation is necessary."
+msgstr ""
+"409：在设备数据库更新期间发生冲突。要解决此问题，需要简化操作。"
+
+#: ../docs/devices/device_mgmt/index.rst:139
+msgid "Unmanage Device"
+msgstr ""
+"取消管理设备"
+
+#: ../docs/devices/device_mgmt/index.rst:141
+msgid "A device uses this request when it no longer needs to be managed. The IoT Platform will no longer send new device management requests to this device and all device management requests from this device will be rejected other than a 'Manage device' request."
+msgstr ""
+"当设备不需要再作为受管设备时，它可以使用此请求。IoT Platform 将不再向此设备发送新的设备管理请求，并且将拒绝来自此设备的所有设备管理请求（“管理设备”请求除外）。"
+
+#: ../docs/devices/device_mgmt/index.rst:202
+msgid "Update Location"
+msgstr ""
+"更新位置"
+
+#: ../docs/devices/device_mgmt/index.rst:204
+msgid "Devices can change their location over time. The update of the location can happen in two ways:"
+msgstr ""
+"设备可以随时间推移更改位置。可以通过以下两种方式更新位置："
+
+#: ../docs/devices/device_mgmt/index.rst:206
+msgid "The device itself notifies the IoT Platform about the location update: The device retrieves its location from a GPS receiver and sends a device management message to the IoT Platform to update its location. The timestamp captures the time at which the location was retrieved from the GPS receiver. This means that the timestamp is valid, even if the transmission of the location message was delayed. In the event that the timestamp is omitted from the device management message sent, the current date and time on message receipt will be used when the device's location metadata is updated."
+msgstr ""
+"设备本身会向 IoT Platform 通知位置更新：设备从 GPS 接收器检索其位置，并向 IoT Platform 发送设备管理消息来更新其位置。时间戳记可捕获从 GPS 接收器检索到设备位置的时间。这表示时间戳记有效，即使位置消息的传输发生延迟，也是如此。如果所发送的设备管理消息中省略了时间戳记，那么在更新设备位置元数据时，将使用该消息的接收日期和时间。"
+
+#: ../docs/devices/device_mgmt/index.rst:208
+msgid "A user / app updates the location of a device using the Rest API: The IoT Platform REST API is used to set the location metadata of a static device. This can be done at the time that the device is registered, or later if required. It is optional whether to include a timestamp. If omitted, the current date and time will be set as the device’s location metadata."
+msgstr ""
+"用户/应用程序使用 REST API 更新设备位置：IoT Platform REST API 用于设置静态设备的位置元数据。该操作可以在注册设备时完成，也可以稍后完成（如有必要）。可以选择是否包含时间戳记。如果省略，当前的日期和时间将设置为设备的位置元数据。"
+
+#: ../docs/devices/device_mgmt/index.rst:211
+#: ../docs/devices/device_mgmt/index.rst:255
+msgid "Location update triggered by device"
+msgstr ""
+"设备触发的位置更新"
+
+#: ../docs/devices/device_mgmt/index.rst:212
+msgid "Devices that can determine their location can choose to notify the IoT Platform device management server about location changes."
+msgstr ""
+"能确定自身位置的设备可以选择将位置变更信息通知给 IoT Platform 设备管理服务器。"
+
+#: ../docs/devices/device_mgmt/index.rst:231
+#: ../docs/devices/device_mgmt/index.rst:298
+msgid "Location update triggered by user or app"
+msgstr ""
+"用户或应用程序触发的位置更新"
+
+#: ../docs/devices/device_mgmt/index.rst:233
+msgid "When a user or application updates the location of an active managed device the device retrieves an update message:"
+msgstr ""
+"在用户或应用程序更新活动的受管设备的位置时，设备检索更新消息："
+
+#: ../docs/devices/device_mgmt/index.rst:238
+#: ../docs/devices/device_mgmt/index.rst:350
+#: ../docs/devices/device_mgmt/index.rst:631
+#: ../docs/devices/device_mgmt/index.rst:699
+msgid "The server publishes this request to the following topic:"
+msgstr ""
+"服务器将此请求发布到以下主题："
+
+#: ../docs/devices/device_mgmt/index.rst:248
+msgid "The \"measuredDateTime\" is the date of location measurement. The \"updatedDateTime\" is the date of the update to the device information. For efficiency reasons, the IoT Platform may batch updates to location information so the updates may be slightly delayed. The \"latitude\" and \"longitude\" should be specified in decimal degrees using WGS84."
+msgstr ""
+"“measuredDateTime”是位置的测量日期。“updatedDateTime”是设备信息的更新日期。出于效率原因，IoT Platform 可能会成批更新位置信息，因此更新可能会稍有延迟。应使用 WGS84 指定“纬度”和“经度”（以十进制度为单位）。"
+
+#: ../docs/devices/device_mgmt/index.rst:250
+msgid "Whenever location is updated, the values provided for latitude, longitude, elevation and uncertainty are considered as a single multi-value update. The latitude and longitude are mandatory and must both be provided with each update.  Elevation and uncertainty are optional and can be omitted."
+msgstr ""
+"无论何时更新位置，为纬度、经度、海拔高度和不确定性提供的值都会被视为单个多值更新。纬度和经度是必需项，每次更新时都必须提供这两项。海拔高度和不确定性是可选项，可以将其省略。"
+
+#: ../docs/devices/device_mgmt/index.rst:252
+msgid "If an optional value is provided on an update and then omitted on a later update, the earlier value is deleted by the later update. Each update is considered as a complete multi-value set."
+msgstr ""
+"如果某次更新时提供了某个可选值，而某次后续更新时省略了该可选值，那么该后续更新将删除先前的值。每次更新都会被视为一个完整的多值集合。"
+
+#: ../docs/devices/device_mgmt/index.rst:300
+#: ../docs/devices/device_mgmt/index.rst:360
+msgid "Payload Format:"
+msgstr ""
+"有效内容格式："
+
+#: ../docs/devices/device_mgmt/index.rst:326
+msgid "Please note: there is no reqId as no response by device is required."
+msgstr ""
+"请注意：不存在 reqId，因为设备无需响应。"
+
+#: ../docs/devices/device_mgmt/index.rst:335
+msgid "Update Device Attributes"
+msgstr ""
+"更新设备属性"
+
+#: ../docs/devices/device_mgmt/index.rst:337
+msgid "The IoT Platform can send this request to a device to update values of one or more device attributes. Attributes that can be updated by the Rest API are location, metadata, device information and firmware."
+msgstr ""
+"IoT Platform 可以向设备发送此请求，以更新一个或多个设备属性的值。REST API 可以更新的属性有位置、元数据、设备信息和固件。"
+
+#: ../docs/devices/device_mgmt/index.rst:339
+msgid "The \"value\" is the new value of the device attribute. It is a complex field matching the device model. Only writeable fields should be updated as a result of this operation. Values can be updated in:"
+msgstr ""
+"“value”是设备属性的新值。这是一个与设备模型匹配的复杂字段。此操作只应更新可写入字段。可以更新以下属性的值："
+
+#: ../docs/devices/device_mgmt/index.rst:341
+msgid "location (see Update location section for details)"
+msgstr ""
+"location（请参阅“更新位置”部分，以获取详细信息）"
+
+#: ../docs/devices/device_mgmt/index.rst:342
+msgid "metadata (Optional)"
+msgstr ""
+"metadata（可选）"
+
+#: ../docs/devices/device_mgmt/index.rst:343
+msgid "deviceInfo (Optional)"
+msgstr ""
+"deviceInfo（可选）"
+
+#: ../docs/devices/device_mgmt/index.rst:344
+msgid "mgmt.firmware (see Firmware update process for details)"
+msgstr ""
+"mgmt.firmware（请参阅“固件更新”过程，以获取详细信息）"
+
+#: ../docs/devices/device_mgmt/index.rst:358
+#: ../docs/devices/device_mgmt/index.rst:582
+#: ../docs/devices/device_mgmt/index.rst:638
+#: ../docs/devices/device_mgmt/index.rst:707
+#: ../docs/devices/device_mgmt/index.rst:766
+msgid "Message format"
+msgstr ""
+"消息格式"
+
+#: ../docs/devices/device_mgmt/index.rst:385
+msgid "Add Error Code"
+msgstr ""
+"添加错误代码"
+
+#: ../docs/devices/device_mgmt/index.rst:387
+msgid "Devices can choose to notify the IoT Platform device management server about changes in their error status."
+msgstr ""
+"设备可以选择向 IoT Platform 设备管理服务器通知错误状态的更改。"
+
+#: ../docs/devices/device_mgmt/index.rst:401
+msgid "The \"errorCode\" is a current device error code that needs to be added to the IoT Platform."
+msgstr ""
+"“errorCode”是需要添加到 IoT Platform 的当前设备错误代码。"
+
+#: ../docs/devices/device_mgmt/index.rst:446
+msgid "Clear Error Codes"
+msgstr ""
+"清除错误代码"
+
+#: ../docs/devices/device_mgmt/index.rst:448
+msgid "Devices can request that the Internet of Things Foundation clear all of their error codes."
+msgstr ""
+"设备可以请求 Internet of Things Foundation 清除其所有错误代码。"
+
+#: ../docs/devices/device_mgmt/index.rst:501
+msgid "Add Log"
+msgstr ""
+"添加日志"
+
+#: ../docs/devices/device_mgmt/index.rst:503
+msgid "Devices can choose to notify IoTF device management support about changes a new log entry. Log entry includes a log messages, its timestamp and severity, as well as an optional base64-encoded binary diagnostic data."
+msgstr ""
+"设备可以选择向 IoTF 设备管理支持人员通知新日志条目的更改。日志条目包括日志消息、消息的时间戳记和严重性，以及采用 base64 编码的二进制诊断数据（可选）。"
+
+#: ../docs/devices/device_mgmt/index.rst:517
+msgid "\"message\" is a diagnostic message that needs to be added to IoTF. \"timestamp\" is a date and time of the log entry in ISO8601 format. \"data\" is an optional base64-encoded diagnostic data. \"severity\" is a severity of the message (0: informational, 1: warning, 2: error)."
+msgstr ""
+"“message”是需要添加到 IoTF 中的诊断消息。“timestamp”是日志条目的日期和时间（ISO8601 格式）。“data”是采用 base64 编码的诊断数据（可选）。“severity”是消息的严重性（0：参考，1：警告，2：错误）。"
+
+#: ../docs/devices/device_mgmt/index.rst:568
+msgid "Clear Logs"
+msgstr ""
+"清除日志"
+
+#: ../docs/devices/device_mgmt/index.rst:570
+msgid "Devices can request that the Internet of Things Foundation clear all of their log entries."
+msgstr ""
+"设备可以请求 Internet of Things Foundation 清除其所有日志条目。"
+
+#: ../docs/devices/device_mgmt/index.rst:622
+msgid "Observe Attribute Changes"
+msgstr ""
+"观察属性更改"
+
+#: ../docs/devices/device_mgmt/index.rst:624
+msgid "The IoT Platform can send this request to a device to observe changes of one or more device attributes. When the device receives this request, it must send a notification request (\"notify\" message) to the IoT Platform whenever the observed attributes value changes."
+msgstr ""
+"IoT Platform 可以向设备发送此请求，以观察一个或多个设备属性的更改。如果设备收到此请求，那么在所观察的属性值发生更改时，必须向 IoT Platform 发送通知请求（“通知”消息）。"
+
+#: ../docs/devices/device_mgmt/index.rst:626
+#: ../docs/devices/device_mgmt/index.rst:694
+#: ../docs/devices/device_mgmt/index.rst:753
+msgid "Devices must implement observe, notify & cancel operations in order to support :ref:`firmware-actions-update`."
+msgstr ""
+"设备必须实施“观察”、“通知”和“取消”操作，才能支持 :ref:`firmware-actions-update`。"
+
+#: ../docs/devices/device_mgmt/index.rst:640
+msgid "The \"fields\" field is an array of the device attribute names from the device model. For example, values could be \"location\", \"mgmt.firmware\" or \"mgmt.firmware.state\". If a complex field, such as \"mgmt.firmware\" is specified, it is expected that its underlying fields are updated at the same time, such that only a single notify message is generated."
+msgstr ""
+"“fields”字段是一个数组，其中包含来自设备模型的设备属性名称。例如，值可以是“location”、“mgmt.firmware”或“mgmt.firmware.state”。如果指定了复杂字段（如“mgmt.firmware”），那么需要同时更新其下层字段，这样就只会生成一条通知消息。"
+
+#: ../docs/devices/device_mgmt/index.rst:642
+msgid "The \"message\" field used in the response can be specified if \"rc\" is not 200. If any field value which was to be observed could not be retrieved, \"rc\" should be set to 404 (if not found) or 500 (any other reason). When values for fields to be observed cannot be found, \"fields\" should contain an array of elements with \"field\" set to the name of each field that could not be read, \"value\" fields should be omitted. For the response code to be set to 200, both \"field\" and \"value\" must be specified, \"value\" is the current value of an attribute identified by \"field\" content."
+msgstr ""
+"如果“rc”不为 200，那么可以指定响应中的“message”字段。如果检索不到先前观察的任何字段值，那么“rc”应设置为 404（找不到）或 500（任何其他原因）。如果找不到要观察的字段值，那么“fields”中应包含元素数组，其中“field”分别设置为各个无法读取的字段的名称，并且应忽略“value”字段。要将响应代码设置为 200，必须同时指定“field”和“value”，“value”是由“field”内容标识的属性的当前值。"
+
+#: ../docs/devices/device_mgmt/index.rst:688
+msgid "Cancel Attribute Observation"
+msgstr ""
+"取消属性观察"
+
+#: ../docs/devices/device_mgmt/index.rst:690
+msgid "The IoT Platform can send this request to a device to cancel the current observation of one or more device attributes. The \"fields\" is an array of the device attribute names from the device model, for example, values could be \"location\", \"mgmt.firmware\" or \"mgmt.firmware.state\"."
+msgstr ""
+"IoT Platform 可以向设备发送此请求，以取消当前对一个或多个设备属性的观察。“fields”是一个数组，其中包含来自设备模型的设备属性名称，例如，值可以是“ location”、“mgmt.firmware”或“mgmt.firmware.state”。"
+
+#: ../docs/devices/device_mgmt/index.rst:692
+msgid "The \"message\" field must be specified if \"rc\" is not 200."
+msgstr ""
+"如果“rc”不为 200，那么必须指定“message”字段。"
+
+#: ../docs/devices/device_mgmt/index.rst:745
+msgid "Notify Attribute Changes"
+msgstr ""
+"通知属性更改"
+
+#: ../docs/devices/device_mgmt/index.rst:747
+msgid "The IoT Platform can make an observation request referring to a specific attribute or set of values. When the value of the attribute or attributes changes, the device must send a notification containing the latest value."
+msgstr ""
+"IoT Platform 可以发出观察请求（其中引用了特定属性或值集）。当一个或多个属性的值发生更改时，设备必须发送包含最新值的通知。"
+
+#: ../docs/devices/device_mgmt/index.rst:749
+msgid "The \"field_name\" value is the name of the attribute that has changed, the \"field_value\" is the current value of the attribute. The attribute can be a complex field, if multiple values in a complex field are updated as a result of a single operation, only a single notification message should be sent."
+msgstr ""
+"“field_name”值是已更改属性的名称，“field_value”是此属性的当前值。此属性可以是复杂字段，如果复杂字段中的多个值因为一个操作而发生更新，那么只应发送一条通知消息。"
+
+#: ../docs/devices/device_mgmt/index.rst:751
+msgid "If notify request is processed successfully, \"rc\" should be set to 200. If the request is not correct, \"rc\" should be set to 400. If the field specified in the notify request is not being observed, \"rc\" should be set to 404."
+msgstr ""
+"如果成功处理了通知请求，那么“rc”应设置为 200。如果请求不正确，那么“rc”应设置为 400。如果未在观察该通知请求中指定的字段，那么“rc”应设置为 404。"
+
+#: ../docs/devices/device_mgmt/index.rst:800
+msgid "404: The topic name is incorrect, the device is not in the database, or there is no observation for the field reported."
+msgstr ""
+"404：主题名称不正确，或者此设备不在数据库中，或者未报告此字段的观察。"
+
+#: ../docs/devices/device_mgmt/index.rst:802
+msgid "500: An internal error occurred, contact IBM Support."
+msgstr ""
+"500：发生内部错误，请联系 IBM 支持人员。"
+

@@ -1,0 +1,685 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/gateways/java_managedgateway.rst:3
+msgid "Java Client Library - Managed Gateway"
+msgstr ""
+"Libreria client Java - Gateway gestito"
+
+#: ../docs/gateways/java_managedgateway.rst:6
+msgid "Introduction"
+msgstr ""
+"Introduzione"
+
+#: ../docs/gateways/java_managedgateway.rst:8
+msgid "Gateway plays an important role in the device management of devices connected to it. Many of these devices will be too basic to be managed. For a managed device, the device management agent on the gateway acts as a proxy for the connected device. The protocol used by the gateway to manage the connected devices is arbitrary, and there need not be a device management agent on the connected devices. It is only necessary for the gateway to ensure that devices connected to it perform their responsibilities as managed devices, performing any translation and processing required to achieve this. The management agent in gateway will act as more than a transparent tunnel between the attached device and the Watson IoT Platform."
+msgstr ""
+"Il Gateway ha un ruolo importante nella gestione dei dispositivi ad esso collegati. Molti di questi dispositivi sono troppo essenziali per essere gestiti. Nel caso di un dispositivo gestito, l'agent di gestione dei dispositivi sul gateway funge da proxy per il dispositivo collegato. Il protocollo utilizzato dal gateway per gestire i dispositivi connessi è arbitrario, e non è necessario che sui dispositivi collegati vi sia un agent di gestione dei dispositivi. Esso è necessario solo per il gateway, in modo da assicurare che i dispositivi ad esso collegati svolgano il proprio ruolo di dispositivi gestiti, effettuando tutte le traduzioni e le elaborazioni necessarie allo scopo. L'agent di gestione in un gateway funge più da tunnel trasparente tra i dispositivi collegati e Watson IoT Platform."
+
+#: ../docs/gateways/java_managedgateway.rst:10
+msgid "For example, It is unlikely that a device connected to a gateway will be able to download the firmware itself. In this case, the gateway’s device management agent will intercept the request to download the firmware and perform the download to its own storage. Then, when the device is instructed to perform the upgrade, the gateway’s device management agent will push the firmware to the device and update it."
+msgstr ""
+"Ad esempio, è improbabile che un dispositivo connesso ad un gateway possa scaricare il firmware. In questo caso, l'agent di gestione dei dispositivi del gateway intercetterà la richiesta di scaricamento del firmware e lo effettuerà nel proprio archivio. Quindi, quando ad un dispositivo viene richiesto di effettuare l'aggiornamento, l'agent di gestione dei dispositivi del gateway effettuerà il push del firmware sul dispositivo aggiornandolo."
+
+#: ../docs/gateways/java_managedgateway.rst:12
+msgid "This section contains information on how gateways (and attached devices) can connect to the Internet of Things Platform Device Management service using Java and perform device management operations like firmware update, location update, and diagnostics update."
+msgstr ""
+"Questa sezione contiene informazioni su come i gateway (ed i dispositivi collegati) possono connettersi al servizio di gestione dei dispositivi di Internet of Things Platform utilizzando Java ed eseguire operazioni di gestione dispositivo come l'aggiornamento del firmware, l'aggiornamento dell'ubicazione e l'aggiornamento della diagnostica."
+
+#: ../docs/gateways/java_managedgateway.rst:17
+msgid "Create DeviceData"
+msgstr ""
+"Crea DeviceData"
+
+#: ../docs/gateways/java_managedgateway.rst:18
+msgid "The `device model <https://docs.internetofthings.ibmcloud.com/reference/device_model.html>`__ describes the metadata and management characteristics of a device or a gateway. The device database in the IBM Watson Internet of Things Platform is the master source of device information. Applications and managed devices are able to send updates to the database such as a location or the progress of a firmware update. Once these updates are received by the IBM Watson Internet of Things Platform, the device database is updated, making the information available to applications."
+msgstr ""
+"Il `modello del dispositivo <https://docs.internetofthings.ibmcloud.com/reference/device_model.html>`__ descrive i metadati e le caratteristiche di gestione di un dispositivo o di un gateway. Il database del dispositivo in IBM Watson Internet of Things Platform è l'origine principale delle informazioni sul dispositivo. Le applicazioni e i dispositivi gestiti sono in grado di inviare aggiornamenti al database come un'ubicazione o l'avanzamento di un aggiornamento firmware. Dopo che questi aggiornamenti vengono ricevuti da IBM Watson Internet of Things Platform, il database del dispositivo viene aggiornato, rendendo le informazioni disponibili per le applicazioni."
+
+#: ../docs/gateways/java_managedgateway.rst:20
+msgid "The device model in the WIoTP client library is represented as DeviceData and to create a DeviceData one needs to create the following objects,"
+msgstr ""
+"Il modello dispositivo nella libreria client WIoTP è rappresentato come DeviceData e per creare un DeviceData è necessario creare i seguenti oggetti,"
+
+#: ../docs/gateways/java_managedgateway.rst:22
+msgid "DeviceInfo (Optional)"
+msgstr ""
+"DeviceInfo (facoltativo)"
+
+#: ../docs/gateways/java_managedgateway.rst:23
+msgid "DeviceLocation (Optional, required only if the device wants to be notified about the location set by the application through Watson IoT Platform API)"
+msgstr ""
+"DeviceLocation (Facoltativo, richiesto solo se il dispositivo deve essere informato sull'ubicazione impostata dall'applicazione attraverso l'API Watson IoT Platform)"
+
+#: ../docs/gateways/java_managedgateway.rst:24
+msgid "DeviceFirmware (Optional)"
+msgstr ""
+"DeviceFirmware (facoltativo)"
+
+#: ../docs/gateways/java_managedgateway.rst:25
+msgid "DeviceMetadata (optional)"
+msgstr ""
+"DeviceMetadata (facoltativo)"
+
+#: ../docs/gateways/java_managedgateway.rst:27
+msgid "The following code snippet shows how to create the object DeviceInfo along with DeviceMetadata with sample data:"
+msgstr ""
+"Il seguente frammento di codice mostra come creare l'oggetto DeviceInfo insieme ad un oggetto DeviceMetadata con dati di esempio:"
+
+#: ../docs/gateways/java_managedgateway.rst:49
+msgid "The following code snippet shows how to create the DeviceData object with the above created DeviceInfo and DeviceMetadata objects:"
+msgstr ""
+"Il seguente frammento di codice mostra come creare l'oggetto DeviceData con gli oggetti DeviceInfo e DeviceMetadata creati in precedenza:"
+
+#: ../docs/gateways/java_managedgateway.rst:58
+msgid "Each gateway and attached devices must have its own DeviceData to represent itself in the Platform. In the case of gateway, the DeviceData will be passed to the library as part of constructing the ManagedGateway instance, and in the case of attached device, the DeviceData will be passed as part of the sendDeviceManageRequest()."
+msgstr ""
+"Ciascun gateway e dispositivo collegato deve avere il proprio DeviceData per essere rappresentato nella Piattaforma. Nel caso di un gateway, il DeviceData verrà trasmesso dalla libreria come parte dell'attività di costruzione dell'istanza ManagedGateway, e nel caso di un dispositivo collegato, il DeviceData verrà trasmesso come parte del sendDeviceManageRequest()."
+
+#: ../docs/gateways/java_managedgateway.rst:63
+msgid "Construct ManagedGateway"
+msgstr ""
+"Costruzione di ManagedGateway"
+
+#: ../docs/gateways/java_managedgateway.rst:64
+msgid "ManagedGateway - A gateway class that connects the gateway as managed gateway to IBM Watson Internet of Things Platform and enables the gateway to perform one or more Device Management operations for itself and attached devices. Also the ManagedGateway instance can be used to do normal gateway operations like publishing gateway events, attached device events and listening for commands from application."
+msgstr ""
+"ManagedGateway - Una classe gateway che connette il gateway a IBM Watson Internet of Things Platform come dispositivo gestito e gli consente di eseguire una o più operazioni di gestione dispositivo per se stesso e per i dispositivi collegati. Inoltre, l'istanza ManagedGateway può essere utilizzata per eseguire normali operazioni gateway come la pubblicazione degli eventi gateway e l'ascolto di comandi dall'applicazione."
+
+#: ../docs/gateways/java_managedgateway.rst:66
+msgid "ManagedGateway exposes 2 different constructors to support different user patterns,"
+msgstr ""
+"ManagedGateway presenta 2 diversi costruttori per supportare diversi schemi utente,"
+
+#: ../docs/gateways/java_managedgateway.rst:68
+msgid "**Constructor One**"
+msgstr ""
+"**Costruttore Uno**"
+
+#: ../docs/gateways/java_managedgateway.rst:70
+msgid "Constructs a ManagedGateway instance by accepting the DeviceData and the following properties,"
+msgstr ""
+"Costruisce un'istanza ManagedGateway accettando DeviceData e le seguenti proprietà,"
+
+#: ../docs/gateways/java_managedgateway.rst:72
+msgid "Organization-ID - Your organization ID."
+msgstr ""
+"Organization-ID - L'ID dell'organizzazione."
+
+#: ../docs/gateways/java_managedgateway.rst:73
+msgid "Gateway-Type - The type of your gateway device."
+msgstr ""
+"Gateway-Type - Il tipo di dispositivo del gateway."
+
+#: ../docs/gateways/java_managedgateway.rst:74
+msgid "Gateway-ID - The ID of your gateway device."
+msgstr ""
+"Gateway-ID - L'ID del dispositivo del gateway."
+
+#: ../docs/gateways/java_managedgateway.rst:75
+msgid "Authentication-Method - Method of authentication (The only value currently supported is \"token\")."
+msgstr ""
+"Authentication-Method - Il metodo di autenticazione (il solo valore attualmente supportato è \"token\")."
+
+#: ../docs/gateways/java_managedgateway.rst:76
+msgid "Authentication-Token - API key token"
+msgstr ""
+"Authentication-Token - Il token della chiave API"
+
+#: ../docs/gateways/java_managedgateway.rst:78
+msgid "All these properties are required to interact with the IBM Watson Internet of Things Platform."
+msgstr ""
+"Tutte queste proprietà sono richieste per interagire con IBM Watson Internet of Things Platform."
+
+#: ../docs/gateways/java_managedgateway.rst:80
+msgid "The following code shows how to create a ManagedGateway instance:"
+msgstr ""
+"Il seguente codice mostra come creare un'istanza ManagedGateway:"
+
+#: ../docs/gateways/java_managedgateway.rst:93
+msgid "**Constructor Two**"
+msgstr ""
+"**Costruttore Due**"
+
+#: ../docs/gateways/java_managedgateway.rst:95
+msgid "Construct a ManagedGateway instance by accepting the DeviceData and the MqttClient instance. This constructor requires the DeviceData to be created with additional device attributes like Device Type and Device Id as follows:"
+msgstr ""
+"Costruisce un'istanza ManagedGateway accettando DeviceData e l'istanza MqttClient. Questo costruttore richiede che DeviceData sia creato con ulteriori attributi dispositivo, come il tipo di dispositivo e l'ID dispositivo come illustrato di seguito:"
+
+#: ../docs/gateways/java_managedgateway.rst:113
+msgid "Note this constructor helps the custom device users to create a ManagedGateway instance with the already created and connected MqttClient instance to take advantage of device management operations. But we recommend the users to use the library for all the device functionalities."
+msgstr ""
+"Tenere presente che questo costruttore aiuta gli utenti del dispositivo personalizzato a creare un'istanza ManagedGateway con l'istanza MqttClient già creata e connesso per sfruttare le operazioni di gestione dispositivo. Tuttavia, agli utenti è consigliato di utilizzare la libreria per tutte le funzionalità del dispositivo."
+
+#: ../docs/gateways/java_managedgateway.rst:118
+msgid "Manage request - gateway"
+msgstr ""
+"Gestione richieste - gateway"
+
+#: ../docs/gateways/java_managedgateway.rst:120
+msgid "The gateway can invoke sendGatewayManageRequest() method to participate in device management activities. The manage request will initiate a connect request internally if the device is not connected to the IBM Watson Internet of Things Platform already:"
+msgstr ""
+"Il gateway può richiamare il metodo sendGatewayManageRequest() per partecipare alle attività di gestione dispositivo. La richiesta di gestione avvierà una richiesta connect internamente se il dispositivo non è già connesso a IBM Watson Internet of Things Platform:"
+
+#: ../docs/gateways/java_managedgateway.rst:126
+msgid "As shown, this method accepts following 3 parameters,"
+msgstr ""
+"Come riportato, questo metodo accetta i seguenti 3 parametri,"
+
+#: ../docs/gateways/java_managedgateway.rst:128
+msgid "*lifetime* The length of time in seconds within which the gateway must send another **Manage** request in order to avoid being reverted to an unmanaged device and marked as dormant. If set to 0, the managed gateway will not become dormant. When set, the minimum supported setting is 3600 (1 hour)."
+msgstr ""
+"*lifetime* Il periodo di tempo in secondi entro cui il gateway deve inviare un'altra richiesta **Gestisci** per evitare di essere nuovamente trasformato in un dispositivo non gestito e contrassegnato come inattivo. Se impostato su 0, il gateway gestito non diventerà inattivo. Quando è impostato, l'impostazione minima supportata è 3600 (1 ora)."
+
+#: ../docs/gateways/java_managedgateway.rst:129
+msgid "*supportFirmwareActions* Tells whether the gateway supports firmware actions or not. The gateway must add a firmware handler to handle the firmware requests."
+msgstr ""
+"*supportFirmwareActions* Indica se il gateway supporta le azioni firmware o meno. Il gateway deve aggiungere un gestore firmware per gestire le richieste firmware."
+
+#: ../docs/gateways/java_managedgateway.rst:130
+msgid "*supportDeviceActions* Tells whether the gateway supports Device actions or not. The gateway must add a Device action handler to handle the reboot and factory reset requests."
+msgstr ""
+"*supportDeviceActions* Indica se il gateway supporta le azioni del dispositivo o meno. Il gateway deve aggiungere un gestore di azioni del dispositivo per gestire le richieste di riavvio e di ripristino delle impostazioni di fabbrica."
+
+#: ../docs/gateways/java_managedgateway.rst:133
+msgid "Manage request - attached devices"
+msgstr ""
+"Gestione richieste - dispositivi collegati"
+
+#: ../docs/gateways/java_managedgateway.rst:135
+msgid "The gateway can invoke sendDeviceManageRequest() method to make the attached devices participate in the device management activities."
+msgstr ""
+"Il gateway può richiamare il metodo sendDeviceManageRequest() per far sì che i dispositivi collegati partecipino alle attività di gestione del dispositivo."
+
+#: ../docs/gateways/java_managedgateway.rst:141
+msgid "As shown, this method accepts the details of the attached device apart from the lifetime and device/firmware support parameters. The gateway can also use the overloaded sendDeviceManageRequest() method to specify the DeviceData for the attached device."
+msgstr ""
+"Come riportato, questo metodo accetta i dettagli del dispositivo collegato tranne che il ciclo di vita ed i parametri di supporto del dispositivo/firmware. Il gateway può anche utilizzare il metodo sendDeviceManageRequest() sottoposto ad overload per specificare il DeviceData del dispositivo collegato."
+
+#: ../docs/gateways/java_managedgateway.rst:143
+msgid "Refer to the `documentation <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/index.html#/manage-device#manage-device>`__ for more information about the manage operation."
+msgstr ""
+"Fare riferimento alla `documentazione <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/index.html#/manage-device#manage-device>`__ per ulteriori informazioni sull'operazione di gestione."
+
+#: ../docs/gateways/java_managedgateway.rst:148
+msgid "Unmanage request - gateway"
+msgstr ""
+"Annullamento della gestione richieste - gateway"
+
+#: ../docs/gateways/java_managedgateway.rst:150
+msgid "A gateway can invoke sendGatewayUnmanageRequet() method when it no longer needs to be managed. The IBM Watson Internet of Things Platform will no longer send new device management requests for this gateway and all device management requests from the gateway (only for the gateway and not for the attached devices) will be rejected other than a **Manage** request."
+msgstr ""
+"Un gateway può richiamare il metodo sendGatewayUnmanageRequet() quando non è più necessario che sia gestito. IBM Watson Internet of Things Platform non invierà più nuove richieste di gestione del dispositivo per questo gateway e tutte le richieste di gestione dispositivo provenienti dal gateway (solo per il gateway e non per i dispositivi collegati) verranno respinte se diverse dalla richiesta **Gestisci**."
+
+#: ../docs/gateways/java_managedgateway.rst:157
+msgid "Unmanage request - attached devices"
+msgstr ""
+"Annullamento della gestione richieste - dispositivi collegati"
+
+#: ../docs/gateways/java_managedgateway.rst:159
+msgid "The gateway can invoke sendDeviceUnmanageRequet() method to move the attached device from managed state to unmanaged state. The IBM Watson Internet of Things Platform will no longer send new device management requests for this device and all device management requests from the gateway for this attached device will be rejected other than a **Manage** request."
+msgstr ""
+"Il gateway può richiamare il metodo sendDeviceUnmanageRequet() per spostare i dispositivi collegati dallo stato gestito a non  gestito. IBM Watson Internet of Things Platform non invierà più nuove richieste di gestione del dispositivo per questo dispositivo e tutte le richieste di gestione dispositivo provenienti dal gateway per questo dispositivo collegato verranno respinte se diverse dalla richiesta **Gestisci**."
+
+#: ../docs/gateways/java_managedgateway.rst:165
+msgid "Refer to the `documentation <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/index.html#/unmanage-device#unmanage-device>`__ for more information about the Unmanage operation."
+msgstr ""
+"Fare riferimento alla `documentazione <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/index.html#/unmanage-device#unmanage-device>`__ per ulteriori informazioni sull'operazione di annullamento della gestione."
+
+#: ../docs/gateways/java_managedgateway.rst:170
+msgid "Location update - gateway"
+msgstr ""
+"Aggiornamento ubicazione - gateway"
+
+#: ../docs/gateways/java_managedgateway.rst:172
+msgid "Gateways that can determine their location can choose to notify the IBM Watson Internet of Things Platform about location changes. The gateway can invoke one of the overloaded updateLocation() method to update the location of the device."
+msgstr ""
+"I gateway che possono determinare la loro ubicazione possono scegliere di notificare a IBM Watson Internet of Things Platform le modifiche di ubicazione. Il gateway può invocare uno dei metodi updateLocation() si cui è stato effettuato l'overload per aggiornare l'ubicazione del dispositivo."
+
+#: ../docs/gateways/java_managedgateway.rst:185
+msgid "Location update - attached devices"
+msgstr ""
+"Aggiornamento ubicazione - collegati"
+
+#: ../docs/gateways/java_managedgateway.rst:187
+msgid "The gateway can invoke corresponding device method updateDeviceLocation() to update the location of the attached devices. The overloaded method can be used to specify the measuredDateTime and etc.."
+msgstr ""
+"Il gateway può richiamare il metodo dispositivo updateDeviceLocation() corrispondente per aggiornare l'ubicazione dei dispositivi collegati. Il metodo di cui è stato effettuato l'overload può essere utilizzato per specificare il measuredDateTime ed altro."
+
+#: ../docs/gateways/java_managedgateway.rst:195
+msgid "Refer to the `documentation <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/index.html#/update-location#update-location>`__ for more information about the Location update."
+msgstr ""
+"Fare riferimento alla `documentazione <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/index.html#/update-location#update-location>`__ per ulteriori informazioni sull'aggiornamento dell'ubicazione."
+
+#: ../docs/gateways/java_managedgateway.rst:200
+msgid "Append/Clear ErrorCodes - gateway"
+msgstr ""
+"Aggiunta/Cancellazione dei ErrorCodes - gateway"
+
+#: ../docs/gateways/java_managedgateway.rst:202
+msgid "Gateways can choose to notify the IBM Watson Internet of Things Platform about changes in their error status. The gateway can invoke  addErrorCode() method to add the current errorcode to Watson IoT Platform."
+msgstr ""
+"I gateway possono scegliere di notificare a IBM Watson Internet of Things Platform le modifiche nel proprio stato di errore. Il gateway può richiamare il metodo addErrorCode() per aggiungere l'errorcode corrente a Watson IoT Platform."
+
+#: ../docs/gateways/java_managedgateway.rst:208
+msgid "Also, the ErrorCodes of gateway can be cleared from IBM Watson Internet of Things Platform by calling the clearErrorCodes() method as follows:"
+msgstr ""
+"Inoltre, è possibile eliminare ErrorCodes del gateway da IBM Watson Internet of Things Platform richiamando il metodo clearErrorCodes() come illustrato di seguito:"
+
+#: ../docs/gateways/java_managedgateway.rst:215
+msgid "Append/Clear ErrorCodes - attached devices"
+msgstr ""
+"Aggiunta/Cancellazione dei ErrorCodes - dispositivi collegati"
+
+#: ../docs/gateways/java_managedgateway.rst:217
+msgid "Similarly, the gateway can invoke the corresponding device method to add/clear the errorcodes of the attached devices,"
+msgstr ""
+"In modo simile, il gateway può richiamare il metodo del dispositivo corrispondente per aggiungere/annullare gli errorcodes dei dispositivi collegati,"
+
+#: ../docs/gateways/java_managedgateway.rst:227
+msgid "Append/Clear Log messages - gateway"
+msgstr ""
+"Aggiungi/Elimina messaggi log - gateway"
+
+#: ../docs/gateways/java_managedgateway.rst:228
+msgid "Gateways can choose to notify the IBM Watson Internet of Things Platform about changes by adding a new log entry. Log entry includes a log messages, its timestamp and severity, as well as an optional base64-encoded binary diagnostic data. The gateways can invoke addGatewayLog() method to send log messages,"
+msgstr ""
+"I gateway possono scegliere di notificare a IBM Watson Internet of Things Platform le modifiche aggiungendo una nuova voce log. La voce di log include messaggi di log, la sua registrazione data/ora e gravità, nonché dati di diagnostica binari codificati base64 facoltativi. I gateway possono richiamare il metodo addGatewayLog() per inviare messaggi,"
+
+#: ../docs/gateways/java_managedgateway.rst:237
+msgid "Also, the log messages can be cleared from IBM Watson Internet of Things Platform by calling the clearLogs() method as follows:"
+msgstr ""
+"Inoltre, è possibile eliminare i messaggi di log da IBM Watson Internet of Things Platform richiamando il metodo clearLogs() come illustrato di seguito:"
+
+#: ../docs/gateways/java_managedgateway.rst:244
+msgid "Append/Clear Logs - attached devices"
+msgstr ""
+"Aggiunta/Cancellazione dei log - dispositivi collegati"
+
+#: ../docs/gateways/java_managedgateway.rst:246
+msgid "Similarly, the gateway can invoke the corresponding device method to add/clear the Logs of the attached devices,"
+msgstr ""
+"In modo simile, il gateway può richiamare il metodo del dispositivo corrispondente per aggiungere/annullare i log dei dispositivi collegati,"
+
+#: ../docs/gateways/java_managedgateway.rst:256
+msgid "and to clear the Logs of attached devices, invoke the clearDeviceLogs() method with the details of the attached device,"
+msgstr ""
+"e per cancellare i log dei dispositivi collegati, richiamare il metodo clearDeviceLogs() con i dettagli del dispositivo collegato,"
+
+#: ../docs/gateways/java_managedgateway.rst:258
+msgid "..code:: java"
+msgstr ""
+"..code:: java"
+
+#: ../docs/gateways/java_managedgateway.rst:260
+msgid "int rc = managedGateway.clearDeviceLogs(typeId, deviceId);"
+msgstr ""
+"int rc = managedGateway.clearDeviceLogs(typeId, deviceId);"
+
+#: ../docs/gateways/java_managedgateway.rst:262
+msgid "The device diagnostics operations are intended to provide information on gateway/device errors, and does not provide diagnostic information relating to the devices connection to the IBM Watson Internet of Things Platform."
+msgstr ""
+"Le operazioni di diagnostica del dispositivo forniscono informazioni sugli errori di dispositivo e non forniscono informazioni diagnostiche relative alla connessione dispositivo a IBM Watson Internet of Things Platform."
+
+#: ../docs/gateways/java_managedgateway.rst:264
+msgid "Refer to the `documentation <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/index.html#/update-location#update-location>`__ for more information about the Diagnostics operation."
+msgstr ""
+"Fare riferimento alla `documentazione <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/index.html#/update-location#update-location>`__ per ulteriori informazioni sulle operazioni di diagnostica."
+
+#: ../docs/gateways/java_managedgateway.rst:269
+msgid "Firmware Action"
+msgstr ""
+"Azione Firmware"
+
+#: ../docs/gateways/java_managedgateway.rst:270
+msgid "The firmware update process is separated into two distinct actions:"
+msgstr ""
+"Il processo di aggiornamento del firmware è separato in due azioni distinte:"
+
+#: ../docs/gateways/java_managedgateway.rst:272
+msgid "Downloading Firmware"
+msgstr ""
+"Scaricamento del firmware"
+
+#: ../docs/gateways/java_managedgateway.rst:273
+msgid "Updating Firmware."
+msgstr ""
+"Aggiornamento del firmware."
+
+#: ../docs/gateways/java_managedgateway.rst:275
+msgid "The gateway needs to do the following activities to support Firmware Action for itself and for the attached devices:"
+msgstr ""
+"Il gateway deve completare le seguenti attività per supportare le azioni firmware per se stesso e per i dispositivi collegati:"
+
+#: ../docs/gateways/java_managedgateway.rst:277
+msgid "**1. Construct DeviceFirmware Object (Optional)**"
+msgstr ""
+"**1. Costruire l'oggetto DeviceFirmware (Facoltativo)**"
+
+#: ../docs/gateways/java_managedgateway.rst:279
+msgid "In order to perform Firmware action, the gateway can optionally construct a DeviceFirmware object for itself and for attached devices and add it to DeviceData as follows:"
+msgstr ""
+"Per eseguire le azioni firmware, il dispositivo può costruire un oggetto DeviceFirmware per se stesso e per i dispositivi collegati ed aggiungerlo a DeviceData come illustrato di seguito:"
+
+#: ../docs/gateways/java_managedgateway.rst:300
+msgid "And in the case of attached devices, the constructed DeviceData can be passed to the library while sending the manage request. i.e"
+msgstr ""
+"E nel caso dei dispositivi collegati, il DeviceData costruito può essere trasmesso alla libreria durante l'invio della richiesta di gestione. ad esempio,"
+
+#: ../docs/gateways/java_managedgateway.rst:306
+msgid "The DeviceFirmware object represents the current firmware of the gateway or attached device and will be used to report the status of the Firmware Download and Firmware Update actions to IBM Watson Internet of Things Platform. In case this DeviceFirmware object is not constructed by the gateway, the library creates an empty object and reports the status to Watson IoT Platform."
+msgstr ""
+"L'oggetto DeviceFirmware rappresenta il firmware corrente del gateway o del dispositivo collegato e verrà utilizzato per notificare lo stato delle azioni Scaricamento del firmware e Aggiornamento del firmware a IBM Watson Internet of Things Platform. Nel caso questo oggetto DeviceFirmware non viene costruito dal gateway, la libreria crea un oggetto vuoto e segnala lo stato a Watson IoT Platform."
+
+#: ../docs/gateways/java_managedgateway.rst:308
+msgid "**2. Inform the server about the Firmware action support**"
+msgstr ""
+"**2. Informare il server riguardo al supporto dell'azione firmware**"
+
+#: ../docs/gateways/java_managedgateway.rst:310
+msgid "The gateway/attached devices needs to set the firmware action flag to true in order for the server to initiate the firmware request. This can be achieved by passing true value for supportFirmwareActions parameter while sending the manage request."
+msgstr ""
+"Il gateway/dispositivo deve impostare l'indicatore dell'azione firmware su true per consentire al server di avviare la richiesta firmware. Ciò può avvenire passando il valore true per il parametro supportFirmwareActions durante l'invio della richiesta di gestione."
+
+#: ../docs/gateways/java_managedgateway.rst:312
+msgid "The gateway can invoke the following method to inform the server about its firmware support,"
+msgstr ""
+"Il gateway può richiamare il seguente metodo per informare il server del proprio supporto firmware,"
+
+#: ../docs/gateways/java_managedgateway.rst:318
+msgid "Similarly, the gateway can invoke the corresponding device method to inform the firmware support of attached devices,"
+msgstr ""
+"In modo simile, il gateway può richiamare il metodo del dispositivo corrispondente per informare il supporto firmware dei dispositivi collegati,"
+
+#: ../docs/gateways/java_managedgateway.rst:324
+msgid "Once the support is informed to the DM server, the server then forwards the firmware actions to the gateway for the gateway itself/attached devices."
+msgstr ""
+"Una volta che il supporto risulta informato sul server DM, questo può inoltrare le azioni firmware sul gateway, per il gateway stesso o per i dispositivi collegati."
+
+#: ../docs/gateways/java_managedgateway.rst:326
+msgid "**3. Create the Firmware Action Handler**"
+msgstr ""
+"**3. Creare il gestore dell'azione firmware**"
+
+#: ../docs/gateways/java_managedgateway.rst:328
+msgid "In order to support the Firmware action, the gateway needs to create a handler and add it to managedGateway. The handler must extend a DeviceFirmwareHandler class and implement the following methods:"
+msgstr ""
+"Per supportare l'azione firmware, il gateway deve creare un gestore e aggiungerlo a managedGateway. Il gestore deve estendere una classe DeviceFirmwareHandler e implementare i seguenti metodi:"
+
+#: ../docs/gateways/java_managedgateway.rst:335
+msgid "**Note**: There must be only one handler added to the library for both the gateway and attached devices where the firmware download/update requests will be redirected. The implementation must create a thread (possibly a pool of threads) to handle multiple firmware requests at the same time. A sample handler implementation with a threadpool is `demonstrated here <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayFirmwareHandlerSample.java>`__"
+msgstr ""
+"**Nota**: È necessario aggiungere un solo gestore alla libreria per il gateway ed i dispositivi collegati in cui le richieste di download/aggiornamento del firmware saranno reindirizzate. L'implementazione deve creare un thread (possibilmente un threadpool) per gestire più richieste di firmware simultaneamente. In `<https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayFirmwareHandlerSample.java>`_ viene riportata un'implementazione di esempio del gestore con un threadpool"
+
+#: ../docs/gateways/java_managedgateway.rst:337
+msgid "**3.1 Sample implementation of downloadFirmware**"
+msgstr ""
+"**3.1 Implementazione di esempio di downloadFirmware**"
+
+#: ../docs/gateways/java_managedgateway.rst:339
+msgid "The implementation must add a logic to download the firmware and report the status of the download via DeviceFirmware object. If the Firmware Download operation is successful, then the state of the firmware to be set to DOWNLOADED and UpdateStatus should be set to SUCCESS."
+msgstr ""
+"L'implementazione deve aggiungere una logica per scaricare il firmware e notificare lo stato dello scaricamento tramite l'oggetto DeviceFirmware. Se l'operazione di scaricamento del firmware ha esito positivo, lo stato del firmware deve essere impostato su DOWNLOADED e UpdateStatus deve essere impostato su SUCCESS."
+
+#: ../docs/gateways/java_managedgateway.rst:341
+msgid "If an error occurs during Firmware Download the state should be set to IDLE and updateStatus should be set to one of the error status values:"
+msgstr ""
+"Se si verifica un errore durante lo scaricamento del firmware, lo stato deve essere impostato su IDLE e updateStatus deve essere impostato su uno dei valori dello stato di errore:"
+
+#: ../docs/gateways/java_managedgateway.rst:343
+#: ../docs/gateways/java_managedgateway.rst:441
+msgid "OUT_OF_MEMORY"
+msgstr ""
+"OUT_OF_MEMORY"
+
+#: ../docs/gateways/java_managedgateway.rst:344
+msgid "CONNECTION_LOST"
+msgstr ""
+"CONNECTION_LOST"
+
+#: ../docs/gateways/java_managedgateway.rst:345
+msgid "INVALID_URI"
+msgstr ""
+"INVALID_URI"
+
+#: ../docs/gateways/java_managedgateway.rst:347
+msgid "A sample Firmware Download implementation is shown below, (The below code doesn't include the threadpool part, refer to the `github sample <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayFirmwareHandlerSample.java>`__  for the complete implementation of the FirmwareHandler)."
+msgstr ""
+"Di seguito viene riportata un'implementazione di esempio del download di un firmware, (Il seguente codice non include una parte threadpool, fare riferimento all'esempio `github <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayFirmwareHandlerSample.java>`__ per un'implementazione completa del FirmwareHandler)."
+
+#: ../docs/gateways/java_managedgateway.rst:406
+msgid "Gateway can check the integrity of the downloaded firmware image using the verifier and report the status back to IBM Watson Internet of Things Platform. The verifier can be set by the gateway during the startup (while creating the DeviceFirmware Object) or as part of the Download Firmware request by the application. A sample code to verify the same is below:"
+msgstr ""
+"Il gateway può controllare l'integrità dell'immagine del firmware scaricata utilizzando il verificatore e notificare lo stato a IBM Watson Internet of Things Platform. Il verificatore può essere impostato dal gateway durante l'avvio (durante la creazione dell'oggetto DeviceFirmware) oppure come parte della richiesta Scaricamento del firmware da parte dell'applicazione. Un codice di esempio per eseguire la stessa verifica è illustrato di seguito:"
+
+#: ../docs/gateways/java_managedgateway.rst:433
+#: ../docs/gateways/java_managedgateway.rst:477
+msgid "The complete code can be found in the gateway management sample `GatewayFirmwareHandlerSample <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayFirmwareHandlerSample.java>`__."
+msgstr ""
+"Il codice completo si trova nell'esempio di gestione gateway `GatewayFirmwareHandlerSample <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayFirmwareHandlerSample.java>`__."
+
+#: ../docs/gateways/java_managedgateway.rst:435
+msgid "**3.2 Sample implementation of updateFirmware**"
+msgstr ""
+"**3.2 Implementazione di esempio di updateFirmware**"
+
+#: ../docs/gateways/java_managedgateway.rst:437
+msgid "The implementation must create a separate thread and add a logic to install the downloaded firmware and report the status of the update via DeviceFirmware object. If the Firmware Update operation is successful, then the state of the firmware should to be set to IDLE and UpdateStatus should be set to SUCCESS."
+msgstr ""
+"L'implementazione deve creare un thread separato ed aggiungere una logica per installare il firmware scaricato e notificare lo stato dell'aggiornamento tramite l'oggetto DeviceFirmware. Se l'operazione di aggiornamento del firmware ha esito positivo, lo stato del firmware deve essere impostato su IDLE e UpdateStatus deve essere impostato su SUCCESS."
+
+#: ../docs/gateways/java_managedgateway.rst:439
+msgid "If an error occurs during Firmware Update, updateStatus should be set to one of the error status values:"
+msgstr ""
+"Se si verifica un errore durante l'aggiornamento del firmware, updateStatus deve essere impostato su uno dei valori dello stato di errore illustrati di seguito:"
+
+#: ../docs/gateways/java_managedgateway.rst:442
+msgid "UNSUPPORTED_IMAGE"
+msgstr ""
+"UNSUPPORTED_IMAGE"
+
+#: ../docs/gateways/java_managedgateway.rst:444
+msgid "A sample Firmware Update implementation for a Raspberry Pi device is shown below:"
+msgstr ""
+"Un'implementazione dell'aggiornamento del firmware per un dispositivo Raspberry Pi è illustrata di seguito:"
+
+#: ../docs/gateways/java_managedgateway.rst:479
+msgid "**4. Add the handler to ManagedGateway**"
+msgstr ""
+"**4. Aggiungere il gestore a ManagedGateway**"
+
+#: ../docs/gateways/java_managedgateway.rst:481
+msgid "The created handler needs to be added to the ManagedGateway instance so that the WIoTP client library invokes the corresponding method when there is a Firmware action request from IBM Watson Internet of Things Platform."
+msgstr ""
+"Il gestore creato deve essere aggiunto all'istanza ManagedGateway in modo che la libreria client WIoTP invochi il metodo corrispondente quando si verifica una richiesta di azione firmware da IBM Watson Internet of Things Platform."
+
+#: ../docs/gateways/java_managedgateway.rst:488
+msgid "Refer to `this page <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/requests.html#/firmware-actions#firmware-actions>`__ for more information about the Firmware action."
+msgstr ""
+"Fare riferimento a `questa pagina <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/requests.html#/firmware-actions#firmware-actions>`__ per ulteriori informazioni sull'azione firmware."
+
+#: ../docs/gateways/java_managedgateway.rst:493
+msgid "Device Actions"
+msgstr ""
+"Azioni dispositivo"
+
+#: ../docs/gateways/java_managedgateway.rst:494
+msgid "The IBM Watson Internet of Things Platform supports the following device actions:"
+msgstr ""
+"IBM Watson Internet of Things Platform supporta le seguenti azioni dispositivo:"
+
+#: ../docs/gateways/java_managedgateway.rst:496
+msgid "Reboot"
+msgstr ""
+"Riavvia"
+
+#: ../docs/gateways/java_managedgateway.rst:497
+msgid "Factory Reset"
+msgstr ""
+"Reimpostazione alle impostazioni di fabbrica"
+
+#: ../docs/gateways/java_managedgateway.rst:499
+msgid "The gateway needs to do the following activities to support Device Actions for itself and for the attached devices:"
+msgstr ""
+"Il gateway deve completare le seguenti attività per supportare le azioni dispositivo per se stesso e per i dispositivi collegati:"
+
+#: ../docs/gateways/java_managedgateway.rst:501
+msgid "**1. Inform server about the Device Actions support**"
+msgstr ""
+"**1. Informare il server del supporto alle azioni dispositivo**"
+
+#: ../docs/gateways/java_managedgateway.rst:503
+msgid "In order to perform Reboot or Factory Reset action for itself and attached devices, the gateway needs to inform the IBM Watson Internet of Things Platform about the support first. This can be achieved by passing true value for supportDeviceActions parameter while sending the manage request."
+msgstr ""
+"Per poter effettuare azioni di riavvio e di ripristino delle impostazioni di fabbrica per se stesso e per i dispositivi collegati, il gateway deve innanzitutto informare IBM Watson Internet of Things Platform del supporto. Ciò può avvenire passando il valore true per il parametro supportDeviceActions durante l'invio della richiesta di gestione."
+
+#: ../docs/gateways/java_managedgateway.rst:505
+msgid "The gateway can invoke the following method to inform the server about its device action support,"
+msgstr ""
+"The gateway can invoke the following method to inform the server about its device action support,"
+
+#: ../docs/gateways/java_managedgateway.rst:511
+msgid "Similarly, the gateway can invoke the corresponding device method to inform the device action support of attached devices,"
+msgstr ""
+"In modo simile, il gateway può richiamare il metodo del dispositivo corrispondente per informare il supporto azione dei dispositivi collegati,"
+
+#: ../docs/gateways/java_managedgateway.rst:517
+msgid "Once the support is informed to the DM server, the server then forwards the device action requests to the device."
+msgstr ""
+"Una volta che il supporto risulta informato sul server DM, questo inoltra le richieste di azioni del dispositivo sul dispositivo."
+
+#: ../docs/gateways/java_managedgateway.rst:519
+msgid "**2. Create the Device Action Handler**"
+msgstr ""
+"**2. Creare il gestore dell'azione dispositivo**"
+
+#: ../docs/gateways/java_managedgateway.rst:521
+msgid "In order to support the device action, the gateway needs to create a handler and add it to managedGateway instance. The handler must extend a DeviceActionHandler class and provide implementation for the following methods:"
+msgstr ""
+"Per supportare l'azione dispositivo, il gateway deve creare un gestore e aggiungerlo all'istanza managedGateway. Il gestore deve estendere una classe DeviceActionHandler e fornire l'implementazione dei seguenti metodi:"
+
+#: ../docs/gateways/java_managedgateway.rst:528
+msgid "**Note:** There must be only one handler added to the library for both the gateway and attached devices where the device action requests will be redirected. The implementation must create a thread (possibly a pool of threads) to handle multiple device action requests at the same time. A sample handler implementation with a threadpool is `demonstrated here <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayActionHandlerSample.java>`__."
+msgstr ""
+"**Nota**: È necessario aggiungere un solo gestore alla libreria per il gateway ed i dispositivi collegati in cui le richieste di azione dispositivo saranno reindirizzate. L'implementazione deve creare un thread (possibilmente un threadpool) per gestire più richieste del dispositivo simultaneamente. In `<https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayActionHandlerSample.java>`_ viene riportata un'implementazione di esempio del gestore con un threadpool"
+
+#: ../docs/gateways/java_managedgateway.rst:530
+msgid "**2.1 Sample implementation of handleReboot**"
+msgstr ""
+"**2.1 Implementazione di esempio di handleReboot**"
+
+#: ../docs/gateways/java_managedgateway.rst:532
+msgid "The implementation must create a separate thread and add a logic to reboot the gateway/attached device and report the status of the reboot via DeviceAction object. Upon receiving the request, the gateway first needs to inform the server about the support(or failure) before proceeding with the actual reboot. And if the sample can not reboot the device or any other error during the reboot, the gateway can update the status along with an optional message. A sample reboot implementation for a Raspberry Pi device is shown below (The below code doesn't include the threadpool part, refer to the `github location <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayActionHandlerSample.java>`__ for the complete implementation of a sample device action handler)."
+msgstr ""
+"L'implementazione deve creare un thread separato ed aggiungere una logica per riavviare il gateway/dispositivo collegato e notificare lo stato del riavvio tramite l'oggetto DeviceAction. Al momento della ricezione della richiesta, il gateway deve innanzitutto informare il server del supporto (o errore) prima di procedere con l'effettivo riavvio. E se l'esempio non può  riavviare il dispositivo o in presenza di qualsiasi altro errore in fase di riavvio, il gateway può aggiornare lo stato ed inviare facoltativamente un messaggio. Di seguito viene riportata un'implementazione di esempio del riavvio di un dispositivo Raspberry Pi, (Il seguente codice non include una parte threadpool, fare riferimento all'ubicazione `github <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayActionHandlerSample.java>`__ per un'implementazione completa del gestore dell'azione del dispositivo di esempio)."
+
+#: ../docs/gateways/java_managedgateway.rst:555
+msgid "The complete code can be found in the device management sample `GatewayActionHandlerSample <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayActionHandlerSample.java>`__."
+msgstr ""
+"Il codice completo si trova nell'esempio di gestione dispositivo `GatewayActionHandlerSample <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayActionHandlerSample.java>`__."
+
+#: ../docs/gateways/java_managedgateway.rst:557
+msgid "**2.2 Sample implementation of handleFactoryReset**"
+msgstr ""
+"**2.2 Implementazione di esempio di handleFactoryReset**"
+
+#: ../docs/gateways/java_managedgateway.rst:559
+msgid "The implementation must create a separate thread and add a logic to reset the gateway/attached device to factory settings and report the status of the reset via DeviceAction object. Upon receiving the request, the gateway first needs to inform the server about the support(or failure) before proceeding with the actual reset. The skeleton of the Factory Reset implementation is shown below:"
+msgstr ""
+"L'implementazione deve creare un thread separato ed aggiungere una logica per riavviare il gateway/dispositivo collegato e notificare lo stato della reimpostazione tramite l'oggetto DeviceAction. Al momento della ricezione della richiesta, il gateway deve innanzitutto informare il server del supporto (o errore) prima di procedere con l'effettiva reimpostazione. Lo skeleton dell'implementazione della reimpostazione alle impostazioni di fabbrica è illustrato di seguito:"
+
+#: ../docs/gateways/java_managedgateway.rst:574
+msgid "**3. Add the handler to ManagedGateway**"
+msgstr ""
+"**3. Aggiungere il gestore a ManagedGateway**"
+
+#: ../docs/gateways/java_managedgateway.rst:576
+msgid "The created handler needs to be added to the ManagedGateway instance so that the WIoTP client library invokes the corresponding method when there is a device action request for this gateway or attached devices, from IBM Watson Internet of Things Platform."
+msgstr ""
+"Il gestore creato deve essere aggiunto all'istanza ManagedGateway in modo che la libreria client WIoTP invochi il metodo corrispondente quando si verifica una richiesta di azione del dispositivo di questo gateway o dei dispositivi collegati da IBM Watson Internet of Things Platform."
+
+#: ../docs/gateways/java_managedgateway.rst:583
+msgid "Refer to `this page <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/requests.html#/device-actions-reboot#device-actions-reboot>`__ for more information about the Device Action."
+msgstr ""
+"Fare riferimento a `questa pagina <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/requests.html#/device-actions-reboot#device-actions-reboot>`__ per ulteriori informazioni sull'azione del dispositivo."
+
+#: ../docs/gateways/java_managedgateway.rst:588
+msgid "Listen for Device attribute changes"
+msgstr ""
+"Ascolto di modifiche dell'attributo dispositivo"
+
+#: ../docs/gateways/java_managedgateway.rst:590
+msgid "This WIoTP client library updates the corresponding objects whenever there is an update request from the IBM Watson Internet of Things Platform, these update requests are initiated by the application either directly or indirectly (Firmware Update) via the IBM Watson Internet of Things Platform ReST API. Apart from updating these attributes, the library provides a mechanism where the gateway can be notified whenever a device attribute is updated."
+msgstr ""
+"Questa libreria client WIoTP aggiorna gli oggetti corrispondenti ogni volta che si verifica una richiesta di aggiornamento da IBM Watson Internet of Things Platform, tali richieste di aggiornamento vengono avviate dall'applicazione direttamente o indirettamente (aggiornamento firmware) tramite l'API ReST di IBM Watson Internet of Things Platform. Oltre ad aggiornare questi attributi, la libreria fornisce un meccanismo tramite il quale il gateway può ricevere notifiche quando viene aggiornato un attributo dispositivo."
+
+#: ../docs/gateways/java_managedgateway.rst:592
+msgid "Attributes that can be updated by this operation are location, metadata, device information and firmware of the gateway/attached devices."
+msgstr ""
+"Gli attributi che possono essere aggiornati da questa operazione sono l'ubicazione, i metadati, le informazioni del dispositivo ed il firmware del gateway e dei dispositivi collegati."
+
+#: ../docs/gateways/java_managedgateway.rst:594
+msgid "In order to get notified, the gateway needs to add a property change listener on those objects that it is interested."
+msgstr ""
+"Per ricevere la notifica, il gateway deve aggiungere un listener di modifica delle proprietà sugli oggetti a cui è interessato."
+
+#: ../docs/gateways/java_managedgateway.rst:603
+msgid "Also, the gateway needs to implement the propertyChange() method where it receives the notification. A sample implementation is as follows:"
+msgstr ""
+"Inoltre, il gateway deve implementare il metodo propertyChange() su cui riceve la notifica. Un'implementazione di esempio è illustrata di seguito:"
+
+#: ../docs/gateways/java_managedgateway.rst:636
+msgid "Refer to `this page <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/index.html#/update-device-attributes#update-device-attributes>`__ for more information about updating the device attributes."
+msgstr ""
+"Fare riferimento a `questa pagina <https://docs.internetofthings.ibmcloud.com/devices/device_mgmt/index.html#/update-device-attributes#update-device-attributes>`__ per ulteriori informazioni sull'aggiornamento degli attributi del dispositivo."
+
+#: ../docs/gateways/java_managedgateway.rst:641
+msgid "Examples"
+msgstr ""
+"Esempi:"
+
+#: ../docs/gateways/java_managedgateway.rst:642
+msgid "`ManagedRasPiGateway <https://github.com/ibm-messaging/gateway-samples/blob/master/java/gateway-samples/src/main/java/com/ibm/iotf/sample/client/gateway/devicemgmt/ManagedRasPiGateway.java>`__ - Gateway Device Management(DM) capabilities are demonstrated in this sample by managing the Arduino Uno device through the Raspberry Pi Gateway. If you do not have Raspberry Pi and Arduino UNO, don’t worry, you can still follow the sample to connect your device as a gateway and manage one or more attached devices."
+msgstr ""
+"`ManagedRasPiGateway <https://github.com/ibm-messaging/gateway-samples/blob/master/java/gateway-samples/src/main/java/com/ibm/iotf/sample/client/gateway/devicemgmt/ManagedRasPiGateway.java>`__ - In questo esempio sono illustrate le funzioni di DM (Device Management) del gateway attraverso la gestione del dispositivo Arduino Uno mediante il gateway Raspberry Pi. Se non si dispone di Raspberry Pi e Arduino UNO, è comunque possibile seguire l'esempio per collegare il proprio dispositivo come gateway e gestire uno o più dispositivi collegati."
+
+#: ../docs/gateways/java_managedgateway.rst:643
+msgid "`HomeGatewaySample <https://github.com/ibm-messaging/gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/HomeGatewaySample.java>`__ - A home gateway sample that manages few attached home devices like, Lights, Switches, Elevator, Oven and OutdoorTemperature."
+msgstr ""
+"`HomeGatewaySample <https://github.com/ibm-messaging/gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/HomeGatewaySample.java>`__ - Un esempio di gateway home che gestisce pochi dispositivi collegati quali Luci, Interruttori, Ascensore, Forno e Temperatura esterna."
+
+#: ../docs/gateways/java_managedgateway.rst:644
+msgid "`GatewayFirmwareHandlerSample <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayFirmwareHandlerSample.java>`__ - A sample implementation of FirmwareHandler."
+msgstr ""
+"`GatewayFirmwareHandlerSample <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayFirmwareHandlerSample.java>`__ - Un'implementazione di esempio di FirmwareHandler."
+
+#: ../docs/gateways/java_managedgateway.rst:645
+msgid "`GatewayActionHandlerSample <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayActionHandlerSample.java>`__ - A sample implementation of DeviceActionHandler."
+msgstr ""
+"`GatewayActionHandlerSample <https://github.com/ibm-messaging/iot-gateway-samples/blob/master/java/advanced-gateway-sample/src/main/java/com/ibm/iotf/sample/gateway/GatewayActionHandlerSample.java>`__ - Un'implementazione di esempio di DeviceActionHandler."
+
+#: ../docs/gateways/java_managedgateway.rst:650
+msgid "Recipe"
+msgstr ""
+"Istruzioni specifiche"
+
+#: ../docs/gateways/java_managedgateway.rst:652
+msgid "Refer to `the recipe <https://developer.ibm.com/recipes/tutorials/raspberry-pi-as-managed-gateway-in-watson-iot-platform-part-1/>`__ that shows how to connect Raspberry Pi as Managed Gateway to IBM Watson IoT Platform and manage the attached devices. For example, update Arduino Uno device with a new sketch program, reboot Arduino Uno using the Watson IoT Platform device management protocol and etc.."
+msgstr ""
+"Fare riferimento alle istruzioni in <https://developer.ibm.com/recipes/tutorials/raspberry-pi-as-managed-gateway-in-watson-iot-platform-part-1/>`__ che mostrano come collegare Raspberry Pi come dispositivo gestito a IBM Watson IoT Platform per gestire i dispositivi collegati. Ad esempio, aggiornare il dispositivo Arduino Uno con un nuovo programma sketch, riavviare Arduino Uno tramite il protocollo di gestione del dispositivo di Watson IoT Platform e così via."
+

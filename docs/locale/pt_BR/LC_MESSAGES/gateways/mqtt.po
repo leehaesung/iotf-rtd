@@ -1,0 +1,547 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/gateways/mqtt.rst:2
+msgid "MQTT Connectivity for Gateways"
+msgstr ""
+"Conectividade do MQTT para Gateways"
+
+#: ../docs/gateways/mqtt.rst:5
+msgid "MQTT client connection"
+msgstr ""
+"Conexão do cliente MQTT"
+
+#: ../docs/gateways/mqtt.rst:6
+msgid "Every registered organization has a unique endpoint which must be used when connecting MQTT clients for gateways in that organization."
+msgstr ""
+"Cada organização registrada possui um terminal exclusivo que deve ser usado ao conectar clientes MQTT para gateways nessa organização."
+
+#: ../docs/gateways/mqtt.rst:9
+msgid "**org\\_id**.messaging.internetofthings.ibmcloud.com"
+msgstr ""
+"**org\\_id**.messaging.internetofthings.ibmcloud.com"
+
+#: ../docs/gateways/mqtt.rst:11
+msgid "In the IoT Platform dashboard, devices and gateways which are connected directly to the IoT Platform display a status icon indicating that they are connected. The dashboard displays devices which are connected indirectly via a gateway as disconnected as it does not have any knowledge of a devices connectivity to the gateway."
+msgstr ""
+"No painel IoT Platform, dispositivos e gateways que estão conectados diretamente ao IoT Platform exibem um ícone de status indicando que eles estão conectados. O painel exibe dispositivos que são conectados indiretamente via um gateway, que desconectado não possui conhecimento de uma conectividade de dispositivos para o gateway."
+
+#: ../docs/gateways/mqtt.rst:14
+msgid "Unencrypted client connection"
+msgstr ""
+"Conexão do cliente não criptografada"
+
+#: ../docs/gateways/mqtt.rst:16
+msgid "Connect on port **1883**"
+msgstr ""
+"Conectar à porta **1883**"
+
+#: ../docs/gateways/mqtt.rst:18
+msgid "All information your gateway submits is being sent in plain text (including the authentication credentials for your gateway). We recommend the use of an encrypted connection whenever possible."
+msgstr ""
+"Todas as informações que seu gateway envia estão sendo enviadas em texto simples (incluindo as credenciais de autenticação para seu gateway). Recomendamos o uso de uma conexão criptografada sempre que possível."
+
+#: ../docs/gateways/mqtt.rst:24
+msgid "Encrypted client connection"
+msgstr ""
+"Conexão do cliente criptografada"
+
+#: ../docs/gateways/mqtt.rst:26
+msgid "Connect on port **8883** or **443** for websockets. In many client libraries you will need to provide the server's public certificate in pem format.  The following file contains the entire certificate chain for \\*.messaging.internetofthings.ibmcloud.com: messaging.pem_"
+msgstr ""
+"Conectar à porta **8883** ou **443** para websockets. Em muitas bibliotecas de clientes, você precisará fornecer um certificado público do servidor no formato pem.  O arquivo a seguir contém a sequência de certificados inteira para \\*.messaging.internetofthings.ibmcloud.com: messaging.pem_"
+
+#: ../docs/gateways/mqtt.rst:33
+msgid "Some SSL client libraries have been shown to not handle wildcarded domains, in which case, if you can not change libraries, you will need to turn off certificate checking."
+msgstr ""
+"Algumas bibliotecas do cliente SSL demonstraram não manipular domínios com caractere curinga; neste caso, se você não puder mudar as bibliotecas, será necessário desativar a verificação de certificados."
+
+#: ../docs/gateways/mqtt.rst:37
+msgid "The IoT Platform requires TLS v1.2. We suggest the following cipher suites: ECDHE-RSA-AES256-GCM-SHA384, AES256-GCM-SHA384, ECDHE-RSA-AES128-GCM-SHA256 or AES128-GCM-SHA256 *(as of Jun 1 2015)*."
+msgstr ""
+"O IoT Platform requer o TLS v1.2. Sugerimos os seguintes conjuntos de cifras: ECDHE-RSA-AES256-GCM-SHA384, AES256-GCM-SHA384, ECDHE-RSA-AES128-GCM-SHA256 ou AES128-GCM-SHA256 *(a partir de 1 de junho de 2015)*."
+
+#: ../docs/gateways/mqtt.rst:42
+msgid "MQTT client identifier"
+msgstr ""
+"Identificador de cliente MQTT"
+
+#: ../docs/gateways/mqtt.rst:44
+msgid "A gateway must authenticate using a client ID in the following format:"
+msgstr ""
+"Um gateway deve autenticar usando um ID de cliente no seguinte formato:"
+
+#: ../docs/gateways/mqtt.rst:46
+msgid "g:**orgId**:**typeId**:**deviceId**"
+msgstr ""
+"g:**orgId**:**typeId**:**deviceId**"
+
+#: ../docs/gateways/mqtt.rst:48
+msgid "**g** idenfities your client as a gateway"
+msgstr ""
+"**g** identifica seu cliente como um gateway"
+
+#: ../docs/gateways/mqtt.rst:49
+msgid "**orgId** is your unique organization ID, assigned when you sign up with the service.  It will be a 6 character alphanumeric string."
+msgstr ""
+"**orgId** é seu ID exclusivo da organização, designado quando você se inscreve no serviço.  Ele será uma sequência alfanumérica de 6 caracteres."
+
+#: ../docs/gateways/mqtt.rst:51
+msgid "**typeId** is intended to be used as an identifier of the type of gateway connecting, it may be useful to think of this as analogous to a model number."
+msgstr ""
+"**typeId** destina-se a ser usado como um identificador do tipo de conexão de gateway, pode ser útil pensar nisso da mesma forma que um número do modelo."
+
+#: ../docs/gateways/mqtt.rst:54
+msgid "**deviceId** must uniquely identify a gateway device across all gateways of a specific type, it may be useful to think of this as analogous to a serial number."
+msgstr ""
+"**deviceId** deve identificar exclusivamente um dispositivo de gateway em todos os gateways de um tipo específico, pode ser útil pensar nisso da mesma forma que um número de série."
+
+#: ../docs/gateways/mqtt.rst:58
+msgid "You can use any scheme of your choice when assigning values for ``typeId`` and ``deviceId``, however the following restrictions apply to both:"
+msgstr ""
+"É possível usar qualquer esquema de sua escolha ao designar valores para ``typeId`` e ``deviceId`, no entanto, as seguintes restrições se aplicam a ambos:"
+
+#: ../docs/gateways/mqtt.rst:61
+msgid "Maximum length of 36 characters"
+msgstr ""
+"Comprimento máximo de 36 caracteres"
+
+#: ../docs/gateways/mqtt.rst:62
+msgid "Must comprise only alpha-numeric characters (``a-z``, ``A-Z``, ``0-9``) and the following special characters:"
+msgstr ""
+"Deve abranger apenas caracteres alfanuméricos (` a-z``, ``A-Z`, ``0-9``) e os seguintes caracteres especiais:"
+
+#: ../docs/gateways/mqtt.rst:64
+msgid "dash (``-``)"
+msgstr ""
+"traço (``-``)"
+
+#: ../docs/gateways/mqtt.rst:65
+msgid "underscore (``_``)"
+msgstr ""
+"sublinhado (``_``)"
+
+#: ../docs/gateways/mqtt.rst:66
+msgid "dot (``.``)"
+msgstr ""
+"ponto (``.``)"
+
+#: ../docs/gateways/mqtt.rst:70
+msgid "MQTT authentication"
+msgstr ""
+"Autenticação MQTT"
+
+#: ../docs/gateways/mqtt.rst:73
+msgid "Username"
+msgstr ""
+"Nome do usuário"
+
+#: ../docs/gateways/mqtt.rst:75
+msgid "The service currently only supports token-based authentication for devices, as such there is only one valid username for gateways today."
+msgstr ""
+"O serviço suporta atualmente apenas a autenticação baseada em token para dispositivos, assim, há apenas um nome de usuário válido para gateways hoje."
+
+#: ../docs/gateways/mqtt.rst:78
+msgid "A value of ``use-token-auth`` indicates to the service that the authentication token for the gateway will be passed as the password for the MQTT connection."
+msgstr ""
+"Um valor de ``use-token-auth`` indica ao serviço que o token de autenticação para o gateway será transmitido como a senha para a conexão de MQTT."
+
+#: ../docs/gateways/mqtt.rst:83
+msgid "Password"
+msgstr ""
+"Senha"
+
+#: ../docs/gateways/mqtt.rst:85
+msgid "When using token based authentication submit the device authentication token as the password when making your MQTT connection."
+msgstr ""
+"Ao usar a autenticação baseada em token, envie o token de autenticação de dispositivo como a senha ao estabelecer sua conexão MQTT."
+
+#: ../docs/gateways/mqtt.rst:90
+msgid "Publishing events"
+msgstr ""
+"Publicando eventos"
+
+#: ../docs/gateways/mqtt.rst:92
+msgid "A gateway can publish events from itself and on behalf of any device connected via the gateway by using the following topic and substituting in the appropriate ``typeId`` and ``deviceId`` based on the intended origin of the event:"
+msgstr ""
+"Um gateway pode publicar eventos de si mesmo e em nome de qualquer dispositivo conectado por meio do gateway usando o tópico a seguir e substituindo no ``typeId`` e ``deviceId`` apropriados com base na origem desejada do evento:"
+
+#: ../docs/gateways/mqtt.rst:97
+msgid "iot-2/type/\\ **typeId**/id/\\ **deviceId**/evt/\\ **eventId**/fmt/\\ **formatString**"
+msgstr ""
+"iot-2/type/\\ **typeId**/id/\\ **deviceId**/evt/\\ **eventId**/fmt/\\ **formatString**"
+
+#: ../docs/gateways/mqtt.rst:100
+#: ../docs/gateways/mqtt.rst:129
+msgid "Example"
+msgstr ""
+"Exemplo:"
+
+#: ../docs/gateways/mqtt.rst:102
+#: ../docs/gateways/mqtt.rst:132
+msgid "``typeId``"
+msgstr ""
+"``typeId``"
+
+#: ../docs/gateways/mqtt.rst:102
+#: ../docs/gateways/mqtt.rst:132
+msgid "``deviceId``"
+msgstr ""
+"``deviceId``"
+
+#: ../docs/gateways/mqtt.rst:104
+#: ../docs/gateways/mqtt.rst:134
+msgid "Gateway 1"
+msgstr ""
+"Gateway 1"
+
+#: ../docs/gateways/mqtt.rst:104
+#: ../docs/gateways/mqtt.rst:134
+msgid "mygateway"
+msgstr ""
+"mygateway"
+
+#: ../docs/gateways/mqtt.rst:104
+#: ../docs/gateways/mqtt.rst:134
+msgid "gateway1"
+msgstr ""
+"gateway1"
+
+#: ../docs/gateways/mqtt.rst:106
+#: ../docs/gateways/mqtt.rst:136
+msgid "Device 1"
+msgstr ""
+"Dispositivo 1"
+
+#: ../docs/gateways/mqtt.rst:106
+#: ../docs/gateways/mqtt.rst:136
+msgid "mydevice"
+msgstr ""
+"mydevice"
+
+#: ../docs/gateways/mqtt.rst:106
+#: ../docs/gateways/mqtt.rst:136
+msgid "device1"
+msgstr ""
+"device1"
+
+#: ../docs/gateways/mqtt.rst:109
+msgid "Gateway 1 can publish its own status events: ``iot-2/type/mygateway/id/gateway1/evt/status/fmt/json``"
+msgstr ""
+"O Gateway 1 pode publicar seus próprios eventos de status: ``iot-2/type/mygateway/id/gateway1/evt/status/fmt/json``"
+
+#: ../docs/gateways/mqtt.rst:110
+msgid "Gateway 1 can publish status events on behalf of Device 1: ``iot-2/type/mydevice/id/device1/evt/status/fmt/json``"
+msgstr ""
+"Gateway 1 pode publicar eventos de status em nome do Dispositivo 1: ``iot-2/type/mydevice/id/device1/evt/status/fmt/json``"
+
+#: ../docs/gateways/mqtt.rst:113
+msgid "The message payload is limited to a maximum of 131072 bytes.  Messages larger than this will be rejected."
+msgstr ""
+"A carga útil da mensagem é limitada a um máximo de 131072 bytes.  Mensagens maiores do que esta serão rejeitadas."
+
+#: ../docs/gateways/mqtt.rst:117
+msgid "Subscribing to commands"
+msgstr ""
+"Assinando comandos"
+
+#: ../docs/gateways/mqtt.rst:119
+msgid "A gateway can subscribe to commands directed at the gateway itself and to any device connected via the gateway by using the following topic and substituting in the appropriate ``typeId`` and ``deviceId``:"
+msgstr ""
+"Um gateway pode assinar comandos direcionados no gateway em si e para qualquer dispositivo conectado por meio do gateway usando o tópico a seguir e substituindo no ``typeId `` e ``deviceId`` apropriados:"
+
+#: ../docs/gateways/mqtt.rst:123
+msgid "iot-2/type/\\ **typeId**/id/\\ **deviceId**/cmd/\\ **commandId**/fmt/\\ **formatString**"
+msgstr ""
+"iot-2/type/\\ **typeId**/id/\\ **deviceId**/cmd/\\ **commandId**/fmt/\\ **formatString**"
+
+#: ../docs/gateways/mqtt.rst:125
+msgid "The MQTT ``+`` wildcard can be used for ``typeId``, ``deviceId``, ``commandId`` and ``formatString`` to subscribe to multiple command sources."
+msgstr ""
+"O curinga ``+`` do MQTT pode ser usado para ``typeId``, ``deviceId``, ``commandId`` e ``formatString`` para assinar várias fontes de comandos."
+
+#: ../docs/gateways/mqtt.rst:139
+msgid "Gateway 1 can subscribe to commands directed at the gateway: ``iot-2/type/mygateway/id/gateway1/cmd/+/fmt/+``"
+msgstr ""
+"Gateway 1 pode assinar comandos direcionados no gateway: ``iot-2/type/mygateway/id/gateway1/cmd/+/fmt/+``"
+
+#: ../docs/gateways/mqtt.rst:140
+msgid "Gateway 1 can subscribe to commands sent to Device 1: ``iot-2/type/mydevice/id/device1/cmd/+/fmt/+``"
+msgstr ""
+"Gateway 1 pode assinar comandos enviados ao Dispositivo 1: ``iot-2/type/mydevice/id/device1/cmd/+/fmt/+``"
+
+#: ../docs/gateways/mqtt.rst:141
+msgid "Gateway 1 can subscribe any command sent to devices of type \"mydevice\": ``iot-2/type/mydevice/id/+/cmd/+/fmt/+``"
+msgstr ""
+"Gateway 1 pode assinar qualquer comando enviado ao dispositivo do tipo \"mydevice\": ``iot-2/type/mydevice/id/+/cmd/+/fmt/+``"
+
+#: ../docs/gateways/mqtt.rst:145
+msgid "MQTT persistent sessions (cleansession=false) do not roam for devices which connect to gateways. What this means is that if a device connects to gateway A, then later connects to gateway B, it will not receive any messages that had been published to gateway A for that device while it was disconnected. A gateway owns the MQTT client and subscription, not the devices which are connected to the gateway."
+msgstr ""
+"Sessões persistentes de MQTT (cleansession=false) não se movem para dispositivos que se conectam aos gateways. Isso significa que se um dispositivo se conectar ao gateway A, e posteriormente se conectar ao gateway B, ele não receberá nenhuma mensagem publicada para o gateway A desse dispositivo enquanto estiver desconectado. Um gateway possui o cliente e assinatura de MQTT, não os dispositivos que estão conectados ao gateway."
+
+#: ../docs/gateways/mqtt.rst:148
+msgid "Gateway auto-registration"
+msgstr ""
+"Autorregistro de gateway"
+
+#: ../docs/gateways/mqtt.rst:149
+msgid "Gateway devices have the ability to automatically register devices which are connected to them. When a gateway publishes a message or subscribes to a topic on behalf of another device, that device will automatically be registered if it does not already exist."
+msgstr ""
+"Os dispositivos de gateway têm a capacidade de registrar automaticamente os dispositivos que estão conectados a eles. Quando um gateway publica uma mensagem ou assina um tópico em nome de outro dispositivo, esse dispositivo será registrado automaticamente se ainda não existir."
+
+#: ../docs/gateways/mqtt.rst:153
+msgid "Registration requests from gateway devices are throttled to 128 pending requests at a time. If trying to connect many new devices to a gateway which have not previously been registered, then there may be some delay in the registration of the devices through the gateway."
+msgstr ""
+"As solicitações de registro dos dispositivos de gateway são reguladas para 128 solicitações pendentes por vez. Se ao tentar conectar muitos novos dispositivos a um gateway que não foi registrado anteriormente, haverá algum atraso no registro dos dispositivos por meio do gateway."
+
+#: ../docs/gateways/mqtt.rst:158
+msgid "If the gateway fails to automatically register a device, then it will not attempt to register that device again for a short period of time. Any messages or subscriptions from the failed device will be dropped during that time."
+msgstr ""
+"Se o gateway falhar ao registrar automaticamente um dispositivo, ele não tentará registrar esse dispositivo novamente durante um curto período. Quaisquer mensagens ou assinaturas do dispositivo com falha serão eliminadas durante esse período."
+
+#: ../docs/gateways/mqtt.rst:163
+msgid "Gateway notifications"
+msgstr ""
+"Notificações de gateway"
+
+#: ../docs/gateways/mqtt.rst:164
+msgid "When errors occur during the validation of the publish or subscribe topic, or during automatic registration, a notification will be sent to the gateway device. A gateway can receive these notifications by subscribing to the following topic, substituting in its own ``typeId`` and ``deviceId``:"
+msgstr ""
+"Quando ocorrerem erros durante a validação do tópico de publicação ou assinatura ou durante o registro automático, uma notificação será enviada ao dispositivo de gateway. Um gateway pode receber essas notificações assinando o tópico a seguir, substituindo em seu próprio ``typeId`` e ``deviceId``:"
+
+#: ../docs/gateways/mqtt.rst:168
+msgid "iot-2/type/\\ **typeId**/id/\\ **deviceId**/notify"
+msgstr ""
+"iot-2/type/\\ **typeId**/id/\\ **deviceId**/notify"
+
+#: ../docs/gateways/mqtt.rst:170
+msgid "Messages received on the notify topic will have the following format:"
+msgstr ""
+"As mensagens recebidas no tópico de notificação terão o formato a seguir:"
+
+#: ../docs/gateways/mqtt.rst:185
+msgid "Request_Type: Either publish or subscribe"
+msgstr ""
+"Request_Type: publicar ou assinar"
+
+#: ../docs/gateways/mqtt.rst:186
+msgid "Timestamp: Time in ISO 8601 Format"
+msgstr ""
+"Registro de data e hora: horário no formato ISO 8601"
+
+#: ../docs/gateways/mqtt.rst:187
+msgid "Topic: The request topic from the gateway"
+msgstr ""
+"Tópico: o tópico de solicitação do gateway"
+
+#: ../docs/gateways/mqtt.rst:188
+msgid "Device_Type: The device type from the topic"
+msgstr ""
+"Device_Type: o tipo de dispositivo do tópico"
+
+#: ../docs/gateways/mqtt.rst:189
+msgid "Device_Id: The device id from the topic"
+msgstr ""
+"Device_Id: o ID do dispositivo do tópico"
+
+#: ../docs/gateways/mqtt.rst:190
+msgid "ClientID: The client id of the request"
+msgstr ""
+"ClientID: o ID do cliente da solicitação"
+
+#: ../docs/gateways/mqtt.rst:191
+msgid "RC: The return code"
+msgstr ""
+"RC: o código de retorno"
+
+#: ../docs/gateways/mqtt.rst:192
+msgid "Message: The error message"
+msgstr ""
+"Mensagem: a mensagem de erro"
+
+#: ../docs/gateways/mqtt.rst:194
+msgid "Notifications a gateway may receive:"
+msgstr ""
+"Notificações que um gateway pode receber:"
+
+#: ../docs/gateways/mqtt.rst:196
+msgid "Topic does not match with any allowed topic rules."
+msgstr ""
+"O tópico não corresponde a nenhuma regra de tópico permitida."
+
+#: ../docs/gateways/mqtt.rst:197
+msgid "Device type is not valid."
+msgstr ""
+"O tipo de dispositivo não é válido."
+
+#: ../docs/gateways/mqtt.rst:198
+msgid "Device id is not valid."
+msgstr ""
+"O ID do dispositivo não é válido."
+
+#: ../docs/gateways/mqtt.rst:199
+msgid "Maximum number of devices per gateway has been reached."
+msgstr ""
+"O número máximo de dispositivos por gateway foi atingido."
+
+#: ../docs/gateways/mqtt.rst:200
+msgid "Maximum number of devices per organization has been reached."
+msgstr ""
+"O número máximo de dispositivos por organização foi atingido."
+
+#: ../docs/gateways/mqtt.rst:201
+msgid "Failed to create device due to internal errors."
+msgstr ""
+"Falha ao criar o dispositivo devido a erros internos."
+
+#: ../docs/gateways/mqtt.rst:205
+msgid "Managed Gateways"
+msgstr ""
+"Gateways Gerenciados"
+
+#: ../docs/gateways/mqtt.rst:207
+msgid "Support for device lifecycle management is optional, the device management protocol used by IoT Platform utilises the same MQTT connection that your gateway already uses for events and command control."
+msgstr ""
+"O suporte para gerenciamento de ciclo de dispositivo é opcional, o protocolo de gerenciamento de dispositivo usado pelo IoT Platform usa a mesma conexão MQTT que seu gateway já usa para eventos e controle de comando."
+
+#: ../docs/gateways/mqtt.rst:212
+msgid "Quality of Service Levels and Clean Session"
+msgstr ""
+"Qualidade de Níveis de Serviço e Sessão de Limpeza"
+
+#: ../docs/gateways/mqtt.rst:214
+msgid "Managed gateways can publish messages with Quality of Service (QoS) level of 0 or 1. If QoS 1 is used, messages from the gateway will be queued if necessary. Messages from the gateway must not be retained messages."
+msgstr ""
+"Gateways gerenciados podem publicar mensagens com níveis de Qualidade de Serviço (QoS) 0 ou 1. Se QoS 1 for usado, as mensagens do gateway serão enfileiradas, se necessário. Mensagens do gateway não devem ser mensagens retidas."
+
+#: ../docs/gateways/mqtt.rst:218
+msgid "The IoT Platform publishes requests with a QoS level of 1 to support queuing of messages.  In order to queue messages sent while a managed gateway is not connected, the device should use ``cleansession=false``."
+msgstr ""
+"O IoT Platform publica solicitações com um nível de QoS 1 para suportar o enfileiramento de mensagens.  Para enfileirar as mensagens enviadas enquanto um gateway gerenciado não está conectado, o dispositivo deve usar ``cleansession=false``."
+
+#: ../docs/gateways/mqtt.rst:223
+msgid "If your managed gateway uses a durable subscription (cleansession=false) you need to be aware that device management commands sent to your gateway while it is offline will be reported as failed operations, however, when the gateway later connects those requests will be actioned by the gateway."
+msgstr ""
+"Se o seu gateway gerenciado usa uma assinatura durável (cleansession=false), você precisa estar ciente de que os comandos de gerenciamento de dispositivo enviados para seu gateway enquanto ele está off-line serão relatados como operações com falha, no entanto, quando o gateway se conectar posteriormente, essas solicitações serão acionadas pelo gateway."
+
+#: ../docs/gateways/mqtt.rst:228
+msgid "When handling failures it is important to take this into account if you are using durable subscriptions for your managed gateways."
+msgstr ""
+"Ao manipular falhas, é importante levar isso em conta se você estiver usando assinaturas duráveis para seus gateways gerenciados."
+
+#: ../docs/gateways/mqtt.rst:233
+msgid "Topics"
+msgstr ""
+"Tópicos"
+
+#: ../docs/gateways/mqtt.rst:235
+msgid "A managed gateway is required to subscribe to two topics to handle requests and responses from IoT Platform:"
+msgstr ""
+"Um gateway gerenciado é necessário para assinar dois tópicos para manipular solicitações e respostas a partir do IoT Platform:"
+
+#: ../docs/gateways/mqtt.rst:237
+msgid "The managed gateway will subscribe to device management reponses on ``iotdm-1/type/<typeId>/id/<deviceId>/response/+``"
+msgstr ""
+"O gateway gerenciado assinará respostas de gerenciamento de dispositivo em ``iotdm-1/type/<typeId>/id/<deviceId>/response/+``"
+
+#: ../docs/gateways/mqtt.rst:238
+msgid "The managed gateway will subscribe to device management requests on ``iotdm-1/type/<typeId>/id/<deviceId>/+``"
+msgstr ""
+"O gateway gerenciado assinará solicitações de gerenciamento de dispositivo em ``iotdm-1/type/<typeId>/id/<deviceId>/+``"
+
+#: ../docs/gateways/mqtt.rst:241
+msgid "A managed gateway will publish to two topics:"
+msgstr ""
+"Um gateway gerenciado publicará em dois tópicos:"
+
+#: ../docs/gateways/mqtt.rst:243
+msgid "The managed gateway will publish device management responses on ``iotdevice-1/type/<typeId>/id/<deviceId>/response/``"
+msgstr ""
+"O gateway gerenciado publicará as respostas de gerenciamento de dispositivo em ``iotdevice-1/type/<typeId>/id/<deviceId>/response/``"
+
+#: ../docs/gateways/mqtt.rst:244
+msgid "The managed gateway will publish device management requests on ``iotdevice-1/type/<typeId>/id/<deviceId>/``"
+msgstr ""
+"O gateway gerenciado publicará solicitações de gerenciamento de dispositivo em ``iotdevice-1/type/<typeId>/id/<deviceId>/``"
+
+#: ../docs/gateways/mqtt.rst:246
+msgid "The gateway is able to process device management protocol messages for both itself and on behalf other connected devices by using the relevant <typeId> and <deviceId>."
+msgstr ""
+"O gateway é capaz de processar mensagens de protocolo de gerenciamento de dispositivo para si mesmo e em nome de outros dispositivos conectados usando o <typeId> e <deviceId> relevantes."
+
+#: ../docs/gateways/mqtt.rst:251
+msgid "Message Format"
+msgstr ""
+"Formato da Mensagem"
+
+#: ../docs/gateways/mqtt.rst:253
+msgid "All messages are sent in JSON format. There are two types of message."
+msgstr ""
+"Todas as mensagens são enviadas no formato JSON. Existem dois tipos de mensagens."
+
+#: ../docs/gateways/mqtt.rst:264
+msgid "Request"
+msgstr ""
+"Solicitação"
+
+#: ../docs/gateways/mqtt.rst:256
+msgid "Requests are formatted as follows:"
+msgstr ""
+"As solicitações são formatadas da seguinte maneira:"
+
+#: ../docs/gateways/mqtt.rst:262
+msgid "``d`` carries any data relevant to the request"
+msgstr ""
+"``d`` transporta quaisquer dados relevantes para a solicitação"
+
+#: ../docs/gateways/mqtt.rst:263
+msgid "``reqId`` is an identifier of the request, and must be copied into a response. If a response is not required, the field should be omitted."
+msgstr ""
+"``reqId`` é um identificador da solicitação e deve ser copiado em uma resposta. Caso não seja necessário fornecer uma resposta, o campo deve ser omitido."
+
+#: ../docs/gateways/mqtt.rst:283
+msgid "Response"
+msgstr ""
+"Resposta"
+
+#: ../docs/gateways/mqtt.rst:267
+msgid "Responses are formatted as follows:"
+msgstr ""
+"As respostas são formatadas da seguinte maneira:"
+
+#: ../docs/gateways/mqtt.rst:278
+msgid "\"rc\" is a result code of the original request."
+msgstr ""
+"\"rc\" é um código de resultado da solicitação original."
+
+#: ../docs/gateways/mqtt.rst:279
+msgid "``message`` is an optional element with a text description of the response code."
+msgstr ""
+"``message`` é um elemento opcional com uma descrição de texto do código de resposta."
+
+#: ../docs/gateways/mqtt.rst:280
+msgid "``d`` is an optional data element accompanying the response."
+msgstr ""
+"``d`` é um elemento de dados opcional que acompanha a resposta."
+
+#: ../docs/gateways/mqtt.rst:281
+msgid "``reqId`` is the request ID of the original request. This is used to correlate responses with requests, and the device needs to ensure that all request IDs are unique.  When responding to IoT Platform requests, the correct ``reqId`` value must be sent in the response."
+msgstr ""
+"``reqId`` é o ID da solicitação original. Isso é usado para correlacionar respostas com solicitações e o dispositivo precisa assegurar que todos os IDs de solicitação sejam exclusivos.  Ao responder às solicitações do IoT Platform, o valor correto de ``reqId`` deve ser enviado na resposta."
+

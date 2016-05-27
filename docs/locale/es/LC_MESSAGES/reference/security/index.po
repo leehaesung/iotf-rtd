@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/reference/security/index.rst:3
+msgid "Securing the Watson IoT platform"
+msgstr ""
+"Seguridad de Watson IoT Platform"
+
+#: ../docs/reference/security/index.rst:5
+msgid "The IBM Watson IoT platform is a fully managed, cloud-hosted service that makes it simple to derive value from Internet of Things (IoT) devices."
+msgstr ""
+"IBM Watson IoT Platform es un servicio alojado en nube totalmente gestionado que simplifica la derivación de valor desde dispositivos de Internet of Things (IoT)."
+
+#: ../docs/reference/security/index.rst:9
+msgid "The following document aims to answer common questions about how your organization's data is protected. Focusing on specific areas:"
+msgstr ""
+"El documento siguiente tiene la intención de proporcionar respuestas a preguntas comunes sobre cómo se protegen los datos de la organización. Se centra en las áreas siguientes:"
+
+#: ../docs/reference/security/index.rst:12
+msgid "Authentication: assuring the identity of users, devices or applications attempting to access your organization's information."
+msgstr ""
+"Autenticación: asegurar la identidad de los usuarios, los dispositivos o las aplicaciones que intentan acceder a la información de la organización."
+
+#: ../docs/reference/security/index.rst:14
+msgid "Authorization: assuring that users, devices and applications have permission to access your organization's information."
+msgstr ""
+"Autorización: asegurar que los usuarios, los dispositivos y las aplicaciones tienen permiso para acceder a la información de la organización."
+
+#: ../docs/reference/security/index.rst:16
+msgid "Encryption: assuring that data is only readable by authorized parties and cannot be intercepted."
+msgstr ""
+"Cifrado: asegurar que los datos solo son legibles para personas autorizadas y que no se pueden interceptar."
+
+#: ../docs/reference/security/index.rst:23
+msgid "Terminology"
+msgstr ""
+"Terminología"
+
+#: ../docs/reference/security/index.rst:32
+msgid "How do we secure management of your organization?"
+msgstr ""
+"¿Cómo proporcionamos seguridad en la gestión de la organización?"
+
+#: ../docs/reference/security/index.rst:33
+msgid "The browser-based GUI and REST APIs are fronted by HTTPS, with a certificate signed by DigiCert enabling you to trust that you're connecting to the genuine Watson IoT platform."
+msgstr ""
+"La GUI basada en navegador y las API REST están lideradas por HTTPS, con un certificado firmado por DigiCert, lo que le permite confiar en que se está conectando a la Watson IoT Platform genuina."
+
+#: ../docs/reference/security/index.rst:37
+msgid "GUI: authenticated via your IBM ID."
+msgstr ""
+"GUI: autenticada mediante el ID de IBM."
+
+#: ../docs/reference/security/index.rst:38
+msgid "REST API: once you create an API key through the GUI, you can use this to make authenticated REST calls against your organization."
+msgstr ""
+"API REST: una vez que ha creado una clave de API mediante la GUI, puede utilizarla para realizar llamadas REST autenticadas para la organización."
+
+#: ../docs/reference/security/index.rst:48
+msgid "How do we secure your device and application credentials?"
+msgstr ""
+"¿Cómo aseguramos las credenciales de dispositivo y aplicación?"
+
+#: ../docs/reference/security/index.rst:49
+msgid "When devices are registered or API keys are generated, the authentication token is salted and hashed. This means your organization's credentials can never be recovered from our systems - even in the unlikely event that the Watson IoT platform is compromised."
+msgstr ""
+"Cuando se registran dispositivos o se generan claves de API, se utiliza sal y hash para la señal de autenticación. Esto significa que las credenciales de la organización no se pueden recuperar nunca de nuestros sistemas, incluso en el suceso improbable de que Watson IoT Platform se vea comprometida."
+
+#: ../docs/reference/security/index.rst:54
+msgid "Device credentials and API keys can be individually revoked if they are compromised."
+msgstr ""
+"Las credenciales de dispositivo y las claves de API se pueden revocar individualmente si están comprometidos."
+
+#: ../docs/reference/security/index.rst:64
+msgid "How do we ensure your devices connect securely to the Watson IoT platform?"
+msgstr ""
+"¿Cómo aseguramos que los dispositivos se conectan de forma segura a Watson IoT Platform?"
+
+#: ../docs/reference/security/index.rst:65
+msgid "Devices connect through a unique combination of clientId and authentication token that only you know."
+msgstr ""
+"Los dispositivos se conectan mediante una combinación exclusiva de ID de cliente y señal de autenticación que solo el usuario conoce."
+
+#: ../docs/reference/security/index.rst:67
+msgid "Full support for connectivity over TLS (v1.2) is provided."
+msgstr ""
+"Se proporciona soporte completo para la conectividad sobre TLS (v1.2)."
+
+#: ../docs/reference/security/index.rst:68
+msgid "Open standards are used (MQTT v3.1.1) to allow easy interop across many platforms and languages."
+msgstr ""
+"Se utilizan estándares abiertos (MQTT v3.1.1) para permitir la interoperación fácil en muchas plataformas e idiomas."
+
+#: ../docs/reference/security/index.rst:78
+msgid "How do we prevent data leaking between devices?"
+msgstr ""
+"¿Cómo impedimos la fuga de datos entre dispositivos?"
+
+#: ../docs/reference/security/index.rst:79
+msgid "Secure messaging patterns are baked in. Once authenticated, devices are only authorized to publish and subscribe to a restricted topic space:"
+msgstr ""
+"Los patrones de mensajes seguros están incorporados. Una vez autenticados, los dispositivos solo están autorizados a publicarse y suscribirse en un espacio de tema restringido:"
+
+#: ../docs/reference/security/index.rst:82
+msgid "/iot-2/evt/+/fmt/+"
+msgstr ""
+"/iot-2/evt/+/fmt/+"
+
+#: ../docs/reference/security/index.rst:83
+msgid "/iot-2/cmd/+"
+msgstr ""
+"/iot-2/cmd/+"
+
+#: ../docs/reference/security/index.rst:85
+msgid "All devices work with the same topic space. The authentication credentials provided by the client connecting dictate to which device this topic space will be scoped by the Watson IoT platform.  This prevents devices from being able to impersonate another device."
+msgstr ""
+"Todos los dispositivos trabajan con el mismo espacio de tema. Las credenciales de autenticación proporcionadas por el cliente que se conecta indican en qué dispositivo pondrá Watson IoT Platform el ámbito para este espacio de tema. Esto evita que los dispositivos puedan suplantar a otro dispositivo."
+
+#: ../docs/reference/security/index.rst:90
+msgid "The only way to impersonate another device is by obtaining compromised security credentials for the device."
+msgstr ""
+"La única manera de suplantar a otro dispositivo consiste en obtener credenciales de seguridad comprometidas para el dispositivo."
+
+#: ../docs/reference/security/index.rst:97
+msgid "Applications can subscribe and publish on both the event and command topics for all devices in the organization. Applications can analyse data from many devices simultaneously, and can also simulate or proxy devices in addition to forming the complementary side of a full duplex communication loop."
+msgstr ""
+"Las aplicaciones se pueden suscribir y publicar en los temas de sucesos y mandatos para todos los dispositivos de la organización. Las aplicaciones pueden analizar datos de muchos dispositivos simultáneamente y también pueden simular dispositivos o realizar proxy para los mismos además de formar el lado complementario de un bucle de comunicación dúplex."
+
+#: ../docs/reference/security/index.rst:107
+msgid "How do we prevent data leaking between organizations?"
+msgstr ""
+"¿Cómo impedimos la fuga de datos entre organizaciones?"
+
+#: ../docs/reference/security/index.rst:108
+msgid "The topic space in which devices and applications operate is scoped within a single organization. When authenticated, the Watson IoT platform transforms the topic structure using an organization ID based on the client authentication, making it impossible for data from one organization to be accessed from another."
+msgstr ""
+"El espacio de tema en el que los dispositivos y las aplicaciones operan tienen el ámbito en una única organización. Cuando se autentica, Watson IoT Platform transforma la estructura de tema utilizando un ID de organización basándose en la autenticación de cliente, haciendo que sea imposible acceder a los datos de una organización desde otra."
+

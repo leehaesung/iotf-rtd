@@ -1,0 +1,453 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/applications/libraries/java.rst:2
+msgid "Java for Application Developers"
+msgstr ""
+"针对应用程序开发者的 Java"
+
+#: ../docs/applications/libraries/java.rst:4
+msgid "See `iot-java <https://github.com/ibm-messaging/iot-java>`_ in GitHub"
+msgstr ""
+"请参阅 GitHub 中的 `iot-java <https://github.com/ibm-messaging/iot-java>`_"
+
+#: ../docs/applications/libraries/java.rst:7
+msgid "Constructor"
+msgstr ""
+"构造方法"
+
+#: ../docs/applications/libraries/java.rst:9
+msgid "The constructor builds the client instance, and accepts a Properties object containing the following definitions:"
+msgstr ""
+"此构造方法用于构建客户机实例，并接受包含以下定义的属性对象："
+
+#: ../docs/applications/libraries/java.rst:11
+msgid "``org`` - Your organization ID (This is a required field. In case of quickstart flow, provide org as ``quickstart``)."
+msgstr ""
+"“org”- 贵组织的标识（这是必填字段。在 quickstart 流程中，将组织作为“quickstart”提供）。"
+
+#: ../docs/applications/libraries/java.rst:12
+msgid "``id`` - The unique ID of your application within your organization."
+msgstr ""
+"“id”- 贵组织内应用程序的唯一标识。"
+
+#: ../docs/applications/libraries/java.rst:13
+msgid "``auth-method`` - Method of authentication (the only value currently supported is ``apikey``)."
+msgstr ""
+"“auth-method”- 认证方法（当前唯一支持的值为“apikey”）。"
+
+#: ../docs/applications/libraries/java.rst:14
+msgid "``auth-key`` - API key (required if auth-method is ``apikey``)."
+msgstr ""
+"“auth-key”- API 密钥（如果 auth-method 为“apikey”，那么此项为必需项）。"
+
+#: ../docs/applications/libraries/java.rst:15
+msgid "``auth-token`` - API key token (required if auth-method is ``apikey``)."
+msgstr ""
+"“auth-token”- API 密钥令牌（如果 auth-method 为“apikey”，那么此项为必需项）。"
+
+#: ../docs/applications/libraries/java.rst:16
+msgid "``clean-session`` - true or false (required only if you want to connect the application in durable subscription. By default the clean-session is set to true)."
+msgstr ""
+"“clean-session”- true 或 false（仅当想要在持久预订期间连接到应用程序时，才是必需的。缺省情况下，clean-session 设置为 true）。"
+
+#: ../docs/applications/libraries/java.rst:17
+msgid "``shared-subscription`` - true or false (required only if shared subscription needs to be enabled)."
+msgstr ""
+"“shared-subscription”- true 或 false（仅在需要启用共享预订时，才是必需的）。"
+
+#: ../docs/applications/libraries/java.rst:19
+msgid "One must set ``shared-subscription`` to true to build scalable applications which will load balance messages across multiple instances of the application. Refer to the `scalable applications section <https://docs.internetofthings.ibmcloud.com/applications/mqtt.html#/scalable-applications#scalable-applications>`__ for more information about the load balancing."
+msgstr ""
+"必须将“shared-subscription”设置为 true 以构建可扩展应用程序，用于在应用程序的多个实例之间对消息进行负载均衡。请参阅 `可扩展应用程序部分 <https://docs.internetofthings.ibmcloud.com/applications/mqtt.html#/scalable-applications#scalable-applications>`__，了解有关负载均衡的更多信息。"
+
+#: ../docs/applications/libraries/java.rst:21
+msgid "The Properties object creates definitions which are used to interact with the IoT Platform module. If no options are provided or organization is provided as quickstart, the client will connect to the IoT Platform Quickstart, and default to an unregistered device."
+msgstr ""
+"属性对象可创建用于与 IoT Platform 模块进行交互的定义。如果没有提供任何选项或者组织作为 Quickstart 提供，那么客户机将连接到 IoT Platform Quickstart，并缺省为未注册的设备。"
+
+#: ../docs/applications/libraries/java.rst:23
+msgid "The following code snippet shows how to construct the ApplicationClient instance in Quickstart mode,"
+msgstr ""
+"以下代码片段显示了如何在 Quickstart 模式下构造 ApplicationClient 实例，"
+
+#: ../docs/applications/libraries/java.rst:36
+msgid "The following code snippet shows how to construct the ApplicationClient instance in registered flow,"
+msgstr ""
+"以下代码片段显示了如何在注册流程中构造 ApplicationClient 实例，"
+
+#: ../docs/applications/libraries/java.rst:50
+msgid "Using a configuration file"
+msgstr ""
+"使用配置文件"
+
+#: ../docs/applications/libraries/java.rst:52
+msgid "Instead of including a Properties object directly, you can use a configuration file containing the name-value pairs for Properties. If you are using a configuration file containing a Properties object, use the following code format."
+msgstr ""
+"您可以使用包含属性的“名称/值”对的配置文件，而不是直接包含属性对象。如果使用的配置文件包含属性对象，请使用以下代码格式。"
+
+#: ../docs/applications/libraries/java.rst:60
+msgid "The application configuration file must be in the following format:"
+msgstr ""
+"应用程序配置文件必须为以下格式："
+
+#: ../docs/applications/libraries/java.rst:77
+msgid "Connecting to the IoT Platform"
+msgstr ""
+"连接到 IoT Platform"
+
+#: ../docs/applications/libraries/java.rst:79
+msgid "Connect to the Watson IoT Platform by calling the connect function. The connect function takes an optional boolean parameter autoRetr (by default autoRetry is true) that controls allows the library to retry the connection when there is an MqttException. Note that the library won't retry when there is a MqttSecurityException due to incorrect device registration details passed even if the autoRetry is set to true ."
+msgstr ""
+"通过调用 connect 函数来连接到 Watson IoT Platform。connect 函数采用可选的布尔参数 autoRetry（缺省情况下 autoRetry 为 true），该参数用于控制在发生 MqttException 时是否允许库重试连接。请注意，如果由于传递了错误的设备注册详细信息而导致出现 MqttSecurityException，那么即使 autoRetry 设置为 true，库也不会重试连接。"
+
+#: ../docs/applications/libraries/java.rst:92
+msgid "After the successful connection to the IoT Platform service, the application client can perform the following operations, like subscribing to device events, subscribing to device status, publishing device events and commands."
+msgstr ""
+"成功连接到 IoT Platform 服务后，应用程序客户机可以执行以下操作，如预订设备事件、预订设备状态以及发布设备事件和命令。"
+
+#: ../docs/applications/libraries/java.rst:99
+msgid "Subscribing to device events"
+msgstr ""
+"预订设备事件"
+
+#: ../docs/applications/libraries/java.rst:100
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"事件是设备用于将数据发布到 IoT Platform 的机制。设备控制事件的内容，并为其发送的每个事件分配名称。"
+
+#: ../docs/applications/libraries/java.rst:102
+msgid "When an event is received by the IoT Platform the credentials of the connection on which the event was received are used to determine from which device the event was sent. With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"IoT Platform 接收到事件时，将使用用于接收该事件的连接的凭证来确定是从哪个设备发送了该事件。由于使用这种体系结构，设备将无法模拟其他设备。"
+
+#: ../docs/applications/libraries/java.rst:104
+msgid "By default, applications will subscribe to all events from all connected devices. Use the type, id, event and msgFormat parameters to control the scope of the subscription. A single client can support multiple subscriptions. The code samples below give examples of how to subscribe to devices dependent on device type, id, event and msgFormat parameters."
+msgstr ""
+"缺省情况下，应用程序将预订来自所有已连接设备的所有事件。使用 type、id、event 和 msgFormat 参数控制预订的作用域。单个客户机可支持多个预订。以下代码样本提供了示例，说明如何根据设备的 type、id、event 和 msgFormat 参数来预订设备。"
+
+#: ../docs/applications/libraries/java.rst:107
+msgid "To subscribe to all events from all devices"
+msgstr ""
+"预订来自所有设备的所有事件"
+
+#: ../docs/applications/libraries/java.rst:115
+msgid "To subscribe to all events from all devices of a specific type"
+msgstr ""
+"预订来自特定类型的所有设备的所有事件"
+
+#: ../docs/applications/libraries/java.rst:123
+msgid "To subscribe to all events from a specific device"
+msgstr ""
+"预订特定设备的所有事件"
+
+#: ../docs/applications/libraries/java.rst:131
+msgid "To subscribe to a specific event from two or more different devices"
+msgstr ""
+"预订来自两个或更多不同设备的特定事件"
+
+#: ../docs/applications/libraries/java.rst:140
+msgid "To subscribe to events published by a device in json format"
+msgstr ""
+"预订设备发布的 json 格式事件"
+
+#: ../docs/applications/libraries/java.rst:152
+msgid "Handling events from devices"
+msgstr ""
+"处理来自设备的事件"
+
+#: ../docs/applications/libraries/java.rst:153
+msgid "To process the events received by your subscriptions you need to register an event callback method. The messages are returned as an instance of the Event class which has the following properties:"
+msgstr ""
+"要处理您的预订接收的事件，需要注册事件回调方法。消息将作为 Event 类的实例返回，具有以下属性："
+
+#: ../docs/applications/libraries/java.rst:155
+msgid "event.device - string (uniquely identifies the device across all types of devices in the organization)"
+msgstr ""
+"event.device - 字符串（在组织内所有类型的设备中唯一标识该设备）"
+
+#: ../docs/applications/libraries/java.rst:156
+msgid "event.deviceType - string"
+msgstr ""
+"event.deviceType - 字符串"
+
+#: ../docs/applications/libraries/java.rst:157
+msgid "event.deviceId - string"
+msgstr ""
+"event.deviceId - 字符串"
+
+#: ../docs/applications/libraries/java.rst:158
+msgid "event.event - string"
+msgstr ""
+"event.event - 字符串"
+
+#: ../docs/applications/libraries/java.rst:159
+msgid "event.format - string"
+msgstr ""
+"event.format - 字符串"
+
+#: ../docs/applications/libraries/java.rst:160
+msgid "event.data - dict"
+msgstr ""
+"event.data - 字典"
+
+#: ../docs/applications/libraries/java.rst:161
+msgid "event.timestamp - datetime"
+msgstr ""
+"event.timestamp - 日期时间"
+
+#: ../docs/applications/libraries/java.rst:163
+msgid "A sample implementation of the Event callback,"
+msgstr ""
+"事件回调的样本实现，"
+
+#: ../docs/applications/libraries/java.rst:212
+msgid "Once the event callback is added to the ApplicationClient, the processEvent() method is invoked whenever any event is published on the subscribed criteria, The following snippet shows how to add the Event call back into ApplicationClient instance,"
+msgstr ""
+"一旦将事件回调添加到 ApplicationClient，只要根据预订条件发布任何事件，就会调用 processEvent() 方法，以下片段显示了如何将事件回调添加到 ApplicationClient 实例，"
+
+#: ../docs/applications/libraries/java.rst:220
+msgid "Similar to subscribing to device events, the application can subscribe to commands that are sent to the devices. Following code snippet shows how to subscribe to all commands to all the devices in the organization:"
+msgstr ""
+"与预订设备事件类似，应用程序可以预订发送到设备的命令。以下代码片段显示了如何预订指向组织内所有设备的所有命令："
+
+#: ../docs/applications/libraries/java.rst:228
+msgid "Overloaded methods are available to control the command subscription. The processCommand() method is called when a command is sent to the device that matches the command subscription."
+msgstr ""
+"重载方法可用于控制命令预订。向与命令预订匹配的设备发送命令时会调用 processCommand() 方法。"
+
+#: ../docs/applications/libraries/java.rst:235
+msgid "Subscribing to device status"
+msgstr ""
+"预订设备状态"
+
+#: ../docs/applications/libraries/java.rst:236
+msgid "Similar to subscribing to device events, applications can subscribe to device status, like device connect and disconnect to IoT Platform. By default, this will subscribe to status updates for all connected devices. Use the Device Type and Device Id parameters to control the scope of the subscription. A single ApplicationClient can support multiple subscriptions."
+msgstr ""
+"与预订设备事件类似，应用程序可以预订设备状态，如设备与 IoT Platform 连接和断开连接。缺省情况下，这将预订所有已连接设备的状态更新。使用设备类型和设备标识参数控制预订的作用域。单个 ApplicationClient 可支持多个预订。"
+
+#: ../docs/applications/libraries/java.rst:239
+msgid "Subscribe to status updates for all devices"
+msgstr ""
+"预订所有设备的状态更新"
+
+#: ../docs/applications/libraries/java.rst:248
+msgid "Subscribe to status updates for all devices of a specific type"
+msgstr ""
+"预订特定类型的所有设备的状态更新"
+
+#: ../docs/applications/libraries/java.rst:257
+msgid "Subscribe to status updates for two different devices"
+msgstr ""
+"预订两种不同设备的状态更新"
+
+#: ../docs/applications/libraries/java.rst:270
+msgid "Handling status updates from devices"
+msgstr ""
+"处理来自设备的状态更新"
+
+#: ../docs/applications/libraries/java.rst:271
+msgid "To process the status updates received by your subscriptions you need to register an status event callback method. The messages are returned as an instance of the Status class which contains the below mentioned properties:"
+msgstr ""
+"要处理您的预订接收的状态更新，就需要注册状态事件回调方法。消息将作为 Status 类的实例返回，包含以下提及的属性："
+
+#: ../docs/applications/libraries/java.rst:273
+msgid "The following properties are set for both \"Connect\" and \"Disconnect\" status events:"
+msgstr ""
+"为“连接”和“断开连接”状态事件设置了以下属性："
+
+#: ../docs/applications/libraries/java.rst:275
+msgid "status.clientAddr - string"
+msgstr ""
+"status.clientAddr - 字符串"
+
+#: ../docs/applications/libraries/java.rst:276
+msgid "status.protocol - string"
+msgstr ""
+"status.protocol - 字符串"
+
+#: ../docs/applications/libraries/java.rst:277
+msgid "status.clientId - string"
+msgstr ""
+"status.clientId - 字符串"
+
+#: ../docs/applications/libraries/java.rst:278
+msgid "status.user - string"
+msgstr ""
+"status.user - 字符串"
+
+#: ../docs/applications/libraries/java.rst:279
+msgid "status.time - java.util.Date"
+msgstr ""
+"status.time - java.util.Date"
+
+#: ../docs/applications/libraries/java.rst:280
+msgid "status.action - string"
+msgstr ""
+"status.action - 字符串"
+
+#: ../docs/applications/libraries/java.rst:281
+msgid "status.connectTime - java.util.Date"
+msgstr ""
+"status.connectTime - java.util.Date"
+
+#: ../docs/applications/libraries/java.rst:282
+msgid "status.port - integer"
+msgstr ""
+"status.port - 整数"
+
+#: ../docs/applications/libraries/java.rst:284
+msgid "The following properties are only set when the action is \"Disconnect\":"
+msgstr ""
+"仅当操作为“断开连接”时，才会设置以下属性："
+
+#: ../docs/applications/libraries/java.rst:286
+msgid "status.writeMsg - integer"
+msgstr ""
+"status.writeMsg - 整数"
+
+#: ../docs/applications/libraries/java.rst:287
+msgid "status.readMsg - integer"
+msgstr ""
+"status.readMsg - 整数"
+
+#: ../docs/applications/libraries/java.rst:288
+msgid "status.reason - string"
+msgstr ""
+"status.reason - 字符串"
+
+#: ../docs/applications/libraries/java.rst:289
+msgid "status.readBytes - integer"
+msgstr ""
+"status.readBytes - 整数"
+
+#: ../docs/applications/libraries/java.rst:290
+msgid "status.writeBytes - integer"
+msgstr ""
+"status.writeBytes - 整数"
+
+#: ../docs/applications/libraries/java.rst:292
+msgid "A sample implementation of the Status callback,"
+msgstr ""
+"状态回调的样本实现，"
+
+#: ../docs/applications/libraries/java.rst:316
+msgid "Once the status callback is added to the ApplicationClient, the processDeviceStatus() method is invoked whenever any device is connected or disconnected from IoT Platform that matches the criteria, The following snippet shows how to add the status call back instance into ApplicationClient,"
+msgstr ""
+"一旦将状态回调添加到 ApplicationClient，只要任何设备与匹配条件的 IoT Platform 连接或与之断开连接，就会调用 processDeviceStatus() 方法，以下片段显示了如何将状态回调实例添加到 ApplicationClient，"
+
+#: ../docs/applications/libraries/java.rst:325
+msgid "As similar to device status, the application can subscribe to any other application connect or disconnect status as well. Following code snippet shows how to subscribe to the application status in the organization:"
+msgstr ""
+"与设备状态类似，应用程序也可以预订其他任何应用程序的连接或断开连接状态。以下代码片段显示了如何预订组织内的应用程序状态："
+
+#: ../docs/applications/libraries/java.rst:333
+msgid "Overloaded method is available to control the status subscription to a particular application. The processApplicationStatus() method is called whenever any application is connected or disconnected from IoT Platform that matches the criteria."
+msgstr ""
+"重载方法可用于控制特定应用程序的状态预订。只要任何应用程序与匹配条件的 IoT Platform 连接或与之断开连接，就会调用 processDeviceStatus() 方法。"
+
+#: ../docs/applications/libraries/java.rst:340
+msgid "Publishing events from devices"
+msgstr ""
+"发布来自设备的事件"
+
+#: ../docs/applications/libraries/java.rst:341
+msgid "Applications can publish events as if they originated from a Device."
+msgstr ""
+"应用程序可以将事件视为来自设备一样进行发布。"
+
+#: ../docs/applications/libraries/java.rst:358
+msgid "Publish events using HTTP(s)"
+msgstr ""
+"使用 HTTP(s) 发布事件"
+
+#: ../docs/applications/libraries/java.rst:359
+msgid "Apart from MQTT, the application can publish device events to IBM Watson IoT Platform using HTTP(s) by following 3 simple steps,"
+msgstr ""
+"除了 MQTT 之外，应用程序可以通过以下 3 个简单步骤使用 HTTP(s) 将设备事件发布到 IBM Watson IoT Platform。"
+
+#: ../docs/applications/libraries/java.rst:361
+msgid "Construct the ApplicationClient instance using the properties file"
+msgstr ""
+"使用属性文件构造 ApplicationClient 实例"
+
+#: ../docs/applications/libraries/java.rst:362
+msgid "Construct the event that needs to be published"
+msgstr ""
+"构造需要发布的事件"
+
+#: ../docs/applications/libraries/java.rst:363
+msgid "Specify the event name, Device Type, Device ID and publish the event using publishEventOverHTTP() method as follows,"
+msgstr ""
+"指定事件名称、设备类型和设备标识，并按照如下所示使用 publishEventOverHTTP() 方法发布事件，"
+
+#: ../docs/applications/libraries/java.rst:377
+msgid "The complete code can be found in the application example `HttpApplicationDeviceEventPublish <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdeviceclient/src/com/ibm/iotf/sample/client/application/HttpApplicationDeviceEventPublish.java>`__"
+msgstr ""
+"完整的代码可在应用程序示例 `HttpApplicationDeviceEventPublish <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdeviceclient/src/com/ibm/iotf/sample/client/application/HttpApplicationDeviceEventPublish.java>`__ 中找到"
+
+#: ../docs/applications/libraries/java.rst:379
+msgid "Based on the settings in the properties file, the publishEventOverHTTP() method either publishes the event in Quickstart or in Registered flow. When the Organization ID mentioned in the properties file is quickstart, publishEventOverHTTP() method publishes the event to IoT Platform quickstart service and publishes the event in plain HTTP format. But when valid registered organization is mentioned in the properties file, this method always publishes the event in HTTPS (HTTP over SSL), so all the communication is secured."
+msgstr ""
+"根据属性文件中的设置，publishEventOverHTTP() 方法会在 Quickstart 或已注册流程中发布事件。如果属性文件中提到的组织标识为 quickstart，publishEventOverHTTP() 方法会将事件发布到 IoT Platform quickstart 服务，并以普通 HTTP 格式发布此事件。但在属性文件中提到有效的已注册组织时，此方法始终会以 HTTPS（基于 SSL 的 HTTP）发布事件，因此所有通信均受到保护。"
+
+#: ../docs/applications/libraries/java.rst:381
+msgid "The event in HTTP(s) is published at most once Quality of Service, so the application needs to implement the retry logic when there is an error."
+msgstr ""
+"采用 HTTP(s) 的事件最多发布一次（服务质量），因此出现错误时，应用程序需要实现重试逻辑。"
+
+#: ../docs/applications/libraries/java.rst:388
+msgid "Publishing commands to devices"
+msgstr ""
+"将命令发布到设备"
+
+#: ../docs/applications/libraries/java.rst:389
+msgid "Applications can publish commands to connected devices."
+msgstr ""
+"应用程序可将命令发布到所连接的设备。"
+
+#: ../docs/applications/libraries/java.rst:408
+msgid "Examples"
+msgstr ""
+"示例"
+
+#: ../docs/applications/libraries/java.rst:409
+msgid "`MQTTApplicationDeviceEventPublish <https://github.com/ibm-messaging/iot-application-samples/blob/master/java/standalone-samples/src/main/java/com/ibm/iotf/sample/client/application/MQTTApplicationDeviceEventPublish.java>`__ - A sample application that shows how to publish device events."
+msgstr ""
+"`MQTTApplicationDeviceEventPublish <https://github.com/ibm-messaging/iot-application-samples/blob/master/java/standalone-samples/src/main/java/com/ibm/iotf/sample/client/application/MQTTApplicationDeviceEventPublish.java>`__ - 这一样本应用程序显示了如何发布设备事件。"
+
+#: ../docs/applications/libraries/java.rst:410
+msgid "`RegisteredApplicationCommandPublish <https://github.com/ibm-messaging/iot-application-samples/blob/master/java/standalone-samples/src/main/java/com/ibm/iotf/sample/client/application/RegisteredApplicationCommandPublish.java>`__ - A sample application that shows how to publish a command to a device."
+msgstr ""
+"`RegisteredApplicationCommandPublish <https://github.com/ibm-messaging/iot-application-samples/blob/master/java/standalone-samples/src/main/java/com/ibm/iotf/sample/client/application/RegisteredApplicationCommandPublish.java>`__ - 这一样本应用程序显示了如何将命令发布到设备。"
+
+#: ../docs/applications/libraries/java.rst:411
+msgid "`RegisteredApplicationSubscribeSample <https://github.com/ibm-messaging/iot-application-samples/blob/master/java/standalone-samples/src/main/java/com/ibm/iotf/sample/client/application/RegisteredApplicationSubscribeSample.java>`__ - A sample application that shows how to subscribe for various events like, device events, device commands, device status and application status."
+msgstr ""
+"`RegisteredApplicationSubscribeSample <https://github.com/ibm-messaging/iot-application-samples/blob/master/java/standalone-samples/src/main/java/com/ibm/iotf/sample/client/application/RegisteredApplicationSubscribeSample.java>`__ - 这一样本应用程序显示了如何预订各种事件，例如设备事件、设备命令、设备状态和应用程序状态。"
+
+#: ../docs/applications/libraries/java.rst:412
+msgid "`SharedSubscriptionSample <https://github.com/ibm-messaging/iot-application-samples/blob/master/java/standalone-samples/src/main/java/com/ibm/iotf/sample/client/application/SharedSubscriptionSample.java>`__ - A sample application that shows how to build a scalable application which will load balance messages across multiple instances of the application."
+msgstr ""
+"`SharedSubscriptionSample <https://github.com/ibm-messaging/iot-application-samples/blob/master/java/standalone-samples/src/main/java/com/ibm/iotf/sample/client/application/SharedSubscriptionSample.java>`__ - 这一样本应用程序显示了如何构建将在多个应用程序实例中均衡消息负载的可扩展应用程序。"
+
+#: ../docs/applications/libraries/java.rst:413
+msgid "`Backup and Restore sample <https://github.com/ibm-messaging/iot-backup-restore-sample>`__ - A sample that shows how to backup the device configuration in Cloudant NoSQL DB and restore the same later."
+msgstr ""
+"`备份和复原样本 <https://github.com/ibm-messaging/iot-backup-restore-sample>`__ - 这一样本显示了如何在 Cloudant NoSQL DB 中备份设备配置并在将来复原同一配置。"
+

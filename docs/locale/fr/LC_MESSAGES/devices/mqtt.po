@@ -1,0 +1,379 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/mqtt.rst:3
+msgid "MQTT Connectivity for Devices"
+msgstr ""
+"Connectivité MQTT des terminaux"
+
+#: ../docs/devices/mqtt.rst:6
+msgid "Client connection"
+msgstr ""
+"Connexion client"
+
+#: ../docs/devices/mqtt.rst:7
+msgid "Every registered organization has a unique endpoint which must be used when connecting MQTT clients for devices in that organization."
+msgstr ""
+"Chaque organisation enregistrée possède un noeud final unique qui doit être utilisé lors de la connexion des clients MQTT pour les terminaux de cette organisation."
+
+#: ../docs/devices/mqtt.rst:10
+msgid "**org\\_id**.messaging.internetofthings.ibmcloud.com"
+msgstr ""
+"**org\\_id**.messaging.internetofthings.ibmcloud.com"
+
+#: ../docs/devices/mqtt.rst:14
+msgid "Unencrypted client connection"
+msgstr ""
+"Connexion client non chiffrée"
+
+#: ../docs/devices/mqtt.rst:16
+msgid "Connect on port **1883**"
+msgstr ""
+"Connexion sur le port **1883**"
+
+#: ../docs/devices/mqtt.rst:18
+msgid "All information your device submits is being sent in plain text (including the authentication credentials for your device). We recommend the use of an encrypted connection whenever possible."
+msgstr ""
+"Toutes les informations soumises par votre terminal sont envoyées sous la forme d'un texte en clair (y compris les données d'authentification du terminal). Il est recommandé d'utiliser une connexion chiffrée dans la mesure du possible."
+
+#: ../docs/devices/mqtt.rst:24
+msgid "Encrypted client connection"
+msgstr ""
+"Connexion client chiffrée"
+
+#: ../docs/devices/mqtt.rst:26
+msgid "Connect on port **8883** or **443** for websockets."
+msgstr ""
+"Connexion sur le port **8883** ou **443** pour les websockets."
+
+#: ../docs/devices/mqtt.rst:28
+msgid "In many client libraries you will need to provide the server's public certificate in pem format.  The following file contains the entire certificate chain for \\*.messaging.internetofthings.ibmcloud.com: messaging.pem_"
+msgstr ""
+"Dans la plupart des bibliothèques client, vous devez fournir le certificat public du serveur au format pem.  Le fichier suivant contient l'ensemble de la chaîne de certificats de \\*.messaging.internetofthings.ibmcloud.com: messaging.pem_"
+
+#: ../docs/devices/mqtt.rst:34
+msgid "Some SSL client libraries have been shown to not handle wildcarded domains, in which case, if you can not change libraries, you will need to turn off certificate checking."
+msgstr ""
+"Certaines bibliothèques client SSL ne traitent pas correctement les domaines associés à des caractères génériques. Dans ce cas, si vous ne pouvez pas changer de bibliothèques, vous devez désactiver la vérification des certificats."
+
+#: ../docs/devices/mqtt.rst:38
+msgid "The IoT Platform requires TLS v1.2. We suggest the following cipher suites: ECDHE-RSA-AES256-GCM-SHA384, AES256-GCM-SHA384, ECDHE-RSA-AES128-GCM-SHA256 or AES128-GCM-SHA256 *(as of Jun 1 2015)*."
+msgstr ""
+"IoT Platform requiert TLS version 1.2. Il est recommandé d'utiliser les suites de chiffrement suivantes : ECDHE-RSA-AES256-GCM-SHA384, AES256-GCM-SHA384, ECDHE-RSA-AES128-GCM-SHA256 ou AES128-GCM-SHA256 *(à compter du 1er juin 2015)*."
+
+#: ../docs/devices/mqtt.rst:41
+msgid "**Device Support in Quickstart**"
+msgstr ""
+"**Prise en charge des terminaux dans Quickstart**"
+
+#: ../docs/devices/mqtt.rst:43
+msgid "When connecting to the Quickstart service no authentication (or registration) is required, and ``orgId`` must be set to ``quickstart``"
+msgstr ""
+"Lors de la connexion au service Quickstart, aucune authentification (ou enregistrement) n'est nécessaire et ``orgId`` doit avoir pour valeur ``quickstart``."
+
+#: ../docs/devices/mqtt.rst:45
+msgid "The Quickstart service does not currently support MQTT Quality of Service (QoS) levels greater than 0. This is the fastest and offers no confirmation of receipt.  If you are writing device code for use with Quickstart you must also take into account the following features present in the registered service that are not supported in Quickstart:"
+msgstr ""
+"Le service Quickstart ne prend pas actuellement en charge les niveaux de qualité de service MQTT supérieurs à 0. Il s'agit de la procédure la plus rapide qui n'inclut pas de confirmation de réception.  Si vous créez un code de terminal que vous souhaitez utiliser avec Quickstart, vous devez prendre en considération les fonctions suivantes qui sont disponibles dans le service enregistré mais qui ne sont pas prises en charge dans Quickstart :"
+
+#: ../docs/devices/mqtt.rst:47
+#: ../docs/devices/mqtt.rst:116
+msgid "Subscribing to commands"
+msgstr ""
+"Abonnement à des commandes"
+
+#: ../docs/devices/mqtt.rst:48
+msgid "Device management protocol"
+msgstr ""
+"Protocole de gestion des terminaux"
+
+#: ../docs/devices/mqtt.rst:49
+msgid "Clean or durable sessions"
+msgstr ""
+"Sessions propres ou durables"
+
+#: ../docs/devices/mqtt.rst:51
+msgid "Also, messages sent from devices at a rate greater than 1 per second may be discarded."
+msgstr ""
+"De plus, il se peut que les messages envoyés depuis des terminaux à une fréquence supérieure à un par seconde soient supprimés."
+
+#: ../docs/devices/mqtt.rst:56
+msgid "MQTT client identifier"
+msgstr ""
+"Identificateur du client MQTT"
+
+#: ../docs/devices/mqtt.rst:58
+msgid "A Device must authenticate using a client ID in the following format:"
+msgstr ""
+"Un terminal doit s'authentifier à l'aide d'un ID client au format suivant :"
+
+#: ../docs/devices/mqtt.rst:60
+msgid "d:**org\\_id**:**device_type**:**device\\_id**"
+msgstr ""
+"d:**org\\_id**:**device_type**:**device\\_id**"
+
+#: ../docs/devices/mqtt.rst:62
+msgid "**d** idenfities your client as a device"
+msgstr ""
+"**d** identifie le client en tant que terminal"
+
+#: ../docs/devices/mqtt.rst:63
+msgid "**org\\_id** is your unique organization ID, assigned when you sign up with the service.  It will be a 6 character alphanumeric string."
+msgstr ""
+"**org\\_id** correspond votre ID organisation unique attribué lors de votre inscription au service.  L'ID est une chaîne alphanumérique de 6 caractères."
+
+#: ../docs/devices/mqtt.rst:65
+msgid "**type\\_id** is intended to be used as an identifier of the type of device connecting, it may be useful to think of this as analogous to a model number."
+msgstr ""
+"**type\\_id** est l'identificateur du type de terminal en cours de connexion. Il peut s'apparenter à un numéro de modèle."
+
+#: ../docs/devices/mqtt.rst:68
+msgid "**device\\_id** must uniquely identify a device across all devices of a specific device\\_type, it may be useful to think of this as analogous to a serial number."
+msgstr ""
+"**device\\_id** doit identifier de manière unique un terminal parmi tous les terminaux d'un type spécifique (device\\_type). Il peut s'apparenter à un numéro de série."
+
+#: ../docs/devices/mqtt.rst:72
+msgid "You can use any scheme of your choice when assigning values for ``type_id`` and ``device_id``, however the following restrictions apply to both:"
+msgstr ""
+"Vous pouvez utiliser les schémas de votre choix lorsque vous affectez des valeurs pour ``type_id`` et ``device_id``. Toutefois, les restrictions suivantes s'appliquent :"
+
+#: ../docs/devices/mqtt.rst:75
+msgid "Maximum length of 36 characters"
+msgstr ""
+"La valeur ne peut pas comporter plus de 36 caractères."
+
+#: ../docs/devices/mqtt.rst:76
+msgid "Must comprise only alpha-numeric characters (``a-z``, ``A-Z``, ``0-9``) and the following special characters:"
+msgstr ""
+"La valeur ne peut comporter que des caractères alphanumériques (``a-z``, ``A-Z``, ``0-9``) et les caractères spéciaux suivants :"
+
+#: ../docs/devices/mqtt.rst:78
+msgid "dash (``-``)"
+msgstr ""
+"tiret (``-``)"
+
+#: ../docs/devices/mqtt.rst:79
+msgid "underscore (``_``)"
+msgstr ""
+"trait de soulignement (``_``)"
+
+#: ../docs/devices/mqtt.rst:80
+msgid "dot (``.``)"
+msgstr ""
+"point (``.``)"
+
+#: ../docs/devices/mqtt.rst:84
+msgid "MQTT authentication"
+msgstr ""
+"Authentification MQTT"
+
+#: ../docs/devices/mqtt.rst:87
+msgid "Username"
+msgstr ""
+"Nom d'utilisateur"
+
+#: ../docs/devices/mqtt.rst:89
+msgid "The service currently only supports token-based authentication for devices, as such there is only one valid username for devices today."
+msgstr ""
+"A l'heure actuelle, le service prend uniquement en charge  l'authentification par jeton pour les terminaux. Il n'y a donc qu'un seul nom d'utilisateur valide pour les terminaux."
+
+#: ../docs/devices/mqtt.rst:92
+msgid "A value of ``use-token-auth`` indicates to the service that the authentication token for the device will be passed as the password for the MQTT connection."
+msgstr ""
+"La valeur ``use-token-auth`` indique au service que le jeton d'authentification du terminal est transmis en tant que mot de passe pour la connexion MQTT."
+
+#: ../docs/devices/mqtt.rst:97
+msgid "Password"
+msgstr ""
+"Mot de passe"
+
+#: ../docs/devices/mqtt.rst:99
+msgid "When using token based authentication submit the device authentication token as the password when making your MQTT connection."
+msgstr ""
+"Lorsque vous utilisez l'authentification par jeton, soumettez le jeton d'authentification du terminal en tant que mot de passe lors de l'établissement de la connexion MQTT."
+
+#: ../docs/devices/mqtt.rst:105
+msgid "Publishing events"
+msgstr ""
+"Publication d'événements"
+
+#: ../docs/devices/mqtt.rst:107
+msgid "Devices can only publish to the event topic of the form iot-2/evt/\\ **event\\_id**/fmt/**format\\_string**"
+msgstr ""
+"Les terminaux ne peuvent publier des données que dans le sujet d'événement au format iot-2/evt/\\ **event\\id**/fmt/**format\\_string**"
+
+#: ../docs/devices/mqtt.rst:109
+msgid "**event\\_id** is the ID of the event, for example \"status\".  The event ID can be any string permitted by MQTT.  Subscriber applications must use this string in their subscription topic to receive the events published on this topic if wildcards are not used."
+msgstr ""
+"**event\\_id** est l'ID de l'événement, par exemple \"status\".  Il peut s'agir de n'importe quelle chaîne admise par MQTT.  Les applications d'abonné doivent utiliser cette chaîne dans leur sujet d'abonnement afin de recevoir les événements publiés dans ce sujet si aucun caractère générique n'est utilisé."
+
+#: ../docs/devices/mqtt.rst:110
+msgid "**format\\_string** is the format of the event payload, for example \"json\".  The format can be any string permitted by MQTT.  Subscriber applications must use this string in their subscription topic to receive events published on this topic if wildcards are not used.  If the format is not \"json\", then messages will not be stored in the Historian."
+msgstr ""
+"**format\\_string** est le format du contenu de l'événement, par exemple \"json\".  Il peut s'agir de n'importe quelle chaîne admise par MQTT.  Les applications d'abonné doivent utiliser cette chaîne dans leur sujet d'abonnement afin de recevoir les événements publiés dans ce sujet si aucun caractère générique n'est utilisé.  Si le format n'est pas \"json\", les messages ne seront pas stockés dans l'historique."
+
+#: ../docs/devices/mqtt.rst:112
+msgid "The message payload is limited to a maximum of 131072 bytes.  Messages larger than this will be rejected."
+msgstr ""
+"La taille du contenu du message ne peut pas être supérieure à 131072 octets.  Les messages dont la taille est plus grande sont rejetés."
+
+#: ../docs/devices/mqtt.rst:118
+msgid "Devices can only subscribe to command topics of the form iot-2/cmd/\\ **command\\_id**/fmt/**format\\_string**.  They cannot subscribe to other devices' events and will only receive commands published specifically to the device itself."
+msgstr ""
+"Les terminaux ne peuvent s'abonner qu'à des sujets de commande au format iot-2/cmd/\\ **command\\_id**/fmt/**format\\_string**.  Il ne peuvent pas s'abonner aux événements d'autres terminaux et ne recevront que les commandes publiées spécifiquement sur le terminal lui-même."
+
+#: ../docs/devices/mqtt.rst:120
+msgid "**command\\_id** is the ID of the command, for example \"update\".  The command ID can be any string permitted by MQTT.  A device must use this string in its subscription topic in order to receive commands published on this topic if wildcards are not used."
+msgstr ""
+"**command\\_id** est l'ID de la commande, par exemple \"update\".  Il peut s'agir de n'importe quelle chaîne admise par MQTT.  Un terminal doit utiliser cette chaîne dans son sujet d'abonnement afin de recevoir les commandes publiées dans ce sujet si aucun caractère générique n'est utilisé."
+
+#: ../docs/devices/mqtt.rst:121
+msgid "**format\\_string** is the format of the command payload, for example \"json\".  The format can be any string permitted by MQTT.  A device must use this string in its subscription topic in order to receive commands published on this topic if wildcards are not used."
+msgstr ""
+"**format\\_string** est le format du contenu de la commande, par exemple \"json\".  Il peut s'agir de n'importe quelle chaîne admise par MQTT.  Un terminal doit utiliser cette chaîne dans son sujet d'abonnement afin de recevoir les commandes publiées dans ce sujet si aucun caractère générique n'est utilisé."
+
+#: ../docs/devices/mqtt.rst:124
+msgid "Managed Devices"
+msgstr ""
+"Terminaux gérés"
+
+#: ../docs/devices/mqtt.rst:126
+msgid "Support for device lifecycle management is optional, the device management protocol used by IoTF utilises the same MQTT connection that your device already uses for events and command control."
+msgstr ""
+"La prise en charge de la gestion du cycle de vie des terminaux est facultative. Le protocole de gestion des terminaux utilisé par IoTF se sert de la même connexion MQTT que celle qu'utilise déjà votre terminal pour les événements et le contrôle des commandes."
+
+#: ../docs/devices/mqtt.rst:131
+msgid "Quality of Service Levels and Clean Session"
+msgstr ""
+"Niveaux de qualité de service et option 'clean session'"
+
+#: ../docs/devices/mqtt.rst:133
+msgid "Managed devices can publish messages with Quality of Service (QoS) level of 0 or 1. If QoS 1 is used, messages from the device will be queued if necessary. Messages from the device must not be retained messages."
+msgstr ""
+"Les terminaux gérés peuvent publier des messages en utilisant le niveau de qualité de service (QoS) 0 ou 1. Si la qualité de service 0 est utilisée, les messages du terminal sont mis en file d'attente, si nécessaire. Les messages du terminal ne doivent pas être des messages conservés."
+
+#: ../docs/devices/mqtt.rst:137
+msgid "The IoT Platform publishes requests with a QoS level of 1 to support queuing of messages.  In order to queue messages sent while a managed device is not connected, the device should use ``cleansession=false``."
+msgstr ""
+"IoT Platform publie des demandes en utilisant le niveau de qualité de service 1 pour prendre en charge la mise en file d'attente des messages.  Pour mettre en file d'attente les messages envoyés lorsqu'un terminal géré n'est pas connecté, le terminal doit utiliser ``cleansession=false``."
+
+#: ../docs/devices/mqtt.rst:142
+msgid "If your managed device uses a durable subscription (cleansession=false) you need to be aware that device management commands sent to your device while it is offline will be reported as failed operations if the device does not reconnect to the service before the request times out, however when the device later connects those requests will be actioned by the device."
+msgstr ""
+"Si votre terminal géré utilise un abonnement durable (cleansession=false), vous devez tenir compte du fait que les commandes de gestion des terminaux envoyées à votre terminal alors qu'il est hors ligne seront signalées comme ayant échoué si le terminal ne se reconnecte pas au service avant l'expiration de la demande. Toutefois, une fois reconnecté, il activera ces demandes."
+
+#: ../docs/devices/mqtt.rst:148
+msgid "When handling request failures it is important to take this into account if you are using durable subscriptions for your managed devices."
+msgstr ""
+"Lors du traitement des échecs de demande, il est important de prendre ce fait en compte si vous utilisez des abonnements durables pour vos terminaux gérés."
+
+#: ../docs/devices/mqtt.rst:153
+msgid "Topics"
+msgstr ""
+"Sujets"
+
+#: ../docs/devices/mqtt.rst:155
+msgid "A managed device is required to subscribe to the following topic to handle requests and responses from the IoT Platform:"
+msgstr ""
+"Un terminal géré doit s'abonner au sujet suivant pour pouvoir traiter les demandes et les réponses d'IoT Platform :"
+
+#: ../docs/devices/mqtt.rst:157
+msgid "``iotdm-1/#``"
+msgstr ""
+"``iotdm-1/#``"
+
+#: ../docs/devices/mqtt.rst:160
+msgid "A managed device will publish to topics specific to the type of management request being performed:"
+msgstr ""
+"Un terminal géré va publier des données dans des sujets spécifiques au type de demande de gestion :"
+
+#: ../docs/devices/mqtt.rst:162
+msgid "The managed device will publish device management responses on ``iotdevice-1/response``"
+msgstr ""
+"Le terminal géré va publier des réponses de gestion des terminaux dans ``iotdevice-1/response``"
+
+#: ../docs/devices/mqtt.rst:163
+msgid "For other topics a managed device may publish to, refer to `Device Management Protocol <device_mgmt/index.html>`__ and `Device Management Requests <device_mgmt/requests.html>`__."
+msgstr ""
+"Pour prendre connaissance des autres sujets dans lesquels un terminal géré peut publier des données, voir `Protocole de gestion des terminaux <device_mgmt/index.html>`__ et `Demandes de gestion des terminaux <device_mgmt/requests.html>`__."
+
+#: ../docs/devices/mqtt.rst:167
+msgid "Message Format"
+msgstr ""
+"Format du message"
+
+#: ../docs/devices/mqtt.rst:169
+msgid "All messages are sent in JSON format. There are two types of messages."
+msgstr ""
+"Tous les messages sont envoyés au format JSON. Il existe deux types de message."
+
+#: ../docs/devices/mqtt.rst:180
+msgid "Request"
+msgstr ""
+"Demande"
+
+#: ../docs/devices/mqtt.rst:172
+msgid "Requests are formatted as follows:"
+msgstr ""
+"Les demandes sont formatées de la manière suivante :"
+
+#: ../docs/devices/mqtt.rst:178
+msgid "``d`` carries any data relevant to the request"
+msgstr ""
+"``d`` contient les données relatives à la demande"
+
+#: ../docs/devices/mqtt.rst:179
+msgid "``reqId`` is an identifier of the request, and must be copied into a response. If a response is not required, the field should be omitted."
+msgstr ""
+"``reqId`` est l'identificateur de la demande et doit être copié dans la réponse. Si aucune réponse n'est requise, la zone doit être omise."
+
+#: ../docs/devices/mqtt.rst:200
+msgid "Response"
+msgstr ""
+"Réponse"
+
+#: ../docs/devices/mqtt.rst:183
+msgid "Responses are formatted as follows:"
+msgstr ""
+"Les réponses sont formatées de la manière suivante :"
+
+#: ../docs/devices/mqtt.rst:194
+msgid "\"rc\" is a result code of the original request."
+msgstr ""
+"\"rc\" est le code de résultat de la demande d'origine."
+
+#: ../docs/devices/mqtt.rst:195
+msgid "``message`` is an optional element with a text description of the response code."
+msgstr ""
+"``message`` est un élément facultatif contenant la description textuelle du code de réponse."
+
+#: ../docs/devices/mqtt.rst:196
+msgid "``d`` is an optional data element accompanying the response."
+msgstr ""
+"``d`` est un élément de données facultatif accompagnant la réponse."
+
+#: ../docs/devices/mqtt.rst:197
+msgid "``reqId`` is the request ID of the original request. This is used to correlate responses with requests, and the device needs to ensure that all request IDs are unique.  When responding to IoT Platform requests, the correct ``reqId`` value must be sent in the response."
+msgstr ""
+"``reqId`` est l'ID de demande de la demande d'origine. Il est utilisé pour corréler les réponses aux demandes et le terminal doit s'assurer que tous les ID de demande sont uniques.  Dans le cas d'une réponse à des demandes IoT Platform, la valeur ``reqId`` correcte doit être envoyée dans la réponse."
+
+#: ../docs/devices/mqtt.rst:202
+msgid "For more details on particular request and response messages, refer to `Device Management Protocol <device_mgmt/index.html>`__ and `Device Management Requests <device_mgmt/requests.html>`__."
+msgstr ""
+"Pour plus de détails sur des messages de demande et de réponse particuliers, voir `Protocole de gestion des terminaux <device_mgmt/index.html>`__ et `Demandes de gestion des terminaux <device_mgmt/requests.html>`__."
+

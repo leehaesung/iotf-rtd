@@ -1,0 +1,218 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 16:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/getting_started/register/index.rst:2
+msgid "Register"
+msgstr ""
+"注册"
+
+#: ../docs/getting_started/register/index.rst:4
+msgid "Registering for an account on the Watson IoT platform and connecting your first device is simple and will take less than 10 minutes to complete."
+msgstr ""
+"在 Watson IoT Platform 上注册帐户并连接到第一个设备非常简单，只需不到 10 分钟即可完成。"
+
+#: ../docs/getting_started/register/index.rst:8
+msgid "Create a Bluemix Account"
+msgstr ""
+"创建 Bluemix 帐户"
+
+#: ../docs/getting_started/register/index.rst:9
+msgid "First you will need to `register for a Bluemix account <https://console.ng.bluemix.net/registration/>`_.  Once you have verified your e-mail address you should find yourself looking at an empty dashboard:"
+msgstr ""
+"首先，您将需要 `注册 Bluemix 帐户 <https://console.ng.bluemix.net/registration/>`_。验证电子邮件地址后，首先会看到一个空白仪表板："
+
+#: ../docs/getting_started/register/index.rst:17
+msgid "Choose your Region"
+msgstr ""
+"选择区域"
+
+#: ../docs/getting_started/register/index.rst:18
+msgid "Now, before you go any further you need to consider data soveriegnty and make a decision as to which of the available regions you want to register your service instance with.  Currently the Watson IoT platform is available in two regions:"
+msgstr ""
+"现在，在执行任何其他操作之前，需要考虑数据主权并决定要向哪些可用区域注册服务实例。目前，Watson IoT Platform 在两个区域中可用："
+
+#: ../docs/getting_started/register/index.rst:21
+msgid "United Kingom"
+msgstr ""
+"英国"
+
+#: ../docs/getting_started/register/index.rst:22
+msgid "United States"
+msgstr ""
+"美国"
+
+#: ../docs/getting_started/register/index.rst:25
+msgid "Data sovereignty is the concept that information which has been converted and stored in binary digital form is subject to the laws of the country in which it is located."
+msgstr ""
+"数据主权是指已转换并以二进制数据格式存储的信息遵守其所在国家或地区的法律的概念。"
+
+#: ../docs/getting_started/register/index.rst:28
+msgid "The region your Watson IoT platform instance will be provisioned in will be determined by the Bluemix region you are using.  You can switch Bluemix regions via the controls in the top right corner of the Bluemix dashboard.  You can also determine which region are currently have selected by the URL in your browser:"
+msgstr ""
+"将供应 Watson IoT Platform 实例的区域取决于您使用的 Bluemix 区域。您可以通过 Bluemix 仪表板右上角的控件切换 Bluemix 区域。您也可以通过浏览器中的 URL 确定当前已选定的区域："
+
+#: ../docs/getting_started/register/index.rst:30
+msgid "United Kingdom: console.\\ **eu-gb**\\ .bluemix.net"
+msgstr ""
+"英国：console.\\ **eu-gb**\\ .bluemix.net"
+
+#: ../docs/getting_started/register/index.rst:31
+msgid "United States: console.\\ **ng**\\ .bluemix.net"
+msgstr ""
+"美国：console.\\ **ng**\\ .bluemix.net"
+
+#: ../docs/getting_started/register/index.rst:38
+msgid "Provision a Watson IoT platform Service Instance"
+msgstr ""
+"供应 Watson IoT Platform 服务实例"
+
+#: ../docs/getting_started/register/index.rst:39
+msgid "From anywhere in the Bluemix dashboard click **catalog** in the top navigation, this will take you to a list of all services available on Bluemix."
+msgstr ""
+"从 Bluemix 仪表板中的任意位置单击顶部导航中的 **目录**，这会将您引至 Bluemix 上可用的所有服务的列表。"
+
+#: ../docs/getting_started/register/index.rst:41
+msgid "Type ``Internet of Things`` into the search box at the top of the page to filter out all the other services."
+msgstr ""
+"在页面顶部的搜索框中输入“Internet of Things”以过滤除所有其他服务。"
+
+#: ../docs/getting_started/register/index.rst:42
+msgid "Click ``View More``  on the **Watson IoT platform** service tile."
+msgstr ""
+"单击 **Watson IoT Platform ** 服务磁贴上的“查看更多”。"
+
+#: ../docs/getting_started/register/index.rst:43
+msgid "Optionally give your service instance a name (or simply accept the generated name)"
+msgstr ""
+"（可选）提供服务实例的名称（或直接接受生成的名称）"
+
+#: ../docs/getting_started/register/index.rst:44
+msgid "Click ``Create``"
+msgstr ""
+"单击“创建”"
+
+#: ../docs/getting_started/register/index.rst:49
+msgid "After a short delay you will find yourself the proud owner of an organization on the IBM Watson IoT platform."
+msgstr ""
+"片刻之后，您将在 IBM Watson IoT Platform 上发现自己成为自豪的组织所有者。"
+
+#: ../docs/getting_started/register/index.rst:56
+msgid "Additional Setup and Experimentation"
+msgstr ""
+"其他设置和实验"
+
+#: ../docs/getting_started/register/index.rst:57
+msgid "Click the ``Launch Dashboard`` button when viewing your new service instance within Bluemix, this will take you to your Watson IoT platform Dashboard."
+msgstr ""
+"在 Bluemix 内查看新服务实例时单击“启动仪表板”按钮，这会将您引至 Watson IoT Platform 仪表板。"
+
+#: ../docs/getting_started/register/index.rst:60
+msgid "Configure Access"
+msgstr ""
+"配置访问"
+
+#: ../docs/getting_started/register/index.rst:61
+msgid "You are currently accessing the dashboard through a 24 hour access token generated by Bluemix when you clicked ``Launch Dashboard``, when this expires you will need to return to Bluemix and relaunch the dashboard.  I think we can all agree it's preferable not to have to do this, so let's promote you to a permanent member of the organization."
+msgstr ""
+"您当前是通过在单击“启动仪表板”时 Bluemix 生成的 24 小时访问令牌来访问仪表板，当此访问令牌到期时，您将需要返回到 Bluemix 并重新启动仪表板。我认为，一般都会觉得执行此操作太麻烦，因此让我们将您升级为组织的永久成员。"
+
+#: ../docs/getting_started/register/index.rst:65
+msgid "In the navigation menu select ``Access`` and then ``Guests``, you should see the e-mail address you signed up to Bluemix with in there and the expiration date for your session.  Click the ``Promote`` button to set yourself up as a permanent member of the organization, your ID will disappear from the list, and can now be found under ``Access > Members``."
+msgstr ""
+"在导航菜单中，选择“访问”，然后选择“访客”，此时其中应显示您用于注册 Bluemix 的电子邮件地址和会话的到期日期。单击“升级”按钮以将您自身设置为组织的永久成员，您的标识将从列表中消失，并且现在可在“访问 > 成员”下找到。"
+
+#: ../docs/getting_started/register/index.rst:73
+msgid "Connect an Application"
+msgstr ""
+"连接应用程序"
+
+#: ../docs/getting_started/register/index.rst:74
+msgid "Applications require an ``API key`` to connect to the service.  Let's set one up.  Navigate to ``Access > API Keys`` and click ``Generate API Key``. Take a note of your ``API Key`` and ``Authentication Token`` - you will need them shortly."
+msgstr ""
+"应用程序需要“API 密钥”来连接到服务。让我们设置一个。浏览至“访问 > API 密钥”，然后单击“生成 API 密钥”。记录您的“API 密钥”和“认证令牌”，很快我们将需要使用它们。"
+
+#: ../docs/getting_started/register/index.rst:80
+msgid "Now we have an API key we want to run an application, the simpler the better."
+msgstr ""
+"现在，我们具有运行应用程序所需的 API 密钥，越简单越好。"
+
+#: ../docs/getting_started/register/index.rst:83
+msgid "The Watson IoT platform has client library support for multiple languages, but for the purpose of this getting started tutorial we're going to stick with Python.  If you don't already have `Python <https://www.python.org/downloads/>`_ installed now is the time to do so."
+msgstr ""
+"Watson IoT Platform 具有多种语言的客户机库支持，但出于此入门教程的目的，我们将坚持使用 Python。如果您尚未安装 `Python <https://www.python.org/downloads/>`_，现在便需要执行此安装。"
+
+#: ../docs/getting_started/register/index.rst:86
+msgid "Install the latest version of the Watson IoT platform python client library using pip"
+msgstr ""
+"使用 pip 安装最新版本的 Watson IoT Platform  Python 客户机库"
+
+#: ../docs/getting_started/register/index.rst:92
+msgid "Now, create a really simple application that will connect using the API key you just created:"
+msgstr ""
+"现在，创建将使用您刚创建的 API 密钥进行连接的超简单应用程序："
+
+#: ../docs/getting_started/register/index.rst:133
+msgid "When you launch the application you will see nothing overly exciting"
+msgstr ""
+"启动应用程序时，将不会显示任何特别内容"
+
+#: ../docs/getting_started/register/index.rst:142
+msgid "Connect a Device"
+msgstr ""
+"连接设备"
+
+#: ../docs/getting_started/register/index.rst:143
+msgid "Before we can register a device we have to define a device type.  A ``device type`` is intended to represent a group of devices that are identical, it can be useful to think of the ``device type`` as analogous to a model in the traditional model:serial identification scheme.  Leave you application running to return to your Watson IoT platform Dashboard and navigate to ``Devices > Device Types``, click ``Create Type`` and enter ``python-sample`` as the name, all other fields are optional, so we're just going to skip past the rest of the options for the device type for now."
+msgstr ""
+"我们必须先定义设备类型，然后才能注册设备。“设备类型”旨在表示一组相同的设备，在传统的“模型:序列标识”方案中，将“设备类型”视为类似于模型可能非常有用。保持运行应用程序以返回到 Watson IoT Platform 仪表板并浏览至“设备 > 设备类型”，单击“创建类型”并输入“python-sample”作为名称，所有其他字段都是可选的，因此我们将会暂时跳过设备类型的其余选项。"
+
+#: ../docs/getting_started/register/index.rst:151
+msgid "Now it's time to register a device of this type, navigate to ``Devices > Browse`` and click ``Add Device``, select the ``python-sample`` device type that we just created and click ``Next``.  On the second panel enter a device ID of \"MyFirstDevice\" and click ``Next`` to continue through the guided creation process until you reach the ``Add`` button."
+msgstr ""
+"现在，即可开始注册此类型的设备，浏览至“设备 > 浏览”，然后单击“添加设备”，选择刚创建的“python-sample”设备类型，然后单击“下一步”。在第二个面板上，输入设备标识“MyFirstDevice”，然后单击“下一步”以继续完成引导的创建过程，直至到达“添加”按钮。"
+
+#: ../docs/getting_started/register/index.rst:158
+msgid "Once you click ``Add`` your device is registered and you will be presented with a generated ``authentication token`` for that device."
+msgstr ""
+"一旦单击“完成”，便会注册您的设备并为您提供所生成的该设备的“认证令牌”。"
+
+#: ../docs/getting_started/register/index.rst:163
+msgid "We're now going to take that authentication token and write a totally minimal device client in python."
+msgstr ""
+"现在，我们将采用该认证令牌并使用 Python 编写整体最小的设备客户机。"
+
+#: ../docs/getting_started/register/index.rst:194
+msgid "When executed the device code will generate 10 events .. code::"
+msgstr ""
+"在执行时，设备代码将生成 10 个事件 .. code::"
+
+#: ../docs/getting_started/register/index.rst:204
+msgid "Returning to the terminal where your application is running you will be able to see the application is recieving and processing the events submitted by your device in real time."
+msgstr ""
+"返回到应用程序运行所在的终端，您将能够实时查看应用程序正在接收和处理设备提交的事件。"
+
+#: ../docs/getting_started/register/index.rst:223
+msgid "Finally, if you return to the Watson IoT platform dashboard and scroll down to ``Device Events`` you will be able to see all the events that you just sent."
+msgstr ""
+"最后，如果返回到 Watson IoT Platform 仪表板并向下滚动到“设备事件”，那么将能够看到刚发送的所有事件。"
+
+#: ../docs/getting_started/register/index.rst:228
+msgid "You can also examine the content of any of the events by selecting an event from the table."
+msgstr ""
+"您也可以通过从表中选择事件来检查任何事件的内容。"
+

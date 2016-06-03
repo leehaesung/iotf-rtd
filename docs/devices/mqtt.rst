@@ -46,7 +46,7 @@ in pem format.  The following file contains the entire certificate chain for
 
     -  Subscribing to commands
     -  Device management protocol
-    -  Clean or durable sessions
+    -  Durable sessions
     
     Also, messages sent from devices at a rate greater than 1 per second may be discarded.
 

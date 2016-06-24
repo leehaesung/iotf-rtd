@@ -1,0 +1,454 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:2
+msgid "Extending Device Management"
+msgstr ""
+"扩展设备管理"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:4
+msgid "This feature is currently available as part of a limited beta.  Future updates may include changes incompatible with the current version of this feature.  Try it out and `let us know what you think <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_"
+msgstr ""
+"此功能目前作为受限测试版的一部分提供。将来的更新可能包含与此功能的当前版本不兼容的更改。试用并 `告知我们您的想法 <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:8
+msgid "The IBM Watson IoT Platform provides the ability to extend the device management capabilities. This is done by adding device management extensions using either the REST APIs or the IoT Platform dashboard."
+msgstr ""
+"IBM Watson IoT Platform 使您能够扩展设备管理功能。可以通过使用 REST API 或 IoT Platform 仪表板添加设备管理扩展来实现这一点。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:11
+msgid "Devices which connect to the IoT Platform may have a wide range of capabilities. The device management actions supported by default in the IoT Platform (*device reboot*, *factory reset*, *firmware download* and *firmware update*) may not be sufficient to manage everything which a device can do."
+msgstr ""
+"连接到 IoT Platform 的设备可能具有丰富的功能。IoT Platform 中缺省情况下支持的设备管理操作（*设备重新引导*、*恢复出厂设置*、*固件下载* 和 *固件更新*）可能不足以管理设备可执行的所有任务。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:17
+msgid "Device Management Extension Packages"
+msgstr ""
+"设备管理扩展包"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:19
+msgid "An extension package is a JSON document which defines a set of device management actions. The actions can be initiated against one or more devices which support those actions. The actions are initiated in the same way as the default device management actions by using either the IoT Platform dashboard or the device management REST APIs."
+msgstr ""
+"扩展包是用于定义一组设备管理操作的 JSON 文档。可以针对支持这些操作的一个或多个设备启动这些操作。可通过 IoT Platform 仪表板或设备管理 REST API，采用与缺省设备管理操作相同的方式启动这些操作。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:23
+msgid "Device management extension packages have the following format:"
+msgstr ""
+"设备管理扩展包具有以下格式："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:58
+msgid "Extension Package Properties:"
+msgstr ""
+"扩展包属性："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:60
+msgid "``bundleId``: Unique identifier for a device management extension. Required."
+msgstr ""
+"“bundleId”：设备管理扩展的唯一标识。必需。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:61
+msgid "``version``: Version string for a device management extension. Optional."
+msgstr ""
+"“version”：设备管理扩展的版本字符串。可选。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:62
+msgid "``provider``: Provider string for a device management extension. Maximum length of 1024 characters. Optional."
+msgstr ""
+"“provider”：设备管理扩展的提供者字符串。最大长度为 1024 字符。可选。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:63
+msgid "``displayName``: Map of ``locale``: ``String`` key-value pairs used for display in the IoT Platform dashboard. Required. Must contain at least one entry."
+msgstr ""
+"“displayName”：“locale”/“String”键值对映射，用于显示在 IoT Platform 仪表板中。必需。必须包含至少一个条目。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:64
+msgid "``description``: Map of ``locale``: ``String`` key-value pairs used for display in the IoT Platform dashboard. Optional. If specified, must contain at least one entry."
+msgstr ""
+"“description”：“locale”/“String”键值对映射，用于显示在 IoT Platform 仪表板中。可选。如果指定此项，那么必须包含至少一个条目。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:65
+msgid "``actions``: Map of ``actionId``: ``<action>`` key-value pairs which defines the actions contained within a device management extension. Required. Must contain at least one entry."
+msgstr ""
+"“actions”：“actionId”/“<action>”键值对映射，用于定义设备管理扩展中包含的操作。必需。必须包含至少一个条目。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:67
+msgid "Properties per action:"
+msgstr ""
+"每个操作的属性："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:69
+msgid "``actionDisplayName``: Map of ``locale``: ``String`` key-value pairs used for display in the IoT Platform dashboard. Required. Must contain at least one entry."
+msgstr ""
+"“actionDisplayName”：“locale”/“String”键值对映射，用于显示在 IoT Platform 仪表板中。必需。必须包含至少一个条目。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:70
+msgid "``description``:  Map of ``locale``: ``String`` key-value pairs used for display in the IoT Platform dashboard. Optional. If specified, must contain at least one entry."
+msgstr ""
+"“description”：“locale”/“String”键值对映射，用于显示在 IoT Platform 仪表板中。可选。如果指定此项，那么必须包含至少一个条目。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:71
+msgid "``parameters``: Array of parameters allowed for a particular action. Optional. If specified, must contain at least one entry."
+msgstr ""
+"“parameters”：特定操作允许的参数数组。可选。如果指定此项，那么必须包含至少一个条目。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:73
+msgid "Properties per action parameter:"
+msgstr ""
+"每个操作参数的属性："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:75
+msgid "``name``: Unique identifier for a parameter within an action. Required."
+msgstr ""
+"“name”：操作中参数的唯一标识。必需。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:76
+msgid "``value``: Regular expression used for validating parameter values when a request is initiated. Optional. If not specified, value will not be validated."
+msgstr ""
+"“value”：用于在启动请求时验证参数值的正则表达式。可选。如果未指定此项，那么将不验证值。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:77
+msgid "``required``: Boolean value specifying whether the parameter is required. Optional. Default: False"
+msgstr ""
+"“required”：用于指定参数是否为必需参数的布尔值。可选。缺省值：False"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:78
+msgid "``defaultValue``: Value to be used if the parameter is not provided when a request is initiated. Optional."
+msgstr ""
+"“defaultValue”：启动请求时，如果没有提供该参数，那么将使用此值。可选。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:82
+msgid "The ``bundleId``, ``version``, ``actionId`` and ``parameterId`` values have the following restrictions:"
+msgstr ""
+"“bundleId”、“version”、“actionId”和“parameterId”值具有以下限制："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:84
+msgid "Maximum length of 255 characters"
+msgstr ""
+"最大长度为 255 个字符"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:85
+msgid "Must comprise only alpha-numeric characters (a-z, A-Z, 0-9) and the following special characters:"
+msgstr ""
+"必须仅包含字母数字字符（a-z、A-Z 和 0-9）以及下列特殊字符："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:87
+msgid "dash (-)"
+msgstr ""
+"短划线 (-)"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:88
+msgid "underscore (_)"
+msgstr ""
+"下划线 (_)"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:89
+msgid "dot (.)"
+msgstr ""
+"点 (.)"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:92
+msgid "Extension packages are managed in the IoT Platform using the following REST APIs."
+msgstr ""
+"可使用以下 REST API 在 IoT Platform 中管理扩展包。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:94
+msgid "List all device management extension packages:"
+msgstr ""
+"列出所有设备管理扩展包："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:96
+msgid "``GET https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle``"
+msgstr ""
+"“GET https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle”"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:98
+msgid "Create a new device management extension package:"
+msgstr ""
+"创建新的设备管理扩展包："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:100
+#: ../docs/devices/device_mgmt/custom_actions.rst:331
+msgid "``POST https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle``"
+msgstr ""
+"“POST https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle”"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:102
+msgid "Get a specific device management extension package:"
+msgstr ""
+"获取特定设备管理扩展包："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:104
+msgid "``GET https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle/{bundleId}``"
+msgstr ""
+"“GET https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle/{bundleId}”"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:106
+msgid "Update a device management extension package:"
+msgstr ""
+"更新设备管理扩展包："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:108
+msgid "``PUT https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle/{bundleId}``"
+msgstr ""
+"“PUT https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle/{bundleId}”"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:110
+msgid "Delete a device management extension package:"
+msgstr ""
+"删除设备管理扩展包："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:112
+msgid "``DELETE https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle/{bundleId}``"
+msgstr ""
+"“DELETE https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle/{bundleId}”"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:114
+msgid "For more information on the REST APIs for device management extension packages refer to the `version 2 API documentation <../../swagger/v0002.html>`_."
+msgstr ""
+"有关用于设备管理扩展包的 REST API 的更多信息，请参阅 `V2 API 文档 <../../swagger/v0002.html>`_。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:119
+msgid "Supporting Custom Device Management Actions"
+msgstr ""
+"支持定制设备管理操作"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:121
+msgid "Device management actions defined in an extension package may only be initiated against devices which support those actions. A device specifies what types of actions it supports when it publishes a manage request to the IoT Platform. In order to allow a device to receive custom actions defined in a particular extension package, the device must specify that extension's bundle identifier in the supports object when publishing a manage request."
+msgstr ""
+"扩展包中定义的设备管理操作只能针对支持这些操作的设备启动。设备在向 IoT Platform 发布管理请求时指定其支持的操作类型。为了允许设备接收特定扩展包中定义的定制操作，该设备在发布管理请求时，必须在支持对象中指定此扩展包标识。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:151
+msgid "For additional information about device manage requests, refer to `Device Management Protocol <index.html>`__."
+msgstr ""
+"有关设备管理请求的其他信息，请参阅 `设备管理协议 <index.html>`__。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:155
+msgid "Initiating Custom Device Management Actions"
+msgstr ""
+"启动定制设备管理操作"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:157
+msgid "Custom device management actions are initiated using the same REST API as the default device management actions:"
+msgstr ""
+"使用与缺省设备管理操作相同的 REST API 来启动定制设备管理操作："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:159
+msgid "``POST https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests``"
+msgstr ""
+"“POST https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests”"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:161
+msgid "The following information must be provided when initiating a request:"
+msgstr ""
+"启动请求时必须提供以下信息："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:163
+msgid "The action ``<bundleId>/<actionId>``"
+msgstr ""
+"操作“<bundleId>/<actionId>”"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:164
+msgid "A list of devices to initiate the action against, with a maximum of 5000 devices"
+msgstr ""
+"要对其启动该操作的设备列表（最多包含 5000 台设备）"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:165
+msgid "A list of parameters as defined in the custom action definition"
+msgstr ""
+"在定制操作定义中定义的参数列表"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:167
+msgid "The payload for initiating a request has the following format:"
+msgstr ""
+"用于启动请求的有效内容具有以下格式："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:189
+msgid "Handling Custom Device Management Actions"
+msgstr ""
+"处理定制设备管理操作"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:191
+msgid "When a custom action is initiated against a device, an MQTT message will be published to the device. The message will contain any parameters that were specified as part of the request. When the device receives this message, it is expected to either execute the action or respond with an error code indicating that it cannot complete the action at this time."
+msgstr ""
+"当对设备启动定制操作时，会向该设备发布 MQTT 消息。该消息将包含作为请求的一部分指定的所有参数。当设备收到此消息时，它应该执行相应操作或者返回错误码以指示此时无法完成该操作。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:196
+msgid "To indicate that the action was completed successfully, a device should publish a response with ``rc`` set to ``200``."
+msgstr ""
+"要指示已成功完成该操作，设备应发布“rc”设置为“200”的响应。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:199
+msgid "Below is an example exchange between the server and a device."
+msgstr ""
+"以下是服务器和设备之间的交换示例。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:230
+msgid "Example"
+msgstr ""
+"示例"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:232
+msgid "In this example, we will walk through defining a new device management extension and executing an action defined within that extension."
+msgstr ""
+"在该示例中，我们将引导您定义新设备管理扩展并执行该扩展中定义的操作。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:235
+msgid "Some company manufactures ``exampleDeviceType`` devices. Users of these devices have the ability to manage plug-ins which run on the devices. To facilitate remote management of plug-ins on ``exampleDeviceType`` devices, the manufacturer provides a device management extension which users can import into their Watson IoT Platform organization."
+msgstr ""
+"某家公司生产了“exampleDeviceType”设备。此类设备的用户能够管理设备上运行的插件。为便于远程管理“exampleDeviceType”设备上的插件，该制造商提供了设备管理扩展，以供用户导入到他们自己的 Watson IoT Platform 组织中。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:239
+msgid "The extension JSON document used in this example:"
+msgstr ""
+"该示例中使用的扩展 JSON 文档："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:322
+msgid "In this device management extension package, 4 actions are defined:"
+msgstr ""
+"在该设备管理扩展包中，定义了 4 个操作："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:324
+msgid "installPlugin"
+msgstr ""
+"installPlugin"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:325
+msgid "enablePlugin"
+msgstr ""
+"enablePlugin"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:326
+msgid "disablePlugin"
+msgstr ""
+"disablePlugin"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:327
+msgid "uninstallPlugin"
+msgstr ""
+"uninstallPlugin"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:329
+msgid "The extension is added using the REST API:"
+msgstr ""
+"使用 REST API 添加了该扩展："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:333
+msgid "Devices registered in organization ``<orgId>`` are now able to specify that they support ``exampleDeviceType-actions-v1`` actions when publishing a manage request."
+msgstr ""
+"在组织“<orgId>”中注册的设备现在能够指定在发布管理请求时其支持“exampleDeviceType-actions-v1”操作。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:336
+msgid "In this example, the manage request sent by a device would look like this:"
+msgstr ""
+"在该示例中，设备发送的管理请求类似于："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:352
+msgid "The device should then receive the following response from the IoT Platform:"
+msgstr ""
+"然后，该设备应从 IoT Platform 收到以下响应："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:364
+msgid "At this point, an action defined in the ``exampleIoT-exampleDeviceType-v1`` extension can be initiated against some devices."
+msgstr ""
+"此时，可以针对某些设备启动“exampleIoT-exampleDeviceType-v1”扩展中定义的操作。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:366
+msgid "The payload for initiating an ``installPlugin`` action will look like the following:"
+msgstr ""
+"用于启动“installPlugin”操作的有效内容将与下面类似："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:394
+msgid "The request is initiated using the REST API:"
+msgstr ""
+"使用 REST API 启动请求："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:400
+msgid "Devices ``device0`` and ``device1`` of type ``exampleDeviceType`` will then receive the following MQTT message:"
+msgstr ""
+"然后，类型为“exampleDeviceType”的设备“device0”和“device1”将收到以下 MQTT 消息："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:424
+msgid "Each device will take action on the message, installing the new plug-in. Once installation is complete, the devices respond with the following message to indicate that the action completed successfully:"
+msgstr ""
+"每个设备将执行此消息上的操作：安装新插件。完成安装后，设备立即返回以下消息以指示成功完成该操作："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:437
+msgid "At this point, the ``installPlugin`` action is now complete."
+msgstr ""
+"此时，“installPlugin”操作现已完成。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:441
+msgid "API Examples"
+msgstr ""
+"API 示例"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:443
+msgid "The following are examples of API requests that may be useful when performing device management actions:"
+msgstr ""
+"以下是执行设备管理操作时可能有用的 API 请求示例："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:445
+msgid "Create a new device management extension:"
+msgstr ""
+"创建新的设备管理扩展："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:447
+msgid "``curl -XPOST -d '<insert payload here>' -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle``"
+msgstr ""
+"“curl -XPOST -d '<insert payload here>' -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle”"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:449
+msgid "List device management extensions:"
+msgstr ""
+"列出设备管理扩展："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:451
+msgid "``curl -XGET -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle``"
+msgstr ""
+"“curl -XGET -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle”"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:453
+msgid "Initiate a device management request:"
+msgstr ""
+"启动设备管理请求："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:455
+msgid "``curl -XPOST -d '<insert payload here>' -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests``"
+msgstr ""
+"“curl -XPOST -d '<insert payload here>' -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests”"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:457
+msgid "List in-progress or completed device management requests:"
+msgstr ""
+"列出正在进行中或已完成的设备管理请求："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:459
+msgid "``curl -XGET -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests``"
+msgstr ""
+"“curl -XGET -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests”"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:461
+msgid "View status of a particular device management request:"
+msgstr ""
+"查看特定设备管理请求的状态："
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:463
+msgid "``curl -XGET -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests/<requestId>``"
+msgstr ""
+"“curl -XGET -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests/<requestId>”"
+

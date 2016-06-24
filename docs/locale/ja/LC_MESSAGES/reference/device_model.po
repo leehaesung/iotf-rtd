@@ -1,0 +1,894 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/reference/device_model.rst:3
+msgid "Device Model"
+msgstr ""
+"デバイス・モデル"
+
+#: ../docs/reference/device_model.rst:5
+msgid "The device model describes the metadata and management characteristics of a device. The device database in the Watson IoT platform is the master source of device information. Applications and managed devices are able to send updates to the database such as a location or the progress of a firmware update. Once these updates are received by the Watson IoT platform, the device database is updated, making the information available to applications."
+msgstr ""
+"デバイス・モデルとは、デバイスのメタデータおよび管理特性を記述するものです。Watson IoT Platform において、デバイス・データベースはデバイス情報のマスター・ソースです。アプリケーションおよび管理対象デバイスは、場所やファームウェア更新の進行状況などの更新情報をデータベースに送信できます。Watson IoT Platform がこのような更新情報を受け取ると、デバイス・データベースが更新され、アプリケーションでそれらの情報を使用できるようになります。"
+
+#: ../docs/reference/device_model.rst:12
+msgid "With the exception of the management extension, the entire device model is available for both managed and unmanaged devices. However, an unmanaged device can not directly update its device model in the database."
+msgstr ""
+"管理拡張を除き、デバイス・モデルはすべて、管理対象デバイスでも非管理対象デバイスでも使用可能です。ただし、非管理対象デバイスからデータベース内のデバイス・モデルを直接更新することはできません。"
+
+#: ../docs/reference/device_model.rst:20
+msgid "Device Identification"
+msgstr ""
+"デバイス ID"
+
+#: ../docs/reference/device_model.rst:22
+msgid "Every device has a typeId and deviceId attribute. Typically, the typeId represents the model of your device, whilst the deviceId can represent its serial number. Within your Watson IoT platform organization, the combination of typeId and deviceId must be unique for each device."
+msgstr ""
+"すべてのデバイスには typeId 属性と deviceId 属性があります。通常、typeId はデバイスのモデルを表し、deviceId はデバイスのシリアル番号を表します。typeId および deviceId の組み合わせは、Watson IoT Platform 組織内で、デバイスごとに固有である必要があります。"
+
+#: ../docs/reference/device_model.rst:26
+msgid "In addition, the Watson IoT platform constructs a further identifier for each device based on your organizationId, the device's typeId and the device's deviceId. This identifier - the clientId - allows you to identify unequivocally an individual device."
+msgstr ""
+"さらに、Watson IoT Platform は、organizationId、デバイスの typeId および deviceId に基づいて各デバイスの ID を作成します。この ID (clientId) により、個別のデバイスを明確に識別できます。"
+
+#: ../docs/reference/device_model.rst:28
+msgid "The characters which can be used in these identifiers are restricted so they can be used straightforwardly in communication protocols and REST APIs. There are a number of optional device identifiers for use with the device management protocol. These identifiers are:"
+msgstr ""
+"通信プロトコルおよび REST API でそのまま使用できるように、これらの ID で使用可能な文字は制限されています。デバイス管理プロトコルで使用するためのオプションのデバイス ID が数多く存在します。それらの ID を以下に示します。"
+
+#: ../docs/reference/device_model.rst:32
+msgid "deviceInfo.manufacturer"
+msgstr ""
+"deviceInfo.manufacturer"
+
+#: ../docs/reference/device_model.rst:33
+msgid "deviceInfo.serialNumber"
+msgstr ""
+"deviceInfo.serialNumber"
+
+#: ../docs/reference/device_model.rst:34
+msgid "deviceInfo.model"
+msgstr ""
+"deviceInfo.model"
+
+#: ../docs/reference/device_model.rst:35
+msgid "deviceInfo.deviceClass"
+msgstr ""
+"deviceInfo.deviceClass"
+
+#: ../docs/reference/device_model.rst:36
+msgid "deviceInfo.description"
+msgstr ""
+"deviceInfo.description"
+
+#: ../docs/reference/device_model.rst:38
+msgid "For more information on the identifiers and descriptions of their comparative identifiers in other device management standards, see Device Model Attributes Reference."
+msgstr ""
+"ID の詳細および他のデバイス管理規格の同等の ID については、「デバイス・モデルの属性参照」を参照してください。"
+
+#: ../docs/reference/device_model.rst:46
+msgid "Identifiers and Device Type"
+msgstr ""
+"ID とデバイス・タイプ"
+
+#: ../docs/reference/device_model.rst:48
+msgid "Each device connected to the Watson IoT platform is associated with a device type. Device types are intended to be groups of devices which share characteristics or behaviour."
+msgstr ""
+"Watson IoT Platform に接続されたデバイスはすべて、デバイス・タイプと関連付けられます。デバイス・タイプとは、特性や振る舞いが同じデバイスをグループ化するためのものです。"
+
+#: ../docs/reference/device_model.rst:52
+msgid "A device type has a set of attributes. When a device is added to the Watson IoT platform, the attributes in its device type are used as a template overridden by device-specific attributes. For example, the device type could have a value for the ``deviceInfo.fwVersion`` attribute reflecting the firmware version at the time of manufacture, and this value would be copied from the device type into the devices as they are added. However, if a device was added which already had a value for ``deviceInfo.fwVersion``, it would not be overridden by the device type."
+msgstr ""
+"デバイス・タイプには一連の属性があります。デバイスを Watson IoT Platform に追加すると、そのデバイス・タイプの属性がテンプレートとして使用されます (これらはデバイス固有の属性によって上書きされます)。例えば、デバイス・タイプに、製造時のファームウェア・バージョンを表す ``deviceInfo.fwVersion`` 属性の値があり、デバイスの追加時にこの値がデバイス・タイプからデバイスにコピーされるとします。ただし、``deviceInfo.fwVersion`` の値を既に持つデバイスが追加された場合に、デバイス・タイプがその値を上書きすることはありません。"
+
+#: ../docs/reference/device_model.rst:59
+msgid "When a device type is updated, future registered devices will reflect the modified device type template. However, existing devices of this device type are unaffected and remain unchanged."
+msgstr ""
+"デバイス・タイプが更新されると、将来登録されるデバイスには、変更されたデバイス・タイプのテンプレートが反映されます。ただし、そのデバイス・タイプの既存のデバイスは影響を受けず、変更されることはありません。"
+
+#: ../docs/reference/device_model.rst:68
+msgid "Attributes"
+msgstr ""
+"属性"
+
+#: ../docs/reference/device_model.rst:70
+msgid "The table below shows the list of attributes which can apply to devices in the Watson IoT platform. Additionally, italicized attributes can also apply to device types."
+msgstr ""
+"下の表は、Watson IoT Platform でデバイスに適用できる属性のリストを示しています。さらに、イタリック体の属性はデバイス・タイプにも適用できます。"
+
+#: ../docs/reference/device_model.rst:72
+msgid "API/DMA: Can be updated by API/Device Management Agent"
+msgstr ""
+"API/DMA: API/デバイス管理エージェントによって更新可能"
+
+#: ../docs/reference/device_model.rst:74
+msgid "R: Read only"
+msgstr ""
+"R: 読み取り専用"
+
+#: ../docs/reference/device_model.rst:75
+msgid "W: Write and read"
+msgstr ""
+"W: 読み取りおよび書き込み"
+
+#: ../docs/reference/device_model.rst:76
+msgid "A: Append"
+msgstr ""
+"A: 付加"
+
+#: ../docs/reference/device_model.rst:79
+#: ../docs/reference/device_model.rst:158
+#: ../docs/reference/device_model.rst:183
+#: ../docs/reference/device_model.rst:207
+msgid "Attribute"
+msgstr ""
+"属性"
+
+#: ../docs/reference/device_model.rst:79
+#: ../docs/reference/device_model.rst:158
+#: ../docs/reference/device_model.rst:183
+#: ../docs/reference/device_model.rst:207
+msgid "Type"
+msgstr ""
+"タイプ"
+
+#: ../docs/reference/device_model.rst:79
+#: ../docs/reference/device_model.rst:158
+#: ../docs/reference/device_model.rst:183
+#: ../docs/reference/device_model.rst:207
+msgid "Description"
+msgstr ""
+"説明"
+
+#: ../docs/reference/device_model.rst:79
+#: ../docs/reference/device_model.rst:158
+#: ../docs/reference/device_model.rst:183
+#: ../docs/reference/device_model.rst:207
+msgid "API"
+msgstr ""
+"API"
+
+#: ../docs/reference/device_model.rst:79
+#: ../docs/reference/device_model.rst:158
+#: ../docs/reference/device_model.rst:183
+#: ../docs/reference/device_model.rst:207
+msgid "DMA"
+msgstr ""
+"DMA"
+
+#: ../docs/reference/device_model.rst:81
+msgid "clientId"
+msgstr ""
+"clientId"
+
+#: ../docs/reference/device_model.rst:81
+#: ../docs/reference/device_model.rst:83
+#: ../docs/reference/device_model.rst:85
+#: ../docs/reference/device_model.rst:87
+#: ../docs/reference/device_model.rst:89
+#: ../docs/reference/device_model.rst:91
+#: ../docs/reference/device_model.rst:95
+#: ../docs/reference/device_model.rst:97
+#: ../docs/reference/device_model.rst:99
+#: ../docs/reference/device_model.rst:101
+#: ../docs/reference/device_model.rst:103
+#: ../docs/reference/device_model.rst:105
+#: ../docs/reference/device_model.rst:108
+#: ../docs/reference/device_model.rst:110
+#: ../docs/reference/device_model.rst:115
+#: ../docs/reference/device_model.rst:117
+#: ../docs/reference/device_model.rst:120
+#: ../docs/reference/device_model.rst:122
+#: ../docs/reference/device_model.rst:124
+#: ../docs/reference/device_model.rst:126
+#: ../docs/reference/device_model.rst:165
+#: ../docs/reference/device_model.rst:167
+#: ../docs/reference/device_model.rst:169
+#: ../docs/reference/device_model.rst:191
+#: ../docs/reference/device_model.rst:193
+#: ../docs/reference/device_model.rst:211
+#: ../docs/reference/device_model.rst:214
+#: ../docs/reference/device_model.rst:223
+#: ../docs/reference/device_model.rst:225
+#: ../docs/reference/device_model.rst:227
+#: ../docs/reference/device_model.rst:229
+#: ../docs/reference/device_model.rst:236
+msgid "string"
+msgstr ""
+"文字列"
+
+#: ../docs/reference/device_model.rst:81
+msgid "The client ID used with MQTT connections"
+msgstr ""
+"MQTT 接続で使用されるクライアント ID"
+
+#: ../docs/reference/device_model.rst:81
+#: ../docs/reference/device_model.rst:83
+#: ../docs/reference/device_model.rst:85
+#: ../docs/reference/device_model.rst:87
+#: ../docs/reference/device_model.rst:89
+#: ../docs/reference/device_model.rst:91
+#: ../docs/reference/device_model.rst:115
+#: ../docs/reference/device_model.rst:117
+#: ../docs/reference/device_model.rst:120
+#: ../docs/reference/device_model.rst:122
+#: ../docs/reference/device_model.rst:124
+#: ../docs/reference/device_model.rst:126
+#: ../docs/reference/device_model.rst:193
+#: ../docs/reference/device_model.rst:209
+#: ../docs/reference/device_model.rst:211
+#: ../docs/reference/device_model.rst:214
+#: ../docs/reference/device_model.rst:217
+#: ../docs/reference/device_model.rst:220
+#: ../docs/reference/device_model.rst:223
+#: ../docs/reference/device_model.rst:225
+#: ../docs/reference/device_model.rst:227
+#: ../docs/reference/device_model.rst:229
+#: ../docs/reference/device_model.rst:232
+#: ../docs/reference/device_model.rst:234
+#: ../docs/reference/device_model.rst:236
+msgid "R"
+msgstr ""
+"R"
+
+#: ../docs/reference/device_model.rst:83
+msgid "*typeId*"
+msgstr ""
+"*typeId*"
+
+#: ../docs/reference/device_model.rst:83
+msgid "Device type"
+msgstr ""
+"デバイス・タイプ"
+
+#: ../docs/reference/device_model.rst:85
+msgid "deviceId"
+msgstr ""
+"deviceId"
+
+#: ../docs/reference/device_model.rst:85
+msgid "Device ID"
+msgstr ""
+"デバイス ID"
+
+#: ../docs/reference/device_model.rst:87
+msgid "classId"
+msgstr ""
+"classId"
+
+#: ../docs/reference/device_model.rst:87
+msgid "Class of device (\"Device\" or \"Gateway\")"
+msgstr ""
+"デバイスのクラス (「デバイス」または「ゲートウェイ」)"
+
+#: ../docs/reference/device_model.rst:89
+msgid "gatewayTypeId"
+msgstr ""
+"gatewayTypeId"
+
+#: ../docs/reference/device_model.rst:89
+msgid "Type ID of the gateway this device is using"
+msgstr ""
+"このデバイスが使用するゲートウェイのタイプ ID"
+
+#: ../docs/reference/device_model.rst:91
+msgid "gatewayId"
+msgstr ""
+"gatewayId"
+
+#: ../docs/reference/device_model.rst:91
+msgid "Device ID of the gateway this device is using"
+msgstr ""
+"このデバイスが使用するゲートウェイのデバイス ID"
+
+#: ../docs/reference/device_model.rst:93
+msgid "status.alert"
+msgstr ""
+"status.alert"
+
+#: ../docs/reference/device_model.rst:93
+#: ../docs/reference/device_model.rst:209
+#: ../docs/reference/device_model.rst:217
+#: ../docs/reference/device_model.rst:220
+msgid "boolean"
+msgstr ""
+"ブール値"
+
+#: ../docs/reference/device_model.rst:93
+msgid "Whether the device has an alert"
+msgstr ""
+"デバイスにアラートが存在するかどうか"
+
+#: ../docs/reference/device_model.rst:93
+#: ../docs/reference/device_model.rst:95
+#: ../docs/reference/device_model.rst:95
+#: ../docs/reference/device_model.rst:97
+#: ../docs/reference/device_model.rst:97
+#: ../docs/reference/device_model.rst:99
+#: ../docs/reference/device_model.rst:99
+#: ../docs/reference/device_model.rst:101
+#: ../docs/reference/device_model.rst:101
+#: ../docs/reference/device_model.rst:103
+#: ../docs/reference/device_model.rst:103
+#: ../docs/reference/device_model.rst:105
+#: ../docs/reference/device_model.rst:105
+#: ../docs/reference/device_model.rst:108
+#: ../docs/reference/device_model.rst:108
+#: ../docs/reference/device_model.rst:110
+#: ../docs/reference/device_model.rst:110
+#: ../docs/reference/device_model.rst:113
+#: ../docs/reference/device_model.rst:113
+#: ../docs/reference/device_model.rst:185
+#: ../docs/reference/device_model.rst:185
+#: ../docs/reference/device_model.rst:187
+#: ../docs/reference/device_model.rst:187
+#: ../docs/reference/device_model.rst:189
+#: ../docs/reference/device_model.rst:189
+#: ../docs/reference/device_model.rst:191
+#: ../docs/reference/device_model.rst:191
+#: ../docs/reference/device_model.rst:195
+#: ../docs/reference/device_model.rst:195
+#: ../docs/reference/device_model.rst:223
+#: ../docs/reference/device_model.rst:225
+#: ../docs/reference/device_model.rst:227
+#: ../docs/reference/device_model.rst:229
+#: ../docs/reference/device_model.rst:232
+#: ../docs/reference/device_model.rst:234
+msgid "W"
+msgstr ""
+"W"
+
+#: ../docs/reference/device_model.rst:95
+msgid "*deviceInfo.serialNumber*"
+msgstr ""
+"*deviceInfo.serialNumber*"
+
+#: ../docs/reference/device_model.rst:95
+msgid "The serial number of the device"
+msgstr ""
+"デバイスのシリアル番号"
+
+#: ../docs/reference/device_model.rst:97
+msgid "*deviceInfo.manufacturer*"
+msgstr ""
+"*deviceInfo.manufacturer*"
+
+#: ../docs/reference/device_model.rst:97
+msgid "The manufacturer of the device"
+msgstr ""
+"デバイスの製造メーカー"
+
+#: ../docs/reference/device_model.rst:99
+msgid "*deviceInfo.model*"
+msgstr ""
+"*deviceInfo.model*"
+
+#: ../docs/reference/device_model.rst:99
+msgid "The model of the device"
+msgstr ""
+"デバイスのモデル"
+
+#: ../docs/reference/device_model.rst:101
+msgid "*deviceInfo.deviceClass*"
+msgstr ""
+"*deviceInfo.deviceClass*"
+
+#: ../docs/reference/device_model.rst:101
+msgid "The class of the device"
+msgstr ""
+"デバイスのクラス"
+
+#: ../docs/reference/device_model.rst:103
+msgid "*deviceInfo.description*"
+msgstr ""
+"*deviceInfo.description*"
+
+#: ../docs/reference/device_model.rst:103
+msgid "The descriptive name of the device"
+msgstr ""
+"デバイスの記述名"
+
+#: ../docs/reference/device_model.rst:105
+msgid "*deviceInfo.fwVersion*"
+msgstr ""
+"*deviceInfo.fwVersion*"
+
+#: ../docs/reference/device_model.rst:105
+msgid "The firmware version currently known to be on the device"
+msgstr ""
+"デバイスの現在既知のファームウェア・バージョン"
+
+#: ../docs/reference/device_model.rst:108
+msgid "*deviceInfo.hwVersion*"
+msgstr ""
+"*deviceInfo.hwVersion*"
+
+#: ../docs/reference/device_model.rst:108
+msgid "The hardware version of the device"
+msgstr ""
+"デバイスのハードウェア・バージョン"
+
+#: ../docs/reference/device_model.rst:110
+msgid "*deviceInfo.descriptiveLocation*"
+msgstr ""
+"*deviceInfo.descriptiveLocation*"
+
+#: ../docs/reference/device_model.rst:110
+msgid "The descriptive location, such as a room or building number, or a geopgraphical region"
+msgstr ""
+"部屋番号や建物番号、地理的領域などの場所の説明"
+
+#: ../docs/reference/device_model.rst:113
+msgid "*metadata*"
+msgstr ""
+"*metadata*"
+
+#: ../docs/reference/device_model.rst:113
+msgid "complex"
+msgstr ""
+"複合"
+
+#: ../docs/reference/device_model.rst:113
+msgid "Free-form metadata"
+msgstr ""
+"フリー・フォームのメタデータ"
+
+#: ../docs/reference/device_model.rst:115
+msgid "added.auth.id"
+msgstr ""
+"added.auth.id"
+
+#: ../docs/reference/device_model.rst:115
+msgid "ID that added the device"
+msgstr ""
+"デバイスを追加した ID"
+
+#: ../docs/reference/device_model.rst:117
+msgid "added.dateTime"
+msgstr ""
+"added.dateTime"
+
+#: ../docs/reference/device_model.rst:117
+msgid "ISO8601 date-time: Date and time the device was added"
+msgstr ""
+"ISO8601 日時: デバイスが追加された日時"
+
+#: ../docs/reference/device_model.rst:120
+msgid "refs.diag.errorCodes"
+msgstr ""
+"refs.diag.errorCodes"
+
+#: ../docs/reference/device_model.rst:120
+msgid "URI of diag extension for error codes, if present"
+msgstr ""
+"エラー・コードの診断拡張の URI (存在する場合)"
+
+#: ../docs/reference/device_model.rst:122
+msgid "refs.diag.logs"
+msgstr ""
+"refs.diag.logs"
+
+#: ../docs/reference/device_model.rst:122
+msgid "URI of diag extension for logs, if present"
+msgstr ""
+"ログの診断拡張の URI (存在する場合)"
+
+#: ../docs/reference/device_model.rst:124
+msgid "refs.location"
+msgstr ""
+"refs.location"
+
+#: ../docs/reference/device_model.rst:124
+msgid "URI of location extension, if present"
+msgstr ""
+"ロケーション拡張の URI (存在する場合)"
+
+#: ../docs/reference/device_model.rst:126
+msgid "refs.mgmt"
+msgstr ""
+"refs.mgmt"
+
+#: ../docs/reference/device_model.rst:126
+msgid "URI of mgmt extension, is present"
+msgstr ""
+"管理拡張の URI (存在する場合)"
+
+#: ../docs/reference/device_model.rst:132
+msgid "Extended Attributes"
+msgstr ""
+"拡張属性"
+
+#: ../docs/reference/device_model.rst:134
+msgid "In addition to core attributes listed above, there are additional attributes which are treated as extensions to the core device model. Simple queries about the device return information from the core device model, but not the extensions. Information from the extensions must be specifically requested."
+msgstr ""
+"上記のコア属性に加えて、コア・デバイス・モデルの拡張として扱われる追加属性があります。デバイスに関する簡単な照会では、このような拡張ではなくコア・デバイス・モデルの情報が返されます。拡張の情報は、特別な方法で要求する必要があります。"
+
+#: ../docs/reference/device_model.rst:140
+msgid "Extension Name"
+msgstr ""
+"拡張名"
+
+#: ../docs/reference/device_model.rst:140
+msgid "Prefix of attributes"
+msgstr ""
+"属性の接頭部"
+
+#: ../docs/reference/device_model.rst:140
+msgid "Purpose"
+msgstr ""
+"目的"
+
+#: ../docs/reference/device_model.rst:142
+msgid "Diagnostics"
+msgstr ""
+"診断"
+
+#: ../docs/reference/device_model.rst:142
+msgid "diag"
+msgstr ""
+"diag"
+
+#: ../docs/reference/device_model.rst:142
+msgid "Error logs and diagnostic information"
+msgstr ""
+"エラー・ログおよび診断情報"
+
+#: ../docs/reference/device_model.rst:144
+msgid "Location"
+msgstr ""
+"ロケーション"
+
+#: ../docs/reference/device_model.rst:144
+msgid "location"
+msgstr ""
+"location"
+
+#: ../docs/reference/device_model.rst:144
+msgid "Location of the device, potentially updated regularly"
+msgstr ""
+"デバイスの場所 (定期的に更新される可能性がある)"
+
+#: ../docs/reference/device_model.rst:146
+msgid "Device management"
+msgstr ""
+"デバイス管理"
+
+#: ../docs/reference/device_model.rst:146
+msgid "mgmt"
+msgstr ""
+"mgmt"
+
+#: ../docs/reference/device_model.rst:146
+msgid "Device management actions, e.g. firmware update"
+msgstr ""
+"デバイス管理アクション (ファームウェア更新など)"
+
+#: ../docs/reference/device_model.rst:151
+msgid "Diagnostics Extension"
+msgstr ""
+"診断拡張"
+
+#: ../docs/reference/device_model.rst:153
+msgid "The diagnostics attributes are optional, and only present for devices with error log information. These attributes are intended for diagnosing device problems, not troubleshooting connectivity to the Watson IoT platform. In order to retrieve the information in these attributes, it must be queried separately, because the information stored in these attributes could potentially be very large."
+msgstr ""
+"診断属性はオプションであり、エラー・ログ情報が存在するデバイスにのみ存在します。これらの属性は、Watson IoT Platform への接続をトラブルシューティングするためではなく、デバイスの問題を診断するためのものです。これらの属性の情報を取得するには、属性を個別に照会する必要があります。これらの属性に保管されている情報は非常に大きい可能性があるためです。"
+
+#: ../docs/reference/device_model.rst:155
+msgid "Diagnostic log information is an array of entries which can have entries appended using an API, however, this can cause earlier entries to be lost, to keep the size of diagnostic logs manageable. Each entry consists of a message, an indication of severity, a timestamp and an optional byte-array of data."
+msgstr ""
+"診断ログ情報は、API を使用して付加できる項目を持つ配列ですが、付加すると、診断ログを管理可能なサイズに維持するために古い項目が失われる可能性があります。各項目には、メッセージ、重大度の目安、タイム・スタンプ、およびオプションでデータのバイト配列が含まれます。"
+
+#: ../docs/reference/device_model.rst:160
+msgid "diag.errorCodes[]"
+msgstr ""
+"diag.errorCodes[]"
+
+#: ../docs/reference/device_model.rst:160
+msgid "array of integer(s)"
+msgstr ""
+"整数の配列"
+
+#: ../docs/reference/device_model.rst:160
+msgid "Array of error codes"
+msgstr ""
+"エラー・コードの配列"
+
+#: ../docs/reference/device_model.rst:160
+#: ../docs/reference/device_model.rst:160
+#: ../docs/reference/device_model.rst:163
+#: ../docs/reference/device_model.rst:163
+msgid "A"
+msgstr ""
+"A"
+
+#: ../docs/reference/device_model.rst:163
+msgid "diag.log[]"
+msgstr ""
+"diag.log[]"
+
+#: ../docs/reference/device_model.rst:163
+msgid "array"
+msgstr ""
+"配列"
+
+#: ../docs/reference/device_model.rst:163
+msgid "Array of diagnostic data"
+msgstr ""
+"診断データの配列"
+
+#: ../docs/reference/device_model.rst:165
+msgid "diag.log[].message"
+msgstr ""
+"diag.log[].message"
+
+#: ../docs/reference/device_model.rst:165
+msgid "Diagnostic message"
+msgstr ""
+"診断メッセージ"
+
+#: ../docs/reference/device_model.rst:167
+msgid "diag.log[].timestamp"
+msgstr ""
+"diag.log[].timestamp"
+
+#: ../docs/reference/device_model.rst:167
+msgid "ISO8601 date-time: Date and time of log entry"
+msgstr ""
+"ISO8601 日時: ログ・エントリーの日時"
+
+#: ../docs/reference/device_model.rst:169
+msgid "diag.log[].logData"
+msgstr ""
+"diag.log[].logData"
+
+#: ../docs/reference/device_model.rst:169
+msgid "byte: Diagnostic data, base-64 encoded"
+msgstr ""
+"byte: 診断データ、Base 64 エンコード"
+
+#: ../docs/reference/device_model.rst:171
+msgid "diag.log[].severity"
+msgstr ""
+"diag.log[].severity"
+
+#: ../docs/reference/device_model.rst:171
+#: ../docs/reference/device_model.rst:185
+#: ../docs/reference/device_model.rst:187
+#: ../docs/reference/device_model.rst:189
+#: ../docs/reference/device_model.rst:195
+#: ../docs/reference/device_model.rst:232
+#: ../docs/reference/device_model.rst:234
+msgid "number"
+msgstr ""
+"数値"
+
+#: ../docs/reference/device_model.rst:171
+msgid "Severity of message, 0: informational, 1: warning, 2: error"
+msgstr ""
+"メッセージの重大度。0: 通知、1: 警告、2: エラー"
+
+#: ../docs/reference/device_model.rst:176
+msgid "Location Extension"
+msgstr ""
+"ロケーション拡張"
+
+#: ../docs/reference/device_model.rst:178
+msgid "These attributes are optional and only present for devices with location information. The location information is stored separately in order to allow the use of storage mechanisms better suited to dynamic information in the event of frequently updated information, for example, in the case of a mobile device."
+msgstr ""
+"これらの属性はオプションであり、ロケーション情報を持つデバイスにのみ存在します。ロケーション情報は、モバイル・デバイスなどのように情報が頻繁に更新される場合に、動的な情報に適したストレージ・メカニズムを使用できるように、個別に保管されます。"
+
+#: ../docs/reference/device_model.rst:180
+msgid "For solutions which place significant importance on frequent location updates, it is expected that the location would be treated as part of the device's event payload, enabling higher update rates, simple historical storage, and analytics."
+msgstr ""
+"頻繁にロケーションを更新することが重要なソリューションでは、ロケーションをデバイスのイベント・ペイロードの一部として扱う必要があります。これにより、更新頻度を上げ、履歴保管や分析を単純化できます。"
+
+#: ../docs/reference/device_model.rst:185
+msgid "location.longitude"
+msgstr ""
+"location.longitude"
+
+#: ../docs/reference/device_model.rst:185
+msgid "Longitude in decimal degrees using WGS84"
+msgstr ""
+"WGS84 を使用した経度 (10 進度数)"
+
+#: ../docs/reference/device_model.rst:187
+msgid "location.latitude"
+msgstr ""
+"location.latitude"
+
+#: ../docs/reference/device_model.rst:187
+msgid "Latitude in decimal degrees using WGS84"
+msgstr ""
+"WGS84 を使用した緯度 (10 進度数)"
+
+#: ../docs/reference/device_model.rst:189
+msgid "location.elevation"
+msgstr ""
+"location.elevation"
+
+#: ../docs/reference/device_model.rst:189
+msgid "Elevation in metres using WGS84"
+msgstr ""
+"WGS84 を使用した高度 (メートル)"
+
+#: ../docs/reference/device_model.rst:191
+msgid "location.measuredDateTime"
+msgstr ""
+"location.measuredDateTime"
+
+#: ../docs/reference/device_model.rst:191
+msgid "ISO8601 date-time: Date and time of location measurement"
+msgstr ""
+"ISO8601 日時: ロケーション測定の日時"
+
+#: ../docs/reference/device_model.rst:193
+msgid "location.updatedDateTime"
+msgstr ""
+"location.updatedDateTime"
+
+#: ../docs/reference/device_model.rst:193
+msgid "ISO8601 date-time: Date and time"
+msgstr ""
+"ISO8601 日時: 日時"
+
+#: ../docs/reference/device_model.rst:195
+msgid "location.accuracy"
+msgstr ""
+"location.accuracy"
+
+#: ../docs/reference/device_model.rst:195
+msgid "Accuracy of the position in metres"
+msgstr ""
+"位置の精度 (メートル)"
+
+#: ../docs/reference/device_model.rst:200
+msgid "Device Management Extension"
+msgstr ""
+"デバイス管理拡張"
+
+#: ../docs/reference/device_model.rst:202
+msgid "The ``mgmt.`` attributes are only present for managed devices. When a managed device becomes dormant, it becomes unmanaged and the ``mgmt.`` attributes are deleted. The ``mgmt.`` attributes are set by the Watson IoT platform as a result of processing device management requests. These attributes cannot be directly written using the API."
+msgstr ""
+"``mgmt.`` 属性は管理対象デバイスにのみ存在します。管理対象デバイスが休止されると、そのデバイスは非管理対象になり、``mgmt.`` 属性は削除されます。``mgmt.`` 属性は、デバイス管理リクエストを処理した結果として Watson IoT Platform によって設定されます。この属性を API を使用して直接作成することはできません。"
+
+#: ../docs/reference/device_model.rst:204
+msgid "Devices have a management lifecycle, defined by their status as managed devices. The device management agent on the device is responsible for sending a Manage Device request using the device management protocol. To deal with defunct devices in large device populations, a managed device can be set to send a Manage Device request regularly, allowing the Watson IoT platform to notice when a device has become dormant. To facilitate this functionality, the Manage Device request has an optional lifetime parameter, When the Watson IoT platform receives a Manage Device request with a lifetime, it calculates the time before which another Manage Device request is required and stores it in the  \"mgmt.dormantDateTime\" attribute."
+msgstr ""
+"デバイスには、管理対象デバイスのステータスで定義される管理ライフサイクルがあります。デバイス管理プロトコルを使用して「デバイスを管理」リクエストを送信するのは、デバイス上のデバイス管理エージェントです。デバイスが多数存在する環境で機能不良デバイスに対処するために、「デバイスを管理」リクエストを定期的に送信するように管理対象デバイスを設定することができます。これにより、デバイスが休止したことを Watson IoT Platform が検知できるようになります。この機能を活用するために、「デバイスを管理」リクエストにはオプションのライフタイム・パラメーターが用意されています。Watson IoT Platform は、ライフタイムが指定された「デバイスを管理」リクエストを受け取ると、次の「デバイスを管理」リクエストが必要になるまでの時間を計算し、その時間を \"mgmt.dormantDateTime\" 属性に保管します。"
+
+#: ../docs/reference/device_model.rst:209
+msgid "mgmt.dormant"
+msgstr ""
+"mgmt.dormant"
+
+#: ../docs/reference/device_model.rst:209
+msgid "Whether the device has become dormant"
+msgstr ""
+"デバイスが休止になったかどうか"
+
+#: ../docs/reference/device_model.rst:211
+msgid "mgmt.dormantDateTime"
+msgstr ""
+"mgmt.dormantDateTime"
+
+#: ../docs/reference/device_model.rst:211
+msgid "ISO8601 date-time: Date and time at which the managed device will become dormant"
+msgstr ""
+"ISO8601 日時: 管理対象デバイスが休止になる日時"
+
+#: ../docs/reference/device_model.rst:214
+msgid "mgmt.lastActivityDateTime"
+msgstr ""
+"mgmt.lastActivityDateTime"
+
+#: ../docs/reference/device_model.rst:214
+msgid "ISO8601 date-time: Date and time of last activity, updated periodically"
+msgstr ""
+"ISO8601 日時: 最後のアクティビティーの日時 (定期的に更新される)"
+
+#: ../docs/reference/device_model.rst:217
+msgid "mgmt.supports.deviceActions"
+msgstr ""
+"mgmt.supports.deviceActions"
+
+#: ../docs/reference/device_model.rst:217
+msgid "Whether the device supports Reboot and Factory Reset actions"
+msgstr ""
+"デバイスがリブートおよび工場出荷時設定へのリセットのアクションをサポートするかどうか"
+
+#: ../docs/reference/device_model.rst:220
+msgid "mgmt.supports.firmwareActions"
+msgstr ""
+"mgmt.supports.firmwareActions"
+
+#: ../docs/reference/device_model.rst:220
+msgid "Whether the device supports Firmware Download and Firmware Update actions"
+msgstr ""
+"デバイスがファームウェア・ダウンロードおよびファームウェア更新のアクションをサポートするかどうか"
+
+#: ../docs/reference/device_model.rst:223
+msgid "mgmt.firmware.version"
+msgstr ""
+"mgmt.firmware.version"
+
+#: ../docs/reference/device_model.rst:223
+msgid "The version of the firmware on the device"
+msgstr ""
+"デバイスのファームウェア・バージョン"
+
+#: ../docs/reference/device_model.rst:225
+msgid "mgmt.firmware.name"
+msgstr ""
+"mgmt.firmware.name"
+
+#: ../docs/reference/device_model.rst:225
+msgid "The name of the firmware to be used on the device"
+msgstr ""
+"デバイスで使用するファームウェアの名前"
+
+#: ../docs/reference/device_model.rst:227
+msgid "mgmt.firmware.uri"
+msgstr ""
+"mgmt.firmware.uri"
+
+#: ../docs/reference/device_model.rst:227
+msgid "The URI from which the firmware image can be downloaded"
+msgstr ""
+"ファームウェア・イメージをダウンロードできる URI"
+
+#: ../docs/reference/device_model.rst:229
+msgid "mgmt.firmware.verifier"
+msgstr ""
+"mgmt.firmware.verifier"
+
+#: ../docs/reference/device_model.rst:229
+msgid "The verifier such as a checksum for the firmware image to validate its integrity"
+msgstr ""
+"ファームウェア・イメージの整合性を検証するためのチェックサムなどのベリファイヤー"
+
+#: ../docs/reference/device_model.rst:232
+msgid "mgmt.firmware.state"
+msgstr ""
+"mgmt.firmware.state"
+
+#: ../docs/reference/device_model.rst:232
+msgid "Indicates the state of firmware download"
+msgstr ""
+"ファームウェア・ダウンロードの状態を示します"
+
+#: ../docs/reference/device_model.rst:234
+msgid "mgmt.firmware.updateStatus"
+msgstr ""
+"mgmt.firmware.updateStatus"
+
+#: ../docs/reference/device_model.rst:234
+msgid "Indicates the status of the update"
+msgstr ""
+"更新の状況を示します"
+
+#: ../docs/reference/device_model.rst:236
+msgid "mgmt.firmware.updatedDateTime"
+msgstr ""
+"mgmt.firmware.updatedDateTime"
+
+#: ../docs/reference/device_model.rst:236
+msgid "ISO8601 date-time: Date of last update"
+msgstr ""
+"ISO8601 日時: 最後の更新の日付"
+

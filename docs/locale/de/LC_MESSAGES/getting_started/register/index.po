@@ -1,0 +1,218 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/getting_started/register/index.rst:2
+msgid "Register"
+msgstr ""
+"Registrieren"
+
+#: ../docs/getting_started/register/index.rst:4
+msgid "Registering for an account on the Watson IoT platform and connecting your first device is simple and will take less than 10 minutes to complete."
+msgstr ""
+"Das Registrieren eines Accounts für Watson IoT Platform und das Verbinden des ersten Geräts beansprucht weniger als 10 Minuten."
+
+#: ../docs/getting_started/register/index.rst:8
+msgid "Create a Bluemix Account"
+msgstr ""
+"Bluemix-Account erstellen"
+
+#: ../docs/getting_started/register/index.rst:9
+msgid "First you will need to `register for a Bluemix account <https://console.ng.bluemix.net/registration/>`_.  Once you have verified your e-mail address you should find yourself looking at an empty dashboard:"
+msgstr ""
+"Zunächst müssen Sie einen eigenen Bluemix-Account registrieren (siehe `Register for a Bluemix account <https://console.ng.bluemix.net/registration/>`_).  Sobald Ihre E-Mail-Adresse bestätigt ist, müsste ein leeres Dashboard angezeigt werden:"
+
+#: ../docs/getting_started/register/index.rst:17
+msgid "Choose your Region"
+msgstr ""
+"Region auswählen"
+
+#: ../docs/getting_started/register/index.rst:18
+msgid "Now, before you go any further you need to consider data soveriegnty and make a decision as to which of the available regions you want to register your service instance with.  Currently the Watson IoT platform is available in two regions:"
+msgstr ""
+"Vor den nächsten Schritten müssen Sie die Datenhoheit berücksichtigen und entscheiden, in welcher der verfügbaren Regionen Ihre Serviceinstanz registriert werden soll.  Watson IoT Platform ist derzeit in den beiden folgenden Regionen verfügbar:"
+
+#: ../docs/getting_started/register/index.rst:21
+msgid "United Kingom"
+msgstr ""
+"Vereinigtes Königreich"
+
+#: ../docs/getting_started/register/index.rst:22
+msgid "United States"
+msgstr ""
+"Vereinigte Staaten"
+
+#: ../docs/getting_started/register/index.rst:25
+msgid "Data sovereignty is the concept that information which has been converted and stored in binary digital form is subject to the laws of the country in which it is located."
+msgstr ""
+"Die Datenhoheit legt fest, dass Informationen, die umgewandelt und in digitaler Form gespeichert wurden, den Gesetzen des Landes unterliegen, in dessen Hoheitsgebiet sie sich befinden."
+
+#: ../docs/getting_started/register/index.rst:28
+msgid "The region your Watson IoT platform instance will be provisioned in will be determined by the Bluemix region you are using.  You can switch Bluemix regions via the controls in the top right corner of the Bluemix dashboard.  You can also determine which region are currently have selected by the URL in your browser:"
+msgstr ""
+"In welcher Region Ihre Instanz von Watson IoT Platform bereitgestellt wird, richtet sich nach der von Ihnen verwendeten Bluemix-Region.  Zum Ändern der Bluemix-Region können Sie die Steuerelemente in der rechten oberen Ecke des Bluemix-Dashboards verwenden.  Die URL in Ihrem Browser gibt ebenfalls Auskunft darüber, welche Region momentan ausgewählt ist:"
+
+#: ../docs/getting_started/register/index.rst:30
+msgid "United Kingdom: console.\\ **eu-gb**\\ .bluemix.net"
+msgstr ""
+"Vereinigtes Königreich: console.\\ **eu-gb**\\ .bluemix.net"
+
+#: ../docs/getting_started/register/index.rst:31
+msgid "United States: console.\\ **ng**\\ .bluemix.net"
+msgstr ""
+"Vereinigte Staaten: console.\\ **ng**\\ .bluemix.net"
+
+#: ../docs/getting_started/register/index.rst:38
+msgid "Provision a Watson IoT platform Service Instance"
+msgstr ""
+"Watson IoT Platform-Serviceinstanz bereitstellen"
+
+#: ../docs/getting_started/register/index.rst:39
+msgid "From anywhere in the Bluemix dashboard click **catalog** in the top navigation, this will take you to a list of all services available on Bluemix."
+msgstr ""
+"Klicken Sie ausgehend von einer beliebigen Stelle im Bluemix-Dashboard auf '**catalog**' im oberen Navigationsbereich. Daraufhin wird eine Liste aller in Bluemix verfügbaren Services angezeigt."
+
+#: ../docs/getting_started/register/index.rst:41
+msgid "Type ``Internet of Things`` into the search box at the top of the page to filter out all the other services."
+msgstr ""
+"Geben Sie ``Internet of Things`` in das Suchfeld oben auf der Seite ein, um alle anderen Services herauszufiltern."
+
+#: ../docs/getting_started/register/index.rst:42
+msgid "Click ``View More``  on the **Watson IoT platform** service tile."
+msgstr ""
+"Klicken Sie auf ``Mehr anzeigen`` auf der Kachel für den Service **Watson IoT Platform**."
+
+#: ../docs/getting_started/register/index.rst:43
+msgid "Optionally give your service instance a name (or simply accept the generated name)"
+msgstr ""
+"Ordnen Sie Ihrer Serviceinstanz einen Namen zu (optional) oder übernehmen Sie einfach den generierten Namen."
+
+#: ../docs/getting_started/register/index.rst:44
+msgid "Click ``Create``"
+msgstr ""
+"Klicken Sie auf ``Erstellen``."
+
+#: ../docs/getting_started/register/index.rst:49
+msgid "After a short delay you will find yourself the proud owner of an organization on the IBM Watson IoT platform."
+msgstr ""
+"Nach einer kurzen Wartezeit sind Sie stolzer Besitzer einer Organisation in IBM Watson IoT Platform."
+
+#: ../docs/getting_started/register/index.rst:56
+msgid "Additional Setup and Experimentation"
+msgstr ""
+"Weitere Einrichtung und versuchsweise Konfiguration"
+
+#: ../docs/getting_started/register/index.rst:57
+msgid "Click the ``Launch Dashboard`` button when viewing your new service instance within Bluemix, this will take you to your Watson IoT platform Dashboard."
+msgstr ""
+"Klicken Sie auf die Schaltfläche ``Dashboard starten``, während Ihre neue Serviceinstanz in Bluemix angezeigt wird, um Ihr Watson IoT Platform-Dashboard zu öffnen."
+
+#: ../docs/getting_started/register/index.rst:60
+msgid "Configure Access"
+msgstr ""
+"Zugriff konfigurieren"
+
+#: ../docs/getting_started/register/index.rst:61
+msgid "You are currently accessing the dashboard through a 24 hour access token generated by Bluemix when you clicked ``Launch Dashboard``, when this expires you will need to return to Bluemix and relaunch the dashboard.  I think we can all agree it's preferable not to have to do this, so let's promote you to a permanent member of the organization."
+msgstr ""
+"Momentan greifen Sie über ein Zugriffstoken mit einem Gültigkeitszeitraum von 24 Stunden auf das Dashboard zu, das von Bluemix generiert wurde, als Sie auf ``Dashboard starten`` geklickt haben. Nach Ablauf dieses Zugriffstokens müssen Sie das Dashboard in Bluemix erneut starten.  Dieses Verfahren ist etwas umständlich und nicht sehr benutzerfreundlich. Daher sollten Sie zu einem permanenten Mitglied der Organisation hochgestuft werden."
+
+#: ../docs/getting_started/register/index.rst:65
+msgid "In the navigation menu select ``Access`` and then ``Guests``, you should see the e-mail address you signed up to Bluemix with in there and the expiration date for your session.  Click the ``Promote`` button to set yourself up as a permanent member of the organization, your ID will disappear from the list, and can now be found under ``Access > Members``."
+msgstr ""
+"Wählen Sie im Navigationsmenü nacheinander die Optionen ``Zugriff`` und ``Gäste`` aus. Nun müssten die E-Mail-Adresse, mit der Sie sich bei Bluemix angemeldet haben, und das Ablaufdatum für Ihre Sitzung angezeigt werden.  Klicken Sie auf die Schaltfläche ``Hochstufen``, um Ihre Benutzer-ID als permanentes Mitglied der Organisation zu deklarieren. Ihre Benutzer-ID wird aus der Liste entfernt und unter ``Zugriff > Mitglieder`` eingefügt."
+
+#: ../docs/getting_started/register/index.rst:73
+msgid "Connect an Application"
+msgstr ""
+"Anwendung verbinden"
+
+#: ../docs/getting_started/register/index.rst:74
+msgid "Applications require an ``API key`` to connect to the service.  Let's set one up.  Navigate to ``Access > API Keys`` and click ``Generate API Key``. Take a note of your ``API Key`` and ``Authentication Token`` - you will need them shortly."
+msgstr ""
+"Anwendungen benötigen einen ``API-Schlüssel``, um die Verbindung zu dem Service herzustellen.  Richten wir also einen API-Schlüssel ein.  Navigieren Sie zu ``Zugriff > API-Schlüssel`` und klicken Sie auf ``API-Schlüssel generieren``. Notieren Sie Ihren ``API-Schlüssel`` und das ``Authentifizierungstoken``. Sie werden diese Angaben in Kürze benötigen."
+
+#: ../docs/getting_started/register/index.rst:80
+msgid "Now we have an API key we want to run an application, the simpler the better."
+msgstr ""
+"Sie verfügen nun über einen API-Schlüssel zum Ausführen einer Anwendung (je einfacher, umso besser)."
+
+#: ../docs/getting_started/register/index.rst:83
+msgid "The Watson IoT platform has client library support for multiple languages, but for the purpose of this getting started tutorial we're going to stick with Python.  If you don't already have `Python <https://www.python.org/downloads/>`_ installed now is the time to do so."
+msgstr ""
+"Watson IoT Platform bietet Unterstützung für Clientbibliotheken in mehreren Sprachen. In den Lerntexten dieser Einführung bleiben wir der Einfachheit halber bei Python.  Wenn `Python <https://www.python.org/downloads/>`_ in Ihrem System noch nicht installiert ist, sollten Sie dies jetzt nachholen."
+
+#: ../docs/getting_started/register/index.rst:86
+msgid "Install the latest version of the Watson IoT platform python client library using pip"
+msgstr ""
+"Installieren Sie die neueste Version der Python-Clientbibliothek für Watson IoT Platform unter Verwendung von Pip."
+
+#: ../docs/getting_started/register/index.rst:92
+msgid "Now, create a really simple application that will connect using the API key you just created:"
+msgstr ""
+"Erstellen Sie nun eine einfache Anwendung, die mit dem von Ihnen erstellen API-Schlüssel eine Verbindung herstellt:"
+
+#: ../docs/getting_started/register/index.rst:133
+msgid "When you launch the application you will see nothing overly exciting"
+msgstr ""
+"Wenn Sie die Anwendung starten, wird nichts Außergewöhnliches angezeigt."
+
+#: ../docs/getting_started/register/index.rst:142
+msgid "Connect a Device"
+msgstr ""
+"Gerät verbinden"
+
+#: ../docs/getting_started/register/index.rst:143
+msgid "Before we can register a device we have to define a device type.  A ``device type`` is intended to represent a group of devices that are identical, it can be useful to think of the ``device type`` as analogous to a model in the traditional model:serial identification scheme.  Leave you application running to return to your Watson IoT platform Dashboard and navigate to ``Devices > Device Types``, click ``Create Type`` and enter ``python-sample`` as the name, all other fields are optional, so we're just going to skip past the rest of the options for the device type for now."
+msgstr ""
+"Vor dem Registrieren eines Geräts muss zunächst ein Gerätetyp definiert werden.  Der ``Gerätetyp`` repräsentiert eine Gruppe identischer Geräte. Dabei entspricht der ``Gerätetyp`` ungefähr dem Modell im herkömmlichen Identifikationsschema 'Modell/Serie'.  Ihre Anwendung wird weiterhin ausgeführt. Wechseln Sie nun in Ihr Watson IoT Platform-Dashboard und navigieren Sie zu ``Geräte > Gerätetypen``. Klicken Sie auf ``Typ erstellen`` und geben Sie als Name ``Python-Beispiel`` ein. Alle übrigen Optionen für den Gerätetyp sind optional und werden in diesem Beispiel zunächst ignoriert."
+
+#: ../docs/getting_started/register/index.rst:151
+msgid "Now it's time to register a device of this type, navigate to ``Devices > Browse`` and click ``Add Device``, select the ``python-sample`` device type that we just created and click ``Next``.  On the second panel enter a device ID of \"MyFirstDevice\" and click ``Next`` to continue through the guided creation process until you reach the ``Add`` button."
+msgstr ""
+"Als nächstes soll ein Gerät dieses Typs registriert werden. Navigieren Sie zu ``Geräte > Durchsuchen``, klicken Sie auf ``Gerät hinzufügen``, wählen Sie den Gerätetyp ``Python-Beispiel`` aus, den Sie eben erstellt haben, und klicken Sie auf ``Weiter``.  Geben Sie im zweiten Fenster die Geräte-ID \"MeinErstesGerät\" ein, klicken Sie auf ``Weiter`` und führen Sie die nachfolgenden Schritte des Erstellungsprozesses aus, bis die Schaltfläche ``Hinzufügen`` angezeigt wird."
+
+#: ../docs/getting_started/register/index.rst:158
+msgid "Once you click ``Add`` your device is registered and you will be presented with a generated ``authentication token`` for that device."
+msgstr ""
+"Nach dem Klicken auf ``Hinzufügen`` wird Ihr Gerät registriert und ein generiertes ``Authentifizierungstoken`` für das Gerät wird angezeigt."
+
+#: ../docs/getting_started/register/index.rst:163
+msgid "We're now going to take that authentication token and write a totally minimal device client in python."
+msgstr ""
+"Unter Verwendung dieses Authentifizierungstokens schreiben wir jetzt die Minimalversion eines Geräteclients in Python."
+
+#: ../docs/getting_started/register/index.rst:194
+msgid "When executed the device code will generate 10 events .. code::"
+msgstr ""
+"Bei der Ausführung des Gerätecodes werden 10 Ereignisse (.. code::) generiert."
+
+#: ../docs/getting_started/register/index.rst:204
+msgid "Returning to the terminal where your application is running you will be able to see the application is recieving and processing the events submitted by your device in real time."
+msgstr ""
+"In dem Terminal, auf dem Ihre Anwendung ausgeführt wird, können Sie nun sehen, dass die Anwendung die Ereignisse in Echtzeit empfängt und verarbeitet, die von Ihrem Gerät übermittelt werden."
+
+#: ../docs/getting_started/register/index.rst:223
+msgid "Finally, if you return to the Watson IoT platform dashboard and scroll down to ``Device Events`` you will be able to see all the events that you just sent."
+msgstr ""
+"Wenn Sie nun zum Watson IoT Platform-Dashboard wechseln und nach unten zu ``Geräteereignisse`` blättern, werden alle Ereignisse angezeigt, die Sie eben gesendet haben."
+
+#: ../docs/getting_started/register/index.rst:228
+msgid "You can also examine the content of any of the events by selecting an event from the table."
+msgstr ""
+"Sie können auch den Inhalt eines bestimmten Ereignisses untersuchen, indem Sie das Ereignis in der Tabelle auswählen."
+

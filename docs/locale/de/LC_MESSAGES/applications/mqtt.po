@@ -1,0 +1,425 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/applications/mqtt.rst:2
+msgid "MQTT Connectivity for Applications"
+msgstr ""
+"MQTT-Konnektivität für Anwendungen"
+
+#: ../docs/applications/mqtt.rst:6
+msgid "Client connection"
+msgstr ""
+"Clientverbindung"
+
+#: ../docs/applications/mqtt.rst:7
+msgid "Every registered organization has a unique endpoint which must be used when connecting MQTT clients for applications in that organization."
+msgstr ""
+"Jede registrierte Organisation hat einen eindeutigen Endpunkt, der beim Verbinden von MQTT-Clients für Anwendungen in dieser Organisation verwendet werden muss."
+
+#: ../docs/applications/mqtt.rst:10
+msgid "**org\\_id**.messaging.internetofthings.ibmcloud.com"
+msgstr ""
+"**org\\_id**.messaging.internetofthings.ibmcloud.com"
+
+#: ../docs/applications/mqtt.rst:14
+msgid "Unencrypted client connection"
+msgstr ""
+"Nicht verschlüsselte Clientverbindung"
+
+#: ../docs/applications/mqtt.rst:16
+msgid "Connect on port **1883**"
+msgstr ""
+"Verbindung auf Port **1883** herstellen"
+
+#: ../docs/applications/mqtt.rst:18
+msgid "All information your application submits is being sent in plain text (including the API key and authentication token). We recommend the use of an encrypted connection whenever possible."
+msgstr ""
+"Alle Informationen, die Ihre Anwendung übergibt, werden in einfachem Text gesendet (einschließlich API-Schlüssel und Authentifizierungstoken). Wir empfehlen die Verwendung einer verschlüsselten Verbindung, wann immer möglich."
+
+#: ../docs/applications/mqtt.rst:24
+msgid "Encrypted client connection"
+msgstr ""
+"Verschlüsselte Clientverbindung"
+
+#: ../docs/applications/mqtt.rst:26
+msgid "Connect on port **8883** or **443** for websockets."
+msgstr ""
+"Verbindung auf **8883** oder **443** für Websockets herstellen"
+
+#: ../docs/applications/mqtt.rst:28
+msgid "In many client libraries you will need to provide the server's public certificate in pem format.  The following file contains the entire certificate chain for \\*.messaging.internetofthings.ibmcloud.com: messaging.pem_"
+msgstr ""
+"In vielen Clientbibliotheken müssen Sie das öffentliche Zertifikat des Servers im Pem-Format angeben.  Die folgende Datei enthält die gesamte Zertifikatskette für \\*.messaging.internetofthings.ibmcloud.com: messaging.pem_"
+
+#: ../docs/applications/mqtt.rst:34
+msgid "Some SSL client libraries have been shown to not handle wildcarded domains, in which case, if you can not change libraries, you will need to turn off certificate checking."
+msgstr ""
+"Einige SSL-Clientbibliotheken können keine Platzhalterdomänen handhaben; wenn Sie keine Bibliotheken wechseln können, müssen in diesem Fall die Zertifikatsprüfung inaktivieren."
+
+#: ../docs/applications/mqtt.rst:38
+msgid "The IoT Platform requires TLS v1.2. We suggest the following cipher suites: ECDHE-RSA-AES256-GCM-SHA384, AES256-GCM-SHA384, ECDHE-RSA-AES128-GCM-SHA256 or AES128-GCM-SHA256 *(as of Jun 1 2015)*."
+msgstr ""
+"Für IoT Platform ist TLS v1.2 erforderlich. Wir empfehlen die folgenden Cipher-Suites: ECDHE-RSA-AES256-GCM-SHA384, AES256-GCM-SHA384, ECDHE-RSA-AES128-GCM-SHA256 oder AES128-GCM-SHA256 *(ab 1. Juni 2015)*."
+
+#: ../docs/applications/mqtt.rst:43
+msgid "MQTT client identifier"
+msgstr ""
+"MQTT-Client-ID"
+
+#: ../docs/applications/mqtt.rst:45
+msgid "An application must authenticate using a client ID in the following format:"
+msgstr ""
+"Eine Anwendung Muss die Authentifizierung mit einer Client-ID im folgenden Format durchführen:"
+
+#: ../docs/applications/mqtt.rst:47
+msgid "a:**org\\_id**:**app_id**"
+msgstr ""
+"a:**org\\_id**:**app_id**"
+
+#: ../docs/applications/mqtt.rst:49
+msgid "**a** indicates the client is an application"
+msgstr ""
+"**a** gibt an, dass der Client eine Anwendung ist"
+
+#: ../docs/applications/mqtt.rst:50
+msgid "**org\\_id** is your unique 6 character organization ID, assigned when you sign up with the service"
+msgstr ""
+"**org\\_id** ist Ihre eindeutige sechsstellige Organisations-ID, die beim Registrieren im Service zugeordnet wird."
+
+#: ../docs/applications/mqtt.rst:52
+msgid "**app\\_id** is a user-defined unique string identifier for this client and must comprise only alpha-numeric characters (a-z, A-Z, 0-9) and the following special characters: dash (-), underscore (\\_), dot (.)"
+msgstr ""
+"**app\\_id** ist eine benutzerdefinierte eindeutige Zeichenfolge-ID für diesen Client. Sie darf nur alphanumerische Zeichen (a - z, A - Z, 0 - 9) und die folgenden Sonderzeichen enthalten: Gedankenstrich (-), Unterstreichungszeichen (\\_), Punkt (.)."
+
+#: ../docs/applications/mqtt.rst:53
+msgid "**app\\_id** has a maximum length of 36 characters"
+msgstr ""
+"Die maximale Länge für **app\\_id** beträgt 36 Zeichen."
+
+#: ../docs/applications/mqtt.rst:54
+msgid "When connecting to the Quickstart service no authentication is required"
+msgstr ""
+"Beim Verbinden mit dem Quickstart-Service ist keine Authentifizierung erforderlich"
+
+#: ../docs/applications/mqtt.rst:55
+msgid "An application does not need to be registered before it can connect"
+msgstr ""
+"Eine Anwendung muss nicht registriert werden, bevor sie eine Verbindung herstellen kann"
+
+#: ../docs/applications/mqtt.rst:57
+msgid "Only one MQTT client can connect using any given client ID.  As soon as a second client in your organization connects using an **app\\_id** that you have already connected the first client will be disconnected."
+msgstr ""
+"Nur ein MQTT-Client kann die Verbindung unter Verwendung einer angegebenen Client-ID herstellen.  Sobald ein zweiter Client in Ihrer Organisation die Verbindung unter Verwendung einer an **app\\_id**, die Sie bereits verbunden haben, herstellt, wird die Verbindung beim ersten Client getrennt."
+
+#: ../docs/applications/mqtt.rst:64
+msgid "MQTT authentication"
+msgstr ""
+"MQTT-Authentifizierung"
+
+#: ../docs/applications/mqtt.rst:66
+msgid "Applications require an API Key to connect into an organization.  When an API Key is registered a token will be generated that must be used with that API key."
+msgstr ""
+"Anwendungen erfordern einen API-Schlüssel zum Herstellen der Verbindung zu einer Organisation.  Wenn ein API-Schlüssel registriert wird, wird ein Token generiert, das diesem API-Schlüssel verwendet werden muss ."
+
+#: ../docs/applications/mqtt.rst:69
+msgid "The API key will look something like this: a-**org\\_id**-a84ps90Ajs"
+msgstr ""
+"Der API-Schlüssel sieht in etwa wie folgt aus: a-**org\\_id**-a84ps90Ajs"
+
+#: ../docs/applications/mqtt.rst:71
+msgid "The token will look something like this: MP$08VKz!8rXwnR-Q*"
+msgstr ""
+"Das Token sieht in etwa wie folgt aus: MP$08VKz!8rXwnR-Q*"
+
+#: ../docs/applications/mqtt.rst:73
+msgid "When making an MQTT connection using an API key the following applies:"
+msgstr ""
+"Beim Einrichten einer MQTT-Verbindung mit einem API-Schlüssel gilt Folgendes:"
+
+#: ../docs/applications/mqtt.rst:75
+msgid "MQTT client ID: a:**org\\id**:**app\\_id**"
+msgstr ""
+"MQTT-Client-ID: a:**org\\id**:**app\\_id**"
+
+#: ../docs/applications/mqtt.rst:76
+msgid "MQTT username must be the API key: a-**org\\_id**-a84ps90Ajs"
+msgstr ""
+"Der MQTT-Benutzername muss der API-Schlüssel sein: a-**org\\_id**-a84ps90Ajs"
+
+#: ../docs/applications/mqtt.rst:77
+msgid "MQTT password must be the authentication token: MP$08VKz!8rXwnR-Q*"
+msgstr ""
+"Das MQTT-Kennwort muss das Authentifizierungstoken sein: MP$08VKz!8rXwnR-Q*"
+
+#: ../docs/applications/mqtt.rst:81
+msgid "Publishing device events"
+msgstr ""
+"Geräteereignisse publizieren"
+
+#: ../docs/applications/mqtt.rst:82
+msgid "An application can publish events as if they came from any registered device."
+msgstr ""
+"Eine Anwendung kann Ereignisse so publizieren, als ob sie von einem beliebigen, registrierten Gerät stammen"
+
+#: ../docs/applications/mqtt.rst:84
+msgid "Publish to topic iot-2/type/**device\\_type**/id/**device\\_id**/evt/**event\\_id**/fmt/**format\\_string**"
+msgstr ""
+"Publizieren in Topic iot-2/type/**device\\_type**/id/**device\\_id**/evt/**event\\_id**/fmt/**format\\_string**"
+
+#: ../docs/applications/mqtt.rst:86
+msgid "You may have a number of devices that are already generating bespoke data that you wish to send to the IoT Platform.  One way to get that data into the service would be to write an application that processes the data and publishes it to the IoT Platform."
+msgstr ""
+"Möglicherweise verfügen Sie über eine Reihe von Geräten, die bereits entsprechende Daten generieren, die Sie an IoT Platform senden möchten.  Eine Möglichkeit, die Daten in den Service zu übertragen, ist das Schreiben einer Anwendung, die die Daten verarbeitet und in IoT Platform publiziert."
+
+#: ../docs/applications/mqtt.rst:90
+msgid "The message payload is limited to a maximum of 131072 bytes.  Messages larger than this will be rejected."
+msgstr ""
+"Die Nachrichtennutzdaten sind auf maximal 131072 Byte begrenzt.  Größere Nachrichten werden abgelehnt."
+
+#: ../docs/applications/mqtt.rst:94
+msgid "Publishing device commands"
+msgstr ""
+"Gerätebefehle publizieren"
+
+#: ../docs/applications/mqtt.rst:95
+msgid "An application can publish a command to any registered device."
+msgstr ""
+"Eine Anwendung kann einen Befehl publizieren an jedes registrierte Gerät publizieren."
+
+#: ../docs/applications/mqtt.rst:97
+msgid "Publish to topic iot-2/type/**device\\_type**/id/**device\\_id**/cmd/**command\\_id**/fmt/**format\\_string**"
+msgstr ""
+"Publizieren in Topic iot-2/type/**device\\_type**/id/**device\\_id**/cmd/**command\\_id**/fmt/**format\\_string**"
+
+#: ../docs/applications/mqtt.rst:101
+msgid "Subscribing to device events"
+msgstr ""
+"Geräteereignisse subskribieren"
+
+#: ../docs/applications/mqtt.rst:102
+msgid "An application can subscribe to events from one or more devices."
+msgstr ""
+"Eine Anwendung kann Ereignisse von einer oder mehrerer Geräte subskribieren."
+
+#: ../docs/applications/mqtt.rst:104
+msgid "Subscribe to topic iot-2/type/**device\\_type**/id/**device\\_id**/evt/**event\\_id**/fmt/**format\\_string**"
+msgstr ""
+"Subskribieren von Topic iot-2/type/**device\\_type**/id/**device\\_id**/evt/**event\\_id**/fmt/**format\\_string**"
+
+#: ../docs/applications/mqtt.rst:106
+#: ../docs/applications/mqtt.rst:122
+msgid "The MQTT \"any\" wildcard character (+) may be used for any of the following components if you want to subscribe to more than one type of event, or events from more than a single device."
+msgstr ""
+"Das MQTT-Platzhalterzeichen \"any\" (+) kann für alle der folgenden Komponenten verwendet werden, wenn Sie mehr als einen Ereignistyp oder Ereignisse aus mehr als einem Gerät subskribieren wollen."
+
+#: ../docs/applications/mqtt.rst:110
+#: ../docs/applications/mqtt.rst:126
+#: ../docs/applications/mqtt.rst:141
+#: ../docs/applications/mqtt.rst:166
+msgid "device\\_type"
+msgstr ""
+"device\\_type"
+
+#: ../docs/applications/mqtt.rst:111
+#: ../docs/applications/mqtt.rst:127
+#: ../docs/applications/mqtt.rst:142
+msgid "device\\_id"
+msgstr ""
+"device\\_id"
+
+#: ../docs/applications/mqtt.rst:112
+msgid "event\\_id"
+msgstr ""
+"event\\_id"
+
+#: ../docs/applications/mqtt.rst:113
+#: ../docs/applications/mqtt.rst:129
+msgid "format\\_string"
+msgstr ""
+"format\\_string"
+
+#: ../docs/applications/mqtt.rst:117
+msgid "Subscribing to device commands"
+msgstr ""
+"Gerätebefehle subskribieren"
+
+#: ../docs/applications/mqtt.rst:118
+msgid "An application can subscribe to commands being sent to one or more devices."
+msgstr ""
+"Eine Anwendung kann Befehle subskribieren, die an eine oder mehrere Geräte gesendet werden."
+
+#: ../docs/applications/mqtt.rst:120
+msgid "Subscribe to topic iot-2/type/**device\\_type**/id/**device\\_id**/cmd/**command\\_id**/fmt/**format\\_string**"
+msgstr ""
+"Subskribieren von Topic iot-2/type/**device\\_type**/id/**device\\_id**/cmd/**command\\_id**/fmt/**format\\_string**"
+
+#: ../docs/applications/mqtt.rst:128
+msgid "cmd\\_id"
+msgstr ""
+"cmd\\_id"
+
+#: ../docs/applications/mqtt.rst:133
+msgid "Subscribing to device status messages"
+msgstr ""
+"Gerätestatusnachrichten subskribieren"
+
+#: ../docs/applications/mqtt.rst:134
+msgid "An application can subscribe to monitor status of one or more devices."
+msgstr ""
+"Eine Anwendung kann den Überwachungsstatus einer oder mehrerer Geräte subskribieren."
+
+#: ../docs/applications/mqtt.rst:136
+msgid "Subscribe to topic iot-2/type/**device\\_type**/id/**device\\_id**/mon"
+msgstr ""
+"Subskribieren von Topic iot-2/type/**device\\_type**/id/**device\\_id**/mon"
+
+#: ../docs/applications/mqtt.rst:138
+msgid "The MQTT \"any\" wildcard character (+) may be used for any of the following components if you want to subscribe to updates from more than one device."
+msgstr ""
+"Das MQTT-Platzhalterzeichen \"any\" (+) kann für alle der folgenden Komponenten verwendet werden, wenn Sie Updates aus mehr als einem Gerät subskribieren wollen."
+
+#: ../docs/applications/mqtt.rst:146
+msgid "Subscribing to application status messages"
+msgstr ""
+"Anwendungsstatusnachrichten subskribieren"
+
+#: ../docs/applications/mqtt.rst:147
+msgid "An application can subscribe to monitor status of one or more applications."
+msgstr ""
+"Eine Anwendung kann den Überwachungsstatus einer oder mehrerer Anwendungen subskribieren."
+
+#: ../docs/applications/mqtt.rst:149
+msgid "Subscribe to topic iot-2/app/**app\\_id**/mon"
+msgstr ""
+"Subskribieren von Topic iot-2/app/**app\\_id**/mon"
+
+#: ../docs/applications/mqtt.rst:151
+msgid "The MQTT \"any\" wildcard character (+) may be used for **app\\_id** if you want to subscribe for updates for all applications."
+msgstr ""
+"Das MQTT-Platzhalterzeichen \"any\" (+) kann für **app\\_id** verwendet werden, wenn Sie Updates für alle Anwendungen subskribieren wollen."
+
+#: ../docs/applications/mqtt.rst:156
+msgid "Quickstart restrictions"
+msgstr ""
+"Quickstart-Einschränkungen"
+
+#: ../docs/applications/mqtt.rst:158
+msgid "If you are writing application code that wants to support use with Quickstart you must take into account the following features present in the registered service that are not supported in Quickstart:"
+msgstr ""
+"Wenn Sie Anwendungscode schreiben, der die Verwendung mit Quickstart unterstützt, müssen Sie die folgenden Funktionen berücksichtigen, die im registrierten Service vorhanden sind und nicht in Quickstart unterstützt werden:"
+
+#: ../docs/applications/mqtt.rst:162
+msgid "Publishing commands"
+msgstr ""
+"Befehle publizieren"
+
+#: ../docs/applications/mqtt.rst:163
+msgid "Subscribing to commands"
+msgstr ""
+"Befehle subskribieren"
+
+#: ../docs/applications/mqtt.rst:164
+msgid "Use of the MQTT \"any\" wildcard character (+) for the following topic components:"
+msgstr ""
+"Verwenden Sie das MQTT-Platzhalterzeichen \"any\" (+) kann für die folgenden Themenkomponenten:"
+
+#: ../docs/applications/mqtt.rst:167
+msgid "app\\_id"
+msgstr ""
+"app\\_id"
+
+#: ../docs/applications/mqtt.rst:168
+msgid "MQTT connection over SSL"
+msgstr ""
+"MQTT-Verbindung über SSL"
+
+#: ../docs/applications/mqtt.rst:172
+msgid "Scalable Applications"
+msgstr ""
+"Skalierbare Anwendungen"
+
+#: ../docs/applications/mqtt.rst:174
+msgid "You can build scalable applications which will load balance messages across multiple instances of your application by making a few changes to how your application connects to the IoT Platform. Applications taking advantage of this feature must only attempt to make non-durable subscriptions. A bit of experimentation may be needed to understand how many clients are needed for the optimum balance in load."
+msgstr ""
+"Sie können skalierbare Anwendungen erstellen, die den Nachrichtenlastausgleich für mehrere Instanzen Ihrer Anwendung übernehmen. Dazu sind nur wenige Änderungen an der Vorgehensweise vorzunehmen, mit der Ihre Anwendung die Verbindung zu IoT Platform herstellt. Anwendungen, die die Vorteile dieser Funktion nutzen, dürfen nur versuchen, nicht permanente Subskriptionen zu erstellen. Es kann eine kleine Versuchsreihe erforderlich sein, um zu ermitteln, wie viele Clients für einen optimalen Lastausgleich erforderlich sind."
+
+#: ../docs/applications/mqtt.rst:181
+msgid "Supply a client id of the form **A**:**org\\_id**:**app\\_id**"
+msgstr ""
+"Geben Sie eine Client-ID in folgender Form an: **A**:**org\\_id**:**app\\_id**"
+
+#: ../docs/applications/mqtt.rst:183
+msgid "**A** indicates the client is a scalable application"
+msgstr ""
+"**A** gibt an, dass der Client eine skalierbare Anwendung ist"
+
+#: ../docs/applications/mqtt.rst:184
+msgid "**org\\_id** is your unique organization ID, assigned when you sign up with the service.  It will be a 6 character alphanumeric string."
+msgstr ""
+"**org\\_id** ist Ihre eindeutige Organisations-ID, die beim Registrieren im Service zugeordnet wird.  Die Organisations-ID ist eine alphanumerische Zeichenfolge mit 6 Zeichen."
+
+#: ../docs/applications/mqtt.rst:186
+msgid "**app\\_id** is a user-defined unique string identifier for this client."
+msgstr ""
+"**app\\_id** ist eine benutzerdefinierte, eindeutige Zeichenfolgekennung für diesen Client."
+
+#: ../docs/applications/mqtt.rst:187
+msgid "Create a non-durable subscription"
+msgstr ""
+"Nicht permanente Subskription erstellen"
+
+#: ../docs/applications/mqtt.rst:189
+msgid "Only non-durable subscriptions are supported for scalable applications. Please note that the client id must begin with a capital 'A' in order to designated as a scalable application by the IoT Platform. Multiple clients that are part of the scalable application should use the exact same client id."
+msgstr ""
+"Für skalierbare Anwendungen werden nur nicht permanente Subskriptionen unterstützt. Beachten Sie, dass die Client-ID mit dem Großbuchstaben 'A' beginnen muss, um sie für IoT Platform als skalierbare Anwendung zu kennzeichnen. Mehrere Clients, die Bestandteil der skalierbaren Anwendung sind, müssen exakt dieselbe Client-ID aufweisen."
+
+#: ../docs/applications/mqtt.rst:196
+msgid "How It Works"
+msgstr ""
+"Funktionsweise"
+
+#: ../docs/applications/mqtt.rst:197
+msgid "The IoT Platform service extends the MQTT 3.1.1 specification to provide support for shared subscriptions. Shared subscription can provide simple load balancing functionality for applications. A shared subscription might be needed if a back-end enterprise application can not keep up with the number of messages being published to a specific topic space. For example if many devices were publishing messages that are being processed by a single application. It might be helpful to leverage the load balancing capability of a shared subscription. IoT Platform shared subscription support is limited to non-durable subscriptions only."
+msgstr ""
+"Der IoT Platform-Service erweitert die Spezifikation MQTT 3.1.1, um Unterstützung für gemeinsam genutzte Subskriptionen bereitzustellen. Von einer gemeinsam genutzten Subskription können einfache Lastausgleichsfunktionen für Anwendungen bereitgestellt werden. Eine gemeinsam genutzte Subskription kann erforderlich sein, wenn die Anzahl der Nachrichten, die für einen bestimmten Topic-Bereich publiziert werden, von der Back-End-Unternehmensanwendung nicht mehr bewältigen werden kann. Beispiel: Viele Geräte publizieren Nachrichten, die von einer einzigen Anwendung verarbeitet werden. Es kann sinnvoll sein, die Lastausgleichsfunktion einer gemeinsam genutzten Subskription zu nutzen. Die Unterstützung für gemeinsam genutzte Subskriptionen in IoT Platform ist ausschließlich auf nicht permanente Subskriptionen beschränkt."
+
+#: ../docs/applications/mqtt.rst:205
+msgid "A simple example of an auto-scaling application:"
+msgstr ""
+"Einfaches Beispiel einer automatisch skalierten Anwendung:"
+
+#: ../docs/applications/mqtt.rst:207
+msgid "client 1 connects as A:abc123:myApplication and subscribes to all device events client 1 will receive 100% of the device events published"
+msgstr ""
+"Client 1 stellt als A:abc123:myApplication eine Verbindung her und subskribiert alle Geräteereignisse; Client 1 empfängt 100 % der publizierten Geräteereignisse."
+
+#: ../docs/applications/mqtt.rst:209
+msgid "client 2 connects as A:abc123:myApplication and subscribes to all device events now, client 1 and client 2 will share all of the events published between them. that is the load is now shared between client 1 and client 2."
+msgstr ""
+"Client 2 stellt als A:abc123:myApplication eine Verbindung her und subskribiert jetzt alle Geräteereignisse; Client 1 und Client 2 nutzen alle zwischen ihnen publizierten Ereignisse gemeinsam. Somit verteilt sich die Last jetzt auf Client 1 und Client 2."
+
+#: ../docs/applications/mqtt.rst:212
+msgid "client 3 connects as A:abc123:myApplication and subscribes to all device events now, instance 1, 2 and 3 will process the events shared amongst all three instances"
+msgstr ""
+"Client 3 stellt als A:abc123:myApplication eine Verbindung her und subskribiert jetzt alle Geräteereignisse; Instanz 1, 2 und 3 verarbeiten die Ereignisse, die von allen drei Instanzen gemeinsam genutzt werden."
+
+#: ../docs/applications/mqtt.rst:214
+msgid "clients 2 and 3 unsubscribe from all device events now, although instance 2 and 3 are still connected to the service, instance 1 will be receiving  all device events published"
+msgstr ""
+"Die Clients 2 und 3 beenden jetzt die Subskription aller Geräteereignisse, obwohl Instanz 2 und 3 noch mit dem Service verbunden sind; Instanz 1 empfängt daraufhin alle publizierten Geräteereignisse."
+

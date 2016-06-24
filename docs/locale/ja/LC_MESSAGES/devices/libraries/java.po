@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/libraries/java.rst:2
+msgid "Java for Device Developers"
+msgstr ""
+"デバイス開発者用の Java"
+
+#: ../docs/devices/libraries/java.rst:4
+msgid "See `iot-java <https://github.com/ibm-messaging/iot-java>`_ in GitHub"
+msgstr ""
+"GitHub の `iot-java <https://github.com/ibm-messaging/iot-java>`_ を参照してください。"
+
+#: ../docs/devices/libraries/java.rst:8
+msgid "Constructor"
+msgstr ""
+"コンストラクター"
+
+#: ../docs/devices/libraries/java.rst:10
+msgid "The constructor builds the client instance, and accepts a Properties object containing the following definitions:"
+msgstr ""
+"コンストラクターはクライアント・インスタンスを構築し、以下の定義を含むプロパティー・オブジェクトを受け入れます。"
+
+#: ../docs/devices/libraries/java.rst:12
+msgid "org - Your organization ID. (This is a required field. In case of quickstart flow, provide org as quickstart.)"
+msgstr ""
+"org - 組織 ID。(これは必須フィールドです。Quickstart フローの場合、Quickstart として org を指定します。)"
+
+#: ../docs/devices/libraries/java.rst:13
+msgid "type - The type of your device. (This is a required field.)"
+msgstr ""
+"type - デバイスのタイプ。(これは必須フィールドです。)"
+
+#: ../docs/devices/libraries/java.rst:14
+msgid "id - The ID of your device. (This is a required field."
+msgstr ""
+"id - デバイスの ID。(これは必須フィールドです。"
+
+#: ../docs/devices/libraries/java.rst:15
+msgid "auth-method - Method of authentication (This is an optional field, needed only for registered flow and the only value currently supported is \"token\")."
+msgstr ""
+"auth-method - 認証方式 (これはオプションのフィールドです。登録されたフローでのみ必要で、現在サポートされている値は「token」のみです)。"
+
+#: ../docs/devices/libraries/java.rst:16
+msgid "auth-token - API key token (This is an optional field, needed only for registered flow)."
+msgstr ""
+"auth-token - API キー・トークン (これはオプションのフィールドで、登録されたフローでのみ必要です)。"
+
+#: ../docs/devices/libraries/java.rst:17
+msgid "clean-session - true or false (required only if you want to connect the application in durable subscription. By default the clean-session is set to true)."
+msgstr ""
+"clean-session - true または false (永続サブスクリプションでアプリケーションを接続する場合にのみ必須です。clean-session は、デフォルトでは true に設定されます。)"
+
+#: ../docs/devices/libraries/java.rst:19
+msgid "One must set ``clean-session`` to false to connect the device in durable subscription. Refer to `Subscription Buffers and Clean Session <https://docs.internetofthings.ibmcloud.com/reference/mqtt/index.html#/subscription-buffers-and-clean-session#subscription-buffers-and-clean-session>`__ for more information about the clean session."
+msgstr ""
+"永続サブスクリプションでデバイスを接続する場合は、``clean-session`` を false に設定する必要があります。クリーン・セッションの詳細については、`サブスクリプション・バッファーとクリーン・セッション<https://docs.internetofthings.ibmcloud.com/reference/mqtt/index.html#/subscription-buffers-and-clean-session#subscription-buffers-and-clean-session>`__ を参照してください。"
+
+#: ../docs/devices/libraries/java.rst:21
+msgid "The Properties object creates definitions which are used to interact with the IoT Platform module."
+msgstr ""
+"プロパティー・オブジェクトは IoT Platform モジュールと対話するために使用される定義を作成します。"
+
+#: ../docs/devices/libraries/java.rst:23
+msgid "The following code shows a device publishing events in a Quickstart mode."
+msgstr ""
+"以下のコードは、Quickstart モード内でイベントをパブリッシュするデバイスを表示します。"
+
+#: ../docs/devices/libraries/java.rst:73
+msgid "The following program shows a device publishing events in a registered flow"
+msgstr ""
+"以下のプログラムは、登録されたフロー内でイベントをパブリッシュするデバイスを表示します。"
+
+#: ../docs/devices/libraries/java.rst:125
+msgid "Using a configuration file"
+msgstr ""
+"構成ファイルの使用"
+
+#: ../docs/devices/libraries/java.rst:127
+msgid "Instead of including a Properties object directly, you can use a configuration file containing the name-value pairs for Properties. If you are using a configuration file containing a Properties object, use the following code format."
+msgstr ""
+"プロパティー・オブジェクトを直接組み込む代わりに、プロパティーの名前と値のペアを含む構成ファイルを使用できます。プロパティー・オブジェクトを含む構成ファイルを使用する場合、以下のコード形式を使用してください。"
+
+#: ../docs/devices/libraries/java.rst:169
+msgid "The content of the configuration file must be in the following format:"
+msgstr ""
+"構成ファイルのコンテンツは、以下の形式でなければなりません。"
+
+#: ../docs/devices/libraries/java.rst:184
+msgid "Connecting to the Watson IoT Platform"
+msgstr ""
+"Watson IoT Platform への接続"
+
+#: ../docs/devices/libraries/java.rst:186
+msgid "Connect to the Watson IoT Platform by calling the connect function. The connect function takes an optional boolean parameter autoRetry (by default autoRetry is true) that controls allows the library to retry the connection when there is an MqttException. Note that the library won't retry when there is a MqttSecurityException due to incorrect device registration details passed even if the autoRetry is set to true."
+msgstr ""
+"接続関数を呼び出して Watson IoT Platform に接続します。接続関数は、オプションのブール値パラメーター autoRetry を取ります (デフォルトでは autoRetry は true です)。このパラメーターにより、MqttException が発生した場合のライブラリーによる接続の再試行を制御および許可します。autoRetry が true に設定されていても、指定されたデバイス登録の詳細が不正確なために MqttSecurityException が発生した場合は、ライブラリーによる再試行は行われないことに注意してください。"
+
+#: ../docs/devices/libraries/java.rst:195
+msgid "After the successful connection to the IoTF service, the device client can perform the following operations, like publishing events and subscribe to device commands from application."
+msgstr ""
+"IoTF サービスへの接続に成功すると、デバイス・クライアントは、イベントをパブリッシュしたり、アプリケーションからのデバイス・コマンドをサブスクライブしたりするなどの操作を実行できます。"
+
+#: ../docs/devices/libraries/java.rst:202
+msgid "Publishing events"
+msgstr ""
+"イベントのパブリッシング"
+
+#: ../docs/devices/libraries/java.rst:203
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"イベントは、デバイスが IoT Platform にデータをパブリッシュするためのメカニズムです。デバイスはイベントのコンテンツを制御し、送信するイベントごとに名前を割り当てます。"
+
+#: ../docs/devices/libraries/java.rst:205
+msgid "When an event is received by the IBM IoT Platform the credentials of the connection on which the event was received are used to determine from which device the event was sent. With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"IBM IoT Platform は、イベントを受け取ると、そのイベントを受け取った接続の資格情報に基づいて、イベントの送信元のデバイスを特定します。このアーキテクチャーにより、デバイスは別のデバイスの偽名を使用することが不可能になります。"
+
+#: ../docs/devices/libraries/java.rst:207
+msgid "Events can be published at any of the three `quality of service levels <../messaging/mqtt.html#/>` defined by the MQTT protocol.  By default events will be published as qos level 0."
+msgstr ""
+"イベントは、MQTT プロトコルによって定義された 3 つの `サービスの品質レベル <../messaging/mqtt.html#/>` のいずれでもパブリッシュできます。デフォルトで、イベントは qos レベル 0 としてパブリッシュされます。"
+
+#: ../docs/devices/libraries/java.rst:210
+msgid "Publish event using default quality of service"
+msgstr ""
+"デフォルトのサービスの品質を使用してイベントをパブリッシュ"
+
+#: ../docs/devices/libraries/java.rst:227
+msgid "Publish event using user-defined quality of service"
+msgstr ""
+"ユーザー定義のサービスの品質を使用してイベントをパブリッシュ"
+
+#: ../docs/devices/libraries/java.rst:229
+msgid "Events can be published at higher MQTT quality of servive levels, but these events may take slower than QoS level 0, because of the extra confirmation of receipt. Also Quickstart flow allows only Qos of 0"
+msgstr ""
+"イベントは、より高レベルな MQTT サービスの品質でパブリッシュできますが、余分な受信の確認があるためこれらのイベントは QoS レベル 0 よりも低速になる可能性があります。また、Quickstart フローでは Qos レベル 0 のみが許可されます。"
+
+#: ../docs/devices/libraries/java.rst:245
+msgid "Publish event using HTTP(s)"
+msgstr ""
+"HTTP(s) を使用してイベントをパブリッシュ"
+
+#: ../docs/devices/libraries/java.rst:246
+msgid "Apart from MQTT, the devices can publish events to the IoT Platform using HTTP(s) by following 3 simple steps,"
+msgstr ""
+"MQTT とは別に、デバイスは以下の 3 つの簡単なステップを実行して、イベントを HTTP(s) を使用して IoT Platform にパブリッシュできます。"
+
+#: ../docs/devices/libraries/java.rst:248
+msgid "Construct a DeviceClient instance using the properties file"
+msgstr ""
+"プロパティー・ファイルを使用した DeviceClient インスタンスの作成"
+
+#: ../docs/devices/libraries/java.rst:249
+msgid "Construct an event that needs to be published"
+msgstr ""
+"パブリッシュが必要なイベントの作成"
+
+#: ../docs/devices/libraries/java.rst:250
+msgid "Specify the event name and publish the event using publishEventOverHTTP() method as follows,"
+msgstr ""
+"以下のような、イベント名の指定および publishEventOverHTTP() メソッドを使用したイベントのパブリッシュ"
+
+#: ../docs/devices/libraries/java.rst:263
+msgid "The complete code can be found in the device example `HttpDeviceEventPublish <https://github.com/ibm-messaging/iot-device-samples/blob/master/java/device-samples/src/main/java/com/ibm/iotf/sample/client/device/HttpDeviceEventPublish.java>`__"
+msgstr ""
+"完全なコードは、デバイス・サンプル `HttpDeviceEventPublish <https://github.com/ibm-messaging/iot-device-samples/blob/master/java/device-samples/src/main/java/com/ibm/iotf/sample/client/device/HttpDeviceEventPublish.java>`__ にあります。"
+
+#: ../docs/devices/libraries/java.rst:265
+msgid "Based on the settings in the properties file, the publishEventOverHTTP() method either publishes the event in Quickstart or in Registered flow. When the Organization ID mentioned in the properties file is quickstart, publishEventOverHTTP() method publishes the event to the IoT Platform quickstart service and publishes the event in plain HTTP format. But when valid registered organization is mentioned in the properties file, this method always publishes the event in HTTPS (HTTP over SSL), so all the communication is secured."
+msgstr ""
+"プロパティー・ファイルの設定に基づいて、publishEventOverHTTP() メソッドは Quickstart または登録されたフローでイベントをパブリッシュします。プロパティー・ファイルで指定されている組織 ID が Quickstart の場合、publishEventOverHTTP() メソッドは、イベントをプレーン HTTP 形式で IoT Platform の Quickstart サービスにパブリッシュします。しかし、登録されている有効な組織がプロパティー・ファイルで示されている場合、このメソッドはイベントを常に HTTPS (HTTP over SSL) でパブリッシュするため、すべての通信が保護されます。"
+
+#: ../docs/devices/libraries/java.rst:267
+msgid "The event in HTTP(s) is published at most once QoS, so the device needs to implement the retry logic when there is an error."
+msgstr ""
+"HTTP(s) でのイベントは最高 1 回の QoS でパブリッシュされるため、デバイスはエラーが発生した場合の再試行ロジックを実装する必要があります。"
+
+#: ../docs/devices/libraries/java.rst:272
+msgid "Handling commands"
+msgstr ""
+"コマンドの処理"
+
+#: ../docs/devices/libraries/java.rst:273
+msgid "When the device client connects it automatically subscribes to any commands for this device. To process specific commands you need to register a command callback method. The messages are returned as an instance of the Command class which has the following properties:"
+msgstr ""
+"デバイス・クライアントは、接続時に自動的にこのデバイスのコマンドをサブスクライブします。特定のコマンドを処理するには、コマンド・コールバック・メソッドを登録する必要があります。メッセージは、以下のプロパティーを持つ Command クラスのインスタンスとして返されます。"
+
+#: ../docs/devices/libraries/java.rst:276
+msgid "payload - java.lang.String"
+msgstr ""
+"payload - java.lang.String"
+
+#: ../docs/devices/libraries/java.rst:277
+msgid "format - java.lang.String"
+msgstr ""
+"format - java.lang.String"
+
+#: ../docs/devices/libraries/java.rst:278
+msgid "command - java.lang.String"
+msgstr ""
+"command - java.lang.String"
+
+#: ../docs/devices/libraries/java.rst:279
+msgid "timestamp - org.joda.time.DateTime"
+msgstr ""
+"timestamp - org.joda.time.DateTime"
+
+#: ../docs/devices/libraries/java.rst:358
+msgid "Samples"
+msgstr ""
+"サンプル"
+
+#: ../docs/devices/libraries/java.rst:360
+msgid "Refer to the `github repository <https://github.com/ibm-messaging/iot-device-samples/tree/master/java>`__ for a list of device and device management samples developed using this Watson IoT Java client library."
+msgstr ""
+"この Watson IoT Java クライアント・ライブラリーを使用して開発されたデバイスおよびデバイス管理のサンプルのリストについては、`github リポジトリー <https://github.com/ibm-messaging/iot-device-samples/tree/master/java>`__を参照してください。"
+

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IBM IOT Foundation 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgstr ""
 #: ../docs/devices/libraries/java_deviceManagement.rst:10
 msgid "This section contains information on how devices can  to the IoT Platform Device Management service using Java and perform device management operations like firmware update, location update, and diagnostics update."
 msgstr ""
-"本節包含裝置如何使用 Java 來連接至「IoT Platform 裝置管理」服務，並執行裝置管理作業（例如，韌體更新、位置更新以及診斷程式更新）的相關資訊。"
+"本節包含裝置如何才能使用 Java 來連接至「IoT Platform 裝置管理」服務，並執行裝置管理作業（如韌體更新、位置更新以及診斷程式更新）的相關資訊。"
 
 #: ../docs/devices/libraries/java_deviceManagement.rst:12
 msgid "The Device section contains information on how devices can publish events and handle commands using the Java ibmiotf Client Library."
@@ -496,7 +496,7 @@ msgstr ""
 #: ../docs/devices/libraries/java_deviceManagement.rst:513
 msgid "Reboot"
 msgstr ""
-"重新開機"
+"重新啟動"
 
 #: ../docs/devices/libraries/java_deviceManagement.rst:514
 msgid "Factory Reset"
@@ -516,7 +516,7 @@ msgstr ""
 #: ../docs/devices/libraries/java_deviceManagement.rst:520
 msgid "In order to perform Reboot and Factory Reset, the device needs to inform the IoT Platform about its support first. This can achieved by invoking a following method with a boolean value:"
 msgstr ""
-"為了執行「重新開機」和「重設為原廠設定」，裝置需要先通知 IoT Platform 有關其支援。以布林值呼叫下列方法，便可達成此作業："
+"為了執行「重新啟動」和「重設為原廠設定」，裝置需要先通知 IoT Platform 有關其支援。以布林值呼叫下列方法，便可達成此作業："
 
 #: ../docs/devices/libraries/java_deviceManagement.rst:527
 msgid "As the manage request informs the IoT Platform about the device action support, manage() method needs to be called right after setting the device action support."
@@ -541,7 +541,7 @@ msgstr ""
 #: ../docs/devices/libraries/java_deviceManagement.rst:540
 msgid "The implementation must add a logic to reboot the device and report the status of the reboot via DeviceAction object. The device needs to update the status along with a optional message only when there is a failure (because the successful operation reboots the device and the device code will not have a control to update the IoT Platform). A sample reboot implementation for a Raspberry Pi device is shown below:"
 msgstr ""
-"實作必須新增邏輯以重新啟動裝置，並透過 DeviceAction 物件報告重新開機的狀態。只有在失敗（因為順利完成的作業會重新啟動裝置，但裝置程式碼沒有控制項可以更新 IoT Platform）時，裝置才需要更新狀態以及選用訊息。下面顯示 Raspberry Pi 裝置的重新開機實作範例："
+"實作必須新增邏輯以重新啟動裝置，並透過 DeviceAction 物件報告重新啟動的狀態。只有在失敗（因為順利完成的作業會重新啟動裝置，但裝置程式碼沒有控制項可以更新 IoT Platform）時，裝置才需要更新狀態以及選用訊息。下面顯示 Raspberry Pi 裝置的重新啟動實作範例："
 
 #: ../docs/devices/libraries/java_deviceManagement.rst:563
 msgid "The complete code can be found in the device management sample `DeviceActionHandlerSample <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdevicemanagement/src/com/ibm/iotf/sample/devicemgmt/device/DeviceActionHandlerSample.java>`__."

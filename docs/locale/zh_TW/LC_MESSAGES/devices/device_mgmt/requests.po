@@ -1,0 +1,679 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/device_mgmt/requests.rst:2
+msgid "Device Management Requests"
+msgstr ""
+"裝置管理要求"
+
+#: ../docs/devices/device_mgmt/requests.rst:4
+msgid "The IoT Platform provides some actions which can be initiated against one or more devices. These actions can be initiated through the dashboard as well as by using the REST API. The available actions are split into two groups, device actions and firmware actions."
+msgstr ""
+"IoT Platform 會提供可以針對一個以上裝置起始的部分動作。這些動作可以透過儀表板以及使用 REST API 來起始。可用的動作分為兩個群組：裝置動作及韌體動作。"
+
+#: ../docs/devices/device_mgmt/requests.rst:7
+msgid "Initiating Device Management Requests through the dashboard"
+msgstr ""
+"透過儀表板來起始裝置管理要求"
+
+#: ../docs/devices/device_mgmt/requests.rst:9
+msgid "Requests can be initiated through the dashboard by navigating to the Actions tab of the Devices page. The **Initiate Action** button provides a dialog for selecting an action, picking the devices to take the action against, and specifying any additional parameters that the selected action supports."
+msgstr ""
+"可以透過儀表板來起始要求，方式導覽至「裝置」頁面的「動作」標籤。**起始動作** 按鈕提供了一個對話框，可以使用此對話框來選取動作、挑選要採取動作的裝置以及指定所選動作支援的任何其他參數。"
+
+#: ../docs/devices/device_mgmt/requests.rst:12
+msgid "Initiating Device Management Requests using the REST API"
+msgstr ""
+"使用 REST API 來起始裝置管理要求"
+
+#: ../docs/devices/device_mgmt/requests.rst:14
+msgid "Requests can be initiated using the following REST API:"
+msgstr ""
+"可以使用下列 REST API 來起始要求："
+
+#: ../docs/devices/device_mgmt/requests.rst:16
+msgid "``POST https://<org>.internetofthings.ibmcloud.com/api/v0002/mgmt/requests``"
+msgstr ""
+"``POST https://<org>.internetofthings.ibmcloud.com/api/v0002/mgmt/requests``"
+
+#: ../docs/devices/device_mgmt/requests.rst:18
+msgid "For more information on the request body, refer to the `API documentation <../../swagger/v0002.html>`__."
+msgstr ""
+"如需要求內文的相關資訊，請參閱 `API 文件 <../../swagger/v0002.html>`__。"
+
+#: ../docs/devices/device_mgmt/requests.rst:21
+msgid "Device Actions"
+msgstr ""
+"裝置動作"
+
+#: ../docs/devices/device_mgmt/requests.rst:23
+msgid "A device may specify that it supports device actions when it publishes a manage request. This indicates to the IoT Platform that the device is able to respond to device reboot and device reset actions."
+msgstr ""
+"裝置可能會指定它在發佈管理要求時支援裝置動作。這會向 IoT Platform 指出，裝置可以回應裝置重新啟動及裝置重設動作。"
+
+#: ../docs/devices/device_mgmt/requests.rst:28
+msgid "Device Actions - Reboot"
+msgstr ""
+"裝置動作 - 重新啟動"
+
+#: ../docs/devices/device_mgmt/requests.rst:30
+msgid "The reboot action can be initiated by using either the IoT Platform dashboard, or the REST API."
+msgstr ""
+"重新啟動動作可使用 IoT Platform 儀表板或 REST API 來起始。"
+
+#: ../docs/devices/device_mgmt/requests.rst:32
+msgid "To initiate a device reboot using the REST API, issue a POST request to:"
+msgstr ""
+"若要使用 REST API 來起始裝置重新啟動動作，請發出 POST 要求給："
+
+#: ../docs/devices/device_mgmt/requests.rst:34
+#: ../docs/devices/device_mgmt/requests.rst:109
+#: ../docs/devices/device_mgmt/requests.rst:231
+#: ../docs/devices/device_mgmt/requests.rst:478
+msgid "``https://<org>.internetofthings.ibmcloud.com/api/v0002/mgmt/requests``"
+msgstr ""
+"``https://<org>.internetofthings.ibmcloud.com/api/v0002/mgmt/requests``"
+
+#: ../docs/devices/device_mgmt/requests.rst:36
+#: ../docs/devices/device_mgmt/requests.rst:111
+#: ../docs/devices/device_mgmt/requests.rst:233
+msgid "The information provided is:"
+msgstr ""
+"所提供的資訊如下："
+
+#: ../docs/devices/device_mgmt/requests.rst:38
+msgid "The action ``device/reboot``"
+msgstr ""
+"動作 ``device/reboot``"
+
+#: ../docs/devices/device_mgmt/requests.rst:39
+msgid "A list of devices to reboot, with a maximum of 5000 devices"
+msgstr ""
+"要重新啟動的裝置清單，上限為 5000 個裝置"
+
+#: ../docs/devices/device_mgmt/requests.rst:41
+msgid "Example device reboot request:"
+msgstr ""
+"範例裝置重新啟動要求："
+
+#: ../docs/devices/device_mgmt/requests.rst:55
+msgid "Once a request has been initiated, an MQTT message will be published to all devices specified in the request body. For each device, a response must be sent back indicating whether or not the reboot action can be initiated. If this operation can be initiated immediately, set ``rc`` to ``202``. If the reboot attempt fails, set ``rc`` to ``500`` and set the ``message`` field accordingly. If reboot is not supported, set ``rc`` to ``501`` and optionally set the ``message`` field accordingly."
+msgstr ""
+"起始要求後，便會將 MQTT 訊息發佈給要求內文中指定的所有裝置。對於每個裝置，必須傳回回應，指出是否可以起始重新啟動動作。如果可以立即起始此作業，請將 ``rc`` 設為 ``202``。如果重新啟動嘗試失敗，請將 ``rc`` 設為 ``500``，並相應地設定 ``message`` 欄位。如果不支援重新啟動，請將 ``rc`` 設為 ``501``，並選擇性地相應設定 ``message`` 欄位。"
+
+#: ../docs/devices/device_mgmt/requests.rst:57
+msgid "The reboot action is considered complete when the device sends a Manage device request following its reboot."
+msgstr ""
+"當裝置在重新啟動之後傳送「管理裝置」要求時，重新啟動動作即視為完成。"
+
+#: ../docs/devices/device_mgmt/requests.rst:60
+#: ../docs/devices/device_mgmt/requests.rst:135
+msgid "Topic"
+msgstr ""
+"主題"
+
+#: ../docs/devices/device_mgmt/requests.rst:62
+#: ../docs/devices/device_mgmt/requests.rst:137
+msgid "The server publishes this request to a device on the following topic:"
+msgstr ""
+"伺服器會將此要求發佈至下列主題上的裝置："
+
+#: ../docs/devices/device_mgmt/requests.rst:70
+#: ../docs/devices/device_mgmt/requests.rst:145
+msgid "Message format"
+msgstr ""
+"訊息格式"
+
+#: ../docs/devices/device_mgmt/requests.rst:72
+#: ../docs/devices/device_mgmt/requests.rst:147
+msgid "Request Format:"
+msgstr ""
+"要求格式："
+
+#: ../docs/devices/device_mgmt/requests.rst:83
+#: ../docs/devices/device_mgmt/requests.rst:158
+msgid "Response Format:"
+msgstr ""
+"回應格式："
+
+#: ../docs/devices/device_mgmt/requests.rst:103
+msgid "Device Actions - Factory Reset"
+msgstr ""
+"裝置動作 - 重設為原廠設定"
+
+#: ../docs/devices/device_mgmt/requests.rst:105
+msgid "The factory reset action can be initiated by using either the IoT Platform dashboard, or the REST API."
+msgstr ""
+"重設為原廠設定動作可使用 IoT Platform 儀表板或 REST API 來起始。"
+
+#: ../docs/devices/device_mgmt/requests.rst:107
+msgid "To initiate a device factory reset using the REST API, issue a POST request to:"
+msgstr ""
+"若要使用 REST API 來起始將裝置重設為原廠設定動作，請發出 POST 要求給："
+
+#: ../docs/devices/device_mgmt/requests.rst:113
+msgid "The action ``device/factoryReset``"
+msgstr ""
+"動作 ``device/factoryReset``"
+
+#: ../docs/devices/device_mgmt/requests.rst:114
+msgid "A list of devices to reset, with a maximum of 5000 devices"
+msgstr ""
+"要重設的裝置清單，上限為 5000 個裝置"
+
+#: ../docs/devices/device_mgmt/requests.rst:116
+msgid "Example device reset request:"
+msgstr ""
+"範例裝置重設要求："
+
+#: ../docs/devices/device_mgmt/requests.rst:130
+msgid "Once a request has been initiated, an MQTT message will be published to all devices specified in the request body. For each device, a response must be sent back indicating whether or not the factory reset action can be initiated. The response code should be set to ``202`` if this action can be initiated immediately. If the factory reset attempt fails, set ``rc`` to ``500`` and set the ``message`` field accordingly. If the factory reset action is not supported, set ``rc`` to ``501`` and optionally set the ``message`` field accordingly."
+msgstr ""
+"起始要求後，便會將 MQTT 訊息發佈給要求內文中指定的所有裝置。對於每個裝置，必須傳回回應，指出是否可以起始重設為原廠設定動作。如果可以立即起始此動作，回應碼應該設為 ``202``。如果重設為原廠設定嘗試失敗，請將 ``rc`` 設為 ``500``，並相應地設定 ``message`` 欄位。如果不支援重設為原廠設定動作，請將 ``rc`` 設為 ``501``，並選擇性地相應設定 ``message`` 欄位。"
+
+#: ../docs/devices/device_mgmt/requests.rst:132
+msgid "The factory reset action is considered complete when the device sends a Manage device request following its factory reset."
+msgstr ""
+"當裝置在重設為原廠設定之後傳送「管理裝置」要求時，重設為原廠設定動作即視為完成。"
+
+#: ../docs/devices/device_mgmt/requests.rst:176
+msgid "Firmware Actions"
+msgstr ""
+"韌體動作"
+
+#: ../docs/devices/device_mgmt/requests.rst:178
+msgid "The firmware level currently known to be on a given device is stored in the ``deviceInfo.fwVersion`` attribute. The ``mgmt.firmware`` attributes are used to perform a firmware update and observe its status."
+msgstr ""
+"給定裝置上目前已知的韌體層次儲存在 ``deviceInfo.fwVersion`` 屬性中。``mgmt.firmware`` 屬性可用來執行韌體更新並觀察其狀態。"
+
+#: ../docs/devices/device_mgmt/requests.rst:181
+msgid "The managed device must support observation of the ``mgmt.firmware`` attribute in order to support firmware actions."
+msgstr ""
+"受管理裝置必須支援觀察 ``mgmt.firmware`` 屬性，才能支援韌體動作。"
+
+#: ../docs/devices/device_mgmt/requests.rst:183
+msgid "The firmware update process is separated into two distinct actions, Downloading Firmware, and Updating Firmware. The status of each of these actions is stored in a separate attribute on the device. The ``mgmt.firmware.state`` attribute describes the status of the firmware download. The possible values for ``mgmt.firmware.state`` are:"
+msgstr ""
+"韌體更新程序分為兩個不同的動作：「下載韌體」及「更新韌體」。每一個動作的狀態都儲存在裝置上個別的屬性中。``mgmt.firmware.state`` 屬性說明韌體下載的狀態。``mgmt.firmware.state`` 的可能值如下："
+
+#: ../docs/devices/device_mgmt/requests.rst:188
+#: ../docs/devices/device_mgmt/requests.rst:202
+msgid "Value"
+msgstr ""
+"值"
+
+#: ../docs/devices/device_mgmt/requests.rst:188
+#: ../docs/devices/device_mgmt/requests.rst:202
+msgid "State"
+msgstr ""
+"狀態"
+
+#: ../docs/devices/device_mgmt/requests.rst:188
+#: ../docs/devices/device_mgmt/requests.rst:202
+msgid "Meaning"
+msgstr ""
+"意義"
+
+#: ../docs/devices/device_mgmt/requests.rst:190
+#: ../docs/devices/device_mgmt/requests.rst:204
+msgid "0"
+msgstr ""
+"0"
+
+#: ../docs/devices/device_mgmt/requests.rst:190
+msgid "Idle"
+msgstr ""
+"閒置"
+
+#: ../docs/devices/device_mgmt/requests.rst:190
+msgid "The device is currently not in the process of downloading firmware"
+msgstr ""
+"裝置目前並未進行韌體下載"
+
+#: ../docs/devices/device_mgmt/requests.rst:192
+#: ../docs/devices/device_mgmt/requests.rst:206
+msgid "1"
+msgstr ""
+"1"
+
+#: ../docs/devices/device_mgmt/requests.rst:192
+msgid "Downloading"
+msgstr ""
+"下載中"
+
+#: ../docs/devices/device_mgmt/requests.rst:192
+msgid "The device is currently downloading firmware"
+msgstr ""
+"裝置目前正在下載韌體"
+
+#: ../docs/devices/device_mgmt/requests.rst:194
+#: ../docs/devices/device_mgmt/requests.rst:208
+msgid "2"
+msgstr ""
+"2"
+
+#: ../docs/devices/device_mgmt/requests.rst:194
+msgid "Downloaded"
+msgstr ""
+"已下載"
+
+#: ../docs/devices/device_mgmt/requests.rst:194
+msgid "The device has successfully downloaded a firmware update and it is ready to install"
+msgstr ""
+"裝置已順利下載韌體更新，且可安裝"
+
+#: ../docs/devices/device_mgmt/requests.rst:199
+msgid "The ``mgmt.firmware.updateStatus`` attribute describes the status of firmware update. The possible values for ``mgmt.firmware.updateStatus`` are:"
+msgstr ""
+"``mgmt.firmware.updateStatus`` 屬性說明韌體更新的狀態。``mgmt.firmware.updateStatus`` 的可能值如下："
+
+#: ../docs/devices/device_mgmt/requests.rst:204
+msgid "Success"
+msgstr ""
+"成功"
+
+#: ../docs/devices/device_mgmt/requests.rst:204
+msgid "The firmware has been successfully updated"
+msgstr ""
+"韌體已順利更新"
+
+#: ../docs/devices/device_mgmt/requests.rst:206
+msgid "In Progress"
+msgstr ""
+"進行中"
+
+#: ../docs/devices/device_mgmt/requests.rst:206
+msgid "The firmware update has been initiated but is not yet complete"
+msgstr ""
+"已起始韌體更新但尚未完成"
+
+#: ../docs/devices/device_mgmt/requests.rst:208
+msgid "Out of Memory"
+msgstr ""
+"記憶體不足"
+
+#: ../docs/devices/device_mgmt/requests.rst:208
+msgid "An out of memory condition has been detected during the operation."
+msgstr ""
+"作業期間偵測到記憶體不足的狀況。"
+
+#: ../docs/devices/device_mgmt/requests.rst:210
+msgid "3"
+msgstr ""
+"3"
+
+#: ../docs/devices/device_mgmt/requests.rst:210
+msgid "Connection Lost"
+msgstr ""
+"連線中斷"
+
+#: ../docs/devices/device_mgmt/requests.rst:210
+msgid "The connection was lost during the firmware download"
+msgstr ""
+"韌體下載期間連線中斷"
+
+#: ../docs/devices/device_mgmt/requests.rst:212
+msgid "4"
+msgstr ""
+"4"
+
+#: ../docs/devices/device_mgmt/requests.rst:212
+msgid "Verification Failed"
+msgstr ""
+"驗證失敗"
+
+#: ../docs/devices/device_mgmt/requests.rst:212
+msgid "The firmware did not pass verification"
+msgstr ""
+"韌體未通過驗證"
+
+#: ../docs/devices/device_mgmt/requests.rst:214
+msgid "5"
+msgstr ""
+"5"
+
+#: ../docs/devices/device_mgmt/requests.rst:214
+msgid "Unsupported Image"
+msgstr ""
+"映像檔不受支援"
+
+#: ../docs/devices/device_mgmt/requests.rst:214
+msgid "The downloaded firmware image is not supported by the device"
+msgstr ""
+"裝置不支援已下載的韌體映像檔"
+
+#: ../docs/devices/device_mgmt/requests.rst:216
+msgid "6"
+msgstr ""
+"6"
+
+#: ../docs/devices/device_mgmt/requests.rst:216
+msgid "Invalid URI"
+msgstr ""
+"URI 無效"
+
+#: ../docs/devices/device_mgmt/requests.rst:216
+msgid "The device could not download the firmware from the provided URI"
+msgstr ""
+"裝置無法從提供的 URI 下載韌體"
+
+#: ../docs/devices/device_mgmt/requests.rst:225
+msgid "Firmware Actions - Download"
+msgstr ""
+"韌體動作 - 下載"
+
+#: ../docs/devices/device_mgmt/requests.rst:227
+msgid "The Download Firmware action can be initiated by using either the IoT Platform dashboard, or the REST API."
+msgstr ""
+"「下載韌體」動作可使用 IoT Platform 儀表板或 REST API 來起始。"
+
+#: ../docs/devices/device_mgmt/requests.rst:229
+msgid "To initiate a firmware download using the REST API, issue a POST request to:"
+msgstr ""
+"若要使用 REST API 來起始韌體下載動作，請發出 POST 要求給："
+
+#: ../docs/devices/device_mgmt/requests.rst:235
+msgid "The action ``firmware/download``"
+msgstr ""
+"動作 ``firmware/download``"
+
+#: ../docs/devices/device_mgmt/requests.rst:236
+msgid "The URI for the firmware image"
+msgstr ""
+"韌體映像檔的 URI"
+
+#: ../docs/devices/device_mgmt/requests.rst:237
+msgid "A list of devices to receive the image, with a maximum of 5000 devices"
+msgstr ""
+"接收映像檔的裝置清單，最多 5000 個裝置"
+
+#: ../docs/devices/device_mgmt/requests.rst:238
+#: ../docs/devices/device_mgmt/requests.rst:485
+msgid "Optional verifier string to validate the image"
+msgstr ""
+"選用的驗證器字串，用來驗證映像檔"
+
+#: ../docs/devices/device_mgmt/requests.rst:239
+#: ../docs/devices/device_mgmt/requests.rst:486
+msgid "Optional firmware name"
+msgstr ""
+"選用的韌體名稱"
+
+#: ../docs/devices/device_mgmt/requests.rst:240
+#: ../docs/devices/device_mgmt/requests.rst:487
+msgid "Optional firmware version"
+msgstr ""
+"選用的韌體版本"
+
+#: ../docs/devices/device_mgmt/requests.rst:242
+msgid "Example firmware download request on which all the following example messages are based:"
+msgstr ""
+"作為下列所有範例訊息之基礎的範例韌體下載要求："
+
+#: ../docs/devices/device_mgmt/requests.rst:269
+msgid "The device management server in the IoT Platform uses the Device Management Protocol to send a request to the devices, initiating the firmware download. There are multiple steps:"
+msgstr ""
+"IoT Platform 中的裝置管理伺服器會使用「裝置管理通訊協定」來傳送要求給裝置，以起始韌體下載。其中包含多個步驟："
+
+#: ../docs/devices/device_mgmt/requests.rst:271
+msgid "Firmware details update request sent on topic ``iotdm-1/device/update``:"
+msgstr ""
+"於主題 ``iotdm-1/device/update`` 傳送的韌體詳細資料更新要求："
+
+#: ../docs/devices/device_mgmt/requests.rst:273
+msgid "This request let the device validate if the requested firmware differs from the currently installed firmware. If there is a difference, set ``rc`` to ``204``, which translates to the status ``Changed``. The following example shows which message is to be expected for the previously sent example firmware download request and what response should be sent, when a difference is detected:"
+msgstr ""
+"此要求可讓裝置驗證要求的韌體是否不同於目前安裝的韌體。如果有差異，請將 ``rc`` 設為 ``204``，這會將狀態轉換為「已變更」。下列範例說明對於先前傳送的範例韌體下載要求所預期的訊息，且在偵測到差異時，應傳送的回應："
+
+#: ../docs/devices/device_mgmt/requests.rst:310
+#: ../docs/devices/device_mgmt/requests.rst:558
+msgid "This response will trigger the next request."
+msgstr ""
+"此回應將會觸發下一個要求。"
+
+#: ../docs/devices/device_mgmt/requests.rst:314
+msgid "Observation request for firmware download status ``iotdm-1/observe``:"
+msgstr ""
+"韌體下載狀態 ``iotdm-1/observe`` 的觀察要求："
+
+#: ../docs/devices/device_mgmt/requests.rst:316
+msgid "Verifies if the device is ready to start the firmware download. When the download can be started immediately, set ``rc`` to ``200`` (``Ok``), ``mgmt.firmware.state`` to ``0`` (``Idle``) and ``mgmt.firmware.updateStatus`` to ``0`` (``Idle``). Here an example exchange between the IoT Platform and device:"
+msgstr ""
+"驗證裝置是否已備妥而可開始韌體下載。如果可以立即開始下載，請將 ``rc`` 設為 ``200``（「確定」）、``mgmt.firmware.state`` 設為 ``0``（「閒置」），並將 ``mgmt.firmware.updateStatus`` 設為 ``0``（「閒置」）。以下是 IoT Platform 與裝置之間的範例交換："
+
+#: ../docs/devices/device_mgmt/requests.rst:344
+msgid "This exchange will trigger the last step."
+msgstr ""
+"此交換將會觸發最後一個步驟。"
+
+#: ../docs/devices/device_mgmt/requests.rst:348
+msgid "Initiate the download request sent on topic ``iotdm-1/mgmt/initiate/firmware/download``:"
+msgstr ""
+"起始於主題 ``iotdm-1/mgmt/initiate/firmware/download`` 傳送的下載要求："
+
+#: ../docs/devices/device_mgmt/requests.rst:350
+msgid "This request tells a device to actually start the firmware download. If the action can be initiated immediately, set ``rc`` to ``202``. Here an example:"
+msgstr ""
+"此要求會指示裝置實際開始韌體下載。如果可以立即起始動作，請將 ``rc`` 設為 ``202``。範例如下："
+
+#: ../docs/devices/device_mgmt/requests.rst:373
+msgid "After a firmware download is initiated this way, the device needs to report to the IoT Platform the status of the download. This is possible by publishing a message to the ``iotdevice-1/notify``-topic, where the ``mgmt.firmware.state`` is set to either ``1`` (``Downloading``) or ``2`` (``Downloaded``). Here some examples:"
+msgstr ""
+"以此方式起始韌體下載後，裝置必須向 IoT Platform 報告下載的狀態。此動作可藉由將訊息發佈至 ``iotdevice-1/notify`` 主題來完成，其中，``mgmt.firmware.state`` 會設為 ``1``（「下載中」）或 ``2``（「已下載」）。以下是一些範例："
+
+#: ../docs/devices/device_mgmt/requests.rst:415
+msgid "After the notification with ``mgmt.firmware.state`` set to ``2`` was published, a request will be triggered on the ``iotdm-1/cancel``-topic, which cancels the observation of the ``mgmt.firmware`` field. After a response with ``rc`` set to ``200`` was sent the firmware download is completed. Example:"
+msgstr ""
+"在 ``mgmt.firmware.state`` 設為 ``2`` 的通知發佈後，將會觸發對 ``iotdm-1/cancel`` 主題的要求，而取消 ``mgmt.firmware`` 欄位的觀察。在傳送 ``rc`` 設為 ``200`` 的回應後，韌體下載即完成。範例："
+
+#: ../docs/devices/device_mgmt/requests.rst:446
+msgid "Useful information regarding error handling:"
+msgstr ""
+"關於錯誤處理的有用資訊："
+
+#: ../docs/devices/device_mgmt/requests.rst:448
+msgid "If ``mgmt.firmware.state`` is not ``0`` (\"Idle\") an error should be reported with response code ``400``, and an optional message text.-"
+msgstr ""
+"如果 ``mgmt.firmware.state`` 不是 ``0``（「閒置」），應該報告回應碼為 ``400`` 的錯誤以及選用的訊息文字。-"
+
+#: ../docs/devices/device_mgmt/requests.rst:449
+msgid "If ``mgmt.firmware.uri`` is not set or is not a valid URI, set ``rc`` to ``400``."
+msgstr ""
+"如果未設定 ``mgmt.firmware.uri`` 或不是有效的 URI，則將 ``rc`` 設為 ``400``。"
+
+#: ../docs/devices/device_mgmt/requests.rst:450
+msgid "If firmware download attempt fails, set ``rc`` to ``500`` and optionally set ``message`` accordingly."
+msgstr ""
+"如果韌體下載嘗試失敗，請將 ``rc`` 設為 ``500``，並選擇性地相應設定 ``message``。"
+
+#: ../docs/devices/device_mgmt/requests.rst:451
+msgid "If firmware download is not supported, set ``rc`` to ``501`` and optionally set ``message`` accordingly."
+msgstr ""
+"如果不支援韌體下載，請將 ``rc`` 設為 ``501``，並選擇性地相應設定 ``message``。"
+
+#: ../docs/devices/device_mgmt/requests.rst:452
+msgid "When an excecute request is received by the device, ``mgmt.firmware.state`` should change from ``0`` (Idle) to ``1`` (Downloading)."
+msgstr ""
+"當裝置收到執行要求時，``mgmt.firmware.state`` 應該從 ``0``（閒置）變更為 ``1``（下載中）。"
+
+#: ../docs/devices/device_mgmt/requests.rst:453
+msgid "When the download has been completed successfully, ``mgmt.firmware.state`` should be set to ``2`` (Downloaded)."
+msgstr ""
+"若下載順利完成，``mgmt.firmware.state`` 應該設為 ``2``（已下載）。"
+
+#: ../docs/devices/device_mgmt/requests.rst:454
+msgid "If an error occurrs during download ``mgmt.firmware.state`` should be set to ``0`` (Idle) and ``mgmt.firmware.updateStatus`` should be set to one of the error status values:"
+msgstr ""
+"如果下載期間發生錯誤，``mgmt.firmware.state`` 應該設為 ``0``（閒置），而 ``mgmt.firmware.updateStatus`` 應該設為其中一個錯誤狀態值："
+
+#: ../docs/devices/device_mgmt/requests.rst:456
+msgid "2 (Out of Memory)"
+msgstr ""
+"2（記憶體不足）"
+
+#: ../docs/devices/device_mgmt/requests.rst:457
+msgid "3 (Connection Lost)"
+msgstr ""
+"3（連線中斷）"
+
+#: ../docs/devices/device_mgmt/requests.rst:458
+msgid "6 (Invalid URI)"
+msgstr ""
+"6（URI 無效）"
+
+#: ../docs/devices/device_mgmt/requests.rst:460
+msgid "If a firmware verifier has been set, the device should attempt to verify the firmware image. If the image verification fails, ``mgmt.firmware.state`` should be set to ``0`` (Idle) and ``mgmt.firmware.updateStatus`` should be set to the error status value ``4`` (Verification Failed)."
+msgstr ""
+"如果已設定韌體驗證器，裝置應該嘗試驗證韌體映像檔。如果映像檔驗證失敗，``mgmt.firmware.state`` 應該設為 ``0``（閒置），而 ``mgmt.firmware.updateStatus`` 應該設為錯誤狀態值 ``4``（驗證失敗）。"
+
+#: ../docs/devices/device_mgmt/requests.rst:469
+msgid "Firmware Actions - Update"
+msgstr ""
+"韌體動作 - 更新"
+
+#: ../docs/devices/device_mgmt/requests.rst:471
+msgid "The firmware update action supports 2 scenarios:"
+msgstr ""
+"韌體更新動作支援 2 種實務範例："
+
+#: ../docs/devices/device_mgmt/requests.rst:473
+msgid "Installing firmware that is already on the device from a previously completed firmware download request, or"
+msgstr ""
+"從先前完成的韌體下載要求安裝已經在裝置上的韌體，或者"
+
+#: ../docs/devices/device_mgmt/requests.rst:474
+msgid "Downloading and installing firmware within a single device management request."
+msgstr ""
+"在單一裝置管理要求內下載並安裝韌體。"
+
+#: ../docs/devices/device_mgmt/requests.rst:476
+msgid "The firmware update action is initiated using the REST API by issuing a POST request to:"
+msgstr ""
+"使用 REST API 來起始韌體更新動作，方式是發出 POST 要求給："
+
+#: ../docs/devices/device_mgmt/requests.rst:480
+msgid "The information which should be provided is:"
+msgstr ""
+"應該提供的資訊如下："
+
+#: ../docs/devices/device_mgmt/requests.rst:482
+msgid "The action ``firmware/update``"
+msgstr ""
+"動作 ``firmware/update``"
+
+#: ../docs/devices/device_mgmt/requests.rst:483
+msgid "The list of devices to receive the image, all of the same device type."
+msgstr ""
+"接收映像檔的裝置清單，裝置類型全部相同。"
+
+#: ../docs/devices/device_mgmt/requests.rst:484
+msgid "Optional The URI for the firmware image"
+msgstr ""
+"選用項目：韌體映像檔的 URI"
+
+#: ../docs/devices/device_mgmt/requests.rst:489
+msgid "Here is an example request:"
+msgstr ""
+"範例要求如下："
+
+#: ../docs/devices/device_mgmt/requests.rst:518
+msgid "If any of the optional parameters are specified in the request, then the device management server will send a firmware details update to the device. The firmware details update request is sent on topic ``iotdm-1/device/update``."
+msgstr ""
+"如果在要求中指定了任何選用參數，則裝置管理伺服器會將韌體詳細資料更新傳送至裝置。以主題 ``iotdm-1/device/update`` 傳送韌體詳細資料更新要求。"
+
+#: ../docs/devices/device_mgmt/requests.rst:521
+msgid "This request lets the device validate if the requested firmware differs from the currently installed firmware. If there is a difference, set ``rc`` to ``204``, which translates to the status ``Changed``. The following example shows which message is to be expected for the previously sent example firmware update request and what response should be sent, when a difference is detected:"
+msgstr ""
+"此要求可讓裝置驗證要求的韌體是否不同於目前安裝的韌體。如果有差異，請將 ``rc`` 設為 ``204``，這會將狀態轉換為「已變更」。下列範例說明對於先前傳送的範例韌體更新要求所預期的訊息，且在偵測到差異時，應傳送的回應："
+
+#: ../docs/devices/device_mgmt/requests.rst:562
+msgid "In order to monitor the status of the firmware update the IoT Platform sends an observe request on the topic ``iotdm-1/observe``. When the device is ready to start the update process it sends a response with ``rc`` set to ``200``, ``mgmt.firmware.state`` set to ``0`` and ``mgmt.firmware.updateStatus`` set to ``0``."
+msgstr ""
+"為了監視韌體更新的狀態，IoT Platform 會以主題 ``iotdm-1/observe`` 傳送觀察要求。當裝置已就緒而可啟動更新程序時，它會傳送 ``rc`` 設為 ``200``、``mgmt.firmware.state`` 設為 ``0`` 且 ``mgmt.firmware.updateStatus`` 設為 ``0`` 的回應。"
+
+#: ../docs/devices/device_mgmt/requests.rst:565
+#: ../docs/devices/device_mgmt/requests.rst:610
+msgid "Here is an example:"
+msgstr ""
+"範例如下："
+
+#: ../docs/devices/device_mgmt/requests.rst:606
+msgid "Afterwards the device management server in the IoT Platform uses the device management protocol to request that the devices specified initiate the firmware installation by publishing using the topic ``iotdm-1/mgmt/initiate/firmware/update``. If this operation can be initiated immediately, ``rc`` should be set to ``202``. If firmware was not previously downloaded successfully, ``rc`` should be set to ``400``."
+msgstr ""
+"隨後，IoT Platform 中的裝置管理伺服器會使用裝置管理通訊協定，利用主題 ``iotdm-1/mgmt/initiate/firmware/update`` 來發佈，以要求指定的裝置起始韌體安裝。如果可以立即起始這項作業，``rc`` 應該設為 ``202``。如果先前未順利下載韌體，``rc`` 應該設為 ``400``。"
+
+#: ../docs/devices/device_mgmt/requests.rst:633
+msgid "In order to finish the firmware update request the device has to report its update status to the IoT Platform via a status message published on its ``iotdevice-1/notify``-topic. Once firmware update is completed, ``mgmt.firmware.updateStatus`` should be set to ``0`` (``Success``), ``mgmt.firmware.state`` should be set to ``0`` (``Idle``), downloaded firmware image can be deleted from the device and ``deviceInfo.fwVersion`` should be set to the value of ``mgmt.firmware.version``."
+msgstr ""
+"為了完成韌體更新要求，裝置必須透過在其 ``iotdevice-1/notify`` 主題上發佈的狀態訊息，將其更新狀態向 IoT Platform 報告。在韌體更新完成之後，``mgmt.firmware.updateStatus`` 即應該設為 ``0``（「成功」），``mgmt.firmware.state`` 應該設為 ``0``（「閒置」），下載的韌體映像檔可以從裝置中刪除，而 ``deviceInfo.fwVersion`` 應該設為 ``mgmt.firmware.version`` 的值。"
+
+#: ../docs/devices/device_mgmt/requests.rst:636
+msgid "Here is an example notify message:"
+msgstr ""
+"範例通知訊息如下："
+
+#: ../docs/devices/device_mgmt/requests.rst:660
+msgid "After the IoT Platform received the notify of a completed firmware update it will trigger a last request on the ``iotdm-1/cancel``-topic for cancelation of the observation of the ``mgmt.firmware``-field. After a response with ``rc`` set to ``200`` was sent the firmware update request is completed. Example:"
+msgstr ""
+"在 IoT Platform 接收到韌體更新已完成的通知後，它會對 ``iotdm-1/cancel`` 主題觸發最後一個要求，以取消 ``mgmt.firmware`` 欄位的觀察。在傳送 ``rc`` 設為 ``200`` 的回應後，韌體更新要求即完成。範例："
+
+#: ../docs/devices/device_mgmt/requests.rst:692
+msgid "Useful information regarding error and process handling:"
+msgstr ""
+"關於錯誤和程序處理的有用資訊："
+
+#: ../docs/devices/device_mgmt/requests.rst:694
+msgid "If firmware update attempt fails, ``rc`` should be set to ``500`` and the ``message`` field can optionally be set to contain relevant information."
+msgstr ""
+"如果韌體更新嘗試失敗，``rc`` 應該設為 ``500``，而 ``message`` 欄位可以選擇性地設為包含相關的資訊。"
+
+#: ../docs/devices/device_mgmt/requests.rst:695
+msgid "If firmware update is not supported ``rc`` should be set to ``501`` and the ``message`` field can optionally be set to contain relevant information."
+msgstr ""
+"如果不支援韌體更新，``rc`` 應該設為 ``501``，而 ``message`` 欄位可以選擇性地設為包含相關的資訊。"
+
+#: ../docs/devices/device_mgmt/requests.rst:696
+msgid "If ``mgmt.firmware.state`` is not ``2`` (Downloaded), an error should be reported with ``rc`` set to ``400`` and an optional message text."
+msgstr ""
+"如果 ``mgmt.firmware.state`` 不是 ``2``（已下載），則應該報告 ``rc`` 設為 ``400`` 的錯誤以及選用的訊息文字。"
+
+#: ../docs/devices/device_mgmt/requests.rst:697
+msgid "Otherwise, ``mgmt.firmware.updateStatus`` should be set to ``1`` (In Progress) and firmware installation should start."
+msgstr ""
+"否則，``mgmt.firmware.updateStatus`` 應該設為 ``1``（進行中），且應該開始韌體安裝。"
+
+#: ../docs/devices/device_mgmt/requests.rst:698
+msgid "If firmware installation fails, ``mgmt.firmware.updateStatus`` should be set to either:"
+msgstr ""
+"如果韌體安裝失敗，``mgmt.firmware.updateStatus`` 應該設為下列其中一項："
+
+#: ../docs/devices/device_mgmt/requests.rst:700
+msgid "``2`` (Out of Memory)"
+msgstr ""
+"``2``（記憶體不足）"
+
+#: ../docs/devices/device_mgmt/requests.rst:701
+msgid "``5`` (Unsupported Image)"
+msgstr ""
+"``5``（映像檔不受支援）"
+
+#: ../docs/devices/device_mgmt/requests.rst:705
+msgid "All fields under ``mgmt.firmware`` must be set at the same time, so that if there is a current observation for ``mgmt.firmware``, only a single notify message is sent."
+msgstr ""
+"``mgmt.firmware`` 下的所有欄位都必須同時設定，如此一來，如果目前有觀察 ``mgmt.firmware``，則只會傳送單一通知訊息。"
+

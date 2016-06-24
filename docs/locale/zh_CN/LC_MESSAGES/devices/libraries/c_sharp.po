@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/libraries/c_sharp.rst:2
+msgid "C# for Device Developers"
+msgstr ""
+"针对设备开发者的 C#"
+
+#: ../docs/devices/libraries/c_sharp.rst:4
+msgid "See `iot-csharp <https://github.com/IoT-Analytics/iot-csharp>`_ in GitHub"
+msgstr ""
+"请参阅 GitHub 中的 `iot-csharp <https://github.com/IoT-Analytics/iot-csharp>`_"
+
+#: ../docs/devices/libraries/c_sharp.rst:8
+msgid "Constructor"
+msgstr ""
+"构造方法"
+
+#: ../docs/devices/libraries/c_sharp.rst:9
+msgid "The constructor builds the client instance, and accepts arguments containing the following definitions:"
+msgstr ""
+"此构造方法用于构建客户机实例，并接受包含以下定义的自变量："
+
+#: ../docs/devices/libraries/c_sharp.rst:11
+msgid "``orgId`` - Your organization ID."
+msgstr ""
+"“orgId”- 贵组织的标识。"
+
+#: ../docs/devices/libraries/c_sharp.rst:12
+msgid "``deviceType`` - The type of your device."
+msgstr ""
+"“deviceType”- 设备的类型。"
+
+#: ../docs/devices/libraries/c_sharp.rst:13
+msgid "``deviceId`` - The ID of your device."
+msgstr ""
+"“deviceId”- 设备的标识。"
+
+#: ../docs/devices/libraries/c_sharp.rst:14
+msgid "``auth-method`` - Method of authentication (the only value currently supported is \"token\")."
+msgstr ""
+"“auth-method”- 认证方法（当前唯一支持的值为“token”）。"
+
+#: ../docs/devices/libraries/c_sharp.rst:15
+msgid "``auth-token`` - API key token (required if auth-method is \"token\")."
+msgstr ""
+"“auth-token”- API 密钥令牌（如果 auth-method 为“token”，那么此项为必需）。"
+
+#: ../docs/devices/libraries/c_sharp.rst:18
+msgid "If deviceId and deviceType are provided, the client will connect to the IoT Platform Quickstart, and default to an unregistered device. The argument lists creates definitions which are used to interact with the IoT Platform module."
+msgstr ""
+"如果提供了 deviceId 和 deviceType，那么客户机将连接到 IoT Platform Quickstart 服务，并缺省设置为未注册的设备。自变量列表可创建用于与 IoT Platform 模块进行交互的定义。"
+
+#: ../docs/devices/libraries/c_sharp.rst:32
+msgid "Publishing events"
+msgstr ""
+"发布事件"
+
+#: ../docs/devices/libraries/c_sharp.rst:33
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"事件是设备用于将数据发布到 IoT Platform 的机制。设备控制事件的内容，并为其发送的每个事件分配名称。"
+
+#: ../docs/devices/libraries/c_sharp.rst:35
+msgid "When an event is received by the IoT Platform the credentials of the connection on which the event was received are used to determine which device sent the event. With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"IoT Platform 接收到事件时，将使用用于接收该事件的连接的凭证来确定是哪个设备发送了该事件。由于使用这种体系结构，设备将无法模拟其他设备。"
+
+#: ../docs/devices/libraries/c_sharp.rst:37
+msgid "Events can be published at any of the three `quality of service (QoS) levels <../mqtt.html#/qoslevels>`_, defined by the MQTT protocol. By default events will be published as QoS level 0."
+msgstr ""
+"可以按 MQTT 协议定义的三个 `服务质量 (QoS) 级别 <../mqtt.html#/qoslevels>`_ 中的任何一个级别发布事件。缺省情况下，将按 QoS 级别 0 发布事件。"
+
+#: ../docs/devices/libraries/c_sharp.rst:40
+msgid "Publish event using default quality of service"
+msgstr ""
+"使用缺省服务质量发布事件"
+
+#: ../docs/devices/libraries/c_sharp.rst:49
+msgid "Publish event using user-defined quality of service"
+msgstr ""
+"使用用户定义的服务质量发布事件"
+
+#: ../docs/devices/libraries/c_sharp.rst:50
+msgid "Events can be published at higher MQTT quality of service levels, but events published at QoS levels above 0 may be slower then QoS 0 events, because of the extra confirmation of receipt used in QoS levels above 0."
+msgstr ""
+"可按较高的 MQTT 服务质量级别发布事件，但由于 QoS 0 以上的级别需要额外的接收确认，因此按 QoS 0 以上的级别发布的事件可能比 QoS 0 事件要慢一些。"
+
+#: ../docs/devices/libraries/c_sharp.rst:59
+msgid "Handling commands"
+msgstr ""
+"处理命令"
+
+#: ../docs/devices/libraries/c_sharp.rst:60
+msgid "When the device client connects, it automatically subscribes to any commands for this device. To process specific commands, you must register a command callback method."
+msgstr ""
+"设备客户机进行连接时，会自动预订此设备的所有命令。要处理特定命令，必须注册命令回调方法。"
+

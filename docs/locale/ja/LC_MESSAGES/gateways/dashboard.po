@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/gateways/dashboard.rst:2
+msgid "Connecting and Using a Gateway Device using the IoT Platform Dashboard"
+msgstr ""
+"IoT Platform ダッシュボードでのゲートウェイ・デバイスの接続と使用"
+
+#: ../docs/gateways/dashboard.rst:4
+msgid "This task describes the process of connecting a gateway device, which connects itself, and devices behind the gateway, and sends data from itself and devices behind it to the IoT Platform."
+msgstr ""
+"このタスクでは、ゲートウェイ・デバイスを接続するプロセスについて説明します。ゲートウェイ・デバイスは、ゲートウェイ自体とゲートウェイの内側に存在するデバイスを IoT Platform に接続し、ゲートウェイ自体のデータとそれらのデバイスからのデータを IoT Platform に送信します。"
+
+#: ../docs/gateways/dashboard.rst:6
+msgid "Gateways can also subscribe to commands on behalf of devices connected to the gateway."
+msgstr ""
+"ゲートウェイは、ゲートウェイに接続しているデバイスの代わりに、コマンドをサブスクライブすることもできます。"
+
+#: ../docs/gateways/dashboard.rst:9
+msgid "Prerequisites"
+msgstr ""
+"前提条件"
+
+#: ../docs/gateways/dashboard.rst:11
+msgid "This task assumes that you already have an IoT Platform organization."
+msgstr ""
+"このタスクでは、IoT Platform の組織が既に存在することを前提としています。"
+
+#: ../docs/gateways/dashboard.rst:14
+msgid "Procedure"
+msgstr ""
+"手順"
+
+#: ../docs/gateways/dashboard.rst:16
+msgid "Creating a device type for your gateway: A gateway has more rights than a normal device, and can send and receive device data on behalf of other devices."
+msgstr ""
+"ゲートウェイのデバイス・タイプを作成します。ゲートウェイには通常のデバイスより多くの権限があるため、他のデバイスの代わりにデバイスのデータを送受信できます。"
+
+#: ../docs/gateways/dashboard.rst:18
+msgid "In your organization dashboard 'Devices' tab, select the 'Device Types' sub-tab. Click 'Create Type'. Click 'Create gateway type', and follow the instructions in the flow, including adding any device properties and metadata. Click 'Create' to complete the flow and create the device type."
+msgstr ""
+"組織のダッシュボードの「デバイス」タブで、「デバイス・タイプ」サブタブを選択します。「タイプの作成」をクリックします。「ゲートウェイ・タイプの作成」をクリックし、フローの指示に従って、デバイスのプロパティーやメタデータを追加したりします。「作成」をクリックしてフローを完了し、デバイス・タイプを作成します。"
+
+#: ../docs/gateways/dashboard.rst:20
+msgid "To create a gateway device:"
+msgstr ""
+"ゲートウェイ・デバイスを作成するには、以下のようにします。"
+
+#: ../docs/gateways/dashboard.rst:22
+msgid "In your organization dashboard 'Devices' tab, select the 'Browse' sub-tab and click 'Add device'. Select the gateway device type created in the previous step. Follow the 'Add device' flow, entering the mandatory *deviceId* property, and any other optional properties."
+msgstr ""
+"組織のダッシュボードの「デバイス」タブで、「参照」サブタブを選択し、「デバイスの追加」をクリックします。前の手順で作成したゲートウェイのデバイス・タイプを選択します。「デバイスの追加」のフローにしたがって、必須の *deviceId* プロパティーや他のオプション・プロパティーを入力します。"
+
+#: ../docs/gateways/dashboard.rst:24
+msgid "After creating a gateway device, the authentication token provided should be saved for use in configuring the gateway to connect to the IoT Platform."
+msgstr ""
+"ゲートウェイ・デバイスを作成したら、表示された認証トークンを保存する必要があります。後で IoT Platform に接続するようにゲートウェイを構成するときに使用します。"
+
+#: ../docs/gateways/dashboard.rst:26
+msgid "Connecting the gateway to the IoT Platform."
+msgstr ""
+"ゲートウェイを IoT Platform に接続します。"
+
+#: ../docs/gateways/dashboard.rst:28
+msgid "There are a range of recipes available for connecting devices to the IoT Platform platform. Connecting a gateway requires the same steps as connecting a normal device with one exception. When connecting a normal device, the clientId uses the following format:"
+msgstr ""
+"デバイスを IoT Platform に接続するためのさまざまなレシピがあります。ゲートウェイを接続するには、通常のデバイスを接続する場合と同じ手順が必要ですが、1 つだけ例外があります。通常のデバイスを接続する場合は、以下の形式の clientId を使用します。"
+
+#: ../docs/gateways/dashboard.rst:30
+msgid "``d:<orgId>:<typeId>:<deviceId>``"
+msgstr ""
+"``d:<orgId>:<typeId>:<deviceId>``"
+
+#: ../docs/gateways/dashboard.rst:32
+msgid "When connecting a gateway device, the clientId replaces ``d`` with ``g``:"
+msgstr ""
+"ゲートウェイ・デバイスを接続する場合は、clientId の ``d`` を ``g`` に置き換えます。"
+
+#: ../docs/gateways/dashboard.rst:34
+msgid "``g:<orgId>:<typeId>:<deviceId>``"
+msgstr ""
+"``g:<orgId>:<typeId>:<deviceId>``"
+
+#: ../docs/gateways/dashboard.rst:36
+msgid "Set up devices that are connected to the gateway and are to be connected to the IoT Platform:"
+msgstr ""
+"ゲートウェイを経由して IoT Platform に接続するデバイスをセットアップします。"
+
+#: ../docs/gateways/dashboard.rst:38
+msgid "Create a device type for the device or devices which are to connect through the gateway. The devices should have *gatewayId* and *gatewayTypeId* properties matching the *deviceId* and *deviceTypeId* of the gateway they are connecting through. Add the devices which are connected to the gateway to the IoT Platform."
+msgstr ""
+"ゲートウェイを経由して接続するデバイスのデバイス・タイプを作成します。それらのデバイスの *gatewayId* プロパティーと *gatewayTypeId* プロパティーは、経由するゲートウェイの *deviceId* と *deviceTypeId* に一致しなければなりません。ゲートウェイに接続するデバイスを IoT Platform に追加します。"
+
+#: ../docs/gateways/dashboard.rst:40
+msgid "The devices connected to the gateway should now be visible in your IoT Platform organization dashboard."
+msgstr ""
+"ゲートウェイに接続するデバイスが IoT Platform の組織のダッシュボードに表示されます。"
+

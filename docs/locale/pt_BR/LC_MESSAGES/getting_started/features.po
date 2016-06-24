@@ -1,0 +1,183 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/getting_started/features.rst:2
+msgid "Feature Overview"
+msgstr ""
+"Visão Geral do Recurso"
+
+#: ../docs/getting_started/features.rst:5
+msgid "Device Registry"
+msgstr ""
+"Registro do Dispositivo"
+
+#: ../docs/getting_started/features.rst:6
+msgid "Manage your inventory, configure security, and store metadata for millions of unique devices.  Define device types to represent individual device models and apply default metadata to all devices of that type."
+msgstr ""
+"Gerencie seu inventário, configure a segurança e armazene metadados para milhões de dispositivos exclusivos.  Defina tipos de dispositivo para representar modelos de dispositivo individuais e aplique metadados padrão para todos os dispositivos desse tipo."
+
+#: ../docs/getting_started/features.rst:11
+msgid "Connectivity"
+msgstr ""
+"Conectividade"
+
+#: ../docs/getting_started/features.rst:12
+msgid "Securely connect your devices, gateways and applications directly to the Watson IoT platform via MQTT.  See the section on MQTT in the :ref:`reference material <ref-mqtt>` to learn more about the advantages of using this protocol.  Model the data from your device as events and control the flow of events into your applications."
+msgstr ""
+"Conecte seus dispositivos, gateways e aplicativos com segurança diretamente à plataforma Watson IoT por meio de MQTT.  Consulte a seção sobre MQTT no :ref:`material de referência <ref-mqtt>` para saber mais sobre as vantagens de usar este protocolo.  Modele os dados de seu dispositivo como eventos e controle o fluxo de eventos em seus aplicativos."
+
+#: ../docs/getting_started/features.rst:19
+msgid "Gateway Support"
+msgstr ""
+"Suporte de Gateway"
+
+#: ../docs/getting_started/features.rst:20
+msgid "In many cases where a direct connection can not be made between the service and a device, the Watson IoT platform allows gateway devices to connect that can provide indirect connectivity for multiple devices."
+msgstr ""
+"Em muitos casos, quando uma conexão direta não pode ser feita entre o serviço e um dispositivo, a plataforma Watson IoT permite que os dispositivos de gateway se conectem, podendo fornecer conectividade indireta para diversos dispositivos."
+
+#: ../docs/getting_started/features.rst:25
+msgid "Device Management"
+msgstr ""
+"Gerenciamento de Dispositivo"
+
+#: ../docs/getting_started/features.rst:26
+msgid "Optionally, allow the Watson IoT platform to manage the lifecycle of your devices by implementing support for the Watson IoT platform's device management protocol in your devices.  The means by which the device connects to the service does not affect the device management protocol, which functions the same for directly connected, indirectly connected, and gateway devices."
+msgstr ""
+"Opcionalmente, permita que a plataforma Watson IoT gerencie o ciclo de vida de seus dispositivos implementando o suporte para o protocolo de gerenciamento de dispositivo da plataforma Watson IoT em seus dispositivos.  O meio pelo qual o dispositivo se conecta ao serviço não afeta o protocolo de gerenciamento de dispositivo, que funciona da mesma forma para dispositivos conectados diretamente, conectados indiretamente e dispositivos de gateway."
+
+#: ../docs/getting_started/features.rst:33
+msgid "External Service Integration"
+msgstr ""
+"Integração de Serviço Externo"
+
+#: ../docs/getting_started/features.rst:34
+msgid "The Watson IoT platform supports integration with external services to bring data and operations supported by other online services into the platform, allowing your application and device developers to seemlessly interact with those services without ever leaving the comfort of the Watson IoT platform APIs."
+msgstr ""
+"A plataforma Watson IoT suporta a integração com serviços externos para trazer dados e operações suportados por outros serviços on-line para a plataforma, permitindo que os desenvolvedores de aplicativos e dispositivos interajam facilmente com esses serviços sem nunca deixar o conforto das APIs da plataforma Watson IoT."
+
+#: ../docs/getting_started/features.rst:38
+msgid "This feature is currently available as part of a limited beta.  Future updates may include changes incompatible with the current version of this feature.  Try it out and `let us know what you think <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_"
+msgstr ""
+"Este recurso está atualmente disponível como parte de uma versão beta limitada.  Atualizações futuras poderão incluir mudanças incompatíveis com a versão atual deste recurso.  Experimente e nos dê sua opinião <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_"
+
+#: ../docs/getting_started/features.rst:44
+msgid "Historian"
+msgstr ""
+"Historiador"
+
+#: ../docs/getting_started/features.rst:45
+msgid "Configure the Watson IoT platform to store a record of the events your devices generate."
+msgstr ""
+"Configure a plataforma Watson IoT para armazenar um registro dos eventos que seus dispositivos geram."
+
+#: ../docs/getting_started/features.rst:47
+msgid "**Message format restrictions apply to the Historian**"
+msgstr ""
+"**Restrições de formato da mensagem se aplicam ao Historiador**"
+
+#: ../docs/getting_started/features.rst:49
+msgid "The historian feature only supports JSON messages meeting specific critera:"
+msgstr ""
+"O recurso de historiador suporta apenas mensagens JSON que atendem a critérios específicos:"
+
+#: ../docs/getting_started/features.rst:51
+msgid "The message must be a valid JSON object (not an array) with only two top level elements: ``d`` and ``ts``"
+msgstr ""
+"A mensagem deve ser um objeto JSON válido (não uma matriz) com apenas dois elementos de nível superior: ``d`` e ``ts``"
+
+#: ../docs/getting_started/features.rst:53
+msgid "The message must be UTF-8 encoded"
+msgstr ""
+"A mensagem deve ser codificada por UTF-8"
+
+#: ../docs/getting_started/features.rst:54
+msgid "The message must be less than 4kb"
+msgstr ""
+"A mensagem deve ter menos de 4kb"
+
+#: ../docs/getting_started/features.rst:56
+msgid "**Data**"
+msgstr ""
+"**Dados**"
+
+#: ../docs/getting_started/features.rst:58
+msgid "The **d** element is where you include all data for the event (or command) being transmitted in the message."
+msgstr ""
+"O elemento **d** é onde você inclui todos os dados para o evento (ou comando) que está sendo transmitido na mensagem."
+
+#: ../docs/getting_started/features.rst:61
+msgid "This element is required for your message to meet the Watson IoT platform message specification."
+msgstr ""
+"Esse elemento é obrigatório para que sua mensagem atenda à especificação da mensagem da plataforma Watson IoT."
+
+#: ../docs/getting_started/features.rst:62
+msgid "This must always be a JSON object (not an array)"
+msgstr ""
+"Este deve ser sempre um objeto JSON (não uma matriz)"
+
+#: ../docs/getting_started/features.rst:63
+msgid "In the case where you wish to send no data the **d** element should still be present, but contain an empty object."
+msgstr ""
+"No caso de você não desejar enviar nenhum dado, o elemento **d** ainda deve estar presente, mas conterá um objeto vazio."
+
+#: ../docs/getting_started/features.rst:66
+msgid "**Timestamp**"
+msgstr ""
+"**Registro de Data e Hora**"
+
+#: ../docs/getting_started/features.rst:68
+msgid "The **ts** element allows you to associate a timestamp with the event (or command). This is an optional element, if included its value should be a valid ISO8601 timestamp."
+msgstr ""
+"O elemento **ts** permite associar um registro de data e hora ao evento (ou comando). Esse é um elemento opcional, se incluído, seu valor deve ser um registro de data e hora ISO8601 válido."
+
+#: ../docs/getting_started/features.rst:72
+msgid "**Example**"
+msgstr ""
+"**Exemplo**"
+
+#: ../docs/getting_started/features.rst:90
+msgid "Last Event Cache"
+msgstr ""
+"Último cache de eventos"
+
+#: ../docs/getting_started/features.rst:91
+msgid "The API can now return the last recorded value of an event-id for a specific device, or the last recorded value for each event-id reported by a specific device. The last event cache only applies to values sent in the last 30 days."
+msgstr ""
+"A API agora pode retornar o último valor registrado de um ID de evento para um dispositivo específico ou o último valor registrado para cada ID de evento relatado por um dispositivo específico. O último cache de eventos se aplica somente a valores enviados nos últimos 30 dias."
+
+#: ../docs/getting_started/features.rst:93
+msgid "To request the most recent value for a specific event-id, use the following API request. This request will return the last recorded value for the event-id \"power\"."
+msgstr ""
+"Para solicitar o valor mais recente para um ID de evento específico, use a solicitação de API a seguir. Essa solicitação retornará o último valor registrado para o ID de evento \"power\"."
+
+#: ../docs/getting_started/features.rst:99
+msgid "The response is returned as JSON in the following format:"
+msgstr ""
+"A resposta é retornada como JSON no formato a seguir:"
+
+#: ../docs/getting_started/features.rst:116
+msgid "Alternatively, to request the most recent value for each event-id reported by this device, use the following API request."
+msgstr ""
+"Como alternativa, para solicitar o valor mais recente para cada ID de evento relatado por este dispositivo, use a solicitação de API a seguir."
+
+#: ../docs/getting_started/features.rst:122
+msgid "The response will include all event-id's sent by the device. In this instance, it returns values for the \"power\" and \"temperature\" events."
+msgstr ""
+"A resposta incluirá todos os IDs de eventos enviados pelo dispositivo. Nesta instância, retorna valores para os eventos \"power\" e \"temperature\"."
+

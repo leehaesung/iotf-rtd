@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/libraries/python.rst:2
+msgid "Python for Device Developers"
+msgstr ""
+"適用於裝置開發人員的 Python"
+
+#: ../docs/devices/libraries/python.rst:4
+msgid "See `iot-python <https://github.com/ibm-messaging/iot-python>`_ in GitHub"
+msgstr ""
+"請參閱 GitHub 中的 `iot-python <https://github.com/ibm-messaging/iot-python>`_"
+
+#: ../docs/devices/libraries/python.rst:5
+msgid "See `ibmiotf <https://pypi.python.org/pypi/ibmiotf>`_ on PyPi"
+msgstr ""
+"請參閱 PyPi 上的 `ibmiotf <https://pypi.python.org/pypi/ibmiotf>`_"
+
+#: ../docs/devices/libraries/python.rst:10
+msgid "Constructor"
+msgstr ""
+"建構子"
+
+#: ../docs/devices/libraries/python.rst:12
+msgid "The constructor builds the client instance, and accepts an options dict containing the following definitions:"
+msgstr ""
+"建構子可建置用戶端實例，並接受包含下列定義的選項 dict："
+
+#: ../docs/devices/libraries/python.rst:14
+msgid "``org`` - Your organization ID."
+msgstr ""
+"``org`` - 組織 ID。"
+
+#: ../docs/devices/libraries/python.rst:15
+msgid "``type`` - The type of your device."
+msgstr ""
+"``type`` - 裝置的類型。"
+
+#: ../docs/devices/libraries/python.rst:16
+msgid "``id`` - The ID of your device."
+msgstr ""
+"``id`` - 裝置的 ID。"
+
+#: ../docs/devices/libraries/python.rst:17
+msgid "``auth-method`` - Method of authentication (the only value currently supported is ``token``)."
+msgstr ""
+"``auth-method`` - 鑑別的方法（目前唯一支援的值是 ``token``）。"
+
+#: ../docs/devices/libraries/python.rst:18
+msgid "``auth-token`` - API key token (required if auth-method is ``token``)."
+msgstr ""
+"``auth-token`` - API 金鑰記號（如果 auth-method 為 ``token`` 則需要）。"
+
+#: ../docs/devices/libraries/python.rst:20
+msgid "If no options dict is provided, the client will connect to the IoT Platform Quickstart, and default to an unregistered device. The options dict creates definitions which are used to interact with the IoT Platform module."
+msgstr ""
+"如果未提供選項字典，用戶端將連接至 IoT Platform Quickstart，並預設為已取消登錄的裝置。選項字典會建立用來與 IoT Platform 模組互動的定義。"
+
+#: ../docs/devices/libraries/python.rst:39
+msgid "Using a configuration file"
+msgstr ""
+"使用配置檔"
+
+#: ../docs/devices/libraries/python.rst:41
+msgid "Instead of including an options dict directly, you can use a configuration file containing an options dict. If you are using a configuration file containing an options dict, use the following code format."
+msgstr ""
+"可以使用一個包含選項 dict 的配置檔，而不直接包含選項 dict。如果使用的配置檔包含選項 dict，請使用下列程式碼格式。"
+
+#: ../docs/devices/libraries/python.rst:52
+msgid "The content of the configuration file must be in the following format(need not contain **$** sign):"
+msgstr ""
+"配置檔的內容必須為下列格式（不需要包含 **$** 符號）："
+
+#: ../docs/devices/libraries/python.rst:68
+msgid "Publishing events"
+msgstr ""
+"發佈事件"
+
+#: ../docs/devices/libraries/python.rst:69
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"事件是裝置藉以將資料發佈到 IoT Platform 的機制。裝置可控制事件的內容，並為它傳送的每一個事件指派一個名稱。"
+
+#: ../docs/devices/libraries/python.rst:71
+msgid "When an event is received by the IoT Platform the credentials of the connection on which the event was received are used to determine from which device the event was sent. With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"當 IoT Platform 接收事件時，會使用接收事件的連線認證來判斷是哪個裝置傳送了事件。使用此架構，裝置就不可能假冒成另一個裝置。"
+
+#: ../docs/devices/libraries/python.rst:73
+msgid "Events can be published at any of the three :ref:`quality of service levels <qoslevels>` defined by the MQTT protocol.  By default events will be published as qos level 0."
+msgstr ""
+"事件可使用 MQTT 通訊協定所定義的三個 :ref:`服務品質等級 <qoslevels>` 的其中一個來發佈。依預設，事件會發佈為 qos 等級 0。"
+
+#: ../docs/devices/libraries/python.rst:76
+msgid "Publish event using default quality of service"
+msgstr ""
+"使用預設服務品質發佈事件"
+
+#: ../docs/devices/libraries/python.rst:85
+msgid "Publish event using user-defined quality of service"
+msgstr ""
+"利用使用者定義的服務品質發佈事件"
+
+#: ../docs/devices/libraries/python.rst:87
+msgid "Events can be published at higher MQTT quality of servive levels, but these events may take slower then QoS level 0, because of the extra confirmation of receipt."
+msgstr ""
+"可以用更高 MQTT 服務品質等級發佈事件，但這些事件的速度比服務品質等級 0 更慢，因為要進行額外的接收確認。"
+
+#: ../docs/devices/libraries/python.rst:99
+msgid "Handling commands"
+msgstr ""
+"處理指令"
+
+#: ../docs/devices/libraries/python.rst:100
+msgid "When the device client connects it automatically subscribes to any command for this device.  To process specific commands you need to register a command callback method. The messages are returned as an instance of the Command class which has the following properties:"
+msgstr ""
+"當裝置用戶端連接時，它會自動訂閱此裝置的任何指令。若要處理特定指令，您必須登錄指令回呼方法。會以「指令」類別的實例傳回訊息，且此類別具有下列內容："
+
+#: ../docs/devices/libraries/python.rst:105
+msgid "command - string"
+msgstr ""
+"command - 字串"
+
+#: ../docs/devices/libraries/python.rst:106
+msgid "format - string"
+msgstr ""
+"format - 字串"
+
+#: ../docs/devices/libraries/python.rst:107
+msgid "data - dict"
+msgstr ""
+"data - dict"
+
+#: ../docs/devices/libraries/python.rst:108
+msgid "timestamp - datetime"
+msgstr ""
+"timestamp - 日期時間"
+
+#: ../docs/devices/libraries/python.rst:136
+msgid "Custom message format support"
+msgstr ""
+"自訂訊息格式支援"
+
+#: ../docs/devices/libraries/python.rst:137
+msgid "By default the library supports the encoding and decoding of Python dictionary objects as JSON when you use msgFormat \"json\".  When you use msgFormat \"json-iotf\" it will encode the message in accordance with the IoT Platform JSON Payload Specification.  To add support for your own custom message formats see the `sample in GitHub <https://github.com/ibm-messaging/iot-python/tree/master/samples/customMessageFormat>`__"
+msgstr ""
+"依預設，當您使用 msgFormat \"json\" 時，此程式庫支援以 JSON 格式對 Python 字典物件進行編碼和解碼。當您使用 msgFormat \"json-iotf\" 時，它會根據「IoT Platform JSON 內容規格」將訊息編碼。若要新增對專屬自訂訊息格式的支援，請參閱 `GitHub 中的範例 <https://github.com/ibm-messaging/iot-python/tree/master/samples/customMessageFormat>`__"
+
+#: ../docs/devices/libraries/python.rst:139
+msgid "Once you have created your custom encoder module it needs to be registered in the device client.  If you attempt to use an unknown message format when sending an event or the device receives a command send in a format that it does not know how to decode then the library will throw a MissingMessageDecoderException."
+msgstr ""
+"當您建立自訂編碼器模組之後，需要在裝置用戶端中登錄它。如果您試圖在傳送事件時使用不明訊息格式，或裝置接收的指令是以它不知道如何解碼的格式傳送，則此程式庫會擲出 MissingMessageDecoderException。"
+

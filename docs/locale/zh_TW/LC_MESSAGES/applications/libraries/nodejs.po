@@ -1,0 +1,349 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/applications/libraries/nodejs.rst:2
+msgid "Node.js for Application Developers"
+msgstr ""
+"適用於應用程式開發人員的 Node.js"
+
+#: ../docs/applications/libraries/nodejs.rst:4
+msgid "See `iot-nodejs <https://github.com/ibm-messaging/iot-nodejs>`_ in GitHub"
+msgstr ""
+"請參閱 GitHub 中的 `iot-nodejs <https://github.com/ibm-messaging/iot-nodejs>`_"
+
+#: ../docs/applications/libraries/nodejs.rst:5
+msgid "See the `samples for device <https://github.com/ibm-messaging/iot-nodejs/tree/master/samples>`_ in Github"
+msgstr ""
+"請參閱 Github 中的 `裝置範例 <https://github.com/ibm-messaging/iot-nodejs/tree/master/samples>`_"
+
+#: ../docs/applications/libraries/nodejs.rst:6
+msgid "See `ibmiotf <https://www.npmjs.com/package/ibmiotf>`_ on NPM"
+msgstr ""
+"請參閱 NPM 上的 `ibmiotf <https://www.npmjs.com/package/ibmiotf>`_"
+
+#: ../docs/applications/libraries/nodejs.rst:13
+msgid "Application"
+msgstr ""
+"應用程式"
+
+#: ../docs/applications/libraries/nodejs.rst:15
+msgid "*ApplicationClient* is application client for the Internet of Things Foundation service. This section contains information on how applications interact with devices."
+msgstr ""
+"*ApplicationClient* 是 Internet of Things Foundation 服務的應用程式用戶端。這個區段包含應用程式如何與裝置互動的相關資訊。"
+
+#: ../docs/applications/libraries/nodejs.rst:20
+msgid "Constructor"
+msgstr ""
+"建構子"
+
+#: ../docs/applications/libraries/nodejs.rst:22
+msgid "The constructor builds the application client instance. It accepts an configuration json containing the following :"
+msgstr ""
+"建構子會建置應用程式用戶端實例。它接受包含下列內容的配置 json："
+
+#: ../docs/applications/libraries/nodejs.rst:25
+msgid "org - Your organization ID"
+msgstr ""
+"org - 組織 ID"
+
+#: ../docs/applications/libraries/nodejs.rst:26
+msgid "id - The unique ID of your application within your organization."
+msgstr ""
+"id - 組織內應用程式的唯一 ID。"
+
+#: ../docs/applications/libraries/nodejs.rst:27
+msgid "auth-key - API key"
+msgstr ""
+"auth-key - API 金鑰"
+
+#: ../docs/applications/libraries/nodejs.rst:28
+msgid "auth-token - API key token"
+msgstr ""
+"auth-token - API 金鑰記號"
+
+#: ../docs/applications/libraries/nodejs.rst:29
+msgid "type - use 'shared' to enable shared subscription"
+msgstr ""
+"type - 請使用 'shared' 來啟用共用訂閱"
+
+#: ../docs/applications/libraries/nodejs.rst:31
+msgid "If you want to use quickstart, then send only the first two properties."
+msgstr ""
+"如果您要使用 Quickstart，請只傳送前兩個內容。"
+
+#: ../docs/applications/libraries/nodejs.rst:49
+msgid "Using a configuration file"
+msgstr ""
+"使用配置檔"
+
+#: ../docs/applications/libraries/nodejs.rst:51
+msgid "Instead of passing the configuration json directly, you can also use a configuration file. Use the following code snippet"
+msgstr ""
+"您也可以使用配置檔，而不需要直接傳遞配置 json。請使用下列程式碼 Snippet"
+
+#: ../docs/applications/libraries/nodejs.rst:62
+msgid "The configuration file must be in the format of"
+msgstr ""
+"配置檔的格式必須如下"
+
+#: ../docs/applications/libraries/nodejs.rst:78
+msgid "Connecting to the IoT Platform"
+msgstr ""
+"連接至 IoT Platform"
+
+#: ../docs/applications/libraries/nodejs.rst:80
+msgid "Connect to the IBM Watson Internet of Things Platform by calling the *connect*"
+msgstr ""
+"呼叫 *connect* 以連接至 IBM Watson Internet of Things Platform。"
+
+#: ../docs/applications/libraries/nodejs.rst:94
+msgid "After the successful connection to the IoT Platform service, the application client sends a *connect* event. So all the logic can be implemented inside this callback function."
+msgstr ""
+"成功連線至 IoT Platform 服務之後，應用程式用戶端會傳送 *connect* 事件。因此所有邏輯都可以在此回呼函數內實作。"
+
+#: ../docs/applications/libraries/nodejs.rst:96
+msgid "The Application Client automatically tries to reconnect when it loses connection. When the reconnection is successful, the client emits *reconnect* event."
+msgstr ""
+"「應用程式用戶端」在其連線中斷時會自動嘗試重新連接。順利完成重新連線時，用戶端會發出 *reconnect* 事件。"
+
+#: ../docs/applications/libraries/nodejs.rst:100
+msgid "Logging"
+msgstr ""
+"記載"
+
+#: ../docs/applications/libraries/nodejs.rst:102
+msgid "By default, all the logs of ```warn``` are logged. If you want to enable more logs, use the *log.setLevel* function. Supported log levels - *trace, debug, info, warn, error*."
+msgstr ""
+"依預設，會記載所有 ```warn``` 日誌。如果要啟用其他日誌，請使用 *log.setLevel* 函數。支援的記載層次 - *trace、debug、info、warn、error*。"
+
+#: ../docs/applications/libraries/nodejs.rst:118
+msgid "Shared Subscription"
+msgstr ""
+"共用訂閱"
+
+#: ../docs/applications/libraries/nodejs.rst:120
+msgid "Use this feature to build scalable applications which will load balance messages across multiple instances of the application. To enable this, pass 'type' as 'shared' in the configuration."
+msgstr ""
+"使用此特性來建置可調式應用程式，在多個應用程式實例之間對訊息進行負載平衡。若要啟用此特性，請在配置中將 'type' 傳遞為 'shared'。"
+
+#: ../docs/applications/libraries/nodejs.rst:143
+msgid "Handling errors"
+msgstr ""
+"處理錯誤"
+
+#: ../docs/applications/libraries/nodejs.rst:145
+msgid "When the application clients encounters an error, it emits an *error* event."
+msgstr ""
+"當應用程式用戶端遇到錯誤時，它會發出 *error* 事件。"
+
+#: ../docs/applications/libraries/nodejs.rst:164
+msgid "Subscribing to device events"
+msgstr ""
+"訂閱裝置事件"
+
+#: ../docs/applications/libraries/nodejs.rst:166
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"事件是裝置藉以將資料發佈到 IoT Platform 的機制。裝置可控制事件的內容，並為它傳送的每一個事件指派一個名稱。"
+
+#: ../docs/applications/libraries/nodejs.rst:168
+msgid "When an event is received by the IoT Platform, the credentials of the connection on which the event was received are used to determine from which device the event was sent. Using this architecture, it is impossible for a device to impersonate another device."
+msgstr ""
+"當 IoT Platform 接收事件時，會使用接收事件的連線認證來判斷是哪個裝置傳送了事件。使用此架構，裝置就不可能假冒成另一個裝置。"
+
+#: ../docs/applications/libraries/nodejs.rst:170
+msgid "By default, applications will subscribe to all events from all connected devices. Use the type, id, event and msgFormat parameters to control the scope of the subscription. A single client can support multiple subscriptions. The code samples below give examples of how to subscribe to devices dependent on device type, id, event and msgFormat parameters."
+msgstr ""
+"依預設，應用程式會訂閱所有已連接裝置的所有事件。請使用類型、ID、事件及 msgFormat 參數來控制訂閱的範圍。單一用戶端可支援多個訂閱。下列程式碼範例提供如何根據裝置類型、ID、事件及 msgFormat 參數來訂閱裝置的範例。"
+
+#: ../docs/applications/libraries/nodejs.rst:173
+msgid "To subscribe to all events from all devices"
+msgstr ""
+"訂閱所有裝置的所有事件"
+
+#: ../docs/applications/libraries/nodejs.rst:188
+msgid "To subscribe to all events from all devices of a specific type"
+msgstr ""
+"訂閱特定類型之所有裝置的所有事件"
+
+#: ../docs/applications/libraries/nodejs.rst:202
+msgid "To subscribe to a specific event from all devices"
+msgstr ""
+"訂閱所有裝置的特定事件"
+
+#: ../docs/applications/libraries/nodejs.rst:217
+msgid "To subscribe to a specific event from two or more different devices"
+msgstr ""
+"訂閱兩個以上不同裝置的特定事件"
+
+#: ../docs/applications/libraries/nodejs.rst:232
+msgid "To subscribe to all events published by a device in json format"
+msgstr ""
+"訂閱裝置已發佈且為 Json 格式的所有事件"
+
+#: ../docs/applications/libraries/nodejs.rst:248
+msgid "Handling events from devices"
+msgstr ""
+"處理裝置的事件"
+
+#: ../docs/applications/libraries/nodejs.rst:250
+msgid "To process the events received by your subscriptions you need to implement a device event callback method. The ibmiotf application client emits the event *deviceEvent*. This function has the following properties:"
+msgstr ""
+"若要處理訂閱所接收的事件，您需要實作裝置事件回呼方法。ibmiotf 應用程式用戶端會發出 *deviceEvent* 事件。這個函數具有下列內容："
+
+#: ../docs/applications/libraries/nodejs.rst:252
+#: ../docs/applications/libraries/nodejs.rst:337
+msgid "deviceType"
+msgstr ""
+"deviceType"
+
+#: ../docs/applications/libraries/nodejs.rst:253
+#: ../docs/applications/libraries/nodejs.rst:338
+msgid "deviceId"
+msgstr ""
+"deviceId"
+
+#: ../docs/applications/libraries/nodejs.rst:254
+msgid "eventType"
+msgstr ""
+"eventType"
+
+#: ../docs/applications/libraries/nodejs.rst:255
+msgid "format"
+msgstr ""
+"format"
+
+#: ../docs/applications/libraries/nodejs.rst:256
+msgid "payload - Device event payload"
+msgstr ""
+"payload - 裝置事件內容"
+
+#: ../docs/applications/libraries/nodejs.rst:257
+msgid "topic - Original topic"
+msgstr ""
+"topic - 原始主題"
+
+#: ../docs/applications/libraries/nodejs.rst:281
+msgid "Subscribing to device status"
+msgstr ""
+"訂閱裝置狀態"
+
+#: ../docs/applications/libraries/nodejs.rst:283
+msgid "By default, this will subscribe to status updates for all connected devices. Use the type and id parameters to control the scope of the subscription. A single client can support multiple subscriptions."
+msgstr ""
+"依預設，這會訂閱所有連線裝置的狀態更新。請使用 type 和 id 參數來控制訂閱的範圍。單一用戶端可支援多個訂閱。"
+
+#: ../docs/applications/libraries/nodejs.rst:286
+msgid "Subscribe to status updates for all devices"
+msgstr ""
+"訂閱所有裝置的狀態更新項目"
+
+#: ../docs/applications/libraries/nodejs.rst:302
+msgid "Subscribe to status updates for all devices of a specific type"
+msgstr ""
+"訂閱特定類型的所有裝置的狀態更新項目"
+
+#: ../docs/applications/libraries/nodejs.rst:317
+msgid "Subscribe to status updates for two different devices"
+msgstr ""
+"訂閱兩個不同裝置的狀態更新項目"
+
+#: ../docs/applications/libraries/nodejs.rst:333
+msgid "Handling status updates from devices"
+msgstr ""
+"處理裝置的狀態更新項目"
+
+#: ../docs/applications/libraries/nodejs.rst:335
+msgid "To process the status updates received by your subscriptions you need to implement an device status callback method. The ibmiotf application client emits the event *deviceStatus*. This function has the following properties:"
+msgstr ""
+"若要處理訂閱所接收的狀態更新，您需要實作裝置狀態回呼方法。ibmiotf 應用程式用戶端會發出 *deviceStatus* 事件。這個函數具有下列內容："
+
+#: ../docs/applications/libraries/nodejs.rst:339
+msgid "payload - Device status payload"
+msgstr ""
+"payload - 裝置狀態內容"
+
+#: ../docs/applications/libraries/nodejs.rst:340
+msgid "topic"
+msgstr ""
+"topic"
+
+#: ../docs/applications/libraries/nodejs.rst:365
+msgid "Publishing events from devices"
+msgstr ""
+"從裝置發佈事件"
+
+#: ../docs/applications/libraries/nodejs.rst:367
+msgid "Applications can publish events as if they originated from a Device. The function requires:"
+msgstr ""
+"應用程式可當成事件是從裝置產生來發佈事件。該函數需要："
+
+#: ../docs/applications/libraries/nodejs.rst:369
+#: ../docs/applications/libraries/nodejs.rst:398
+msgid "DeviceType"
+msgstr ""
+"裝置類型"
+
+#: ../docs/applications/libraries/nodejs.rst:370
+#: ../docs/applications/libraries/nodejs.rst:399
+msgid "Device ID"
+msgstr ""
+"裝置 ID"
+
+#: ../docs/applications/libraries/nodejs.rst:371
+msgid "Event Type"
+msgstr ""
+"事件類型"
+
+#: ../docs/applications/libraries/nodejs.rst:372
+#: ../docs/applications/libraries/nodejs.rst:401
+msgid "Format"
+msgstr ""
+"格式"
+
+#: ../docs/applications/libraries/nodejs.rst:373
+#: ../docs/applications/libraries/nodejs.rst:402
+msgid "Data"
+msgstr ""
+"資料"
+
+#: ../docs/applications/libraries/nodejs.rst:394
+msgid "Publishing commands to devices"
+msgstr ""
+"對裝置發佈指令"
+
+#: ../docs/applications/libraries/nodejs.rst:396
+msgid "Applications can publish commands to connected devices. The function requires:"
+msgstr ""
+"應用程式可對連接的裝置發佈指令。該函數需要："
+
+#: ../docs/applications/libraries/nodejs.rst:400
+msgid "Command Type"
+msgstr ""
+"指令類型"
+
+#: ../docs/applications/libraries/nodejs.rst:423
+msgid "Disconnect Client"
+msgstr ""
+"中斷連接用戶端"
+
+#: ../docs/applications/libraries/nodejs.rst:425
+msgid "Disconnects the client and releases the connections"
+msgstr ""
+"切斷用戶端並釋放連線"
+

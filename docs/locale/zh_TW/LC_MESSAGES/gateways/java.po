@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IBM IOT Foundation 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -251,33 +251,48 @@ msgid "A sample implementation of the Command callback is shown below,"
 msgstr ""
 "下面顯示「指令」回呼的範例實作。"
 
-#: ../docs/gateways/java.rst:223
+#: ../docs/gateways/java.rst:234
 msgid "Once the Command callback is added to the GatewayClient, the processCommand() method is invoked whenever any command is published on the subscribed criteria, The following snippet shows how to add the command call back into GatewayClient instance,"
 msgstr ""
 "「指令」回呼新增至 GatewayClient 之後，每當在已訂閱的準則上發佈任何指令時，即會呼叫 processCommand() 方法。下列 Snippet 顯示如何將指令回呼新增至 GatewayClient 實例中。"
 
-#: ../docs/gateways/java.rst:234
+#: ../docs/gateways/java.rst:245
 msgid "Overloaded methods are available to control the command subscription."
 msgstr ""
 "超載方法可用來控制指令訂閱。"
 
-#: ../docs/gateways/java.rst:239
+#: ../docs/gateways/java.rst:250
 msgid "List Devices Connected through the Gateway"
 msgstr ""
 "列出透過閘道連接的裝置"
 
-#: ../docs/gateways/java.rst:241
+#: ../docs/gateways/java.rst:252
 msgid "Invoke the method getDevicesConnectedThroughGateway() to retrieve all devices that are connected through the specified gateway(typeId, deviceId) to Watson IoT Platform:"
 msgstr ""
 "呼叫方法 getDevicesConnectedThroughGateway()，將透過指定的閘道（typeId、deviceId）連接的所有裝置擷取至 Watson IoT Platform："
 
-#: ../docs/gateways/java.rst:250
+#: ../docs/gateways/java.rst:261
 msgid "Examples"
 msgstr ""
 "範例"
 
-#: ../docs/gateways/java.rst:251
-msgid "`SampleRasPiGateway <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdeviceclient/src/com/ibm/iotf/sample/client/gateway/SampleRasPiGateway.java>`__ - A Gateway sample that shows how to connect Raspberry Pi as Gateway. This sample is explained in detail in `this recipe <https://developer.ibm.com/recipes/?post_type=tutorials&p=9397>`__."
+#: ../docs/gateways/java.rst:262
+msgid "`SampleRasPiGateway <https://github.com/ibm-messaging/iot-gateway-samples/tree/master/java/gateway-samples>`__ - This Java project contains 3 samples, which will help one to connect their own Gateway and devices behind the Gateway to IBM Watson Internet of Things Platform. All the samples use the Java Client Library for IBM Watson IoT Platform, that simplifies the Gateway interactions with the Platform."
 msgstr ""
-"`SampleRasPiGateway <https://github.com/ibm-messaging/iot-java/blob/master/samples/iotfdeviceclient/src/com/ibm/iotf/sample/client/gateway/SampleRasPiGateway.java>`__ - 顯示如何連接 Raspberry Pi 作為「閘道」的「閘道」範例。在 `此秘訣 <https://developer.ibm.com/recipes/?post_type=tutorials&p=9397>`__ 中將詳細說明此範例。"
+"`SampleRasPiGateway <https://github.com/ibm-messaging/iot-gateway-samples/tree/master/java/gateway-samples>`__ - 此 Java 專案包含 3 個範例，這些範例會協助任何人將其自己的閘道以及閘道後面的裝置連接至 IBM Watson Internet of Things Platform。所有範例皆會使用適用於 IBM Watson IoT Platform 的 Java 用戶端程式庫，以簡化閘道與平台的互動。"
+
+#: ../docs/gateways/java.rst:265
+msgid "Recipes"
+msgstr ""
+"秘訣"
+
+#: ../docs/gateways/java.rst:267
+msgid "Refer to `the recipe <https://developer.ibm.com/recipes/tutorials/connect-raspberry-pi-as-gateway-to-watson-iot-platform/>`__ that explains how to connect your Gateway and devices behind the Gateway to IBM Watson Internet of Things Platform with the sample present in this github project."
+msgstr ""
+"請參閱 `秘訣 <https://developer.ibm.com/recipes/tutorials/connect-raspberry-pi-as-gateway-to-watson-iot-platform/>`__，該秘訣會說明如何使用此 github 專案中提供的範例，將閘道以及閘道後面的裝置連接至 IBM Watson Internet of Things Platform。"
+
+#: ../docs/gateways/java.rst:269
+msgid "Refer to `the recipe <https://developer.ibm.com/recipes/tutorials/raspberry-pi-as-managed-gateway-in-watson-iot-platform-part-1/>`__ that explains how to connect your Gateway as managed device in IBM Watson Internet of Things Platform and perform one or more device management operations."
+msgstr ""
+"請參閱 `秘訣 <https://developer.ibm.com/recipes/tutorials/raspberry-pi-as-managed-gateway-in-watson-iot-platform-part-1/>`__，該秘訣會說明如何在 IBM Watson Internet of Things Platform 中將閘道連接為受管理裝置，並執行一項以上的裝置管理作業。"
 

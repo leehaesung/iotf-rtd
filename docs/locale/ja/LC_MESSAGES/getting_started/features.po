@@ -1,0 +1,183 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/getting_started/features.rst:2
+msgid "Feature Overview"
+msgstr ""
+"フィーチャーの概要"
+
+#: ../docs/getting_started/features.rst:5
+msgid "Device Registry"
+msgstr ""
+"デバイス・レジストリー"
+
+#: ../docs/getting_started/features.rst:6
+msgid "Manage your inventory, configure security, and store metadata for millions of unique devices.  Define device types to represent individual device models and apply default metadata to all devices of that type."
+msgstr ""
+"インベントリーを管理したり、セキュリティーを構成したり、何百万もの固有デバイスのメタデータを格納したりできます。個々のデバイス・モデルを表すデバイス・タイプを定義し、そのタイプのすべてのデバイスにデフォルトのメタデータを適用することもできます。"
+
+#: ../docs/getting_started/features.rst:11
+msgid "Connectivity"
+msgstr ""
+"接続"
+
+#: ../docs/getting_started/features.rst:12
+msgid "Securely connect your devices, gateways and applications directly to the Watson IoT platform via MQTT.  See the section on MQTT in the :ref:`reference material <ref-mqtt>` to learn more about the advantages of using this protocol.  Model the data from your device as events and control the flow of events into your applications."
+msgstr ""
+"MQTT を使用してセキュアにデバイス、ゲートウェイ、アプリケーションを Watson IoT Platform に直接接続できます。このプロトコルを使用するメリットの詳細については、:ref:`参照資料<ref-mqtt>` の MQTT のセクションを参照してください。デバイスから送られてくるデータをイベントとしてモデル化し、アプリケーションへのイベントの流れを制御できます。"
+
+#: ../docs/getting_started/features.rst:19
+msgid "Gateway Support"
+msgstr ""
+"ゲートウェイ・サポート"
+
+#: ../docs/getting_started/features.rst:20
+msgid "In many cases where a direct connection can not be made between the service and a device, the Watson IoT platform allows gateway devices to connect that can provide indirect connectivity for multiple devices."
+msgstr ""
+"多くの場合、サービスとデバイスの間で直接接続を行えないため、Watson IoT platform ではゲートウェイ・デバイスが接続できるようになっており、それによって複数のデバイスの間接接続が可能です。"
+
+#: ../docs/getting_started/features.rst:25
+msgid "Device Management"
+msgstr ""
+"デバイス管理"
+
+#: ../docs/getting_started/features.rst:26
+msgid "Optionally, allow the Watson IoT platform to manage the lifecycle of your devices by implementing support for the Watson IoT platform's device management protocol in your devices.  The means by which the device connects to the service does not affect the device management protocol, which functions the same for directly connected, indirectly connected, and gateway devices."
+msgstr ""
+"Watson IoT Platform のデバイス管理プロトコルに対するサポートをデバイスに実装して、デバイスのライフサイクルを Watson IoT Platform で管理することもできます。どのような方法でデバイスからサービスに接続しても、デバイス管理プロトコルへの影響はありません。直接接続したデバイスでも、間接接続したデバイスでも、ゲートウェイ・デバイスでも、デバイス管理プロトコルは機能します。"
+
+#: ../docs/getting_started/features.rst:33
+msgid "External Service Integration"
+msgstr ""
+"外部サービス統合"
+
+#: ../docs/getting_started/features.rst:34
+msgid "The Watson IoT platform supports integration with external services to bring data and operations supported by other online services into the platform, allowing your application and device developers to seemlessly interact with those services without ever leaving the comfort of the Watson IoT platform APIs."
+msgstr ""
+"Watson IoT Platform は、他のオンライン・サービスでサポートされているデータや操作をこのプラットフォームに組み込めるように、外部サービスと統合することをサポートしています。このため、アプリケーションやデバイスの開発者は、快適な Watson IoT Platform API を利用しながらそれらのサービスとシームレスに対話できます。"
+
+#: ../docs/getting_started/features.rst:38
+msgid "This feature is currently available as part of a limited beta.  Future updates may include changes incompatible with the current version of this feature.  Try it out and `let us know what you think <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_"
+msgstr ""
+"この機能は、現在、限定的なベータ版で提供されています。今後の更新によって、この機能の現行バージョンと互換性のない変更が行われる可能性があります。この機能を試して、`ご意見をお寄せください<https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_。"
+
+#: ../docs/getting_started/features.rst:44
+msgid "Historian"
+msgstr ""
+"履歴"
+
+#: ../docs/getting_started/features.rst:45
+msgid "Configure the Watson IoT platform to store a record of the events your devices generate."
+msgstr ""
+"Watson IoT Platform は、デバイスで生成されたイベントのレコードを格納するように構成できます。"
+
+#: ../docs/getting_started/features.rst:47
+msgid "**Message format restrictions apply to the Historian**"
+msgstr ""
+"**履歴機能に適用されるメッセージ形式に関する制約**"
+
+#: ../docs/getting_started/features.rst:49
+msgid "The historian feature only supports JSON messages meeting specific critera:"
+msgstr ""
+"履歴機能は、次の特定の条件を満たす JSON メッセージのみをサポートします。"
+
+#: ../docs/getting_started/features.rst:51
+msgid "The message must be a valid JSON object (not an array) with only two top level elements: ``d`` and ``ts``"
+msgstr ""
+"メッセージは、``d`` および ``ts`` の 2 つのトップレベル要素のみを含む有効な JSON オブジェクト (配列ではない) でなければなりません。"
+
+#: ../docs/getting_started/features.rst:53
+msgid "The message must be UTF-8 encoded"
+msgstr ""
+"メッセージは UTF-8 エンコードでなければなりません"
+
+#: ../docs/getting_started/features.rst:54
+msgid "The message must be less than 4kb"
+msgstr ""
+"メッセージは 4kb 未満でなければなりません"
+
+#: ../docs/getting_started/features.rst:56
+msgid "**Data**"
+msgstr ""
+"**データ**"
+
+#: ../docs/getting_started/features.rst:58
+msgid "The **d** element is where you include all data for the event (or command) being transmitted in the message."
+msgstr ""
+"**d** 要素には、メッセージに入れて送信されるイベント (またはコマンド) のすべてのデータを入れます。"
+
+#: ../docs/getting_started/features.rst:61
+msgid "This element is required for your message to meet the Watson IoT platform message specification."
+msgstr ""
+"この要素は、メッセージが Watson IoT プラットフォーム・メッセージ仕様を満たす上で必須です。"
+
+#: ../docs/getting_started/features.rst:62
+msgid "This must always be a JSON object (not an array)"
+msgstr ""
+"これは、常に JSON オブジェクトでなければなりません (配列ではない)"
+
+#: ../docs/getting_started/features.rst:63
+msgid "In the case where you wish to send no data the **d** element should still be present, but contain an empty object."
+msgstr ""
+"データを送信するわけではない場合でも、**d** 要素には、空オブジェクトが内容として存在しなければなりません。"
+
+#: ../docs/getting_started/features.rst:66
+msgid "**Timestamp**"
+msgstr ""
+"**タイム・スタンプ**"
+
+#: ../docs/getting_started/features.rst:68
+msgid "The **ts** element allows you to associate a timestamp with the event (or command). This is an optional element, if included its value should be a valid ISO8601 timestamp."
+msgstr ""
+"**ts** 要素を使用すると、イベント (またはコマンド) にタイム・スタンプを関連付けることができます。これはオプションの要素であり、含める場合は、ISO8601 タイム・スタンプの有効な値でなければなりません。"
+
+#: ../docs/getting_started/features.rst:72
+msgid "**Example**"
+msgstr ""
+"**例**"
+
+#: ../docs/getting_started/features.rst:90
+msgid "Last Event Cache"
+msgstr ""
+"最新イベント・キャッシュ"
+
+#: ../docs/getting_started/features.rst:91
+msgid "The API can now return the last recorded value of an event-id for a specific device, or the last recorded value for each event-id reported by a specific device. The last event cache only applies to values sent in the last 30 days."
+msgstr ""
+"API は、特定のデバイスのイベント ID 値の最後に記録されたもの、または特定のデバイスによって報告された各イベント ID 値の最後に記録されたものを返せるようになりました。最新イベント・キャッシュは、過去 30 日間に送信された値にのみ適用されます。"
+
+#: ../docs/getting_started/features.rst:93
+msgid "To request the most recent value for a specific event-id, use the following API request. This request will return the last recorded value for the event-id \"power\"."
+msgstr ""
+"特定のイベント ID の最新の値を要求するには、次の API 要求を使用します。この要求は、イベント ID \"power\" の値の最後に記録されたものを返します。"
+
+#: ../docs/getting_started/features.rst:99
+msgid "The response is returned as JSON in the following format:"
+msgstr ""
+"応答は次の形式の JSON として返されます。"
+
+#: ../docs/getting_started/features.rst:116
+msgid "Alternatively, to request the most recent value for each event-id reported by this device, use the following API request."
+msgstr ""
+"あるいは、このデバイスによって報告された各イベント ID 値の最新のものを要求するには、次の API 要求を使用します。"
+
+#: ../docs/getting_started/features.rst:122
+msgid "The response will include all event-id's sent by the device. In this instance, it returns values for the \"power\" and \"temperature\" events."
+msgstr ""
+"デバイスによって送信されたすべてのイベント ID が応答に含まれます。この場合は、\"power\" イベントと \"temperature\" イベントの値が返されます。"
+

@@ -1,0 +1,298 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/gateways/java.rst:2
+msgid "Java for Gateway Developers"
+msgstr ""
+"Java para Desenvolvedores de Gateway"
+
+#: ../docs/gateways/java.rst:4
+msgid "See `iot-java <https://github.com/ibm-messaging/iot-java>`_ in GitHub"
+msgstr ""
+"Consulte `iot-java <https://github.com/ibm-messaging/iot-java>`_ no GitHub"
+
+#: ../docs/gateways/java.rst:7
+msgid "Constructor"
+msgstr ""
+"Construtor"
+
+#: ../docs/gateways/java.rst:9
+msgid "The constructor builds the Gateway client instance, and accepts a Properties object containing the following definitions:"
+msgstr ""
+"O construtor constrói a instância do cliente do Gateway e aceita um objeto Propriedades contendo as seguintes definições:"
+
+#: ../docs/gateways/java.rst:11
+msgid "org - Your organization ID."
+msgstr ""
+"org - O ID da organização."
+
+#: ../docs/gateways/java.rst:12
+msgid "type - The type of your Gateway device."
+msgstr ""
+"type - O tipo de seu dispositivo de Gateway."
+
+#: ../docs/gateways/java.rst:13
+msgid "id - The ID of your Gateway."
+msgstr ""
+"id - O ID de seu Gateway."
+
+#: ../docs/gateways/java.rst:14
+msgid "auth-method - Method of authentication (The only value currently supported is \"token\")."
+msgstr ""
+"auth-method - Método de autenticação (O único valor suportado atualmente é \"token\")."
+
+#: ../docs/gateways/java.rst:15
+msgid "auth-token - API key token."
+msgstr ""
+"auth-token - Token de chave da API."
+
+#: ../docs/gateways/java.rst:17
+msgid "The Properties object creates definitions which are used to interact with the Watson Internet of Things Platform module."
+msgstr ""
+"O objeto Propriedades cria definições que são usadas para interagir com o módulo do Watson Internet of Things Platform."
+
+#: ../docs/gateways/java.rst:19
+msgid "The following code snippet shows how to construct the GatewayClient instance,"
+msgstr ""
+"O fragmento de código a seguir mostra como construir a instância GatewayClient,"
+
+#: ../docs/gateways/java.rst:33
+msgid "Using a configuration file"
+msgstr ""
+"Usando um arquivo de configuração"
+
+#: ../docs/gateways/java.rst:35
+msgid "Instead of including a Properties object directly, you can use a configuration file containing the name-value pairs for Properties. If you are using a configuration file containing a Properties object, use the following code format."
+msgstr ""
+"Em vez de incluir um objeto Propriedades diretamente, você pode usar um arquivo de configuração contendo os pares nome-valor para Propriedades. Se você estiver usando um arquivo de configuração contendo um objeto Propriedades, use o formato de código a seguir."
+
+#: ../docs/gateways/java.rst:43
+msgid "The Gateway device configuration file must be in the following format:"
+msgstr ""
+"O arquivo de configuração de dispositivo de Gateway deve estar no seguinte formato:"
+
+#: ../docs/gateways/java.rst:58
+msgid "Connecting to the Watson Internet of Things Platform"
+msgstr ""
+"Conectando-se ao Watson Internet of Things Platform"
+
+#: ../docs/gateways/java.rst:60
+msgid "Connect to the Watson Internet of Things Platform by calling the *connect* function."
+msgstr ""
+"Conecte-se ao Watson Internet of Things Platform chamando a função *connect*."
+
+#: ../docs/gateways/java.rst:70
+msgid "After the successful connection to the IBM Watson IoT Platform, the Gateway client can perform the following operations,"
+msgstr ""
+"Após a conexão bem-sucedida com o IBM IoT Watson Platform, o cliente de Gateway pode executar as seguintes operações:"
+
+#: ../docs/gateways/java.rst:72
+msgid "Publish events for itself and on behalf of devices connected behind the Gateway."
+msgstr ""
+"Publicar eventos por conta própria e em nome de dispositivos conectados por trás do Gateway."
+
+#: ../docs/gateways/java.rst:73
+msgid "Subscribe to commands for itself and on behalf of devices behind the Gateway."
+msgstr ""
+"Assinar comandos por conta própria e em nome de dispositivos por trás do Gateway."
+
+#: ../docs/gateways/java.rst:78
+msgid "Register devices using the Watson IoT Platform API"
+msgstr ""
+"Registrar dispositivos usando a API do Watson IoT Platform"
+
+#: ../docs/gateways/java.rst:79
+msgid "There are different ways to register the devices behind the Gateway to IBM Watson IoT Platform,"
+msgstr ""
+"Há maneiras diferentes para registrar os dispositivos por trás do Gateway para o IBM Watson IoT Platform,"
+
+#: ../docs/gateways/java.rst:81
+msgid "**Auto registration**: The device gets added automatically in IBM Watson IoT Platform when Gateway publishes any event/subscribes to any commands for the devices connected to it."
+msgstr ""
+"**Registro Automático**: o dispositivo é incluído automaticamente no IBM Watson IoT Platform quando o Gateway publica qualquer evento/assina quaisquer comandos para os dispositivos conectados a ele."
+
+#: ../docs/gateways/java.rst:82
+msgid "**API**: The Watson IoT Platform API can be used to register the devices to the Watson IoT Platform."
+msgstr ""
+"**API**: O Watson IoT Platform API pode ser usado para registrar os dispositivos no Watson IoT Platform."
+
+#: ../docs/gateways/java.rst:84
+msgid "The Watson IoT Platform API can be used to register the devices (that are connected to the Gateway) to the Watson IoT Platform. The APIClient simplifies the interactions with Watson IoT Platform API. Get the APIClient instance by invoking the api() method as follows,"
+msgstr ""
+"A API do Watson IoT Platform pode ser usada para registrar os dispositivos (que estão conectados ao Gateway) para a plataforma do Watson IoT. O APIClient simplifica as interações com a API do Watson IoT Platform. Obtenha a instância do APIClient chamando o método api(), conforme a seguir,"
+
+#: ../docs/gateways/java.rst:97
+msgid "Once you get the handle of APIClient, you can add the devices. Following code snippet shows how to add a device to a Gateway in Watson IoT Platform,"
+msgstr ""
+"Depois de obter o identificador de APIClient, é possível incluir os dispositivos. O fragmento de código a seguir mostra como incluir um dispositivo em um Gateway na Plataforma Watson IoT,"
+
+#: ../docs/gateways/java.rst:111
+msgid "The gwDeviceId and gwDeviceType are the Gateway properties to which this device will be attached to when its registered."
+msgstr ""
+"gwDeviceId e gwDeviceType são as propriedades de Gateway às quais este dispositivo será conectado quando for registrado."
+
+#: ../docs/gateways/java.rst:117
+msgid "Publishing events"
+msgstr ""
+"Publicando eventos"
+
+#: ../docs/gateways/java.rst:118
+msgid "Events are the mechanism by which Gateways/devices publish data to the Watson IoT Platform. The Gateway/device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"Eventos são o mecanismo pelo qual Gateways/dispositivos publicam dados na Plataforma Watson IoT. O Gateway/dispositivo controla o conteúdo do evento e designa um nome para cada evento que envia."
+
+#: ../docs/gateways/java.rst:120
+msgid "**The Gateway can publish events from itself and on behalf of any device connected via the Gateway**."
+msgstr ""
+"**O Gateway pode publicar eventos de si mesmo e em nome de qualquer dispositivo conectado por meio do Gateway**."
+
+#: ../docs/gateways/java.rst:122
+msgid "When an event is received by the IBM Watson IoT Platform the credentials of the connection on which the event was received are used to determine from which Gateway the event was sent. With this architecture it is impossible for a Gateway to impersonate another device."
+msgstr ""
+"Quando um evento é recebido pelo IBM Watson IoT Platform, as credenciais da conexão na qual o evento foi recebido são usadas para determinar o Gateway pelo qual o evento. Com essa arquitetura, é impossível para um Gateway personificar outro dispositivo."
+
+#: ../docs/gateways/java.rst:124
+msgid "Events can be published at any of the three `quality of service levels <../messaging/mqtt.html#/>`__ defined by the MQTT protocol.  By default events will be published as qos level 0."
+msgstr ""
+"Os eventos podem ser publicados em qualquer um dos três `níveis de qualidade de serviço <../messaging/mqtt.html#/>`__ definidos pelo protocolo MQTT.  Por padrão, os eventos serão publicados como qos nível 0."
+
+#: ../docs/gateways/java.rst:127
+msgid "Publish Gateway event using default quality of service"
+msgstr ""
+"Publicar evento do Gateway usando a qualidade de serviço padrão"
+
+#: ../docs/gateways/java.rst:140
+msgid "Publish Gateway event using user-defined quality of service"
+msgstr ""
+"Publicar evento do Gateway usando qualidade de serviço definida pelo usuário"
+
+#: ../docs/gateways/java.rst:142
+msgid "Events can be published at higher MQTT quality of service levels, but these events may take slower than QoS level 0, because of the extra confirmation of receipt."
+msgstr ""
+"Os eventos podem ser publicados em níveis de serviço de qualidade de MQTT superiores, mas esses eventos podem ser mais lentos que o QoS nível 0 por causa da confirmação de recebimento extra."
+
+#: ../docs/gateways/java.rst:156
+msgid "Publishing events from devices"
+msgstr ""
+"Publicando eventos a partir de dispositivos"
+
+#: ../docs/gateways/java.rst:158
+msgid "The Gateway can publish events on behalf of any device connected via the Gateway by passing the appropriate typeId and deviceId based on the origin of the event:"
+msgstr ""
+"O Gateway pode publicar eventos em nome de qualquer dispositivo conectado por meio do Gateway, transmitindo o typeId e deviceId apropriados com base na origem do evento:"
+
+#: ../docs/gateways/java.rst:173
+msgid "One can use the overloaded publishDeviceEvent() method to publish the device event in the desired quality of service. Refer to `MQTT Connectivity for Gateways <https://docs.internetofthings.ibmcloud.com/gateways/mqtt.html>`__ documentation to know more about the topic structure used."
+msgstr ""
+"É possível usar o método publishDeviceEvent() sobrecarregado para publicar o evento de dispositivo na qualidade de serviço desejada. Consulte a documentação `Conectividade de MQTT para Gateways <https://docs.internetofthings.ibmcloud.com/gateways/mqtt.html>`__ para saber mais sobre a estrutura de tópico usada."
+
+#: ../docs/gateways/java.rst:179
+msgid "Handling commands"
+msgstr ""
+"Manipulando comandos"
+
+#: ../docs/gateways/java.rst:180
+msgid "The Gateway can subscribe to commands directed at the gateway itself and to any device connected via the gateway. When the Gateway client connects, it automatically subscribes to any commands for this Gateway. But to subscribe to any commands for the devices connected via the Gateway, use one of the overloaded subscribeToDeviceCommands() method, for example,"
+msgstr ""
+"O Gateway pode assinar comandos direcionados no gateway em si e para qualquer dispositivo conectado por meio do gateway. Quando o cliente do Gateway se conecta, ele assina automaticamente quaisquer comandos para esse Gateway. Mas, para assinar todos os comandos para os dispositivos conectados por meio do Gateway, use um dos métodos subscribeToDeviceCommands() sobrecarregados, por exemplo,"
+
+#: ../docs/gateways/java.rst:189
+msgid "To process specific commands you need to register a command callback method. The messages are returned as an instance of the Command class which has the following properties:"
+msgstr ""
+"Para processar comandos específicos, você precisa registrar um método de retorno de chamada de comando. As mensagens são retornadas como uma instância da classe Comando, que possui as seguintes propriedades:"
+
+#: ../docs/gateways/java.rst:191
+msgid "deviceType - The device type for which the command is received."
+msgstr ""
+"deviceType - O tipo de dispositivo para o qual o comando é recebido."
+
+#: ../docs/gateways/java.rst:192
+msgid "deviceId - The device id for which the command is received, Could be the Gateway or any device connected via the Gateway."
+msgstr ""
+"deviceId - O ID do dispositivo para o qual o comando é recebido, poderia ser o Gateway ou qualquer dispositivo conectado por meio do Gateway."
+
+#: ../docs/gateways/java.rst:193
+msgid "payload - The command payload."
+msgstr ""
+"payload - A carga útil do comando."
+
+#: ../docs/gateways/java.rst:194
+msgid "format - The format of the command payload, currently only JSON format is supported in the Java Client Library."
+msgstr ""
+"format - O formato da carga útil de comando, atualmente apenas o formato JSON é suportado na Biblioteca do Cliente Java."
+
+#: ../docs/gateways/java.rst:195
+msgid "command - The name of the command."
+msgstr ""
+"command - O nome do comando."
+
+#: ../docs/gateways/java.rst:196
+msgid "timestamp - The org.joda.time.DateTime when the command is sent."
+msgstr ""
+"timestamp - O org.joda.time.DateTime quando o comando é enviado."
+
+#: ../docs/gateways/java.rst:198
+msgid "A sample implementation of the Command callback is shown below,"
+msgstr ""
+"Uma implementação de amostra do retorno de chamada do Comando é mostrada abaixo,"
+
+#: ../docs/gateways/java.rst:234
+msgid "Once the Command callback is added to the GatewayClient, the processCommand() method is invoked whenever any command is published on the subscribed criteria, The following snippet shows how to add the command call back into GatewayClient instance,"
+msgstr ""
+"Uma vez que o retorno de chamada do Comando é incluído no GatewayClient, o método processCommand() é chamado sempre que algum comando é publicado nos critérios assinados. O fragmento a seguir mostra como incluir o retorno de chamada de comando na instância de GatewayClient,"
+
+#: ../docs/gateways/java.rst:245
+msgid "Overloaded methods are available to control the command subscription."
+msgstr ""
+"Os métodos sobrecarregados estão disponíveis para controlar a assinatura do comando."
+
+#: ../docs/gateways/java.rst:250
+msgid "List Devices Connected through the Gateway"
+msgstr ""
+"Listar Dispositivos Conectados por meio do Gateway"
+
+#: ../docs/gateways/java.rst:252
+msgid "Invoke the method getDevicesConnectedThroughGateway() to retrieve all devices that are connected through the specified gateway(typeId, deviceId) to Watson IoT Platform:"
+msgstr ""
+"Chame o método getDevicesConnectedThroughGateway() para recuperar todos os dispositivos que estão conectados por meio do gateway especificado (typeId, deviceId) ao Watson IoT Platform:"
+
+#: ../docs/gateways/java.rst:261
+msgid "Examples"
+msgstr ""
+"Exemplos"
+
+#: ../docs/gateways/java.rst:262
+msgid "`SampleRasPiGateway <https://github.com/ibm-messaging/iot-gateway-samples/tree/master/java/gateway-samples>`__ - This Java project contains 3 samples, which will help one to connect their own Gateway and devices behind the Gateway to IBM Watson Internet of Things Platform. All the samples use the Java Client Library for IBM Watson IoT Platform, that simplifies the Gateway interactions with the Platform."
+msgstr ""
+"`SampleRasPiGateway <https://github.com/ibm-messaging/iot-gateway-samples/tree/master/java/gateway-samples>`__ - Este projeto Java contém 3 amostras, que ajudarão a se conectar a seu próprio Gateway e dispositivos por trás do Gateway com o IBM Watson Internet of Things Platform. Todas as amostras usam o Java Client Library for IBM Watson IoT Platform, que simplifica as interações de Gateway com a Platform."
+
+#: ../docs/gateways/java.rst:265
+msgid "Recipes"
+msgstr ""
+"Receitas"
+
+#: ../docs/gateways/java.rst:267
+msgid "Refer to `the recipe <https://developer.ibm.com/recipes/tutorials/connect-raspberry-pi-as-gateway-to-watson-iot-platform/>`__ that explains how to connect your Gateway and devices behind the Gateway to IBM Watson Internet of Things Platform with the sample present in this github project."
+msgstr ""
+"Consulte `the recipe <https://developer.ibm.com/recipes/tutorials/connect-raspberry-pi-as-gateway-to-watson-iot-platform/>`__ que explica como conectar seu Gateway e os dispositivos por trás do Gateway com o IBM Watson Internet of Things Platform à amostra presente neste projeto github."
+
+#: ../docs/gateways/java.rst:269
+msgid "Refer to `the recipe <https://developer.ibm.com/recipes/tutorials/raspberry-pi-as-managed-gateway-in-watson-iot-platform-part-1/>`__ that explains how to connect your Gateway as managed device in IBM Watson Internet of Things Platform and perform one or more device management operations."
+msgstr ""
+"Consulte `the recipe <https://developer.ibm.com/recipes/tutorials/raspberry-pi-as-managed-gateway-in-watson-iot-platform-part-1/>`__ que explica como conectar seu Gateway como dispositivo gerenciado no IBM Watson Internet of Things Platform e executar uma ou mais das operações de gerenciamento de dispositivo."
+

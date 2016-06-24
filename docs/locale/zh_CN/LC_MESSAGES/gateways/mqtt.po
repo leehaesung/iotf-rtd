@@ -1,0 +1,547 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/gateways/mqtt.rst:2
+msgid "MQTT Connectivity for Gateways"
+msgstr ""
+"网关的 MQTT 连接"
+
+#: ../docs/gateways/mqtt.rst:5
+msgid "MQTT client connection"
+msgstr ""
+"MQTT 客户机连接"
+
+#: ../docs/gateways/mqtt.rst:6
+msgid "Every registered organization has a unique endpoint which must be used when connecting MQTT clients for gateways in that organization."
+msgstr ""
+"每个注册组织都具有唯一端点，在连接该组织中网关的 MQTT 客户机时必须使用此端点。"
+
+#: ../docs/gateways/mqtt.rst:9
+msgid "**org\\_id**.messaging.internetofthings.ibmcloud.com"
+msgstr ""
+"**org\\_id**.messaging.internetofthings.ibmcloud.com"
+
+#: ../docs/gateways/mqtt.rst:11
+msgid "In the IoT Platform dashboard, devices and gateways which are connected directly to the IoT Platform display a status icon indicating that they are connected. The dashboard displays devices which are connected indirectly via a gateway as disconnected as it does not have any knowledge of a devices connectivity to the gateway."
+msgstr ""
+"在 IoT Platform 仪表板中，直接连接到 IoT Platform 的设备和网关会显示一个状态图标，用以指示它们已连接。对于通过网关间接连接的设备，该仪表板会将其显示为已断开连接，因为它未检测到关于设备连接到网关的任何信息。"
+
+#: ../docs/gateways/mqtt.rst:14
+msgid "Unencrypted client connection"
+msgstr ""
+"未加密客户机连接"
+
+#: ../docs/gateways/mqtt.rst:16
+msgid "Connect on port **1883**"
+msgstr ""
+"在端口 **1883** 上连接"
+
+#: ../docs/gateways/mqtt.rst:18
+msgid "All information your gateway submits is being sent in plain text (including the authentication credentials for your gateway). We recommend the use of an encrypted connection whenever possible."
+msgstr ""
+"网关提交的所有信息都以明文形式发送（包括网关的认证凭证）。我们建议尽可能使用加密连接。"
+
+#: ../docs/gateways/mqtt.rst:24
+msgid "Encrypted client connection"
+msgstr ""
+"加密客户机连接"
+
+#: ../docs/gateways/mqtt.rst:26
+msgid "Connect on port **8883** or **443** for websockets. In many client libraries you will need to provide the server's public certificate in pem format.  The following file contains the entire certificate chain for \\*.messaging.internetofthings.ibmcloud.com: messaging.pem_"
+msgstr ""
+"针对 Web 套接字，在端口 **8883** 或 **443** 上连接。在许多客户机库中，您将需要以 pem 格式提供服务器的公用证书。以下文件包含 \\*.messaging.internetofthings.ibmcloud.com: messaging.pem_ 的整个证书链"
+
+#: ../docs/gateways/mqtt.rst:33
+msgid "Some SSL client libraries have been shown to not handle wildcarded domains, in which case, if you can not change libraries, you will need to turn off certificate checking."
+msgstr ""
+"经证实，一些 SSL 客户机库不会处理带通配符的域，在此情况下，如果无法更改库，那么您将需要关闭证书检查。"
+
+#: ../docs/gateways/mqtt.rst:37
+msgid "The IoT Platform requires TLS v1.2. We suggest the following cipher suites: ECDHE-RSA-AES256-GCM-SHA384, AES256-GCM-SHA384, ECDHE-RSA-AES128-GCM-SHA256 or AES128-GCM-SHA256 *(as of Jun 1 2015)*."
+msgstr ""
+"IoT Platform 需要 TLS v1.2。我们建议使用以下密码套件：ECDHE-RSA-AES256-GCM-SHA384、AES256-GCM-SHA384、ECDHE-RSA-AES128-GCM-SHA256 或 AES128-GCM-SHA256 *（自 2015 年 6 月 1 日起）*。"
+
+#: ../docs/gateways/mqtt.rst:42
+msgid "MQTT client identifier"
+msgstr ""
+"MQTT 客户机标识"
+
+#: ../docs/gateways/mqtt.rst:44
+msgid "A gateway must authenticate using a client ID in the following format:"
+msgstr ""
+"网关必须使用以下格式的客户机标识进行认证："
+
+#: ../docs/gateways/mqtt.rst:46
+msgid "g:**orgId**:**typeId**:**deviceId**"
+msgstr ""
+"g:**orgId**:**typeId**:**deviceId**"
+
+#: ../docs/gateways/mqtt.rst:48
+msgid "**g** idenfities your client as a gateway"
+msgstr ""
+"**g** 将客户机识别为网关"
+
+#: ../docs/gateways/mqtt.rst:49
+msgid "**orgId** is your unique organization ID, assigned when you sign up with the service.  It will be a 6 character alphanumeric string."
+msgstr ""
+"**orgId** 是在您注册服务时分配的唯一组织标识。它将是 6 字符字母数字字符串。"
+
+#: ../docs/gateways/mqtt.rst:51
+msgid "**typeId** is intended to be used as an identifier of the type of gateway connecting, it may be useful to think of this as analogous to a model number."
+msgstr ""
+"**typeId** 旨在用作进行连接的网关类型的标识，将其视为类似于型号可能会很有用。"
+
+#: ../docs/gateways/mqtt.rst:54
+msgid "**deviceId** must uniquely identify a gateway device across all gateways of a specific type, it may be useful to think of this as analogous to a serial number."
+msgstr ""
+"**deviceId** 必须在特定类型的所有网关中唯一识别网关设备，将其视为类似于序列号可能会很有用。"
+
+#: ../docs/gateways/mqtt.rst:58
+msgid "You can use any scheme of your choice when assigning values for ``typeId`` and ``deviceId``, however the following restrictions apply to both:"
+msgstr ""
+"在为“typeId”和“deviceId”分配值时，可以使用所选的任何方案，但两者均有以下限制："
+
+#: ../docs/gateways/mqtt.rst:61
+msgid "Maximum length of 36 characters"
+msgstr ""
+"最大长度为 36 个字符"
+
+#: ../docs/gateways/mqtt.rst:62
+msgid "Must comprise only alpha-numeric characters (``a-z``, ``A-Z``, ``0-9``) and the following special characters:"
+msgstr ""
+"必须仅包含字母数字字符（“a-z”、“A-Z”和“0-9”）和以下特殊字符："
+
+#: ../docs/gateways/mqtt.rst:64
+msgid "dash (``-``)"
+msgstr ""
+"短划线（“-”）"
+
+#: ../docs/gateways/mqtt.rst:65
+msgid "underscore (``_``)"
+msgstr ""
+"下划线（“_”）"
+
+#: ../docs/gateways/mqtt.rst:66
+msgid "dot (``.``)"
+msgstr ""
+"点（“.”）"
+
+#: ../docs/gateways/mqtt.rst:70
+msgid "MQTT authentication"
+msgstr ""
+"MQTT 认证"
+
+#: ../docs/gateways/mqtt.rst:73
+msgid "Username"
+msgstr ""
+"用户名"
+
+#: ../docs/gateways/mqtt.rst:75
+msgid "The service currently only supports token-based authentication for devices, as such there is only one valid username for gateways today."
+msgstr ""
+"服务当前仅支持针对设备进行基于令牌的认证，因此目前针对网关仅有一个有效用户名。"
+
+#: ../docs/gateways/mqtt.rst:78
+msgid "A value of ``use-token-auth`` indicates to the service that the authentication token for the gateway will be passed as the password for the MQTT connection."
+msgstr ""
+"值“use-token-auth”向服务表明：网关的认证令牌将作为 MQTT 连接的密码进行传递。"
+
+#: ../docs/gateways/mqtt.rst:83
+msgid "Password"
+msgstr ""
+"密码"
+
+#: ../docs/gateways/mqtt.rst:85
+msgid "When using token based authentication submit the device authentication token as the password when making your MQTT connection."
+msgstr ""
+"如果使用基于令牌的认证，请在建立 MQTT 连接时，将设备认证令牌作为密码提交。"
+
+#: ../docs/gateways/mqtt.rst:90
+msgid "Publishing events"
+msgstr ""
+"发布事件"
+
+#: ../docs/gateways/mqtt.rst:92
+msgid "A gateway can publish events from itself and on behalf of any device connected via the gateway by using the following topic and substituting in the appropriate ``typeId`` and ``deviceId`` based on the intended origin of the event:"
+msgstr ""
+"通过使用以下主题并基于意向事件源在相应的“typeId”和“deviceId”中进行替换，网关可以从其自身发布事件，并可代表通过网关连接的任何设备发布事件："
+
+#: ../docs/gateways/mqtt.rst:97
+msgid "iot-2/type/\\ **typeId**/id/\\ **deviceId**/evt/\\ **eventId**/fmt/\\ **formatString**"
+msgstr ""
+"iot-2/type/\\ **typeId**/id/\\ **deviceId**/evt/\\ **eventId**/fmt/\\ **formatString**"
+
+#: ../docs/gateways/mqtt.rst:100
+#: ../docs/gateways/mqtt.rst:129
+msgid "Example"
+msgstr ""
+"示例"
+
+#: ../docs/gateways/mqtt.rst:102
+#: ../docs/gateways/mqtt.rst:132
+msgid "``typeId``"
+msgstr ""
+"``typeId``"
+
+#: ../docs/gateways/mqtt.rst:102
+#: ../docs/gateways/mqtt.rst:132
+msgid "``deviceId``"
+msgstr ""
+"``deviceId``"
+
+#: ../docs/gateways/mqtt.rst:104
+#: ../docs/gateways/mqtt.rst:134
+msgid "Gateway 1"
+msgstr ""
+"网关 1"
+
+#: ../docs/gateways/mqtt.rst:104
+#: ../docs/gateways/mqtt.rst:134
+msgid "mygateway"
+msgstr ""
+"mygateway"
+
+#: ../docs/gateways/mqtt.rst:104
+#: ../docs/gateways/mqtt.rst:134
+msgid "gateway1"
+msgstr ""
+"gateway1"
+
+#: ../docs/gateways/mqtt.rst:106
+#: ../docs/gateways/mqtt.rst:136
+msgid "Device 1"
+msgstr ""
+"设备 1"
+
+#: ../docs/gateways/mqtt.rst:106
+#: ../docs/gateways/mqtt.rst:136
+msgid "mydevice"
+msgstr ""
+"mydevice"
+
+#: ../docs/gateways/mqtt.rst:106
+#: ../docs/gateways/mqtt.rst:136
+msgid "device1"
+msgstr ""
+"device1"
+
+#: ../docs/gateways/mqtt.rst:109
+msgid "Gateway 1 can publish its own status events: ``iot-2/type/mygateway/id/gateway1/evt/status/fmt/json``"
+msgstr ""
+"网关 1 可以发布自己的状态事件：“iot-2/type/mygateway/id/gateway1/evt/status/fmt/json”"
+
+#: ../docs/gateways/mqtt.rst:110
+msgid "Gateway 1 can publish status events on behalf of Device 1: ``iot-2/type/mydevice/id/device1/evt/status/fmt/json``"
+msgstr ""
+"网关 1 可以代表设备 1 发布状态事件：“iot-2/type/mydevice/id/device1/evt/status/fmt/json”"
+
+#: ../docs/gateways/mqtt.rst:113
+msgid "The message payload is limited to a maximum of 131072 bytes.  Messages larger than this will be rejected."
+msgstr ""
+"消息有效内容限制为最长 131072 个字节。将拒绝大于此大小的消息。"
+
+#: ../docs/gateways/mqtt.rst:117
+msgid "Subscribing to commands"
+msgstr ""
+"预订命令"
+
+#: ../docs/gateways/mqtt.rst:119
+msgid "A gateway can subscribe to commands directed at the gateway itself and to any device connected via the gateway by using the following topic and substituting in the appropriate ``typeId`` and ``deviceId``:"
+msgstr ""
+"通过使用以下主题并在相应的“typeId”和“deviceId”中进行替换，网关可以预订针对网关自身的命令和通过网关连接的任何设备："
+
+#: ../docs/gateways/mqtt.rst:123
+msgid "iot-2/type/\\ **typeId**/id/\\ **deviceId**/cmd/\\ **commandId**/fmt/\\ **formatString**"
+msgstr ""
+"iot-2/type/\\ **typeId**/id/\\ **deviceId**/cmd/\\ **commandId**/fmt/\\ **formatString**"
+
+#: ../docs/gateways/mqtt.rst:125
+msgid "The MQTT ``+`` wildcard can be used for ``typeId``, ``deviceId``, ``commandId`` and ``formatString`` to subscribe to multiple command sources."
+msgstr ""
+"MQTT“+”通配符可用于“typeId”、“deviceId”、“commandId”和“formatString”，以预订多个命令源。"
+
+#: ../docs/gateways/mqtt.rst:139
+msgid "Gateway 1 can subscribe to commands directed at the gateway: ``iot-2/type/mygateway/id/gateway1/cmd/+/fmt/+``"
+msgstr ""
+"网关 1 可以预订针对网关的命令：“iot-2/type/mygateway/id/gateway1/cmd/+/fmt/+”"
+
+#: ../docs/gateways/mqtt.rst:140
+msgid "Gateway 1 can subscribe to commands sent to Device 1: ``iot-2/type/mydevice/id/device1/cmd/+/fmt/+``"
+msgstr ""
+"网关 1 可以预订发送到设备 1 的命令：“iot-2/type/mydevice/id/device1/cmd/+/fmt/+”"
+
+#: ../docs/gateways/mqtt.rst:141
+msgid "Gateway 1 can subscribe any command sent to devices of type \"mydevice\": ``iot-2/type/mydevice/id/+/cmd/+/fmt/+``"
+msgstr ""
+"网关 1 可以预订发送到类型为“mydevice”的设备的任何命令：“iot-2/type/mydevice/id/+/cmd/+/fmt/+”"
+
+#: ../docs/gateways/mqtt.rst:145
+msgid "MQTT persistent sessions (cleansession=false) do not roam for devices which connect to gateways. What this means is that if a device connects to gateway A, then later connects to gateway B, it will not receive any messages that had been published to gateway A for that device while it was disconnected. A gateway owns the MQTT client and subscription, not the devices which are connected to the gateway."
+msgstr ""
+"对于连接到网关的设备，MQTT 持久会话 (cleansession=false) 不会漫游。这意味着，如果某设备连接到网关 A，并在稍后连接到网关 B，那么它在断开连接期间不会收到已发布到网关 A 的任何消息。网关拥有 MQTT 客户机和预订，但没有与网关连接的设备。"
+
+#: ../docs/gateways/mqtt.rst:148
+msgid "Gateway auto-registration"
+msgstr ""
+"网关自动注册"
+
+#: ../docs/gateways/mqtt.rst:149
+msgid "Gateway devices have the ability to automatically register devices which are connected to them. When a gateway publishes a message or subscribes to a topic on behalf of another device, that device will automatically be registered if it does not already exist."
+msgstr ""
+"网关设备能够自动注册连接到自己的设备。当网关代表另一设备发布消息或预订主题时，如果该设备尚不存在，将自动注册该设备。"
+
+#: ../docs/gateways/mqtt.rst:153
+msgid "Registration requests from gateway devices are throttled to 128 pending requests at a time. If trying to connect many new devices to a gateway which have not previously been registered, then there may be some delay in the registration of the devices through the gateway."
+msgstr ""
+"来自网关设备的注册请求将调速为一次 128 个暂挂请求。如果尝试将许多先前尚未注册的新设备连接到某个网关，那么通过该网关注册这些设备可能会出现一些延迟。"
+
+#: ../docs/gateways/mqtt.rst:158
+msgid "If the gateway fails to automatically register a device, then it will not attempt to register that device again for a short period of time. Any messages or subscriptions from the failed device will be dropped during that time."
+msgstr ""
+"如果网关未能自动注册某个设备，那么短期内将不会尝试再次注册该设备。来自失败设备的任何消息或预订在此期间内都将被删除。"
+
+#: ../docs/gateways/mqtt.rst:163
+msgid "Gateway notifications"
+msgstr ""
+"网关通知"
+
+#: ../docs/gateways/mqtt.rst:164
+msgid "When errors occur during the validation of the publish or subscribe topic, or during automatic registration, a notification will be sent to the gateway device. A gateway can receive these notifications by subscribing to the following topic, substituting in its own ``typeId`` and ``deviceId``:"
+msgstr ""
+"验证发布或预订主题期间或者自动注册期间发生错误时，会向网关设备发送通知。网关通过预订以下主题并替换自己的“typeId”和“deviceId”来接收这些通知："
+
+#: ../docs/gateways/mqtt.rst:168
+msgid "iot-2/type/\\ **typeId**/id/\\ **deviceId**/notify"
+msgstr ""
+"iot-2/type/\\ **typeId**/id/\\ **deviceId**/notify"
+
+#: ../docs/gateways/mqtt.rst:170
+msgid "Messages received on the notify topic will have the following format:"
+msgstr ""
+"通知主题上收到的消息将具有以下格式："
+
+#: ../docs/gateways/mqtt.rst:185
+msgid "Request_Type: Either publish or subscribe"
+msgstr ""
+"Request_Type：发布或预订"
+
+#: ../docs/gateways/mqtt.rst:186
+msgid "Timestamp: Time in ISO 8601 Format"
+msgstr ""
+"Timestamp：采用 ISO 8601 格式的时间"
+
+#: ../docs/gateways/mqtt.rst:187
+msgid "Topic: The request topic from the gateway"
+msgstr ""
+"Topic：来自网关的请求主题"
+
+#: ../docs/gateways/mqtt.rst:188
+msgid "Device_Type: The device type from the topic"
+msgstr ""
+"Device_Type：来自主题的设备类型"
+
+#: ../docs/gateways/mqtt.rst:189
+msgid "Device_Id: The device id from the topic"
+msgstr ""
+"Device_Id：来自主题的设备标识"
+
+#: ../docs/gateways/mqtt.rst:190
+msgid "ClientID: The client id of the request"
+msgstr ""
+"ClientID：请求的客户机标识"
+
+#: ../docs/gateways/mqtt.rst:191
+msgid "RC: The return code"
+msgstr ""
+"RC：返回码"
+
+#: ../docs/gateways/mqtt.rst:192
+msgid "Message: The error message"
+msgstr ""
+"Message：错误消息"
+
+#: ../docs/gateways/mqtt.rst:194
+msgid "Notifications a gateway may receive:"
+msgstr ""
+"网关可能收到的通知："
+
+#: ../docs/gateways/mqtt.rst:196
+msgid "Topic does not match with any allowed topic rules."
+msgstr ""
+"主题与任何允许的主题规则均不匹配。"
+
+#: ../docs/gateways/mqtt.rst:197
+msgid "Device type is not valid."
+msgstr ""
+"设备类型无效。"
+
+#: ../docs/gateways/mqtt.rst:198
+msgid "Device id is not valid."
+msgstr ""
+"设备标识无效。"
+
+#: ../docs/gateways/mqtt.rst:199
+msgid "Maximum number of devices per gateway has been reached."
+msgstr ""
+"已达到每个网关的最大设备数。"
+
+#: ../docs/gateways/mqtt.rst:200
+msgid "Maximum number of devices per organization has been reached."
+msgstr ""
+"已达到每个组织的最大设备数。"
+
+#: ../docs/gateways/mqtt.rst:201
+msgid "Failed to create device due to internal errors."
+msgstr ""
+"由于内部错误，无法创建设备。"
+
+#: ../docs/gateways/mqtt.rst:205
+msgid "Managed Gateways"
+msgstr ""
+"受管网关"
+
+#: ../docs/gateways/mqtt.rst:207
+msgid "Support for device lifecycle management is optional, the device management protocol used by IoT Platform utilises the same MQTT connection that your gateway already uses for events and command control."
+msgstr ""
+"对设备生命周期管理的支持是可选的，IoT Platform 所使用的设备管理协议利用您的网关已使用的同一 MQTT 连接进行事件和命令控制。"
+
+#: ../docs/gateways/mqtt.rst:212
+msgid "Quality of Service Levels and Clean Session"
+msgstr ""
+"服务质量级别和清除会话"
+
+#: ../docs/gateways/mqtt.rst:214
+msgid "Managed gateways can publish messages with Quality of Service (QoS) level of 0 or 1. If QoS 1 is used, messages from the gateway will be queued if necessary. Messages from the gateway must not be retained messages."
+msgstr ""
+"受管网关可以发布服务质量 (QoS) 级别为 0 或 1 的消息。如果使用 QoS 1，那么在必要时将对来自网关的消息进行排队。来自网关的消息不得是保留消息。"
+
+#: ../docs/gateways/mqtt.rst:218
+msgid "The IoT Platform publishes requests with a QoS level of 1 to support queuing of messages.  In order to queue messages sent while a managed gateway is not connected, the device should use ``cleansession=false``."
+msgstr ""
+"IoT Platform 可发布 QoS 级别为 1 的请求以支持消息排队。为对受管网关未连接时发送的消息进行排队，设备应使用“cleansession=false”。"
+
+#: ../docs/gateways/mqtt.rst:223
+msgid "If your managed gateway uses a durable subscription (cleansession=false) you need to be aware that device management commands sent to your gateway while it is offline will be reported as failed operations, however, when the gateway later connects those requests will be actioned by the gateway."
+msgstr ""
+"如果受管网关使用持久预订 (cleansession=false)，那么需要注意，在网关脱机时向其发送的设备管理命令将报告为失败操作，但在网关稍后连接时，网关将会处理这些请求。"
+
+#: ../docs/gateways/mqtt.rst:228
+msgid "When handling failures it is important to take this into account if you are using durable subscriptions for your managed gateways."
+msgstr ""
+"在处理故障时，如果对受管网关使用的是持久预订，请务必将此考虑在内。"
+
+#: ../docs/gateways/mqtt.rst:233
+msgid "Topics"
+msgstr ""
+"主题"
+
+#: ../docs/gateways/mqtt.rst:235
+msgid "A managed gateway is required to subscribe to two topics to handle requests and responses from IoT Platform:"
+msgstr ""
+"受管网关需要预订两个主题以处理来自 IoT Platform 的请求和响应："
+
+#: ../docs/gateways/mqtt.rst:237
+msgid "The managed gateway will subscribe to device management reponses on ``iotdm-1/type/<typeId>/id/<deviceId>/response/+``"
+msgstr ""
+"受管网关将在“iotdm-1/type/<typeId>/id/<deviceId>/response/+”上预订设备管理响应"
+
+#: ../docs/gateways/mqtt.rst:238
+msgid "The managed gateway will subscribe to device management requests on ``iotdm-1/type/<typeId>/id/<deviceId>/+``"
+msgstr ""
+"受管网关将在“iotdm-1/type/<typeId>/id/<deviceId>/+”上预订设备管理请求"
+
+#: ../docs/gateways/mqtt.rst:241
+msgid "A managed gateway will publish to two topics:"
+msgstr ""
+"受管网关将发布到两个主题："
+
+#: ../docs/gateways/mqtt.rst:243
+msgid "The managed gateway will publish device management responses on ``iotdevice-1/type/<typeId>/id/<deviceId>/response/``"
+msgstr ""
+"受管网关将在“iotdevice-1/type/<typeId>/id/<deviceId>/response/”上发布设备管理响应"
+
+#: ../docs/gateways/mqtt.rst:244
+msgid "The managed gateway will publish device management requests on ``iotdevice-1/type/<typeId>/id/<deviceId>/``"
+msgstr ""
+"受管网关将在“iotdevice-1/type/<typeId>/id/<deviceId>/”上发布设备管理请求"
+
+#: ../docs/gateways/mqtt.rst:246
+msgid "The gateway is able to process device management protocol messages for both itself and on behalf other connected devices by using the relevant <typeId> and <deviceId>."
+msgstr ""
+"网关能够通过使用相关的 <typeId> 和 <deviceId> 从其自身和代表其他已连接设备来处理设备管理协议消息。"
+
+#: ../docs/gateways/mqtt.rst:251
+msgid "Message Format"
+msgstr ""
+"消息格式"
+
+#: ../docs/gateways/mqtt.rst:253
+msgid "All messages are sent in JSON format. There are two types of message."
+msgstr ""
+"所有消息都以 JSON 格式进行发送。有两种类型的消息。"
+
+#: ../docs/gateways/mqtt.rst:264
+msgid "Request"
+msgstr ""
+"请求"
+
+#: ../docs/gateways/mqtt.rst:256
+msgid "Requests are formatted as follows:"
+msgstr ""
+"请求的格式如下："
+
+#: ../docs/gateways/mqtt.rst:262
+msgid "``d`` carries any data relevant to the request"
+msgstr ""
+"“d”传送与请求相关的所有数据"
+
+#: ../docs/gateways/mqtt.rst:263
+msgid "``reqId`` is an identifier of the request, and must be copied into a response. If a response is not required, the field should be omitted."
+msgstr ""
+"“reqId”是请求的标识，必须复制到响应中。如果不需要响应，那么应省略此字段。"
+
+#: ../docs/gateways/mqtt.rst:283
+msgid "Response"
+msgstr ""
+"响应"
+
+#: ../docs/gateways/mqtt.rst:267
+msgid "Responses are formatted as follows:"
+msgstr ""
+"响应的格式如下："
+
+#: ../docs/gateways/mqtt.rst:278
+msgid "\"rc\" is a result code of the original request."
+msgstr ""
+"“rc”是原始请求的结果代码。"
+
+#: ../docs/gateways/mqtt.rst:279
+msgid "``message`` is an optional element with a text description of the response code."
+msgstr ""
+"“message”是包含响应代码的文本描述的可选元素。"
+
+#: ../docs/gateways/mqtt.rst:280
+msgid "``d`` is an optional data element accompanying the response."
+msgstr ""
+"“d”是伴随响应的可选数据元素。"
+
+#: ../docs/gateways/mqtt.rst:281
+msgid "``reqId`` is the request ID of the original request. This is used to correlate responses with requests, and the device needs to ensure that all request IDs are unique.  When responding to IoT Platform requests, the correct ``reqId`` value must be sent in the response."
+msgstr ""
+"“reqId”是原始请求的请求标识。这用于将响应与请求相关联，并且设备需要确保所有请求标识都唯一。在对 IoT Platform 请求进行响应时，必须在响应中发送正确的“reqId”值。"
+

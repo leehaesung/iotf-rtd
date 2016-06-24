@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IBM IOT Foundation 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-06 22:15-0600\n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: ../docs/reference/device_model.rst:5
 msgid "The device model describes the metadata and management characteristics of a device. The device database in the Watson IoT platform is the master source of device information. Applications and managed devices are able to send updates to the database such as a location or the progress of a firmware update. Once these updates are received by the Watson IoT platform, the device database is updated, making the information available to applications."
 msgstr ""
-"Il modello dispositivo descrive le caratteristiche di gestione e metadati di un dispositivo. Il database del dispositivo in Watson IoT platform è l'origine principale delle informazioni sul dispositivo.Le applicazioni e i dispositivi gestiti sono in grado di inviare aggiornamenti al database come un'ubicazione o l'avanzamento di un aggiornamento firmware. Una volta che Watson IoT platform ha ricevuto questi aggiornamenti, il database del dispositivo viene aggiornato, rendendo le informazioni disponibili alle applicazioni."
+"Il modello dispositivo descrive le caratteristiche di gestione e metadati di un dispositivo. Il database del dispositivo in Watson IoT platform è l'origine principale delle informazioni sul dispositivo. Le applicazioni e i dispositivi gestiti sono in grado di inviare aggiornamenti al database come un'ubicazione o l'avanzamento di un aggiornamento firmware. Una volta che Watson IoT platform ha ricevuto questi aggiornamenti, il database del dispositivo viene aggiornato, rendendo le informazioni disponibili alle applicazioni."
 
 #: ../docs/reference/device_model.rst:12
 msgid "With the exception of the management extension, the entire device model is available for both managed and unmanaged devices. However, an unmanaged device can not directly update its device model in the database."

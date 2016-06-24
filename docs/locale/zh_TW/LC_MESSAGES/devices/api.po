@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/api.rst:2
+msgid "HTTP API for Devices"
+msgstr ""
+"適用於裝置的 HTTP API"
+
+#: ../docs/devices/api.rst:4
+msgid "This feature is currently available as part of a limited beta.  Future updates may include changes incompatible with the current version of this feature.  Try it out and `let us know what you think <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_"
+msgstr ""
+"受限測試版目前提供此功能。未來更新可能包括與此功能的現行版本不相容的變更。請試用它，並 `讓我們知道您的想法 <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_"
+
+#: ../docs/devices/api.rst:10
+msgid "Publish an event"
+msgstr ""
+"發佈事件"
+
+#: ../docs/devices/api.rst:12
+msgid "As an alternative to MQTT it is possible for devices to submit events to the IoT Platform over an HTTP API.  Devices may submit a ``POST`` request to: ``https://${orgid}.internetofthings.ibmcloud.com/api/v0002/device/types/${typeId}/devices/${deviceId}/events/${eventId}``"
+msgstr ""
+"作為 MQTT 的替代方案，裝置可透過 HTTP API 將事件提交至 IoT Platform。裝置可能會將 ``POST`` 要求提交至：``https://${orgid}.internetofthings.ibmcloud.com/api/v0002/device/types/${typeId}/devices/${deviceId}/events/${eventId}``"
+
+#: ../docs/devices/api.rst:14
+msgid "For full details, see the relevant `API documentation <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html#/>`__.  The request body (event payload) can have any content, however, MQTT message payload guidelines should be followed."
+msgstr ""
+"如需詳細資料，請參閱相關的 `API 文件 <https://docs.internetofthings.ibmcloud.com/swagger/v0002.html#/>`__。要求內文（事件內容）可以有任何內容，但應遵循 MQTT 訊息內容準則。"
+
+#: ../docs/devices/api.rst:16
+msgid "When connecting a device or application to Quickstart you should use the following URL instead:  ``http://quickstart.internetofthings.ibmcloud.com/api/v0002/device/types/${typeId}/devices/${deviceId}/events/${eventId}``"
+msgstr ""
+"將裝置或應用程式連接至 Quickstart 時，您應該改用下列 URL：  ``http://quickstart.internetofthings.ibmcloud.com/api/v0002/device/types/${typeId}/devices/${deviceId}/events/${eventId}``"
+
+#: ../docs/devices/api.rst:18
+msgid "HTTP messaging only covers the ability to submit device events currently.  Device management and command control require MQTT connectivity in your device."
+msgstr ""
+"HTTP 傳訊目前只涵蓋提交裝置事件的能力。裝置管理和指令控制需要裝置中的 MQTT 連線功能。"
+
+#: ../docs/devices/api.rst:23
+msgid "Authentication"
+msgstr ""
+"鑑別"
+
+#: ../docs/devices/api.rst:25
+msgid "Requests must include an authorization header. Basic authentication the only method supported. Applications are authenticated by API keys, when an application makes any request to the IoT Platform API it must present an API as it's credentials:"
+msgstr ""
+"要求必須包括授權標頭。基本鑑別是唯一受支援的方法。應用程式是透過 API 金鑰鑑別。當應用程式向 IoT Platform API 提出任何要求時，它必須呈現 API，因為它是認證："
+
+#: ../docs/devices/api.rst:29
+msgid "username = \"use-token-auth\""
+msgstr ""
+"使用者名稱 = \"use-token-auth\""
+
+#: ../docs/devices/api.rst:30
+msgid "password = Authentication token"
+msgstr ""
+"密碼 = 鑑別記號"
+
+#: ../docs/devices/api.rst:33
+msgid "Content-Type"
+msgstr ""
+"Content-Type"
+
+#: ../docs/devices/api.rst:35
+msgid "A ``Content-Type`` request header must be provided with the request. The following table shows the supported types and how they are mapped to the IoT Platform internal formats."
+msgstr ""
+"``Content-Type`` 要求標頭必須與要求一起提供。下表顯示支援的類型，以及如何將它們對映至 IoT Platform 內部格式。"
+
+#: ../docs/devices/api.rst:38
+msgid "Content-Type Header"
+msgstr ""
+"Content-Type 標頭"
+
+#: ../docs/devices/api.rst:38
+msgid "IoT Platform Format"
+msgstr ""
+"IoT Platform 格式"
+
+#: ../docs/devices/api.rst:40
+msgid "text/plain"
+msgstr ""
+"text/plain"
+
+#: ../docs/devices/api.rst:40
+msgid "text"
+msgstr ""
+"text"
+
+#: ../docs/devices/api.rst:42
+msgid "application/json"
+msgstr ""
+"application/json"
+
+#: ../docs/devices/api.rst:42
+msgid "json"
+msgstr ""
+"json"
+
+#: ../docs/devices/api.rst:44
+msgid "application/xml"
+msgstr ""
+"application/xml"
+
+#: ../docs/devices/api.rst:44
+msgid "xml"
+msgstr ""
+"xml"
+
+#: ../docs/devices/api.rst:46
+msgid "application/octet-stream"
+msgstr ""
+"application/octet-stream"
+
+#: ../docs/devices/api.rst:46
+msgid "bin"
+msgstr ""
+"bin"
+
+#: ../docs/devices/api.rst:51
+msgid "Quality of Service"
+msgstr ""
+"服務品質"
+
+#: ../docs/devices/api.rst:53
+msgid "The HTTP(S) protocol provides \"at most once\" best effort delivery, analagous to the QoS0 quality of service provided by the MQTT protocol. When using QoS0, or the HTTP(S) equivalent, to deliver event messages, the device or application must implement retry logic to guarantee delivery."
+msgstr ""
+"HTTP(S) 通訊協定提供「最多一次」的最佳效能遞送，這類似於 MQTT 通訊協定所提供的 QoS0 服務品質。使用 QoS0 或 HTTP(S) 的對等項目來傳遞事件訊息時，裝置或應用程式必須實作重試邏輯以保證遞送。"
+
+#: ../docs/devices/api.rst:55
+msgid "For more information on the MQTT protocol and Quality of Service levels, please see `MQTT for the IoT Platform <../reference/mqtt/index.html>`__ documentation."
+msgstr ""
+"如需 MQTT 通訊協定和「服務品質」等級的相關資訊，請參閱 `IoT Platform 的 MQTT <../reference/mqtt/index.html>`__ 文件。"
+

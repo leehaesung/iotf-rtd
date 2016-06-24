@@ -1,0 +1,188 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/applications/libraries/c_sharp.rst:2
+msgid "C# for Application Developers"
+msgstr ""
+"C# para Desenvolvedores de Aplicativos"
+
+#: ../docs/applications/libraries/c_sharp.rst:4
+msgid "See `iot-csharp <https://github.com/IoT-Analytics/iot-csharp>`_ in GitHub"
+msgstr ""
+"Consulte `iot-csharp <https://github.com/IoT-Analytics/iot-csharp>`_ no GitHub"
+
+#: ../docs/applications/libraries/c_sharp.rst:11
+msgid "Constructor"
+msgstr ""
+"Construtor"
+
+#: ../docs/applications/libraries/c_sharp.rst:13
+msgid "The constructor builds the client instance, and accepts arguments containing the following definitions:"
+msgstr ""
+"O construtor constrói a instância do cliente e aceita argumentos que contêm as seguintes definições:"
+
+#: ../docs/applications/libraries/c_sharp.rst:15
+msgid "``orgId`` - Your organization ID."
+msgstr ""
+"``orgId`` - O ID de sua organização."
+
+#: ../docs/applications/libraries/c_sharp.rst:16
+msgid "``appId`` - The unique ID of your application within your organization."
+msgstr ""
+"``appId`` - O ID exclusivo de seu aplicativo dentro de sua organização."
+
+#: ../docs/applications/libraries/c_sharp.rst:17
+msgid "``auth-key`` - API key (required if auth-method is ``apikey``)."
+msgstr ""
+"``auth-key`` - Chave de API (necessário se o método de autenticação é ``apikey``)."
+
+#: ../docs/applications/libraries/c_sharp.rst:18
+msgid "``auth-token`` - API key token (required if auth-method is ``apikey``)."
+msgstr ""
+"``auth-token`` - Token de chave da API (necessário se o método de autenticação é ``apikey``)."
+
+#: ../docs/applications/libraries/c_sharp.rst:20
+msgid "If only ``appId`` is provided, the client will connect to the IoT Platform Quickstart service and default to an unregistered device. The argument lists create definitions which are used to interact with the IoT Platform module."
+msgstr ""
+"Se somente o ``appId`` for fornecido, o cliente se conectará ao serviço do IoT Platform Quickstart e padronizará com um dispositivo não registrado. As listas de argumentos criam definições que são usadas para interagir com o módulo do IoT Platform."
+
+#: ../docs/applications/libraries/c_sharp.rst:32
+msgid "Subscribing to device events"
+msgstr ""
+"Assinando eventos de dispositivo"
+
+#: ../docs/applications/libraries/c_sharp.rst:34
+msgid "Events are the mechanism by which devices publish data to the IoT Platform. The device controls the content of the event and assigns a name for each event it sends."
+msgstr ""
+"Eventos são o mecanismo pelo qual dispositivos publicam dados no IoT Platform. O dispositivo controla o conteúdo do evento e designa um nome para cada evento que envia."
+
+#: ../docs/applications/libraries/c_sharp.rst:36
+msgid "When an event is received by the IoT Foundation the credentials of the connection on which the event was received are used to determine from which device the event was sent. With this architecture it is impossible for a device to impersonate another device."
+msgstr ""
+"Quando um evento é recebido pelo IoT Foundation, as credenciais da conexão na qual o evento foi recebido são usadas para determinar de qual dispositivo o evento foi enviado. Com essa arquitetura, é impossível para um dispositivo personificar outro dispositivo."
+
+#: ../docs/applications/libraries/c_sharp.rst:38
+msgid "By default, applications will subscribe to all events from all connected devices. Use the type, id, event and msgFormat parameters to control the scope of the subscription. A single client can support multiple subscriptions. The code samples below give examples of how to subscribe to devices dependent on device type, id, event and msgFormat parameters."
+msgstr ""
+"Por padrão, os aplicativos assinarão todos os eventos de todos os dispositivos conectados. Use os parâmetros de tipo, ID, evento e msgFormat para controlar o escopo da assinatura. Um único cliente pode suportar várias assinaturas. As amostras de código abaixo fornecem exemplos de como assinar os dispositivos dependendo dos parâmetros de tipo de dispositivo, ID, evento e msgFormat."
+
+#: ../docs/applications/libraries/c_sharp.rst:41
+msgid "To subscribe to all events from all devices"
+msgstr ""
+"Para assinar todos os eventos de todos os dispositivos"
+
+#: ../docs/applications/libraries/c_sharp.rst:50
+msgid "To subscribe to all events from all devices of a specific type"
+msgstr ""
+"Para assinar todos os eventos de todos os dispositivos de um tipo específico"
+
+#: ../docs/applications/libraries/c_sharp.rst:59
+msgid "To subscribe to a specific event from all devices"
+msgstr ""
+"Para assinar um evento específico de todos os dispositivos"
+
+#: ../docs/applications/libraries/c_sharp.rst:68
+msgid "To subscribe to a specific event from two or more different devices"
+msgstr ""
+"Para assinar um evento específico de dois ou mais dispositivos diferentes"
+
+#: ../docs/applications/libraries/c_sharp.rst:77
+msgid "To subscribe to all events published by a device in json format"
+msgstr ""
+"Para assinar todos os eventos publicados por um dispositivo no formato json"
+
+#: ../docs/applications/libraries/c_sharp.rst:86
+msgid "Handling events from devices"
+msgstr ""
+"Manipulando eventos a partir de dispositivos"
+
+#: ../docs/applications/libraries/c_sharp.rst:88
+msgid "To process the events received by your subscriptions you need to register an event callback method."
+msgstr ""
+"Para processar os eventos recebidos por suas assinaturas, é necessário registrar um método de retorno de chamada de evento."
+
+#: ../docs/applications/libraries/c_sharp.rst:90
+msgid "``event.device`` - string (uniquely identifies the device across all types of devices in the organization)"
+msgstr ""
+"``event.device`` - sequência (identifica exclusivamente o dispositivo entre todos os tipos de dispositivos na organização)"
+
+#: ../docs/applications/libraries/c_sharp.rst:91
+msgid "``eventName`` - string"
+msgstr ""
+"``eventName`` - sequência"
+
+#: ../docs/applications/libraries/c_sharp.rst:92
+msgid "``eventFormat`` - string"
+msgstr ""
+"``eventFormat`` - sequência"
+
+#: ../docs/applications/libraries/c_sharp.rst:93
+msgid "``eventData`` - string"
+msgstr ""
+"``eventData`` - sequência"
+
+#: ../docs/applications/libraries/c_sharp.rst:110
+msgid "Subscribing to device status"
+msgstr ""
+"Assinando o status do dispositivo"
+
+#: ../docs/applications/libraries/c_sharp.rst:112
+msgid "By default, this will subscribe to status updates for all connected devices. Use the type and id parameters to control the scope of the subscription. A single client can support multiple subscriptions."
+msgstr ""
+"Por padrão, este assinará as atualizações de status para todos os dispositivos conectados. Use os parâmetros de tipo e ID para controlar o escopo da assinatura. Um único cliente pode suportar várias assinaturas."
+
+#: ../docs/applications/libraries/c_sharp.rst:115
+msgid "Subscribe to status updates for all devices"
+msgstr ""
+"Assinar as atualizações de status para todos os dispositivos"
+
+#: ../docs/applications/libraries/c_sharp.rst:125
+msgid "Subscribe to status updates for two different devices"
+msgstr ""
+"Assinar as atualizações de status para dois dispositivos diferentes"
+
+#: ../docs/applications/libraries/c_sharp.rst:135
+msgid "Handling status updates from devices"
+msgstr ""
+"Manipulando atualizações de status a partir de dispositivos"
+
+#: ../docs/applications/libraries/c_sharp.rst:136
+msgid "To process the status updates received by your subscriptions you need to register an event callback method."
+msgstr ""
+"Para processar as atualizações de status recebidas por suas assinaturas, você precisa registrar um método de retorno de chamada de evento."
+
+#: ../docs/applications/libraries/c_sharp.rst:155
+msgid "Publishing events from devices"
+msgstr ""
+"Publicando eventos a partir de dispositivos"
+
+#: ../docs/applications/libraries/c_sharp.rst:157
+msgid "Applications can publish events as if they originated from a Device."
+msgstr ""
+"Os aplicativos podem publicar eventos como se eles se originassem em um Dispositivo."
+
+#: ../docs/applications/libraries/c_sharp.rst:169
+msgid "Publishing commands to devices"
+msgstr ""
+"Publicando comandos para dispositivos"
+
+#: ../docs/applications/libraries/c_sharp.rst:171
+msgid "Applications can publish commands to connected devices."
+msgstr ""
+"Os aplicativos podem publicar comandos para dispositivos conectados."
+

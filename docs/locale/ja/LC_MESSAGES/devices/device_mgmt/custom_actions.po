@@ -1,0 +1,454 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:2
+msgid "Extending Device Management"
+msgstr ""
+"デバイス管理の拡張"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:4
+msgid "This feature is currently available as part of a limited beta.  Future updates may include changes incompatible with the current version of this feature.  Try it out and `let us know what you think <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_"
+msgstr ""
+"この機能は、現在、限定的なベータ版で提供されています。今後の更新によって、この機能の現行バージョンと互換性のない変更が行われる可能性があります。この機能を試して、`ご意見をお寄せください<https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:8
+msgid "The IBM Watson IoT Platform provides the ability to extend the device management capabilities. This is done by adding device management extensions using either the REST APIs or the IoT Platform dashboard."
+msgstr ""
+"IBM Watson IoT Platform では、デバイス管理機能を拡張することができます。このためには、REST API または IoT Platform ダッシュボードを使用してデバイス管理拡張を追加します。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:11
+msgid "Devices which connect to the IoT Platform may have a wide range of capabilities. The device management actions supported by default in the IoT Platform (*device reboot*, *factory reset*, *firmware download* and *firmware update*) may not be sufficient to manage everything which a device can do."
+msgstr ""
+"IoT Platform には、さまざまな機能を持つデバイスが接続されます。IoT Platform でデフォルトでサポートされるデバイス管理操作 (デバイスのリブート、出荷時設定へのリセット、ファームウェアのダウンロード、ファームウェアの更新) では、デバイスの実行可能な機能のすべてを管理するために十分ではない可能性があります。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:17
+msgid "Device Management Extension Packages"
+msgstr ""
+"デバイス管理拡張パッケージ"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:19
+msgid "An extension package is a JSON document which defines a set of device management actions. The actions can be initiated against one or more devices which support those actions. The actions are initiated in the same way as the default device management actions by using either the IoT Platform dashboard or the device management REST APIs."
+msgstr ""
+"拡張パッケージは、一連のデバイス管理操作を定義した JSON 文書です。それらの操作は、操作をサポートしている 1 つ以上のデバイスに対して開始できます。操作は、デフォルトのデバイス管理操作と同じ方法で IoT Platform ダッシュボードまたはデバイス管理 REST API を使用して開始できます。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:23
+msgid "Device management extension packages have the following format:"
+msgstr ""
+"デバイス管理拡張パッケージの形式は以下のとおりです。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:58
+msgid "Extension Package Properties:"
+msgstr ""
+"拡張パッケージのプロパティー:"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:60
+msgid "``bundleId``: Unique identifier for a device management extension. Required."
+msgstr ""
+"``bundleId``: デバイス管理拡張の固有 ID。必須。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:61
+msgid "``version``: Version string for a device management extension. Optional."
+msgstr ""
+"``version``: デバイス管理拡張のバージョン・ストリング。オプション。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:62
+msgid "``provider``: Provider string for a device management extension. Maximum length of 1024 characters. Optional."
+msgstr ""
+"``provider``: デバイス管理拡張のプロバイダー・ストリング。最大長は 1024 文字です。オプション。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:63
+msgid "``displayName``: Map of ``locale``: ``String`` key-value pairs used for display in the IoT Platform dashboard. Required. Must contain at least one entry."
+msgstr ""
+"``displayName``: IoT Platform ダッシュボードでの表示に使用する ``locale``:``String`` のキー/値のペアのマップ。必須。少なくとも 1 つの項目が含まれている必要があります。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:64
+msgid "``description``: Map of ``locale``: ``String`` key-value pairs used for display in the IoT Platform dashboard. Optional. If specified, must contain at least one entry."
+msgstr ""
+"``description``: IoT Platform ダッシュボードでの表示に使用する ``locale``:``String`` のキー/値のペアのマップ。オプション。指定する場合、少なくとも 1 つの項目が含まれている必要があります。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:65
+msgid "``actions``: Map of ``actionId``: ``<action>`` key-value pairs which defines the actions contained within a device management extension. Required. Must contain at least one entry."
+msgstr ""
+"``actions``: デバイス管理拡張に含まれる操作を定義する ``actionId``:``<action>`` のキー/値のペアのマップ。必須。少なくとも 1 つの項目が含まれている必要があります。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:67
+msgid "Properties per action:"
+msgstr ""
+"操作ごとのプロパティー:"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:69
+msgid "``actionDisplayName``: Map of ``locale``: ``String`` key-value pairs used for display in the IoT Platform dashboard. Required. Must contain at least one entry."
+msgstr ""
+"``actionDisplayName``: IoT Platform ダッシュボードでの表示に使用する ``locale``:``String`` のキー/値のペアのマップ。必須。少なくとも 1 つの項目が含まれている必要があります。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:70
+msgid "``description``:  Map of ``locale``: ``String`` key-value pairs used for display in the IoT Platform dashboard. Optional. If specified, must contain at least one entry."
+msgstr ""
+"``description``: IoT Platform ダッシュボードでの表示に使用する ``locale``:``String`` のキー/値のペアのマップ。オプション。指定する場合、少なくとも 1 つの項目が含まれている必要があります。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:71
+msgid "``parameters``: Array of parameters allowed for a particular action. Optional. If specified, must contain at least one entry."
+msgstr ""
+"``parameters``: 特定の操作で許可されるパラメーターの配列。オプション。指定する場合、少なくとも 1 つの項目が含まれている必要があります。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:73
+msgid "Properties per action parameter:"
+msgstr ""
+"操作ごとのプロパティーのパラメーター:"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:75
+msgid "``name``: Unique identifier for a parameter within an action. Required."
+msgstr ""
+"``name``: 操作の中で一意のパラメーター ID。必須。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:76
+msgid "``value``: Regular expression used for validating parameter values when a request is initiated. Optional. If not specified, value will not be validated."
+msgstr ""
+"``value``: リクエストの開始時にパラメーター値を検証するために使用する正規表現。オプション。指定しない場合、値の検証は行われません。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:77
+msgid "``required``: Boolean value specifying whether the parameter is required. Optional. Default: False"
+msgstr ""
+"``required``: パラメーターが必須かどうかを示すブール値。オプション。デフォルト: False"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:78
+msgid "``defaultValue``: Value to be used if the parameter is not provided when a request is initiated. Optional."
+msgstr ""
+"``defaultValue``: リクエストの開始時にパラメーターが指定されていない場合に使用する値。オプション。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:82
+msgid "The ``bundleId``, ``version``, ``actionId`` and ``parameterId`` values have the following restrictions:"
+msgstr ""
+"``bundleId``、``version``、``actionId``、および ``parameterId`` 値には、以下の制限があります。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:84
+msgid "Maximum length of 255 characters"
+msgstr ""
+"最大長 255 文字"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:85
+msgid "Must comprise only alpha-numeric characters (a-z, A-Z, 0-9) and the following special characters:"
+msgstr ""
+"英数字 (a-z、A-Z、0-9) および以下の特殊文字のみで構成する必要があります。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:87
+msgid "dash (-)"
+msgstr ""
+"ダッシュ (-)"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:88
+msgid "underscore (_)"
+msgstr ""
+"アンダースコアー (_)"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:89
+msgid "dot (.)"
+msgstr ""
+"ドット (.)"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:92
+msgid "Extension packages are managed in the IoT Platform using the following REST APIs."
+msgstr ""
+"拡張パッケージは、以下の REST API を使用して IoT Platform で管理します。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:94
+msgid "List all device management extension packages:"
+msgstr ""
+"すべてのデバイス管理拡張パッケージをリストします。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:96
+msgid "``GET https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle``"
+msgstr ""
+"``GET https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:98
+msgid "Create a new device management extension package:"
+msgstr ""
+"新しいデバイス管理拡張パッケージを作成します。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:100
+#: ../docs/devices/device_mgmt/custom_actions.rst:331
+msgid "``POST https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle``"
+msgstr ""
+"``POST https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:102
+msgid "Get a specific device management extension package:"
+msgstr ""
+"特定のデバイス管理拡張パッケージを取得します。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:104
+msgid "``GET https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle/{bundleId}``"
+msgstr ""
+"``GET https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle/{bundleId}``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:106
+msgid "Update a device management extension package:"
+msgstr ""
+"デバイス管理拡張パッケージを更新します。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:108
+msgid "``PUT https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle/{bundleId}``"
+msgstr ""
+"``PUT https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle/{bundleId}``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:110
+msgid "Delete a device management extension package:"
+msgstr ""
+"デバイス管理拡張パッケージを削除します。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:112
+msgid "``DELETE https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle/{bundleId}``"
+msgstr ""
+"``DELETE https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle/{bundleId}``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:114
+msgid "For more information on the REST APIs for device management extension packages refer to the `version 2 API documentation <../../swagger/v0002.html>`_."
+msgstr ""
+"デバイス管理拡張パッケージのための REST API について詳しくは、`バージョン 2 API の資料 <../../swagger/v0002.html>`_を参照してください。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:119
+msgid "Supporting Custom Device Management Actions"
+msgstr ""
+"カスタムのデバイス管理操作のサポート"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:121
+msgid "Device management actions defined in an extension package may only be initiated against devices which support those actions. A device specifies what types of actions it supports when it publishes a manage request to the IoT Platform. In order to allow a device to receive custom actions defined in a particular extension package, the device must specify that extension's bundle identifier in the supports object when publishing a manage request."
+msgstr ""
+"拡張パッケージに定義されたデバイス管理操作は、その操作をサポートするデバイスに対してのみ開始できます。デバイスは、管理リクエストを IoT Platform にパブリッシュするときに、そのデバイスでサポートしている操作のタイプを指定します。特定の拡張パッケージで定義されたカスタム操作をデバイスが受け取れるようにするには、デバイスが管理リクエストをパブリッシュするときに、その拡張のバンドル ID をサポート・オブジェクトに指定する必要があります。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:151
+msgid "For additional information about device manage requests, refer to `Device Management Protocol <index.html>`__."
+msgstr ""
+"デバイス管理リクエストについて詳しくは、`デバイス管理プロトコル <index.html>`__を参照してください。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:155
+msgid "Initiating Custom Device Management Actions"
+msgstr ""
+"カスタムのデバイス管理操作の開始"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:157
+msgid "Custom device management actions are initiated using the same REST API as the default device management actions:"
+msgstr ""
+"カスタムのデバイス管理操作は、デフォルトのデバイス管理操作と同じ REST API を使用して、次のように開始します。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:159
+msgid "``POST https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests``"
+msgstr ""
+"``POST https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:161
+msgid "The following information must be provided when initiating a request:"
+msgstr ""
+"リクエストを開始するときには、以下の情報を指定する必要があります。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:163
+msgid "The action ``<bundleId>/<actionId>``"
+msgstr ""
+"操作 ``<bundleId>/<actionId>``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:164
+msgid "A list of devices to initiate the action against, with a maximum of 5000 devices"
+msgstr ""
+"開始する操作の対象にするデバイスのリスト (最大デバイス数 5000)"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:165
+msgid "A list of parameters as defined in the custom action definition"
+msgstr ""
+"カスタム操作定義に定義されたパラメーターのリスト"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:167
+msgid "The payload for initiating a request has the following format:"
+msgstr ""
+"リクエストを開始するためのペイロードの形式は以下のとおりです。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:189
+msgid "Handling Custom Device Management Actions"
+msgstr ""
+"カスタムのデバイス管理操作の処理"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:191
+msgid "When a custom action is initiated against a device, an MQTT message will be published to the device. The message will contain any parameters that were specified as part of the request. When the device receives this message, it is expected to either execute the action or respond with an error code indicating that it cannot complete the action at this time."
+msgstr ""
+"カスタム操作をデバイスに対して開始すると、そのデバイスに MQTT メッセージがパブリッシュされます。このメッセージには、リクエストの一部として指定したパラメーターが含まれています。このメッセージを受け取ったデバイスは、操作を実行するか、現時点では操作を実行できないことを示すエラー・コードを出して応答する必要があります。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:196
+msgid "To indicate that the action was completed successfully, a device should publish a response with ``rc`` set to ``200``."
+msgstr ""
+"操作が正常に完了したことを示す場合、デバイスは ``rc`` を ``200`` に設定した応答をパブリッシュします。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:199
+msgid "Below is an example exchange between the server and a device."
+msgstr ""
+"サーバーとデバイスの間の交換の例を以下に示します。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:230
+msgid "Example"
+msgstr ""
+"例"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:232
+msgid "In this example, we will walk through defining a new device management extension and executing an action defined within that extension."
+msgstr ""
+"この例では、新しいデバイス管理拡張を定義し、その拡張内に定義した操作を実行する方法を示します。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:235
+msgid "Some company manufactures ``exampleDeviceType`` devices. Users of these devices have the ability to manage plug-ins which run on the devices. To facilitate remote management of plug-ins on ``exampleDeviceType`` devices, the manufacturer provides a device management extension which users can import into their Watson IoT Platform organization."
+msgstr ""
+"ある企業が、``exampleDeviceType`` デバイスを製造しています。このデバイスのユーザーは、デバイス上で実行するプラグインを管理できます。``exampleDeviceType`` デバイス上のプラグインを簡単にリモート管理できるように、この製造メーカーは、ユーザーの Watson IoT Platform 組織にインポートできるデバイス管理拡張を提供しています。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:239
+msgid "The extension JSON document used in this example:"
+msgstr ""
+"この例で使用する拡張 JSON 文書:"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:322
+msgid "In this device management extension package, 4 actions are defined:"
+msgstr ""
+"このデバイス管理拡張パッケージには、以下の 4 つの操作が定義されています。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:324
+msgid "installPlugin"
+msgstr ""
+"installPlugin"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:325
+msgid "enablePlugin"
+msgstr ""
+"enablePlugin"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:326
+msgid "disablePlugin"
+msgstr ""
+"disablePlugin"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:327
+msgid "uninstallPlugin"
+msgstr ""
+"uninstallPlugin"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:329
+msgid "The extension is added using the REST API:"
+msgstr ""
+"この拡張を、REST API を使用して追加します。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:333
+msgid "Devices registered in organization ``<orgId>`` are now able to specify that they support ``exampleDeviceType-actions-v1`` actions when publishing a manage request."
+msgstr ""
+"以上で、組織 ``<orgId>`` に登録されたデバイスは、管理リクエストをパブリッシュするときに、``exampleDeviceType-actions-v1`` 操作をサポートしていることを示せるようになりました。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:336
+msgid "In this example, the manage request sent by a device would look like this:"
+msgstr ""
+"この例では、デバイスから送信する管理リクエストは以下のようなものになります。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:352
+msgid "The device should then receive the following response from the IoT Platform:"
+msgstr ""
+"そして、デバイスは IoT Platform から以下の応答を受け取ります。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:364
+msgid "At this point, an action defined in the ``exampleIoT-exampleDeviceType-v1`` extension can be initiated against some devices."
+msgstr ""
+"この時点で、``exampleIoT-exampleDeviceType-v1`` 拡張に定義された操作をデバイスに対して開始することができます。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:366
+msgid "The payload for initiating an ``installPlugin`` action will look like the following:"
+msgstr ""
+"``installPlugin`` 操作を開始するためのペイロードは、以下のようなものになります。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:394
+msgid "The request is initiated using the REST API:"
+msgstr ""
+"以下の REST API を使用して、リクエストを開始します。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:400
+msgid "Devices ``device0`` and ``device1`` of type ``exampleDeviceType`` will then receive the following MQTT message:"
+msgstr ""
+"そして、タイプ ``exampleDeviceType`` のデバイス ``device0`` および ``device1`` が、以下の MQTT メッセージを受け取ります。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:424
+msgid "Each device will take action on the message, installing the new plug-in. Once installation is complete, the devices respond with the following message to indicate that the action completed successfully:"
+msgstr ""
+"各デバイスは、メッセージの操作を実行して、新しいプラグインをインストールします。インストールが完了したら、デバイスは、操作が正常に完了したことを示す以下のメッセージを出して応答します。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:437
+msgid "At this point, the ``installPlugin`` action is now complete."
+msgstr ""
+"この時点で、`installPlugin`` 操作は完了します。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:441
+msgid "API Examples"
+msgstr ""
+"API の例"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:443
+msgid "The following are examples of API requests that may be useful when performing device management actions:"
+msgstr ""
+"デバイス管理操作を実行するときに参考になる API リクエストの例を以下に示します。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:445
+msgid "Create a new device management extension:"
+msgstr ""
+"新しいデバイス管理拡張を作成します。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:447
+msgid "``curl -XPOST -d '<insert payload here>' -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle``"
+msgstr ""
+"``curl -XPOST -d '<insert payload here>' -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:449
+msgid "List device management extensions:"
+msgstr ""
+"デバイス管理拡張をリストします。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:451
+msgid "``curl -XGET -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle``"
+msgstr ""
+"``curl -XGET -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/custom/bundle``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:453
+msgid "Initiate a device management request:"
+msgstr ""
+"デバイス管理リクエストを開始します。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:455
+msgid "``curl -XPOST -d '<insert payload here>' -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests``"
+msgstr ""
+"``curl -XPOST -d '<insert payload here>' -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:457
+msgid "List in-progress or completed device management requests:"
+msgstr ""
+"進行中のデバイス管理リクエスト、または完了したデバイス管理リクエストをリストします。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:459
+msgid "``curl -XGET -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests``"
+msgstr ""
+"``curl -XGET -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests``"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:461
+msgid "View status of a particular device management request:"
+msgstr ""
+"特定のデバイス管理リクエストの状況を表示します。"
+
+#: ../docs/devices/device_mgmt/custom_actions.rst:463
+msgid "``curl -XGET -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests/<requestId>``"
+msgstr ""
+"``curl -XGET -H \"Content-Type: application/json\" -u \"<apiKey>:<apiToken>\" https://<orgId>.internetofthings.ibmcloud.com:443/api/v0002/mgmt/requests/<requestId>``"
+

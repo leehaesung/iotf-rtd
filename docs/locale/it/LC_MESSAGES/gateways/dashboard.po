@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/gateways/dashboard.rst:2
+msgid "Connecting and Using a Gateway Device using the IoT Platform Dashboard"
+msgstr ""
+"Connessione ed utilizzo di un dispositivo gateway utilizzando il dashboard IoT Platform"
+
+#: ../docs/gateways/dashboard.rst:4
+msgid "This task describes the process of connecting a gateway device, which connects itself, and devices behind the gateway, and sends data from itself and devices behind it to the IoT Platform."
+msgstr ""
+"Questa attività descrive il processo di connessione di un dispositivo gateway che connette se stesso e i dispositivi dietro al gateway e invia i dati da se stesso e dai dispositivi dietro di esso a IoT Platform."
+
+#: ../docs/gateways/dashboard.rst:6
+msgid "Gateways can also subscribe to commands on behalf of devices connected to the gateway."
+msgstr ""
+"I gateway possono inoltrare i comandi per conto dei dispositivi ad essi connessi."
+
+#: ../docs/gateways/dashboard.rst:9
+msgid "Prerequisites"
+msgstr ""
+"Prerequisiti"
+
+#: ../docs/gateways/dashboard.rst:11
+msgid "This task assumes that you already have an IoT Platform organization."
+msgstr ""
+"Questa attività presuppone che già si possiede un'organizzazione IoT Platform."
+
+#: ../docs/gateways/dashboard.rst:14
+msgid "Procedure"
+msgstr ""
+"Procedura"
+
+#: ../docs/gateways/dashboard.rst:16
+msgid "Creating a device type for your gateway: A gateway has more rights than a normal device, and can send and receive device data on behalf of other devices."
+msgstr ""
+"Creazione di un tipo di dispositivo per il gateway: un gateway dispone di maggiori privilegi rispetto ad un normale dispositivo e può inviare e ricevere i dati per conto di altri dispositivi."
+
+#: ../docs/gateways/dashboard.rst:18
+msgid "In your organization dashboard 'Devices' tab, select the 'Device Types' sub-tab. Click 'Create Type'. Click 'Create gateway type', and follow the instructions in the flow, including adding any device properties and metadata. Click 'Create' to complete the flow and create the device type."
+msgstr ""
+"Nella scheda 'Dispositivi' del dashboard dell'organizzazione, selezionare la scheda secondaria 'Tipi di dispositivo'. Fare clic su 'Crea tipo'. Fare clic su 'Crea tipo di gateway' e seguire le istruzioni nel flusso, incluso l'aggiunta delle proprietà e dei metadati del dispositivo. Fare clic su 'Crea' per completare il flusso e creare il tipo di dispositivo."
+
+#: ../docs/gateways/dashboard.rst:20
+msgid "To create a gateway device:"
+msgstr ""
+"Per creare un dispositivo gateway:"
+
+#: ../docs/gateways/dashboard.rst:22
+msgid "In your organization dashboard 'Devices' tab, select the 'Browse' sub-tab and click 'Add device'. Select the gateway device type created in the previous step. Follow the 'Add device' flow, entering the mandatory *deviceId* property, and any other optional properties."
+msgstr ""
+"Nella scheda 'Dispositivi' del dashboard dell'organizzazione, selezionare la scheda secondaria 'Sfoglia' e fare clic su 'Aggiungi dispositivo'. Selezionare il tipo di dispositivo gateway creato nell'operazione precedente. Seguire il flusso 'Aggiungi dispositivo' immettendo la proprietà obbligatoria *deviceId* e le altre proprietà facoltative."
+
+#: ../docs/gateways/dashboard.rst:24
+msgid "After creating a gateway device, the authentication token provided should be saved for use in configuring the gateway to connect to the IoT Platform."
+msgstr ""
+"Una volta creato un dispositivo gateway, il token di autenticazione fornito dovrebbe essere salvato per l'utilizzo nella configurazione del gateway per la connessione a IoT Platform."
+
+#: ../docs/gateways/dashboard.rst:26
+msgid "Connecting the gateway to the IoT Platform."
+msgstr ""
+"Connessione del gateway a IoT Platform."
+
+#: ../docs/gateways/dashboard.rst:28
+msgid "There are a range of recipes available for connecting devices to the IoT Platform platform. Connecting a gateway requires the same steps as connecting a normal device with one exception. When connecting a normal device, the clientId uses the following format:"
+msgstr ""
+"Esiste una gamma di istruzioni disponibili per la connessione dei dispositivi a IoT Platform. La connessione di un gateway richiede le stesse procedure utilizzate per la connessione di un dispositivo normale con un'eccezione. Durante la connessione di un dispositivo normale, clientId utilizza il seguente formato:"
+
+#: ../docs/gateways/dashboard.rst:30
+msgid "``d:<orgId>:<typeId>:<deviceId>``"
+msgstr ""
+"``d:<orgId>:<typeId>:<deviceId>``"
+
+#: ../docs/gateways/dashboard.rst:32
+msgid "When connecting a gateway device, the clientId replaces ``d`` with ``g``:"
+msgstr ""
+"Durante la connessione di un dispositivo gateway, clientId sostituisce ``d`` con ``g``:"
+
+#: ../docs/gateways/dashboard.rst:34
+msgid "``g:<orgId>:<typeId>:<deviceId>``"
+msgstr ""
+"``g:<orgId>:<typeId>:<deviceId>``"
+
+#: ../docs/gateways/dashboard.rst:36
+msgid "Set up devices that are connected to the gateway and are to be connected to the IoT Platform:"
+msgstr ""
+"Configurare i dispositivi che sono connessi al gateway e devono essere connessi a IoT Platform:"
+
+#: ../docs/gateways/dashboard.rst:38
+msgid "Create a device type for the device or devices which are to connect through the gateway. The devices should have *gatewayId* and *gatewayTypeId* properties matching the *deviceId* and *deviceTypeId* of the gateway they are connecting through. Add the devices which are connected to the gateway to the IoT Platform."
+msgstr ""
+"Creare un tipo di dispositivo per il dispositivo o i dispositivi che devono essere connessi mediante il gateway. I dispositivi dovrebbero avere le proprietà *gatewayId* e *gatewayTypeId* corrispondenti a *deviceId* e *deviceTypeId* del gateway attraverso cui sono connessi. Aggiungere i dispositivi che tramite il gateway sono connessi a IoT Platform."
+
+#: ../docs/gateways/dashboard.rst:40
+msgid "The devices connected to the gateway should now be visible in your IoT Platform organization dashboard."
+msgstr ""
+"I dispositivi connessi al gateway dovrebbero ora essere visibili nel dashboard dell'organizzazione IoT Platform."
+

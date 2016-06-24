@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, IBM Corporation
+# This file is distributed under the same license as the IBM IOT Foundation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: IBM IOT Foundation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 21:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../docs/reference/extensions/index.rst:2
+msgid "External Service Integrations"
+msgstr ""
+"Integrazioni di un servizio esterno"
+
+#: ../docs/reference/extensions/index.rst:5
+msgid "Overview"
+msgstr ""
+"Panoramica"
+
+#: ../docs/reference/extensions/index.rst:6
+msgid "External service integration allows you to bind metadata or function supported by another service to your Watson IoT account."
+msgstr ""
+"L'integrazione di un servizio esterno consente di collegare i metadati o la funzione supportata da un altro servizio al proprio account Watson IoT."
+
+#: ../docs/reference/extensions/index.rst:10
+msgid "Jasper"
+msgstr ""
+"Jasper"
+
+#: ../docs/reference/extensions/index.rst:12
+msgid "Jasper is an administration and management platform for SIM devices. Jasper has been integrated into the IBM Watson IoT platform dashboard, making it possible to administer Jasper devices through your Watson IoT platform organization dashboard."
+msgstr ""
+"Jasper è una piattaforma di amministrazione e gestione per i dispositivi SIM. Jasper è stata integrata nel dashboard IBM Watson IoT platform, rendendo possibile amministrare i dispositivi Jasper attraverso il dashboard dell'organizzazione Watson IoT platform."
+
+#: ../docs/reference/extensions/index.rst:14
+msgid "Jasper integration is currently available as part of a limited beta.  Future updates may include changes incompatible with the current version of this feature."
+msgstr ""
+"L'integrazione Jasper è attualmente disponibile come parte di una versione beta limitata.  Futuri aggiornamenti potrebbero comportare modifiche incompatibili con la versione corrente di questa funzione."
+
+#: ../docs/reference/extensions/index.rst:19
+msgid "Supported Operations"
+msgstr ""
+"Operazioni supportate"
+
+#: ../docs/reference/extensions/index.rst:21
+msgid "The built-in Jasper integration provided by our platform provides support for the following Jasper operations:"
+msgstr ""
+"L'integrazione incorporata Jasper fornita dalla piattaforma fornisce il supporto per le seguenti operazioni Jasper:"
+
+#: ../docs/reference/extensions/index.rst:23
+msgid "View overall Jasper data"
+msgstr ""
+"Visualizzazione dei dati generali Jasper"
+
+#: ../docs/reference/extensions/index.rst:25
+msgid "Shows: Status, Rate Plan, month-to-date data usage, month-to-date SMS usage, month-to-date voice usage, overage limits, date added, and date modified."
+msgstr ""
+"Mostra: Stato, piano tariffario, utilizzo dati dall'inizio del mese ad oggi, utilizzo SMS dall'inizio del mese ad oggi, utilizzo voce dall'inizio del mese ad oggi, limiti di eccedenza, data di aggiunta e data di modifica."
+
+#: ../docs/reference/extensions/index.rst:26
+msgid "Change SIM activation state."
+msgstr ""
+"Modificare lo stato di attivazione della SIM."
+
+#: ../docs/reference/extensions/index.rst:28
+msgid "Select from: Inventory, Activation Ready, Activated, Deactivated, and Retired."
+msgstr ""
+"Selezionare da: inventario, attivazione pronta, attivata, disattivata e ritirata."
+
+#: ../docs/reference/extensions/index.rst:29
+msgid "View SIM Usage"
+msgstr ""
+"Visualizzazione utilizzo SIM"
+
+#: ../docs/reference/extensions/index.rst:31
+msgid "Shows: Cycle start date, billable and total data, billable and total SMS, billable and total voice."
+msgstr ""
+"Mostra: data di inizio ciclo, dati totali e fatturabili, SMS totali e fatturabili, voce totale e fatturabile."
+
+#: ../docs/reference/extensions/index.rst:32
+msgid "The cycle start date can be set using a YYYY-MM-DD format."
+msgstr ""
+"La data di inizio ciclo può essere impostata utilizzando il formato AAAA_MM_GG."
+
+#: ../docs/reference/extensions/index.rst:33
+msgid "Send SMS to SIM"
+msgstr ""
+"Inviare SMS alla SIM"
+
+#: ../docs/reference/extensions/index.rst:34
+msgid "Change rate plan"
+msgstr ""
+"Modificare il piano tariffario"
+
+#: ../docs/reference/extensions/index.rst:37
+msgid "These operations can be accessed in the device drilldown of a Jasper connected device after the configuration steps below are completed."
+msgstr ""
+"È possibile accedere a queste operazioni nel drill down di un dispositivo connesso a Jasper una volta completata la procedura di configurazione riportata di seguito."
+
+#: ../docs/reference/extensions/index.rst:41
+msgid "Configuration"
+msgstr ""
+"Configurazione"
+
+#: ../docs/reference/extensions/index.rst:43
+msgid "In order to connect your Watson IoT Platform platform organization with your Jasper account, there are two stages of configuration which must first be performed. The first stage of configuration is Organization Configuration."
+msgstr ""
+"Per connettere l'organizzazione Watson IoT Platform all'account Jasper , è necessario prima eseguire due fasi di configurazione. La prima fase della configurazione è la Configurazione organizzazione."
+
+#: ../docs/reference/extensions/index.rst:47
+msgid "Extension Enablement"
+msgstr ""
+"Abilitazione estensione"
+
+#: ../docs/reference/extensions/index.rst:49
+msgid "To enable Jasper integrtion with your Watson IoT organization follow these steps:"
+msgstr ""
+"Per abilitare l'integrazione Jasper con l'organizzazione Watson IoT seguire questi passi:"
+
+#: ../docs/reference/extensions/index.rst:51
+msgid "When in your Watson IoT platform dashboard, click the wrench icon on the right to open the Configuration Settings."
+msgstr ""
+"Quando ci si trova nel dashboard Watson IoT platform fare clic sull'icona a forma di chiave inglese sulla destra per aprire Impostazioni di configurazione."
+
+#: ../docs/reference/extensions/index.rst:52
+msgid "Scroll down the to the Extensions section, and set Jasper to 'On'."
+msgstr ""
+"Scorrere verso il basso fino alla sezione Estensioni e impostare Jasper su 'Attivo'."
+
+#: ../docs/reference/extensions/index.rst:53
+msgid "Enter your Jasper username, password, license key, and API endpoint. The API endpoint must begin with ``http://`` or ``https://``. If the API endpoint begins with ``http://`` Watson IoT Platform will communicate with Jasper over an unencrypted connection. The API endpoint must begin with ``https://`` in order to use encryption. An example API endpoint is ``https://api.jasperwireless.com``."
+msgstr ""
+"Immettere il nome utente, la password, la chiave della licenza e l'endpoint dell'API di Jasper. L'endpoint API deve iniziare con ``http://`` o ``https://``. Se l'endpoint API inizia con ``http://`` Watson IoT Platform comunicherà con Jasper tramite una connessione codificata. L'endpoint API deve iniziare con ``https://`` per poter utilizzare la codifica. Un esempio di endpoint API ``https://api.jasperwireless.com``."
+
+#: ../docs/reference/extensions/index.rst:56
+msgid "Device Configuration"
+msgstr ""
+"Configurazione dispositivo"
+
+#: ../docs/reference/extensions/index.rst:58
+msgid "Devices which are connected to both your Watson IoT platform organization and your Jasper account can be configured to display data from Jasper in the Watson IoT platform dashboard. Jasper configuration cannot be applied as part of the Add Device process, only already connected devices can be configured with Jasper. To configure your Jasper-connected devices, follow these steps:"
+msgstr ""
+"I dispositivi connessi a entrambi l'organizzazione Watson IoT platform e all'account Jasper possono essere configurati per visualizzare i dati provenienti da Jasper nel dashboard Watson IoT platform. La configurazione di Jasper non può essere applicata come parte del processo Aggiungi dispositivo, solo i dispositivi già connessi possono essere configurati con Jasper. Per configurare i dispositivi connessi a Jasper, eseguire le seguenti operazioni:"
+
+#: ../docs/reference/extensions/index.rst:60
+msgid "In the devices tab of your Watson IoT platform dashboard, find the Jasper-connected device to be configured."
+msgstr ""
+"Nella scheda Dispositivi del dashboard Watson IoT platform, trovare il dispositivo connesso a Jasper da configurare."
+
+#: ../docs/reference/extensions/index.rst:61
+msgid "Select the device to open the Device Drilldown view."
+msgstr ""
+"Selezionare il dispositivo per aprire la vista Drill down dispositivo."
+
+#: ../docs/reference/extensions/index.rst:62
+msgid "Scroll down to the 'Extension Configuration section. The extension configuration must be entered as JSON in the following format:"
+msgstr ""
+"Scorrere in basso fino alla sezione 'Configurazione estensione. È necessario immettere la configurazione dell'estensione come JSON nel seguente formato:"
+
+#: ../docs/reference/extensions/index.rst:72
+msgid "When this has been entered, click 'Confirm changes' to save the configuration."
+msgstr ""
+"Una volta immessa, fare clic su 'Conferma modifiche' per salvare la configurazione."
+
+#: ../docs/reference/extensions/index.rst:74
+msgid "If the Organization configuration has been completed correctly, the Extensions section should now appear below the Extensions Configuration section in the Device Drilldown."
+msgstr ""
+"Se la configurazione dell'organizzazione è stata completata correttamente, la sezione Estensioni dovrebbe essere visualizzata sotto alla sezione Configurazione dell'estensione nel drill down del dispositivo."
+

@@ -37,12 +37,6 @@ strongly recommend that all users build their solutions based on the version 2 A
 IoT Platform API Version 1
 ------------------------------
 
-`Version 1 <../swagger/v0001.html>`_ of the API is still supported, however it should now be considered a 
-deprecated API, many features listed above are not available in the version 1 API.
+`Version 1 <../swagger/v0001.html>`_ of the API is now disabled. You should ensure that all your applications use the current `version 2 <../swagger/v0002.html>`_ API.
 
-
-.. note::
-    - Many of the API paths relating to devices have changed.
-    - Version 1 of the API does not support any device type operations, other than listing all device types.
-    - Operations related to device management, device management requests, diagnostic information, or location cannot be performed using version 1 of the API.
 

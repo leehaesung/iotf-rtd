@@ -50,7 +50,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'IBM IOT Foundation'
+project = 'IBM Watson IoT Platform'
 copyright = '2015, IBM Corporation'
 
 # The version info for the project you're documenting, acts as replacement for

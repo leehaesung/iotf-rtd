@@ -27,8 +27,7 @@ The IoT Platform API supports the following functionality for applications:
 IoT Platform API Version 2 
 ------------------------------
 
-The current version of the IoT Platform API is `version 2 <../swagger/v0002.html>`_.  We 
-strongly recommend that all users build their solutions based on the version 2 APIs.
+The only supported version of the IoT Platform API is `version 2 <../swagger/v0002.html>`_.  All users must ensure their solutions are using this version.
 
 
 ----

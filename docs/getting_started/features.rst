@@ -40,52 +40,6 @@ seemlessly interact with those services without ever leaving the comfort of the 
   think <https://developer.ibm.com/answers/smart-spaces/17/internet-of-things.html>`_
 
 
-Historian
----------
-Configure the Watson IoT platform to store a record of the events your devices generate.
-
-.. warning:: **Message format restrictions apply to the Historian**
-  
-  The historian feature only supports JSON messages meeting specific critera:
-  
-  * The message must be a valid JSON object (not an array) with only two top level
-    elements: ``d`` and ``ts``
-  * The message must be UTF-8 encoded
-  * The message must be less than 4kb
-
-  **Data**
-  
-  The **d** element is where you include all data for the event (or
-  command) being transmitted in the message. 
-  
-  * This element is required for your message to meet the Watson IoT platform message specification.
-  * This must always be a JSON object (not an array)
-  * In the case where you wish to send no data the **d** element should 
-    still be present, but contain an empty object.
-
-  **Timestamp**
-  
-  The **ts** element allows you to associate a timestamp with the event
-  (or command). This is an optional element, if included its value should
-  be a valid ISO8601 timestamp.
-
-  **Example**
-  
-  .. code:: json
-  
-      {
-        "d": {
-          "host": "IBM700-R9E683D", 
-          "mem": 54.9, 
-          "network": {
-            "up": 1.22, 
-            "down": 0.55
-          },
-          "cpu": 1.3, 
-        },
-        "ts": "2014-12-30T14:47:36+00:00"
-      }
-
 Last Event Cache
 -----------------
 The API can now return the last recorded value of an event-id for a specific device, or the last recorded value for each event-id reported by a specific device. The last event cache only applies to values sent in the last 30 days. 

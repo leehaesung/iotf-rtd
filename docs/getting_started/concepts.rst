@@ -84,23 +84,6 @@ device to impersonate another device.
   combination of these events.
 
 
-Historical Event Storage
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-Historical event storage allows users to store the data from devices added to their 
-Watson IoT platform organization. Historical event storage activity and 
-duration can be controlled from the settings panel in the Watson IoT platform dashboard.
-
-.. tip:: When changing settings for historical data storage, keep in mind that storing 
-    data for longer periods of time will affect your billing. Also, care should be taken 
-    when disabling historical data storage, as upon disabling data storage for your 
-    organization, all stored data will be deleted, and cannot be recovered.
-
-.. warning:: Historical event storage uses an MQTT Quality of Service level of 0 
-    (delivery at most once), so some data may be lost. Please note that only messages of up to 4096 bytes are stored.
-
-
-
 Commands
 -------------------------------------------------------------------------------
 **Commands** are the mechanism by which **applications** can communicate with 
